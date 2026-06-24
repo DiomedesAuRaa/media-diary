@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+docs/movies.json
+docs/books.json
+docs/tv.json

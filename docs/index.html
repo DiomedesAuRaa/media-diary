@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Diary</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1b;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 28px 32px;
+            text-align: center;
+        }
+
+        header h1 { font-size: 2.2em; margin-bottom: 6px; }
+        header p { opacity: 0.9; }
+
+        .media-nav {
+            background: #1a1a1b;
+            padding: 12px 20px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #6c5ce7;
+        }
+
+        .media-tab {
+            background: transparent;
+            color: #ccc;
+            border: 1px solid #444;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .media-tab.active { background: #6c5ce7; color: white; border-color: #6c5ce7; }
+        .media-tab.disabled { opacity: 0.35; cursor: default; }
+
+        .content { padding: 24px 28px; }
+
+        .stats {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            color: #666;
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            position: sticky;
+            top: 0;
+            background: white;
+        }
+
+        .table-wrap { overflow-x: auto; max-height: 70vh; overflow-y: auto; }
+
+        .rating-badge {
+            display: inline-block;
+            background: #6c5ce7;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85em;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 14px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Media Diary</h1>
+            <p>Read-only view of rated media.</p>
+        </header>
+
+        <nav class="media-nav" id="mediaNav"></nav>
+
+        <div class="content">
+            <div class="stats" id="stats"></div>
+            <div class="table-wrap" id="tableWrap"></div>
+        </div>
+    </div>
+
+    <script>
+        const TYPES = {
+            movies: {
+                label: 'Movies',
+                json: 'movies.json',
+                columns: ['Movie', 'Date Watched/Rated', 'Date Released', 'Rating', 'Director'],
+                enabled: true,
+            },
+            books: {
+                label: 'Books',
+                json: 'books.json',
+                columns: ['Book', 'Date Read/Rated', 'Date Published', 'Rating', 'Author'],
+                enabled: true,
+            },
+            tv: {
+                label: 'TV Shows',
+                json: 'tv.json',
+                columns: ['Show', 'Date Watched/Rated', 'Date Premiered', 'Rating', 'Creator'],
+                enabled: true,
+            },
+        };
+
+        let currentType = 'movies';
+        let cache = {};
+
+        function renderNav() {
+            const nav = document.getElementById('mediaNav');
+            nav.innerHTML = '';
+            Object.entries(TYPES).forEach(([key, config]) => {
+                const btn = document.createElement('button');
+                btn.className = 'media-tab' + (key === currentType ? ' active' : '') + (config.enabled ? '' : ' disabled');
+                btn.textContent = config.label + (config.enabled ? '' : ' (soon)');
+                if (config.enabled) {
+                    btn.addEventListener('click', () => {
+                        currentType = key;
+                        renderNav();
+                        renderTable();
+                    });
+                }
+                nav.appendChild(btn);
+            });
+        }
+
+        async function loadData(type) {
+            if (cache[type]) return cache[type];
+            const config = TYPES[type];
+            const res = await fetch(config.json);
+            if (!res.ok) throw new Error(`Could not load ${config.json}`);
+            const data = await res.json();
+            cache[type] = data.entries || [];
+            return cache[type];
+        }
+
+        async function renderTable() {
+            const wrap = document.getElementById('tableWrap');
+            const stats = document.getElementById('stats');
+            const config = TYPES[currentType];
+
+            try {
+                const entries = await loadData(currentType);
+                const ratings = entries.map(e => Number(e.Rating)).filter(n => !Number.isNaN(n));
+                const avg = ratings.length ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1) : '—';
+                stats.textContent = `${entries.length} entries · average rating ${avg}`;
+
+                if (!entries.length) {
+                    wrap.innerHTML = '<p>No entries yet.</p>';
+                    return;
+                }
+
+                let html = '<table><thead><tr>';
+                config.columns.forEach(col => { html += `<th>${col}</th>`; });
+                html += '</tr></thead><tbody>';
+                entries.forEach(row => {
+                    html += '<tr>';
+                    config.columns.forEach(col => {
+                        if (col === 'Rating') {
+                            html += `<td><span class="rating-badge">${row[col] || ''}</span></td>`;
+                        } else {
+                            html += `<td>${row[col] || ''}</td>`;
+                        }
+                    });
+                    html += '</tr>';
+                });
+                html += '</tbody></table>';
+                wrap.innerHTML = html;
+            } catch (err) {
+                wrap.innerHTML = `<div class="error">${err.message}</div>`;
+                stats.textContent = '';
+            }
+        }
+
+        renderNav();
+        renderTable();
+    </script>
+</body>
+</html>
