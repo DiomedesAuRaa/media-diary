@@ -316,7 +316,7 @@ flowchart LR
 
 | Task | Where | URL |
 |---|---|---|
-| Rate a movie | Pi app (home Wi-Fi) | `http://192.168.1.48:8765` |
+| Rate a movie | Pi app (home Wi-Fi) | `http://<your-pi-ip>:8765` |
 | Browse diary | GitHub Pages | `https://diomedesauraa.github.io/media-diary/` |
 | Recommendations | Mac terminal | `git pull && python scripts/recommendations.py` |
 
@@ -436,7 +436,7 @@ Pages viewer (`docs/index.html`): same tab pattern, read-only tables from export
 ### Phase 2 — Pi
 1. Clone repo, systemd service, deploy key
 2. Switch write endpoint from Mac to Pi
-3. Bookmark `http://192.168.1.48:8765` on phone
+3. Bookmark `http://<your-pi-ip>:8765` on phone
 
 ### Phase 3 — Expand (when you want)
 1. Enable books: Open Library provider + `data/books.csv`

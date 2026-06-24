@@ -4,7 +4,7 @@ Personal media tracker for **movies**, **books**, and **TV shows**. Rate things 
 
 | What | Where |
 |------|-------|
-| **Add ratings** | FastAPI app on Mac or Pi (`http://localhost:8765` or `http://192.168.1.48:8765`) |
+| **Add ratings** | FastAPI app on Mac or Pi (`http://localhost:8765` or `http://<your-pi-ip>:8765`) |
 | **Browse anywhere** | GitHub Pages read-only viewer |
 | **Movie recommendations** | `scripts/recommendations.py` (Gemini) |
 
@@ -129,9 +129,9 @@ The Pi runs the entry app 24/7 so you can rate from your phone on home Wi‑Fi. 
 ### 4a. Clone on the Pi
 
 ```bash
-ssh pi@192.168.1.48
-git clone git@github.com:YOUR_USER/media-diary.git /home/pi/media-diary
-cd /home/pi/media-diary
+ssh pi@<your-pi-ip>
+git clone https://github.com/YOUR_USER/media-diary.git ~/media-diary
+cd ~/media-diary
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -146,16 +146,13 @@ nano .env
 
 ```ini
 TMDB_API_KEY=your_key_here
-GEMINI_API_KEY=your_key_here
 GIT_SYNC_ENABLED=true
-GIT_PUSH_TOKEN=ghp_xxxxxxxx        # see below
+GIT_PUSH_TOKEN=                  # optional if using gh auth login
 GIT_REMOTE=origin
 GIT_BRANCH=main
 ```
 
-**Git push token:** Create a fine-grained GitHub PAT (repo → Contents: Read and write) or add a deploy key with write access. Put the token in `GIT_PUSH_TOKEN`.
-
-Alternatively, set up SSH deploy keys on the Pi if you prefer `git@github.com:` remotes without a token.
+**Git auth:** Either set `GIT_PUSH_TOKEN` (fine-grained PAT with repo write), or run `gh auth login` + `gh auth setup-git` on the Pi and leave the token blank.
 
 ### 4c. Install systemd service
 
@@ -168,11 +165,11 @@ sudo systemctl enable --now media-diary
 sudo systemctl status media-diary
 ```
 
-App URL: **http://192.168.1.48:8765** (LAN only — do not expose to the internet without auth).
+App URL: **http://&lt;your-pi-ip&gt;:8765** (LAN only — do not expose to the internet without auth).
 
 ### 4d. Bookmark on your phone
 
-Add `http://192.168.1.48:8765` to your home screen while on Wi‑Fi.
+Add `http://<your-pi-ip>:8765` to your home screen while on Wi‑Fi.
 
 ### Updating the Pi later
 
