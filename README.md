@@ -284,3 +284,4 @@ media-diary/
 - Movie recommendations script (Gemini)
 
 **Not included:** public internet access to the entry app (LAN only by design), Portfolio site integration (optional — can add a link in `Portfolio/home.html` later).
+# media-diary
