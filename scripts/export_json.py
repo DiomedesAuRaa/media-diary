@@ -10,14 +10,19 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
 DOCS_DIR = REPO_ROOT / "docs"
 
+# Updated to include watchlist CSVs
 EXPORTS = {
     "movies": DATA_DIR / "movies.csv",
+    "movies_watchlist": DATA_DIR / "movies_watchlist.csv",
     "books": DATA_DIR / "books.csv",
+    "books_watchlist": DATA_DIR / "books_watchlist.csv",
     "tv": DATA_DIR / "tv.csv",
+    "tv_watchlist": DATA_DIR / "tv_watchlist.csv",
 }
 
 
 def export_csv(name: str, csv_path: Path) -> int:
+    # If the watchlist file doesn't exist yet, we skip it quietly
     if not csv_path.exists():
         return 0
 

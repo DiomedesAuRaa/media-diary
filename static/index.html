@@ -245,11 +245,17 @@
         .rating-btn:hover { border-color: rgba(255,255,255,0.2); color: var(--text-main); }
         .rating-btn.selected { background: #5f27cd; color: white; border-color: #5f27cd; box-shadow: 0 0 8px rgba(95,39,205,0.3); }
 
-        /* ── Action bar ── */
-        .action-bar { display: flex; justify-content: stretch; gap: 12px; margin-top: 12px; align-items: center; }
+        /* ── Action bar & Buttons ── */
+        .form-actions-row { 
+            display: flex; 
+            gap: 12px; 
+            margin-top: 12px; 
+            align-items: center; 
+            flex-wrap: wrap;
+        }
 
         @media (min-width: 480px) {
-            .action-bar { justify-content: flex-end; }
+            .form-actions-row { justify-content: flex-end; }
         }
 
         .btn {
@@ -262,14 +268,19 @@
             border: none;
             transition: all 0.2s;
             touch-action: manipulation;
+            flex: 1;
         }
-        .btn-primary { background: var(--accent); color: white; flex: 1; }
+        @media (min-width: 480px) {
+            .btn { flex: 0 0 auto; }
+        }
+
+        .btn-primary { background: var(--accent); color: white; }
         .btn-primary:hover:not(:disabled) { background: var(--accent-hover); }
         .btn-primary:disabled { opacity: 0.25; cursor: not-allowed; }
 
-        @media (min-width: 480px) {
-            .btn-primary { flex: 0 0 auto; }
-        }
+        .btn-secondary { background: rgba(255,255,255,0.06); color: var(--text-main); border: 1px solid var(--border-color); }
+        .btn-secondary:hover:not(:disabled) { background: rgba(255,255,255,0.12); }
+        .btn-secondary:disabled { opacity: 0.25; cursor: not-allowed; }
 
         /* ── Preview ── */
         .preview-box {
@@ -286,7 +297,36 @@
         .preview-label { font-size: 0.72em; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
         .preview-value { font-size: 0.9em; font-weight: 500; }
 
-        /* ── Controls row ── */
+        /* ── Controls & View Toggle ── */
+        .view-toggle-container {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            width: fit-content;
+        }
+
+        .view-toggle-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 16px;
+            font-size: 0.9em;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .view-toggle-btn.active {
+            background: #5f27cd;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
         .controls-row {
             display: flex;
             flex-direction: column;
@@ -306,15 +346,8 @@
 
         .stats { color: var(--text-muted); font-size: 0.88em; font-weight: 500; }
 
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        @media (min-width: 480px) {
-            .filter-group { flex-direction: row; align-items: center; }
-        }
+        .filter-group { display: flex; flex-direction: column; gap: 8px; }
+        @media (min-width: 480px) { .filter-group { flex-direction: row; align-items: center; } }
 
         /* ── Table (desktop) / Card list (mobile) ── */
         .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border-color); }
@@ -334,55 +367,15 @@
             border-radius: 8px;
             padding: 14px;
         }
+        .entry-list-item-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+        .entry-list-item-title { font-weight: 600; font-size: 0.95em; line-height: 1.4; flex: 1; }
+        .entry-list-item-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+        .entry-meta-field { display: flex; flex-direction: column; gap: 1px; }
+        .entry-meta-label { font-size: 0.68em; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .entry-meta-value { font-size: 0.85em; }
+        .entry-list-item-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border-color); }
 
-        .entry-list-item-header {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
-
-        .entry-list-item-title {
-            font-weight: 600;
-            font-size: 0.95em;
-            line-height: 1.4;
-            flex: 1;
-        }
-
-        .entry-list-item-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px 14px;
-        }
-
-        .entry-meta-field {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-        }
-
-        .entry-meta-label {
-            font-size: 0.68em;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .entry-meta-value {
-            font-size: 0.85em;
-        }
-
-        .entry-list-item-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* ── Rating badge ── */
+        /* ── Badges ── */
         .rating-badge {
             display: inline-block;
             padding: 4px 10px;
@@ -396,7 +389,7 @@
         .rating-tier-mid { background: rgba(112, 111, 211, 0.25); color: #9c88ff; border-color: rgba(112, 111, 211, 0.3); }
         .rating-tier-low { background: rgba(255, 127, 80, 0.15); color: #ff7f50; border-color: rgba(255, 127, 80, 0.2); }
 
-        /* ── Delete button ── */
+        /* ── Inline Row Actions ── */
         .btn-delete {
             background: transparent;
             border: 1px solid rgba(255, 71, 87, 0.3);
@@ -413,17 +406,28 @@
         }
         .btn-delete:hover { background: #ff4757; color: white; border-color: #ff4757; }
 
-        /* ── Status ── */
-        .status-msg {
-            padding: 12px 16px;
+        .watchlist-actions { display: flex; gap: 8px; align-items: center; }
+        .action-badge {
+            padding: 6px 12px;
             border-radius: 6px;
-            font-size: 0.9em;
-            font-weight: 500;
-            display: none;
-            margin-bottom: 14px;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.15s ease;
+            color: white;
+            white-space: nowrap;
         }
+        .badge-log { background: #5f27cd; }
+        .badge-log:hover { background: #341f97; }
+        .badge-remove { background: transparent; border: 1px solid rgba(255, 71, 87, 0.3); color: #ff4757; }
+        .badge-remove:hover { background: #ff4757; color: white; border-color: #ff4757; }
+
+        /* ── Status ── */
+        .status-msg { padding: 12px 16px; border-radius: 6px; font-size: 0.9em; font-weight: 500; display: none; margin-bottom: 14px; }
         .status-msg.success { background: rgba(46, 213, 115, 0.15); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.2); display: block; }
         .status-msg.warning { background: rgba(255, 165, 2, 0.15); color: #ffa502; border: 1px solid rgba(255, 165, 2, 0.2); display: block; }
+        .status-msg.info { background: rgba(95, 39, 205, 0.15); color: #9c88ff; border: 1px solid rgba(95, 39, 205, 0.3); display: block; }
         .status-msg.error { background: rgba(255, 71, 87, 0.15); color: #ff4757; border: 1px solid rgba(255, 71, 87, 0.2); display: block; }
 
         /* ── Modal ── */
@@ -485,29 +489,14 @@
         .modal-header { font-size: 1.2em; font-weight: 700; margin-bottom: 10px; }
         .modal-body { font-size: 0.9em; color: var(--text-muted); margin-bottom: 22px; line-height: 1.6; }
 
-        .modal-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        @media (min-width: 480px) {
-            .modal-actions { flex-direction: row; justify-content: flex-end; }
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.08);
-            color: var(--text-main);
-            height: var(--min-tap);
-            border: none;
-        }
-        .btn-secondary:hover { background: rgba(255,255,255,0.12); }
+        .modal-actions { display: flex; flex-direction: column; gap: 10px; }
+        @media (min-width: 480px) { .modal-actions { flex-direction: row; justify-content: flex-end; } }
+        
+        .modal-actions .btn-secondary { height: var(--min-tap); border: none; }
         .btn-danger { background: #ff4757; color: white; height: var(--min-tap); border: none; }
         .btn-danger:hover { background: #ff6b81; }
 
-        @media (max-width: 479px) {
-            .modal-actions .btn { width: 100%; }
-        }
+        @media (max-width: 479px) { .modal-actions .btn { width: 100%; } }
     </style>
 </head>
 <body>
@@ -522,7 +511,7 @@
 
         <div class="workspace">
             <div class="entry-card">
-                <div class="section-title">Log New Rating</div>
+                <div class="section-title">Log or Watchlist Entry</div>
                 <div id="statusBox" class="status-msg"></div>
 
                 <div class="form-row">
@@ -539,19 +528,25 @@
                     <div class="preview-grid" id="previewGrid"></div>
                 </div>
 
-                <div class="form-row">
+                <div class="form-row" id="ratingInputContainer">
                     <div class="form-group">
                         <label>Your Score</label>
                         <div class="rating-grid" id="ratingGrid"></div>
                     </div>
                 </div>
 
-                <div class="action-bar">
+                <div class="form-actions-row">
+                    <button class="btn btn-secondary" id="watchlistBtn" disabled type="button">Add to Watchlist</button>
                     <button class="btn btn-primary" id="saveBtn" disabled>Save Entry</button>
                 </div>
             </div>
 
             <div>
+                <div class="view-toggle-container">
+                    <button id="viewDiaryBtn" class="view-toggle-btn active" onclick="switchView('diary')">Diary Log</button>
+                    <button id="viewWatchlistBtn" class="view-toggle-btn" onclick="switchView('watchlist')">Watchlist</button>
+                </div>
+
                 <div class="controls-row">
                     <div class="stats" id="stats">Loading...</div>
                     <div class="filter-group">
@@ -584,6 +579,7 @@
     <script>
         let typesConfig = {};
         let currentType = 'movies';
+        let currentView = 'diary'; // 'diary' | 'watchlist'
         let cachedEntries = [];
         let selectedResult = null;
         let selectedRating = null;
@@ -591,15 +587,13 @@
         let highlightedIndex = -1;
         let currentSortOrder = 'date-desc';
 
-        function isMobile() {
-            return window.innerWidth < 600;
-        }
+        function isMobile() { return window.innerWidth < 600; }
 
         function showStatus(text, type = 'success') {
             const box = document.getElementById('statusBox');
             box.textContent = text;
             box.className = `status-msg ${type}`;
-            if (type === 'success') {
+            if (type === 'success' || type === 'info') {
                 setTimeout(() => { box.className = 'status-msg'; }, 6000);
             }
         }
@@ -686,41 +680,32 @@
 
         function updateSaveState() {
             document.getElementById('saveBtn').disabled = !(selectedResult && selectedRating);
+            document.getElementById('watchlistBtn').disabled = !selectedResult;
+        }
+
+        function switchView(view) {
+            currentView = view;
+            document.getElementById('viewDiaryBtn').classList.toggle('active', view === 'diary');
+            document.getElementById('viewWatchlistBtn').classList.toggle('active', view === 'watchlist');
+            loadRecent();
         }
 
         function handleSearchInput() {
             clearTimeout(searchTimeout);
-
             const q = document.getElementById('titleSearch').value.trim();
             const panel = document.getElementById('searchResults');
 
-            if (!q) {
-                panel.classList.remove('visible');
-                return;
-            }
+            if (!q) { panel.classList.remove('visible'); return; }
 
             searchTimeout = setTimeout(async () => {
                 try {
-                    const res = await fetch(
-                        `/api/${currentType}/search?q=${encodeURIComponent(q)}`
-                    );
-
+                    const res = await fetch(`/api/${currentType}/search?q=${encodeURIComponent(q)}`);
                     if (!res.ok) {
-                        console.error('Search failed:', res.status);
                         panel.classList.remove('visible');
                         return;
                     }
-
                     const data = await res.json();
-
-                    console.log('Search response:', data);
-
-                    renderDropdown(
-                        Array.isArray(data)
-                            ? data
-                            : (data.results || [])
-                    );
-
+                    renderDropdown(data.results || []);
                 } catch (err) {
                     console.error('Search error:', err);
                     panel.classList.remove('visible');
@@ -747,6 +732,7 @@
             const panel = document.getElementById('searchResults');
             const items = panel.querySelectorAll('.dropdown-item');
             if (!panel.classList.contains('visible') || !items.length) return;
+            
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
                 highlightedIndex = (highlightedIndex + 1) % items.length;
@@ -774,10 +760,12 @@
             selectedResult = item;
             document.getElementById('titleSearch').value = item.title;
             document.getElementById('searchResults').classList.remove('visible');
+            
             const pGrid = document.getElementById('previewGrid');
             pGrid.innerHTML = '';
             const cfg = typesConfig[currentType];
             const labels = [...cfg.auto_fields, ...cfg.api_fields];
+            
             labels.forEach(label => {
                 let val = '';
                 if (label === 'Date Watched/Rated' || label === 'Date Read/Rated') {
@@ -799,7 +787,8 @@
         async function loadRecent() {
             const wrap = document.getElementById('tableWrap');
             try {
-                const res = await fetch(`/api/${currentType}/entries?limit=150`);
+                const endpoint = currentView === 'diary' ? `/api/${currentType}/entries` : `/api/${currentType}/watchlist`;
+                const res = await fetch(`${endpoint}?limit=150`);
                 if (!res.ok) throw new Error('Failed loading entries.');
                 const data = await res.json();
                 cachedEntries = data.entries || [];
@@ -817,6 +806,7 @@
 
             let records = [...cachedEntries];
             const query = document.getElementById('tableSearchBox').value.trim().toLowerCase();
+            
             if (query) {
                 records = records.filter(row => cfg.columns.some(col => row[col] && String(row[col]).toLowerCase().includes(query)));
             }
@@ -829,9 +819,13 @@
                 return new Date(b[trackingDateColumn] || 0) - new Date(a[trackingDateColumn] || 0);
             });
 
-            const numericRatings = records.map(r => Number(r.Rating)).filter(n => !isNaN(n));
-            const avg = numericRatings.length ? (numericRatings.reduce((x, y) => x + y, 0) / numericRatings.length).toFixed(1) : '—';
-            stats.textContent = `${records.length} entries · avg ${avg}/10`;
+            if (currentView === 'watchlist') {
+                stats.textContent = `${records.length} items in Watchlist`;
+            } else {
+                const numericRatings = records.map(r => Number(r.Rating)).filter(n => !isNaN(n));
+                const avg = numericRatings.length ? (numericRatings.reduce((x, y) => x + y, 0) / numericRatings.length).toFixed(1) : '—';
+                stats.textContent = `${records.length} entries · avg ${avg}/10`;
+            }
 
             if (!records.length) {
                 wrap.innerHTML = `<p style="padding: 24px; color: var(--text-muted); text-align: center;">No matches found.</p>`;
@@ -856,7 +850,7 @@
                 const titleCol = cfg.title_column;
                 const dateCol = cfg.columns[1];
                 const title = row[titleCol] || '—';
-                const date = row[dateCol] || '';
+                const date = currentView === 'watchlist' ? '—' : (row[dateCol] || '');
                 const badgeClass = getRatingBadgeClass(row.Rating);
 
                 const metaFields = cfg.columns.filter(c => c !== titleCol && c !== dateCol && c !== 'Rating');
@@ -868,22 +862,37 @@
                     </div>
                 `).join('');
 
-                item.innerHTML = `
+                let headerHtml = `
                     <div class="entry-list-item-header">
                         <div class="entry-list-item-title">${title}</div>
-                        <span class="rating-badge ${badgeClass}">${row.Rating || '?'}/10</span>
-                    </div>
-                    ${metaHTML ? `<div class="entry-list-item-meta">${metaHTML}</div>` : ''}
-                    <div class="entry-list-item-footer">
-                        <span style="font-size:0.8em; color:var(--text-muted);">${date}</span>
-                        <button class="btn-delete" data-title="${(row[titleCol] || '').replace(/"/g, '&quot;')}" data-date="${date.replace(/"/g, '&quot;')}">Delete</button>
+                        ${currentView === 'diary' ? `<span class="rating-badge ${badgeClass}">${row.Rating || '?'}/10</span>` : ''}
                     </div>
                 `;
 
-                item.querySelector('.btn-delete').addEventListener('click', function() {
-                    promptDelete(this.dataset.title, this.dataset.date);
-                });
+                let footerHtml = '';
+                const safeTitle = (title || '').replace(/'/g, "\\'");
+                const safeDate = (date || '').replace(/'/g, "\\'");
 
+                if (currentView === 'watchlist') {
+                    footerHtml = `
+                        <div class="entry-list-item-footer">
+                            <span style="font-size:0.8em; color:var(--text-muted);">Watchlist</span>
+                            <div class="watchlist-actions">
+                                <button class="action-badge badge-log" onclick="promoteWatchlistItem('${safeTitle}')">Log Entry</button>
+                                <button class="action-badge badge-remove" onclick="deleteWatchlistItem('${safeTitle}')">Remove</button>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    footerHtml = `
+                        <div class="entry-list-item-footer">
+                            <span style="font-size:0.8em; color:var(--text-muted);">${date}</span>
+                            <button class="btn-delete" onclick="promptDelete('${safeTitle}', '${safeDate}')">Delete</button>
+                        </div>
+                    `;
+                }
+
+                item.innerHTML = headerHtml + (metaHTML ? `<div class="entry-list-item-meta">${metaHTML}</div>` : '') + footerHtml;
                 list.appendChild(item);
             });
 
@@ -895,21 +904,43 @@
             wrap.className = 'table-wrap';
             let html = '<table><thead><tr>';
             cfg.columns.forEach(col => { html += `<th>${col}</th>`; });
-            html += '<th style="text-align: right; width: 80px;">Actions</th></tr></thead><tbody>';
+            
+            // Make actions column wider if we are in watchlist view to fit both buttons
+            const actionWidth = currentView === 'watchlist' ? '140px' : '80px';
+            html += `<th style="text-align: right; width: ${actionWidth};">Actions</th></tr></thead><tbody>`;
 
             records.forEach(row => {
                 html += '<tr>';
                 cfg.columns.forEach(col => {
                     if (col === 'Rating') {
-                        const badgeClass = getRatingBadgeClass(row[col]);
-                        html += `<td><span class="rating-badge ${badgeClass}">${row[col] || ''}/10</span></td>`;
+                        if (currentView === 'watchlist') {
+                            html += `<td><span style="color:var(--text-muted)">—</span></td>`;
+                        } else {
+                            const badgeClass = getRatingBadgeClass(row[col]);
+                            html += `<td><span class="rating-badge ${badgeClass}">${row[col] || ''}/10</span></td>`;
+                        }
+                    } else if (col === cfg.auto_fields[0] && currentView === 'watchlist') {
+                         html += `<td><span style="color:var(--text-muted)">—</span></td>`;
                     } else {
                         html += `<td>${row[col] || ''}</td>`;
                     }
                 });
+                
                 const safeTitle = (row[cfg.title_column] || '').replace(/'/g, "\\'");
-                const safeDate = (row[cfg.columns[1]] || '').replace(/'/g, "\\'");
-                html += `<td style="text-align: right;"><button class="btn-delete" onclick="promptDelete('${safeTitle}', '${safeDate}')">Delete</button></td>`;
+                
+                if (currentView === 'watchlist') {
+                    html += `
+                        <td style="text-align: right;">
+                            <div class="watchlist-actions" style="justify-content: flex-end;">
+                                <button class="action-badge badge-log" onclick="promoteWatchlistItem('${safeTitle}')">Log</button>
+                                <button class="action-badge badge-remove" onclick="deleteWatchlistItem('${safeTitle}')">X</button>
+                            </div>
+                        </td>`;
+                } else {
+                    const safeDate = (row[cfg.columns[1]] || '').replace(/'/g, "\\'");
+                    html += `<td style="text-align: right;"><button class="btn-delete" onclick="promptDelete('${safeTitle}', '${safeDate}')">Delete</button></td>`;
+                }
+                
                 html += '</tr>';
             });
 
@@ -946,7 +977,77 @@
             );
         }
 
+        // Action for Watchlist specific deletion
+        function deleteWatchlistItem(title) {
+            triggerModal(
+                'Remove from Watchlist',
+                `Remove "${title}" from your watchlist?`,
+                async () => {
+                    try {
+                        const res = await fetch(`/api/${currentType}/watchlist?title=${encodeURIComponent(title)}`, { method: 'DELETE' });
+                        if (!res.ok) throw new Error('Could not delete item');
+                        showStatus(`Removed "${title}" from watchlist.`);
+                        await loadRecent();
+                    } catch (err) { showStatus(err.message, 'error'); }
+                }
+            );
+        }
+
+        // Bring a Watchlist item up to the top to log a rating
+        function promoteWatchlistItem(title) {
+            switchView('diary');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            const searchBox = document.getElementById('titleSearch');
+            searchBox.value = title;
+            searchBox.focus();
+            handleSearchInput();
+            
+            showStatus(`Ready to log "${title}". Select it from the dropdown, choose a rating, and hit Save!`, 'info');
+        }
+
+        async function commitWatchlistSave() {
+            if (!selectedResult) return;
+
+            const btn = document.getElementById('watchlistBtn');
+            const originalText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+
+            try {
+                const payload = {
+                    title: selectedResult.title,
+                    external_id: String(selectedResult.id),
+                    api_values: null
+                };
+
+                const res = await fetch(`/api/${currentType}/watchlist`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+                
+                if (res.status === 400) throw new Error(data.detail || 'Item already in watchlist.');
+                if (!res.ok) throw new Error(data.detail || 'Failed to save to Watchlist');
+
+                showStatus(`Added "${selectedResult.title}" to your Watchlist!`, 'success');
+                resetForm();
+                
+                if (currentView === 'watchlist') await loadRecent();
+
+            } catch (err) {
+                showStatus(String(err), 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = originalText;
+            }
+        }
+
         async function commitSave(forcedStrategy = null) {
+            if (!selectedResult || !selectedRating) return;
+            
             const saveBtn = document.getElementById('saveBtn');
             const originalBtnText = saveBtn.textContent;
             saveBtn.disabled = true;
@@ -1020,8 +1121,11 @@
                     showStatus(message, 'success');
                 }
 
+                // Opportunistically silently auto-prune this title from the watchlist just in case it was there!
+                fetch(`/api/${currentType}/watchlist?title=${encodeURIComponent(selectedResult.title)}`, { method: 'DELETE' }).catch(() => {});
+
                 resetForm();
-                await loadRecent();
+                if (currentView === 'diary') await loadRecent();
 
             } catch (err) {
                 showStatus(String(err), 'error');
@@ -1031,10 +1135,13 @@
             }
         }
 
+        // Event Listeners
         document.getElementById('titleSearch').addEventListener('input', handleSearchInput);
         document.getElementById('titleSearch').addEventListener('keydown', handleSearchKeydown);
         document.getElementById('saveBtn').addEventListener('click', () => commitSave(null));
+        document.getElementById('watchlistBtn').addEventListener('click', commitWatchlistSave);
         document.getElementById('tableSearchBox').addEventListener('input', renderTableRecords);
+        
         document.getElementById('sortSelect').addEventListener('change', (e) => {
             currentSortOrder = e.target.value;
             renderTableRecords();
@@ -1048,6 +1155,7 @@
 
         window.addEventListener('resize', () => { renderTableRecords(); });
 
+        // Initialize App
         loadTypes().catch(err => showStatus(String(err), 'error'));
     </script>
 </body>

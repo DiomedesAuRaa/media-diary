@@ -11,6 +11,7 @@ MEDIA_TYPES: dict[str, dict[str, Any]] = {
     "movies": {
         "label": "Movies",
         "csv": "data/movies.csv",
+        "watchlist_csv": "data/movies_watchlist.csv",
         "columns": [
             "Movie",
             "Date Watched/Rated",
@@ -28,6 +29,7 @@ MEDIA_TYPES: dict[str, dict[str, Any]] = {
     "books": {
         "label": "Books",
         "csv": "data/books.csv",
+        "watchlist_csv": "data/books_watchlist.csv",
         "columns": [
             "Book",
             "Date Read/Rated",
@@ -45,6 +47,7 @@ MEDIA_TYPES: dict[str, dict[str, Any]] = {
     "tv": {
         "label": "TV Shows",
         "csv": "data/tv.csv",
+        "watchlist_csv": "data/tv_watchlist.csv",
         "columns": [
             "Show",
             "Date Watched/Rated",
@@ -78,3 +81,8 @@ def get_enabled_types() -> dict[str, dict[str, Any]]:
 def csv_path(media_type: str) -> Path:
     config = get_media_type(media_type)
     return REPO_ROOT / config["csv"]
+
+
+def watchlist_path(media_type: str) -> Path:
+    config = get_media_type(media_type)
+    return REPO_ROOT / config["watchlist_csv"]

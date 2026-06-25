@@ -4,7 +4,7 @@ import csv
 from datetime import datetime
 from typing import Any
 
-from app.config import csv_path, get_media_type
+from app.config import csv_path, get_media_type, watchlist_path
 
 
 def format_date_mmddyy(dt: datetime | None = None) -> str:
@@ -12,8 +12,8 @@ def format_date_mmddyy(dt: datetime | None = None) -> str:
     return dt.strftime("%m/%d/%y")
 
 
-def read_entries(media_type: str, limit: int | None = None) -> list[dict[str, str]]:
-    path = csv_path(media_type)
+def read_entries(media_type: str, limit: int | None = None, *, use_watchlist: bool = False) -> list[dict[str, str]]:
+    path = watchlist_path(media_type) if use_watchlist else csv_path(media_type)
     if not path.exists():
         return []
 
@@ -25,20 +25,20 @@ def read_entries(media_type: str, limit: int | None = None) -> list[dict[str, st
     return rows
 
 
-def title_exists(media_type: str, title: str) -> bool:
+def title_exists(media_type: str, title: str, *, use_watchlist: bool = False) -> bool:
     config = get_media_type(media_type)
     title_column = config["title_column"]
     normalized = title.strip().casefold()
-    for row in read_entries(media_type):
+    for row in read_entries(media_type, use_watchlist=use_watchlist):
         existing = (row.get(title_column) or "").strip().casefold()
         if existing == normalized:
             return True
     return False
 
 
-def prepend_entry(media_type: str, row: dict[str, str]) -> dict[str, str]:
+def prepend_entry(media_type: str, row: dict[str, str], *, use_watchlist: bool = False) -> dict[str, str]:
     config = get_media_type(media_type)
-    path = csv_path(media_type)
+    path = watchlist_path(media_type) if use_watchlist else csv_path(media_type)
     path.parent.mkdir(parents=True, exist_ok=True)
 
     columns = config["columns"]
@@ -87,6 +87,28 @@ def build_row(
     return row
 
 
+def build_watchlist_row(
+    media_type: str,
+    *,
+    title: str,
+    api_values: dict[str, str] | None = None,
+) -> dict[str, str]:
+    config = get_media_type(media_type)
+    api_values = api_values or {}
+    row: dict[str, Any] = {}
+
+    for column in config["columns"]:
+        row[column] = ""
+
+    row[config["title_column"]] = title.strip()
+    # Rating and auto_fields (Date Watched) are left empty for watchlist entries
+
+    for field in config["api_fields"]:
+        row[field] = api_values.get(field, "").strip()
+
+    return row
+
+
 def update_entry_rating(media_type: str, title: str, rating: str, date_rated: str | None = None) -> dict[str, str] | None:
     config = get_media_type(media_type)
     path = csv_path(media_type)
@@ -123,9 +145,9 @@ def update_entry_rating(media_type: str, title: str, rating: str, date_rated: st
     return None
 
 
-def delete_entry(media_type: str, title: str, date_rated: str) -> bool:
+def delete_entry(media_type: str, title: str, date_rated: str | None = None, *, use_watchlist: bool = False) -> bool:
     config = get_media_type(media_type)
-    path = csv_path(media_type)
+    path = watchlist_path(media_type) if use_watchlist else csv_path(media_type)
     if not path.exists():
         return False
 
@@ -133,7 +155,7 @@ def delete_entry(media_type: str, title: str, date_rated: str) -> bool:
     auto_fields = config["auto_fields"]
     date_column = auto_fields[0] if auto_fields else "Date Watched/Rated"
 
-    existing_rows = read_entries(media_type)
+    existing_rows = read_entries(media_type, use_watchlist=use_watchlist)
     new_rows = []
     deleted = False
 
@@ -141,7 +163,13 @@ def delete_entry(media_type: str, title: str, date_rated: str) -> bool:
         row_title = (row.get(title_column) or "").strip()
         row_date = (row.get(date_column) or "").strip()
         
-        if not deleted and row_title.casefold() == title.strip().casefold() and row_date == date_rated.strip():
+        if use_watchlist:
+            # Watchlist rows do not have a recorded date, so match purely on the title
+            match = row_title.casefold() == title.strip().casefold()
+        else:
+            match = row_title.casefold() == title.strip().casefold() and row_date == (date_rated or "").strip()
+        
+        if not deleted and match:
             deleted = True
             continue
         new_rows.append(row)

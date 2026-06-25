@@ -189,8 +189,11 @@
     <script>
         const TYPES = {
             movies: { label: 'Movies', json: 'movies.json', columns: ['Movie', 'Date Watched/Rated', 'Date Released', 'Rating', 'Director'], enabled: true },
+            movies_watchlist: { label: 'Movie Watchlist', json: 'movies_watchlist.json', columns: ['Movie', 'Date Added', 'Release Year', 'Rating', 'Director'], enabled: true },
             books: { label: 'Books', json: 'books.json', columns: ['Book', 'Date Read/Rated', 'Date Published', 'Rating', 'Author'], enabled: true },
+            books_watchlist: { label: 'Book Watchlist', json: 'books_watchlist.json', columns: ['Book', 'Date Added', 'Published Year', 'Rating', 'Author'], enabled: true },
             tv: { label: 'TV Shows', json: 'tv.json', columns: ['Show', 'Date Watched/Rated', 'Date Premiered', 'Rating', 'Creator'], enabled: true },
+            tv_watchlist: { label: 'TV Watchlist', json: 'tv_watchlist.json', columns: ['Show', 'Date Added', 'Premiered Year', 'Rating', 'Creator'], enabled: true },
         };
 
         // Initialize state from URL

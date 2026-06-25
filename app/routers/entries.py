@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 from app.config import get_enabled_types, get_media_type
 from app.csv_store import (
     build_row,
+    build_watchlist_row,
     delete_entry,
     prepend_entry,
     read_entries,
@@ -27,6 +28,12 @@ class EntryCreate(BaseModel):
     date_rated: str | None = None
     api_values: dict[str, str] | None = None
     strategy: Literal["update", "rewatch"] | None = None
+
+
+class WatchlistCreate(BaseModel):
+    title: str = Field(min_length=1)
+    external_id: str = Field(min_length=1)
+    api_values: dict[str, str] | None = None
 
 
 def _require_type(media_type: str) -> dict[str, Any]:
@@ -124,5 +131,55 @@ def delete_diary_entry(media_type: str, title: str, date_rated: str) -> dict[str
         raise HTTPException(status_code=404, detail="Entry not found.")
 
     commit_message = f"{media_type}: delete entry for {title} logged on {date_rated}"
+    sync_csv_async(media_type, commit_message)
+    return {"status": "deleted", "git_sync": get_sync_status()}
+
+
+# --- WATCHLIST ENDPOINTS ---
+
+@router.get("/{media_type}/watchlist")
+def list_watchlist(media_type: str) -> dict[str, Any]:
+    _require_type(media_type)
+    rows = read_entries(media_type, use_watchlist=True)
+    return {"entries": rows}
+
+
+@router.post("/{media_type}/watchlist")
+async def create_watchlist_entry(media_type: str, payload: WatchlistCreate) -> dict[str, Any]:
+    config = _require_type(media_type)
+    title = payload.title.strip()
+
+    if title_exists(media_type, title, use_watchlist=True):
+        raise HTTPException(status_code=400, detail="Item is already in your watchlist.")
+
+    api_values = payload.api_values
+    if api_values is None:
+        provider = get_provider(config["provider"])
+        try:
+            api_values = await provider.lookup(payload.external_id)
+        except (NotImplementedError, RuntimeError) as exc:
+            raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+    row = build_watchlist_row(media_type, title=title, api_values=api_values)
+    saved = prepend_entry(media_type, row, use_watchlist=True)
+
+    commit_message = f"{media_type}: add {title} to watchlist"
+    sync_csv_async(media_type, commit_message)
+
+    return {
+        "status": "created",
+        "entry": saved,
+        "git_sync": get_sync_status(),
+    }
+
+
+@router.delete("/{media_type}/watchlist")
+def delete_watchlist_entry(media_type: str, title: str) -> dict[str, Any]:
+    _require_type(media_type)
+    success = delete_entry(media_type, title, use_watchlist=True)
+    if not success:
+        raise HTTPException(status_code=404, detail="Watchlist item not found.")
+
+    commit_message = f"{media_type}: remove {title} from watchlist"
     sync_csv_async(media_type, commit_message)
     return {"status": "deleted", "git_sync": get_sync_status()}
