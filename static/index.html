@@ -7,11 +7,24 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0d0b18 0%, #130f26 100%);
+            --card-bg: #1c1836;
+            --header-gradient: linear-gradient(135deg, #5f27cd, #341f97);
+            --text-main: #f1f2f6;
+            --text-muted: #a5a1c2;
+            --accent: #ff5252;
+            --accent-hover: #ff7675;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --input-bg: #120e24;
+            --item-hover: rgba(255, 255, 255, 0.04);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #1a1a1b;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-main);
+            background: var(--bg-gradient);
             padding: 20px;
             min-height: 100vh;
         }
@@ -19,869 +32,693 @@
         .container {
             max-width: 950px;
             margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
         }
 
         header {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            background: var(--header-gradient);
             color: white;
-            padding: 28px 32px;
+            padding: 32px;
             text-align: center;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        header h1 { font-size: 2.2em; margin-bottom: 6px; font-weight: 600; }
-        header p { opacity: 0.9; font-size: 0.95em; }
+        header h1 { font-size: 2.4em; margin-bottom: 6px; font-weight: 700; letter-spacing: -0.5px; }
+        header p { opacity: 0.85; font-size: 1.05em; }
 
-        .media-nav {
-            background: #1a1a1b;
-            padding: 12px 20px;
+        .tabs {
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            border-bottom: 2px solid #6c5ce7;
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid var(--border-color);
+            padding: 4px 4px 0 4px;
         }
 
-        .media-tab {
+        .tab-btn {
+            flex: 1;
+            padding: 14px;
             background: transparent;
-            color: #ccc;
-            border: 1px solid #444;
-            padding: 8px 18px;
-            border-radius: 20px;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.05em;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 600;
-            transition: all 0.2s;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.2s ease;
         }
 
-        .media-tab:hover { background: #333; color: white; }
-        .media-tab.active { background: #6c5ce7; color: white; border-color: #6c5ce7; }
-        .media-tab.disabled { opacity: 0.35; cursor: not-allowed; }
+        .tab-btn:hover { color: var(--text-main); background: var(--item-hover); }
+        .tab-btn.active { color: white; background: var(--card-bg); border-bottom: 3px solid #5f27cd; }
 
-        .content { padding: 28px 32px; }
+        .content { padding: 32px; }
+        .section-title { font-size: 1.3em; margin-bottom: 16px; color: white; font-weight: 600; }
 
-        .form-grid {
-            display: grid;
-            gap: 18px;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 6px;
-            font-size: 0.9em;
-            color: #444;
-        }
-
-        input[type="text"], input[type="number"], input[type="date"] {
+        .search-wrap { position: relative; margin-bottom: 24px; }
+        
+        .input-field {
             width: 100%;
-            padding: 12px 14px;
-            border: 2px solid #e0e0e0;
+            padding: 14px 16px;
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            font-size: 1em;
+            color: var(--text-main);
+            font-size: 1.05em;
             transition: border-color 0.2s;
         }
+        .input-field:focus { outline: none; border-color: #5f27cd; box-shadow: 0 0 0 3px rgba(95, 39, 205, 0.2); }
 
-        input:focus {
-            outline: none;
-            border-color: #6c5ce7;
-        }
-
-        .search-wrap { position: relative; }
-
-        .search-results {
+        /* Search Spinner styling */
+        .search-container { position: relative; }
+        .spinner {
+            display: none;
             position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-            max-height: 280px;
+            right: 16px;
+            top: 16px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            border-top-color: #5f27cd;
+            animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .dropdown {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0; right: 0;
+            background: #231e42;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            max-height: 320px;
             overflow-y: auto;
-            z-index: 50;
+            z-index: 100;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
             display: none;
         }
-
-        .search-results.visible { display: block; }
-
-        .search-item {
-            padding: 12px 14px;
+        .dropdown.visible { display: block; }
+        
+        .dropdown-item {
+            padding: 12px 16px;
             cursor: pointer;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            transition: background 0.15s;
         }
+        .dropdown-item:last-child { border-bottom: none; }
+        .dropdown-item:hover, .dropdown-item.highlighted { background: #342e5c; }
+        .dropdown-item .title { font-weight: 600; color: white; }
+        .dropdown-item .meta { font-size: 0.85em; color: var(--text-muted); margin-top: 2px; }
 
-        .search-item:hover { background: #f5f3ff; }
-        .search-item strong { display: block; }
-        .search-item span { font-size: 0.85em; color: #666; }
-
-        .search-hint {
-            font-size: 0.85em;
-            color: #666;
-            margin-top: 6px;
-        }
-
-        .search-hint.error { color: #c0392b; }
-
-        .preview {
-            background: #f8f7ff;
-            border: 1px solid #dcd6ff;
+        .preview-panel {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 14px 16px;
+            padding: 24px;
+            margin-bottom: 24px;
             display: none;
         }
+        .preview-panel.visible { display: block; }
+        
+        .preview-header h3 { font-size: 1.4em; color: white; margin-bottom: 4px; }
+        .preview-header p { color: var(--text-muted); font-size: 0.95em; margin-bottom: 16px; }
 
-        .preview.visible { display: block; }
-        .preview p { font-size: 0.95em; color: #333; }
-
-        .rating-row {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
+        .rating-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
         .rating-btn {
-            width: 42px;
-            height: 42px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            background: white;
-            font-weight: 700;
+            flex: 1;
+            min-width: 45px;
+            padding: 10px 0;
+            background: #231e42;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 6px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.15s;
         }
+        .rating-btn:hover { background: #342e5c; border-color: var(--text-muted); }
+        .rating-btn.selected { background: #5f27cd; color: white; border-color: #5f27cd; box-shadow: 0 0 10px rgba(95, 39, 205, 0.4); }
 
-        .rating-btn:hover { border-color: #6c5ce7; }
-        .rating-btn.selected {
-            background: #6c5ce7;
-            color: white;
-            border-color: #6c5ce7;
-        }
+        .form-row { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+        .form-group { flex: 1; }
+        .form-group label { display: block; font-size: 0.85em; color: var(--text-muted); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        .actions {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: #6c5ce7;
+        .btn {
+            background: #5f27cd;
             color: white;
             border: none;
-            padding: 12px 28px;
-            border-radius: 8px;
+            padding: 14px 28px;
             font-size: 1em;
             font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-primary:hover { background: #5a4bd1; }
-        .btn-primary:disabled { background: #bbb; cursor: not-allowed; }
-
-        .btn-delete {
-            background: transparent;
-            color: #e74c3c;
-            border: 1px solid #e74c3c;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.85em;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.15s;
-        }
-
-        .btn-delete:hover {
-            background: #e74c3c;
-            color: white;
-        }
-
-        .status {
-            margin-top: 16px;
-            padding: 12px 16px;
             border-radius: 8px;
-            display: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn:hover { background: #48dbfb; color: #120e24; }
+        .btn:disabled { background: #2d2945; color: rgba(255,255,255,0.2); cursor: not-allowed; box-shadow: none; }
+
+        .status-box {
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
             font-size: 0.95em;
+            display: none;
+            font-weight: 500;
         }
+        .status-box.success { display: block; background: rgba(46, 213, 115, 0.15); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.3); }
+        .status-box.error { display: block; background: rgba(255, 71, 87, 0.15); color: #ff4757; border: 1px solid rgba(255, 71, 87, 0.3); }
+        .status-box.warning { display: block; background: rgba(ffa502, 0.15); color: #ffa502; border: 1px solid rgba(ffa502, 0.3); }
 
-        .status.visible { display: block; }
-        .status.success { background: #d4edda; color: #155724; }
-        .status.error { background: #f8d7da; color: #721c24; }
-        .status.warning { background: #fff3cd; color: #856404; }
+        .history-section { margin-top: 40px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 8px; text-align: left; }
+        th { padding: 14px 16px; color: var(--text-muted); font-size: 0.85em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--border-color); }
+        td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-main); font-size: 0.95em; vertical-align: middle; }
+        tr:hover td { background: var(--item-hover); }
 
-        .recent {
-            margin-top: 36px;
-            border-top: 2px solid #f0f0f0;
-            padding-top: 24px;
-        }
-
-        .recent h2 {
-            font-size: 1.2em;
-            margin-bottom: 14px;
-            color: #333;
-        }
-
-        /* Diary search section */
-        .diary-search {
-            margin-top: 36px;
-            border-top: 2px solid #f0f0f0;
-            padding-top: 24px;
-        }
-
-        .diary-search-header {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .diary-search-header h2 {
-            font-size: 1.2em;
-            color: #333;
-        }
-
-        .diary-search-count {
-            font-size: 0.85em;
-            color: #888;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9em;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 10px 8px;
-            border-bottom: 1px solid #eee;
-            vertical-align: middle;
-        }
-
-        th {
-            color: #666;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
+        /* Tiered Badges */
         .rating-badge {
             display: inline-block;
-            background: #6c5ce7;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-weight: 700;
             font-size: 0.85em;
+            text-align: center;
         }
+        .rating-tier-high { background: rgba(46, 213, 115, 0.15); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.2); }
+        .rating-tier-mid { background: rgba(112, 111, 211, 0.25); color: #9c88ff; border: 1px solid rgba(112, 111, 211, 0.3); }
+        .rating-tier-low { background: rgba(255, 127, 80, 0.15); color: #ff7f50; border: 1px solid rgba(255, 127, 80, 0.2); }
 
-        @media (max-width: 600px) {
-            .content { padding: 20px 16px; }
-            header { padding: 22px 16px; }
+        .delete-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 71, 87, 0.6);
+            cursor: pointer;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: all 0.15s;
         }
+        .delete-btn:hover { color: #ff4757; background: rgba(255, 71, 87, 0.1); }
+
+        footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 0.85em; }
+
+        /* Custom Modal Structure */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(10, 7, 20, 0.8);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 460px;
+            padding: 28px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            transform: translateY(15px);
+            transition: transform 0.2s ease;
+        }
+        .modal-overlay.active .modal-card { transform: translateY(0); }
+        .modal-card h4 { font-size: 1.3em; color: white; margin-bottom: 10px; font-weight: 600; }
+        .modal-card p { color: var(--text-muted); font-size: 0.95em; margin-bottom: 24px; }
+        .modal-actions { display: flex; gap: 12px; justify-content: flex-end; }
+        .btn-secondary { background: #231e42; color: var(--text-main); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { background: #342e5c; }
+        .btn-danger { background: #ff4757; color: white; }
+        .btn-danger:hover { background: #ff6b81; }
     </style>
 </head>
 <body>
+
     <div class="container">
         <header>
             <h1>Media Diary</h1>
-            <p>Rate what you watch, read, and binge.</p>
+            <p id="syncStatus">Loading system configurations...</p>
         </header>
 
-        <nav class="media-nav" id="mediaNav"></nav>
+        <nav class="tabs" id="tabsContainer"></nav>
 
-        <div class="content">
-            <div class="form-grid">
+        <main class="content">
+            <section class="log-section">
+                <h2 class="section-title">Add Entry</h2>
+                
                 <div class="search-wrap">
-                    <label for="titleSearch">Search title</label>
-                    <input type="text" id="titleSearch" placeholder="Start typing a title..." autocomplete="off" spellcheck="false">
-                    <div class="search-results" id="searchResults"></div>
-                    <p class="search-hint" id="searchHint"></p>
+                    <div class="search-container">
+                        <input type="text" id="titleSearch" class="input-field" placeholder="Search title name..." autocomplete="off">
+                        <div class="spinner" id="searchSpinner"></div>
+                    </div>
+                    <div id="searchResults" class="dropdown"></div>
                 </div>
 
-                <div class="preview" id="preview">
-                    <p id="previewText"></p>
+                <div id="preview" class="preview-panel">
+                    <div class="preview-header">
+                        <h3 id="previewTitle"></h3>
+                        <p id="previewSubtitle"></p>
+                    </div>
+
+                    <div class="rating-grid" id="ratingContainer"></div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dateRated">Date Logged</label>
+                            <input type="text" id="dateRated" class="input-field" placeholder="MM/DD/YY (or empty for today)">
+                        </div>
+                    </div>
+
+                    <button id="saveBtn" class="btn" disabled>Save Entry</button>
                 </div>
 
-                <div>
-                    <label for="dateRated">Date rated</label>
-                    <input type="text" id="dateRated" placeholder="MM/DD/YY" autocomplete="off" autocorrect="off" spellcheck="false" inputmode="numeric">
-                </div>
+                <div id="statusBox" class="status-box"></div>
+            </section>
 
-                <div>
-                    <label>Rating</label>
-                    <div class="rating-row" id="ratingRow"></div>
-                </div>
+            <section class="history-section">
+                <h2 class="section-title">Recent Entries</h2>
+                <div id="recentLogsTableContainer"></div>
+            </section>
+        </main>
+    </div>
 
-                <div class="actions">
-                    <button class="btn-primary" id="saveBtn" disabled>Save entry</button>
-                </div>
+    <footer>
+        Media Diary Layer &bull; Backed by Git CSV Store
+    </footer>
 
-                <div class="status" id="status"></div>
+    <div id="customModal" class="modal-overlay">
+        <div class="modal-card">
+            <h4 id="modalTitle">Confirm Action</h4>
+            <p id="modalDescription">Are you sure you want to proceed?</p>
+            <div class="modal-actions" id="modalActions">
+                <button id="modalCancel" class="btn btn-secondary">Cancel</button>
+                <button id="modalConfirm" class="btn">Confirm</button>
             </div>
-
-            <section class="diary-search">
-                <div class="diary-search-header">
-                    <h2>Search diary</h2>
-                    <span class="diary-search-count" id="diarySearchCount"></span>
-                </div>
-                <div class="search-wrap">
-                    <input type="text" id="diarySearch" placeholder="Search your entries…" autocomplete="off" spellcheck="false">
-                    <p class="search-hint" id="diarySearchHint"></p>
-                </div>
-                <div id="diarySearchResults" style="margin-top: 14px;"></div>
-            </section>
-
-            <section class="recent">
-                <h2>Recent entries</h2>
-                <div id="recentTable"></div>
-            </section>
         </div>
     </div>
 
     <script>
-        let mediaTypes = {};
-        let currentType = null;
+        let currentType = '';
+        let typesConfig = {};
         let selectedResult = null;
         let selectedRating = null;
-        let searchTimer = null;
-        let lastSearchResults = [];
-        let searchPending = false;
+        let searchTimeout = null;
 
-        // Diary search state
-        let diarySearchTimer = null;
-
-        // Escape helper for safe injection into raw HTML attributes
-        function escapeHtmlAttr(str) {
-            if (!str) return '';
-            return str.replace(/&/g, '&amp;')
-                      .replace(/"/g, '&quot;')
-                      .replace(/'/g, '&#39;')
-                      .replace(/</g, '&lt;')
-                      .replace(/>/g, '&gt;');
-        }
-
-        function todayMmDdYy() {
-            const d = new Date();
-            const mm = String(d.getMonth() + 1).padStart(2, '0');
-            const dd = String(d.getDate()).padStart(2, '0');
-            const yy = String(d.getFullYear()).slice(-2);
-            return `${mm}/${dd}/${yy}`;
-        }
-
-        function showStatus(message, kind) {
-            const el = document.getElementById('status');
-            el.textContent = message;
-            el.className = `status visible ${kind}`;
-        }
-
-        function clearStatus() {
-            const el = document.getElementById('status');
-            el.className = 'status';
-        }
-
-        function renderRatingButtons() {
-            const row = document.getElementById('ratingRow');
-            row.innerHTML = '';
-            for (let i = 1; i <= 10; i++) {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'rating-btn';
-                btn.textContent = i;
-                btn.addEventListener('click', () => {
-                    selectedRating = i;
-                    row.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
-                    btn.classList.add('selected');
-                    updateSaveState();
-                });
-                row.appendChild(btn);
-            }
-        }
-
-        function renderMediaNav() {
-            const nav = document.getElementById('mediaNav');
-            nav.innerHTML = '';
-            Object.entries(mediaTypes).forEach(([key, config]) => {
-                const btn = document.createElement('button');
-                btn.className = 'media-tab' + (key === currentType ? ' active' : '');
-                btn.textContent = config.label;
-                btn.addEventListener('click', () => switchType(key));
-                nav.appendChild(btn);
-            });
-        }
-
-        async function switchType(type) {
-            currentType = type;
-            selectedResult = null;
-            selectedRating = null;
-            document.getElementById('titleSearch').value = '';
-            document.getElementById('dateRated').value = todayMmDdYy();
-            document.getElementById('preview').classList.remove('visible');
-            document.getElementById('searchResults').classList.remove('visible');
-            document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
-            clearStatus();
-            // Clear diary search on tab switch
-            document.getElementById('diarySearch').value = '';
-            document.getElementById('diarySearchHint').textContent = '';
-            document.getElementById('diarySearchResults').innerHTML = '';
-            document.getElementById('diarySearchCount').textContent = '';
-            renderMediaNav();
-            updateFormLabels();
-            updateSaveState();
-            await loadRecent();
-        }
-
-        function updateFormLabels() {
-            const dateLabel = currentType === 'books' ? 'Date read' : 'Date rated';
-            document.querySelector('label[for="dateRated"]').textContent = dateLabel;
-            const placeholders = {
-                movies: 'Search for a movie…',
-                books: 'Search for a book…',
-                tv: 'Search for a TV show…',
-            };
-            document.getElementById('titleSearch').placeholder = placeholders[currentType] || 'Start typing a title…';
-
-            const diaryPlaceholders = {
-                movies: 'Search your movie diary…',
-                books: 'Search your book diary…',
-                tv: 'Search your TV diary…',
-            };
-            document.getElementById('diarySearch').placeholder = diaryPlaceholders[currentType] || 'Search your entries…';
-        }
-
-        function updateSearchHint() {
-            const hint = document.getElementById('searchHint');
-            const query = document.getElementById('titleSearch').value.trim();
-            if (selectedResult) {
-                hint.textContent = '';
-                hint.className = 'search-hint';
-                return;
-            }
-            if (searchPending) {
-                hint.textContent = 'Searching…';
-                hint.className = 'search-hint';
-                return;
-            }
-            if (query.length >= 2 && lastSearchResults.length) {
-                hint.textContent = lastSearchResults.length === 1
-                    ? 'Match found — confirm details below, then save.'
-                    : `${lastSearchResults.length} matches — click the one you mean (year and creator shown).`;
-                hint.className = 'search-hint';
-            } else if (query.length >= 2 && lastSearchResults.length === 0) {
-                hint.textContent = 'No matches found — check your connection or try a different spelling.';
-                hint.className = 'search-hint error';
-            } else {
-                hint.textContent = '';
-                hint.className = 'search-hint';
-            }
-        }
-
-        function updateSaveState() {
-            const canSave = selectedRating && (
-                selectedResult || lastSearchResults.length === 1
-            );
-            document.getElementById('saveBtn').disabled = !canSave;
-            updateSearchHint();
-        }
+        // Dropdown Keyboard Navigation Array Tracking
+        let currentDropdownItems = [];
+        let highlightedIndex = -1;
 
         async function loadTypes() {
             const res = await fetch('/api/types');
             const data = await res.json();
-            mediaTypes = data.types;
-            currentType = Object.keys(mediaTypes)[0];
-            document.getElementById('dateRated').value = todayMmDdYy();
-            renderRatingButtons();
-            renderMediaNav();
-            updateFormLabels();
-            await loadRecent();
-        }
-
-        async function searchTitles(query) {
-            const res = await fetch(`/api/${currentType}/search?q=${encodeURIComponent(query)}`);
-            const data = await res.json().catch(() => ({}));
-            if (!res.ok) {
-                throw new Error(data.detail || 'Search failed — is the server running with TMDB_API_KEY set?');
+            typesConfig = data.types;
+            
+            const keys = Object.keys(typesConfig);
+            if (keys.length > 0) {
+                currentType = keys[0];
+                renderTabs(keys);
+                updateSyncHeader(data.git_sync);
+                switchType(currentType);
             }
-            return data.results || [];
         }
 
-        function renderSearchResults(results) {
-            searchPending = false;
-            lastSearchResults = results;
-            const container = document.getElementById('searchResults');
+        function renderTabs(keys) {
+            const container = document.getElementById('tabsContainer');
             container.innerHTML = '';
-            if (!results.length) {
-                container.classList.remove('visible');
-                updateSaveState();
-                return;
-            }
-            results.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'search-item';
-                const headline = item.subtitle || `${item.title}${item.year ? ` (${item.year})` : ''}`;
-                const credit = item.director || item.author || item.creator || '';
-                const creditLabel = item.director ? 'Directed by' : item.author ? 'By' : item.creator ? 'Created by' : '';
-                const blurb = credit && creditLabel ? `${creditLabel} ${credit}` : (item.year ? `Released ${item.year}` : '');
-                div.innerHTML = `<strong>${headline}</strong><span>${blurb}</span>`;
-                div.addEventListener('click', () => selectResult(item));
-                container.appendChild(div);
+            keys.forEach(key => {
+                const btn = document.createElement('button');
+                btn.className = `tab-btn ${key === currentType ? 'active' : ''}`;
+                btn.textContent = typesConfig[key].label;
+                btn.addEventListener('click', () => switchType(key));
+                container.appendChild(btn);
             });
-            container.classList.add('visible');
-            if (results.length === 1 && !selectedResult) {
-                selectResult(results[0]);
+        }
+
+        function updateSyncHeader(sync) {
+            const banner = document.getElementById('syncStatus');
+            if (sync && sync.enabled) {
+                if (sync.last_ok === false) {
+                    banner.innerHTML = `<span style="color:#ff4757;">&uarr;&darr; Git Sync Error: ${sync.last_error || 'Push failed'}</span>`;
+                } else {
+                    banner.textContent = '✓ Synchronized with remote repository standard storage';
+                }
             } else {
-                updateSaveState();
+                banner.textContent = 'Local sandbox workspace mode (Git pipeline passive)';
             }
         }
 
-        async function resolveSelectedResult() {
-            if (selectedResult) return selectedResult;
-            const query = document.getElementById('titleSearch').value.trim();
-            if (!query) return null;
-
-            if (!lastSearchResults.length) {
-                lastSearchResults = await searchTitles(query);
-                renderSearchResults(lastSearchResults);
-            }
-
-            if (!lastSearchResults.length) return null;
-            if (lastSearchResults.length > 1) {
-                showStatus('Multiple matches — click the correct movie in the list.', 'warning');
-                document.getElementById('searchResults').classList.add('visible');
-                return null;
-            }
-
-            await selectResult(lastSearchResults[0]);
-            return selectedResult;
-        }
-
-        async function selectResult(item) {
-            selectedResult = item;
-            document.getElementById('titleSearch').value = item.title;
-            document.getElementById('searchResults').classList.remove('visible');
-            updateSaveState();
-
-            const res = await fetch(`/api/${currentType}/lookup/${item.id}`);
-            if (!res.ok) {
-                showStatus('Could not load metadata for that title.', 'error');
-                return;
-            }
-            const meta = await res.json();
-            selectedResult.metadata = meta;
-
-            const config = mediaTypes[currentType];
-            const parts = config.api_fields.map(field => `${field}: ${meta[field] || 'Unknown'}`);
-            document.getElementById('previewText').textContent = parts.join(' · ');
-            document.getElementById('preview').classList.add('visible');
-        }
-
-        async function loadRecent() {
-            const res = await fetch(`/api/${currentType}/entries?limit=15`);
-            const data = await res.json();
-            const config = mediaTypes[currentType];
-            const entries = data.entries || [];
-
-            if (!entries.length) {
-                document.getElementById('recentTable').innerHTML = '<p>No entries yet.</p>';
-                return;
-            }
-
-            const cols = [config.title_column, ...config.auto_fields, 'Rating'];
-            let html = '<table><thead><tr>';
-            cols.forEach(c => { html += `<th>${c}</th>`; });
-            html += '<th>Actions</th>';
-            html += '</tr></thead><tbody>';
-            entries.forEach(row => {
-                html += '<tr>';
-                cols.forEach(c => {
-                    if (c === 'Rating') {
-                        html += `<td><span class="rating-badge">${row[c]}</span></td>`;
-                    } else {
-                        html += `<td>${row[c] || ''}</td>`;
-                    }
-                });
-
-                const rTitle = row[config.title_column];
-                const rDate = row[config.auto_fields[0]];
-                html += `<td>
-                    <button class="btn-delete" data-title="${escapeHtmlAttr(rTitle)}" data-date="${escapeHtmlAttr(rDate)}" onclick="confirmAndExecuteDelete(this)">Delete</button>
-                </td>`;
-
-                html += '</tr>';
+        function switchType(type) {
+            currentType = type;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === typesConfig[type].label);
             });
-            html += '</tbody></table>';
-            document.getElementById('recentTable').innerHTML = html;
-        }
-
-        // ── Diary search ──────────────────────────────────────────────────────
-
-        function renderDiaryResults(results, total) {
-            const out = document.getElementById('diarySearchResults');
-            const count = document.getElementById('diarySearchCount');
-
-            if (!results.length) {
-                out.innerHTML = '';
-                count.textContent = '';
-                return;
-            }
-
-            const config = mediaTypes[currentType];
-            const cols = [config.title_column, ...config.api_fields, ...config.auto_fields, 'Rating'];
-
-            count.textContent = total === results.length
-                ? `${total} result${total === 1 ? '' : 's'}`
-                : `showing ${results.length} of ${total}`;
-
-            let html = '<table><thead><tr>';
-            cols.forEach(c => { html += `<th>${c}</th>`; });
-            html += '<th>Actions</th>';
-            html += '</tr></thead><tbody>';
-            results.forEach(row => {
-                html += '<tr>';
-                cols.forEach(c => {
-                    html += c === 'Rating'
-                        ? `<td><span class="rating-badge">${row[c] || ''}</span></td>`
-                        : `<td>${row[c] || ''}</td>`;
-                });
-
-                const rTitle = row[config.title_column];
-                const rDate = row[config.auto_fields[0]];
-                html += `<td>
-                    <button class="btn-delete" data-title="${escapeHtmlAttr(rTitle)}" data-date="${escapeHtmlAttr(rDate)}" onclick="confirmAndExecuteDelete(this)">Delete</button>
-                </td>`;
-
-                html += '</tr>';
-            });
-            html += '</tbody></table>';
-            out.innerHTML = html;
-        }
-
-        document.getElementById('diarySearch').addEventListener('input', (e) => {
-            const q = e.target.value.trim();
-            const hint = document.getElementById('diarySearchHint');
-            const count = document.getElementById('diarySearchCount');
-
-            if (diarySearchTimer) clearTimeout(diarySearchTimer);
-
-            if (q.length < 2) {
-                document.getElementById('diarySearchResults').innerHTML = '';
-                hint.textContent = '';
-                hint.className = 'search-hint';
-                count.textContent = '';
-                return;
-            }
-
-            hint.textContent = 'Searching…';
-            hint.className = 'search-hint';
-
-            diarySearchTimer = setTimeout(async () => {
-                try {
-                    const res = await fetch(
-                        `/api/${currentType}/entries/search?q=${encodeURIComponent(q)}&limit=50`
-                    );
-                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                    const data = await res.json();
-                    const results = data.results || [];
-                    const total = data.total ?? results.length;
-
-                    if (!results.length) {
-                        hint.textContent = 'No matches in your diary.';
-                        hint.className = 'search-hint';
-                        document.getElementById('diarySearchResults').innerHTML = '';
-                        count.textContent = '';
-                    } else {
-                        hint.textContent = '';
-                        hint.className = 'search-hint';
-                        renderDiaryResults(results, total);
-                    }
-                } catch (err) {
-                    hint.textContent = 'Search failed.';
-                    hint.className = 'search-hint error';
-                    document.getElementById('diarySearchResults').innerHTML = '';
-                    count.textContent = '';
-                }
-            }, 300);
-        });
-
-        // ── Action: Delete Entry Handler ──────────────────────────────────────
-
-        async function confirmAndExecuteDelete(btn) {
-            const title = btn.getAttribute('data-title');
-            const dateRated = btn.getAttribute('data-date');
             
-            if (!confirm(`Are you sure you want to delete the entry for "${title}" logged on ${dateRated}?`)) {
-                return;
-            }
-
-            clearStatus();
-            
-            try {
-                const res = await fetch(`/api/${currentType}/entries?title=${encodeURIComponent(title)}&date_rated=${encodeURIComponent(dateRated)}`, {
-                    method: 'DELETE'
-                });
-                const data = await res.json();
-
-                if (!res.ok) {
-                    showStatus(data.detail || 'Delete failed.', 'error');
-                    return;
-                }
-
-                showStatus(`Successfully deleted "${title}".`, 'success');
-                
-                // Reload lists to show updated state
-                await loadRecent();
-                
-                // Dynamically re-trigger diary search query if active
-                const searchBox = document.getElementById('diarySearch');
-                if (searchBox && searchBox.value.trim().length >= 2) {
-                    searchBox.dispatchEvent(new Event('input'));
-                }
-            } catch (err) {
-                showStatus(String(err.message || err), 'error');
-            }
-        }
-
-        // ── Title search handlers ─────────────────────────────────
-
-        document.getElementById('titleSearch').addEventListener('input', (e) => {
-            clearStatus();
-            selectedResult = null;
-            document.getElementById('preview').classList.remove('visible');
-            const query = e.target.value.trim();
-            if (searchTimer) clearTimeout(searchTimer);
-            if (query.length < 2) {
-                searchPending = false;
-                lastSearchResults = [];
-                document.getElementById('searchResults').classList.remove('visible');
-                updateSaveState();
-                return;
-            }
-            searchPending = true;
-            lastSearchResults = [];
-            document.getElementById('searchResults').classList.remove('visible');
-            updateSaveState();
-            searchTimer = setTimeout(async () => {
-                try {
-                    const results = await searchTitles(query);
-                    searchPending = false;
-                    renderSearchResults(results);
-                } catch (err) {
-                    searchPending = false;
-                    lastSearchResults = [];
-                    showStatus(String(err.message || err), 'error');
-                    updateSaveState();
-                }
-            }, 300);
-            updateSaveState();
-        });
-
-        document.getElementById('titleSearch').addEventListener('keydown', async (e) => {
-            if (e.key !== 'Enter') return;
-            e.preventDefault();
-            if (searchPending) return;
-            if (lastSearchResults.length) {
-                await selectResult(lastSearchResults[0]);
-                return;
-            }
-            const query = e.target.value.trim();
-            if (query.length < 2) return;
-            searchPending = true;
-            updateSaveState();
-            try {
-                renderSearchResults(await searchTitles(query));
-            } catch (err) {
-                searchPending = false;
-                showStatus(String(err.message || err), 'error');
-                updateSaveState();
-            }
-        });
-
-        // ── Smart Multi-Strategy Save Listener ──
-        document.getElementById('saveBtn').addEventListener('click', async () => {
-            if (!selectedRating) return;
-            const resolved = await resolveSelectedResult();
-            if (!resolved) {
-                showStatus('Could not find that title — try picking from the search list.', 'error');
-                return;
-            }
-            clearStatus();
-            document.getElementById('saveBtn').disabled = true;
-
-            const payload = {
-                title: selectedResult.title,
-                rating: selectedRating,
-                external_id: selectedResult.id,
-                date_rated: document.getElementById('dateRated').value.trim(),
-                api_values: selectedResult.metadata || null,
-            };
-
-            async function executePost(bodyData) {
-                const res = await fetch(`/api/${currentType}/entries`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(bodyData),
-                });
-
-                if (res.status === 409) {
-                    const updateChoice = confirm(
-                        `'${bodyData.title}' is already in your diary.\n\nDo you want to OVERWRITE and update your existing rating/date?`
-                    );
-
-                    if (updateChoice) {
-                        bodyData.strategy = "update";
-                        return executePost(bodyData);
-                    } else {
-                        const rewatchChoice = confirm(
-                            `Would you like to log this as a brand new REWATCH entry instead?\n(Click Cancel to abort entirely)`
-                        );
-                        if (rewatchChoice) {
-                            bodyData.strategy = "rewatch";
-                            return executePost(bodyData);
-                        } else {
-                            return null; 
-                        }
-                    }
-                }
-                return res;
-            }
-
-            const response = await executePost(payload);
-            document.getElementById('saveBtn').disabled = false;
-
-            if (response === null) {
-                clearStatus();
-                return;
-            }
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                showStatus(data.detail || 'Save failed.', 'error');
-                return;
-            }
-
-            let message = data.status === 'updated' 
-                ? `Updated rating for ${selectedResult.title} to (${selectedRating}/10).`
-                : `Saved ${selectedResult.title} (${selectedRating}/10).`;
-
-            if (data.git_sync && data.git_sync.enabled && data.git_sync.last_error) {
-                message += ` Git sync issue: ${data.git_sync.last_error}`;
-                showStatus(message, 'warning');
-            } else {
-                showStatus(message, 'success');
-            }
+            // Auto focus search field whenever switching domains
+            const searchInput = document.getElementById('titleSearch');
+            searchInput.value = '';
+            searchInput.placeholder = `Search for ${typesConfig[type].label.toLowerCase()}...`;
+            searchInput.focus();
 
             selectedResult = null;
             selectedRating = null;
-            document.getElementById('titleSearch').value = '';
             document.getElementById('preview').classList.remove('visible');
-            document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+            document.getElementById('searchResults').classList.remove('visible');
+            hideStatus();
+            loadRecent();
+        }
+
+        function getRatingBadgeClass(ratingStr) {
+            const val = parseInt(ratingStr, 10);
+            if (isNaN(val)) return 'rating-tier-mid';
+            if (val >= 8) return 'rating-tier-high';
+            if (val >= 5) return 'rating-tier-mid';
+            return 'rating-tier-low';
+        }
+
+        // Custom Modal UI handler to bypass basic browser confirm blocks
+        function triggerCustomModal({ title, message, actionText, isDanger, onConfirm }) {
+            const modal = document.getElementById('customModal');
+            const confirmBtn = document.getElementById('modalConfirm');
+            
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = message;
+            confirmBtn.textContent = actionText || 'Confirm';
+            
+            confirmBtn.className = isDanger ? 'btn btn-danger' : 'btn';
+            
+            const closeModal = () => modal.classList.remove('active');
+            
+            // Clean dynamic listeners
+            const nextConfirm = () => { onConfirm(); closeModal(); };
+            confirmBtn.onclick = nextConfirm;
+            document.getElementById('modalCancel').onclick = closeModal;
+            
+            modal.classList.add('active');
+        }
+
+        async function loadRecent() {
+            const config = typesConfig[currentType];
+            const tableContainer = document.getElementById('recentLogsTableContainer');
+            if (!config) return;
+
+            try {
+                const res = await fetch(`/api/${currentType}/entries?limit=30`);
+                const data = await res.json();
+                const entries = data.entries || [];
+
+                if (entries.length === 0) {
+                    tableContainer.innerHTML = '<p style="color: var(--text-muted); padding: 12px 0;">No logs added yet for this shelf repository.</p>';
+                    return;
+                }
+
+                let html = '<table><thead><tr>';
+                config.columns.forEach(col => { html += `<th>${col}</th>`; });
+                html += '<th style="text-align:right;">Actions</th></tr></thead><tbody>';
+
+                entries.forEach(row => {
+                    html += '<tr>';
+                    config.columns.forEach(col => {
+                        if (col === 'Rating') {
+                            const badgeTier = getRatingBadgeClass(row[col]);
+                            html += `<td><span class="rating-badge ${badgeTier}">${row[col] || ''}/10</span></td>`;
+                        } else {
+                            html += `<td>${row[col] || ''}</td>`;
+                        }
+                    });
+
+                    const titleVal = encodeURIComponent(row[config.title_column] || '');
+                    const dateCol = config.auto_fields[0] || 'Date Watched/Rated';
+                    const dateVal = encodeURIComponent(row[dateCol] || '');
+
+                    html += `<td style="text-align:right;">
+                        <button class="delete-btn" onclick="confirmDelete('${titleVal}', '${dateVal}')">Delete</button>
+                    </td></tr>`;
+                });
+
+                html += '</tbody></table>';
+                tableContainer.innerHTML = html;
+            } catch (err) {
+                tableContainer.innerHTML = `<p style="color:#ff4757;">Failed to render history stream.</p>`;
+            }
+        }
+
+        function confirmDelete(titleEsc, dateEsc) {
+            const title = decodeURIComponent(titleEsc);
+            const dateRated = decodeURIComponent(dateEsc);
+
+            triggerCustomModal({
+                title: 'Delete History Entry',
+                message: `Are you sure you want to permanently erase the logging entry for "${title}" dated ${dateRated}? This cannot be undone.`,
+                actionText: 'Delete',
+                isDanger: true,
+                onConfirm: async () => {
+                    try {
+                        const url = `/api/${currentType}/entries?title=${encodeURIComponent(title)}&date_rated=${encodeURIComponent(dateRated)}`;
+                        const res = await fetch(url, { method: 'DELETE' });
+                        const data = await res.json();
+
+                        if (!res.ok) throw new Error(data.detail || 'Delete endpoint failure.');
+                        
+                        showStatus(`Successfully removed "${title}" from pipeline diary.`, 'success');
+                        updateSyncHeader(data.git_sync);
+                        loadRecent();
+                    } catch (e) {
+                        showStatus(e.message, 'error');
+                    }
+                }
+            });
+        }
+
+        // Live API search with dynamic text matching and spinner animation loaders
+        function handleSearchInput(e) {
+            clearTimeout(searchTimeout);
+            const spinner = document.getElementById('searchSpinner');
+            const q = e.target.value.trim();
+
+            if (q.length < 2) {
+                document.getElementById('searchResults').classList.remove('visible');
+                spinner.style.display = 'none';
+                return;
+            }
+
+            spinner.style.display = 'block';
+            searchTimeout = setTimeout(async () => {
+                try {
+                    const res = await fetch(`/api/${currentType}/search?q=${encodeURIComponent(q)}`);
+                    const data = await res.json();
+                    renderSearchResults(data.results || []);
+                } catch (err) {
+                    renderSearchResults([]);
+                } finally {
+                    spinner.style.display = 'none';
+                }
+            }, 350);
+        }
+
+        function renderSearchResults(results) {
+            const box = document.getElementById('searchResults');
+            box.innerHTML = '';
+            currentDropdownItems = results;
+            highlightedIndex = -1;
+
+            if (results.length === 0) {
+                box.innerHTML = '<div class="dropdown-item"><div class="meta">No global matches metadata resources located.</div></div>';
+                box.classList.add('visible');
+                return;
+            }
+
+            results.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'dropdown-item';
+                div.dataset.index = index;
+                div.innerHTML = `
+                    <div class="title">${item.title}</div>
+                    <div class="meta">${item.subtitle || item.year || ''}</div>
+                `;
+                div.addEventListener('click', () => selectResult(item));
+                box.appendChild(div);
+            });
+            box.classList.add('visible');
+        }
+
+        // Keyboard dropdown controls (ArrowUp, ArrowDown, Enter)
+        function handleSearchKeydown(e) {
+            const dropdown = document.getElementById('searchResults');
+            const items = dropdown.querySelectorAll('.dropdown-item');
+            
+            if (!dropdown.classList.contains('visible') || items.length === 0) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                highlightedIndex = (highlightedIndex + 1) % items.length;
+                updateDropdownHighlight(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
+                updateDropdownHighlight(items);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (highlightedIndex >= 0 && highlightedIndex < currentDropdownItems.length) {
+                    selectResult(currentDropdownItems[highlightedIndex]);
+                }
+            }
+        }
+
+        function updateDropdownHighlight(elements) {
+            elements.forEach((el, idx) => {
+                if (idx === highlightedIndex) {
+                    el.classList.add('highlighted');
+                    el.scrollIntoView({ block: 'nearest' });
+                } else {
+                    el.classList.remove('highlighted');
+                }
+            });
+        }
+
+        function selectResult(item) {
+            selectedResult = item;
+            document.getElementById('searchResults').classList.remove('visible');
+            document.getElementById('titleSearch').value = item.title;
+
+            document.getElementById('previewTitle').textContent = item.title;
+            document.getElementById('previewSubtitle').textContent = item.subtitle || item.year || '';
+            
+            renderRatingButtons();
+            document.getElementById('dateRated').value = ''; 
+            document.getElementById('preview').classList.add('visible');
             updateSaveState();
-            await loadRecent();
-        });
+        }
+
+        function renderRatingButtons() {
+            const container = document.getElementById('ratingContainer');
+            container.innerHTML = '';
+            for (let i = 1; i <= 10; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'rating-btn';
+                btn.textContent = i;
+                btn.addEventListener('click', () => {
+                    selectedRating = i;
+                    document.querySelectorAll('.rating-btn').forEach(b => b.classList.toggle('selected', b.textContent == i));
+                    updateSaveState();
+                });
+                container.appendChild(btn);
+            }
+        }
+
+        function updateSaveState() {
+            document.getElementById('saveBtn').disabled = !(selectedResult && selectedRating);
+        }
+
+        function showStatus(text, type) {
+            const box = document.getElementById('statusBox');
+            box.textContent = text;
+            box.className = `status-box ${type}`;
+        }
+
+        function hideStatus() {
+            const box = document.getElementById('statusBox');
+            box.className = 'status-box';
+            box.textContent = '';
+        }
+
+        // Handles strategy selector injection workflow elegantly if a duplicate entry exists
+        async function commitSave(strategy = null) {
+            const saveBtn = document.getElementById('saveBtn');
+            saveBtn.disabled = true;
+            const originalBtnText = saveBtn.textContent;
+            saveBtn.textContent = 'Saving to Git...';
+
+            const payload = {
+                title: selectedResult.title,
+                rating: parseInt(selectedRating, 10),
+                external_id: String(selectedResult.id),
+                date_rated: document.getElementById('dateRated').value.trim() || null,
+                strategy: strategy
+            };
+
+            try {
+                const response = await fetch(`/api/${currentType}/entries`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await response.json();
+
+                // If duplicate row was processed without choice, trigger selection overlay wizard
+                if (response.status === 200 && data.status === 'created' && data.duplicate_warning && !strategy) {
+                    saveBtn.disabled = false;
+                    saveBtn.textContent = originalBtnText;
+                    
+                    triggerCustomModal({
+                        title: 'Duplicate Log Found',
+                        message: `"${selectedResult.title}" is already in your ledger list. Do you want to overwrite your last rating index data point or log this as a brand new rewatch entry row?`,
+                        actionText: 'Log New Rewatch',
+                        onConfirm: () => commitSave('rewatch')
+                    });
+                    
+                    // Wire the secondary button choice context dynamically to the modal actions panel
+                    const actionsArea = document.getElementById('modalActions');
+                    const updateBtn = document.createElement('button');
+                    updateBtn.className = 'btn';
+                    updateBtn.style.background = '#00b894';
+                    updateBtn.textContent = 'Overwrite Existing';
+                    updateBtn.onclick = () => {
+                        document.getElementById('customModal').classList.remove('active');
+                        commitSave('update');
+                    };
+                    actionsArea.insertBefore(updateBtn, actionsArea.firstChild);
+                    return;
+                }
+
+                if (!response.ok) {
+                    showStatus(data.detail || 'Save routine execution fault.', 'error');
+                    return;
+                }
+
+                let message = data.status === 'updated' 
+                    ? `Updated rating evaluation for ${selectedResult.title} to (${selectedRating}/10).`
+                    : `Saved entry for "${selectedResult.title}" (${selectedRating}/10).`;
+
+                if (data.git_sync && data.git_sync.enabled && data.git_sync.last_error) {
+                    message += ` Git distribution failure: ${data.git_sync.last_error}`;
+                    showStatus(message, 'warning');
+                } else {
+                    showStatus(message, 'success');
+                }
+
+                // Reset field elements context state
+                selectedResult = null;
+                selectedRating = null;
+                document.getElementById('titleSearch').value = '';
+                document.getElementById('preview').classList.remove('visible');
+                updateSaveState();
+                await loadRecent();
+
+            } catch (err) {
+                showStatus(String(err), 'error');
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.textContent = originalBtnText;
+            }
+        }
+
+        // Standard Event Registries
+        document.getElementById('titleSearch').addEventListener('input', handleSearchInput);
+        document.getElementById('titleSearch').addEventListener('keydown', handleSearchKeydown);
+        document.getElementById('saveBtn').addEventListener('click', () => commitSave(null));
 
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.search-wrap')) {
