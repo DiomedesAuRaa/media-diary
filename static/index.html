@@ -17,7 +17,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             background: white;
             border-radius: 8px;
@@ -182,6 +182,23 @@
         .btn-primary:hover { background: #5a4bd1; }
         .btn-primary:disabled { background: #bbb; cursor: not-allowed; }
 
+        .btn-delete {
+            background: transparent;
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.15s;
+        }
+
+        .btn-delete:hover {
+            background: #e74c3c;
+            color: white;
+        }
+
         .status {
             margin-top: 16px;
             padding: 12px 16px;
@@ -241,6 +258,7 @@
             text-align: left;
             padding: 10px 8px;
             border-bottom: 1px solid #eee;
+            vertical-align: middle;
         }
 
         th {
@@ -335,6 +353,16 @@
 
         // Diary search state
         let diarySearchTimer = null;
+
+        // Escape helper for safe injection into raw HTML attributes
+        function escapeHtmlAttr(str) {
+            if (!str) return '';
+            return str.replace(/&/g, '&amp;')
+                      .replace(/"/g, '&quot;')
+                      .replace(/'/g, '&#39;')
+                      .replace(/</g, '&lt;')
+                      .replace(/>/g, '&gt;');
+        }
 
         function todayMmDdYy() {
             const d = new Date();
@@ -564,6 +592,7 @@
             const cols = [config.title_column, ...config.auto_fields, 'Rating'];
             let html = '<table><thead><tr>';
             cols.forEach(c => { html += `<th>${c}</th>`; });
+            html += '<th>Actions</th>';
             html += '</tr></thead><tbody>';
             entries.forEach(row => {
                 html += '<tr>';
@@ -574,6 +603,13 @@
                         html += `<td>${row[c] || ''}</td>`;
                     }
                 });
+
+                const rTitle = row[config.title_column];
+                const rDate = row[config.auto_fields[0]];
+                html += `<td>
+                    <button class="btn-delete" data-title="${escapeHtmlAttr(rTitle)}" data-date="${escapeHtmlAttr(rDate)}" onclick="confirmAndExecuteDelete(this)">Delete</button>
+                </td>`;
+
                 html += '</tr>';
             });
             html += '</tbody></table>';
@@ -601,6 +637,7 @@
 
             let html = '<table><thead><tr>';
             cols.forEach(c => { html += `<th>${c}</th>`; });
+            html += '<th>Actions</th>';
             html += '</tr></thead><tbody>';
             results.forEach(row => {
                 html += '<tr>';
@@ -609,6 +646,13 @@
                         ? `<td><span class="rating-badge">${row[c] || ''}</span></td>`
                         : `<td>${row[c] || ''}</td>`;
                 });
+
+                const rTitle = row[config.title_column];
+                const rDate = row[config.auto_fields[0]];
+                html += `<td>
+                    <button class="btn-delete" data-title="${escapeHtmlAttr(rTitle)}" data-date="${escapeHtmlAttr(rDate)}" onclick="confirmAndExecuteDelete(this)">Delete</button>
+                </td>`;
+
                 html += '</tr>';
             });
             html += '</tbody></table>';
@@ -661,6 +705,44 @@
                 }
             }, 300);
         });
+
+        // ── Action: Delete Entry Handler ──────────────────────────────────────
+
+        async function confirmAndExecuteDelete(btn) {
+            const title = btn.getAttribute('data-title');
+            const dateRated = btn.getAttribute('data-date');
+            
+            if (!confirm(`Are you sure you want to delete the entry for "${title}" logged on ${dateRated}?`)) {
+                return;
+            }
+
+            clearStatus();
+            
+            try {
+                const res = await fetch(`/api/${currentType}/entries?title=${encodeURIComponent(title)}&date_rated=${encodeURIComponent(dateRated)}`, {
+                    method: 'DELETE'
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    showStatus(data.detail || 'Delete failed.', 'error');
+                    return;
+                }
+
+                showStatus(`Successfully deleted "${title}".`, 'success');
+                
+                // Reload lists to show updated state
+                await loadRecent();
+                
+                // Dynamically re-trigger diary search query if active
+                const searchBox = document.getElementById('diarySearch');
+                if (searchBox && searchBox.value.trim().length >= 2) {
+                    searchBox.dispatchEvent(new Event('input'));
+                }
+            } catch (err) {
+                showStatus(String(err.message || err), 'error');
+            }
+        }
 
         // ── Title search handlers ─────────────────────────────────
 
@@ -736,7 +818,6 @@
                 api_values: selectedResult.metadata || null,
             };
 
-            // Recursive delivery wrapper to easily capture and prompt options if 409 hits
             async function executePost(bodyData) {
                 const res = await fetch(`/api/${currentType}/entries`, {
                     method: 'POST',
@@ -744,7 +825,6 @@
                     body: JSON.stringify(bodyData),
                 });
 
-                // CATCH 409 DUPLICATE SIGNAL
                 if (res.status === 409) {
                     const updateChoice = confirm(
                         `'${bodyData.title}' is already in your diary.\n\nDo you want to OVERWRITE and update your existing rating/date?`
@@ -752,16 +832,15 @@
 
                     if (updateChoice) {
                         bodyData.strategy = "update";
-                        return executePost(bodyData); // Re-fire request
+                        return executePost(bodyData);
                     } else {
                         const rewatchChoice = confirm(
                             `Would you like to log this as a brand new REWATCH entry instead?\n(Click Cancel to abort entirely)`
                         );
                         if (rewatchChoice) {
                             bodyData.strategy = "rewatch";
-                            return executePost(bodyData); // Re-fire request
+                            return executePost(bodyData);
                         } else {
-                            // User chose to completely abort
                             return null; 
                         }
                     }
@@ -772,7 +851,6 @@
             const response = await executePost(payload);
             document.getElementById('saveBtn').disabled = false;
 
-            // If the user aborted the action entirely
             if (response === null) {
                 clearStatus();
                 return;
@@ -796,7 +874,6 @@
                 showStatus(message, 'success');
             }
 
-            // Clear inputs and reload lists
             selectedResult = null;
             selectedRating = null;
             document.getElementById('titleSearch').value = '';

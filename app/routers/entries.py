@@ -6,7 +6,14 @@ from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field
 
 from app.config import get_enabled_types, get_media_type
-from app.csv_store import build_row, prepend_entry, read_entries, title_exists, update_entry_rating
+from app.csv_store import (
+    build_row,
+    delete_entry,
+    prepend_entry,
+    read_entries,
+    title_exists,
+    update_entry_rating,
+)
 from app.git_sync import get_sync_status, sync_csv_async
 from app.providers import get_provider
 
@@ -94,14 +101,12 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
 
     duplicate = title_exists(media_type, title)
     
-    # If it is a duplicate and the frontend hasn't stated a strategy yet, halt with 409
     if duplicate and payload.strategy is None:
         raise HTTPException(
             status_code=409,
             detail=f"'{title}' already exists in your diary."
         )
 
-    # Strategy A: Update existing entry in-place
     if duplicate and payload.strategy == "update":
         saved = update_entry_rating(
             media_type,
@@ -116,7 +121,6 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
         else:
             raise HTTPException(status_code=500, detail="Failed to update entry rating.")
 
-    # Strategy B (or No Duplicate): Save a brand new entry row
     api_values = payload.api_values
     if api_values is None:
         provider = get_provider(config["provider"])
@@ -143,6 +147,18 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
         "entry": saved,
         "git_sync": get_sync_status(),
     }
+
+
+@router.delete("/{media_type}/entries")
+def delete_diary_entry(media_type: str, title: str, date_rated: str) -> dict[str, Any]:
+    _require_type(media_type)
+    success = delete_entry(media_type, title, date_rated)
+    if not success:
+        raise HTTPException(status_code=404, detail="Entry not found.")
+    
+    commit_message = f"{media_type}: delete entry for {title} logged on {date_rated}"
+    sync_csv_async(media_type, commit_message)
+    return {"status": "deleted", "git_sync": get_sync_status()}
 
 
 def _require_type(media_type: str) -> dict[str, Any]:
