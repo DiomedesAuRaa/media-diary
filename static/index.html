@@ -693,6 +693,26 @@
             const q = document.getElementById('titleSearch').value.trim();
             const panel = document.getElementById('searchResults');
             if (!q) { panel.classList.remove('visible'); return; }
+            
+            searchTimeout = setTimeout(async () => {
+                try {
+                    const res = await fetch(`/api/${currentType}/search?q=${encodeURIComponent(q)}`);
+                    if (!res.ok) {
+                        console.error("API Error:", await res.text());
+                        return;
+                    }
+                    const data = await res.json();
+                    // FIX: Pass data.results specifically, and ensure it exists
+                    renderDropdown(data.results || []); 
+                } catch (err) { 
+                    console.error("Search failed:", err); 
+                }
+            }, 250);
+        }
+            clearTimeout(searchTimeout);
+            const q = document.getElementById('titleSearch').value.trim();
+            const panel = document.getElementById('searchResults');
+            if (!q) { panel.classList.remove('visible'); return; }
             searchTimeout = setTimeout(async () => {
                 try {
                     const res = await fetch(`/api/${currentType}/search?q=${encodeURIComponent(q)}`);
