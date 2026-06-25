@@ -60,14 +60,36 @@
 
         .content { padding: 24px 28px; }
 
-        .stats {
+        /* --- NEW SEARCH STYLING --- */
+        .controls-row {
             display: flex;
-            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
+            gap: 16px;
             margin-bottom: 20px;
+        }
+
+        .stats {
             color: #555;
             font-size: 0.95em;
         }
+
+        .search-box {
+            padding: 8px 14px;
+            border: 2px solid #eee;
+            border-radius: 6px;
+            font-size: 0.9em;
+            width: 100%;
+            max-width: 300px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box:focus {
+            border-color: #6c5ce7;
+        }
+        /* -------------------------- */
 
         table {
             width: 100%;
@@ -121,7 +143,11 @@
         <nav class="media-nav" id="mediaNav"></nav>
 
         <div class="content">
-            <div class="stats" id="stats"></div>
+            <div class="controls-row">
+                <div class="stats" id="stats"></div>
+                <input type="text" id="searchBox" class="search-box" placeholder="Search entries...">
+            </div>
+            
             <div class="table-wrap" id="tableWrap"></div>
         </div>
     </div>
@@ -150,6 +176,7 @@
 
         let currentType = 'movies';
         let cache = {};
+        let searchQuery = ''; // NEW: Holds the current active search keyword
 
         function renderNav() {
             const nav = document.getElementById('mediaNav');
@@ -161,6 +188,10 @@
                 if (config.enabled) {
                     btn.addEventListener('click', () => {
                         currentType = key;
+                        // Reset search box when switching tabs
+                        document.getElementById('searchBox').value = '';
+                        searchQuery = '';
+                        
                         renderNav();
                         renderTable();
                     });
@@ -185,13 +216,30 @@
             const config = TYPES[currentType];
 
             try {
-                const entries = await loadData(currentType);
+                let entries = await loadData(currentType);
+                
+                // --- NEW SEARCH FILTER LOGIC ---
+                if (searchQuery) {
+                    const query = searchQuery.toLowerCase();
+                    entries = entries.filter(row => {
+                        // Check if any of the table columns contain the search string
+                        return config.columns.some(col => {
+                            const val = row[col];
+                            return val && String(val).toLowerCase().includes(query);
+                        });
+                    });
+                }
+                // -------------------------------
+
                 const ratings = entries.map(e => Number(e.Rating)).filter(n => !Number.isNaN(n));
                 const avg = ratings.length ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1) : '—';
-                stats.textContent = `${entries.length} entries · average rating ${avg}`;
+                
+                // Adjusted stats string to reflect "matching" items if searching
+                const searchSuffix = searchQuery ? ' matching search' : '';
+                stats.textContent = `${entries.length} entries${searchSuffix} · average rating ${avg}`;
 
                 if (!entries.length) {
-                    wrap.innerHTML = '<p>No entries yet.</p>';
+                    wrap.innerHTML = '<p style="color: #666; padding: 10px 0;">No matching entries found.</p>';
                     return;
                 }
 
@@ -216,6 +264,13 @@
                 stats.textContent = '';
             }
         }
+
+        // --- NEW EVENT LISTENER FOR SEARCH INPUT ---
+        document.getElementById('searchBox').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderTable(); // Re-render table dynamically as user types
+        });
+        // -------------------------------------------
 
         renderNav();
         renderTable();
