@@ -20,13 +20,12 @@
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text-main); background: var(--bg-gradient); min-height: 100vh; }
         .container { max-width: 1100px; margin: 0 auto; background: var(--card-bg); min-height: 100vh; }
         header { background: var(--header-gradient); color: white; padding: 24px; text-align: center; border-bottom: 1px solid var(--border-color); }
-        
-        /* Navs */
+
         .nav-container { background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid var(--border-color); }
         .media-nav, .sub-nav { display: flex; gap: 8px; padding: 10px; overflow-x: auto; }
         .media-tab { background: transparent; color: var(--text-muted); border: 1px solid var(--border-color); padding: 8px 18px; border-radius: 20px; cursor: pointer; font-weight: 600; white-space: nowrap; }
         .media-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
-        
+
         .sub-nav { border-top: 1px solid var(--border-color); justify-content: center; background: rgba(0,0,0,0.1); }
         .sub-tab { background: transparent; color: var(--text-muted); border: none; padding: 6px 16px; cursor: pointer; font-size: 0.85em; font-weight: 600; border-radius: 4px; }
         .sub-tab.active { color: white; background: rgba(255,255,255,0.1); }
@@ -34,109 +33,188 @@
         .content { padding: 24px; }
         .controls-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
         .search-box { padding: 10px; background: var(--input-bg); border: 1px solid var(--border-color); border-radius: 8px; color: white; width: 100%; max-width: 300px; }
-        
-        /* Tables/Cards */
-        .table-wrap { overflow-x: auto; }
+
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 12px; border-bottom: 1px solid var(--border-color); text-align: left; }
-        .rating-badge { padding: 2px 8px; border-radius: 10px; font-weight: bold; font-size: 0.85em; }
-        .rating-tier-high { background: rgba(46, 213, 115, 0.2); color: #2ed573; }
-        .rating-tier-mid { background: rgba(112, 111, 211, 0.2); color: #9c88ff; }
-        .rating-tier-low { background: rgba(255, 127, 80, 0.2); color: #ff7f50; }
+        tbody tr:hover { background: var(--item-hover); }
+
+        .rating-badge {
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        .rating-high { background: rgba(46, 213, 115, 0.2); color: #2ed573; }
+        .rating-mid { background: rgba(112, 111, 211, 0.2); color: #9c88ff; }
+        .rating-low { background: rgba(255, 127, 80, 0.2); color: #ff7f50; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header><h1>Media Diary</h1></header>
+<div class="container">
+    <header><h1>Media Diary</h1></header>
 
-        <div class="nav-container">
-            <nav class="media-nav" id="mediaNav"></nav>
-            <nav class="sub-nav" id="subNav"></nav>
-        </div>
-
-        <div class="content">
-            <div class="controls-row">
-                <div id="stats"></div>
-                <input type="text" id="searchBox" class="search-box" placeholder="Search...">
-            </div>
-            <div id="tableWrap"></div>
-        </div>
+    <div class="nav-container">
+        <nav class="media-nav" id="mediaNav"></nav>
+        <nav class="sub-nav" id="subNav"></nav>
     </div>
 
-    <script>
-        const TYPES = {
-            movies: { 
-                label: 'Movies', 
-                json: 'movies.json', 
-                watchlistJson: 'movies_watchlist.json',
-                columns: ['Movie', 'Date Watched/Rated', 'Rating', 'Director'] 
-            },
-            books: { 
-                label: 'Books', 
-                json: 'books.json', 
-                watchlistJson: 'books_watchlist.json',
-                columns: ['Book', 'Date Read/Rated', 'Rating', 'Author'] 
-            },
-            tv: { 
-                label: 'TV Shows', 
-                json: 'tv.json', 
-                watchlistJson: 'tv_watchlist.json',
-                columns: ['Show', 'Date Watched/Rated', 'Rating', 'Creator'] 
-            },
+    <div class="content">
+        <div class="controls-row">
+            <div id="stats"></div>
+            <input type="text" id="searchBox" class="search-box" placeholder="Search...">
+        </div>
+        <div id="tableWrap"></div>
+    </div>
+</div>
+
+<script>
+const TYPES = {
+    movies: {
+        label: "Movies",
+        json: "movies.json",
+        watchlistJson: "movies_watchlist.json",
+        columns: ["Movie", "Date Watched/Rated", "Rating", "Director"]
+    },
+    books: {
+        label: "Books",
+        json: "books.json",
+        watchlistJson: "books_watchlist.json",
+        columns: ["Book", "Date Read/Rated", "Rating", "Author"]
+    },
+    tv: {
+        label: "TV Shows",
+        json: "tv.json",
+        watchlistJson: "tv_watchlist.json",
+        columns: ["Show", "Date Watched/Rated", "Rating", "Creator"]
+    }
+};
+
+let currentType = "movies";
+let viewMode = "diary";
+
+const cache = {};
+
+function escapeHtml(str = "") {
+    return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function ratingClass(val) {
+    const n = Number(val);
+    if (n >= 8) return "rating-high";
+    if (n >= 5) return "rating-mid";
+    return "rating-low";
+}
+
+async function loadData(file) {
+    if (cache[file]) return cache[file];
+    const res = await fetch(file);
+    const json = await res.json();
+    cache[file] = json.entries || [];
+    return cache[file];
+}
+
+function renderNav() {
+    const nav = document.getElementById("mediaNav");
+    nav.innerHTML = "";
+
+    Object.keys(TYPES).forEach(key => {
+        const btn = document.createElement("button");
+        btn.className = `media-tab ${key === currentType ? "active" : ""}`;
+        btn.textContent = TYPES[key].label;
+
+        btn.onclick = () => {
+            currentType = key;
+            renderNav();
+            renderSubNav();
+            renderTable();
         };
 
-        let currentType = 'movies';
-        let viewMode = 'diary'; // 'diary' or 'watchlist'
+        nav.appendChild(btn);
+    });
+}
 
-        function renderNav() {
-            const nav = document.getElementById('mediaNav');
-            nav.innerHTML = '';
-            Object.keys(TYPES).forEach(key => {
-                const btn = document.createElement('button');
-                btn.className = `media-tab ${key === currentType ? 'active' : ''}`;
-                btn.textContent = TYPES[key].label;
-                btn.onclick = () => { currentType = key; renderNav(); renderSubNav(); renderTable(); };
-                nav.appendChild(btn);
-            });
+function renderSubNav() {
+    const nav = document.getElementById("subNav");
+    nav.innerHTML = "";
+
+    ["diary", "watchlist"].forEach(mode => {
+        const btn = document.createElement("button");
+        btn.className = `sub-tab ${viewMode === mode ? "active" : ""}`;
+        btn.textContent = mode === "diary" ? "Diary Log" : "Watchlist";
+
+        btn.onclick = () => {
+            viewMode = mode;
+            renderSubNav();
+            renderTable();
+        };
+
+        nav.appendChild(btn);
+    });
+}
+
+async function renderTable() {
+    const config = TYPES[currentType];
+    const file = viewMode === "diary" ? config.json : config.watchlistJson;
+
+    const wrap = document.getElementById("tableWrap");
+    const stats = document.getElementById("stats");
+    const query = document.getElementById("searchBox").value.toLowerCase();
+
+    wrap.innerHTML = "<p>Loading...</p>";
+
+    try {
+        let entries = await loadData(file);
+
+        if (query) {
+            entries = entries.filter(e =>
+                Object.values(e).some(v =>
+                    String(v).toLowerCase().includes(query)
+                )
+            );
         }
 
-        function renderSubNav() {
-            const nav = document.getElementById('subNav');
-            nav.innerHTML = '';
-            ['diary', 'watchlist'].forEach(mode => {
-                const btn = document.createElement('button');
-                btn.className = `sub-tab ${viewMode === mode ? 'active' : ''}`;
-                btn.textContent = mode === 'diary' ? 'Diary Log' : 'Watchlist';
-                btn.onclick = () => { viewMode = mode; renderSubNav(); renderTable(); };
-                nav.appendChild(btn);
-            });
-        }
+        const rows = entries.map(row => `
+            <tr>
+                ${config.columns.map(col => {
+                    const val = escapeHtml(row[col] ?? "—");
 
-        async function renderTable() {
-            const config = TYPES[currentType];
-            const file = viewMode === 'diary' ? config.json : config.watchlistJson;
-            const wrap = document.getElementById('tableWrap');
-            
-            try {
-                const res = await fetch(file);
-                const data = await res.json();
-                const entries = data.entries || [];
-                
-                let html = '<table><thead><tr>' + config.columns.map(c => `<th>${c}</th>`).join('') + '</tr></thead><tbody>';
-                entries.forEach(row => {
-                    html += '<tr>' + config.columns.map(col => {
-                        if (col === 'Rating') return `<td><span class="rating-badge rating-tier-mid">${row[col] || '—'}</span></td>`;
-                        return `<td>${row[col] || '—'}</td>`;
-                    }).join('') + '</tr>';
-                });
-                wrap.innerHTML = html + '</tbody></table>';
-                document.getElementById('stats').textContent = `${entries.length} items`;
-            } catch(e) { wrap.innerHTML = "No data found."; }
-        }
+                    if (col === "Rating") {
+                        return `<td><span class="rating-badge ${ratingClass(row[col])}">${val}</span></td>`;
+                    }
 
-        renderNav();
-        renderSubNav();
-        renderTable();
-    </script>
+                    return `<td>${val}</td>`;
+                }).join("")}
+            </tr>
+        `).join("");
+
+        wrap.innerHTML = `
+            <table>
+                <thead>
+                    <tr>${config.columns.map(c => `<th>${c}</th>`).join("")}</tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>
+        `;
+
+        stats.textContent = `${entries.length} items`;
+
+    } catch (e) {
+        wrap.innerHTML = "<p>Failed to load data.</p>";
+        stats.textContent = "";
+    }
+}
+
+document.getElementById("searchBox")
+    .addEventListener("input", renderTable);
+
+renderNav();
+renderSubNav();
+renderTable();
+</script>
 </body>
 </html>
