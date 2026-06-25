@@ -6,7 +6,7 @@ from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field
 
 from app.config import get_enabled_types, get_media_type
-from app.csv_store import build_row, prepend_entry, read_entries, title_exists
+from app.csv_store import build_row, prepend_entry, read_entries, title_exists, update_entry_rating
 from app.git_sync import get_sync_status, sync_csv_async
 from app.providers import get_provider
 
@@ -19,6 +19,7 @@ class EntryCreate(BaseModel):
     external_id: str = Field(min_length=1)
     date_rated: str | None = None
     api_values: dict[str, str] | None = None
+    allow_update: bool = False
 
 
 @router.get("/types")
@@ -92,6 +93,33 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
     title = payload.title.strip()
 
     duplicate = title_exists(media_type, title)
+    
+    if duplicate and not payload.allow_update:
+        return {
+            "status": "duplicate",
+            "message": f"'{title}' already exists in your diary.",
+            "prompt_update": True,
+            "git_sync": get_sync_status()
+        }
+
+    if duplicate and payload.allow_update:
+        saved = update_entry_rating(
+            media_type,
+            title=title,
+            rating=str(payload.rating),
+            date_rated=payload.date_rated
+        )
+        if saved:
+            commit_message = f"{media_type}: update rating for {title} to {payload.rating}/10"
+            sync_csv_async(media_type, commit_message)
+            return {
+                "status": "updated",
+                "entry": saved,
+                "git_sync": get_sync_status(),
+            }
+        else:
+            raise HTTPException(status_code=500, detail="Failed to update entry rating.")
+
     api_values = payload.api_values
     if api_values is None:
         provider = get_provider(config["provider"])
@@ -115,8 +143,9 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
     sync_csv_async(media_type, commit_message)
 
     return {
+        "status": "created",
         "entry": saved,
-        "duplicate_warning": duplicate,
+        "duplicate_warning": False,
         "git_sync": get_sync_status(),
     }
 

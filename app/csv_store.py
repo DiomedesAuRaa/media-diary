@@ -59,6 +59,45 @@ def prepend_entry(media_type: str, row: dict[str, str]) -> dict[str, str]:
     return normalized
 
 
+def update_entry_rating(
+    media_type: str,
+    title: str,
+    rating: str,
+    date_rated: str | None = None
+) -> dict[str, str] | None:
+    config = get_media_type(media_type)
+    path = csv_path(media_type)
+    if not path.exists():
+        return None
+
+    title_column = config["title_column"]
+    normalized_title = title.strip().casefold()
+    columns = config["columns"]
+
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        existing_rows = list(csv.DictReader(handle))
+
+    updated_row = None
+    for row in existing_rows:
+        existing_title = (row.get(title_column) or "").strip().casefold()
+        if existing_title == normalized_title:
+            row["Rating"] = str(rating).strip()
+            for field in config["auto_fields"]:
+                row[field] = date_rated or format_date_mmddyy()
+            updated_row = {column: str(row.get(column, "")).strip() for column in columns}
+            break
+
+    if updated_row:
+        with path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=columns)
+            writer.writeheader()
+            for row in existing_rows:
+                writer.writerow({column: row.get(column, "") for column in columns})
+        return updated_row
+
+    return None
+
+
 def build_row(
     media_type: str,
     *,
