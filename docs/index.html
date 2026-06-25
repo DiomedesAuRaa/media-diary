@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Diary</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         :root {
             --bg-gradient: linear-gradient(135deg, #0d0b18 0%, #130f26 100%);
@@ -16,6 +16,7 @@
             --border-color: rgba(255, 255, 255, 0.08);
             --input-bg: #120e24;
             --item-hover: rgba(255, 255, 255, 0.04);
+            --min-tap: 44px;
         }
 
         body {
@@ -23,7 +24,6 @@
             line-height: 1.6;
             color: var(--text-main);
             background: var(--bg-gradient);
-            padding: 20px;
             min-height: 100vh;
         }
 
@@ -31,31 +31,46 @@
             max-width: 1100px;
             margin: 0 auto;
             background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 600px) {
+            body { padding: 20px; }
+            .container {
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                border: 1px solid var(--border-color);
+                min-height: auto;
+            }
         }
 
         header {
             background: var(--header-gradient);
             color: white;
-            padding: 32px;
+            padding: 24px 20px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
 
-        header h1 { font-size: 2.4em; margin-bottom: 6px; font-weight: 700; letter-spacing: -0.5px; }
-        header p { opacity: 0.85; font-size: 1.05em; }
+        header h1 { font-size: 1.8em; margin-bottom: 4px; font-weight: 700; letter-spacing: -0.5px; }
+        header p { opacity: 0.85; font-size: 0.9em; }
+
+        @media (min-width: 600px) {
+            header { padding: 32px; }
+            header h1 { font-size: 2.4em; }
+        }
 
         .media-nav {
             background: rgba(0, 0, 0, 0.2);
-            padding: 12px 20px;
+            padding: 10px;
             display: flex;
             gap: 8px;
-            flex-wrap: wrap;
             border-bottom: 1px solid var(--border-color);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
+        .media-nav::-webkit-scrollbar { display: none; }
 
         .media-tab {
             background: transparent;
@@ -66,6 +81,9 @@
             cursor: pointer;
             font-size: 0.9em;
             font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+            height: var(--min-tap);
             transition: all 0.2s ease;
         }
 
@@ -73,30 +91,23 @@
         .media-tab.active { background: #5f27cd; color: white; border-color: #5f27cd; box-shadow: 0 0 12px rgba(95, 39, 205, 0.4); }
         .media-tab.disabled { opacity: 0.25; cursor: default; }
 
-        .content { padding: 32px; }
+        .content { padding: 16px; }
+        @media (min-width: 600px) { .content { padding: 32px; } }
 
         .controls-row {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 16px;
             margin-bottom: 24px;
         }
-
-        .stats {
-            color: var(--text-muted);
-            font-size: 0.95em;
-            font-weight: 500;
+        @media (min-width: 600px) {
+            .controls-row { flex-direction: row; justify-content: space-between; align-items: center; }
         }
 
-        .filter-group {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            width: 100%;
-            max-width: 520px;
-        }
+        .stats { color: var(--text-muted); font-size: 0.9em; font-weight: 500; }
+
+        .filter-group { display: flex; gap: 10px; width: 100%; }
+        @media (min-width: 600px) { .filter-group { max-width: 520px; } }
 
         .search-box, .sort-select {
             padding: 10px 14px;
@@ -106,74 +117,46 @@
             font-size: 0.95em;
             color: var(--text-main);
             outline: none;
-            transition: all 0.2s;
+            height: var(--min-tap);
+            width: 100%;
         }
 
         .search-box { flex: 2; }
         .sort-select { flex: 1; cursor: pointer; }
 
-        .search-box:focus, .sort-select:focus {
-            border-color: #5f27cd;
-            box-shadow: 0 0 0 3px rgba(95, 39, 205, 0.2);
-        }
-
-        .table-wrap { 
-            overflow-x: auto; 
-            max-height: 70vh; 
-            overflow-y: auto; 
-            border-radius: 8px;
+        /* Card styles for mobile */
+        .entry-list { display: flex; flex-direction: column; gap: 12px; }
+        .entry-card {
+            background: rgba(0,0,0,0.15);
             border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
         }
+        .entry-title { font-weight: 700; font-size: 1.05em; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .entry-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.85em; }
+        .meta-field { display: flex; flex-direction: column; color: var(--text-muted); }
+        .meta-value { color: var(--text-main); font-weight: 500; }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95em;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border-color);
-            vertical-align: middle;
-        }
-
-        th {
-            color: var(--text-muted);
-            font-size: 0.8em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: sticky;
-            top: 0;
-            background: #1f1b3a; /* Solid offset color to remain legible while scrolling */
-            border-bottom: 2px solid var(--border-color);
-            z-index: 10;
-        }
-
+        /* Table styles for desktop */
+        .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border-color); }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+        th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border-color); }
+        th { color: var(--text-muted); font-size: 0.8em; font-weight: 600; text-transform: uppercase; background: #1f1b3a; }
         tr:hover td { background: var(--item-hover); }
 
-        /* Tiered Badges Mirroring write-app */
         .rating-badge {
             display: inline-block;
             padding: 4px 10px;
             border-radius: 20px;
             font-weight: 700;
             font-size: 0.85em;
-            text-align: center;
             border: 1px solid transparent;
         }
         .rating-tier-high { background: rgba(46, 213, 115, 0.15); color: #2ed573; border-color: rgba(46, 213, 115, 0.2); }
         .rating-tier-mid { background: rgba(112, 111, 211, 0.25); color: #9c88ff; border-color: rgba(112, 111, 211, 0.3); }
         .rating-tier-low { background: rgba(255, 127, 80, 0.15); color: #ff7f50; border-color: rgba(255, 127, 80, 0.2); }
 
-        .error {
-            background: rgba(255, 71, 87, 0.15);
-            color: #ff4757;
-            padding: 14px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 71, 87, 0.3);
-        }
+        .error { background: rgba(255, 71, 87, 0.15); color: #ff4757; padding: 14px; border-radius: 8px; }
     </style>
 </head>
 <body>
@@ -189,8 +172,8 @@
             <div class="controls-row">
                 <div class="stats" id="stats"></div>
                 <div class="filter-group">
-                    <input type="text" id="searchBox" class="search-box" placeholder="Search entries...">
-                    <select id="sortSelect" class="sort-select">
+                    <input type="text" id="searchBox" class="search-box" placeholder="Search entries..." aria-label="Search entries">
+                    <select id="sortSelect" class="sort-select" aria-label="Sort entries">
                         <option value="date-desc">Recent First</option>
                         <option value="date-asc">Oldest First</option>
                         <option value="rating-desc">Highest Rated</option>
@@ -199,50 +182,57 @@
                 </div>
             </div>
             
-            <div class="table-wrap" id="tableWrap"></div>
+            <div id="tableWrap"></div>
         </div>
     </div>
 
     <script>
         const TYPES = {
-            movies: {
-                label: 'Movies',
-                json: 'movies.json',
-                columns: ['Movie', 'Date Watched/Rated', 'Date Released', 'Rating', 'Director'],
-                enabled: true,
-            },
-            books: {
-                label: 'Books',
-                json: 'books.json',
-                columns: ['Book', 'Date Read/Rated', 'Date Published', 'Rating', 'Author'],
-                enabled: true,
-            },
-            tv: {
-                label: 'TV Shows',
-                json: 'tv.json',
-                columns: ['Show', 'Date Watched/Rated', 'Date Premiered', 'Rating', 'Creator'],
-                enabled: true,
-            },
+            movies: { label: 'Movies', json: 'movies.json', columns: ['Movie', 'Date Watched/Rated', 'Date Released', 'Rating', 'Director'], enabled: true },
+            books: { label: 'Books', json: 'books.json', columns: ['Book', 'Date Read/Rated', 'Date Published', 'Rating', 'Author'], enabled: true },
+            tv: { label: 'TV Shows', json: 'tv.json', columns: ['Show', 'Date Watched/Rated', 'Date Premiered', 'Rating', 'Creator'], enabled: true },
         };
 
-        let currentType = 'movies';
+        // Initialize state from URL
+        const params = new URLSearchParams(location.search);
+        let currentType = params.get('type') || 'movies';
+        let sortOrder = params.get('sort') || 'date-desc';
+        let searchQuery = params.get('search') || '';
+        
         let cache = {};
-        let searchQuery = ''; 
-        let sortOrder = 'date-desc'; // Default sorting mode tracks date backwards
+        let searchTimer;
+        let wasMobile = isMobile();
+
+        // Helpers
+        function isMobile() { return window.innerWidth < 600; }
+        
+        function displayValue(value) {
+            return value == null || value === '' ? '—' : value;
+        }
+
+        function updateURL() {
+            const params = new URLSearchParams();
+            params.set('type', currentType);
+            params.set('sort', sortOrder);
+            if (searchQuery) params.set('search', searchQuery);
+            history.replaceState(null, '', '?' + params.toString());
+        }
 
         function renderNav() {
             const nav = document.getElementById('mediaNav');
             nav.innerHTML = '';
             Object.entries(TYPES).forEach(([key, config]) => {
                 const btn = document.createElement('button');
+                btn.type = 'button';
                 btn.className = 'media-tab' + (key === currentType ? ' active' : '') + (config.enabled ? '' : ' disabled');
-                btn.textContent = config.label + (config.enabled ? '' : ' (soon)');
+                btn.setAttribute('aria-pressed', key === currentType);
+                btn.textContent = config.label;
                 if (config.enabled) {
                     btn.addEventListener('click', () => {
                         currentType = key;
                         document.getElementById('searchBox').value = '';
                         searchQuery = '';
-                        
+                        updateURL();
                         renderNav();
                         renderTable();
                     });
@@ -254,14 +244,13 @@
         async function loadData(type) {
             if (cache[type]) return cache[type];
             const config = TYPES[type];
-            const res = await fetch(config.json);
-            if (!res.ok) throw new Error(`Could not load ${config.json}`);
+            const res = await fetch(config.json, { cache: 'no-cache' });
+            if (!res.ok) throw new Error(`Failed to load ${config.label} data (${res.status})`);
             const data = await res.json();
             cache[type] = data.entries || [];
             return cache[type];
         }
 
-        // Helper function mapping dynamic tiers to CSS design styles
         function getRatingBadgeClass(ratingStr) {
             const val = parseInt(ratingStr, 10);
             if (isNaN(val)) return 'rating-tier-mid';
@@ -275,77 +264,108 @@
             const stats = document.getElementById('stats');
             const config = TYPES[currentType];
 
+            wrap.innerHTML = `<div style="padding:24px; text-align:center; color:var(--text-muted);">Loading...</div>`;
+
             try {
-                let entries = [...(await loadData(currentType))]; // Clone array to preserve core cache orders
+                let entries = [...(await loadData(currentType))];
                 
-                // 1. FILTERING LOGIC
                 if (searchQuery) {
                     const query = searchQuery.toLowerCase();
-                    entries = entries.filter(row => {
-                        return config.columns.some(col => {
-                            const val = row[col];
-                            return val && String(val).toLowerCase().includes(query);
-                        });
-                    });
+                    entries = entries.filter(row => config.columns.some(col => row[col] && String(row[col]).toLowerCase().includes(query)));
                 }
 
-                // 2. NEW SORTING ENGINE
-                const dateColumnName = config.columns[1]; // Evaluates the primary logging tracking date column
+                const dateColumnName = config.columns[1];
                 entries.sort((a, b) => {
-                    if (sortOrder === 'rating-desc') {
-                        return (Number(b.Rating) || 0) - (Number(a.Rating) || 0);
-                    } else if (sortOrder === 'rating-asc') {
-                        return (Number(a.Rating) || 0) - (Number(b.Rating) || 0);
-                    } else if (sortOrder === 'date-asc') {
-                        return new Date(a[dateColumnName] || 0) - new Date(b[dateColumnName] || 0);
-                    } else { // 'date-desc'
-                        return new Date(b[dateColumnName] || 0) - new Date(a[dateColumnName] || 0);
-                    }
+                    if (sortOrder === 'rating-desc') return (Number(b.Rating) || 0) - (Number(a.Rating) || 0);
+                    if (sortOrder === 'rating-asc') return (Number(a.Rating) || 0) - (Number(b.Rating) || 0);
+                    if (sortOrder === 'date-asc') return new Date(a[dateColumnName] || 0) - new Date(b[dateColumnName] || 0);
+                    return new Date(b[dateColumnName] || 0) - new Date(a[dateColumnName] || 0);
                 });
 
                 const ratings = entries.map(e => Number(e.Rating)).filter(n => !Number.isNaN(n));
                 const avg = ratings.length ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1) : '—';
-                
-                const searchSuffix = searchQuery ? ' matching search' : '';
-                stats.textContent = `${entries.length} entries${searchSuffix} · average rating ${avg}`;
+                stats.textContent = `${entries.length} entries · avg ${avg}`;
 
                 if (!entries.length) {
-                    wrap.innerHTML = '<p style="color: var(--text-muted); padding: 24px; text-align: center;">No matching ledger entries found in this view index.</p>';
+                    wrap.innerHTML = '<p style="color: var(--text-muted); padding: 24px; text-align: center;">No matches found.</p>';
                     return;
                 }
 
-                let html = '<table><thead><tr>';
-                config.columns.forEach(col => { html += `<th>${col}</th>`; });
-                html += '</tr></thead><tbody>';
-                entries.forEach(row => {
-                    html += '<tr>';
-                    config.columns.forEach(col => {
-                        if (col === 'Rating') {
-                            const badgeClass = getRatingBadgeClass(row[col]);
-                            html += `<td><span class="rating-badge ${badgeClass}">${row[col] || ''}/10</span></td>`;
-                        } else {
-                            html += `<td>${row[col] || ''}</td>`;
-                        }
+                if (isMobile()) {
+                    wrap.innerHTML = '';
+                    const listDiv = document.createElement('div');
+                    listDiv.className = 'entry-list';
+                    entries.forEach(row => {
+                        const card = document.createElement('div');
+                        card.className = 'entry-card';
+                        
+                        const ratingDisplay = (row.Rating != null && row.Rating !== '') ? `${row.Rating}/10` : '—';
+                        const badge = `<span class="rating-badge ${getRatingBadgeClass(row.Rating)}">${ratingDisplay}</span>`;
+                        
+                        card.innerHTML = `<div class="entry-title">${row[config.columns[0]]} ${badge}</div>`;
+                        
+                        let meta = '<div class="entry-meta">';
+                        config.columns.forEach((col, idx) => {
+                            if (idx > 0 && col !== 'Rating') {
+                                meta += `<div class="meta-field"><span style="font-size: 0.7em;">${col}</span><span class="meta-value">${displayValue(row[col])}</span></div>`;
+                            }
+                        });
+                        meta += '</div>';
+                        card.innerHTML += meta;
+                        listDiv.appendChild(card);
                     });
-                    html += '</tr>';
-                });
-                html += '</tbody></table>';
-                wrap.innerHTML = html;
+                    wrap.appendChild(listDiv);
+                } else {
+                    let html = '<div class="table-wrap"><table><thead><tr>';
+                    config.columns.forEach(col => { html += `<th>${col}</th>`; });
+                    html += '</tr></thead><tbody>';
+                    entries.forEach(row => {
+                        html += '<tr>';
+                        config.columns.forEach(col => {
+                            if (col === 'Rating') {
+                                const ratingDisplay = (row[col] != null && row[col] !== '') ? `${row[col]}/10` : '—';
+                                html += `<td><span class="rating-badge ${getRatingBadgeClass(row[col])}">${ratingDisplay}</span></td>`;
+                            } else {
+                                html += `<td>${displayValue(row[col])}</td>`;
+                            }
+                        });
+                        html += '</tr>';
+                    });
+                    html += '</tbody></table></div>';
+                    wrap.innerHTML = html;
+                }
             } catch (err) {
                 wrap.innerHTML = `<div class="error">${err.message}</div>`;
                 stats.textContent = '';
             }
         }
 
-        // EVENT REGISTRIES
+        // Apply URL values to inputs
+        document.getElementById('searchBox').value = searchQuery;
+        document.getElementById('sortSelect').value = sortOrder;
+
+        // Event Listeners
         document.getElementById('searchBox').addEventListener('input', (e) => {
-            searchQuery = e.target.value;
-            renderTable(); 
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(() => {
+                searchQuery = e.target.value;
+                updateURL();
+                renderTable();
+            }, 150);
         });
 
         document.getElementById('sortSelect').addEventListener('change', (e) => {
             sortOrder = e.target.value;
+            updateURL();
             renderTable();
+        });
+
+        window.addEventListener('resize', () => {
+            const mobile = isMobile();
+            if (mobile !== wasMobile) {
+                wasMobile = mobile;
+                renderTable();
+            }
         });
 
         renderNav();
