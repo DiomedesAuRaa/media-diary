@@ -207,6 +207,30 @@
             color: #333;
         }
 
+        /* Diary search section */
+        .diary-search {
+            margin-top: 36px;
+            border-top: 2px solid #f0f0f0;
+            padding-top: 24px;
+        }
+
+        .diary-search-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .diary-search-header h2 {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .diary-search-count {
+            font-size: 0.85em;
+            color: #888;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -281,6 +305,19 @@
                 <div class="status" id="status"></div>
             </div>
 
+            <!-- Diary search -->
+            <section class="diary-search">
+                <div class="diary-search-header">
+                    <h2>Search diary</h2>
+                    <span class="diary-search-count" id="diarySearchCount"></span>
+                </div>
+                <div class="search-wrap">
+                    <input type="text" id="diarySearch" placeholder="Search your entries…" autocomplete="off" spellcheck="false">
+                    <p class="search-hint" id="diarySearchHint"></p>
+                </div>
+                <div id="diarySearchResults" style="margin-top: 14px;"></div>
+            </section>
+
             <section class="recent">
                 <h2>Recent entries</h2>
                 <div id="recentTable"></div>
@@ -296,6 +333,9 @@
         let searchTimer = null;
         let lastSearchResults = [];
         let searchPending = false;
+
+        // Diary search state
+        let diarySearchTimer = null;
 
         function todayMmDdYy() {
             const d = new Date();
@@ -356,6 +396,11 @@
             document.getElementById('searchResults').classList.remove('visible');
             document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
             clearStatus();
+            // Clear diary search on tab switch
+            document.getElementById('diarySearch').value = '';
+            document.getElementById('diarySearchHint').textContent = '';
+            document.getElementById('diarySearchResults').innerHTML = '';
+            document.getElementById('diarySearchCount').textContent = '';
             renderMediaNav();
             updateFormLabels();
             updateSaveState();
@@ -371,6 +416,13 @@
                 tv: 'Search for a TV show…',
             };
             document.getElementById('titleSearch').placeholder = placeholders[currentType] || 'Start typing a title…';
+
+            const diaryPlaceholders = {
+                movies: 'Search your movie diary…',
+                books: 'Search your book diary…',
+                tv: 'Search your TV diary…',
+            };
+            document.getElementById('diarySearch').placeholder = diaryPlaceholders[currentType] || 'Search your entries…';
         }
 
         function updateSearchHint() {
@@ -528,6 +580,91 @@
             html += '</tbody></table>';
             document.getElementById('recentTable').innerHTML = html;
         }
+
+        // ── Diary search ──────────────────────────────────────────────────────
+
+        function renderDiaryResults(results, total) {
+            const out = document.getElementById('diarySearchResults');
+            const count = document.getElementById('diarySearchCount');
+
+            if (!results.length) {
+                out.innerHTML = '';
+                count.textContent = '';
+                return;
+            }
+
+            const config = mediaTypes[currentType];
+            // Show title + api_fields (e.g. Director/Author/Creator) + date + rating
+            const cols = [config.title_column, ...config.api_fields, ...config.auto_fields, 'Rating'];
+
+            count.textContent = total === results.length
+                ? `${total} result${total === 1 ? '' : 's'}`
+                : `showing ${results.length} of ${total}`;
+
+            let html = '<table><thead><tr>';
+            cols.forEach(c => { html += `<th>${c}</th>`; });
+            html += '</tr></thead><tbody>';
+            results.forEach(row => {
+                html += '<tr>';
+                cols.forEach(c => {
+                    html += c === 'Rating'
+                        ? `<td><span class="rating-badge">${row[c] || ''}</span></td>`
+                        : `<td>${row[c] || ''}</td>`;
+                });
+                html += '</tr>';
+            });
+            html += '</tbody></table>';
+            out.innerHTML = html;
+        }
+
+        document.getElementById('diarySearch').addEventListener('input', (e) => {
+            const q = e.target.value.trim();
+            const hint = document.getElementById('diarySearchHint');
+            const count = document.getElementById('diarySearchCount');
+
+            if (diarySearchTimer) clearTimeout(diarySearchTimer);
+
+            if (q.length < 2) {
+                document.getElementById('diarySearchResults').innerHTML = '';
+                hint.textContent = '';
+                hint.className = 'search-hint';
+                count.textContent = '';
+                return;
+            }
+
+            hint.textContent = 'Searching…';
+            hint.className = 'search-hint';
+
+            diarySearchTimer = setTimeout(async () => {
+                try {
+                    const res = await fetch(
+                        `/api/${currentType}/entries/search?q=${encodeURIComponent(q)}&limit=50`
+                    );
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    const data = await res.json();
+                    const results = data.results || [];
+                    const total = data.total ?? results.length;
+
+                    if (!results.length) {
+                        hint.textContent = 'No matches in your diary.';
+                        hint.className = 'search-hint';
+                        document.getElementById('diarySearchResults').innerHTML = '';
+                        count.textContent = '';
+                    } else {
+                        hint.textContent = '';
+                        hint.className = 'search-hint';
+                        renderDiaryResults(results, total);
+                    }
+                } catch (err) {
+                    hint.textContent = 'Search failed.';
+                    hint.className = 'search-hint error';
+                    document.getElementById('diarySearchResults').innerHTML = '';
+                    count.textContent = '';
+                }
+            }, 300);
+        });
+
+        // ── Title search handlers (unchanged) ─────────────────────────────────
 
         document.getElementById('titleSearch').addEventListener('input', (e) => {
             clearStatus();

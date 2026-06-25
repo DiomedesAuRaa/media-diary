@@ -62,6 +62,23 @@ async def lookup(media_type: str, external_id: str) -> dict[str, str]:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
+@router.get("/{media_type}/entries/search")
+def search_entries(
+    media_type: str,
+    q: str = Query(min_length=1),
+    limit: int = Query(default=50, ge=1, le=200),
+) -> dict[str, Any]:
+    config = _require_type(media_type)
+    title_col = config["title_column"]
+    q_lower = q.strip().lower()
+    all_rows = read_entries(media_type)
+    matched = [
+        row for row in all_rows
+        if q_lower in (row.get(title_col) or "").lower()
+    ]
+    return {"results": matched[:limit], "total": len(matched)}
+
+
 @router.get("/{media_type}/entries")
 def entries(media_type: str, limit: int = Query(default=20, ge=1, le=200)) -> dict[str, Any]:
     _require_type(media_type)
