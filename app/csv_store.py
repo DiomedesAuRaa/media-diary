@@ -1,174 +1,158 @@
 from __future__ import annotations
 
-from typing import Any, Literal
+import csv
+from datetime import datetime
+from typing import Any
 
-from fastapi import APIRouter, HTTPException, Query
-from pydantic import BaseModel, Field
-
-from app.config import get_enabled_types, get_media_type
-from app.csv_store import (
-    build_row, 
-    delete_entry, 
-    prepend_entry, 
-    read_entries, 
-    title_exists, 
-    update_entry_rating
-)
-from app.git_sync import get_sync_status, sync_csv_async
-from app.providers import get_provider
-
-router = APIRouter(prefix="/api", tags=["entries"])
+from app.config import csv_path, get_media_type
 
 
-class EntryCreate(BaseModel):
-    title: str = Field(min_length=1)
-    rating: int = Field(ge=1, le=10)
-    external_id: str = Field(min_length=1)
-    date_rated: str | None = None
-    api_values: dict[str, str] | None = None
-    strategy: Literal["update", "rewatch"] | None = None
+def format_date_mmddyy(dt: datetime | None = None) -> str:
+    dt = dt or datetime.now()
+    return dt.strftime("%m/%d/%y")
 
 
-@router.get("/types")
-def list_types() -> dict[str, Any]:
-    enabled = get_enabled_types()
-    payload = {}
-    for key, config in enabled.items():
-        payload[key] = {
-            "label": config["label"],
-            "columns": config["columns"],
-            "title_column": config["title_column"],
-            "user_fields": config["user_fields"],
-            "auto_fields": config["auto_fields"],
-            "api_fields": config["api_fields"],
-        }
-    return {"types": payload, "git_sync": get_sync_status()}
+def read_entries(media_type: str, limit: int | None = None) -> list[dict[str, str]]:
+    path = csv_path(media_type)
+    if not path.exists():
+        return []
+
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+
+    if limit is not None:
+        return rows[:limit]
+    return rows
 
 
-@router.get("/{media_type}/search")
-async def search(media_type: str, q: str = Query(min_length=1)) -> dict[str, Any]:
-    config = _require_type(media_type)
-    provider = get_provider(config["provider"])
-    try:
-        results = await provider.search(q)
-    except NotImplementedError as exc:
-        raise HTTPException(status_code=501, detail=str(exc)) from exc
-    except RuntimeError as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
-    return {"results": results}
+def title_exists(media_type: str, title: str) -> bool:
+    config = get_media_type(media_type)
+    title_column = config["title_column"]
+    normalized = title.strip().casefold()
+    for row in read_entries(media_type):
+        existing = (row.get(title_column) or "").strip().casefold()
+        if existing == normalized:
+            return True
+    return False
 
 
-@router.get("/{media_type}/lookup/{external_id}")
-async def lookup(media_type: str, external_id: str) -> dict[str, str]:
-    config = _require_type(media_type)
-    provider = get_provider(config["provider"])
-    try:
-        return await provider.lookup(external_id)
-    except NotImplementedError as exc:
-        raise HTTPException(status_code=501, detail=str(exc)) from exc
-    except RuntimeError as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+def prepend_entry(media_type: str, row: dict[str, str]) -> dict[str, str]:
+    config = get_media_type(media_type)
+    path = csv_path(media_type)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    columns = config["columns"]
+    normalized = {column: (row.get(column) or "").strip() for column in columns}
+
+    existing_rows: list[dict[str, str]] = []
+    if path.exists():
+        with path.open("r", encoding="utf-8", newline="") as handle:
+            existing_rows = list(csv.DictReader(handle))
+
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=columns)
+        writer.writeheader()
+        writer.writerow(normalized)
+        for existing in existing_rows:
+            writer.writerow({column: existing.get(column, "") for column in columns})
+
+    return normalized
 
 
-@router.get("/{media_type}/entries/search")
-def search_entries(
+def build_row(
     media_type: str,
-    q: str = Query(min_length=1),
-    limit: int = Query(default=50, ge=1, le=200),
-) -> dict[str, Any]:
-    config = _require_type(media_type)
-    title_col = config["title_column"]
-    q_lower = q.strip().lower()
-    all_rows = read_entries(media_type)
-    matched = [
-        row for row in all_rows
-        if q_lower in (row.get(title_col) or "").lower()
-    ]
-    return {"results": matched[:limit], "total": len(matched)}
+    *,
+    title: str,
+    rating: str,
+    date_rated: str | None = None,
+    api_values: dict[str, str] | None = None,
+) -> dict[str, str]:
+    config = get_media_type(media_type)
+    api_values = api_values or {}
+    row: dict[str, Any] = {}
+
+    for column in config["columns"]:
+        row[column] = ""
+
+    row[config["title_column"]] = title.strip()
+    row["Rating"] = str(rating).strip()
+
+    date_str = date_rated.strip() if date_rated else format_date_mmddyy()
+    for field in config["auto_fields"]:
+        row[field] = date_str
+
+    for field in config["api_fields"]:
+        row[field] = api_values.get(field, "").strip()
+
+    return row
 
 
-@router.get("/{media_type}/entries")
-def entries(media_type: str, limit: int = Query(default=20, ge=1, le=200)) -> dict[str, Any]:
-    _require_type(media_type)
-    rows = read_entries(media_type, limit=limit)
-    return {"entries": rows}
+def update_entry_rating(media_type: str, title: str, rating: str, date_rated: str | None = None) -> dict[str, str] | None:
+    config = get_media_type(media_type)
+    path = csv_path(media_type)
+    if not path.exists():
+        return None
 
+    title_column = config["title_column"]
+    auto_fields = config["auto_fields"]
+    date_column = auto_fields[0] if auto_fields else "Date Watched/Rated"
 
-@router.post("/{media_type}/entries")
-async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
-    config = _require_type(media_type)
-    title = payload.title.strip()
+    existing_rows = read_entries(media_type)
+    updated_row = None
 
-    duplicate = title_exists(media_type, title)
-    
-    if duplicate and payload.strategy is None:
-        raise HTTPException(
-            status_code=409,
-            detail=f"'{title}' already exists in your diary."
-        )
-
-    if duplicate and payload.strategy == "update":
-        saved = update_entry_rating(
-            media_type,
-            title=title,
-            rating=str(payload.rating),
-            date_rated=payload.date_rated
-        )
-        if saved:
-            commit_message = f"{media_type}: update rating for {title} to {payload.rating}/10"
-            sync_csv_async(media_type, commit_message)
-            return {"status": "updated", "entry": saved, "git_sync": get_sync_status()}
-        else:
-            raise HTTPException(status_code=500, detail="Failed to update entry rating.")
-
-    api_values = payload.api_values
-    if api_values is None:
-        provider = get_provider(config["provider"])
-        try:
-            api_values = await provider.lookup(payload.external_id)
-        except (NotImplementedError, RuntimeError) as exc:
-            raise HTTPException(status_code=500, detail=str(exc)) from exc
-
-    row = build_row(
-        media_type,
-        title=title,
-        rating=str(payload.rating),
-        date_rated=payload.date_rated,
-        api_values=api_values,
-    )
-    saved = prepend_entry(media_type, row)
-
-    action = "rewatch" if duplicate else "rate"
-    commit_message = f"{media_type}: {action} {title} {payload.rating}/10"
-    sync_csv_async(media_type, commit_message)
-
-    return {
-        "status": "created",
-        "entry": saved,
-        "git_sync": get_sync_status(),
-    }
-
-
-@router.delete("/{media_type}/entries")
-def delete_diary_entry(
-    media_type: str, 
-    title: str = Query(min_length=1), 
-    date_rated: str = Query(min_length=1)
-) -> dict[str, Any]:
-    _require_type(media_type)
-    success = delete_entry(media_type, title=title, date_rated=date_rated)
-    
-    if not success:
-        raise HTTPException(status_code=404, detail="Diary entry not found.")
+    for row in existing_rows:
+        row_title = (row.get(title_column) or "").strip()
+        row_date = (row.get(date_column) or "").strip()
         
-    commit_message = f"{media_type}: delete entry for {title} logged on {date_rated}"
-    sync_csv_async(media_type, commit_message)
-    
-    return {"status": "deleted", "git_sync": get_sync_status()}
+        match_title = row_title.casefold() == title.strip().casefold()
+        match_date = (date_rated is None) or (row_date == date_rated.strip())
+        
+        if updated_row is None and match_title and match_date:
+            row["Rating"] = str(rating).strip()
+            updated_row = row
+
+    if updated_row is not None:
+        columns = config["columns"]
+        with path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=columns)
+            writer.writeheader()
+            for row in existing_rows:
+                writer.writerow({col: row.get(col, "") for col in columns})
+        return updated_row
+
+    return None
 
 
-def _require_type(media_type: str) -> dict[str, Any]:
-    try:
-        return get_media_type(media_type)
-    except KeyError as exc:
-        raise HTTPException(status_code=404, detail=str(exc)) from exc
+def delete_entry(media_type: str, title: str, date_rated: str) -> bool:
+    config = get_media_type(media_type)
+    path = csv_path(media_type)
+    if not path.exists():
+        return False
+
+    title_column = config["title_column"]
+    auto_fields = config["auto_fields"]
+    date_column = auto_fields[0] if auto_fields else "Date Watched/Rated"
+
+    existing_rows = read_entries(media_type)
+    new_rows = []
+    deleted = False
+
+    for row in existing_rows:
+        row_title = (row.get(title_column) or "").strip()
+        row_date = (row.get(date_column) or "").strip()
+        
+        if not deleted and row_title.casefold() == title.strip().casefold() and row_date == date_rated.strip():
+            deleted = True
+            continue
+        new_rows.append(row)
+
+    if deleted:
+        columns = config["columns"]
+        with path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=columns)
+            writer.writeheader()
+            for row in new_rows:
+                writer.writerow({col: row.get(col, "") for col in columns})
+        return True
+
+    return False
