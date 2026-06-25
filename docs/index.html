@@ -7,11 +7,22 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0d0b18 0%, #130f26 100%);
+            --card-bg: #1c1836;
+            --header-gradient: linear-gradient(135deg, #5f27cd, #341f97);
+            --text-main: #f1f2f6;
+            --text-muted: #a5a1c2;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --input-bg: #120e24;
+            --item-hover: rgba(255, 255, 255, 0.04);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #1a1a1b;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-main);
+            background: var(--bg-gradient);
             padding: 20px;
             min-height: 100vh;
         }
@@ -19,117 +30,149 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
             overflow: hidden;
         }
 
         header {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            background: var(--header-gradient);
             color: white;
-            padding: 28px 32px;
+            padding: 32px;
             text-align: center;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        header h1 { font-size: 2.2em; margin-bottom: 6px; }
-        header p { opacity: 0.9; }
+        header h1 { font-size: 2.4em; margin-bottom: 6px; font-weight: 700; letter-spacing: -0.5px; }
+        header p { opacity: 0.85; font-size: 1.05em; }
 
         .media-nav {
-            background: #1a1a1b;
+            background: rgba(0, 0, 0, 0.2);
             padding: 12px 20px;
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
-            border-bottom: 2px solid #6c5ce7;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .media-tab {
             background: transparent;
-            color: #ccc;
-            border: 1px solid #444;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
             padding: 8px 18px;
             border-radius: 20px;
             cursor: pointer;
             font-size: 0.9em;
             font-weight: 600;
+            transition: all 0.2s ease;
         }
 
-        .media-tab.active { background: #6c5ce7; color: white; border-color: #6c5ce7; }
-        .media-tab.disabled { opacity: 0.35; cursor: default; }
+        .media-tab:hover:not(.disabled) { color: var(--text-main); background: var(--item-hover); }
+        .media-tab.active { background: #5f27cd; color: white; border-color: #5f27cd; box-shadow: 0 0 12px rgba(95, 39, 205, 0.4); }
+        .media-tab.disabled { opacity: 0.25; cursor: default; }
 
-        .content { padding: 24px 28px; }
+        .content { padding: 32px; }
 
-        /* --- NEW SEARCH STYLING --- */
         .controls-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .stats {
-            color: #555;
+            color: var(--text-muted);
             font-size: 0.95em;
+            font-weight: 500;
         }
 
-        .search-box {
-            padding: 8px 14px;
-            border: 2px solid #eee;
-            border-radius: 6px;
-            font-size: 0.9em;
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
             width: 100%;
-            max-width: 300px;
-            outline: none;
-            transition: border-color 0.2s;
+            max-width: 520px;
         }
 
-        .search-box:focus {
-            border-color: #6c5ce7;
+        .search-box, .sort-select {
+            padding: 10px 14px;
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.2s;
         }
-        /* -------------------------- */
+
+        .search-box { flex: 2; }
+        .sort-select { flex: 1; cursor: pointer; }
+
+        .search-box:focus, .sort-select:focus {
+            border-color: #5f27cd;
+            box-shadow: 0 0 0 3px rgba(95, 39, 205, 0.2);
+        }
+
+        .table-wrap { 
+            overflow-x: auto; 
+            max-height: 70vh; 
+            overflow-y: auto; 
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.9em;
+            font-size: 0.95em;
         }
 
         th, td {
             text-align: left;
-            padding: 10px 8px;
-            border-bottom: 1px solid #eee;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
         }
 
         th {
-            color: #666;
-            font-size: 0.78em;
+            color: var(--text-muted);
+            font-size: 0.8em;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
             position: sticky;
             top: 0;
-            background: white;
+            background: #1f1b3a; /* Solid offset color to remain legible while scrolling */
+            border-bottom: 2px solid var(--border-color);
+            z-index: 10;
         }
 
-        .table-wrap { overflow-x: auto; max-height: 70vh; overflow-y: auto; }
+        tr:hover td { background: var(--item-hover); }
 
+        /* Tiered Badges Mirroring write-app */
         .rating-badge {
             display: inline-block;
-            background: #6c5ce7;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-weight: 700;
             font-size: 0.85em;
+            text-align: center;
+            border: 1px solid transparent;
         }
+        .rating-tier-high { background: rgba(46, 213, 115, 0.15); color: #2ed573; border-color: rgba(46, 213, 115, 0.2); }
+        .rating-tier-mid { background: rgba(112, 111, 211, 0.25); color: #9c88ff; border-color: rgba(112, 111, 211, 0.3); }
+        .rating-tier-low { background: rgba(255, 127, 80, 0.15); color: #ff7f50; border-color: rgba(255, 127, 80, 0.2); }
 
         .error {
-            background: #f8d7da;
-            color: #721c24;
+            background: rgba(255, 71, 87, 0.15);
+            color: #ff4757;
             padding: 14px;
             border-radius: 8px;
+            border: 1px solid rgba(255, 71, 87, 0.3);
         }
     </style>
 </head>
@@ -137,7 +180,7 @@
     <div class="container">
         <header>
             <h1>Media Diary</h1>
-            <p>Read-only view of rated media.</p>
+            <p>Read-only archive of rated media collections.</p>
         </header>
 
         <nav class="media-nav" id="mediaNav"></nav>
@@ -145,7 +188,15 @@
         <div class="content">
             <div class="controls-row">
                 <div class="stats" id="stats"></div>
-                <input type="text" id="searchBox" class="search-box" placeholder="Search entries...">
+                <div class="filter-group">
+                    <input type="text" id="searchBox" class="search-box" placeholder="Search entries...">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="date-desc">Recent First</option>
+                        <option value="date-asc">Oldest First</option>
+                        <option value="rating-desc">Highest Rated</option>
+                        <option value="rating-asc">Lowest Rated</option>
+                    </select>
+                </div>
             </div>
             
             <div class="table-wrap" id="tableWrap"></div>
@@ -176,7 +227,8 @@
 
         let currentType = 'movies';
         let cache = {};
-        let searchQuery = ''; // NEW: Holds the current active search keyword
+        let searchQuery = ''; 
+        let sortOrder = 'date-desc'; // Default sorting mode tracks date backwards
 
         function renderNav() {
             const nav = document.getElementById('mediaNav');
@@ -188,7 +240,6 @@
                 if (config.enabled) {
                     btn.addEventListener('click', () => {
                         currentType = key;
-                        // Reset search box when switching tabs
                         document.getElementById('searchBox').value = '';
                         searchQuery = '';
                         
@@ -210,36 +261,56 @@
             return cache[type];
         }
 
+        // Helper function mapping dynamic tiers to CSS design styles
+        function getRatingBadgeClass(ratingStr) {
+            const val = parseInt(ratingStr, 10);
+            if (isNaN(val)) return 'rating-tier-mid';
+            if (val >= 8) return 'rating-tier-high';
+            if (val >= 5) return 'rating-tier-mid';
+            return 'rating-tier-low';
+        }
+
         async function renderTable() {
             const wrap = document.getElementById('tableWrap');
             const stats = document.getElementById('stats');
             const config = TYPES[currentType];
 
             try {
-                let entries = await loadData(currentType);
+                let entries = [...(await loadData(currentType))]; // Clone array to preserve core cache orders
                 
-                // --- NEW SEARCH FILTER LOGIC ---
+                // 1. FILTERING LOGIC
                 if (searchQuery) {
                     const query = searchQuery.toLowerCase();
                     entries = entries.filter(row => {
-                        // Check if any of the table columns contain the search string
                         return config.columns.some(col => {
                             const val = row[col];
                             return val && String(val).toLowerCase().includes(query);
                         });
                     });
                 }
-                // -------------------------------
+
+                // 2. NEW SORTING ENGINE
+                const dateColumnName = config.columns[1]; // Evaluates the primary logging tracking date column
+                entries.sort((a, b) => {
+                    if (sortOrder === 'rating-desc') {
+                        return (Number(b.Rating) || 0) - (Number(a.Rating) || 0);
+                    } else if (sortOrder === 'rating-asc') {
+                        return (Number(a.Rating) || 0) - (Number(b.Rating) || 0);
+                    } else if (sortOrder === 'date-asc') {
+                        return new Date(a[dateColumnName] || 0) - new Date(b[dateColumnName] || 0);
+                    } else { // 'date-desc'
+                        return new Date(b[dateColumnName] || 0) - new Date(a[dateColumnName] || 0);
+                    }
+                });
 
                 const ratings = entries.map(e => Number(e.Rating)).filter(n => !Number.isNaN(n));
                 const avg = ratings.length ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1) : '—';
                 
-                // Adjusted stats string to reflect "matching" items if searching
                 const searchSuffix = searchQuery ? ' matching search' : '';
                 stats.textContent = `${entries.length} entries${searchSuffix} · average rating ${avg}`;
 
                 if (!entries.length) {
-                    wrap.innerHTML = '<p style="color: #666; padding: 10px 0;">No matching entries found.</p>';
+                    wrap.innerHTML = '<p style="color: var(--text-muted); padding: 24px; text-align: center;">No matching ledger entries found in this view index.</p>';
                     return;
                 }
 
@@ -250,7 +321,8 @@
                     html += '<tr>';
                     config.columns.forEach(col => {
                         if (col === 'Rating') {
-                            html += `<td><span class="rating-badge">${row[col] || ''}</span></td>`;
+                            const badgeClass = getRatingBadgeClass(row[col]);
+                            html += `<td><span class="rating-badge ${badgeClass}">${row[col] || ''}/10</span></td>`;
                         } else {
                             html += `<td>${row[col] || ''}</td>`;
                         }
@@ -265,12 +337,16 @@
             }
         }
 
-        // --- NEW EVENT LISTENER FOR SEARCH INPUT ---
+        // EVENT REGISTRIES
         document.getElementById('searchBox').addEventListener('input', (e) => {
             searchQuery = e.target.value;
-            renderTable(); // Re-render table dynamically as user types
+            renderTable(); 
         });
-        // -------------------------------------------
+
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            sortOrder = e.target.value;
+            renderTable();
+        });
 
         renderNav();
         renderTable();
