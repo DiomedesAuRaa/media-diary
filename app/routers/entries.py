@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Literal
 
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field
@@ -19,7 +19,7 @@ class EntryCreate(BaseModel):
     external_id: str = Field(min_length=1)
     date_rated: str | None = None
     api_values: dict[str, str] | None = None
-    allow_update: bool = False
+    strategy: Literal["update", "rewatch"] | None = None
 
 
 @router.get("/types")
@@ -94,15 +94,15 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
 
     duplicate = title_exists(media_type, title)
     
-    if duplicate and not payload.allow_update:
-        return {
-            "status": "duplicate",
-            "message": f"'{title}' already exists in your diary.",
-            "prompt_update": True,
-            "git_sync": get_sync_status()
-        }
+    # If it is a duplicate and the frontend hasn't stated a strategy yet, halt with 409
+    if duplicate and payload.strategy is None:
+        raise HTTPException(
+            status_code=409,
+            detail=f"'{title}' already exists in your diary."
+        )
 
-    if duplicate and payload.allow_update:
+    # Strategy A: Update existing entry in-place
+    if duplicate and payload.strategy == "update":
         saved = update_entry_rating(
             media_type,
             title=title,
@@ -112,22 +112,17 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
         if saved:
             commit_message = f"{media_type}: update rating for {title} to {payload.rating}/10"
             sync_csv_async(media_type, commit_message)
-            return {
-                "status": "updated",
-                "entry": saved,
-                "git_sync": get_sync_status(),
-            }
+            return {"status": "updated", "entry": saved, "git_sync": get_sync_status()}
         else:
             raise HTTPException(status_code=500, detail="Failed to update entry rating.")
 
+    # Strategy B (or No Duplicate): Save a brand new entry row
     api_values = payload.api_values
     if api_values is None:
         provider = get_provider(config["provider"])
         try:
             api_values = await provider.lookup(payload.external_id)
-        except NotImplementedError as exc:
-            raise HTTPException(status_code=501, detail=str(exc)) from exc
-        except RuntimeError as exc:
+        except (NotImplementedError, RuntimeError) as exc:
             raise HTTPException(status_code=500, detail=str(exc)) from exc
 
     row = build_row(
@@ -139,13 +134,13 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
     )
     saved = prepend_entry(media_type, row)
 
-    commit_message = f"{media_type}: rate {title} {payload.rating}/10"
+    action = "rewatch" if duplicate else "rate"
+    commit_message = f"{media_type}: {action} {title} {payload.rating}/10"
     sync_csv_async(media_type, commit_message)
 
     return {
         "status": "created",
         "entry": saved,
-        "duplicate_warning": False,
         "git_sync": get_sync_status(),
     }
 
