@@ -690,23 +690,41 @@
 
         function handleSearchInput() {
             clearTimeout(searchTimeout);
+
             const q = document.getElementById('titleSearch').value.trim();
             const panel = document.getElementById('searchResults');
-            if (!q) { panel.classList.remove('visible'); return; }
+
+            if (!q) {
+                panel.classList.remove('visible');
+                return;
+            }
+
             searchTimeout = setTimeout(async () => {
                 try {
+                    const res = await fetch(
+                        `/api/${currentType}/search?q=${encodeURIComponent(q)}`
+                    );
+
+                    if (!res.ok) {
+                        console.error('Search failed:', res.status);
+                        panel.classList.remove('visible');
+                        return;
+                    }
+
                     const data = await res.json();
 
-                    console.log("Search response:", data);
+                    console.log('Search response:', data);
 
                     renderDropdown(
                         Array.isArray(data)
                             ? data
-                            : data.results || []
+                            : (data.results || [])
                     );
-                    const items = await res.json();
-                    renderDropdown(items);
-                } catch (err) { console.error(err); }
+
+                } catch (err) {
+                    console.error('Search error:', err);
+                    panel.classList.remove('visible');
+                }
             }, 250);
         }
 
