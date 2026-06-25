@@ -45,163 +45,187 @@
             padding: 32px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
         }
 
         header h1 { font-size: 2.4em; margin-bottom: 6px; font-weight: 700; letter-spacing: -0.5px; }
         header p { opacity: 0.85; font-size: 1.05em; }
 
-        .tabs {
-            display: flex;
+        .sync-badge {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 0.75em;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+        .sync-badge.synced { color: #2ed573; border-color: rgba(46,213,115,0.2); }
+        .sync-badge.error { color: #ff4757; border-color: rgba(255,71,87,0.2); }
+
+        .media-nav {
             background: rgba(0, 0, 0, 0.2);
+            padding: 12px 20px;
+            display: flex;
+            gap: 8px;
             border-bottom: 1px solid var(--border-color);
-            padding: 4px 4px 0 4px;
         }
 
-        .tab-btn {
-            flex: 1;
-            padding: 14px;
+        .media-tab {
             background: transparent;
-            border: none;
             color: var(--text-muted);
-            font-size: 1.05em;
-            font-weight: 600;
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 20px;
             cursor: pointer;
-            border-radius: 8px 8px 0 0;
+            font-size: 0.9em;
+            font-weight: 600;
             transition: all 0.2s ease;
         }
 
-        .tab-btn:hover { color: var(--text-main); background: var(--item-hover); }
-        .tab-btn.active { color: white; background: var(--card-bg); border-bottom: 3px solid #5f27cd; }
+        .media-tab:hover { color: var(--text-main); background: var(--item-hover); }
+        .media-tab.active { background: #5f27cd; color: white; border-color: #5f27cd; box-shadow: 0 0 12px rgba(95, 39, 205, 0.4); }
 
-        .content { padding: 32px; }
-        .section-title { font-size: 1.3em; margin-bottom: 16px; color: white; font-weight: 600; }
+        .workspace { padding: 32px; display: flex; flex-direction: column; gap: 32px; }
 
-        .search-wrap { position: relative; margin-bottom: 24px; }
-        
-        .input-field {
+        .section-title { font-size: 1.2em; margin-bottom: 16px; font-weight: 600; color: var(--text-main); }
+
+        .entry-card {
+            background: rgba(0,0,0,0.15);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-row { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-end; }
+        .form-group { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        .form-group.tight { flex: 0 0 140px; }
+
+        label { font-size: 0.85em; color: var(--text-muted); font-weight: 500; }
+
+        .search-wrap { position: relative; width: 100%; }
+
+        input[type="text"], select {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px 14px;
             background: var(--input-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
+            font-size: 0.95em;
             color: var(--text-main);
-            font-size: 1.05em;
-            transition: border-color 0.2s;
+            outline: none;
+            transition: all 0.2s;
         }
-        .input-field:focus { outline: none; border-color: #5f27cd; box-shadow: 0 0 0 3px rgba(95, 39, 205, 0.2); }
 
-        /* Search Spinner styling */
-        .search-container { position: relative; }
-        .spinner {
-            display: none;
-            position: absolute;
-            right: 16px;
-            top: 16px;
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255,255,255,0.1);
-            border-radius: 50%;
-            border-top-color: #5f27cd;
-            animation: spin 0.6s linear infinite;
+        input[type="text"]:focus, select:focus {
+            border-color: #5f27cd;
+            box-shadow: 0 0 0 3px rgba(95, 39, 205, 0.2);
         }
-        @keyframes spin { to { transform: rotate(360deg); } }
 
-        .dropdown {
+        .dropdown-panel {
             position: absolute;
             top: calc(100% + 4px);
-            left: 0; right: 0;
-            background: #231e42;
-            border: 1px solid var(--border-color);
+            left: 0;
+            right: 0;
+            background: #1c1836;
+            border: 1px solid rgba(255,255,255,0.12);
             border-radius: 8px;
-            max-height: 320px;
+            max-height: 280px;
             overflow-y: auto;
             z-index: 100;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             display: none;
         }
-        .dropdown.visible { display: block; }
-        
+        .dropdown-panel.visible { display: block; }
+
         .dropdown-item {
             padding: 12px 16px;
             cursor: pointer;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid var(--border-color);
             transition: background 0.15s;
         }
         .dropdown-item:last-child { border-bottom: none; }
-        .dropdown-item:hover, .dropdown-item.highlighted { background: #342e5c; }
-        .dropdown-item .title { font-weight: 600; color: white; }
-        .dropdown-item .meta { font-size: 0.85em; color: var(--text-muted); margin-top: 2px; }
+        .dropdown-item:hover, .dropdown-item.highlighted { background: rgba(255,255,255,0.06); }
+        .dropdown-item .item-title { font-weight: 600; font-size: 0.95em; margin-bottom: 2px; }
+        .dropdown-item .item-sub { font-size: 0.8em; color: var(--text-muted); }
 
-        .preview-panel {
-            background: var(--input-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 24px;
-            display: none;
-        }
-        .preview-panel.visible { display: block; }
-        
-        .preview-header h3 { font-size: 1.4em; color: white; margin-bottom: 4px; }
-        .preview-header p { color: var(--text-muted); font-size: 0.95em; margin-bottom: 16px; }
-
-        .rating-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+        .rating-grid { display: flex; gap: 6px; width: 100%; }
         .rating-btn {
             flex: 1;
-            min-width: 45px;
-            padding: 10px 0;
-            background: #231e42;
+            padding: 12px 0;
+            background: var(--input-bg);
             border: 1px solid var(--border-color);
-            color: var(--text-main);
+            color: var(--text-muted);
             border-radius: 6px;
-            font-weight: 600;
             cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95em;
             transition: all 0.15s;
         }
-        .rating-btn:hover { background: #342e5c; border-color: var(--text-muted); }
-        .rating-btn.selected { background: #5f27cd; color: white; border-color: #5f27cd; box-shadow: 0 0 10px rgba(95, 39, 205, 0.4); }
+        .rating-btn:hover { border-color: rgba(255,255,255,0.2); color: var(--text-main); }
+        .rating-btn.selected { background: #5f27cd; color: white; border-color: #5f27cd; box-shadow: 0 0 8px rgba(95,39,205,0.3); }
 
-        .form-row { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
-        .form-group { flex: 1; }
-        .form-group label { display: block; font-size: 0.85em; color: var(--text-muted); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .action-bar { display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px; align-items: center; }
 
         .btn {
-            background: #5f27cd;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            font-size: 1em;
+            padding: 12px 28px;
+            border-radius: 8px;
             font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn:hover { background: #48dbfb; color: #120e24; }
-        .btn:disabled { background: #2d2945; color: rgba(255,255,255,0.2); cursor: not-allowed; box-shadow: none; }
-
-        .status-box {
-            padding: 14px 16px;
-            border-radius: 8px;
-            margin-bottom: 24px;
             font-size: 0.95em;
-            display: none;
-            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
         }
-        .status-box.success { display: block; background: rgba(46, 213, 115, 0.15); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.3); }
-        .status-box.error { display: block; background: rgba(255, 71, 87, 0.15); color: #ff4757; border: 1px solid rgba(255, 71, 87, 0.3); }
-        .status-box.warning { display: block; background: rgba(ffa502, 0.15); color: #ffa502; border: 1px solid rgba(ffa502, 0.3); }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover:not(:disabled) { background: var(--accent-hover); transform: translateY(-1px); }
+        .btn-primary:disabled { opacity: 0.25; cursor: not-allowed; transform: none; }
 
-        .history-section { margin-top: 40px; }
+        .preview-box {
+            background: rgba(95, 39, 205, 0.08);
+            border: 1px dashed rgba(95, 39, 205, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            display: none;
+        }
+        .preview-box.visible { display: block; }
+        .preview-grid { display: flex; flex-wrap: wrap; gap: 16px 24px; }
+        .preview-item { display: flex; flex-direction: column; gap: 2px; }
+        .preview-label { font-size: 0.75em; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .preview-value { font-size: 0.95em; font-weight: 500; }
+
+        .controls-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .stats { color: var(--text-muted); font-size: 0.9em; font-weight: 500; }
         
-        table { width: 100%; border-collapse: collapse; margin-top: 8px; text-align: left; }
-        th { padding: 14px 16px; color: var(--text-muted); font-size: 0.85em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--border-color); }
-        td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-main); font-size: 0.95em; vertical-align: middle; }
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+        th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        th { color: var(--text-muted); font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(0,0,0,0.1); }
         tr:hover td { background: var(--item-hover); }
 
-        /* Tiered Badges */
         .rating-badge {
             display: inline-block;
             padding: 4px 10px;
@@ -209,194 +233,155 @@
             font-weight: 700;
             font-size: 0.85em;
             text-align: center;
+            border: 1px solid transparent;
         }
-        .rating-tier-high { background: rgba(46, 213, 115, 0.15); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.2); }
-        .rating-tier-mid { background: rgba(112, 111, 211, 0.25); color: #9c88ff; border: 1px solid rgba(112, 111, 211, 0.3); }
-        .rating-tier-low { background: rgba(255, 127, 80, 0.15); color: #ff7f50; border: 1px solid rgba(255, 127, 80, 0.2); }
+        .rating-tier-high { background: rgba(46, 213, 115, 0.15); color: #2ed573; border-color: rgba(46, 213, 115, 0.2); }
+        .rating-tier-mid { background: rgba(112, 111, 211, 0.25); color: #9c88ff; border-color: rgba(112, 111, 211, 0.3); }
+        .rating-tier-low { background: rgba(255, 127, 80, 0.15); color: #ff7f50; border-color: rgba(255, 127, 80, 0.2); }
 
-        .delete-btn {
+        .btn-delete {
             background: transparent;
-            border: none;
-            color: rgba(255, 71, 87, 0.6);
-            cursor: pointer;
-            font-weight: 600;
-            padding: 4px 8px;
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            color: #ff4757;
+            padding: 4px 10px;
             border-radius: 4px;
-            font-size: 0.9em;
+            cursor: pointer;
+            font-size: 0.8em;
+            font-weight: 600;
             transition: all 0.15s;
         }
-        .delete-btn:hover { color: #ff4757; background: rgba(255, 71, 87, 0.1); }
+        .btn-delete:hover { background: #ff4757; color: white; border-color: #ff4757; }
 
-        footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 0.85em; }
+        .status-msg {
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 500;
+            display: none;
+            margin-bottom: 16px;
+        }
+        .status-msg.success { background: rgba(46, 213, 115, 0.15); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.2); display: block; }
+        .status-msg.warning { background: rgba(25ffa, 165, 2, 0.15); color: #ffa502; border: 1px solid rgba(255, 165, 2, 0.2); display: block; }
+        .status-msg.error { background: rgba(255, 71, 87, 0.15); color: #ff4757; border: 1px solid rgba(255, 71, 87, 0.2); display: block; }
 
-        /* Custom Modal Structure */
+        /* Dialog Box Component Context */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(10, 7, 20, 0.8);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0; pointer-events: none;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; opacity: 0; pointer-events: none;
             transition: opacity 0.2s ease;
         }
-        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-overlay.visible { opacity: 1; pointer-events: auto; }
         .modal-card {
-            background: var(--card-bg);
+            background: #1c1836;
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            width: 90%;
-            max-width: 460px;
-            padding: 28px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-            transform: translateY(15px);
-            transition: transform 0.2s ease;
+            border-radius: 12px; width: 100%; max-width: 480px; padding: 28px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            transform: scale(0.95); transition: transform 0.2s ease;
         }
-        .modal-overlay.active .modal-card { transform: translateY(0); }
-        .modal-card h4 { font-size: 1.3em; color: white; margin-bottom: 10px; font-weight: 600; }
-        .modal-card p { color: var(--text-muted); font-size: 0.95em; margin-bottom: 24px; }
-        .modal-actions { display: flex; gap: 12px; justify-content: flex-end; }
-        .btn-secondary { background: #231e42; color: var(--text-main); border: 1px solid var(--border-color); }
-        .btn-secondary:hover { background: #342e5c; }
+        .modal-overlay.visible .modal-card { transform: scale(1); }
+        .modal-header { font-size: 1.25em; font-weight: 700; margin-bottom: 12px; }
+        .modal-body { font-size: 0.95em; color: var(--text-muted); margin-bottom: 24px; line-height: 1.5; }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 12px; }
+        .btn-secondary { background: rgba(255,255,255,0.08); color: var(--text-main); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.12); }
         .btn-danger { background: #ff4757; color: white; }
         .btn-danger:hover { background: #ff6b81; }
     </style>
 </head>
 <body>
-
     <div class="container">
         <header>
             <h1>Media Diary</h1>
-            <p id="syncStatus">Loading system configurations...</p>
+            <p>Log entries and sync structural content indices.</p>
+            <div class="sync-badge" id="syncStatus">Git status lookup...</div>
         </header>
 
-        <nav class="tabs" id="tabsContainer"></nav>
+        <nav class="media-nav" id="mediaNav"></nav>
 
-        <main class="content">
-            <section class="log-section">
-                <h2 class="section-title">Add Entry</h2>
-                
-                <div class="search-wrap">
-                    <div class="search-container">
-                        <input type="text" id="titleSearch" class="input-field" placeholder="Search title name..." autocomplete="off">
-                        <div class="spinner" id="searchSpinner"></div>
-                    </div>
-                    <div id="searchResults" class="dropdown"></div>
-                </div>
+        <div class="workspace">
+            <div class="entry-card">
+                <div class="section-title">Log New Rating</div>
+                <div id="statusBox" class="status-msg"></div>
 
-                <div id="preview" class="preview-panel">
-                    <div class="preview-header">
-                        <h3 id="previewTitle"></h3>
-                        <p id="previewSubtitle"></p>
-                    </div>
-
-                    <div class="rating-grid" id="ratingContainer"></div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dateRated">Date Logged</label>
-                            <input type="text" id="dateRated" class="input-field" placeholder="MM/DD/YY (or empty for today)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="titleSearch">Search Title</label>
+                        <div class="search-wrap">
+                            <input type="text" id="titleSearch" placeholder="Type to fetch metadata matching context..." autocomplete="off">
+                            <div id="searchResults" class="dropdown-panel"></div>
                         </div>
                     </div>
-
-                    <button id="saveBtn" class="btn" disabled>Save Entry</button>
                 </div>
 
-                <div id="statusBox" class="status-box"></div>
-            </section>
+                <div id="preview" class="preview-box">
+                    <div class="preview-grid" id="previewGrid"></div>
+                </div>
 
-            <section class="history-section">
-                <h2 class="section-title">Recent Entries</h2>
-                <div id="recentLogsTableContainer"></div>
-            </section>
-        </main>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Score Valuation</label>
+                        <div class="rating-grid" id="ratingGrid"></div>
+                    </div>
+                </div>
+
+                <div class="action-bar">
+                    <button class="btn btn-primary" id="saveBtn" disabled>Save Diary Entry</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="controls-row">
+                    <div class="stats" id="stats">Loading historical cache index...</div>
+                    <div class="filter-group">
+                        <input type="text" id="tableSearchBox" placeholder="Filter recent local ledger records..." style="max-width: 300px; padding: 10px 14px; font-size: 0.9em;">
+                        <select id="sortSelect" style="max-width: 200px; padding: 10px 14px; font-size: 0.9em; cursor: pointer;">
+                            <option value="date-desc">Recent First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="rating-desc">Highest Rated</option>
+                            <option value="rating-asc">Lowest Rated</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-wrap" id="tableWrap"></div>
+            </div>
+        </div>
     </div>
 
-    <footer>
-        Media Diary Layer &bull; Backed by Git CSV Store
-    </footer>
-
-    <div id="customModal" class="modal-overlay">
+    <div class="modal-overlay" id="confirmModal">
         <div class="modal-card">
-            <h4 id="modalTitle">Confirm Action</h4>
-            <p id="modalDescription">Are you sure you want to proceed?</p>
-            <div class="modal-actions" id="modalActions">
-                <button id="modalCancel" class="btn btn-secondary">Cancel</button>
-                <button id="modalConfirm" class="btn">Confirm</button>
+            <div class="modal-header" id="modalTitle">Confirm Action</div>
+            <div class="modal-body" id="modalDescription">Are you sure you want to alter the dataset with this transaction parameter configuration?</div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="modalCancelBtn">Cancel</button>
+                <button class="btn btn-danger" id="modalConfirmBtn">Proceed</button>
             </div>
         </div>
     </div>
 
     <script>
-        let currentType = '';
         let typesConfig = {};
+        let currentType = 'movies';
+        let cachedEntries = [];
+        
         let selectedResult = null;
         let selectedRating = null;
         let searchTimeout = null;
-
-        // Dropdown Keyboard Navigation Array Tracking
-        let currentDropdownItems = [];
         let highlightedIndex = -1;
 
-        async function loadTypes() {
-            const res = await fetch('/api/types');
-            const data = await res.json();
-            typesConfig = data.types;
-            
-            const keys = Object.keys(typesConfig);
-            if (keys.length > 0) {
-                currentType = keys[0];
-                renderTabs(keys);
-                updateSyncHeader(data.git_sync);
-                switchType(currentType);
+        // Sorting tracking state configurations mirroring GHA layout
+        let currentSortOrder = 'date-desc';
+
+        function showStatus(text, type = 'success') {
+            const box = document.getElementById('statusBox');
+            box.textContent = text;
+            box.className = `status-msg ${type}`;
+            if (type === 'success') {
+                setTimeout(() => { box.className = 'status-msg'; }, 6000);
             }
-        }
-
-        function renderTabs(keys) {
-            const container = document.getElementById('tabsContainer');
-            container.innerHTML = '';
-            keys.forEach(key => {
-                const btn = document.createElement('button');
-                btn.className = `tab-btn ${key === currentType ? 'active' : ''}`;
-                btn.textContent = typesConfig[key].label;
-                btn.addEventListener('click', () => switchType(key));
-                container.appendChild(btn);
-            });
-        }
-
-        function updateSyncHeader(sync) {
-            const banner = document.getElementById('syncStatus');
-            if (sync && sync.enabled) {
-                if (sync.last_ok === false) {
-                    banner.innerHTML = `<span style="color:#ff4757;">&uarr;&darr; Git Sync Error: ${sync.last_error || 'Push failed'}</span>`;
-                } else {
-                    banner.textContent = '✓ Synchronized with remote repository standard storage';
-                }
-            } else {
-                banner.textContent = 'Local sandbox workspace mode (Git pipeline passive)';
-            }
-        }
-
-        function switchType(type) {
-            currentType = type;
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.textContent === typesConfig[type].label);
-            });
-            
-            // Auto focus search field whenever switching domains
-            const searchInput = document.getElementById('titleSearch');
-            searchInput.value = '';
-            searchInput.placeholder = `Search for ${typesConfig[type].label.toLowerCase()}...`;
-            searchInput.focus();
-
-            selectedResult = null;
-            selectedRating = null;
-            document.getElementById('preview').classList.remove('visible');
-            document.getElementById('searchResults').classList.remove('visible');
-            hideStatus();
-            loadRecent();
         }
 
         function getRatingBadgeClass(ratingStr) {
@@ -407,158 +392,131 @@
             return 'rating-tier-low';
         }
 
-        // Custom Modal UI handler to bypass basic browser confirm blocks
-        function triggerCustomModal({ title, message, actionText, isDanger, onConfirm }) {
-            const modal = document.getElementById('customModal');
-            const confirmBtn = document.getElementById('modalConfirm');
+        async function loadTypes() {
+            const res = await fetch('/api/types');
+            const data = await res.json();
+            typesConfig = data.types;
             
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalDescription').textContent = message;
-            confirmBtn.textContent = actionText || 'Confirm';
-            
-            confirmBtn.className = isDanger ? 'btn btn-danger' : 'btn';
-            
-            const closeModal = () => modal.classList.remove('active');
-            
-            // Clean dynamic listeners
-            const nextConfirm = () => { onConfirm(); closeModal(); };
-            confirmBtn.onclick = nextConfirm;
-            document.getElementById('modalCancel').onclick = closeModal;
-            
-            modal.classList.add('active');
-        }
-
-        async function loadRecent() {
-            const config = typesConfig[currentType];
-            const tableContainer = document.getElementById('recentLogsTableContainer');
-            if (!config) return;
-
-            try {
-                const res = await fetch(`/api/${currentType}/entries?limit=30`);
-                const data = await res.json();
-                const entries = data.entries || [];
-
-                if (entries.length === 0) {
-                    tableContainer.innerHTML = '<p style="color: var(--text-muted); padding: 12px 0;">No logs added yet for this shelf repository.</p>';
-                    return;
+            const badge = document.getElementById('syncStatus');
+            if (data.git_sync && data.git_sync.enabled) {
+                if (data.git_sync.last_ok) {
+                    badge.textContent = 'Git Synced';
+                    badge.className = 'sync-badge synced';
+                } else if (data.git_sync.last_error) {
+                    badge.textContent = 'Git Sync Error';
+                    badge.className = 'sync-badge error';
+                    badge.title = data.git_sync.last_error;
+                } else {
+                    badge.textContent = 'Git Monitoring Active';
+                    badge.className = 'sync-badge';
                 }
-
-                let html = '<table><thead><tr>';
-                config.columns.forEach(col => { html += `<th>${col}</th>`; });
-                html += '<th style="text-align:right;">Actions</th></tr></thead><tbody>';
-
-                entries.forEach(row => {
-                    html += '<tr>';
-                    config.columns.forEach(col => {
-                        if (col === 'Rating') {
-                            const badgeTier = getRatingBadgeClass(row[col]);
-                            html += `<td><span class="rating-badge ${badgeTier}">${row[col] || ''}/10</span></td>`;
-                        } else {
-                            html += `<td>${row[col] || ''}</td>`;
-                        }
-                    });
-
-                    const titleVal = encodeURIComponent(row[config.title_column] || '');
-                    const dateCol = config.auto_fields[0] || 'Date Watched/Rated';
-                    const dateVal = encodeURIComponent(row[dateCol] || '');
-
-                    html += `<td style="text-align:right;">
-                        <button class="delete-btn" onclick="confirmDelete('${titleVal}', '${dateVal}')">Delete</button>
-                    </td></tr>`;
-                });
-
-                html += '</tbody></table>';
-                tableContainer.innerHTML = html;
-            } catch (err) {
-                tableContainer.innerHTML = `<p style="color:#ff4757;">Failed to render history stream.</p>`;
+            } else {
+                badge.textContent = 'Local Mode Only';
+                badge.className = 'sync-badge';
             }
+
+            renderNav();
+            setupRatingGrid();
+            await loadRecent();
         }
 
-        function confirmDelete(titleEsc, dateEsc) {
-            const title = decodeURIComponent(titleEsc);
-            const dateRated = decodeURIComponent(dateEsc);
-
-            triggerCustomModal({
-                title: 'Delete History Entry',
-                message: `Are you sure you want to permanently erase the logging entry for "${title}" dated ${dateRated}? This cannot be undone.`,
-                actionText: 'Delete',
-                isDanger: true,
-                onConfirm: async () => {
-                    try {
-                        const url = `/api/${currentType}/entries?title=${encodeURIComponent(title)}&date_rated=${encodeURIComponent(dateRated)}`;
-                        const res = await fetch(url, { method: 'DELETE' });
-                        const data = await res.json();
-
-                        if (!res.ok) throw new Error(data.detail || 'Delete endpoint failure.');
-                        
-                        showStatus(`Successfully removed "${title}" from pipeline diary.`, 'success');
-                        updateSyncHeader(data.git_sync);
-                        loadRecent();
-                    } catch (e) {
-                        showStatus(e.message, 'error');
-                    }
-                }
+        function renderNav() {
+            const nav = document.getElementById('mediaNav');
+            nav.innerHTML = '';
+            Object.entries(typesConfig).forEach(([key, cfg]) => {
+                const btn = document.createElement('button');
+                btn.className = 'media-tab' + (key === currentType ? ' active' : '');
+                btn.textContent = cfg.label;
+                btn.addEventListener('click', async () => {
+                    currentType = key;
+                    resetForm();
+                    renderNav();
+                    await loadRecent();
+                });
+                nav.appendChild(btn);
             });
         }
 
-        // Live API search with dynamic text matching and spinner animation loaders
-        function handleSearchInput(e) {
-            clearTimeout(searchTimeout);
-            const spinner = document.getElementById('searchSpinner');
-            const q = e.target.value.trim();
+        function setupRatingGrid() {
+            const grid = document.getElementById('ratingGrid');
+            grid.innerHTML = '';
+            for (let i = 1; i <= 10; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'rating-btn';
+                btn.textContent = i;
+                btn.addEventListener('click', () => {
+                    selectedRating = i;
+                    document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    updateSaveState();
+                });
+                grid.appendChild(btn);
+            }
+        }
 
-            if (q.length < 2) {
-                document.getElementById('searchResults').classList.remove('visible');
-                spinner.style.display = 'none';
+        function resetForm() {
+            selectedResult = null;
+            selectedRating = null;
+            document.getElementById('titleSearch').value = '';
+            document.getElementById('preview').classList.remove('visible');
+            document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+            document.getElementById('tableSearchBox').value = '';
+            updateSaveState();
+        }
+
+        function updateSaveState() {
+            document.getElementById('saveBtn').disabled = !(selectedResult && selectedRating);
+        }
+
+        function handleSearchInput() {
+            clearTimeout(searchTimeout);
+            const q = document.getElementById('titleSearch').value.trim();
+            const panel = document.getElementById('searchResults');
+            
+            if (!q) {
+                panel.classList.remove('visible');
                 return;
             }
 
-            spinner.style.display = 'block';
             searchTimeout = setTimeout(async () => {
                 try {
                     const res = await fetch(`/api/${currentType}/search?q=${encodeURIComponent(q)}`);
-                    const data = await res.json();
-                    renderSearchResults(data.results || []);
+                    if (!res.ok) return;
+                    const items = await res.json();
+                    renderDropdown(items);
                 } catch (err) {
-                    renderSearchResults([]);
-                } finally {
-                    spinner.style.display = 'none';
+                    console.error(err);
                 }
-            }, 350);
+            }, 250);
         }
 
-        function renderSearchResults(results) {
-            const box = document.getElementById('searchResults');
-            box.innerHTML = '';
-            currentDropdownItems = results;
+        function renderDropdown(items) {
+            const panel = document.getElementById('searchResults');
+            panel.innerHTML = '';
             highlightedIndex = -1;
 
-            if (results.length === 0) {
-                box.innerHTML = '<div class="dropdown-item"><div class="meta">No global matches metadata resources located.</div></div>';
-                box.classList.add('visible');
+            if (!items.length) {
+                panel.classList.remove('visible');
                 return;
             }
 
-            results.forEach((item, index) => {
+            items.forEach((item, idx) => {
                 const div = document.createElement('div');
                 div.className = 'dropdown-item';
-                div.dataset.index = index;
                 div.innerHTML = `
-                    <div class="title">${item.title}</div>
-                    <div class="meta">${item.subtitle || item.year || ''}</div>
+                    <div class="item-title">${item.title}</div>
+                    <div class="item-sub">${item.subtitle || item.year || ''}</div>
                 `;
-                div.addEventListener('click', () => selectResult(item));
-                box.appendChild(div);
+                div.addEventListener('click', () => selectItem(item));
+                panel.appendChild(div);
             });
-            box.classList.add('visible');
+            panel.classList.add('visible');
         }
 
-        // Keyboard dropdown controls (ArrowUp, ArrowDown, Enter)
         function handleSearchKeydown(e) {
-            const dropdown = document.getElementById('searchResults');
-            const items = dropdown.querySelectorAll('.dropdown-item');
-            
-            if (!dropdown.classList.contains('visible') || items.length === 0) return;
+            const panel = document.getElementById('searchResults');
+            const items = panel.querySelectorAll('.dropdown-item');
+            if (!panel.classList.contains('visible') || !items.length) return;
 
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
@@ -570,127 +528,231 @@
                 updateDropdownHighlight(items);
             } else if (e.key === 'Enter') {
                 e.preventDefault();
-                if (highlightedIndex >= 0 && highlightedIndex < currentDropdownItems.length) {
-                    selectResult(currentDropdownItems[highlightedIndex]);
+                if (highlightedIndex >= 0 && highlightedIndex < items.length) {
+                    items[highlightedIndex].click();
                 }
+            } else if (e.key === 'Escape') {
+                panel.classList.remove('visible');
             }
         }
 
-        function updateDropdownHighlight(elements) {
-            elements.forEach((el, idx) => {
+        function updateDropdownHighlight(items) {
+            items.forEach((item, idx) => {
                 if (idx === highlightedIndex) {
-                    el.classList.add('highlighted');
-                    el.scrollIntoView({ block: 'nearest' });
+                    item.classList.add('highlighted');
+                    item.scrollIntoView({ block: 'nearest' });
                 } else {
-                    el.classList.remove('highlighted');
+                    item.classList.remove('highlighted');
                 }
             });
         }
 
-        function selectResult(item) {
+        function selectItem(item) {
             selectedResult = item;
-            document.getElementById('searchResults').classList.remove('visible');
             document.getElementById('titleSearch').value = item.title;
-
-            document.getElementById('previewTitle').textContent = item.title;
-            document.getElementById('previewSubtitle').textContent = item.subtitle || item.year || '';
+            document.getElementById('searchResults').classList.remove('visible');
             
-            renderRatingButtons();
-            document.getElementById('dateRated').value = ''; 
+            const pGrid = document.getElementById('previewGrid');
+            pGrid.innerHTML = '';
+            
+            const cfg = typesConfig[currentType];
+            const labels = [...cfg.auto_fields, ...cfg.api_fields];
+            
+            labels.forEach(label => {
+                let val = '';
+                if (label === 'Date Watched/Rated' || label === 'Date Read/Rated') {
+                    const today = new Date();
+                    val = `${String(today.getMonth()+1).padStart(2,'0')}/${String(today.getDate()).padStart(2,'0')}/${String(today.getFullYear()).slice(-2)}`;
+                } else {
+                    const lookupKey = Object.keys(item).find(k => k.toLowerCase() === label.toLowerCase());
+                    val = lookupKey ? item[lookupKey] : '';
+                }
+
+                const div = document.createElement('div');
+                div.className = 'preview-item';
+                div.innerHTML = `<span class="preview-label">${label}</span><span class="preview-value">${val || '—'}</span>`;
+                pGrid.appendChild(div);
+            });
+
             document.getElementById('preview').classList.add('visible');
             updateSaveState();
         }
 
-        function renderRatingButtons() {
-            const container = document.getElementById('ratingContainer');
-            container.innerHTML = '';
-            for (let i = 1; i <= 10; i++) {
-                const btn = document.createElement('button');
-                btn.className = 'rating-btn';
-                btn.textContent = i;
-                btn.addEventListener('click', () => {
-                    selectedRating = i;
-                    document.querySelectorAll('.rating-btn').forEach(b => b.classList.toggle('selected', b.textContent == i));
-                    updateSaveState();
-                });
-                container.appendChild(btn);
+        async function loadRecent() {
+            const wrap = document.getElementById('tableWrap');
+            try {
+                // Request a higher retrieval allowance so local client-side sort handles a broader historical scope
+                const res = await fetch(`/api/${currentType}/entries?limit=150`);
+                if (!res.ok) throw new Error('Failed loading current media ledger database entries.');
+                const data = await res.json();
+                cachedEntries = data.entries || [];
+                renderTableRecords();
+            } catch (err) {
+                wrap.innerHTML = `<div style="padding:20px; color:#ff4757;">Error: ${err.message}</div>`;
             }
         }
 
-        function updateSaveState() {
-            document.getElementById('saveBtn').disabled = !(selectedResult && selectedRating);
+        function renderTableRecords() {
+            const wrap = document.getElementById('tableWrap');
+            const stats = document.getElementById('stats');
+            const cfg = typesConfig[currentType];
+            if (!cfg) return;
+
+            let records = [...cachedEntries];
+            const query = document.getElementById('tableSearchBox').value.trim().toLowerCase();
+
+            // 1. FILTERING
+            if (query) {
+                records = records.filter(row => {
+                    return cfg.columns.some(col => row[col] && String(row[col]).toLowerCase().includes(query));
+                });
+            }
+
+            // 2. SORTING ENGINE EXTENSION SYNCHRONIZED FROM PAGES VIEW ARCHITECTURE
+            const trackingDateColumn = cfg.columns[1]; // Resolves dynamic rating activity timestamp
+            records.sort((a, b) => {
+                if (currentSortOrder === 'rating-desc') {
+                    return (Number(b.Rating) || 0) - (Number(a.Rating) || 0);
+                } else if (currentSortOrder === 'rating-asc') {
+                    return (Number(a.Rating) || 0) - (Number(b.Rating) || 0);
+                } else if (currentSortOrder === 'date-asc') {
+                    return new Date(a[trackingDateColumn] || 0) - new Date(b[trackingDateColumn] || 0);
+                } else { // 'date-desc'
+                    return new Date(b[trackingDateColumn] || 0) - new Date(a[trackingDateColumn] || 0);
+                }
+            });
+
+            // Calculate current runtime stats
+            const numericRatings = records.map(r => Number(r.Rating)).filter(n => !isNaN(n));
+            const averageValuation = numericRatings.length ? (numericRatings.reduce((x, y) => x + y, 0) / numericRatings.length).toFixed(1) : '—';
+            stats.textContent = `${records.length} records mapped · average value: ${averageValuation}/10`;
+
+            if (!records.length) {
+                wrap.innerHTML = `<p style="padding: 24px; color: var(--text-muted); text-align: center;">No matches found in active log context view index.</p>`;
+                return;
+            }
+
+            let html = '<table><thead><tr>';
+            cfg.columns.forEach(col => { html += `<th>${col}</th>`; });
+            html += '<th style="text-align: right;">Actions</th></tr></thead><tbody>';
+
+            records.forEach(row => {
+                html += '<tr>';
+                cfg.columns.forEach(col => {
+                    if (col === 'Rating') {
+                        const badgeClass = getRatingBadgeClass(row[col]);
+                        html += `<td><span class="rating-badge ${badgeClass}">${row[col] || ''}/10</span></td>`;
+                    } else {
+                        html += `<td>${row[col] || ''}</td>`;
+                    }
+                });
+                
+                const safeTitle = (row[cfg.title_column] || '').replace(/'/g, "\\'");
+                const safeDate = (row[cfg.columns[1]] || '').replace(/'/g, "\\'");
+                html += `<td style="text-align: right;"><button class="btn-delete" onclick="promptDelete('${safeTitle}', '${safeDate}')">Delete</button></td>`;
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            wrap.innerHTML = html;
         }
 
-        function showStatus(text, type) {
-            const box = document.getElementById('statusBox');
-            box.textContent = text;
-            box.className = `status-box ${type}`;
-        }
-
-        function hideStatus() {
-            const box = document.getElementById('statusBox');
-            box.className = 'status-box';
-            box.textContent = '';
-        }
-
-        // Handles strategy selector injection workflow elegantly if a duplicate entry exists
-        async function commitSave(strategy = null) {
-            const saveBtn = document.getElementById('saveBtn');
-            saveBtn.disabled = true;
-            const originalBtnText = saveBtn.textContent;
-            saveBtn.textContent = 'Saving to Git...';
-
-            const payload = {
-                title: selectedResult.title,
-                rating: parseInt(selectedRating, 10),
-                external_id: String(selectedResult.id),
-                date_rated: document.getElementById('dateRated').value.trim() || null,
-                strategy: strategy
+        function triggerModal(title, description, onConfirm) {
+            const overlay = document.getElementById('confirmModal');
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            
+            const confirmBtn = document.getElementById('modalConfirmBtn');
+            const cancelBtn = document.getElementById('modalCancelBtn');
+            
+            const cleanup = () => {
+                overlay.classList.remove('visible');
+                confirmBtn.onclick = null;
+                cancelBtn.onclick = null;
             };
 
+            confirmBtn.onclick = () => { onConfirm(); cleanup(); };
+            cancelBtn.onclick = () => { cleanup(); };
+            overlay.classList.add('visible');
+        }
+
+        function promptDelete(title, dateRated) {
+            triggerModal(
+                'Delete Diary Entry',
+                `Are you certain you wish to completely remove the record entry for "${title}" logged on ${dateRated}? This rewrite transaction will cascade into tracked remote components upon completion.`,
+                async () => {
+                    try {
+                        const targetUrl = `/api/${currentType}/entries?title=${encodeURIComponent(title)}&date_rated=${encodeURIComponent(dateRated)}`;
+                        const res = await fetch(targetUrl, { method: 'DELETE' });
+                        const payload = await res.json();
+                        
+                        if (!res.ok) throw new Error(payload.detail || 'Failed processing entry disposal route parameters.');
+                        showStatus(`Successfully expunged record index for ${title}.`);
+                        await loadRecent();
+                    } catch (err) {
+                        showStatus(err.message, 'error');
+                    }
+                }
+            );
+        }
+
+        async function commitSave(forcedStrategy = null) {
+            const saveBtn = document.getElementById('saveBtn');
+            const originalBtnText = saveBtn.textContent;
+            
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Storing entry...';
+
             try {
-                const response = await fetch(`/api/${currentType}/entries`, {
+                const payload = {
+                    title: selectedResult.title,
+                    rating: parseInt(selectedRating, 10),
+                    external_id: String(selectedResult.id),
+                    strategy: forcedStrategy
+                };
+
+                const res = await fetch(`/api/${currentType}/entries`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-                
-                const data = await response.json();
 
-                // If duplicate row was processed without choice, trigger selection overlay wizard
-                if (response.status === 200 && data.status === 'created' && data.duplicate_warning && !strategy) {
+                const data = await res.json();
+
+                if (res.status === 409 && data.strategy_required) {
                     saveBtn.disabled = false;
                     saveBtn.textContent = originalBtnText;
+
+                    triggerModal(
+                        'Duplicate Title Found',
+                        `"${selectedResult.title}" already contains active record metrics inside your repository workspace. Would you prefer to log this as a standard new separate interaction history entry (Rewatch/Reread) or overwrite the evaluation context score metric for your historical record?`,
+                        () => commitSave('rewatch'), // Confirm mapping handler maps to rewatch
+                        () => commitSave('update')  // Secondary track pathways map to update strategies
+                    );
                     
-                    triggerCustomModal({
-                        title: 'Duplicate Log Found',
-                        message: `"${selectedResult.title}" is already in your ledger list. Do you want to overwrite your last rating index data point or log this as a brand new rewatch entry row?`,
-                        actionText: 'Log New Rewatch',
-                        onConfirm: () => commitSave('rewatch')
-                    });
+                    // Remap choice targets temporarily inside contextual dialogue triggers
+                    document.getElementById('modalConfirmBtn').textContent = 'Log as Rewatch';
+                    document.getElementById('modalCancelBtn').removeAttribute('class');
+                    document.getElementById('modalCancelBtn').className = 'btn btn-primary';
+                    document.getElementById('modalCancelBtn').style.background = '#5f27cd';
+                    document.getElementById('modalCancelBtn').textContent = 'Overwrite Score';
                     
-                    // Wire the secondary button choice context dynamically to the modal actions panel
-                    const actionsArea = document.getElementById('modalActions');
-                    const updateBtn = document.createElement('button');
-                    updateBtn.className = 'btn';
-                    updateBtn.style.background = '#00b894';
-                    updateBtn.textContent = 'Overwrite Existing';
-                    updateBtn.onclick = () => {
-                        document.getElementById('customModal').classList.remove('active');
+                    // Modify close button mapping behaviors to act as secondary selection channels
+                    document.getElementById('modalCancelBtn').onclick = () => {
+                        document.getElementById('confirmModal').classList.remove('visible');
                         commitSave('update');
                     };
-                    actionsArea.insertBefore(updateBtn, actionsArea.firstChild);
                     return;
                 }
 
-                if (!response.ok) {
-                    showStatus(data.detail || 'Save routine execution fault.', 'error');
+                if (!res.ok) {
+                    showStatus(data.detail || 'Save routine aborted on validation exception checks.', 'error');
                     return;
                 }
 
                 let message = data.status === 'updated' 
-                    ? `Updated rating evaluation for ${selectedResult.title} to (${selectedRating}/10).`
-                    : `Saved entry for "${selectedResult.title}" (${selectedRating}/10).`;
+                    ? `Updated rating context valuation metrics for ${selectedResult.title} to (${selectedRating}/10).`
+                    : `Successfully appended record metric data ledger values for ${selectedResult.title} (${selectedRating}/10).`;
 
                 if (data.git_sync && data.git_sync.enabled && data.git_sync.last_error) {
                     message += ` Git distribution failure: ${data.git_sync.last_error}`;
@@ -699,12 +761,7 @@
                     showStatus(message, 'success');
                 }
 
-                // Reset field elements context state
-                selectedResult = null;
-                selectedRating = null;
-                document.getElementById('titleSearch').value = '';
-                document.getElementById('preview').classList.remove('visible');
-                updateSaveState();
+                resetForm();
                 await loadRecent();
 
             } catch (err) {
@@ -712,13 +769,26 @@
             } finally {
                 saveBtn.disabled = false;
                 saveBtn.textContent = originalBtnText;
+                
+                // Re-standardize confirmation system configurations following modal exits
+                document.getElementById('modalCancelBtn').removeAttribute('style');
+                document.getElementById('modalCancelBtn').className = 'btn btn-secondary';
+                document.getElementById('modalCancelBtn').textContent = 'Cancel';
+                document.getElementById('modalConfirmBtn').textContent = 'Proceed';
             }
         }
 
-        // Standard Event Registries
+        // Standard Hook Event Registries
         document.getElementById('titleSearch').addEventListener('input', handleSearchInput);
         document.getElementById('titleSearch').addEventListener('keydown', handleSearchKeydown);
         document.getElementById('saveBtn').addEventListener('click', () => commitSave(null));
+        document.getElementById('tableSearchBox').addEventListener('input', renderTableRecords);
+        
+        // Connect event listener to execute full sorting engine recalculations dynamically on toggle changes
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            currentSortOrder = e.target.value;
+            renderTableRecords();
+        });
 
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.search-wrap')) {
