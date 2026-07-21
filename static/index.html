@@ -745,6 +745,18 @@
 
             // Sync initial values if there's a selectedResult
             if (selectedResult) populateManualFromSelected(selectedResult);
+            // Prefill date inputs with today if empty so manual entries default to today
+            try {
+                const today = new Date();
+                const y = today.getFullYear();
+                const m = String(today.getMonth() + 1).padStart(2, '0');
+                const d = String(today.getDate()).padStart(2, '0');
+                const todayIso = `${y}-${m}-${d}`;
+                cfg.auto_fields.forEach(field => {
+                    const el = document.getElementById(`manualField_${field.replace(/[^a-z0-9]/gi,'_')}`);
+                    if (el && !el.value) el.value = todayIso;
+                });
+            } catch (e) {}
             // Always wire up syncing between manual title and main search title
             const titleSearch = document.getElementById('titleSearch');
             const manualTitle = document.getElementById('manualTitleInput');
@@ -806,6 +818,11 @@
                 const field = inp.dataset.field;
                 const val = (inp.value || '').trim();
                 if (!field) return;
+                // exclude auto fields (date) from api_values
+                try {
+                    const cfg = typesConfig[currentType];
+                    if (cfg && cfg.auto_fields && cfg.auto_fields.includes(field)) return;
+                } catch (e) {}
                 if (val) obj[field] = val;
             });
             return Object.keys(obj).length ? obj : null;
