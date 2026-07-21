@@ -1306,7 +1306,8 @@
                 }
 
                 if (!res.ok) {
-                    showStatus(data.detail || 'Save failed.', 'error');
+                    const message = data.detail || data.message || (data[0] && data[0].msg) || 'Save failed.';
+                    showStatus(message, 'error');
                     return;
                 }
 
