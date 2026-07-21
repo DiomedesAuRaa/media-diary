@@ -24,7 +24,7 @@ router = APIRouter(prefix="/api", tags=["entries"])
 class EntryCreate(BaseModel):
     title: str = Field(min_length=1)
     rating: int = Field(ge=1, le=10)
-    external_id: str = Field(min_length=1)
+    external_id: str | None = Field(default=None)
     date_rated: str | None = None
     api_values: dict[str, str] | None = None
     strategy: Literal["update", "rewatch"] | None = None
@@ -32,7 +32,7 @@ class EntryCreate(BaseModel):
 
 class WatchlistCreate(BaseModel):
     title: str = Field(min_length=1)
-    external_id: str = Field(min_length=1)
+    external_id: str | None = Field(default=None)
     api_values: dict[str, str] | None = None
 
 
@@ -96,12 +96,16 @@ async def create_entry(media_type: str, payload: EntryCreate) -> dict[str, Any]:
             }
 
     api_values = payload.api_values
-    if api_values is None:
+    # If api_values aren't provided, attempt provider lookup when an external_id is supplied.
+    if api_values is None and payload.external_id:
         provider = get_provider(config["provider"])
         try:
             api_values = await provider.lookup(payload.external_id)
         except (NotImplementedError, RuntimeError) as exc:
             raise HTTPException(status_code=500, detail=str(exc)) from exc
+    # If neither api_values nor external_id were supplied, treat this as a manual entry
+    if api_values is None:
+        api_values = {}
 
     row = build_row(
         media_type,
@@ -153,12 +157,15 @@ async def create_watchlist_entry(media_type: str, payload: WatchlistCreate) -> d
         raise HTTPException(status_code=400, detail="Item is already in your watchlist.")
 
     api_values = payload.api_values
-    if api_values is None:
+    # Allow watchlist items to be created manually if no external_id is provided
+    if api_values is None and payload.external_id:
         provider = get_provider(config["provider"])
         try:
             api_values = await provider.lookup(payload.external_id)
         except (NotImplementedError, RuntimeError) as exc:
             raise HTTPException(status_code=500, detail=str(exc)) from exc
+    if api_values is None:
+        api_values = {}
 
     row = build_watchlist_row(media_type, title=title, api_values=api_values)
     saved = prepend_entry(media_type, row, use_watchlist=True)

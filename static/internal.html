@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Media Diary — Internal</title>
+  <style>
+    :root{--bg:#0b0b12;--card:#111018;--muted:#a7a3bf;--accent:#6c5ce7;--accent-2:#00b894;--text:#f7f7fb}
+    html,body{height:100%;margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#07060a, #0b0b12);color:var(--text)}
+    .wrap{max-width:720px;margin:0 auto;padding:18px}
+    header{padding:8px 0 18px}
+    h1{font-size:1.3rem;margin:0 0 6px}
+    p.lead{color:var(--muted);margin:0 0 12px;font-size:0.95rem}
+    .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px}
+    input[type=text],select,textarea,input[type=date],input[type=number]{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-size:1rem}
+    .row{display:flex;gap:10px}
+    .row .col{flex:1}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    button{flex:1;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+    .muted{color:var(--muted);font-size:0.9rem}
+    .status{margin-top:10px;font-size:0.95rem}
+    .entries{margin-top:14px}
+    .entry{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-bottom:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .entry h3{margin:0;font-size:1rem}
+    .small{font-size:0.85rem;color:var(--muted)}
+    @media(min-width:640px){.row{gap:12px}.actions button{flex:0 0 auto;padding:12px 18px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Media Diary — Internal</h1>
+      <p class="lead">Quick manual logging UI — mobile-first, minimal chrome.</p>
+    </header>
+
+    <div class="card">
+      <div>
+        <label for="typeSelect">Type</label>
+        <select id="typeSelect"></select>
+      </div>
+
+      <div style="margin-top:12px">
+        <label for="titleInput">Title</label>
+        <input id="titleInput" type="text" placeholder="Title (required)" />
+      </div>
+
+      <div class="row" style="margin-top:12px">
+        <div class="col">
+          <label for="ratingInput">Rating</label>
+          <input id="ratingInput" type="number" min="1" max="10" placeholder="8" />
+        </div>
+        <div class="col">
+          <label for="dateInput">Date</label>
+          <input id="dateInput" type="date" />
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <label for="apiValues">Optional API fields (JSON)</label>
+        <textarea id="apiValues" rows="4" placeholder='e.g. {"Author":"Jane Doe","ISBN":"manual"}'></textarea>
+        <div class="muted" style="margin-top:6px">Leave blank to create entry with empty API fields.</div>
+      </div>
+
+      <div class="actions">
+        <button id="watchlistBtn" class="btn-ghost">Add to Watchlist</button>
+        <button id="saveBtn" class="btn-primary">Save Entry</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </div>
+
+    <div class="entries card" id="recentWrap" style="margin-top:14px">
+      <div class="muted">Recent entries</div>
+      <div id="recentList"></div>
+    </div>
+  </div>
+
+  <script>
+    const typeSelect = document.getElementById('typeSelect');
+    const titleInput = document.getElementById('titleInput');
+    const ratingInput = document.getElementById('ratingInput');
+    const dateInput = document.getElementById('dateInput');
+    const apiValues = document.getElementById('apiValues');
+    const status = document.getElementById('status');
+    const recentList = document.getElementById('recentList');
+
+    function show(msg, kind=''){
+      status.textContent = msg; status.className = 'status ' + (kind||'');
+      if(kind==='success') setTimeout(()=>status.textContent='','5000');
+    }
+
+    async function loadTypes(){
+      const res = await fetch('/api/types');
+      const data = await res.json();
+      Object.keys(data.types).forEach(k=>{
+        const o = document.createElement('option'); o.value = k; o.textContent = data.types[k].label; typeSelect.appendChild(o);
+      });
+      if(typeSelect.options.length) typeSelect.value = typeSelect.options[0].value;
+      loadRecent();
+    }
+
+    function todayISO(){
+      const d = new Date();
+      return d.toISOString().slice(0,10);
+    }
+
+    async function loadRecent(){
+      try{
+        const t = typeSelect.value;
+        const res = await fetch(`/api/${t}/entries?limit=30`);
+        const data = await res.json();
+        renderRecent(data.entries||[]);
+      }catch(e){console.error(e); show('Could not load recent entries','error')}
+    }
+
+    function renderRecent(entries){
+      recentList.innerHTML = '';
+      if(!entries.length){ recentList.innerHTML = '<div class="small" style="padding:8px 0">No entries yet</div>'; return; }
+      entries.forEach(r=>{
+        const div = document.createElement('div'); div.className='entry';
+        const title = r[Object.keys(r)[0]] || r.Title || '—';
+        const date = r[Object.keys(r)[1]] || '';
+        div.innerHTML = `<h3>${title}</h3><div class="small">${date} · ${r.Rating||'—'}/10</div>`;
+        recentList.appendChild(div);
+      });
+    }
+
+    async function commitEntry(isWatchlist=false){
+      const t = typeSelect.value; const title = titleInput.value.trim();
+      if(!title) { show('Title is required','error'); return; }
+      const payload = { title };
+      if(!isWatchlist){ payload.rating = Number(ratingInput.value) || 0; payload.date_rated = dateInput.value ? formatDateShort(dateInput.value) : null; }
+      try{
+        const parsed = apiValues.value.trim();
+        payload.api_values = parsed ? JSON.parse(parsed) : null;
+      }catch(e){ show('Invalid JSON in API fields','error'); return; }
+
+      const url = isWatchlist ? `/api/${t}/watchlist` : `/api/${t}/entries`;
+      const method = 'POST';
+
+      try{
+        const res = await fetch(url, { method, headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+        const data = await res.json();
+        if(!res.ok) throw new Error(data.detail || 'Request failed');
+        show(isWatchlist ? 'Added to watchlist' : 'Saved entry', 'success');
+        titleInput.value=''; ratingInput.value=''; apiValues.value=''; dateInput.value='';
+        loadRecent();
+      }catch(err){ console.error(err); show(String(err),'error') }
+    }
+
+    function formatDateShort(iso){ const d = new Date(iso); return `${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}/${String(d.getFullYear()).slice(-2)}` }
+
+    document.getElementById('saveBtn').addEventListener('click', ()=>commitEntry(false));
+    document.getElementById('watchlistBtn').addEventListener('click', ()=>commitEntry(true));
+    typeSelect.addEventListener('change', loadRecent);
+
+    // init
+    dateInput.value = todayISO();
+    loadTypes().catch(err=>console.error(err));
+  </script>
+</body>
+</html>

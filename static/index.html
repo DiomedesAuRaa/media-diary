@@ -528,6 +528,11 @@
                     <div class="preview-grid" id="previewGrid"></div>
                 </div>
 
+                <div style="margin-top:12px">
+                    <label for="manualApiValues" style="font-size:0.85em;color:var(--text-muted);display:block;margin-bottom:6px">Optional API fields (JSON) — for manual entries</label>
+                    <textarea id="manualApiValues" placeholder='{"Author":"Jane Doe","ISBN":"manual"}' style="width:100%;min-height:64px;background:var(--input-bg);border:1px solid var(--border-color);border-radius:8px;padding:10px;color:var(--text-main);font-size:0.95em"></textarea>
+                </div>
+
                 <div class="form-row" id="ratingInputContainer">
                     <div class="form-group">
                         <label>Your Score</label>
@@ -679,8 +684,9 @@
         }
 
         function updateSaveState() {
-            document.getElementById('saveBtn').disabled = !(selectedResult && selectedRating);
-            document.getElementById('watchlistBtn').disabled = !selectedResult;
+            const titleVal = document.getElementById('titleSearch').value.trim();
+            document.getElementById('saveBtn').disabled = !(selectedRating && (selectedResult || titleVal));
+            document.getElementById('watchlistBtn').disabled = !(selectedResult || titleVal);
         }
 
         function switchView(view) {
@@ -1007,7 +1013,9 @@
         }
 
         async function commitWatchlistSave() {
-            if (!selectedResult) return;
+            // allow manual watchlist add when no search result is selected
+            const titleVal = document.getElementById('titleSearch').value.trim();
+            if (!selectedResult && !titleVal) return;
 
             const btn = document.getElementById('watchlistBtn');
             const originalText = btn.textContent;
@@ -1015,10 +1023,11 @@
             btn.textContent = 'Saving...';
 
             try {
+                const manualApi = document.getElementById('manualApiValues').value.trim();
                 const payload = {
-                    title: selectedResult.title,
-                    external_id: String(selectedResult.id),
-                    api_values: null
+                    title: selectedResult ? selectedResult.title : titleVal,
+                    external_id: selectedResult && selectedResult.id ? String(selectedResult.id) : undefined,
+                    api_values: manualApi ? JSON.parse(manualApi) : null
                 };
 
                 const res = await fetch(`/api/${currentType}/watchlist`, {
@@ -1046,7 +1055,8 @@
         }
 
         async function commitSave(forcedStrategy = null) {
-            if (!selectedResult || !selectedRating) return;
+            const titleVal = document.getElementById('titleSearch').value.trim();
+            if (!selectedRating || (!selectedResult && !titleVal)) return;
             
             const saveBtn = document.getElementById('saveBtn');
             const originalBtnText = saveBtn.textContent;
@@ -1054,10 +1064,12 @@
             saveBtn.textContent = 'Saving...';
 
             try {
+                const manualApi = document.getElementById('manualApiValues').value.trim();
                 const payload = {
-                    title: selectedResult.title,
+                    title: selectedResult ? selectedResult.title : titleVal,
                     rating: parseInt(selectedRating, 10),
-                    external_id: String(selectedResult.id),
+                    external_id: selectedResult && selectedResult.id ? String(selectedResult.id) : undefined,
+                    api_values: manualApi ? JSON.parse(manualApi) : null,
                     strategy: forcedStrategy
                 };
 
@@ -1075,7 +1087,8 @@
 
                     const overlay = document.getElementById('confirmModal');
                     document.getElementById('modalTitle').textContent = 'Duplicate Found';
-                    document.getElementById('modalDescription').textContent = `"${selectedResult.title}" already exists. Log as a rewatch/reread, or overwrite the existing score?`;
+                    const dupTitle = selectedResult ? selectedResult.title : titleVal;
+                    document.getElementById('modalDescription').textContent = `"${dupTitle}" already exists. Log as a rewatch/reread, or overwrite the existing score?`;
 
                     const confirmBtn = document.getElementById('modalConfirmBtn');
                     const cancelBtn = document.getElementById('modalCancelBtn');
