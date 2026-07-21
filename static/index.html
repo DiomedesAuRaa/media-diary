@@ -691,7 +691,8 @@
         }
 
         function updateSaveState() {
-            const titleVal = document.getElementById('titleSearch').value.trim();
+            const manualTitleEl = document.getElementById('manualTitleInput');
+            const titleVal = (manualTitleEl && manualTitleEl.offsetParent !== null) ? (manualTitleEl.value || '').trim() : document.getElementById('titleSearch').value.trim();
             // Save requires a rating for logging, and either a selected result or a typed title.
             const canSave = selectedRating && (selectedResult || titleVal);
             document.getElementById('saveBtn').disabled = !canSave;
@@ -705,6 +706,9 @@
             document.getElementById('modeManualBtn').classList.toggle('active', mode === 'manual');
             const manual = document.getElementById('manualFields');
             manual.style.display = mode === 'manual' ? 'flex' : 'none';
+            // hide the main title search when in manual mode to avoid confusion
+            const titleGroup = document.getElementById('titleSearch').closest('.form-group');
+            if (titleGroup) titleGroup.style.display = mode === 'manual' ? 'none' : '';
         }
 
         function renderManualFields() {
@@ -712,23 +716,97 @@
             container.innerHTML = '';
             const cfg = typesConfig[currentType];
             if (!cfg) return;
-            // Render API fields as optional inputs
-            cfg.api_fields.forEach(field => {
+
+            // Build fields: Title, auto_fields (date), then api_fields. Exclude 'Rating'.
+            container.className = 'form-row';
+
+            // Title
+            const titleWrap = document.createElement('div');
+            titleWrap.className = 'form-group';
+            titleWrap.innerHTML = `<label>${cfg.title_column}</label><input type="text" id="manualTitleInput" class="manual-field-input" placeholder="${cfg.title_column}" />`;
+            container.appendChild(titleWrap);
+
+            // Auto fields (date inputs)
+            cfg.auto_fields.forEach(field => {
                 const wrap = document.createElement('div');
-                wrap.style.display = 'flex';
-                wrap.style.flexDirection = 'column';
-                wrap.style.flex = '1';
-                wrap.innerHTML = `<label style="font-size:0.85em;color:var(--text-muted);margin-bottom:6px">${field}</label><input class="manual-field-input" data-field="${field}" placeholder="${field}" />`;
+                wrap.className = 'form-group tight';
+                // Use date input when possible
+                wrap.innerHTML = `<label>${field}</label><input type="date" id="manualField_${field.replace(/[^a-z0-9]/gi,'_')}" class="manual-field-input" data-field="${field}" />`;
                 container.appendChild(wrap);
             });
+
+            // API fields
+            cfg.api_fields.forEach(field => {
+                const wrap = document.createElement('div');
+                wrap.className = 'form-group';
+                wrap.innerHTML = `<label>${field}</label><input type="text" class="manual-field-input" data-field="${field}" placeholder="${field}" />`;
+                container.appendChild(wrap);
+            });
+
+            // Sync initial values if there's a selectedResult
+            if (selectedResult) populateManualFromSelected(selectedResult);
+            // Always wire up syncing between manual title and main search title
+            const titleSearch = document.getElementById('titleSearch');
+            const manualTitle = document.getElementById('manualTitleInput');
+            if (manualTitle) {
+                manualTitle.addEventListener('input', () => { titleSearch.value = manualTitle.value; updateSaveState(); });
+                titleSearch.addEventListener('input', () => { if (document.activeElement !== manualTitle) manualTitle.value = titleSearch.value; updateSaveState(); });
+            }
+        }
+
+        function populateManualFromSelected(item) {
+            try {
+                const cfg = typesConfig[currentType];
+                const titleEl = document.getElementById('manualTitleInput');
+                if (titleEl) titleEl.value = item.title || '';
+
+                // fill api fields
+                cfg.api_fields.forEach(field => {
+                    const inp = document.querySelector(`.manual-field-input[data-field='${field}']`);
+                    if (inp) {
+                        const lookupKey = Object.keys(item).find(k => k.toLowerCase() === field.toLowerCase());
+                        inp.value = lookupKey ? item[lookupKey] : '';
+                    }
+                });
+
+                // fill date fields from preview/selected item if possible
+                cfg.auto_fields.forEach(field => {
+                    const el = document.getElementById(`manualField_${field.replace(/[^a-z0-9]/gi,'_')}`);
+                    if (el) {
+                        // try to find date in selected item
+                        const lookupKey = Object.keys(item).find(k => k.toLowerCase().includes('date') && item[k]);
+                        if (lookupKey && item[lookupKey]) {
+                            // attempt to parse mm/dd/yy into yyyy-mm-dd
+                            const parts = item[lookupKey].split('/');
+                            if (parts.length >= 3) {
+                                const mm = parts[0].padStart(2,'0');
+                                const dd = parts[1].padStart(2,'0');
+                                const yy = parts[2];
+                                const yyyy = yy.length === 2 ? ('20' + yy) : yy;
+                                el.value = `${yyyy}-${mm}-${dd}`;
+                            }
+                        }
+                    }
+                });
+
+                // keep titleSearch in sync when manual inputs change
+                const titleSearch = document.getElementById('titleSearch');
+                const manualTitle = document.getElementById('manualTitleInput');
+                if (manualTitle) {
+                    manualTitle.addEventListener('input', () => { titleSearch.value = manualTitle.value; updateSaveState(); });
+                    titleSearch.addEventListener('input', () => { if (!document.getElementById('manualTitleInput').matches(':focus')) document.getElementById('manualTitleInput').value = titleSearch.value; updateSaveState(); });
+                }
+            } catch (e) { /* ignore */ }
         }
 
         function collectManualApiValues() {
             const inputs = document.querySelectorAll('.manual-field-input');
             const obj = {};
             inputs.forEach(inp => {
+                const field = inp.dataset.field;
                 const val = (inp.value || '').trim();
-                if (val) obj[inp.dataset.field] = val;
+                if (!field) return;
+                if (val) obj[field] = val;
             });
             return Object.keys(obj).length ? obj : null;
         }
@@ -1113,11 +1191,32 @@
 
             try {
                 const manualObj = collectManualApiValues();
+                // determine manual date for auto_fields[0]
+                let dateVal = null;
+                try {
+                    const cfg = typesConfig[currentType];
+                    if (cfg && cfg.auto_fields && cfg.auto_fields.length) {
+                        const auto = cfg.auto_fields[0];
+                        const el = document.getElementById(`manualField_${auto.replace(/[^a-z0-9]/gi,'_')}`);
+                        if (el && el.value) {
+                            // el.value is yyyy-mm-dd -> convert to mm/dd/yy
+                            const parts = el.value.split('-');
+                            if (parts.length === 3) {
+                                const mm = parts[1].padStart(2,'0');
+                                const dd = parts[2].padStart(2,'0');
+                                const yy = String(parts[0]).slice(-2);
+                                dateVal = `${mm}/${dd}/${yy}`;
+                            }
+                        }
+                    }
+                } catch (e) {}
+
                 const payload = {
                     title: selectedResult ? selectedResult.title : titleVal,
                     rating: parseInt(selectedRating, 10),
                     external_id: selectedResult && selectedResult.id ? String(selectedResult.id) : undefined,
                     api_values: manualObj,
+                    date_rated: dateVal,
                     strategy: forcedStrategy
                 };
 
