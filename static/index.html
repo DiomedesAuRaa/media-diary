@@ -279,6 +279,7 @@
         .btn-primary:disabled { opacity: 0.25; cursor: not-allowed; }
 
         .btn-secondary { background: rgba(255,255,255,0.06); color: var(--text-main); border: 1px solid var(--border-color); }
+        .btn.secondary-active, .btn.active { background: #5f27cd; color: white; box-shadow: 0 6px 18px rgba(95,39,205,0.25); }
         .btn-secondary:hover:not(:disabled) { background: rgba(255,255,255,0.12); }
         .btn-secondary:disabled { opacity: 0.25; cursor: not-allowed; }
 
@@ -529,8 +530,13 @@
                 </div>
 
                 <div style="margin-top:12px">
-                    <label for="manualApiValues" style="font-size:0.85em;color:var(--text-muted);display:block;margin-bottom:6px">Optional API fields (JSON) — for manual entries</label>
-                    <textarea id="manualApiValues" placeholder='{"Author":"Jane Doe","ISBN":"manual"}' style="width:100%;min-height:64px;background:var(--input-bg);border:1px solid var(--border-color);border-radius:8px;padding:10px;color:var(--text-main);font-size:0.95em"></textarea>
+                    <div style="display:flex;gap:8px;margin-bottom:8px">
+                        <button id="modeLogBtn" class="btn btn-secondary" type="button">Log</button>
+                        <button id="modeWatchlistBtn" class="btn btn-secondary" type="button">Watchlist</button>
+                        <button id="modeManualBtn" class="btn btn-secondary" type="button">Manual</button>
+                    </div>
+
+                    <div id="manualFields" style="display:none;gap:10px"></div>
                 </div>
 
                 <div class="form-row" id="ratingInputContainer">
@@ -591,6 +597,7 @@
         let searchTimeout = null;
         let highlightedIndex = -1;
         let currentSortOrder = 'date-desc';
+        let currentInputMode = 'log'; // 'log' | 'watchlist' | 'manual'
 
         function isMobile() { return window.innerWidth < 600; }
 
@@ -685,8 +692,45 @@
 
         function updateSaveState() {
             const titleVal = document.getElementById('titleSearch').value.trim();
-            document.getElementById('saveBtn').disabled = !(selectedRating && (selectedResult || titleVal));
+            // Save requires a rating for logging, and either a selected result or a typed title.
+            const canSave = selectedRating && (selectedResult || titleVal);
+            document.getElementById('saveBtn').disabled = !canSave;
             document.getElementById('watchlistBtn').disabled = !(selectedResult || titleVal);
+        }
+
+        function setInputMode(mode) {
+            currentInputMode = mode;
+            document.getElementById('modeLogBtn').classList.toggle('active', mode === 'log');
+            document.getElementById('modeWatchlistBtn').classList.toggle('active', mode === 'watchlist');
+            document.getElementById('modeManualBtn').classList.toggle('active', mode === 'manual');
+            const manual = document.getElementById('manualFields');
+            manual.style.display = mode === 'manual' ? 'flex' : 'none';
+        }
+
+        function renderManualFields() {
+            const container = document.getElementById('manualFields');
+            container.innerHTML = '';
+            const cfg = typesConfig[currentType];
+            if (!cfg) return;
+            // Render API fields as optional inputs
+            cfg.api_fields.forEach(field => {
+                const wrap = document.createElement('div');
+                wrap.style.display = 'flex';
+                wrap.style.flexDirection = 'column';
+                wrap.style.flex = '1';
+                wrap.innerHTML = `<label style="font-size:0.85em;color:var(--text-muted);margin-bottom:6px">${field}</label><input class="manual-field-input" data-field="${field}" placeholder="${field}" />`;
+                container.appendChild(wrap);
+            });
+        }
+
+        function collectManualApiValues() {
+            const inputs = document.querySelectorAll('.manual-field-input');
+            const obj = {};
+            inputs.forEach(inp => {
+                const val = (inp.value || '').trim();
+                if (val) obj[inp.dataset.field] = val;
+            });
+            return Object.keys(obj).length ? obj : null;
         }
 
         function switchView(view) {
@@ -717,6 +761,8 @@
                     panel.classList.remove('visible');
                 }
             }, 250);
+            // update button enabled state immediately for manual typing
+            updateSaveState();
         }
 
         function renderDropdown(items) {
@@ -799,6 +845,8 @@
                 const data = await res.json();
                 cachedEntries = data.entries || [];
                 renderTableRecords();
+                // Update manual fields for the selected type
+                renderManualFields();
             } catch (err) {
                 wrap.innerHTML = `<div style="padding:20px; color:#ff4757;">Error: ${err.message}</div>`;
             }
@@ -1022,13 +1070,13 @@
             btn.disabled = true;
             btn.textContent = 'Saving...';
 
-            try {
-                const manualApi = document.getElementById('manualApiValues').value.trim();
-                const payload = {
-                    title: selectedResult ? selectedResult.title : titleVal,
-                    external_id: selectedResult && selectedResult.id ? String(selectedResult.id) : undefined,
-                    api_values: manualApi ? JSON.parse(manualApi) : null
-                };
+                try {
+                    const manualObj = collectManualApiValues();
+                    const payload = {
+                        title: selectedResult ? selectedResult.title : titleVal,
+                        external_id: selectedResult && selectedResult.id ? String(selectedResult.id) : undefined,
+                        api_values: manualObj
+                    };
 
                 const res = await fetch(`/api/${currentType}/watchlist`, {
                     method: 'POST',
@@ -1041,7 +1089,7 @@
                 if (res.status === 400) throw new Error(data.detail || 'Item already in watchlist.');
                 if (!res.ok) throw new Error(data.detail || 'Failed to save to Watchlist');
 
-                showStatus(`Added "${selectedResult.title}" to your Watchlist!`, 'success');
+                showStatus(`Added "${payload.title}" to your Watchlist!`, 'success');
                 resetForm();
                 
                 if (currentView === 'watchlist') await loadRecent();
@@ -1064,12 +1112,12 @@
             saveBtn.textContent = 'Saving...';
 
             try {
-                const manualApi = document.getElementById('manualApiValues').value.trim();
+                const manualObj = collectManualApiValues();
                 const payload = {
                     title: selectedResult ? selectedResult.title : titleVal,
                     rating: parseInt(selectedRating, 10),
                     external_id: selectedResult && selectedResult.id ? String(selectedResult.id) : undefined,
-                    api_values: manualApi ? JSON.parse(manualApi) : null,
+                    api_values: manualObj,
                     strategy: forcedStrategy
                 };
 
@@ -1124,8 +1172,8 @@
                 }
 
                 let message = data.status === 'updated'
-                    ? `Updated rating for ${selectedResult.title} to ${selectedRating}/10.`
-                    : `Saved ${selectedResult.title} (${selectedRating}/10).`;
+                    ? `Updated rating for ${payload.title} to ${selectedRating}/10.`
+                    : `Saved ${payload.title} (${selectedRating}/10).`;
 
                 if (data.git_sync && data.git_sync.enabled && data.git_sync.last_error) {
                     message += ` Git sync failed: ${data.git_sync.last_error}`;
@@ -1135,7 +1183,7 @@
                 }
 
                 // Opportunistically silently auto-prune this title from the watchlist just in case it was there!
-                fetch(`/api/${currentType}/watchlist?title=${encodeURIComponent(selectedResult.title)}`, { method: 'DELETE' }).catch(() => {});
+                fetch(`/api/${currentType}/watchlist?title=${encodeURIComponent(payload.title)}`, { method: 'DELETE' }).catch(() => {});
 
                 resetForm();
                 if (currentView === 'diary') await loadRecent();
@@ -1153,6 +1201,9 @@
         document.getElementById('titleSearch').addEventListener('keydown', handleSearchKeydown);
         document.getElementById('saveBtn').addEventListener('click', () => commitSave(null));
         document.getElementById('watchlistBtn').addEventListener('click', commitWatchlistSave);
+        document.getElementById('modeLogBtn').addEventListener('click', () => setInputMode('log'));
+        document.getElementById('modeWatchlistBtn').addEventListener('click', () => setInputMode('watchlist'));
+        document.getElementById('modeManualBtn').addEventListener('click', () => setInputMode('manual'));
         document.getElementById('tableSearchBox').addEventListener('input', renderTableRecords);
         
         document.getElementById('sortSelect').addEventListener('change', (e) => {
@@ -1170,6 +1221,8 @@
 
         // Initialize App
         loadTypes().catch(err => showStatus(String(err), 'error'));
+        // default input mode
+        setInputMode('log');
     </script>
 </body>
 </html>
