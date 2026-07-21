@@ -603,6 +603,13 @@
 
         function showStatus(text, type = 'success') {
             const box = document.getElementById('statusBox');
+            if (text && typeof text === 'object') {
+                try {
+                    text = JSON.stringify(text, null, 0);
+                } catch (_e) {
+                    text = String(text);
+                }
+            }
             box.textContent = text;
             box.className = `status-msg ${type}`;
             if (type === 'success' || type === 'info') {
@@ -690,9 +697,16 @@
             updateSaveState();
         }
 
-        function updateSaveState() {
+        function getCurrentTitle() {
             const manualTitleEl = document.getElementById('manualTitleInput');
-            const titleVal = (manualTitleEl && manualTitleEl.offsetParent !== null) ? (manualTitleEl.value || '').trim() : document.getElementById('titleSearch').value.trim();
+            if (manualTitleEl && manualTitleEl.offsetParent !== null) {
+                return (manualTitleEl.value || '').trim();
+            }
+            return document.getElementById('titleSearch').value.trim();
+        }
+
+        function updateSaveState() {
+            const titleVal = getCurrentTitle();
             // Save requires a rating for logging, and either a selected result or a typed title.
             const canSave = selectedRating && (selectedResult || titleVal);
             document.getElementById('saveBtn').disabled = !canSave;
@@ -709,6 +723,10 @@
             // hide the main title search when in manual mode to avoid confusion
             const titleGroup = document.getElementById('titleSearch').closest('.form-group');
             if (titleGroup) titleGroup.style.display = mode === 'manual' ? 'none' : '';
+            if (mode === 'manual') {
+                selectedResult = null;
+                document.getElementById('preview').classList.remove('visible');
+            }
         }
 
         function renderManualFields() {
@@ -761,7 +779,11 @@
             const titleSearch = document.getElementById('titleSearch');
             const manualTitle = document.getElementById('manualTitleInput');
             if (manualTitle) {
-                manualTitle.addEventListener('input', () => { titleSearch.value = manualTitle.value; updateSaveState(); });
+                manualTitle.addEventListener('input', () => {
+                    titleSearch.value = manualTitle.value;
+                    if (currentInputMode === 'manual') selectedResult = null;
+                    updateSaveState();
+                });
                 titleSearch.addEventListener('input', () => { if (document.activeElement !== manualTitle) manualTitle.value = titleSearch.value; updateSaveState(); });
             }
         }
@@ -1157,7 +1179,7 @@
 
         async function commitWatchlistSave() {
             // allow manual watchlist add when no search result is selected
-            const titleVal = document.getElementById('titleSearch').value.trim();
+            const titleVal = getCurrentTitle();
             if (!selectedResult && !titleVal) return;
 
             const btn = document.getElementById('watchlistBtn');
@@ -1165,13 +1187,13 @@
             btn.disabled = true;
             btn.textContent = 'Saving...';
 
-                try {
-                    const manualObj = collectManualApiValues();
-                    const payload = {
-                        title: selectedResult ? selectedResult.title : titleVal,
-                        external_id: selectedResult && selectedResult.id ? String(selectedResult.id) : undefined,
-                        api_values: manualObj
-                    };
+            try {
+                const manualObj = collectManualApiValues();
+                const payload = {
+                    title: (currentInputMode === 'manual' || !selectedResult) ? titleVal : selectedResult.title,
+                    external_id: currentInputMode === 'manual' ? undefined : (selectedResult && selectedResult.id ? String(selectedResult.id) : undefined),
+                    api_values: manualObj
+                };
 
                 const res = await fetch(`/api/${currentType}/watchlist`, {
                     method: 'POST',
@@ -1190,7 +1212,8 @@
                 if (currentView === 'watchlist') await loadRecent();
 
             } catch (err) {
-                showStatus(String(err), 'error');
+                console.error('Watchlist save failed', err);
+                showStatus(err && err.message ? err.message : String(err), 'error');
             } finally {
                 btn.disabled = false;
                 btn.textContent = originalText;
@@ -1198,7 +1221,7 @@
         }
 
         async function commitSave(forcedStrategy = null) {
-            const titleVal = document.getElementById('titleSearch').value.trim();
+            const titleVal = getCurrentTitle();
             if (!selectedRating || (!selectedResult && !titleVal)) return;
             
             const saveBtn = document.getElementById('saveBtn');
@@ -1229,9 +1252,9 @@
                 } catch (e) {}
 
                 const payload = {
-                    title: selectedResult ? selectedResult.title : titleVal,
+                    title: (currentInputMode === 'manual' || !selectedResult) ? titleVal : selectedResult.title,
                     rating: parseInt(selectedRating, 10),
-                    external_id: selectedResult && selectedResult.id ? String(selectedResult.id) : undefined,
+                    external_id: currentInputMode === 'manual' ? undefined : (selectedResult && selectedResult.id ? String(selectedResult.id) : undefined),
                     api_values: manualObj,
                     date_rated: dateVal,
                     strategy: forcedStrategy
@@ -1305,7 +1328,14 @@
                 if (currentView === 'diary') await loadRecent();
 
             } catch (err) {
-                showStatus(String(err), 'error');
+                console.error('Save failed', err);
+                let message = 'Save failed.';
+                if (err && typeof err === 'object') {
+                    message = err.message || err.detail || JSON.stringify(err);
+                } else {
+                    message = String(err);
+                }
+                showStatus(message, 'error');
             } finally {
                 saveBtn.disabled = false;
                 saveBtn.textContent = originalBtnText;
