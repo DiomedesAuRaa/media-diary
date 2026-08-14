@@ -11,16 +11,36 @@
     header{padding:8px 0 18px}
     h1{font-size:1.3rem;margin:0 0 6px}
     p.lead{color:var(--muted);margin:0 0 12px;font-size:0.95rem}
-    .tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto}
+    .tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;-webkit-overflow-scrolling:touch}
     .tab{padding:8px 14px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;font-size:0.9rem;font-weight:600}
     .tab.active{background:var(--accent);color:white;border-color:var(--accent)}
     .tab:hover{color:var(--text)}
-    .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 20px rgba(0,0,0,0.6);margin-bottom:14px}
+    .row{display:flex;gap:10px}
+    .row .col{flex:1}
+    .row.tight{gap:6px}
+    .row.tight .col{flex:0 0 auto;min-width:40px}
+    label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px;font-weight:600}
+    input[type=text],input[type=number],input[type=date],select{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-size:1rem;font-family:inherit}
+    input::placeholder{color:var(--muted)}
+    .rating-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:12px}
+    @media(min-width:480px){.rating-grid{grid-template-columns:repeat(10,1fr)}}
+    .rating-btn{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);cursor:pointer;font-weight:600}
+    .rating-btn.selected{background:var(--accent);color:white;border-color:var(--accent)}
+    .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+    button{flex:1;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;font-size:0.95rem}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-primary:hover:not(:disabled){background:#7c3aed}
+    .btn-primary:disabled{opacity:0.4;cursor:not-allowed}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+    .btn-ghost:hover{background:rgba(255,255,255,0.06)}
+    .status{margin-top:10px;font-size:0.95rem;padding:10px;border-radius:6px;display:none}
+    .status.show{display:block}
+    .status.success{background:rgba(46,213,115,0.15);color:#2ed573;border:1px solid rgba(46,213,115,0.2)}
+    .status.error{background:rgba(255,71,87,0.15);color:#ff4757;border:1px solid rgba(255,71,87,0.2)}
     .controls{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-    input[type=text]{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-size:1rem}
-    input[type=text]::placeholder{color:var(--muted)}
     .stats{color:var(--muted);font-size:0.9rem;white-space:nowrap}
-    .entries{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+    .entries{display:flex;flex-direction:column;gap:10px}
     .entry{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
     .entry h3{margin:0 0 6px;font-size:1rem;line-height:1.3}
     .entry-meta{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:6px}
@@ -37,16 +57,49 @@
   <div class="wrap">
     <header>
       <h1>Media Diary</h1>
-      <p class="lead">Browse your logged entries and watchlists.</p>
+      <p class="lead">Quick logging + browse entries.</p>
     </header>
 
-    <div class="tabs" id="typeNav"></div>
-    <div class="tabs" id="modeNav"></div>
+    <div class="card">
+      <div>
+        <label for="typeSelect">Type</label>
+        <select id="typeSelect"></select>
+      </div>
+
+      <div style="margin-top:12px">
+        <label for="titleInput">Title</label>
+        <input id="titleInput" type="text" placeholder="Title (required)" />
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="ratingInput">Rating</label>
+          <div class="rating-grid" id="ratingGrid"></div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <label for="dateInput">Date</label>
+        <input id="dateInput" type="date" />
+      </div>
+
+      <div class="actions">
+        <button id="watchlistBtn" class="btn-ghost">Add to Watchlist</button>
+        <button id="saveBtn" class="btn-primary">Save Entry</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </div>
 
     <div class="card">
-      <div class="controls">
+      <div style="color:var(--muted);font-size:0.95rem;margin-bottom:10px">Browse Entries</div>
+      
+      <div class="tabs" id="typeNav2"></div>
+      <div class="tabs" id="modeNav2"></div>
+
+      <div class="controls" style="margin-top:12px">
         <div class="stats" id="stats"></div>
-        <input type="text" id="searchBox" placeholder="Filter entries...">
+        <input type="text" id="searchBox" placeholder="Filter...">
       </div>
       <div class="entries" id="entriesList"></div>
     </div>
@@ -59,9 +112,10 @@
       tv: { label: 'TV Shows', json: 'tv.json', watchlistJson: 'tv_watchlist.json', columns: ['Show', 'Date Watched/Rated', 'Rating', 'Creator'] }
     };
 
-    let currentType = 'movies';
-    let viewMode = 'diary';
+    let currentBrowseType = 'movies';
+    let browseModeView = 'diary';
     const cache = {};
+    let selectedRating = null;
 
     function ratingClass(val) {
       const n = Number(val);
@@ -70,47 +124,116 @@
       return 'rating-low';
     }
 
-    async function loadData(file) {
-      if (cache[file]) return cache[file];
+    function show(msg, kind=''){
+      const status = document.getElementById('status');
+      status.textContent = msg;
+      status.className = `status ${kind}`;
+      if(kind==='success') status.classList.add('show');
+      if(kind==='error') status.classList.add('show');
+      if(kind==='success') setTimeout(()=>{status.className = 'status'},5000);
+    }
+
+    // Rating grid setup
+    function setupRating(){
+      const grid = document.getElementById('ratingGrid');
+      grid.innerHTML = '';
+      for(let i=1;i<=10;i++){
+        const btn = document.createElement('button');
+        btn.className = 'rating-btn';
+        btn.textContent = i;
+        btn.type = 'button';
+        btn.onclick = () => {
+          selectedRating = i;
+          document.querySelectorAll('.rating-btn').forEach(b=>b.classList.remove('selected'));
+          btn.classList.add('selected');
+        };
+        grid.appendChild(btn);
+      }
+    }
+
+    // Form submission
+    async function commitEntry(isWatchlist=false){
+      const typeSelect = document.getElementById('typeSelect');
+      const titleInput = document.getElementById('titleInput');
+      const ratingInput = selectedRating;
+      const dateInput = document.getElementById('dateInput');
+
+      const t = typeSelect.value;
+      const title = titleInput.value.trim();
+      if(!title) { show('Title is required','error'); return; }
+
+      const payload = { title };
+      if(!isWatchlist){
+        payload.rating = ratingInput || 0;
+        if(dateInput.value){
+          const d = new Date(dateInput.value);
+          payload.date_rated = `${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}/${String(d.getFullYear()).slice(-2)}`;
+        }
+      }
+
+      const url = isWatchlist ? `/api/${t}/watchlist` : `/api/${t}/entries`;
+      try{
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if(!res.ok) throw new Error(data.detail || 'Request failed');
+        show(isWatchlist ? 'Added to watchlist' : 'Saved entry', 'success');
+        titleInput.value='';
+        selectedRating=null;
+        document.querySelectorAll('.rating-btn').forEach(b=>b.classList.remove('selected'));
+        dateInput.value='';
+        loadBrowseEntries();
+      }catch(err){
+        console.error(err);
+        show(String(err),'error');
+      }
+    }
+
+    // Browse functionality
+    async function loadBrowseData(file){
+      if(cache[file]) return cache[file];
       const res = await fetch(file);
       const json = await res.json();
       cache[file] = json.entries || [];
       return cache[file];
     }
 
-    function renderTypeNav() {
-      const nav = document.getElementById('typeNav');
+    function renderBrowseTypeNav(){
+      const nav = document.getElementById('typeNav2');
       nav.innerHTML = '';
       Object.keys(TYPES).forEach(key => {
         const btn = document.createElement('button');
-        btn.className = `tab ${key === currentType ? 'active' : ''}`;
+        btn.className = `tab ${key === currentBrowseType ? 'active' : ''}`;
         btn.textContent = TYPES[key].label;
-        btn.onclick = () => { currentType = key; renderTypeNav(); renderModeNav(); renderEntries(); };
+        btn.onclick = () => { currentBrowseType = key; renderBrowseTypeNav(); renderBrowseModeNav(); loadBrowseEntries(); };
         nav.appendChild(btn);
       });
     }
 
-    function renderModeNav() {
-      const nav = document.getElementById('modeNav');
+    function renderBrowseModeNav(){
+      const nav = document.getElementById('modeNav2');
       nav.innerHTML = '';
       ['diary', 'watchlist'].forEach(mode => {
         const btn = document.createElement('button');
-        btn.className = `tab ${viewMode === mode ? 'active' : ''}`;
+        btn.className = `tab ${browseModeView === mode ? 'active' : ''}`;
         btn.textContent = mode === 'diary' ? 'Diary Log' : 'Watchlist';
-        btn.onclick = () => { viewMode = mode; renderModeNav(); renderEntries(); };
+        btn.onclick = () => { browseModeView = mode; renderBrowseModeNav(); loadBrowseEntries(); };
         nav.appendChild(btn);
       });
     }
 
-    async function renderEntries() {
-      const config = TYPES[currentType];
-      const file = viewMode === 'diary' ? config.json : config.watchlistJson;
+    async function loadBrowseEntries(){
+      const config = TYPES[currentBrowseType];
+      const file = browseModeView === 'diary' ? config.json : config.watchlistJson;
       const query = document.getElementById('searchBox').value.toLowerCase();
       const list = document.getElementById('entriesList');
       const stats = document.getElementById('stats');
 
       try {
-        let entries = await loadData(file);
+        let entries = await loadBrowseData(file);
         if (query) {
           entries = entries.filter(e =>
             Object.values(e).some(v => String(v).toLowerCase().includes(query))
@@ -158,10 +281,32 @@
       }
     }
 
-    document.getElementById('searchBox').addEventListener('input', renderEntries);
-    renderTypeNav();
-    renderModeNav();
-    renderEntries();
+    // Init
+    function todayISO(){
+      const d = new Date();
+      return d.toISOString().slice(0,10);
+    }
+
+    async function loadTypes(){
+      const select = document.getElementById('typeSelect');
+      Object.keys(TYPES).forEach(k => {
+        const o = document.createElement('option');
+        o.value = k;
+        o.textContent = TYPES[k].label;
+        select.appendChild(o);
+      });
+      setupRating();
+      document.getElementById('dateInput').value = todayISO();
+      renderBrowseTypeNav();
+      renderBrowseModeNav();
+      loadBrowseEntries();
+    }
+
+    document.getElementById('saveBtn').addEventListener('click', () => commitEntry(false));
+    document.getElementById('watchlistBtn').addEventListener('click', () => commitEntry(true));
+    document.getElementById('searchBox').addEventListener('input', loadBrowseEntries);
+
+    loadTypes().catch(err => console.error(err));
   </script>
 </body>
 </html>
