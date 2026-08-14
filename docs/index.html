@@ -5,117 +5,200 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Media Diary</title>
   <style>
-    :root{--bg:#0b0b12;--card:#111018;--muted:#a7a3bf;--accent:#6c5ce7;--text:#f7f7fb}
-    html,body{height:100%;margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#07060a, #0b0b12);color:var(--text)}
-    .wrap{max-width:720px;margin:0 auto;padding:18px}
-    header{padding:8px 0 18px}
-    h1{font-size:1.3rem;margin:0 0 6px}
-    p.lead{color:var(--muted);margin:0 0 12px;font-size:0.95rem}
-    .tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;-webkit-overflow-scrolling:touch}
-    .tab{padding:8px 14px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;font-size:0.9rem;font-weight:600}
-    .tab.active{background:var(--accent);color:white;border-color:var(--accent)}
-    .tab:hover{color:var(--text)}
-    .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 20px rgba(0,0,0,0.6);margin-bottom:14px}
-    .row{display:flex;gap:10px}
-    .row .col{flex:1}
-    .row.tight{gap:6px}
-    .row.tight .col{flex:0 0 auto;min-width:40px}
-    label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px;font-weight:600}
-    input[type=text],input[type=number],input[type=date],select{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-size:1rem;font-family:inherit}
-    input::placeholder{color:var(--muted)}
-    .rating-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:12px}
-    @media(min-width:480px){.rating-grid{grid-template-columns:repeat(10,1fr)}}
-    .rating-btn{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);cursor:pointer;font-weight:600}
-    .rating-btn.selected{background:var(--accent);color:white;border-color:var(--accent)}
-    .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-    button{flex:1;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;font-size:0.95rem}
-    .btn-primary{background:var(--accent);color:white}
-    .btn-primary:hover:not(:disabled){background:#7c3aed}
-    .btn-primary:disabled{opacity:0.4;cursor:not-allowed}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
-    .btn-ghost:hover{background:rgba(255,255,255,0.06)}
-    .status{margin-top:10px;font-size:0.95rem;padding:10px;border-radius:6px;display:none}
-    .status.show{display:block}
-    .status.success{background:rgba(46,213,115,0.15);color:#2ed573;border:1px solid rgba(46,213,115,0.2)}
-    .status.error{background:rgba(255,71,87,0.15);color:#ff4757;border:1px solid rgba(255,71,87,0.2)}
-    .controls{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-    .stats{color:var(--muted);font-size:0.9rem;white-space:nowrap}
-    .entries{display:flex;flex-direction:column;gap:10px}
-    .entry{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
-    .entry h3{margin:0 0 6px;font-size:1rem;line-height:1.3}
-    .entry-meta{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:6px}
-    .entry-meta-item{font-size:0.85rem;color:var(--muted)}
-    .entry-meta-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted)}
-    .entry-meta-value{font-size:0.9rem;color:var(--text);font-weight:500}
-    .rating-badge{display:inline-block;padding:4px 10px;border-radius:14px;font-weight:700;font-size:0.85em;color:white}
-    .rating-high{background:rgba(46,213,115,0.3)}
-    .rating-mid{background:rgba(112,111,211,0.3)}
-    .rating-low{background:rgba(255,127,80,0.3)}
+    :root {
+      --bg: #0b0b12;
+      --card: #111018;
+      --muted: #a7a3bf;
+      --accent: #6c5ce7;
+      --text: #f7f7fb;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #07060a, #0b0b12);
+      color: var(--text);
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 40px;
+    }
+    .wrap {
+      width: min(100%, 760px);
+    }
+    header {
+      padding: 8px 0 18px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.1;
+    }
+    p.lead {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 400;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      margin-top: 18px;
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 2px;
+      margin-bottom: 12px;
+    }
+    .tab {
+      flex: 0 0 auto;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .tab.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 10px 0 14px;
+      flex-wrap: wrap;
+    }
+    .stats {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    input[type="text"] {
+      width: min(100%, 220px);
+      padding: 11px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      font-size: 1rem;
+    }
+    input::placeholder { color: var(--muted); }
+    .entries {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .entry {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .entry h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+    .entry-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+    .entry-meta-item {
+      min-width: 90px;
+    }
+    .entry-meta-label {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.66rem;
+      margin-bottom: 3px;
+    }
+    .entry-meta-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .rating-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: white;
+    }
+    .rating-high { background: rgba(46,213,115,0.35); }
+    .rating-mid { background: rgba(112,111,211,0.35); }
+    .rating-low { background: rgba(255,127,80,0.35); }
+    .empty {
+      color: var(--muted);
+      text-align: center;
+      padding: 22px 12px;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <h1>Media Diary</h1>
-      <p class="lead">Quick logging + browse entries.</p>
+      <p class="lead">Browse your media diary.</p>
     </header>
 
     <div class="card">
-      <div>
-        <label for="typeSelect">Type</label>
-        <select id="typeSelect"></select>
+      <div class="tabs" id="typeNav"></div>
+      <div class="tabs" id="modeNav"></div>
+
+      <div class="controls">
+        <div class="stats" id="stats">0 items</div>
+        <input type="text" id="searchBox" placeholder="Search..." />
       </div>
 
-      <div style="margin-top:12px">
-        <label for="titleInput">Title</label>
-        <input id="titleInput" type="text" placeholder="Title (required)" />
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <label for="ratingInput">Rating</label>
-          <div class="rating-grid" id="ratingGrid"></div>
-        </div>
-      </div>
-
-      <div style="margin-top:12px">
-        <label for="dateInput">Date</label>
-        <input id="dateInput" type="date" />
-      </div>
-
-      <div class="actions">
-        <button id="watchlistBtn" class="btn-ghost">Add to Watchlist</button>
-        <button id="saveBtn" class="btn-primary">Save Entry</button>
-      </div>
-
-      <div id="status" class="status"></div>
-    </div>
-
-    <div class="card">
-      <div style="color:var(--muted);font-size:0.95rem;margin-bottom:10px">Browse Entries</div>
-      
-      <div class="tabs" id="typeNav2"></div>
-      <div class="tabs" id="modeNav2"></div>
-
-      <div class="controls" style="margin-top:12px">
-        <div class="stats" id="stats"></div>
-        <input type="text" id="searchBox" placeholder="Filter...">
-      </div>
       <div class="entries" id="entriesList"></div>
     </div>
   </div>
 
   <script>
     const TYPES = {
-      movies: { label: 'Movies', json: 'movies.json', watchlistJson: 'movies_watchlist.json', columns: ['Movie', 'Date Watched/Rated', 'Rating', 'Director'] },
-      books: { label: 'Books', json: 'books.json', watchlistJson: 'books_watchlist.json', columns: ['Book', 'Date Read/Rated', 'Rating', 'Author'] },
-      tv: { label: 'TV Shows', json: 'tv.json', watchlistJson: 'tv_watchlist.json', columns: ['Show', 'Date Watched/Rated', 'Rating', 'Creator'] }
+      movies: {
+        label: 'Movies',
+        json: 'movies.json',
+        watchlistJson: 'movies_watchlist.json',
+        columns: ['Movie', 'Date Watched/Rated', 'Rating', 'Director']
+      },
+      books: {
+        label: 'Books',
+        json: 'books.json',
+        watchlistJson: 'books_watchlist.json',
+        columns: ['Book', 'Date Read/Rated', 'Rating', 'Author']
+      },
+      tv: {
+        label: 'TV Shows',
+        json: 'tv.json',
+        watchlistJson: 'tv_watchlist.json',
+        columns: ['Show', 'Date Watched/Rated', 'Rating', 'Creator']
+      }
     };
 
-    let currentBrowseType = 'movies';
-    let browseModeView = 'diary';
+    let currentType = 'movies';
+    let viewMode = 'diary';
     const cache = {};
-    let selectedRating = null;
 
     function ratingClass(val) {
       const n = Number(val);
@@ -124,134 +207,79 @@
       return 'rating-low';
     }
 
-    function show(msg, kind=''){
-      const status = document.getElementById('status');
-      status.textContent = msg;
-      status.className = `status ${kind}`;
-      if(kind==='success') status.classList.add('show');
-      if(kind==='error') status.classList.add('show');
-      if(kind==='success') setTimeout(()=>{status.className = 'status'},5000);
-    }
-
-    // Rating grid setup
-    function setupRating(){
-      const grid = document.getElementById('ratingGrid');
-      grid.innerHTML = '';
-      for(let i=1;i<=10;i++){
-        const btn = document.createElement('button');
-        btn.className = 'rating-btn';
-        btn.textContent = i;
-        btn.type = 'button';
-        btn.onclick = () => {
-          selectedRating = i;
-          document.querySelectorAll('.rating-btn').forEach(b=>b.classList.remove('selected'));
-          btn.classList.add('selected');
-        };
-        grid.appendChild(btn);
-      }
-    }
-
-    // Form submission
-    async function commitEntry(isWatchlist=false){
-      const typeSelect = document.getElementById('typeSelect');
-      const titleInput = document.getElementById('titleInput');
-      const ratingInput = selectedRating;
-      const dateInput = document.getElementById('dateInput');
-
-      const t = typeSelect.value;
-      const title = titleInput.value.trim();
-      if(!title) { show('Title is required','error'); return; }
-
-      const payload = { title };
-      if(!isWatchlist){
-        payload.rating = ratingInput || 0;
-        if(dateInput.value){
-          const d = new Date(dateInput.value);
-          payload.date_rated = `${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}/${String(d.getFullYear()).slice(-2)}`;
-        }
-      }
-
-      const url = isWatchlist ? `/api/${t}/watchlist` : `/api/${t}/entries`;
-      try{
-        const res = await fetch(url, {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if(!res.ok) throw new Error(data.detail || 'Request failed');
-        show(isWatchlist ? 'Added to watchlist' : 'Saved entry', 'success');
-        titleInput.value='';
-        selectedRating=null;
-        document.querySelectorAll('.rating-btn').forEach(b=>b.classList.remove('selected'));
-        dateInput.value='';
-        loadBrowseEntries();
-      }catch(err){
-        console.error(err);
-        show(String(err),'error');
-      }
-    }
-
-    // Browse functionality
-    async function loadBrowseData(file){
-      if(cache[file]) return cache[file];
+    async function loadData(file) {
+      if (cache[file]) return cache[file];
       const res = await fetch(file);
       const json = await res.json();
-      cache[file] = json.entries || [];
-      return cache[file];
+      const entries = json.entries || [];
+      cache[file] = entries;
+      return entries;
     }
 
-    function renderBrowseTypeNav(){
-      const nav = document.getElementById('typeNav2');
+    function renderTypeNav() {
+      const nav = document.getElementById('typeNav');
       nav.innerHTML = '';
-      Object.keys(TYPES).forEach(key => {
+      Object.keys(TYPES).forEach((key) => {
         const btn = document.createElement('button');
-        btn.className = `tab ${key === currentBrowseType ? 'active' : ''}`;
+        btn.type = 'button';
+        btn.className = `tab ${key === currentType ? 'active' : ''}`;
         btn.textContent = TYPES[key].label;
-        btn.onclick = () => { currentBrowseType = key; renderBrowseTypeNav(); renderBrowseModeNav(); loadBrowseEntries(); };
+        btn.addEventListener('click', () => {
+          currentType = key;
+          renderTypeNav();
+          renderEntries();
+        });
         nav.appendChild(btn);
       });
     }
 
-    function renderBrowseModeNav(){
-      const nav = document.getElementById('modeNav2');
+    function renderModeNav() {
+      const nav = document.getElementById('modeNav');
       nav.innerHTML = '';
-      ['diary', 'watchlist'].forEach(mode => {
+      ['diary', 'watchlist'].forEach((mode) => {
         const btn = document.createElement('button');
-        btn.className = `tab ${browseModeView === mode ? 'active' : ''}`;
+        btn.type = 'button';
+        btn.className = `tab ${mode === viewMode ? 'active' : ''}`;
         btn.textContent = mode === 'diary' ? 'Diary Log' : 'Watchlist';
-        btn.onclick = () => { browseModeView = mode; renderBrowseModeNav(); loadBrowseEntries(); };
+        btn.addEventListener('click', () => {
+          viewMode = mode;
+          renderModeNav();
+          renderEntries();
+        });
         nav.appendChild(btn);
       });
     }
 
-    async function loadBrowseEntries(){
-      const config = TYPES[currentBrowseType];
-      const file = browseModeView === 'diary' ? config.json : config.watchlistJson;
+    async function renderEntries() {
+      const config = TYPES[currentType];
+      const file = viewMode === 'diary' ? config.json : config.watchlistJson;
       const query = document.getElementById('searchBox').value.toLowerCase();
       const list = document.getElementById('entriesList');
       const stats = document.getElementById('stats');
 
       try {
-        let entries = await loadBrowseData(file);
+        let entries = await loadData(file);
+
         if (query) {
-          entries = entries.filter(e =>
-            Object.values(e).some(v => String(v).toLowerCase().includes(query))
+          entries = entries.filter((entry) =>
+            Object.values(entry).some((value) =>
+              String(value).toLowerCase().includes(query)
+            )
           );
         }
 
         if (!entries.length) {
-          list.innerHTML = '<div style="color:var(--muted);padding:20px;text-align:center">No entries found</div>';
+          list.innerHTML = '<div class="empty">No entries found</div>';
           stats.textContent = '0 items';
           return;
         }
 
-        list.innerHTML = entries.map(row => {
+        list.innerHTML = entries.map((row) => {
           const title = row[config.columns[0]] || '—';
           const date = row[config.columns[1]] || '—';
           const rating = row[config.columns[2]] || '—';
           const source = row[config.columns[3]] || '—';
-          
+
           return `
             <div class="entry">
               <h3>${title}</h3>
@@ -274,39 +302,17 @@
         }).join('');
 
         stats.textContent = `${entries.length} items`;
-      } catch (e) {
-        list.innerHTML = '<div style="color:#ff4757;padding:20px">Failed to load entries</div>';
+      } catch (error) {
+        list.innerHTML = '<div class="empty">Unable to load entries.</div>';
         stats.textContent = '0 items';
-        console.error(e);
+        console.error(error);
       }
     }
 
-    // Init
-    function todayISO(){
-      const d = new Date();
-      return d.toISOString().slice(0,10);
-    }
-
-    async function loadTypes(){
-      const select = document.getElementById('typeSelect');
-      Object.keys(TYPES).forEach(k => {
-        const o = document.createElement('option');
-        o.value = k;
-        o.textContent = TYPES[k].label;
-        select.appendChild(o);
-      });
-      setupRating();
-      document.getElementById('dateInput').value = todayISO();
-      renderBrowseTypeNav();
-      renderBrowseModeNav();
-      loadBrowseEntries();
-    }
-
-    document.getElementById('saveBtn').addEventListener('click', () => commitEntry(false));
-    document.getElementById('watchlistBtn').addEventListener('click', () => commitEntry(true));
-    document.getElementById('searchBox').addEventListener('input', loadBrowseEntries);
-
-    loadTypes().catch(err => console.error(err));
+    document.getElementById('searchBox').addEventListener('input', renderEntries);
+    renderTypeNav();
+    renderModeNav();
+    renderEntries();
   </script>
 </body>
 </html>
