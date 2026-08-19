@@ -23,6 +23,11 @@
     label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:6px;font-weight:600}
     input[type=text],input[type=number],input[type=date],select{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-size:1rem;font-family:inherit}
     input::placeholder{color:var(--muted)}
+    .search-results{display:flex;flex-direction:column;margin-top:6px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden}
+    .search-result{padding:10px 12px;background:var(--card);color:var(--text);text-align:left;border:0;border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;font-weight:500}
+    .search-result:last-child{border-bottom:0}
+    .search-result:hover{background:rgba(108,92,231,0.2)}
+    .search-result-subtitle{display:block;color:var(--muted);font-size:0.82rem;margin-top:3px}
     .rating-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:12px}
     @media(min-width:480px){.rating-grid{grid-template-columns:repeat(10,1fr)}}
     .rating-btn{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);cursor:pointer;font-weight:600}
@@ -69,6 +74,7 @@
       <div style="margin-top:12px">
         <label for="titleInput">Title</label>
         <input id="titleInput" type="text" placeholder="Title (required)" />
+        <div id="searchResults" class="search-results" hidden></div>
       </div>
 
       <div class="row">
@@ -116,6 +122,8 @@
     let browseModeView = 'diary';
     const cache = {};
     let selectedRating = null;
+    let selectedSearchResult = null;
+    let searchTimer = null;
 
     function ratingClass(val) {
       const n = Number(val);
@@ -163,6 +171,9 @@
       if(!title) { show('Title is required','error'); return; }
 
       const payload = { title };
+      if(selectedSearchResult && selectedSearchResult.title === title){
+        payload.external_id = selectedSearchResult.id;
+      }
       if(!isWatchlist){
         payload.rating = ratingInput || 0;
         if(dateInput.value){
@@ -185,11 +196,43 @@
         selectedRating=null;
         document.querySelectorAll('.rating-btn').forEach(b=>b.classList.remove('selected'));
         dateInput.value='';
+        selectedSearchResult=null;
         Object.keys(cache).forEach(key => delete cache[key]);
         loadBrowseEntries();
       }catch(err){
         console.error(err);
         show(String(err),'error');
+      }
+    }
+
+    async function searchTitles(){
+      const query = document.getElementById('titleInput').value.trim();
+      const type = document.getElementById('typeSelect').value;
+      const results = document.getElementById('searchResults');
+      selectedSearchResult = null;
+      if(query.length < 2){ results.hidden = true; results.innerHTML = ''; return; }
+
+      try{
+        const res = await fetch(`/api/${type}/search?q=${encodeURIComponent(query)}`);
+        if(!res.ok) throw new Error('Search failed');
+        const data = await res.json();
+        results.innerHTML = '';
+        (data.results || []).forEach(result => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'search-result';
+          button.innerHTML = `${result.title}<span class="search-result-subtitle">${result.subtitle || ''}</span>`;
+          button.onclick = () => {
+            titleInput.value = result.title;
+            selectedSearchResult = result;
+            results.hidden = true;
+          };
+          results.appendChild(button);
+        });
+        results.hidden = !(data.results || []).length;
+      }catch(err){
+        results.hidden = true;
+        console.error(err);
       }
     }
 
@@ -310,6 +353,14 @@
     document.getElementById('saveBtn').addEventListener('click', () => commitEntry(false));
     document.getElementById('watchlistBtn').addEventListener('click', () => commitEntry(true));
     document.getElementById('searchBox').addEventListener('input', loadBrowseEntries);
+    document.getElementById('titleInput').addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(searchTitles, 300);
+    });
+    document.getElementById('typeSelect').addEventListener('change', () => {
+      selectedSearchResult = null;
+      document.getElementById('searchResults').hidden = true;
+    });
 
     loadTypes().catch(err => console.error(err));
   </script>
