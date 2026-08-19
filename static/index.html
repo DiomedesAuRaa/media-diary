@@ -12,6 +12,7 @@
     h1{font-size:1.3rem;margin:0 0 6px}
     p.lead{color:var(--muted);margin:0 0 12px;font-size:0.95rem}
     .tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .top-type-tabs{margin-bottom:0}
     .tab{padding:8px 14px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;font-size:0.9rem;font-weight:600}
     .tab.active{background:var(--accent);color:white;border-color:var(--accent)}
     .tab:hover{color:var(--text)}
@@ -72,7 +73,8 @@
     <div class="card">
       <div>
         <label for="typeSelect">Type</label>
-        <select id="typeSelect"></select>
+        <select id="typeSelect" hidden></select>
+        <div class="tabs top-type-tabs" id="topTypeNav"></div>
       </div>
 
       <div style="margin-top:12px">
@@ -271,9 +273,29 @@
         const btn = document.createElement('button');
         btn.className = `tab ${key === currentBrowseType ? 'active' : ''}`;
         btn.textContent = TYPES[key].label;
-        btn.onclick = () => { currentBrowseType = key; renderBrowseTypeNav(); renderBrowseModeNav(); loadBrowseEntries(); };
+        btn.onclick = () => setCurrentType(key);
         nav.appendChild(btn);
       });
+    }
+
+    function renderTopTypeNav(){
+      const nav = document.getElementById('topTypeNav');
+      nav.innerHTML = '';
+      Object.keys(TYPES).forEach(key => {
+        const btn = document.createElement('button');
+        btn.className = `tab ${key === currentBrowseType ? 'active' : ''}`;
+        btn.textContent = TYPES[key].label;
+        btn.onclick = () => setCurrentType(key);
+        nav.appendChild(btn);
+      });
+    }
+
+    function setCurrentType(key){
+      currentBrowseType = key;
+      document.getElementById('typeSelect').value = key;
+      renderTopTypeNav();
+      renderBrowseTypeNav();
+      loadBrowseEntries();
     }
 
     function renderBrowseModeNav(){
@@ -413,6 +435,8 @@
       });
       setupRating();
       document.getElementById('dateInput').value = todayISO();
+      document.getElementById('typeSelect').value = currentBrowseType;
+      renderTopTypeNav();
       renderBrowseTypeNav();
       renderBrowseModeNav();
       loadBrowseEntries();
