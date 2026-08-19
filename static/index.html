@@ -52,6 +52,9 @@
     .entry-meta-item{font-size:0.85rem;color:var(--muted)}
     .entry-meta-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted)}
     .entry-meta-value{font-size:0.9rem;color:var(--text);font-weight:500}
+    .entry-actions{display:flex;gap:8px;margin-top:10px}
+    .entry-action{flex:0 0 auto;padding:7px 11px;border-radius:6px;font-size:0.8rem;background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--text)}
+    .entry-action.danger{color:#ff7b86}
     .rating-badge{display:inline-block;padding:4px 10px;border-radius:14px;font-weight:700;font-size:0.85em;color:white}
     .rating-high{background:rgba(46,213,115,0.3)}
     .rating-mid{background:rgba(112,111,211,0.3)}
@@ -92,6 +95,7 @@
       <div class="actions">
         <button id="watchlistBtn" class="btn-ghost">Add to Watchlist</button>
         <button id="saveBtn" class="btn-primary">Save Entry</button>
+        <button id="cancelEditBtn" class="btn-ghost" hidden>Cancel Edit</button>
       </div>
 
       <div id="status" class="status"></div>
@@ -124,6 +128,7 @@
     let selectedRating = null;
     let selectedSearchResult = null;
     let searchTimer = null;
+    let editingEntry = null;
 
     function ratingClass(val) {
       const n = Number(val);
@@ -182,6 +187,10 @@
         }
       }
 
+      if(editingEntry){
+        payload.strategy = 'update';
+      }
+
       const url = isWatchlist ? `/api/${t}/watchlist` : `/api/${t}/entries`;
       try{
         const res = await fetch(url, {
@@ -191,12 +200,16 @@
         });
         const data = await res.json();
         if(!res.ok) throw new Error(data.detail || 'Request failed');
-        show(isWatchlist ? 'Added to watchlist' : 'Saved entry', 'success');
+        show(editingEntry ? 'Entry updated' : (isWatchlist ? 'Added to watchlist' : 'Saved entry'), 'success');
         titleInput.value='';
+        titleInput.disabled=false;
         selectedRating=null;
         document.querySelectorAll('.rating-btn').forEach(b=>b.classList.remove('selected'));
         dateInput.value='';
         selectedSearchResult=null;
+        editingEntry=null;
+        document.getElementById('saveBtn').textContent='Save Entry';
+        document.getElementById('cancelEditBtn').hidden=true;
         Object.keys(cache).forEach(key => delete cache[key]);
         loadBrowseEntries();
       }catch(err){
@@ -294,12 +307,15 @@
           return;
         }
 
-        list.innerHTML = entries.map(row => {
+        list.innerHTML = entries.map((row, index) => {
           const title = row[config.columns[0]] || '—';
           const date = row[config.columns[1]] || '—';
           const rating = row[config.columns[2]] || '—';
           const source = row[config.columns[3]] || '—';
           
+          const actions = browseModeView === 'diary'
+            ? `<button class="entry-action" data-action="edit" data-index="${index}">Edit</button>`
+            : '';
           return `
             <div class="entry">
               <h3>${title}</h3>
@@ -317,15 +333,66 @@
                   <div class="entry-meta-value">${source}</div>
                 </div>
               </div>
+              <div class="entry-actions">
+                ${actions}
+                <button class="entry-action danger" data-action="delete" data-index="${index}">Delete</button>
+              </div>
             </div>
           `;
         }).join('');
+
+        list.querySelectorAll('[data-action]').forEach(button => {
+          button.addEventListener('click', () => {
+            const row = entries[Number(button.dataset.index)];
+            if(button.dataset.action === 'edit') startEdit(row, config);
+            if(button.dataset.action === 'delete') deleteEntry(row, config, browseModeView === 'watchlist');
+          });
+        });
 
         stats.textContent = `${entries.length} items`;
       } catch (e) {
         list.innerHTML = '<div style="color:#ff4757;padding:20px">Failed to load entries</div>';
         stats.textContent = '0 items';
         console.error(e);
+      }
+    }
+
+    function dateToISO(value){
+      const match = String(value || '').match(/^(\d{2})\/(\d{2})\/(\d{2})$/);
+      return match ? `20${match[3]}-${match[1]}-${match[2]}` : '';
+    }
+
+    function startEdit(row, config){
+      const title = row[config.columns[0]] || '';
+      const rating = Number(row[config.columns[2]]) || null;
+      editingEntry = { title, date: row[config.columns[1]] || '' };
+      document.getElementById('typeSelect').value = currentBrowseType;
+      document.getElementById('titleInput').value = title;
+      document.getElementById('titleInput').disabled = true;
+      document.getElementById('dateInput').value = dateToISO(editingEntry.date);
+      selectedRating = rating;
+      document.querySelectorAll('.rating-btn').forEach(button => {
+        button.classList.toggle('selected', Number(button.textContent) === rating);
+      });
+      document.getElementById('saveBtn').textContent = 'Update Entry';
+      document.getElementById('cancelEditBtn').hidden = false;
+      document.getElementById('titleInput').scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    async function deleteEntry(row, config, isWatchlist){
+      const title = row[config.columns[0]] || '';
+      if(!confirm(`Delete "${title}"?`)) return;
+      const params = new URLSearchParams({title});
+      if(!isWatchlist) params.set('date_rated', row[config.columns[1]] || '');
+      try{
+        const res = await fetch(`/api/${currentBrowseType}/${isWatchlist ? 'watchlist' : 'entries'}?${params}`, {method:'DELETE'});
+        const data = await res.json();
+        if(!res.ok) throw new Error(data.detail || 'Delete failed');
+        Object.keys(cache).forEach(key => delete cache[key]);
+        loadBrowseEntries();
+        show('Entry deleted', 'success');
+      }catch(err){
+        show(String(err), 'error');
       }
     }
 
@@ -352,6 +419,16 @@
 
     document.getElementById('saveBtn').addEventListener('click', () => commitEntry(false));
     document.getElementById('watchlistBtn').addEventListener('click', () => commitEntry(true));
+    document.getElementById('cancelEditBtn').addEventListener('click', () => {
+      editingEntry=null;
+      document.getElementById('titleInput').disabled=false;
+      document.getElementById('titleInput').value='';
+      document.getElementById('dateInput').value=todayISO();
+      selectedRating=null;
+      document.querySelectorAll('.rating-btn').forEach(button => button.classList.remove('selected'));
+      document.getElementById('saveBtn').textContent='Save Entry';
+      document.getElementById('cancelEditBtn').hidden=true;
+    });
     document.getElementById('searchBox').addEventListener('input', loadBrowseEntries);
     document.getElementById('titleInput').addEventListener('input', () => {
       clearTimeout(searchTimer);
