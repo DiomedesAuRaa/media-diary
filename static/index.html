@@ -185,6 +185,7 @@
         selectedRating=null;
         document.querySelectorAll('.rating-btn').forEach(b=>b.classList.remove('selected'));
         dateInput.value='';
+        Object.keys(cache).forEach(key => delete cache[key]);
         loadBrowseEntries();
       }catch(err){
         console.error(err);
@@ -193,12 +194,17 @@
     }
 
     // Browse functionality
-    async function loadBrowseData(file){
-      if(cache[file]) return cache[file];
-      const res = await fetch(file);
+    async function loadBrowseData(mediaType, mode){
+      const key = `${mediaType}:${mode}`;
+      if(cache[key]) return cache[key];
+      const endpoint = mode === 'diary'
+        ? `/api/${mediaType}/entries`
+        : `/api/${mediaType}/watchlist`;
+      const res = await fetch(endpoint);
+      if(!res.ok) throw new Error(`Failed to load ${endpoint}`);
       const json = await res.json();
-      cache[file] = json.entries || [];
-      return cache[file];
+      cache[key] = json.entries || [];
+      return cache[key];
     }
 
     function renderBrowseTypeNav(){
@@ -227,13 +233,12 @@
 
     async function loadBrowseEntries(){
       const config = TYPES[currentBrowseType];
-      const file = browseModeView === 'diary' ? config.json : config.watchlistJson;
       const query = document.getElementById('searchBox').value.toLowerCase();
       const list = document.getElementById('entriesList');
       const stats = document.getElementById('stats');
 
       try {
-        let entries = await loadBrowseData(file);
+        let entries = await loadBrowseData(currentBrowseType, browseModeView);
         if (query) {
           entries = entries.filter(e =>
             Object.values(e).some(v => String(v).toLowerCase().includes(query))
