@@ -357,6 +357,9 @@
       clearTimeout(searchTimer);
       searchTimer = setTimeout(searchTitles, 300);
     });
+    document.getElementById('titleInput').addEventListener('blur', () => {
+      setTimeout(() => { document.getElementById('searchResults').hidden = true; }, 150);
+    });
     document.getElementById('typeSelect').addEventListener('change', () => {
       selectedSearchResult = null;
       document.getElementById('searchResults').hidden = true;
