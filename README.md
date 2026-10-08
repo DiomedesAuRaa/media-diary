@@ -1,37 +1,30 @@
 # Media Diary
 
-A personal movies, books and TV diary with ratings, rewatches, editing, deletion and per-category watchlists. Metadata comes from TMDb and Open Library. The editable app runs on the home LAN; GitHub Pages is a public read-only snapshot.
+A personal diary for movies, books and TV, with a home-network editor and a public read-only GitHub Pages viewer. Remote editing is intentionally off.
 
-## Current deployment
+## Browse and log
 
-The writer is deployed with Docker Desktop on the Mac mini at **http://192.168.1.131:8765**. Public browsing remains at **https://diomedesauraa.github.io/media-diary/**. Remote editing is disabled. See [DEPLOYMENT-MAC-MINI.md](DEPLOYMENT-MAC-MINI.md) for this Mac's paths, startup, backups, testing and recovery instructions. `compose.mac-mini.yml` records its deployment configuration; the active standalone project is under `/Users/josh/Desktop/media-stack/media-diary` and is separate from the main media stack updater.
+The home editor opens directly to a searchable, paginated diary. Use Movies, Books, TV or All; switch between Diary and For later, then sort by recent consumption, rating or title. Log something opens a separate form. Native links, rating selects and HTML forms work without JavaScript; optional enhancement preserves drafts in the current browser tab, defaults dates to the device's local calendar and prevents repeated Save clicks.
 
-The app immediately saves to six CSVs: ratings and watchlists for movies, books and TV. One background worker commits only those files and pushes to main. Failed pushes retry every minute and after restart, including already-committed changes. GitHub Actions tests the application, exports CSVs as JSON and publishes `docs/`. A local save, a Git push and a Pages deployment are separate stages.
+Open an entry to edit it, log another viewing/reading, or remove it. A for-later entry can become a completed log; removal from the future list happens only after the completed log is saved. Editing uses the original row identity so changing its date does not select a different viewing.
 
-CSV mutations are serialized and use atomic replacement. Run one Uvicorn worker. The LAN browser retrieves all ratings through pagination. UI data is escaped, provider/Git failures are sanitized, and the home form shows publication status. `/health` is liveness, `/ready` checks data accessibility, and `/api/types` includes publication and local-backup status.
+`?compact=1` selects the compact home interface. Public `compact.html` provides the compact viewer with pre-rendered entries and real page links for the Nokia 2780 browser. The full viewer supports laptop and iPhone layouts. Public search uses JavaScript; category, sorting and page links also work without it. Physical handset testing remains necessary; viewport emulation alone does not certify a device.
 
-## Local development
+## Public data and architecture
 
-Use a normal local folder outside cloud sync. Python 3.12 is tested. Create a virtual environment and install `requirements.lock`, then configure `.env` from `.env.example`, leaving `GIT_SYNC_ENABLED=false` for disposable/local testing. Run `./run.sh` and open port 8765. The convenience script uses reload; Docker production does not.
+Exactly six datasets are published: ratings and future lists for movies, books and TV. Titles, ratings, reading/watching dates and creator/release metadata are deliberately public. `app/presentation.py` declares the approved fields; `scripts/export_json.py` exports only those fields and generates a fresh read-only publication directory containing known JSON, HTML and CSS/JavaScript assets. Generation failures preserve the last good output.
 
-Movies/TV require a TMDb API key. Books use Open Library without a key. `scripts/recommendations.py` is a separate optional Gemini CLI, not part of the API or Pages build. `python scripts/export_json.py` generates viewer JSON locally.
+The FastAPI API remains compatible with `/api/{media_type}/entries`, `/watchlist` and `/search`. The HTML interface uses `/`, `/record`, `/log`, `/save` and `/remove`. The home API relies on a trusted LAN; it must not be exposed publicly. HTML mutations use signed expiring form tokens and same-origin checks, while the existing JSON API remains available to trusted clients.
 
-| Setting | Purpose |
-|---|---|
-| `TMDB_API_KEY` / `TMDB_API_KEY_FILE` | Metadata credential; a configured file takes precedence |
-| `GIT_SYNC_ENABLED` | Enable the serialized publisher; default false |
-| `REPO_ROOT` | Runtime Git checkout; defaults to application root for development |
-| `DATA_ROOT` | CSV directory; defaults to `REPO_ROOT/data` |
-| `GIT_REMOTE` / `GIT_BRANCH` | Publishing remote/branch, defaults origin/main |
-| `GIT_SSH_COMMAND` | Protected SSH deploy-key and known-hosts configuration |
-| `SYNC_STATE_PATH` | Persistent publication status file |
-| `BACKUP_ROOT` | Optional daily CSV/Git snapshots, newest 14 retained |
-| `GEMINI_API_KEY` | Optional recommendations CLI only |
+CSV writes are serialized and atomically replaced. One application worker owns writes and a bounded Git publishing worker. Publishing stages only the six CSVs and retries failed pushes. Credentials, runtime Git state, backups and machine-specific operations belong outside this public source tree; deployment guidance is maintained separately by the operator.
 
-Use an appropriately scoped credential for publication, such as the Mac's write-enabled repository deploy key. Embedded PAT URLs are no longer used by the publisher. Do not commit `.env`, private keys, credentials or runtime snapshots. Only one installation may write the diary. Changes pushed from another clone require deliberate reconciliation; the worker never force-pushes or automatically merges CSVs.
+## Development and validation
 
-## Verification
+Use Python 3.12 and install `requirements.lock` into an isolated environment. Set `DATA_ROOT`/`REPO_ROOT` to disposable fixtures and `GIT_SYNC_ENABLED=false` for previews. Never test writes against production CSVs.
 
-Run `python -m unittest discover -s tests -v`. Tests use disposable data and local bare Git repositories; they do not contact production GitHub or providers. The Pages workflow runs the same suite before deployment. Python dependencies and the Docker base image are pinned; upgrades require review and rerunning tests.
+```sh
+python -m unittest discover -s tests -q
+python scripts/export_json.py
+```
 
-The old `media-diary.service` file remains as a historical Pi template, not the current deployment. LAN editing retains the existing home-network trust model and has no application login. No public API route or remote editing tunnel is configured.
+The tests use temporary storage and local Git remotes to verify concurrent saves, publishing retries, backup recovery, native forms, exact edits, repeated submissions, completion safety and publication boundaries.

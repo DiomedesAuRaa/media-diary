@@ -214,3 +214,22 @@ def delete_entry(media_type: str, title: str, date_rated: str | None = None, *, 
         return True
 
     return False
+
+@synchronized
+def replace_entry_by_key(media_type: str, key: str, replacement: dict[str, str] | None, *, use_watchlist: bool = False) -> dict[str, str] | None:
+    """Address the exact unchanged row, including repeated titles/dates; stale forms fail safely."""
+    from app.presentation import records
+    rows = read_entries(media_type, use_watchlist=use_watchlist)
+    data = {media_type + ('_watchlist' if use_watchlist else ''): rows}
+    matched = next((r for r in records(data, 'later' if use_watchlist else 'diary') if r['key'] == key), None)
+    if matched is None:
+        return None
+    index = next(i for i, r in enumerate(records(data, 'later' if use_watchlist else 'diary')) if r['key'] == key)
+    original = rows[index]
+    if replacement is None:
+        rows.pop(index)
+    else:
+        rows[index] = {column: str(replacement.get(column, '')).strip() for column in get_media_type(media_type)['columns']}
+    path = watchlist_path(media_type) if use_watchlist else csv_path(media_type)
+    _write_rows(path, get_media_type(media_type)['columns'], rows)
+    return original

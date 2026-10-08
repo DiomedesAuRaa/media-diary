@@ -11,6 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from app.config import APP_ROOT, REPO_ROOT, DATA_ROOT
 from app.git_sync import start_sync_worker, stop_sync_worker
 from app.routers.entries import router as entries_router
+from app.web import router as web_router
 
 
 def load_env() -> None:
@@ -40,15 +41,11 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Media Diary", version="1.1.0", lifespan=lifespan)
 app.include_router(entries_router)
+app.include_router(web_router)
 
 static_dir = APP_ROOT / "static"
 if static_dir.exists():
     app.mount("/static", StaticFiles(directory=static_dir), name="static")
-
-
-@app.get("/")
-def index() -> FileResponse:
-    return FileResponse(static_dir / "index.html")
 
 
 @app.get("/health")
