@@ -1,289 +1,37 @@
 # Media Diary
 
-Personal media tracker for **movies**, **books**, and **TV shows**. Rate things from a browser, auto-fill metadata from TMDb / Open Library, and keep everything in git-backed CSV files.
+A personal movies, books and TV diary with ratings, rewatches, editing, deletion and per-category watchlists. Metadata comes from TMDb and Open Library. The editable app runs on the home LAN; GitHub Pages is a public read-only snapshot.
 
-| What | Where |
-|------|-------|
-| **Add ratings** | FastAPI app on Mac or Pi (`http://localhost:8765` or `http://<your-pi-ip>:8765`) |
-| **Browse anywhere** | GitHub Pages read-only viewer |
-| **Movie recommendations** | `scripts/recommendations.py` (Gemini) |
+## Current deployment
 
----
+The writer is deployed with Docker Desktop on the Mac mini at **http://192.168.1.131:8765**. Public browsing remains at **https://diomedesauraa.github.io/media-diary/**. Remote editing is disabled. See [DEPLOYMENT-MAC-MINI.md](DEPLOYMENT-MAC-MINI.md) for this Mac's paths, startup, backups, testing and recovery instructions. `compose.mac-mini.yml` records its deployment configuration; the active standalone project is under `/Users/josh/Desktop/media-stack/media-diary` and is separate from the main media stack updater.
 
-## Recommended setup order
+The app immediately saves to six CSVs: ratings and watchlists for movies, books and TV. One background worker commits only those files and pushes to main. Failed pushes retry every minute and after restart, including already-committed changes. GitHub Actions tests the application, exports CSVs as JSON and publishes `docs/`. A local save, a Git push and a Pages deployment are separate stages.
 
-Do these in order — each step builds on the last:
+CSV mutations are serialized and use atomic replacement. Run one Uvicorn worker. The LAN browser retrieves all ratings through pagination. UI data is escaped, provider/Git failures are sanitized, and the home form shows publication status. `/health` is liveness, `/ready` checks data accessibility, and `/api/types` includes publication and local-backup status.
 
-```
-1. Mac (test locally)  →  2. Push to GitHub  →  3. Enable Pages  →  4. Pi (always-on)
-```
+## Local development
 
-| Step | Why |
-|------|-----|
-| **1. Mac first** | Confirm search, save, and CSV writes work before involving git remotes or the Pi |
-| **2. Push to GitHub** | Pi clones from GitHub; Pages deploys from GitHub — you need the remote first |
-| **3. Enable Pages** | Optional but easy once the repo exists; gives you a public read-only URL |
-| **4. Pi last** | Always-on entry form on your home network; auto-commits ratings back to GitHub |
+Use a normal local folder outside cloud sync. Python 3.12 is tested. Create a virtual environment and install `requirements.lock`, then configure `.env` from `.env.example`, leaving `GIT_SYNC_ENABLED=false` for disposable/local testing. Run `./run.sh` and open port 8765. The convenience script uses reload; Docker production does not.
 
-You do **not** need the Pi to start using the app — Mac localhost is fine for daily use until you want phone access on Wi‑Fi.
+Movies/TV require a TMDb API key. Books use Open Library without a key. `scripts/recommendations.py` is a separate optional Gemini CLI, not part of the API or Pages build. `python scripts/export_json.py` generates viewer JSON locally.
 
----
+| Setting | Purpose |
+|---|---|
+| `TMDB_API_KEY` / `TMDB_API_KEY_FILE` | Metadata credential; a configured file takes precedence |
+| `GIT_SYNC_ENABLED` | Enable the serialized publisher; default false |
+| `REPO_ROOT` | Runtime Git checkout; defaults to application root for development |
+| `DATA_ROOT` | CSV directory; defaults to `REPO_ROOT/data` |
+| `GIT_REMOTE` / `GIT_BRANCH` | Publishing remote/branch, defaults origin/main |
+| `GIT_SSH_COMMAND` | Protected SSH deploy-key and known-hosts configuration |
+| `SYNC_STATE_PATH` | Persistent publication status file |
+| `BACKUP_ROOT` | Optional daily CSV/Git snapshots, newest 14 retained |
+| `GEMINI_API_KEY` | Optional recommendations CLI only |
 
-## Prerequisites
+Use an appropriately scoped credential for publication, such as the Mac's write-enabled repository deploy key. Embedded PAT URLs are no longer used by the publisher. Do not commit `.env`, private keys, credentials or runtime snapshots. Only one installation may write the diary. Changes pushed from another clone require deliberate reconciliation; the worker never force-pushes or automatically merges CSVs.
 
-- **Python 3.11+** (3.12 recommended)
-- **TMDb API key** (free): https://www.themoviedb.org/settings/api
-- **Gemini API key** (optional, for `scripts/recommendations.py`)
-- **GitHub account** (for remote backup + Pages + Pi git push)
+## Verification
 
-Books use Open Library and need no API key.
+Run `python -m unittest discover -s tests -v`. Tests use disposable data and local bare Git repositories; they do not contact production GitHub or providers. The Pages workflow runs the same suite before deployment. Python dependencies and the Docker base image are pinned; upgrades require review and rerunning tests.
 
----
-
-## Step 1 — Mac local setup
-
-> **Important:** Clone or work in a normal folder (e.g. `~/code/media-diary`). Do **not** use a Synology Drive sync folder as your git working copy — cloud sync and git fight each other.
-
-If you're starting from the copy already on Synology Drive, push it to GitHub first (Step 2), then clone fresh to `~/code/` for day-to-day use.
-
-### 1a. Install and configure
-
-```bash
-cd ~/code/media-diary          # or wherever you cloned it
-cp .env.example .env
-```
-
-Edit `.env`:
-
-```ini
-TMDB_API_KEY=your_key_here
-GEMINI_API_KEY=your_key_here    # optional
-GIT_SYNC_ENABLED=false          # keep false on Mac for now
-```
-
-### 1b. Run the app
-
-```bash
-./run.sh
-```
-
-Open **http://localhost:8765**
-
-### 1c. Smoke test
-
-1. **Movies** tab → search "Dune" → pick a result from the dropdown → set rating → Save
-2. **Books** tab → search "Project Hail Mary" → pick → Save
-3. **TV** tab → search "Severance" → pick → Save
-4. Confirm new rows appear in `data/movies.csv`, `data/books.csv`, `data/tv.csv`
-
-If search returns nothing, check that `TMDB_API_KEY` is set and restart `./run.sh`.
-
----
-
-## Step 2 — Push to GitHub
-
-From the project directory:
-
-```bash
-git add -A
-git commit -m "Initial media diary app with movies, books, and TV"
-```
-
-Create a new repo on GitHub (e.g. `DiomedesAuRaa/media-diary`), then:
-
-```bash
-git remote add origin git@github.com:YOUR_USER/media-diary.git
-git branch -M main
-git push -u origin main
-```
-
-**What gets committed:** app code, CSV data, `docs/index.html`, workflows.
-
-**What stays local (gitignored):** `.env`, `.venv/`, `docs/*.json` (generated by the Pages workflow).
-
-Never commit `.env` — it contains your API keys.
-
----
-
-## Step 3 — GitHub Pages (read-only viewer)
-
-After the first push:
-
-1. GitHub repo → **Settings** → **Pages**
-2. **Build and deployment** → Source: **GitHub Actions**
-3. The workflow in `.github/workflows/pages.yml` runs on every push to `main`
-4. It exports `data/*.csv` → `docs/*.json` and deploys `docs/`
-
-Viewer URL: **https://YOUR_USER.github.io/media-diary/**
-
-First deploy may take 1–2 minutes. Re-runs automatically whenever the Pi (or you) push CSV changes.
-
-This site is **read-only** — you cannot add ratings from Pages. Entry always goes through the FastAPI app.
-
----
-
-## Step 4 — Raspberry Pi (always-on)
-
-The Pi runs the entry app 24/7 so you can rate from your phone on home Wi‑Fi. It also auto-commits and pushes each save to GitHub (which triggers the Pages rebuild).
-
-### 4a. Clone on the Pi
-
-```bash
-ssh pi@<your-pi-ip>
-git clone https://github.com/YOUR_USER/media-diary.git ~/media-diary
-cd ~/media-diary
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-## MAybe these:
-pip install eval_type_backport
-sudo systemctl restart media-diary
-sudo systemctl status media-diary
-```
-
-### 4b. Configure `.env` on the Pi
-
-```bash
-cp .env.example .env
-nano .env
-```
-
-```ini
-TMDB_API_KEY=your_key_here
-GIT_SYNC_ENABLED=true
-GIT_PUSH_TOKEN=                  # optional if using gh auth login
-GIT_REMOTE=origin
-GIT_BRANCH=main
-```
-
-**Git auth:** Either set `GIT_PUSH_TOKEN` (fine-grained PAT with repo write), or run `gh auth login` + `gh auth setup-git` on the Pi and leave the token blank.
-
-### 4c. Install systemd service
-
-Edit `media-diary.service` if your Pi user isn't `pi`, then:
-
-```bash
-sudo cp media-diary.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable --now media-diary
-sudo systemctl status media-diary
-```
-
-App URL: **http://&lt;your-pi-ip&gt;:8765** (LAN only — do not expose to the internet without auth).
-
-### 4d. Bookmark on your phone
-
-Add `http://<your-pi-ip>:8765` to your home screen while on Wi‑Fi.
-
-### Updating the Pi later
-
-```bash
-cd /home/pi/media-diary
-git pull
-sudo systemctl restart media-diary
-```
-
----
-
-## Day-to-day usage
-
-### Rate something (phone or laptop, on Wi‑Fi)
-
-1. Open the app (Pi URL or `localhost:8765` on Mac)
-2. Pick tab: Movies / Books / TV
-3. Search title → click the correct match from the list
-4. Set rating → Save
-
-The Pi auto-commits and pushes; Pages updates within ~1 minute.
-
-### Browse your diary (anywhere)
-
-Open **https://YOUR_USER.github.io/media-diary/**
-
-### Get movie recommendations (Mac)
-
-```bash
-cd ~/code/media-diary
-git pull                         # get latest ratings from Pi
-source .venv/bin/activate
-python scripts/recommendations.py
-```
-
-### Manual export (optional)
-
-```bash
-python scripts/export_json.py    # writes docs/*.json locally
-```
-
----
-
-## Environment variables
-
-| Variable | Mac | Pi | Description |
-|----------|-----|-----|-------------|
-| `TMDB_API_KEY` | Yes | Yes | TMDb key for movies and TV |
-| `GEMINI_API_KEY` | Optional | Optional | For `scripts/recommendations.py` |
-| `GIT_SYNC_ENABLED` | `false` | `true` | Auto commit + push after each save |
-| `GIT_PUSH_TOKEN` | — | Yes | GitHub PAT with repo write access |
-| `GIT_REMOTE` | — | `origin` | Git remote name |
-| `GIT_BRANCH` | — | `main` | Branch to push |
-| `REPO_ROOT` | Auto | Auto | Override only if needed |
-
----
-
-## Data model
-
-| Type | CSV | API | Auto-filled fields |
-|------|-----|-----|--------------------|
-| Movies | `data/movies.csv` | TMDb | Date Released, Director |
-| Books | `data/books.csv` | Open Library | Date Published, Author |
-| TV | `data/tv.csv` | TMDb | Date Premiered, Creator |
-
-All types: you enter **title** (via search) and **rating**; **date rated** defaults to today.
-
----
-
-## Repo layout
-
-```
-media-diary/
-  data/                  CSV files (source of truth, tracked in git)
-  app/                   FastAPI backend + providers
-  static/index.html      Entry UI (rate movies/books/TV)
-  docs/index.html        GitHub Pages read-only viewer
-  scripts/
-    export_json.py       CSV → JSON for Pages
-    recommendations.py   Gemini movie recommendations
-  run.sh                 Start locally on Mac
-  media-diary.service    Pi systemd unit template
-  .github/workflows/     Pages deploy on push
-```
-
----
-
-## Troubleshooting
-
-| Problem | Fix |
-|---------|-----|
-| Search returns "No matches" | Check `TMDB_API_KEY` in `.env`, restart `./run.sh` |
-| Save button stays greyed out | Click a result from the search dropdown (don't just type the title) |
-| Git push fails on Pi | Verify `GIT_PUSH_TOKEN` or SSH deploy key; run `git push` manually to see the error |
-| Pages viewer is stale | Confirm Pi pushed (`git log` on GitHub); check Actions tab for workflow errors |
-| `.venv` broken on Synology Drive | Recreate outside sync folder: `rm -rf .venv && python3 -m venv .venv && pip install -r requirements.txt` |
-| Merge conflict on CSV | Avoid hand-editing CSV on Mac while Pi is also writing; `git pull` before editing |
-
----
-
-## What's complete
-
-- Movies, books, and TV entry with search + metadata lookup
-- Generic API routes and CSV storage (extensible for more media types later)
-- Entry UI with media tabs
-- GitHub Pages viewer with tabs
-- Pi systemd service template
-- Git auto-sync on save (Pi)
-- Movie recommendations script (Gemini)
-
-**Not included:** public internet access to the entry app (LAN only by design), Portfolio site integration (optional — can add a link in `Portfolio/home.html` later).
-# media-diary
+The old `media-diary.service` file remains as a historical Pi template, not the current deployment. LAN editing retains the existing home-network trust model and has no application login. No public API route or remote editing tunnel is configured.

@@ -6,3 +6,6 @@ __pycache__/
 docs/movies.json
 docs/books.json
 docs/tv.json
+
+docs/*_watchlist.json
+.sync-status.json

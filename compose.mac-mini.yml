@@ -1,0 +1,78 @@
+name: media-diary
+services:
+  media-diary:
+    image: media-diary:mac-mini-v1
+    build:
+      context: .
+    container_name: media-diary
+    user: "501:20"
+    environment:
+      TZ: America/New_York
+      HOME: /tmp
+      REPO_ROOT: /state/repo
+      DATA_ROOT: /state/repo/data
+      SYNC_STATE_PATH: /state/status/publication.json
+      BACKUP_ROOT: /state/backups
+      TMDB_API_KEY_FILE: /run/secrets/tmdb-api-key
+      GIT_SYNC_ENABLED: "true"
+      GIT_REMOTE: origin
+      GIT_BRANCH: main
+      GIT_TERMINAL_PROMPT: "0"
+      GIT_SSH_COMMAND: "ssh -i /run/secrets/github-deploy-key -o IdentitiesOnly=yes -o UserKnownHostsFile=/run/secrets/github-known-hosts -o StrictHostKeyChecking=yes -o BatchMode=yes -o ConnectTimeout=10"
+    ports:
+      - "192.168.1.131:8765:8765"
+    volumes:
+      - type: bind
+        source: /Users/josh/Library/Application Support/media-stack/media-diary/repo
+        target: /state/repo
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /Users/josh/Library/Application Support/media-stack/media-diary/status
+        target: /state/status
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /Users/josh/Library/Application Support/media-stack/media-diary/secrets/tmdb-api-key
+        target: /run/secrets/tmdb-api-key
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /Users/josh/Library/Application Support/media-stack/media-diary/secrets/github-deploy-key
+        target: /run/secrets/github-deploy-key
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /Users/josh/Library/Application Support/media-stack/media-diary/secrets/github-known-hosts
+        target: /run/secrets/github-known-hosts
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /Users/josh/Library/Application Support/media-stack/media-diary/backups
+        target: /state/backups
+        bind:
+          create_host_path: false
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    cpus: 0.5
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/ready', timeout=3).close()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped

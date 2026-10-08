@@ -79,6 +79,10 @@
   </div>
 
   <script>
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[ch]));
+    }
+
     const typeSelect = document.getElementById('typeSelect');
     const titleInput = document.getElementById('titleInput');
     const ratingInput = document.getElementById('ratingInput');
@@ -123,7 +127,7 @@
         const div = document.createElement('div'); div.className='entry';
         const title = r[Object.keys(r)[0]] || r.Title || '—';
         const date = r[Object.keys(r)[1]] || '';
-        div.innerHTML = `<h3>${title}</h3><div class="small">${date} · ${r.Rating||'—'}/10</div>`;
+        div.innerHTML = `<h3>${escapeHTML(title)}</h3><div class="small">${escapeHTML(date)} · ${escapeHTML(r.Rating||'—')}/10</div>`;
         recentList.appendChild(div);
       });
     }

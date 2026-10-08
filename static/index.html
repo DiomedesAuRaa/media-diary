@@ -102,6 +102,7 @@
       </div>
 
       <div id="status" class="status"></div>
+      <div id="publicationStatus" style="color:var(--muted);font-size:0.85rem;margin-top:8px" aria-live="polite"></div>
     </div>
 
     <div class="card">
@@ -119,6 +120,10 @@
   </div>
 
   <script>
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[ch]));
+    }
+
     const TYPES = {
       movies: { label: 'Movies', json: 'movies.json', watchlistJson: 'movies_watchlist.json', columns: ['Movie', 'Date Watched/Rated', 'Rating', 'Director'] },
       books: { label: 'Books', json: 'books.json', watchlistJson: 'books_watchlist.json', columns: ['Book', 'Date Read/Rated', 'Rating', 'Author'] },
@@ -185,7 +190,8 @@
       if(!isWatchlist){
         payload.rating = ratingInput || 0;
         if(dateInput.value){
-          const d = new Date(dateInput.value);
+          const [year, month, day] = dateInput.value.split("-").map(Number);
+          const d = new Date(year, month - 1, day);
           payload.date_rated = `${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}/${String(d.getFullYear()).slice(-2)}`;
         }
       }
@@ -215,6 +221,7 @@
         document.getElementById('cancelEditBtn').hidden=true;
         Object.keys(cache).forEach(key => delete cache[key]);
         loadBrowseEntries();
+        refreshPublicationStatus();
       }catch(err){
         console.error(err);
         show(String(err),'error');
@@ -237,7 +244,7 @@
           const button = document.createElement('button');
           button.type = 'button';
           button.className = 'search-result';
-          button.innerHTML = `${result.title}<span class="search-result-subtitle">${result.subtitle || ''}</span>`;
+          button.innerHTML = `${escapeHTML(result.title)}<span class="search-result-subtitle">${escapeHTML(result.subtitle || '')}</span>`;
           button.onclick = () => {
             titleInput.value = result.title;
             selectedSearchResult = result;
@@ -259,10 +266,25 @@
       const endpoint = mode === 'diary'
         ? `/api/${mediaType}/entries`
         : `/api/${mediaType}/watchlist`;
-      const res = await fetch(endpoint);
-      if(!res.ok) throw new Error(`Failed to load ${endpoint}`);
-      const json = await res.json();
-      cache[key] = json.entries || [];
+      const entries = [];
+      if (mode === 'diary') {
+        let offset = 0;
+        let total = Infinity;
+        while (offset < total) {
+          const res = await fetch(`${endpoint}?limit=200&offset=${offset}`);
+          if (!res.ok) throw new Error(`Failed to load ${endpoint}`);
+          const page = await res.json();
+          entries.push(...(page.entries || []));
+          total = page.total;
+          offset += (page.entries || []).length;
+          if (!(page.entries || []).length) break;
+        }
+      } else {
+        const res = await fetch(endpoint);
+        if (!res.ok) throw new Error(`Failed to load ${endpoint}`);
+        entries.push(...((await res.json()).entries || []));
+      }
+      cache[key] = entries;
       return cache[key];
     }
 
@@ -341,19 +363,19 @@
             : '';
           return `
             <div class="entry">
-              <h3>${title}</h3>
+              <h3>${escapeHTML(title)}</h3>
               <div class="entry-meta">
                 <div class="entry-meta-item">
                   <div class="entry-meta-label">${config.columns[1].split('/')[0]}</div>
-                  <div class="entry-meta-value">${date}</div>
+                  <div class="entry-meta-value">${escapeHTML(date)}</div>
                 </div>
                 <div class="entry-meta-item">
                   <div class="entry-meta-label">Rating</div>
-                  <div class="entry-meta-value"><span class="rating-badge ${ratingClass(rating)}">${rating}</span></div>
+                  <div class="entry-meta-value"><span class="rating-badge ${ratingClass(rating)}">${escapeHTML(rating)}</span></div>
                 </div>
                 <div class="entry-meta-item">
                   <div class="entry-meta-label">${config.columns[3].split(' ')[0]}</div>
-                  <div class="entry-meta-value">${source}</div>
+                  <div class="entry-meta-value">${escapeHTML(source)}</div>
                 </div>
               </div>
               <div class="entry-actions">
@@ -404,7 +426,7 @@
 
     async function deleteEntry(row, config, isWatchlist){
       const title = row[config.columns[0]] || '';
-      if(!confirm(`Delete "${title}"?`)) return;
+      if(!confirm(`Delete "${escapeHTML(title)}"?`)) return;
       const params = new URLSearchParams({title});
       if(!isWatchlist) params.set('date_rated', row[config.columns[1]] || '');
       try{
@@ -423,6 +445,21 @@
     function todayISO(){
       const d = new Date();
       return d.toISOString().slice(0,10);
+    }
+
+    async function refreshPublicationStatus() {
+      const el = document.getElementById('publicationStatus');
+      try {
+        const res = await fetch('/api/types');
+        if (!res.ok) throw new Error('Unavailable');
+        const sync = (await res.json()).git_sync;
+        el.textContent = !sync.enabled ? 'Public updates are paused.'
+          : sync.last_error ? 'Saved locally. Public update delayed; retrying automatically.'
+          : sync.pending ? 'Public update pending.'
+          : 'Sent to GitHub. The public viewer updates after publishing completes.';
+      } catch (_) {
+        el.textContent = 'Public update status unavailable.';
+      }
     }
 
     async function loadTypes(){
@@ -468,6 +505,8 @@
     });
 
     loadTypes().catch(err => console.error(err));
+    refreshPublicationStatus();
+    setInterval(refreshPublicationStatus, 15000);
   </script>
 </body>
 </html>

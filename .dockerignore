@@ -1,0 +1,7 @@
+*
+!Dockerfile
+!requirements.lock
+!app/
+!app/**
+!static/
+!static/**

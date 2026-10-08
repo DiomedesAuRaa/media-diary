@@ -175,6 +175,10 @@
   </div>
 
   <script>
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[ch]));
+    }
+
     const TYPES = {
       movies: {
         label: 'Movies',
@@ -282,19 +286,19 @@
 
           return `
             <div class="entry">
-              <h3>${title}</h3>
+              <h3>${escapeHTML(title)}</h3>
               <div class="entry-meta">
                 <div class="entry-meta-item">
                   <div class="entry-meta-label">${config.columns[1].split('/')[0]}</div>
-                  <div class="entry-meta-value">${date}</div>
+                  <div class="entry-meta-value">${escapeHTML(date)}</div>
                 </div>
                 <div class="entry-meta-item">
                   <div class="entry-meta-label">Rating</div>
-                  <div class="entry-meta-value"><span class="rating-badge ${ratingClass(rating)}">${rating}</span></div>
+                  <div class="entry-meta-value"><span class="rating-badge ${ratingClass(rating)}">${escapeHTML(rating)}</span></div>
                 </div>
                 <div class="entry-meta-item">
                   <div class="entry-meta-label">${config.columns[3].split(' ')[0]}</div>
-                  <div class="entry-meta-value">${source}</div>
+                  <div class="entry-meta-value">${escapeHTML(source)}</div>
                 </div>
               </div>
             </div>

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import os
+from pathlib import Path
 from datetime import datetime
 from typing import Any
 
@@ -11,7 +12,8 @@ TMDB_BASE = "https://api.themoviedb.org/3"
 
 
 def _api_key() -> str:
-    key = os.environ.get("TMDB_API_KEY", "").strip()
+    key_file = os.environ.get("TMDB_API_KEY_FILE", "").strip()
+    key = Path(key_file).read_text().strip() if key_file else os.environ.get("TMDB_API_KEY", "").strip()
     if not key:
         raise RuntimeError("TMDB_API_KEY is not set")
     return key

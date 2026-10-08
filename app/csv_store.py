@@ -1,10 +1,48 @@
 from __future__ import annotations
 
 import csv
+import os
+import tempfile
+import threading
+from functools import wraps
+from pathlib import Path
 from datetime import datetime
 from typing import Any
 
 from app.config import csv_path, get_media_type, watchlist_path
+
+
+storage_lock = threading.RLock()
+
+
+def synchronized(func):
+    @wraps(func)
+    def wrapped(*args, **kwargs):
+        with storage_lock:
+            return func(*args, **kwargs)
+    return wrapped
+
+
+def _write_rows(path: Path, columns: list[str], rows: list[dict[str, str]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix=".diary-", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=columns)
+            writer.writeheader()
+            for row in rows:
+                writer.writerow({column: row.get(column, "") for column in columns})
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+        directory_fd = os.open(path.parent, os.O_RDONLY)
+        try:
+            os.fsync(directory_fd)
+        finally:
+            os.close(directory_fd)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
 
 
 def format_date_mmddyy(dt: datetime | None = None) -> str:
@@ -12,7 +50,8 @@ def format_date_mmddyy(dt: datetime | None = None) -> str:
     return dt.strftime("%m/%d/%y")
 
 
-def read_entries(media_type: str, limit: int | None = None, *, use_watchlist: bool = False) -> list[dict[str, str]]:
+@synchronized
+def read_entries(media_type: str, limit: int | None = None, *, use_watchlist: bool = False, offset: int = 0) -> list[dict[str, str]]:
     path = watchlist_path(media_type) if use_watchlist else csv_path(media_type)
     if not path.exists():
         return []
@@ -21,10 +60,11 @@ def read_entries(media_type: str, limit: int | None = None, *, use_watchlist: bo
         rows = list(csv.DictReader(handle))
 
     if limit is not None:
-        return rows[:limit]
-    return rows
+        return rows[offset:offset + limit]
+    return rows[offset:]
 
 
+@synchronized
 def title_exists(media_type: str, title: str, *, use_watchlist: bool = False) -> bool:
     config = get_media_type(media_type)
     title_column = config["title_column"]
@@ -36,6 +76,7 @@ def title_exists(media_type: str, title: str, *, use_watchlist: bool = False) ->
     return False
 
 
+@synchronized
 def prepend_entry(media_type: str, row: dict[str, str], *, use_watchlist: bool = False) -> dict[str, str]:
     config = get_media_type(media_type)
     path = watchlist_path(media_type) if use_watchlist else csv_path(media_type)
@@ -49,12 +90,7 @@ def prepend_entry(media_type: str, row: dict[str, str], *, use_watchlist: bool =
         with path.open("r", encoding="utf-8", newline="") as handle:
             existing_rows = list(csv.DictReader(handle))
 
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=columns)
-        writer.writeheader()
-        writer.writerow(normalized)
-        for existing in existing_rows:
-            writer.writerow({column: existing.get(column, "") for column in columns})
+    _write_rows(path, columns, [normalized, *existing_rows])
 
     return normalized
 
@@ -109,6 +145,7 @@ def build_watchlist_row(
     return row
 
 
+@synchronized
 def update_entry_rating(media_type: str, title: str, rating: str, date_rated: str | None = None) -> dict[str, str] | None:
     config = get_media_type(media_type)
     path = csv_path(media_type)
@@ -135,16 +172,13 @@ def update_entry_rating(media_type: str, title: str, rating: str, date_rated: st
 
     if updated_row is not None:
         columns = config["columns"]
-        with path.open("w", encoding="utf-8", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=columns)
-            writer.writeheader()
-            for row in existing_rows:
-                writer.writerow({col: row.get(col, "") for col in columns})
+        _write_rows(path, columns, existing_rows)
         return updated_row
 
     return None
 
 
+@synchronized
 def delete_entry(media_type: str, title: str, date_rated: str | None = None, *, use_watchlist: bool = False) -> bool:
     config = get_media_type(media_type)
     path = watchlist_path(media_type) if use_watchlist else csv_path(media_type)
@@ -176,11 +210,7 @@ def delete_entry(media_type: str, title: str, date_rated: str | None = None, *, 
 
     if deleted:
         columns = config["columns"]
-        with path.open("w", encoding="utf-8", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=columns)
-            writer.writeheader()
-            for row in new_rows:
-                writer.writerow({col: row.get(col, "") for col in columns})
+        _write_rows(path, columns, new_rows)
         return True
 
     return False

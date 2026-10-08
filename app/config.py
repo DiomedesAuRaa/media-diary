@@ -5,7 +5,10 @@ from pathlib import Path
 from typing import Any
 
 _root = os.environ.get("REPO_ROOT", "").strip()
-REPO_ROOT = Path(_root) if _root else Path(__file__).resolve().parent.parent
+APP_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(_root) if _root else APP_ROOT
+DATA_ROOT = Path(os.environ.get("DATA_ROOT", str(REPO_ROOT / "data")))
+SYNC_STATE_PATH = Path(os.environ.get("SYNC_STATE_PATH", str(REPO_ROOT / ".sync-status.json")))
 
 MEDIA_TYPES: dict[str, dict[str, Any]] = {
     "movies": {
@@ -80,9 +83,9 @@ def get_enabled_types() -> dict[str, dict[str, Any]]:
 
 def csv_path(media_type: str) -> Path:
     config = get_media_type(media_type)
-    return REPO_ROOT / config["csv"]
+    return DATA_ROOT / Path(config["csv"]).name
 
 
 def watchlist_path(media_type: str) -> Path:
     config = get_media_type(media_type)
-    return REPO_ROOT / config["watchlist_csv"]
+    return DATA_ROOT / Path(config["watchlist_csv"]).name
