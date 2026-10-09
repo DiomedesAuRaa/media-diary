@@ -3,7 +3,7 @@
   'use strict';
   var stateNode=document.getElementById('diary-state');if(!stateNode)return;
   var state=JSON.parse(stateNode.textContent), main=document.querySelector('[data-public]'), query=new URLSearchParams(location.search);
-  ['type','mode','q','sort','page','compact'].forEach(function(k){if(query.has(k))state[k]=query.get(k);});state.compact=state.compact===true||state.compact==='1';state.page=Math.max(1,Math.min(100000,parseInt(state.page,10)||1));if(['all','movies','books','tv'].indexOf(state.type)<0)state.type='movies';state.mode=state.mode==='later'?'later':'diary';if(['recent','rating','title'].indexOf(state.sort)<0)state.sort='recent';state.q=String(state.q||'').slice(0,300);
+  ['type','mode','q','sort','page','compact'].forEach(function(k){if(query.has(k))state[k]=query.get(k);});state.compact=state.compact===true||state.compact==='1';var narrowViewport=window.matchMedia?window.matchMedia('(max-width: 280px)').matches:window.innerWidth<=280;if(narrowViewport)state.compact=true;state.page=Math.max(1,Math.min(100000,parseInt(state.page,10)||1));if(['all','movies','books','tv'].indexOf(state.type)<0)state.type='movies';state.mode=state.mode==='later'?'later':'diary';if(['recent','rating','title'].indexOf(state.sort)<0)state.sort='recent';state.q=String(state.q||'').slice(0,300);
   var cache=null,loading=null;
   function filename(s){return s.type+'-'+s.mode+'-'+s.sort+'-'+s.page+'-'+(s.compact?'compact':'full')+'.html';}
   function href(s){var params=new URLSearchParams();Object.keys(s).forEach(function(k){params.set(k,k==='compact'?(s[k]?'1':'0'):s[k]);});return filename(s)+'?'+params.toString();}
@@ -43,5 +43,5 @@
   // Static page links retain search and remain real links, so native Back is reliable.
   main.addEventListener('click',function(e){var target=e.target.closest('a');if(!target||!state.q||target.classList.contains('brand'))return;var match=/^(all|movies|books|tv)-(diary|later)-(recent|rating|title)-(\d+)-(compact|full)\.html/.exec(target.getAttribute('href')||'');if(match){var next={type:match[1],mode:match[2],sort:match[3],page:Number(match[4]),compact:match[5]==='compact',q:state.q};target.href=href(next);}});
   window.addEventListener('popstate',function(e){if(e.state){state=e.state;load();}else location.reload();});
-  if(state.q||['type','mode','sort','page','compact'].some(function(k){return query.has(k);}))load();
+  if(narrowViewport||state.q||['type','mode','sort','page','compact'].some(function(k){return query.has(k);}))load();
 }());

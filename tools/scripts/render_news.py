@@ -124,8 +124,8 @@ def render(root: Path, config_path=None):
                         links.append('<a class="page-link" href="%s"%s>%d</a>' % (
                             esc(route(category, number, mode)), ' aria-current="page"' if number == page else "", number))
                 status = '<p class="status">Some feeds are using saved headlines or are temporarily unavailable: %s.</p>' % esc(", ".join(statuses[category])) if statuses[category] else ""
-                replacement = '<script>window.NEWS_PAGE_COUNTS=%s;</script><nav class="category-links" aria-label="News categories">%s</nav><nav class="pager" aria-label="News pages and display mode">%s</nav><div class="cache-info">Updated %s · collection attempted %s</div><main class="category%s" id="cat-%s"><h2>%s</h2>%s%s</main>' % (
-                    json.dumps(page_counts), "".join(nav), "".join(links), esc(digest.get("generatedAt") or "not yet"), esc(digest["lastAttemptAt"]), " compact" if mode == "compact" else "", esc(category), esc(heading), "".join(article_markup), status)
+                replacement = '<script>window.NEWS_PAGE_COUNTS=%s;</script><nav class="category-links" aria-label="News categories">%s</nav><main class="category%s" id="cat-%s"><h2>%s</h2>%s%s</main><nav class="pager" aria-label="News pages and display mode">%s</nav><div class="cache-info">Collection attempted %s</div>' % (
+                    json.dumps(page_counts), "".join(nav), " compact" if mode == "compact" else "", esc(category), esc(heading), "".join(article_markup), status, "".join(links), esc(digest["lastAttemptAt"]))
                 page_html = template.replace(marker, replacement).replace("<!-- GENERATED_AT -->", esc(digest.get("generatedAt") or "not yet"))
                 root_attrs = f'data-news-category="{esc(category)}" data-news-page="{page}"'
                 if route(category, page, mode) != "news.html":

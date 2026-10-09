@@ -259,6 +259,10 @@ html body.sports-page .league-picker[hidden] { display:none !important; }
 html body.sports-page .league-picker label { display:block; color:var(--tool-muted); margin:0 0 .2rem; }
 html body.sports-page .league-picker select { width:100%; }
 @media (max-width:280px) {
+  /* Browser chrome leaves little content height on keypad phones. */
+  html body { padding:4px; }
+  html .tool-nav { padding-bottom:3px; margin-bottom:4px; }
+  html .tool-nav a, html .tool-nav button { min-height:29px; padding:3px 6px; font-size:12px; }
   html body.sports-page.league-picker-ready .league-picker:not([hidden]) { display:block; margin:.3rem 0; }
   html body.sports-page.league-picker-ready #league-nav { display:none !important; }
 }

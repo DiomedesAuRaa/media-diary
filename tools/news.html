@@ -22,6 +22,12 @@
     .headline-meta,.cache-info,.status,.empty { color:var(--tool-muted); font-size:11px; }
     .status { padding:6px; background:var(--tool-surface); }
     .compact .headline { padding:5px 3px; } .compact .headline a { font-size:12px; } .compact .category h2 { font-size:14px; }
+    @media(max-width:280px) {
+      .category-links { flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; padding:6px 0; }
+      .category-link { flex:0 0 auto; }
+      .pager { padding:6px 0; }
+      .cache-info { margin-top:8px; }
+    }
     @media(max-width:280px) { .compact .category-link,.compact .page-link,.compact .compact-link,.compact .full-link { min-width:30px; min-height:30px; } }
     @media(max-width:360px) { body { padding:8px; } .header h1 { font-size:17px; } .snapshot-meta { font-size:10px; } }
   </style>

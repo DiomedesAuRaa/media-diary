@@ -56,3 +56,52 @@ html body.game-page .navdrawer a { border-color:#33485c; }
 html body.game-page .obtn { background:#a66a18; color:#fff7e6; }
 html body.game-page .navclose button,
 html body.game-page .sk { background-color:transparent; }
+
+/* 2048 runs on older KaiOS Gecko builds where CSS Grid and newer sizing values
+   can collapse the board. Keep this fallback local to 2048. */
+html body.game-2048 { width:100%; max-width:none; min-height:100vh; height:auto; max-height:none;
+  padding:4px; overflow-x:hidden; overflow-y:auto; }
+html body.game-2048 .shell { display:block; width:100%; height:auto; min-height:0; max-height:none; overflow:visible; }
+html body.game-2048 .hdr { height:30px; min-height:30px; padding:3px 6px; flex-wrap:nowrap; gap:0; }
+html body.game-2048 .htitle { font-size:13px; }
+html body.game-2048 .hscores { gap:8px; }
+html body.game-2048 .hs span { font-size:8px; }
+html body.game-2048 .hs b { font-size:12px; }
+html body.game-2048 .area { display:block; position:relative; min-height:0; height:auto; padding:7px 0;
+  overflow:visible; text-align:center; }
+html body.game-2048 #board { display:block; position:relative; width:220px; height:220px; margin:0 auto;
+  padding:5px; border-radius:8px; background:#1a2f45; }
+html body.game-2048 #board:after { content:""; display:block; clear:both; }
+html body.game-2048 .tile { display:block; float:left; width:48px; height:48px; margin:2px;
+  border-radius:6px; line-height:48px; text-align:center; font-size:18px; }
+html body.game-2048 .tapbanner { position:absolute; top:7px; right:0; bottom:7px; left:0;
+  width:100%; padding:8px; }
+html body.game-2048 .tapbanner .tt { font-size:12px; }
+html body.game-2048 .tapbanner .ts { font-size:10px; }
+html body.game-2048 .skeys { display:flex; height:34px; min-height:34px; flex-wrap:nowrap; }
+html body.game-2048 .sk { display:flex; width:25%; min-width:0; height:34px; min-height:34px;
+  padding:0 3px; font-size:12px; }
+html body.game-2048 .sk.l { justify-content:center; padding:0; }
+html body.game-2048 .sk.r { justify-content:center; padding:0; }
+html body.game-2048 .navdrawer { position:absolute; top:0; left:0; right:0; width:auto; max-height:80vh;
+  overflow-y:auto; z-index:30; }
+html body.game-2048 .navdrawer a { padding:4px 8px; font-size:13px; }
+html body.game-2048 .navclose { padding:3px 8px; }
+html body.game-2048 .navclose span { font-size:10px; }
+html body.game-2048 .navclose button { font-size:13px; }
+html body.game-2048 .overlay { top:7px; right:0; bottom:7px; left:0; }
+
+@media (min-width:360px) {
+  html body.game-2048 #board { width:320px; height:320px; padding:10px; }
+  html body.game-2048 .tile { width:68px; height:68px; margin:3px; line-height:68px; font-size:22px; }
+  html body.game-2048 .tile[data-v="128"], html body.game-2048 .tile[data-v="256"],
+  html body.game-2048 .tile[data-v="512"] { font-size:16px; }
+  html body.game-2048 .tile[data-v="1024"], html body.game-2048 .tile[data-v="2048"],
+  html body.game-2048 .tile[data-v="4096"], html body.game-2048 .tile[data-v="8192"] { font-size:13px; }
+}
+
+@media (max-width:280px) {
+  html body.game-2048 { padding:2px; }
+  html body.game-2048 .hdr { padding-right:4px; padding-left:4px; }
+  html body.game-2048 .skeys, html body.game-2048 .sk { min-height:29px; height:29px; font-size:11px; }
+}
