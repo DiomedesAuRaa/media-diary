@@ -209,6 +209,7 @@
         <div class="verse-reference" id="verse-ref"></div>
         <div id="verse-content"></div>
     </div>
+    <noscript><p role="status">Bible passages need JavaScript to load the World English Bible. Read the <a href="../index.html">static diary</a> or <a href="news.html">static headlines</a>.</p></noscript>
     
     <script>
         const oldTestament = [
@@ -400,6 +401,9 @@
             const requestVersion = ++chapterRequest;
             showLoading('Loading chapter...');
             document.getElementById('error').replaceChildren();
+            document.getElementById('verse-display').classList.remove('active');
+            document.getElementById('verse-content').replaceChildren();
+            document.getElementById('verse-ref').textContent = '';
             
             const passage = `${book} ${chapter}`;
             
@@ -489,22 +493,32 @@
         }
         
         function resetChapterVerse() {
+            chapterRequest++;
+            currentChapter = [];
             document.getElementById('chapter-selector').classList.remove('active');
             document.getElementById('verse-selector').classList.remove('active');
             document.getElementById('verse-display').classList.remove('active');
+            document.getElementById('verse-content').replaceChildren();
+            document.getElementById('verse-ref').textContent = '';
         }
         
         function resetVerse() {
+            chapterRequest++;
+            currentChapter = [];
             document.getElementById('verse-selector').classList.remove('active');
             document.getElementById('verse-display').classList.remove('active');
+            document.getElementById('verse-content').replaceChildren();
+            document.getElementById('verse-ref').textContent = '';
         }
         
         function showLoading(message) {
             document.getElementById('loading').textContent = message;
+            document.getElementById('verse-display').setAttribute('aria-busy', 'true');
         }
         
         function hideLoading() {
             document.getElementById('loading').textContent = '';
+            document.getElementById('verse-display').setAttribute('aria-busy', 'false');
         }
         
         function showError(message, retry) {

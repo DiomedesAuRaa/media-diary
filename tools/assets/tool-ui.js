@@ -77,6 +77,16 @@
   document.documentElement.classList.toggle('compact', compact);
   window.ToolUI = {escape:escapeText, httpURL:httpURL, setHTML:setHTML, replaceHTML:replaceHTML, text:text, storageGet:storageGet, storageSet:storageSet, fetch:fetchWithTimeout};
   document.addEventListener('DOMContentLoaded', function () {
+    // Keep repeated site navigation out of the way for keyboard readers.
+    var content = document.querySelector('main, h1, .hdr');
+    if (content) {
+      if (!content.id) content.id = 'tool-main';
+      if (!content.hasAttribute('tabindex')) content.setAttribute('tabindex', '-1');
+      var skip = document.querySelector('a.skip') || text('a', 'Skip to content', 'tool-skip');
+      skip.href = '#' + content.id;
+      skip.addEventListener('click', function () { content.focus(); });
+      if (!skip.parentNode) document.body.insertBefore(skip, document.body.firstChild);
+    }
     var nav = document.createElement('nav'); nav.className = 'tool-nav'; nav.setAttribute('aria-label','Site');
     var prefix = document.body.classList.contains('game-page') ? '../' : '';
     var home = text('a','Home'); home.href = prefix + 'home.html';
@@ -88,7 +98,10 @@
       var address = new URL(location.href); address.searchParams.set('compact',compact ? '1' : '0'); history.replaceState(null,'',address);
       document.dispatchEvent(new Event('tool-layout-change'));
     });
-    nav.append(home,services,mode); document.body.insertBefore(nav,document.body.firstChild);
+    nav.append(home,services,mode);
+    var first = document.body.querySelector('a.skip, a.tool-skip');
+    if (first) first.insertAdjacentElement('afterend', nav);
+    else document.body.insertBefore(nav,document.body.firstChild);
     document.querySelectorAll('.back-btn,.home-link').forEach(function (el) { el.hidden = true; });
     document.querySelectorAll('.last-update,#last-updated,.error,.config-error').forEach(function(el){el.setAttribute('role','status');});
   });

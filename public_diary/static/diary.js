@@ -4,7 +4,7 @@
   var stateNode=document.getElementById('diary-state');if(!stateNode)return;
   var state=JSON.parse(stateNode.textContent), main=document.querySelector('[data-public]'), query=new URLSearchParams(location.search);
   ['type','mode','q','sort','page','compact'].forEach(function(k){if(query.has(k))state[k]=query.get(k);});state.compact=state.compact===true||state.compact==='1';state.page=Math.max(1,Math.min(100000,parseInt(state.page,10)||1));if(['all','movies','books','tv'].indexOf(state.type)<0)state.type='movies';state.mode=state.mode==='later'?'later':'diary';if(['recent','rating','title'].indexOf(state.sort)<0)state.sort='recent';state.q=String(state.q||'').slice(0,300);
-  var cache=null;
+  var cache=null,loading=null;
   function filename(s){return s.type+'-'+s.mode+'-'+s.sort+'-'+s.page+'-'+(s.compact?'compact':'full')+'.html';}
   function href(s){var params=new URLSearchParams();Object.keys(s).forEach(function(k){params.set(k,k==='compact'?(s[k]?'1':'0'):s[k]);});return filename(s)+'?'+params.toString();}
   function node(tag,text,cls){var el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;}
@@ -27,7 +27,18 @@
     main.querySelector('.count').textContent=rows.length+' items';var pager=main.querySelector('.pagination');pager.textContent='';[['Previous',state.page-1],['Next',state.page+1]].forEach(function(pair,i){if(i===1)pager.appendChild(node('span',state.page+' / '+pages));if(pair[1]<1||pair[1]>pages){pager.appendChild(node('span',pair[0]));return;}var a=node('a',pair[0]);a.href=href(Object.assign({},state,{page:pair[1]}));pager.appendChild(a);});
     var q=main.querySelector('[name=q]');if(q)q.value=state.q||'';var sort=main.querySelector('[name=sort]');if(sort)sort.value=state.sort;
   }
-  function load(){if(cache){render();return Promise.resolve();}return Promise.all(['movies','books','tv','movies_watchlist','books_watchlist','tv_watchlist'].map(function(name){return fetch(name+'.json').then(function(r){if(!r.ok)throw new Error('load');return r.json();}).then(function(data){return [name,data];});})).then(function(all){cache={};all.forEach(function(pair){cache[pair[0]]=pair[1];});render();}).catch(function(){main.querySelector('.count').textContent='Search unavailable. Reload or use the category links.';});}
+  function load(){
+    if(cache){render();return Promise.resolve();}
+    if(loading)return loading;
+    var controller=window.AbortController?new AbortController():null,timer;
+    var requests=Promise.all(['movies','books','tv','movies_watchlist','books_watchlist','tv_watchlist'].map(function(name){return fetch(name+'.json',controller?{signal:controller.signal}:undefined).then(function(r){if(!r.ok)throw new Error('load');return r.json();}).then(function(data){return [name,data];});}));
+    var deadline=new Promise(function(_,reject){timer=setTimeout(function(){if(controller)controller.abort();reject(new Error('timeout'));},12000);});
+    loading=Promise.race([requests,deadline]).then(function(all){cache={};all.forEach(function(pair){cache[pair[0]]=pair[1];});render();}).catch(function(){
+      var count=main.querySelector('.count');count.textContent='Search unavailable. ';
+      var retry=node('button','Retry');retry.type='button';retry.addEventListener('click',function(){retry.disabled=true;count.textContent='Loading search…';load();});count.appendChild(retry);
+    }).then(function(){clearTimeout(timer);if(controller)controller.abort();loading=null;});
+    return loading;
+  }
   main.querySelector('.find').addEventListener('submit',function(e){e.preventDefault();state.q=main.querySelector('[name=q]').value;state.sort=main.querySelector('[name=sort]').value;state.page=1;history.pushState(state,'',href(state));load();});
   // Static page links retain search and remain real links, so native Back is reliable.
   main.addEventListener('click',function(e){var target=e.target.closest('a');if(!target||!state.q||target.classList.contains('brand'))return;var match=/^(all|movies|books|tv)-(diary|later)-(recent|rating|title)-(\d+)-(compact|full)\.html/.exec(target.getAttribute('href')||'');if(match){var next={type:match[1],mode:match[2],sort:match[3],page:Number(match[4]),compact:match[5]==='compact',q:state.q};target.href=href(next);}});

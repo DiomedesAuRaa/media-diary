@@ -36,7 +36,7 @@ class PublicBuildTests(unittest.TestCase):
         self.assertTrue((self.output/'tools/news.html').is_file())
         self.assertEqual({p for p in files if p.endswith('.json')}, {
             'movies.json','books.json','tv.json','movies_watchlist.json','books_watchlist.json','tv_watchlist.json',
-            'tools/podcast-manifest.json','tools/reddit-digest.json','tools/sports-config.json','tools/news-digest.json'})
+            'tools/podcast-manifest.json','tools/reddit-digest.json','tools/sports-config.json','tools/sports-snapshot.json','tools/news-digest.json'})
         self.assertFalse(any('/scripts/' in '/' + p or '/tests/' in '/' + p or p.endswith('.csv') for p in files))
         self.assertFalse(any(p.startswith(('app/','public_diary/','data/')) for p in files))
         self.assertFalse(any('scores-' in p for p in files))
@@ -76,6 +76,16 @@ class PublicBuildTests(unittest.TestCase):
         sources='\n'.join(p.read_text(encoding='utf-8') for p in (ROOT/'public_diary').glob('*.py'))
         for forbidden in ('from app.', 'FastAPI', 'SYNC_STATE_PATH', 'DATA_ROOT', '/api/', '/log?', '/record?'):
             self.assertNotIn(forbidden, sources)
+
+    def test_racing_score_configuration_is_validated(self):
+        config = builder.validate_sports_config(ROOT/'tools/sports-config.json')
+        racing = next(league for league in config['leagues'] if league['name'] == 'F1')
+        self.assertEqual(racing['scores_type'], 'racing')
+        racing['scores_type'] = 'untrusted-renderer'
+        with TemporaryDirectory(prefix='combined-apps-racing-', dir=ROOT.parent) as temp:
+            path = Path(temp)/'sports.json'
+            path.write_text(json.dumps(config))
+            with self.assertRaises(ValueError): builder.validate_sports_config(path)
 
     def test_nonempty_and_symlink_outputs_are_preserved(self):
         with TemporaryDirectory(prefix='combined-apps-safety-', dir=ROOT.parent) as temp:

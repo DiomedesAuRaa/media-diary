@@ -61,15 +61,25 @@
     <button class="refresh-btn" id="refresh-scores" type="button">REFRESH</button>
     <div class="last-update" id="lastUpdate"></div>
     <div id="content"><div class="loading">Loading config...</div></div>
+    <noscript><p role="status">Sports scores need JavaScript to load current league data. Read the <a href="../index.html">static diary</a> or <a href="news.html">static headlines</a>.</p></noscript>
 
     <script>
         var API_BASE       = 'https://site.api.espn.com/apis/site/v2/sports';
         var CONFIG_URL     = 'sports-config.json';
         var CACHE_KEY      = 'sports_scores_cache_safe_v2';
         var CACHE_DURATION = 2 * 60 * 1000;
+        var SNAPSHOT_FRESHNESS_MS = 30 * 60 * 1000;
+        var SNAPSHOT_URL    = 'sports-snapshot.json';
 
         var PRIORITY_TEAMS = [];
         var SPORTS_CONFIG  = {};
+        var SPORTS_SNAPSHOT = null;
+        var snapshotRequestVersion = 0;
+        var scoresRequestVersion = 0;
+        var scoreResults = [];
+        var expandedScoreCounts = {};
+        var lastGoodScoreHTML = '';
+        var lastGoodScoreTimestamp = null;
 
         async function loadConfig() {
             var res = await ToolUI.fetch(CONFIG_URL + '?t=' + Date.now());
@@ -87,6 +97,27 @@
             });
         }
 
+        async function loadSportsSnapshot() {
+            var requestVersion = ++snapshotRequestVersion;
+            var res = await ToolUI.fetch(SNAPSHOT_URL, {cache:'no-cache'});
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            var snapshot = await res.json();
+            if (!snapshot || snapshot.version !== 1 || !snapshot.entries || typeof snapshot.entries !== 'object') throw new Error('Invalid sports snapshot');
+            if (requestVersion !== snapshotRequestVersion) return null;
+            SPORTS_SNAPSHOT = snapshot;
+            return snapshot;
+        }
+
+        function formatSnapshotTime(value) {
+            var time = value ? new Date(value) : null;
+            return time && Number.isFinite(time.getTime()) ? time.toLocaleString() : 'time unavailable';
+        }
+
+        function isSnapshotStale(entry) {
+            var generatedAt = entry && entry.generatedAt ? Date.parse(entry.generatedAt) : NaN;
+            return !Number.isFinite(generatedAt) || Date.now() - generatedAt > SNAPSHOT_FRESHNESS_MS || entry.status === 'stale';
+        }
+
         function formatTime(ts) {
             var d = new Date(ts), h = d.getHours(), m = d.getMinutes().toString().padStart(2,'0');
             return (h % 12 || 12) + ':' + m + (h >= 12 ? ' PM' : ' AM');
@@ -101,30 +132,34 @@
         }
 
         function getGameStatus(comp) {
-            var s = comp.status, typeName = s.type.name, gameDate = formatDate(comp.date);
+            var s = comp && comp.status ? comp.status : {};
+            var type = s.type || {};
+            var typeName = type.name || '';
+            var gameDate = comp && comp.date ? formatDate(comp.date) : '';
             if (typeName === 'STATUS_IN_PROGRESS')
-                return '<span class="live">LIVE - ' + ToolUI.escape((s.type.shortDetail || '')) + '</span>';
+                return '<span class="live">LIVE - ' + ToolUI.escape((type.shortDetail || '')) + '</span>';
             if (typeName === 'STATUS_FINAL') {
-                var f = s.type.shortDetail || 'FINAL';
+                var f = type.shortDetail || 'FINAL';
                 return gameDate ? ToolUI.escape(f) + ' - ' + gameDate : ToolUI.escape(f);
             }
-            if (typeName === 'STATUS_SCHEDULED') {
+            if (typeName === 'STATUS_SCHEDULED' && comp && comp.date) {
                 var t = formatTime(comp.date);
                 return gameDate ? gameDate + ' ' + t : t;
             }
-            return ToolUI.escape(s.type.shortDetail || 'Scheduled');
+            return ToolUI.escape(type.shortDetail || 'Status unavailable');
         }
 
         function isPriorityTeam(team) {
+            if (!team || !team.team) return false;
             var name = (team.team.abbreviation || team.team.shortDisplayName || team.team.displayName || '').toUpperCase();
             return PRIORITY_TEAMS.some(function(p) { return name.includes(p.toUpperCase()); });
         }
 
         function renderRace(comp, isPriority, showSport) {
-            var isLive  = comp.status.type.name === 'STATUS_IN_PROGRESS';
+            var isLive  = !!(comp.status && comp.status.type && comp.status.type.name === 'STATUS_IN_PROGRESS');
             var status  = getGameStatus(comp);
             var pLabel  = isPriority ? '<span style="color:#ffd700;font-weight:bold;">* </span>' : '';
-            var sLabel  = (showSport && comp._sportName) ? '<span style="color:#0ff;font-size:10px;">[' + ToolUI.escape(comp._sportName) + ']</span> ' : '';
+            var sLabel  = (showSport && comp._sportName) ? '<span style="color:#0ff;font-size:10px;">[' + ToolUI.escape(comp._sportName) + (comp._snapshotStatus === 'stale' ? ' · saved data' : '') + ']</span> ' : '';
             var pStyle  = isPriority ? 'border-left:3px solid #ffd700;background:#1a1a00;' : '';
 
             // For races, competitors are individual drivers — show top 3 finishers or full grid
@@ -162,12 +197,14 @@
         }
 
         function renderGame(comp, isPriority, showSport) {
-            var home = comp.competitors.find(function(t) { return t.homeAway === 'home'; });
-            var away = comp.competitors.find(function(t) { return t.homeAway === 'away'; });
-            var isLive = comp.status.type.name === 'STATUS_IN_PROGRESS';
+            var competitors = Array.isArray(comp.competitors) ? comp.competitors : [];
+            var home = competitors.find(function(t) { return t && t.homeAway === 'home'; });
+            var away = competitors.find(function(t) { return t && t.homeAway === 'away'; });
+            if (!home || !away || !home.team || !away.team) return '';
+            var isLive = !!(comp.status && comp.status.type && comp.status.type.name === 'STATUS_IN_PROGRESS');
             var pStyle = isPriority ? 'border-left:3px solid #ffd700;background:#1a1a00;' : '';
             var pLabel = isPriority ? '<span style="color:#ffd700;font-weight:bold;">* </span>' : '';
-            var sLabel = (showSport && comp._sportName) ? '<span style="color:#0ff;font-size:10px;">[' + ToolUI.escape(comp._sportName) + ']</span> ' : '';
+            var sLabel = (showSport && comp._sportName) ? '<span style="color:#0ff;font-size:10px;">[' + ToolUI.escape(comp._sportName) + (comp._snapshotStatus === 'stale' ? ' · saved data' : '') + ']</span> ' : '';
             var link = '#';
             if (comp.links) {
                 var gc = comp.links.find(function(l) { return l.text === 'Gamecast' || l.text === 'Game Info'; });
@@ -178,21 +215,28 @@
             var close = link !== '#' ? '</a>' : '</div>';
             return open +
                 '<div class="game-status ' + (isLive ? 'live' : '') + '">' + pLabel + sLabel + getGameStatus(comp) + '</div>' +
-                '<div class="team-row"><span class="team-name ' + (away.winner ? 'winner' : '') + '">' + ToolUI.escape((away.team.abbreviation || away.team.shortDisplayName)) + '</span><span class="score ' + (away.winner ? 'winner' : '') + '">' + ToolUI.escape((away.score || '-')) + '</span></div>' +
-                '<div class="team-row"><span class="team-name ' + (home.winner ? 'winner' : '') + '">' + ToolUI.escape((home.team.abbreviation || home.team.shortDisplayName)) + '</span><span class="score ' + (home.winner ? 'winner' : '') + '">' + ToolUI.escape((home.score || '-')) + '</span></div>' +
+                '<div class="team-row"><span class="team-name ' + (away.winner ? 'winner' : '') + '">' + ToolUI.escape((away.team.abbreviation || away.team.shortDisplayName)) + '</span><span class="score ' + (away.winner ? 'winner' : '') + '">' + ToolUI.escape(away.score === null || away.score === undefined || away.score === '' ? '-' : String(away.score)) + '</span></div>' +
+                '<div class="team-row"><span class="team-name ' + (home.winner ? 'winner' : '') + '">' + ToolUI.escape((home.team.abbreviation || home.team.shortDisplayName)) + '</span><span class="score ' + (home.winner ? 'winner' : '') + '">' + ToolUI.escape(home.score === null || home.score === undefined || home.score === '' ? '-' : String(home.score)) + '</span></div>' +
                 close;
         }
 
-        async function fetchSportScores(sportName, config) {
+        function fetchSportScores(sportName, config) {
             try {
-                var res = await ToolUI.fetch(config.url);
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                var data = await res.json(), events = data.events || [];
-                var priorityGames = [], regularGames = [];
-                events.slice(0, 15).forEach(function(event) {
-                    var comp = event.competitions[0];
+                var entry = SPORTS_SNAPSHOT && SPORTS_SNAPSHOT.entries[config.url];
+                if (!entry || ['ok', 'stale'].indexOf(entry.status) < 0 || !entry.payload || typeof entry.payload !== 'object') throw new Error('No published score data');
+                var events = entry.payload.events || [];
+                var priorityGames = [], regularGames = [], validEventCount = 0, invalidEventCount = 0;
+                // Scan every event returned by the bounded ESPN request so a
+                // priority team later in the feed is not silently missed.
+                events.forEach(function(event) {
+                    var comp = event && Array.isArray(event.competitions) ? event.competitions[0] : null;
+                    if (!comp || !Array.isArray(comp.competitors) || !comp.status || !comp.status.type) { invalidEventCount++; return; }
+                    if (config.scoresType !== 'racing' && !comp.competitors.some(function(team) { return team && team.homeAway === 'home' && team.team; }) ) { invalidEventCount++; return; }
+                    if (config.scoresType !== 'racing' && !comp.competitors.some(function(team) { return team && team.homeAway === 'away' && team.team; }) ) { invalidEventCount++; return; }
+                    validEventCount++;
                     comp._sportName  = sportName;
                     comp._scoresType = config.scoresType || 'default';
+                    comp._snapshotStatus = isSnapshotStale(entry) ? 'stale' : 'ok';
                     if (config.scoresType === 'racing') {
                         // Racing events have no home/away — never priority, always regular
                         regularGames.push(comp);
@@ -202,36 +246,91 @@
                         regularGames.push(comp);
                     }
                 });
-                return { priorityGames: priorityGames, regularGames: regularGames.slice(0, 10), hasGames: events.length > 0, sportName: sportName, color: config.color };
+                if (events.length > 0 && validEventCount === 0) throw new Error('Snapshot entries do not contain usable events');
+                return { priorityGames: priorityGames, regularGames: regularGames, hasGames: validEventCount > 0, invalidEventCount: invalidEventCount, sportName: sportName, color: config.color, status: isSnapshotStale(entry) ? 'stale' : 'ok', generatedAt: entry.generatedAt, lastAttemptAt: entry.lastAttemptAt };
             } catch(err) {
-                return { priorityGames: [], regularGames: [], hasGames: false, sportName: sportName, color: config.color, error: true };
+                var snapshotEntry = SPORTS_SNAPSHOT && SPORTS_SNAPSHOT.entries[config.url];
+                return { priorityGames: [], regularGames: [], hasGames: false, sportName: sportName, color: config.color, error: true, status: snapshotEntry && snapshotEntry.status || 'unavailable', generatedAt: snapshotEntry && snapshotEntry.generatedAt, lastAttemptAt: snapshotEntry && snapshotEntry.lastAttemptAt };
             }
         }
 
         function getCachedData() {
             try {
                 var raw = localStorage.getItem(CACHE_KEY);
-                if (raw) { var d = JSON.parse(raw); if (Date.now() - d.timestamp < CACHE_DURATION) return d.content; }
+                if (raw) { var d = JSON.parse(raw); if (typeof d.content === 'string' && Date.now() - d.timestamp < CACHE_DURATION) return d; }
             } catch(e) {}
             return null;
         }
 
         function setCachedData(content) {
-            try { localStorage.setItem(CACHE_KEY, JSON.stringify({ content: content, timestamp: Date.now() })); } catch(e) {}
+            var timestamp = Date.now();
+            lastGoodScoreHTML = content;
+            lastGoodScoreTimestamp = timestamp;
+            try { localStorage.setItem(CACHE_KEY, JSON.stringify({ content: content, timestamp: timestamp })); } catch(e) {}
         }
 
-        async function loadScores(forceRefresh) {
+        function renderLeagueSection(result, index) {
+            var sectionId = 'section-' + result.sportName.replace(/[^a-z0-9]/gi, '_');
+            var count = Math.min(expandedScoreCounts[index] || 10, result.regularGames.length);
+            var games = result.regularGames.slice(0, count).map(function(c) {
+                return c._scoresType === 'racing' ? renderRace(c, false, false) : renderGame(c, false, false);
+            }).join('');
+            var more = count < result.regularGames.length
+                ? '<button type="button" data-show-more="' + index + '">Show 10 more (' + (result.regularGames.length - count) + ' left)</button>'
+                : '';
+            var staleNote = result.status === 'stale' ? '<p class="last-update">Showing saved data from ' + ToolUI.escape(formatSnapshotTime(result.generatedAt)) + '.</p>' : '';
+            var invalidNote = result.invalidEventCount ? '<p class="last-update" role="status">Some incomplete game records were skipped.</p>' : '';
+            return '<div class="sport-section" id="' + sectionId + '"><div class="sport-title" style="border-left:3px solid ' + result.color + ';padding-left:5px;">' + ToolUI.escape(result.sportName) + '</div>' + staleNote + invalidNote + games + more + '</div>';
+        }
+
+        function attachShowMoreButtons() {
+            document.querySelectorAll('[data-show-more]').forEach(function(button) {
+                if (button.dataset.showMoreBound === 'true') return;
+                button.dataset.showMoreBound = 'true';
+                button.addEventListener('click', function() {
+                    var index = Number(button.dataset.showMore);
+                    if (!Number.isInteger(index) || !scoreResults[index]) return;
+                    expandedScoreCounts[index] = (expandedScoreCounts[index] || 10) + 10;
+                    var section = button.closest('.sport-section');
+                    if (section) ToolUI.replaceHTML(section, renderLeagueSection(scoreResults[index], index));
+                    attachShowMoreButtons();
+                    var sectionId = 'section-' + scoreResults[index].sportName.replace(/[^a-z0-9]/gi, '_');
+                    var nextButton = document.querySelector('#' + sectionId + ' [data-show-more]');
+                    if (nextButton) nextButton.focus();
+                    else {
+                        var expandedSection = document.getElementById(sectionId);
+                        if (expandedSection) { expandedSection.setAttribute('tabindex', '-1'); expandedSection.focus(); }
+                    }
+                });
+            });
+        }
+
+        async function loadScores(forceRefresh, keepCachedView) {
+            var requestVersion = ++scoresRequestVersion;
             var content = document.getElementById('content');
             content.setAttribute('aria-busy', 'true');
             if (!forceRefresh) {
                 var cached = getCachedData();
-                if (cached) { ToolUI.setHTML(content, cached); updateTimestamp(); loadScores(true); return; }
+                if (cached) {
+                    lastGoodScoreHTML = cached.content;
+                    lastGoodScoreTimestamp = cached.timestamp;
+                    ToolUI.setHTML(content, cached.content);
+                    updateTimestamp(0, cached.timestamp);
+                    loadScores(true, true);
+                    return;
+                }
             }
-            ToolUI.setHTML(content, '<div class="loading">Loading scores...</div>');
+            if (!keepCachedView) ToolUI.setHTML(content, '<div class="loading">Loading scores...</div>');
             try {
-                var results = await Promise.all(Object.entries(SPORTS_CONFIG).map(function(e) { return fetchSportScores(e[0], e[1]); }));
+                var snapshot = await loadSportsSnapshot();
+                if (requestVersion !== scoresRequestVersion || !snapshot) return;
+                var results = Object.entries(SPORTS_CONFIG).map(function(e) { return fetchSportScores(e[0], e[1]); });
+                scoreResults = results;
+                expandedScoreCounts = {};
                 var allPriority = [];
                 results.forEach(function(r) { allPriority = allPriority.concat(r.priorityGames); });
+                var failedResults = results.filter(function(r) { return r.error; });
+                var staleResults = results.filter(function(r) { return r.status === 'stale'; });
                 var html = '';
                 if (allPriority.length > 0) {
                     html += '<div class="sport-section" id="section-FAVORITES"><div class="sport-title" style="border-left:3px solid #ffd700;padding-left:5px;">FAVORITES</div>' + allPriority.map(function(c) { return c._scoresType === 'racing' ? renderRace(c, true, true) : renderGame(c, true, true); }).join('') + '</div>';
@@ -240,18 +339,44 @@
                     if (result.error) {
                         html += '<div class="sport-section" id="section-' + result.sportName.replace(/[^a-z0-9]/gi,'_') + '"><div class="sport-title" style="border-left:3px solid ' + result.color + ';padding-left:5px;">' + ToolUI.escape(result.sportName) + '</div><div class="error">Unable to load</div></div>';
                     } else if (result.regularGames.length > 0) {
-                        html += '<div class="sport-section" id="section-' + result.sportName.replace(/[^a-z0-9]/gi,'_') + '"><div class="sport-title" style="border-left:3px solid ' + result.color + ';padding-left:5px;">' + ToolUI.escape(result.sportName) + '</div>' + result.regularGames.map(function(c) { return c._scoresType === 'racing' ? renderRace(c, false, false) : renderGame(c, false, false); }).join('') + '</div>';
+                        html += renderLeagueSection(result, results.indexOf(result));
                     } else if (!result.hasGames && allPriority.length === 0) {
                         html += '<div class="sport-section" id="section-' + result.sportName.replace(/[^a-z0-9]/gi,'_') + '"><div class="sport-title" style="border-left:3px solid ' + result.color + ';padding-left:5px;">' + ToolUI.escape(result.sportName) + '</div><div style="padding:5px;color:#666;font-size:11px;">No games today</div></div>';
                     }
                 });
+                if (failedResults.length === results.length && results.length > 0) {
+                    html = '<div class="error" role="alert">Scores could not load for any league. <button type="button" id="retry-scores">Retry</button></div>';
+                    if (lastGoodScoreHTML) {
+                        html += '<p class="last-update">Showing saved scores from ' + new Date(lastGoodScoreTimestamp).toLocaleTimeString() + '.</p>' + lastGoodScoreHTML;
+                        document.getElementById('lastUpdate').textContent = 'Snapshot unavailable · saved scores from ' + new Date(lastGoodScoreTimestamp).toLocaleTimeString();
+                    } else {
+                        document.getElementById('lastUpdate').textContent = 'No league data in the published snapshot.';
+                    }
+                } else if (failedResults.length > 0 || staleResults.length > 0) {
+                    html = '<p class="error" role="status">' + (failedResults.length ? 'Some league data is unavailable.' : '') + (failedResults.length && staleResults.length ? ' ' : '') + (staleResults.length ? 'Some leagues are using saved data.' : '') + ' Use Refresh to check again.</p>' + html;
+                }
                 ToolUI.setHTML(content, html);
                 content.setAttribute('aria-busy', 'false');
                 buildLeagueNav(results, allPriority.length > 0);
-                setCachedData(html);
-                updateTimestamp();
+                if (failedResults.length < results.length) {
+                    if (failedResults.length === 0 && staleResults.length === 0) {
+                        setCachedData(html);
+                    }
+                    updateTimestamp(failedResults.length, snapshot, staleResults.length);
+                }
+                var retryScores = document.getElementById('retry-scores');
+                if (retryScores) retryScores.addEventListener('click', function() { loadScores(true); });
+                attachShowMoreButtons();
             } catch(err) {
-                ToolUI.setHTML(content, '<div class="error">Failed to load scores. <button type="button" id="retry-scores">Retry</button></div>');
+                if (requestVersion !== scoresRequestVersion) return;
+                var fallback = '<div class="error" role="alert">Could not load the published sports snapshot. <button type="button" id="retry-scores">Retry</button></div>';
+                if (lastGoodScoreHTML) {
+                    fallback += '<p class="last-update">Showing saved scores from ' + new Date(lastGoodScoreTimestamp).toLocaleTimeString() + '.</p>' + lastGoodScoreHTML;
+                    document.getElementById('lastUpdate').textContent = 'Snapshot unavailable · saved scores from ' + new Date(lastGoodScoreTimestamp).toLocaleTimeString();
+                } else {
+                    document.getElementById('lastUpdate').textContent = 'Published sports snapshot unavailable.';
+                }
+                ToolUI.setHTML(content, fallback);
                 content.setAttribute('aria-busy', 'false');
                 document.getElementById('retry-scores').addEventListener('click', function() { loadScores(true); });
             }
@@ -305,10 +430,13 @@
         });
         window.addEventListener('hashchange', syncLeaguePicker);
 
-        function updateTimestamp() {
+        function updateTimestamp(failedCount, snapshot, staleCount) {
             var now = new Date();
             document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
-            document.getElementById('lastUpdate').textContent = 'Updated: ' + now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
+            var updated = Number.isFinite(snapshot) ? 'Showing saved scores from ' + new Date(snapshot).toLocaleTimeString() : 'Sports snapshot checked ' + formatSnapshotTime(snapshot && snapshot.lastAttemptAt);
+            if (failedCount) updated += ' · ' + failedCount + ' unavailable';
+            if (staleCount) updated += ' · ' + staleCount + ' stale';
+            document.getElementById('lastUpdate').textContent = updated;
         }
 
 

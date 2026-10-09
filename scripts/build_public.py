@@ -26,7 +26,7 @@ TOOL_PAGES = (
     'games/2048.html', 'games/minesweeper.html', 'games/snake.html',
     'games/tetris.html', 'games/wordle.html',
 )
-TOOL_DATA = ('podcast-manifest.json', 'reddit-digest.json', 'sports-config.json', 'news-digest.json')
+TOOL_DATA = ('podcast-manifest.json', 'reddit-digest.json', 'sports-config.json', 'sports-snapshot.json', 'news-digest.json')
 TOOL_ASSETS = ('assets/tool-ui.css', 'assets/tool-ui.js', 'assets/game-ui.css')
 
 def assert_no_symlink_components(path: Path, boundary: Path):
@@ -55,7 +55,7 @@ def approved_source_files():
     files.extend(tools / name for name in TOOL_PAGES + TOOL_DATA + TOOL_ASSETS)
     files.extend(tools / 'scripts' / name for name in (
         'fetch_feeds.py','fetch_reddit.py','fetch_news.py','validate_podcast.py',
-        'validate_reddit.py','validate_news.py','render_news.py','reddit-config.json','news-config.json',
+        'validate_reddit.py','validate_news.py','validate_sports.py','render_news.py','reddit-config.json','news-config.json',
     ))
     return files
 
@@ -101,7 +101,7 @@ def validate_sports_config(path: Path):
         raise ValueError('Invalid league list')
     names = set()
     for league in leagues:
-        allowed = {'name', 'enabled', 'espn_path', 'color', 'standings', 'standings_type'}
+        allowed = {'name', 'enabled', 'espn_path', 'color', 'standings', 'standings_type', 'scores_type'}
         if not isinstance(league, dict) or set(league) - allowed or not {'name', 'enabled', 'espn_path', 'color', 'standings'} <= set(league):
             raise ValueError('Invalid league fields')
         name, path_value, color = league['name'], league['espn_path'], league['color']
@@ -116,6 +116,8 @@ def validate_sports_config(path: Path):
             raise ValueError('Invalid league color')
         if 'standings_type' in league and league['standings_type'] not in {'division', 'rankings', 'soccer', 'f1'}:
             raise ValueError('Invalid standings type')
+        if 'scores_type' in league and league['scores_type'] not in {'default', 'racing'}:
+            raise ValueError('Invalid scores type')
     return config
 
 def validate_output(path: Path) -> Path:
@@ -153,6 +155,7 @@ def populate(output: Path):
                 copy_checked(source, output / source.name, generated)
     tools = ROOT / 'tools'
     validate_sports_config(tools / 'sports-config.json')
+    subprocess.run([sys.executable, str(tools / 'scripts/validate_sports.py'), str(tools / 'sports-snapshot.json'), '--config', str(tools / 'sports-config.json')], check=True)
     # Validate feed JSON against its source-side configs before it can enter Pages.
     subprocess.run([sys.executable, str(tools / 'scripts/validate_podcast.py'), str(tools / 'podcast-manifest.json')], check=True)
     subprocess.run([sys.executable, str(tools / 'scripts/validate_reddit.py'), str(tools / 'reddit-digest.json')], check=True)

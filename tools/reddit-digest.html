@@ -289,9 +289,11 @@
 
         <footer>
             <p>📡 Last updated: <span id="last-updated">Loading...</span></p>
-            <p>This page auto-refreshes every 5 minutes</p>
+            <p>This page checks for a newly published digest every 5 minutes.</p>
         </footer>
     </div>
+
+    <noscript><p class="error">The digest needs JavaScript to display saved posts. You can browse communities directly at <a href="https://www.reddit.com/">Reddit</a>, or return to <a href="home.html">Tools</a>.</p></noscript>
 
     <button id="back-to-top" title="Back to top">↑</button>
 
@@ -302,6 +304,7 @@
 
         let allDigestData = null;
         let activeFeed = ToolUI.storageGet('activeFeed') || null;
+        const activeSubFeeds = Object.create(null);
 
         // ── Utilities ──────────────────────────────────────────────────────
         function escapeHtml(text) { return ToolUI.escape(text); }
@@ -356,7 +359,11 @@
                 // ── End normalization ──
 
                 checkStaleness(data.generated_at);
-                if (data.refresh_status && data.refresh_status !== 'ok') document.getElementById('stale-banner').classList.add('visible');
+                if (data.refresh_status && data.refresh_status !== 'ok') {
+                    const banner = document.getElementById('stale-banner');
+                    banner.textContent = '⚠️ Some feeds could not refresh. Saved posts remain available where a last-good snapshot exists.';
+                    banner.classList.add('visible');
+                }
                 buildFeedNav(data.feeds);
                 populateSubredditFilter(data);
                 buildSubredditNav(data);
@@ -364,8 +371,16 @@
                 scheduleRefresh();
             } catch (err) {
                 console.error('Error loading digest data:', err);
-                ToolUI.setHTML(document.getElementById('content'), `<div class="error">⚠️ Error loading Reddit digest data: ${escapeHtml(err.message)} <button type="button" id="retry-digest">Retry</button></div>`);
-                document.getElementById('retry-digest').addEventListener('click', loadDigestData);
+                const banner = document.getElementById('stale-banner');
+                if (allDigestData) {
+                    banner.textContent = '⚠️ Could not check for a new digest. The posts already on this page are still available.';
+                    banner.classList.add('visible');
+                    const lastUpdated = document.getElementById('last-updated');
+                    if (!lastUpdated.textContent.includes('Update check failed')) lastUpdated.textContent += ' · Update check failed';
+                } else {
+                    ToolUI.setHTML(document.getElementById('content'), `<div class="error">⚠️ Error loading Reddit digest data: ${escapeHtml(err.message)} <button type="button" id="retry-digest">Retry</button></div>`);
+                    document.getElementById('retry-digest').addEventListener('click', loadDigestData);
+                }
                 scheduleRefresh();
             }
         }
@@ -385,8 +400,12 @@
         function checkStaleness(generatedAt) {
             const date = parseDigestDate(generatedAt);
             const age = date ? Date.now() - date.getTime() : Infinity;
-            document.getElementById('stale-banner')
-                    .classList.toggle('visible', age > STALE_THRESHOLD);
+            const banner = document.getElementById('stale-banner');
+            const stale = age > STALE_THRESHOLD;
+            banner.textContent = stale
+                ? '⚠️ This published digest is over 2 hours old. Saved posts remain available.'
+                : '⚠️ Some feeds could not refresh. Saved posts remain available where a last-good snapshot exists.';
+            banner.classList.toggle('visible', stale);
         }
 
         // ── Global feed switcher ───────────────────────────────────────────
@@ -438,14 +457,50 @@
             // Swap every subreddit to the same feed, and sync per-sub tabs
             document.querySelectorAll('.subreddit').forEach(subDiv => {
                 const subreddit = subDiv.id.replace('sub-', '');
-                switchSubFeed(subreddit, label, /* updateGlobal= */ false);
+                chooseSubFeed(subreddit, label);
             });
+        }
+
+        function chooseSubFeed(subreddit, requested) {
+            const wrapper = document.getElementById(`posts-${subreddit}`);
+            if (!wrapper) return;
+            const available = Array.from(wrapper.querySelectorAll('.feed-posts'))
+                .filter(panel => panel.dataset.unavailable !== 'true')
+                .map(panel => panel.dataset.feed);
+            const selected = available.includes(requested) ? requested
+                : available.includes(activeSubFeeds[subreddit]) ? activeSubFeeds[subreddit]
+                : (available[0] || '');
+            if (selected) switchSubFeed(subreddit, selected);
+            else {
+                activeSubFeeds[subreddit] = '';
+                wrapper.querySelectorAll('.feed-posts').forEach(panel => panel.classList.remove('active'));
+                wrapper.querySelectorAll('.sub-feed-tab').forEach(button => {
+                    button.classList.remove('active'); button.setAttribute('aria-selected', 'false'); button.tabIndex = -1;
+                });
+            }
+            const note = wrapper.querySelector('.fallback-note');
+            if (note) {
+                note.textContent = selected && selected !== requested
+                    ? `${requested} is unavailable here; showing saved posts from ${selected}.`
+                    : selected ? `Showing ${selected} for this community.`
+                    : 'No saved posts are available for this community.';
+                if (!selected && /^[A-Za-z0-9_]{1,50}$/.test(subreddit)) {
+                    const link = document.createElement('a');
+                    link.href = `https://www.reddit.com/r/${encodeURIComponent(subreddit)}/`;
+                    link.target = '_blank'; link.rel = 'noopener noreferrer';
+                    link.textContent = `Open r/${subreddit}`;
+                    note.append(' ', link);
+                }
+                note.hidden = false;
+            }
         }
 
         function switchSubFeed(subreddit, label, updateGlobal = true) {
             // Swap visible feed-posts for this subreddit only
             const postsWrapper = document.getElementById(`posts-${subreddit}`);
             if (!postsWrapper) return;
+            if (!postsWrapper.querySelector(`.feed-posts[data-feed="${CSS.escape(label)}"]`)) return;
+            activeSubFeeds[subreddit] = label;
             postsWrapper.querySelectorAll('.feed-posts').forEach(el => {
                 el.classList.toggle('active', el.dataset.feed === label);
             });
@@ -458,6 +513,13 @@
                     btn.setAttribute('aria-selected', String(btn.dataset.feed === label));
                     btn.tabIndex = btn.dataset.feed === label ? 0 : -1;
                 });
+            }
+            const note = postsWrapper.querySelector('.fallback-note');
+            if (note) {
+                note.textContent = label === activeFeed
+                    ? `Showing ${label} for this community.`
+                    : `Showing ${label} for this community; the global feed is ${activeFeed}.`;
+                note.hidden = false;
             }
         }
 
@@ -544,6 +606,13 @@
                     : '';
 
                 const feedLabels = Object.keys(feedsData);
+                const selectableFeedLabels = feedLabels.filter(label => {
+                    const status = data.feed_status?.[subreddit]?.[label];
+                    return feedsData[label]?.length > 0 || status?.status !== 'unavailable';
+                });
+                const localActiveFeed = selectableFeedLabels.includes(activeFeed) ? activeFeed
+                    : (selectableFeedLabels[0] || '');
+                if (localActiveFeed) activeSubFeeds[subreddit] = localActiveFeed;
 
                 ToolUI.setHTML(subredditDiv, `
                     <div class="subreddit-header">
@@ -555,14 +624,14 @@
                             </div>
                         </div>
                         <div class="sub-feed-tabs" id="sub-tabs-${escapeHtml(subreddit)}" role="tablist" aria-label="Feeds for r/${escapeHtml(subreddit)}">
-                            ${feedLabels.map(label => `
-                                <button class="sub-feed-tab${label === activeFeed ? ' active' : ''}"
-                                        data-feed="${escapeHtml(label)}" role="tab" aria-selected="${label === activeFeed}" aria-controls="posts-${escapeHtml(subreddit)}" tabindex="${label === activeFeed ? '0' : '-1'}">
+                            ${selectableFeedLabels.map(label => `
+                                <button class="sub-feed-tab${label === localActiveFeed ? ' active' : ''}"
+                                        data-feed="${escapeHtml(label)}" role="tab" aria-selected="${label === localActiveFeed}" aria-controls="posts-${escapeHtml(subreddit)}" tabindex="${label === localActiveFeed ? '0' : '-1'}">
                                     ${escapeHtml(label)}
                                 </button>`).join('')}
                         </div>
                     </div>
-                    <div class="subreddit-posts" id="posts-${escapeHtml(subreddit)}" role="tabpanel"></div>`);
+                    <div class="subreddit-posts" id="posts-${escapeHtml(subreddit)}" role="tabpanel"><p class="last-update fallback-note" aria-live="polite"></p></div>`);
 
                 const collapseButton = subredditDiv.querySelector('.collapse-btn');
                 collapseButton.addEventListener('click', () => toggleSubreddit(subreddit));
@@ -575,12 +644,17 @@
                 // One div per feed; only the active one has class="active"
                 for (const [feedLabel, posts] of Object.entries(feedsData)) {
                     const feedDiv = document.createElement('div');
-                    feedDiv.className    = 'feed-posts' + (feedLabel === activeFeed ? ' active' : '');
+                    feedDiv.className    = 'feed-posts' + (feedLabel === localActiveFeed ? ' active' : '');
                     feedDiv.dataset.feed = feedLabel;
+                    const feedStatus = data.feed_status?.[subreddit]?.[feedLabel];
+                    feedDiv.dataset.unavailable = String(feedStatus?.status === 'unavailable' && !(posts || []).length);
 
                     if (!posts || posts.length === 0) {
-                        ToolUI.setHTML(feedDiv, `<p style="color:#7c7c7c;padding:20px 0">
-                            No posts available for <strong>${escapeHtml(feedLabel)}</strong>.</p>`);
+                        const status = data.feed_status && data.feed_status[subreddit] && data.feed_status[subreddit][feedLabel];
+                        const message = status?.status === 'unavailable'
+                            ? 'This source did not return posts on the last refresh; no saved posts are available.'
+                            : `No saved posts are available for ${feedLabel}.`;
+                        feedDiv.appendChild(ToolUI.text('p', message, 'empty'));
                     } else {
                         let page = 0;
                         const renderPage = () => {
@@ -600,8 +674,13 @@
                                 const pager = ToolUI.text('nav', '', 'tool-pagination'); pager.setAttribute('aria-label','Posts');
                                 const previous = ToolUI.text('button', 'Previous'), next = ToolUI.text('button','Next');
                                 previous.disabled = page === 0; next.disabled = first + count >= posts.length;
-                                previous.addEventListener('click', () => { page--; renderPage(); previous.focus(); });
-                                next.addEventListener('click', () => { page++; renderPage(); });
+                                previous.addEventListener('click', () => {
+                                    page--; renderPage(); feedDiv.querySelector('.tool-pagination button:first-child')?.focus();
+                                });
+                                next.addEventListener('click', () => {
+                                    page++; renderPage();
+                                    (feedDiv.querySelector('.tool-pagination button:last-child:not(:disabled)') || feedDiv.querySelector('.tool-pagination button:first-child'))?.focus();
+                                });
                                 pager.append(previous, ToolUI.text('span', (page + 1) + ' / ' + Math.ceil(posts.length / count)), next);
                                 feedDiv.appendChild(pager);
                             }
@@ -612,6 +691,8 @@
 
                     postsWrapper.appendChild(feedDiv);
                 }
+
+                chooseSubFeed(subreddit, activeFeed);
 
                 contentDiv.appendChild(subredditDiv);
             }

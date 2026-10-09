@@ -143,6 +143,7 @@
     <p id="location-status" role="status" aria-live="polite"></p>
     <button id="retry-forecast" type="button" hidden>Retry forecast</button>
     <p class="last-update">Saved on this browser only. City searches and forecasts use Open-Meteo; device location is optional.</p>
+    <noscript><p role="status">Weather forecasts need JavaScript to load. Read the <a href="../index.html">static diary</a> or <a href="news.html">static headlines</a>.</p></noscript>
     <div class="current">
         <div class="weather-row">
             <div class="label">Temperature</div>
@@ -171,6 +172,7 @@
 
     <script>
     let forecastVersion = 0;
+    let citySearchVersion = 0;
     function loadWeather(location){
         const requestVersion = ++forecastVersion;
         const lat = location.lat;
@@ -200,9 +202,9 @@
         .then(r=>r.ok? r.json(): Promise.reject('no data'))
         .then(data=>{
             if (requestVersion !== forecastVersion) return;
-            document.getElementById('location-status').textContent = 'Forecast fetched ' + new Date().toLocaleTimeString();
             const cw = data.current_weather;
             if(!cw){ throw 'no current_weather'; }
+            document.getElementById('location-status').textContent = cw.time ? 'Forecast for ' + cw.time.slice(0, 16).replace('T', ' ') + ' (location time)' : 'Forecast loaded.';
             const tempC = Math.round(cw.temperature);
             elTemp.textContent = cToF(tempC) + '°F';
             elDesc.textContent = weatherCodes[cw.weathercode] || ('Code ' + cw.weathercode);
@@ -270,6 +272,7 @@
     }
     function chooseLocation(value) {
         if (!validLocation(value)) return;
+        citySearchVersion++;
         selectedLocation = value;
         ToolUI.storageSet('portfolio_weather_location', JSON.stringify(value));
         document.getElementById('location-results').replaceChildren();
@@ -282,6 +285,7 @@
     document.getElementById('retry-forecast').addEventListener('click', () => loadWeather(selectedLocation));
     document.getElementById('location-form').addEventListener('submit', async function(event) {
         event.preventDefault();
+        const requestVersion = ++citySearchVersion;
         const status = document.getElementById('location-status');
         status.textContent = 'Finding cities…';
         const results = document.getElementById('location-results'); results.replaceChildren();
@@ -289,6 +293,7 @@
             const response = await ToolUI.fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(document.getElementById('city-input').value.trim()) + '&count=5&language=en&format=json');
             if (!response.ok) throw new Error('unavailable');
             const data = await response.json();
+            if (requestVersion !== citySearchVersion) return;
             (data.results || []).forEach(city => {
                 const name = [city.name, city.admin1, city.country].filter(Boolean).join(', ');
                 const button = ToolUI.text('button', name); button.type = 'button';
@@ -296,7 +301,7 @@
                 results.appendChild(button);
             });
             status.textContent = data.results && data.results.length ? 'Choose a city below.' : 'No cities found. Try a nearby city.';
-        } catch (_) { status.textContent = 'City search unavailable. Your current setting is unchanged.'; }
+        } catch (_) { if (requestVersion === citySearchVersion) status.textContent = 'City search unavailable. Your current setting is unchanged.'; }
     });
     document.getElementById('device-location').addEventListener('click', function() {
         const status = document.getElementById('location-status');

@@ -16,7 +16,6 @@
     {"id":"espn","category":"sports","name":"ESPN","url":"https://www.espn.com/espn/rss/news","limit":8},
     {"id":"cbs-sports","category":"sports","name":"CBS Sports","url":"https://www.cbssports.com/rss/headlines","limit":8},
     {"id":"yahoo-sports","category":"sports","name":"Yahoo Sports","url":"https://sports.yahoo.com/rss/","limit":8},
-    {"id":"bleacher-report","category":"sports","name":"Bleacher Report","url":"https://bleacherreport.com/articles/feed","limit":8},
     {"id":"marketwatch","category":"business","name":"MarketWatch","url":"https://feeds.marketwatch.com/marketwatch/topstories/","limit":8},
     {"id":"cnbc","category":"business","name":"CNBC","url":"https://www.cnbc.com/id/100003114/device/rss/rss.html","limit":8},
     {"id":"ft-markets","category":"business","name":"Financial Times Markets","url":"https://www.ft.com/rss/home/us","limit":8},

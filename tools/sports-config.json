@@ -63,6 +63,7 @@
         "name": "F1",
         "enabled": true,
         "espn_path": "racing/f1",
+        "scores_type": "racing",
         "color": "#e10600",
         "standings": false
       },

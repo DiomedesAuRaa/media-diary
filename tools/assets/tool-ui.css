@@ -17,6 +17,8 @@ html body { width:auto; max-width:58rem; min-height:100vh; height:auto; max-heig
 html body a { color:var(--tool-link); text-underline-offset:.16em; }
 html body a:hover { color:#a4f0e6; }
 .tool-nav { display:flex; align-items:center; flex-wrap:wrap; gap:.4rem; padding:0 0 .65rem; margin:0 0 .75rem; border-bottom:1px solid var(--tool-border); }
+.tool-skip { position:absolute; left:-10000px; top:0; z-index:100; padding:.5rem .75rem; background:var(--tool-focus); }
+html body .tool-skip:focus { left:.5rem; color:var(--tool-bg); }
 .tool-nav a, .tool-nav button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.45rem .75rem; border:1px solid transparent; border-radius:.45rem; font-size:.95rem; font-weight:650; text-decoration:none; }
 .tool-nav a { color:var(--tool-text); }
 .tool-nav a:hover { background:var(--tool-surface-raised); border-color:var(--tool-border); }
@@ -25,6 +27,7 @@ html body a:hover { color:#a4f0e6; }
 html button, html select, html input, html textarea { font:inherit; max-width:100%; }
 html button, html select, html input:not([type="checkbox"]):not([type="radio"]), html textarea { min-height:44px; }
 html button { cursor:pointer; }
+html body button, html body select, html body input:not([type="checkbox"]):not([type="radio"]) { background:var(--tool-surface-raised); color:var(--tool-text); border:1px solid var(--tool-border); border-radius:.4rem; padding:.4rem .65rem; }
 html :is(a,button,input,select,textarea,[tabindex]):focus-visible { outline:3px solid var(--tool-focus) !important; outline-offset:2px; }
 html body h1 { color:var(--tool-text); font-size:clamp(1.35rem,4vw,1.85rem); line-height:1.2; margin:.45rem 0 .7rem; }
 html body h2 { color:var(--tool-text); font-size:1.15rem; line-height:1.25; margin:1.2rem 0 .5rem; }

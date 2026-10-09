@@ -80,15 +80,21 @@
     <button class="refresh-btn" id="refresh-standings" type="button">REFRESH</button>
     <div class="last-update" id="lastUpdate"></div>
     <div id="content"><div class="loading">Loading config...</div></div>
+    <noscript><p role="status">Standings need JavaScript to load current league data. Read the <a href="../index.html">static diary</a> or <a href="news.html">static headlines</a>.</p></noscript>
 
     <script>
         var STANDINGS_API = 'https://site.api.espn.com/apis/v2/sports';
         var RANKINGS_API  = 'https://site.api.espn.com/apis/site/v2/sports';
         var CONFIG_URL    = 'sports-config.json';
+        var SNAPSHOT_URL  = 'sports-snapshot.json';
+        var SNAPSHOT_FRESHNESS_MS = 30 * 60 * 1000;
 
         var PRIORITY_TEAMS   = [];
         var LEAGUES          = [];   // full league objects from config
         var currentLeague    = null; // currently selected league object
+        var SPORTS_SNAPSHOT  = null;
+        var currentSnapshotEntry = null;
+        var snapshotRequestVersion = 0;
 
         // ── Config ─────────────────────────────────────────────────────────
         async function loadConfig() {
@@ -100,6 +106,36 @@
             LEAGUES = (cfg.leagues || []).filter(function(l) {
                 return l.enabled !== false && l.standings === true;
             });
+        }
+
+        async function loadSportsSnapshot() {
+            var requestVersion = ++snapshotRequestVersion;
+            var res = await ToolUI.fetch(SNAPSHOT_URL, {cache:'no-cache'});
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            var snapshot = await res.json();
+            if (!snapshot || snapshot.version !== 1 || !snapshot.entries || typeof snapshot.entries !== 'object') throw new Error('Invalid sports snapshot');
+            if (requestVersion !== snapshotRequestVersion) return null;
+            SPORTS_SNAPSHOT = snapshot;
+            return snapshot;
+        }
+
+        function formatSnapshotTime(value) {
+            var time = value ? new Date(value) : null;
+            return time && Number.isFinite(time.getTime()) ? time.toLocaleString() : 'time unavailable';
+        }
+
+        function isSnapshotStale(entry) {
+            var generatedAt = entry && entry.generatedAt ? Date.parse(entry.generatedAt) : NaN;
+            return !Number.isFinite(generatedAt) || Date.now() - generatedAt > SNAPSHOT_FRESHNESS_MS || entry.status === 'stale';
+        }
+
+        function getSnapshotPayload(url) {
+            var entry = SPORTS_SNAPSHOT && SPORTS_SNAPSHOT.entries[url];
+            if (!entry || ['ok', 'stale'].indexOf(entry.status) < 0 || !entry.payload || typeof entry.payload !== 'object') {
+                throw new Error('No current or saved snapshot data is available for this league.');
+            }
+            currentSnapshotEntry = entry;
+            return entry.payload;
         }
 
         // ── Nav ─────────────────────────────────────────────────────────────
@@ -205,9 +241,7 @@
         // ── Fetchers ───────────────────────────────────────────────────────
         async function fetchDivisionStandings(league) {
             var url = STANDINGS_API + '/' + league.espn_path + '/standings';
-            var res = await ToolUI.fetch(url);
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            var data = await res.json();
+            var data = getSnapshotPayload(url);
 
             var divisions = data.children || data.standings || [];
             if (divisions.length === 0) return '<div class="error">No standings data</div>';
@@ -220,9 +254,7 @@
 
         async function fetchSoccerStandings(league) {
             var url = STANDINGS_API + '/' + league.espn_path + '/standings';
-            var res = await ToolUI.fetch(url);
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            var data = await res.json();
+            var data = getSnapshotPayload(url);
 
             // Soccer uses children[0].standings or flat standings
             var groups = data.children || [];
@@ -240,9 +272,7 @@
 
         async function fetchRankings(league) {
             var url = RANKINGS_API + '/' + league.espn_path + '/rankings';
-            var res = await ToolUI.fetch(url);
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            var data = await res.json();
+            var data = getSnapshotPayload(url);
 
             var rankings = data.rankings || [];
             if (rankings.length === 0) return '<div class="error">No rankings available</div>';
@@ -281,9 +311,7 @@
         async function fetchF1Standings(league) {
             // Try driver standings first, fall back to season results
             var url = 'https://site.api.espn.com/apis/v2/sports/racing/f1/standings';
-            var res = await ToolUI.fetch(url);
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            var data = await res.json();
+            var data = getSnapshotPayload(url);
 
             var groups = data.children || [];
             if (groups.length > 0) {
@@ -303,7 +331,7 @@
 
         // ── Main ───────────────────────────────────────────────────────────
         var standingsVersion = 0;
-        async function loadStandings() {
+        async function loadStandings(refreshSnapshot) {
             var requestVersion = ++standingsVersion;
             var content = document.getElementById('content');
             if (!currentLeague) return;
@@ -312,6 +340,11 @@
             content.setAttribute('aria-busy', 'true');
 
             try {
+                if (refreshSnapshot || !SPORTS_SNAPSHOT) {
+                    var snapshot = await loadSportsSnapshot();
+                    if (requestVersion !== standingsVersion || !snapshot) return;
+                }
+                currentSnapshotEntry = null;
                 var html = '';
                 var type = currentLeague.standings_type || 'division';
 
@@ -328,27 +361,36 @@
                 if (requestVersion !== standingsVersion) return;
                 ToolUI.setHTML(content, html || '<div class="no-standings">No standings available</div>');
                 content.setAttribute('aria-busy', 'false');
-                updateTimestamp();
+                updateTimestamp(currentSnapshotEntry);
             } catch(err) {
                 if (requestVersion !== standingsVersion) return;
-                ToolUI.setHTML(content, '<div class="error">Unable to load ' + ToolUI.escape(currentLeague.name) + ' standings. <button type="button" id="retry-standings">Retry</button></div>');
+                ToolUI.setHTML(content, '<div class="error" role="alert">Unable to show ' + ToolUI.escape(currentLeague.name) + ' standings: ' + ToolUI.escape(err.message || 'published snapshot unavailable') + ' <button type="button" id="retry-standings">Retry snapshot</button></div>');
                 content.setAttribute('aria-busy', 'false');
-                document.getElementById('retry-standings').addEventListener('click', loadStandings);
+                document.getElementById('lastUpdate').textContent = currentSnapshotEntry && currentSnapshotEntry.generatedAt
+                    ? 'Snapshot refresh failed · last saved standings from ' + formatSnapshotTime(currentSnapshotEntry.generatedAt)
+                    : 'No current or saved standings snapshot available.';
+                document.getElementById('retry-standings').addEventListener('click', function() { loadStandings(true); });
                 console.error(err);
             }
         }
 
-        function updateTimestamp() {
+        function updateTimestamp(entry) {
             var now = new Date();
             document.getElementById('currentDate').textContent =
                 now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
-            document.getElementById('lastUpdate').textContent =
-                'Updated: ' + now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
+            if (!entry) {
+                document.getElementById('lastUpdate').textContent = 'Sports snapshot loaded; timestamp unavailable.';
+                return;
+            }
+            var stale = isSnapshotStale(entry);
+            var published = stale ? 'Saved standings from ' + formatSnapshotTime(entry.generatedAt) : 'Standings published ' + formatSnapshotTime(entry.generatedAt);
+            if (stale) published += ' · last check ' + formatSnapshotTime(entry.lastAttemptAt);
+            document.getElementById('lastUpdate').textContent = published;
         }
 
 
 
-        document.getElementById('refresh-standings').addEventListener('click', loadStandings);
+        document.getElementById('refresh-standings').addEventListener('click', function() { loadStandings(true); });
         document.getElementById('league-picker').addEventListener('change', function() {
             var tab = document.querySelector('.league-nav button[data-idx="' + this.value + '"]');
             if (tab) tab.click();

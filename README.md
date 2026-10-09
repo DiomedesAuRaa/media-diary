@@ -25,3 +25,9 @@ python3 -m unittest discover -s tests
 Feed generator tests need `tools/requirements-podcast.txt`. Fetch jobs must validate generated manifests/digests before publishing them. Do not run the fetchers when testing a build; fixtures cover feed behavior without live requests.
 
 The games preserve their existing localStorage keys. The legacy Portfolio score JSON files are not consumed by the game pages and are not included in the combined source or artifact.
+
+## Sports data
+
+Scores and standings read `tools/sports-snapshot.json` from this site. ESPN's browser CORS responses can block direct requests, so the scheduled sports workflow collects the configured public endpoints every 15 minutes and publishes a validated snapshot. Each endpoint retains its last successful data on refresh failure; the UI labels saved and stale data with collection times. These are periodic snapshots, not second-by-second live scores. GitHub schedule timing and deployment can add delay.
+
+The collector uses no provider credentials and keeps only the fields needed by the renderers. Sports, news, podcast, Reddit and ordinary Pages deployments share one publication queue and always build the full current site. Only Actions owns these schedules; a future Mac collector must replace that ownership rather than create a second publisher. Keep private APIs, runtime state and credentials in the private backend/deployment workspace.
