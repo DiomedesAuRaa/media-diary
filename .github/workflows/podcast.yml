@@ -1,5 +1,7 @@
 name: Refresh podcast manifest and publish Pages
 on:
+  schedule:
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 permissions:
   contents: read

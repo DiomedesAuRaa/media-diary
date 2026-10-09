@@ -1,5 +1,7 @@
 name: Refresh Reddit RSS digest and publish Pages
 on:
+  schedule:
+    - cron: '0 8,20 * * *'
   workflow_dispatch:
 permissions:
   contents: read

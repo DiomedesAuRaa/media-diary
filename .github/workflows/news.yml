@@ -1,5 +1,7 @@
 name: Refresh news digest and publish Pages
 on:
+  schedule:
+    - cron: '17 * * * *'
   workflow_dispatch:
 permissions:
   contents: read
