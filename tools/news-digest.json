@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T09:43:49+00:00",
-  "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+  "generatedAt": "2026-10-09T10:02:33+00:00",
+  "lastAttemptAt": "2026-10-09T10:02:33+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,22 +10,17 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
-        {
-          "title": "Fill in the blank in the quiz: A plague research employee in Russia died from ____",
-          "url": "https://www.npr.org/2026/10/09/g-s1-147111/trump-bts-paramount-tv-el-nino-news-quiz",
-          "date": "2026-10-09"
-        },
         {
           "title": "In Central African Republic, deported immigrants find themselves in limbo",
           "url": "https://www.npr.org/2026/10/09/nx-s1-5993805/third-country-deportations-cuba",
           "date": "2026-10-09"
         },
         {
-          "title": "Republican congressman tries to outrun a potential blue wave in New York toss-up seat",
-          "url": "https://www.npr.org/2026/10/09/nx-s1-5986150/lawler-new-york-congress-trump",
+          "title": "Fill in the blank in the quiz: A plague research employee in Russia died from ____",
+          "url": "https://www.npr.org/2026/10/09/g-s1-147111/trump-bts-paramount-tv-el-nino-news-quiz",
           "date": "2026-10-09"
         },
         {
@@ -34,13 +29,18 @@
           "date": "2026-10-09"
         },
         {
-          "title": "Why mailing a ballot close to Election Day may get it rejected for a late postmark",
-          "url": "https://www.npr.org/2026/10/09/nx-s1-5984981/mail-in-ballot-usps-postmark",
+          "title": "ChatGPT for Teens has special safeguards. A watchdog group finds most don't work",
+          "url": "https://www.npr.org/2026/10/09/nx-s1-5995514/chatgpt-openai-teens-mental-health",
           "date": "2026-10-09"
         },
         {
-          "title": "ChatGPT for Teens has special safeguards. A watchdog group finds most don't work",
-          "url": "https://www.npr.org/2026/10/09/nx-s1-5995514/chatgpt-openai-teens-mental-health",
+          "title": "Republican congressman tries to outrun a potential blue wave in New York toss-up seat",
+          "url": "https://www.npr.org/2026/10/09/nx-s1-5986150/lawler-new-york-congress-trump",
+          "date": "2026-10-09"
+        },
+        {
+          "title": "Why mailing a ballot close to Election Day may get it rejected for a late postmark",
+          "url": "https://www.npr.org/2026/10/09/nx-s1-5984981/mail-in-ballot-usps-postmark",
           "date": "2026-10-09"
         },
         {
@@ -61,8 +61,8 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "I would not have voted for Zionism motion, Polanski says",
@@ -80,6 +80,11 @@
           "date": "2026-10-09"
         },
         {
+          "title": "Fort Hood survivor supports gunman's execution by firing squad but questions livestream",
+          "url": "https://www.bbc.co.uk/news/articles/ck1wvqw4lzdvo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-09"
+        },
+        {
           "title": "Emotions run high at the round table as Celebrity Traitors banish two players",
           "url": "https://www.bbc.co.uk/news/articles/cm9dzl7wx2qyo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-08"
@@ -87,11 +92,6 @@
         {
           "title": "£15m spent cleaning illegal waste supersite in ancient woodland",
           "url": "https://www.bbc.co.uk/news/articles/cq98zdp612pko?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-09"
-        },
-        {
-          "title": "Russian strikes and approaching winter force some in Kyiv to pack bags and flee",
-          "url": "https://www.bbc.co.uk/news/articles/c6zjx7jexz1do?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-09"
         },
         {
@@ -112,12 +112,17 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "Firing squad execution to be livestreamed, Pentagon says",
           "url": "https://www.bbc.co.uk/news/articles/cmy0r96xygx6o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-09"
+        },
+        {
+          "title": "Fort Hood survivor supports gunman's execution by firing squad but questions livestream",
+          "url": "https://www.bbc.co.uk/news/articles/ck1wvqw4lzdvo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-09"
         },
         {
@@ -136,6 +141,11 @@
           "date": "2026-10-09"
         },
         {
+          "title": "Fired OpenAI researchers say they were let go for 'prioritising safety'",
+          "url": "https://www.bbc.co.uk/news/articles/cvlydn8d3lkjo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-09"
+        },
+        {
           "title": "Cars torched and shops looted as anti-migrant violence erupts in South Africa",
           "url": "https://www.bbc.co.uk/news/articles/cwm24v45p4jgo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-09"
@@ -144,16 +154,6 @@
           "title": "Protesters blame 'vulture funds' for Spain's housing crisis",
           "url": "https://www.bbc.co.uk/news/articles/c3j4790elkx7o?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-08"
-        },
-        {
-          "title": "Fired OpenAI researchers say they were let go for 'prioritising safety'",
-          "url": "https://www.bbc.co.uk/news/articles/cvlydn8d3lkjo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-09"
-        },
-        {
-          "title": "Adidas sues Australian label White Fox over four stripes design",
-          "url": "https://www.bbc.co.uk/news/articles/c9e8ld448km8o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-09"
         }
       ]
     },
@@ -163,8 +163,8 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "Navi Pillay wins Nobel Peace Prize",
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "Egyptian journalists plan weekend protest over detention of six colleagues",
@@ -265,8 +265,8 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "South African Human Rights lawyer Navi Pillay wins Nobel Peace Prize",
@@ -315,9 +315,9 @@
       "category": "tech",
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
-      "status": "ok",
+      "status": "stale",
       "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "OTel-Native by Design – Building Products That Export to Any Observability Stack",
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "SpaceX calls for better coordination in orbit after near-misses with Starlink",
@@ -418,9 +418,14 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
+        {
+          "title": "OpenAI doubles down on decision to fire three AI safety researchers",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008604/openai-defends-decision-fire-safety-researchers",
+          "date": "2026-10-09"
+        },
         {
           "title": "Microsoft 365 Family subscribers will finally be able to share AI benefits",
           "url": "https://www.theverge.com/news/1008581/microsoft-365-family-premium-shared-ai-features-storage-changes",
@@ -455,11 +460,6 @@
           "title": "California is trying to shut down robot vs. human cage matches",
           "url": "https://www.theverge.com/tech/1008401/california-shut-down-rek-fighting-robot-company-human",
           "date": "2026-10-08"
-        },
-        {
-          "title": "ICE detainees in Georgia used the facility’s video calling software to expose the conditions inside",
-          "url": "https://www.theverge.com/report/1008342/folkston-georgia-ice-detention-hunger-strike-video",
-          "date": "2026-10-08"
         }
       ]
     },
@@ -469,9 +469,14 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
+        {
+          "title": "Even ‘Law & Order’ Is Terrified of AI",
+          "url": "https://www.wired.com/story/even-law-and-order-is-terrified-of-ai/",
+          "date": "2026-10-09"
+        },
         {
           "title": "A New Mexico Community Was a Place to Build a Life. Then a Hypersonic Missile Factory Showed Up",
           "url": "https://www.wired.com/story/a-new-mexico-community-was-a-place-to-build-a-life-then-a-hypersonic-missile-factory-showed-up/",
@@ -506,11 +511,6 @@
           "title": "Lovehoney Coupon Offers: Toys, Lingerie, and Gift Set Discounts",
           "url": "https://www.wired.com/story/lovehoney-discount-code/",
           "date": "2026-10-09"
-        },
-        {
-          "title": "Instacart Promo Code: $15 Off | October 2026",
-          "url": "https://www.wired.com/story/instacart-promo/code/",
-          "date": "2026-10-09"
         }
       ]
     },
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "We’re putting too much faith in AI’s ability to say no",
@@ -570,9 +570,9 @@
       "category": "sports",
       "name": "ESPN",
       "url": "https://www.espn.com/espn/rss/news",
-      "status": "ok",
+      "status": "stale",
       "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "Buccaneers explode in third quarter in win over Cowboys",
@@ -622,8 +622,8 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "Guardians erupt in sixth inning to stun White Sox in Game 4 of ALDS, force deciding Game 5",
@@ -673,47 +673,47 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
-          "title": "🚨 BREAKING: Enzo Maresca questioned for the first time since Man City verdict",
-          "url": "https://sports.yahoo.com/articles/breaking-enzo-maresca-questioned-first-093300583.html",
+          "title": "Republic of Ireland to face Finns in Euro U21 play-off",
+          "url": "https://sports.yahoo.com/articles/republic-ireland-face-finns-euro-095501774.html",
           "date": "2026-10-09"
         },
         {
-          "title": "A fair and just ruling or Eckert's great escape?",
-          "url": "https://sports.yahoo.com/articles/fair-just-ruling-eckerts-great-093151402.html",
+          "title": "Jason Whitlock calls out Nike’s ‘cult of content creator’ after Caitlin Clark defends Kelsey Mitchell",
+          "url": "https://sports.yahoo.com/articles/jason-whitlock-calls-nike-cult-095407238.html",
           "date": "2026-10-09"
         },
         {
-          "title": "3 biggest takeaways for Sixers after preseason road loss to Nets",
-          "url": "https://sports.yahoo.com/articles/3-biggest-takeaways-sixers-preseason-093136410.html",
+          "title": "European soccer leaders tell UEFA of unhappiness with longer 4-game schedule for national teams",
+          "url": "https://sports.yahoo.com/articles/european-soccer-leaders-tell-uefa-095303309.html",
           "date": "2026-10-09"
         },
         {
-          "title": "WNBA fans are stunned after A’ja Wilson wins fifth MVP at 30",
-          "url": "https://sports.yahoo.com/articles/wnba-fans-stunned-ja-wilson-093000634.html",
+          "title": "Russell fastest from Leclerc in Singapore practice",
+          "url": "https://sports.yahoo.com/articles/russell-fastest-leclerc-singapore-practice-095113984.html",
           "date": "2026-10-09"
         },
         {
-          "title": "Mike Preston: Ravens will finally be tested. Are they ready?",
-          "url": "https://sports.yahoo.com/articles/mike-preston-ravens-finally-tested-093000888.html",
+          "title": "HUGE Concerns On Crown Jewel 2026 - WWE's Next Saudi PLE In Doubt (WWE News)",
+          "url": "https://sports.yahoo.com/articles/huge-concerns-crown-jewel-2026-095102008.html",
           "date": "2026-10-09"
         },
         {
-          "title": "Anatomy of a scandal: The extraordinary story of sandpapergate and how Australia got caught",
-          "url": "https://sports.yahoo.com/articles/anatomy-scandal-extraordinary-story-sandpapergate-092900539.html",
+          "title": "Russell tops sole practice session for F1 Singapore Grand Prix",
+          "url": "https://sports.yahoo.com/articles/russell-tops-sole-practice-session-094829095.html",
           "date": "2026-10-09"
         },
         {
-          "title": "Guardians vs. White Sox schedule: Dates, times, TV channels, live streams to watch 2026 ALDS games",
-          "url": "https://sports.yahoo.com/articles/guardians-vs-white-sox-schedule-154637646.html",
+          "title": "Arsenal (A): Important travel update for supporters",
+          "url": "https://sports.yahoo.com/articles/arsenal-important-travel-supporters-094800555.html",
           "date": "2026-10-09"
         },
         {
-          "title": "After Jalon Daniels leads Bucs over Cowboys, NFL teams are 8-4 when starting a backup QB",
-          "url": "https://sports.yahoo.com/articles/jalon-daniels-leads-bucs-over-092745234.html",
+          "title": "Australia cricket team players age: How old is Australia's current Test squad?",
+          "url": "https://sports.yahoo.com/articles/australia-cricket-team-players-age-094700814.html",
           "date": "2026-10-09"
         }
       ]
@@ -725,7 +725,7 @@
       "url": "https://bleacherreport.com/articles/feed",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": []
     },
     {
@@ -734,8 +734,8 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "‘I feel like a loser’: My ETFs go up one day and crash the next. Is this a bad sign?",
@@ -785,8 +785,8 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "South Africa lawyer Navanethm 'Navi' Pillay wins Nobel Peace Prize for efforts to prosecute war crimes and genocide",
@@ -799,23 +799,18 @@
           "date": "2026-10-09"
         },
         {
-          "title": "Tokenization could unleash tens of billions of dollars in trapped capital, Nasdaq CEO says",
-          "url": "https://www.cnbc.com/2026/10/09/nasdaq-ceo-tokenization-could-unleash-billions-in-trapped-capital-.html",
-          "date": "2026-10-09"
-        },
-        {
           "title": "SpaceX deal to acquire spectrum license hammers shares of AT&T, Verizon and T-Mobile",
           "url": "https://www.cnbc.com/2026/10/08/spacex-spectrum-license-att-verizon-tmobile.html",
           "date": "2026-10-08"
         },
         {
-          "title": "Nvidia-backed Aussie AI firm Firmus withdraws historic IPO, citing market volatility",
-          "url": "https://www.cnbc.com/2026/10/09/nvidia-ai-firmus-ipo-.html",
+          "title": "Tokenization could unleash tens of billions of dollars in trapped capital, Nasdaq CEO says",
+          "url": "https://www.cnbc.com/2026/10/09/nasdaq-ceo-tokenization-could-unleash-billions-in-trapped-capital-.html",
           "date": "2026-10-09"
         },
         {
-          "title": "Trump says U.S. will not attack Iran before midterm election",
-          "url": "https://www.cnbc.com/2026/10/08/iran-war-trump-midterm-election.html",
+          "title": "U.S. suspends Microsoft, Adobe from green card labor program in foreign worker crackdown",
+          "url": "https://www.cnbc.com/2026/10/08/microsoft-adobe-green-card-labor-suspension.html",
           "date": "2026-10-08"
         },
         {
@@ -824,9 +819,14 @@
           "date": "2026-10-08"
         },
         {
-          "title": "U.S. East Asian envoy says investors are overpricing Taiwan conflict risk",
-          "url": "https://www.cnbc.com/2026/10/09/taiwan-trump-china-militia-boat-tsmc-.html",
-          "date": "2026-10-09"
+          "title": "Treasury yields are 'really, really high' but can come down soon, Bessent's new advisor says",
+          "url": "https://www.cnbc.com/2026/10/08/treasury-yields-david-zervos.html",
+          "date": "2026-10-08"
+        },
+        {
+          "title": "Major League Baseball proposes shortening its regular season as it pushes for a salary cap",
+          "url": "https://www.cnbc.com/2026/10/08/major-league-baseball-proposes-shorter-season-amid-salary-cap-push.html",
+          "date": "2026-10-08"
         }
       ]
     },
@@ -837,7 +837,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": []
     },
     {
@@ -847,7 +847,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": []
     },
     {
@@ -856,8 +856,8 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "NASA is searching for hidden caves to build its first Moon base",
@@ -907,8 +907,8 @@
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "APOD: 2026 October 9 – Stickney Crater",
@@ -958,8 +958,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "Number of known species of giant waterlilies almost doubles",
@@ -1009,8 +1009,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "Author Correction: Histone readers MLLT1 and MLLT3 concentrate AID to confer locus specificity",
@@ -1061,7 +1061,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": []
     },
     {
@@ -1070,8 +1070,8 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "“Don’t use ‘open weight’ and ‘open source’ interchangeably”: Percona CEO on why AI terminology matters",
@@ -1121,8 +1121,8 @@
       "name": "DevOps.com",
       "url": "https://devops.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "IBM and Red Hat Disclose Discovery of More Than 400 Java Vulnerabilities",
@@ -1172,8 +1172,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "Who owns NIS2 and DORA on a Kubernetes platform team",
@@ -1223,8 +1223,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-09T09:43:49+00:00",
+      "generatedAt": "2026-10-09T10:02:33+00:00",
+      "lastAttemptAt": "2026-10-09T10:02:33+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #537",
