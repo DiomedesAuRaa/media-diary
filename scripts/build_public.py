@@ -164,6 +164,7 @@ def populate(output: Path):
          '--config', str(tools / 'scripts/news-config.json')],
         check=True,
     )
+    copy_checked(tools / 'home.html', output / 'tools' / 'index.html', tools)
     (output / '.nojekyll').touch()
 
 def build(path: Path):

@@ -368,7 +368,7 @@
             const content = document.getElementById('content');
             ToolUI.setHTML(content, '<div class="loading">Loading...</div>');
             try {
-                const response = await fetch('podcast-manifest.json', {cache: 'no-cache'});
+                const response = await ToolUI.fetch('podcast-manifest.json', {cache: 'no-cache'});
                 if (!response.ok) throw new Error('HTTP ' + response.status);
                 const raw = await response.json();
                 if (!raw.length) { ToolUI.setHTML(content, '<div class="error">No shows found.</div>'); return; }

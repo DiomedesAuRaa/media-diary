@@ -9,3 +9,5 @@ The six files in `data/` are public diary data. The renderer exports only its ex
 Tools use shared assets in `tools/assets/`. Preserve semantic controls, visible amber focus, navy/teal surfaces, touch-sized controls, normal scrolling and ordinary browser navigation. On screens at or below 280px, compact controls may use the existing smaller target size. Keep game key capture scoped to active gameplay and do not capture keys from text fields or navigation.
 
 Treat feed text and URLs as untrusted. Render text safely and allow only intended HTTP(S) destinations. Keep the World English Bible label accurate. Weather defaults to Atlanta; city overrides remain device-local and geolocation stays optional.
+
+Dynamic services use ToolUI.fetch with a 12-second header/body deadline and existing retry/error states. Keep provider requests bounded and preserve weather/Bible request-version guards. News uses build-time static category/pagination routes with a durable validated digest. Pages and feed workflows share a publication queue and every deploy builds the full current-main artifact. Never deploy a tools-only artifact over the diary.

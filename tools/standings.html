@@ -92,7 +92,7 @@
 
         // ── Config ─────────────────────────────────────────────────────────
         async function loadConfig() {
-            var res = await fetch(CONFIG_URL + '?t=' + Date.now());
+            var res = await ToolUI.fetch(CONFIG_URL + '?t=' + Date.now());
             if (!res.ok) throw new Error('HTTP ' + res.status);
             var cfg = await res.json();
             PRIORITY_TEAMS = cfg.priority_teams || [];
@@ -205,7 +205,7 @@
         // ── Fetchers ───────────────────────────────────────────────────────
         async function fetchDivisionStandings(league) {
             var url = STANDINGS_API + '/' + league.espn_path + '/standings';
-            var res = await fetch(url);
+            var res = await ToolUI.fetch(url);
             if (!res.ok) throw new Error('HTTP ' + res.status);
             var data = await res.json();
 
@@ -220,7 +220,7 @@
 
         async function fetchSoccerStandings(league) {
             var url = STANDINGS_API + '/' + league.espn_path + '/standings';
-            var res = await fetch(url);
+            var res = await ToolUI.fetch(url);
             if (!res.ok) throw new Error('HTTP ' + res.status);
             var data = await res.json();
 
@@ -240,7 +240,7 @@
 
         async function fetchRankings(league) {
             var url = RANKINGS_API + '/' + league.espn_path + '/rankings';
-            var res = await fetch(url);
+            var res = await ToolUI.fetch(url);
             if (!res.ok) throw new Error('HTTP ' + res.status);
             var data = await res.json();
 
@@ -281,7 +281,7 @@
         async function fetchF1Standings(league) {
             // Try driver standings first, fall back to season results
             var url = 'https://site.api.espn.com/apis/v2/sports/racing/f1/standings';
-            var res = await fetch(url);
+            var res = await ToolUI.fetch(url);
             if (!res.ok) throw new Error('HTTP ' + res.status);
             var data = await res.json();
 

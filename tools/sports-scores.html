@@ -72,7 +72,7 @@
         var SPORTS_CONFIG  = {};
 
         async function loadConfig() {
-            var res = await fetch(CONFIG_URL + '?t=' + Date.now());
+            var res = await ToolUI.fetch(CONFIG_URL + '?t=' + Date.now());
             if (!res.ok) throw new Error('HTTP ' + res.status);
             var cfg = await res.json();
             PRIORITY_TEAMS = cfg.priority_teams || [];
@@ -185,7 +185,7 @@
 
         async function fetchSportScores(sportName, config) {
             try {
-                var res = await fetch(config.url);
+                var res = await ToolUI.fetch(config.url);
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 var data = await res.json(), events = data.events || [];
                 var priorityGames = [], regularGames = [];

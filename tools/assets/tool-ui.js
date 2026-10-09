@@ -41,11 +41,40 @@
   function text(tag, value, className) { var el = document.createElement(tag); el.textContent = String(value == null ? '' : value); if (className) el.className = className; return el; }
   function storageGet(key) { try { return localStorage.getItem(key); } catch (_) { return null; } }
   function storageSet(key, value) { try { localStorage.setItem(key, value); } catch (_) {} }
+  function fetchWithTimeout(input, init) {
+    var timeoutMs = 12000, controller = typeof window.AbortController === 'function' ? new window.AbortController() : null;
+    var options = init ? Object.assign({}, init) : {};
+    if (controller && !options.signal) options.signal = controller.signal;
+    var timer, rejectDeadline, settled = false;
+    var deadline = new Promise(function (_, reject) { rejectDeadline = reject; });
+    function stop() { if (settled) return; settled = true; clearTimeout(timer); }
+    timer = setTimeout(function () {
+      if (controller) { try { controller.abort(); } catch (_) {} }
+      rejectDeadline(new Error('Request timed out after 12 seconds'));
+    }, timeoutMs);
+    var request;
+    try { request = window.fetch(input, options); }
+    catch (err) { stop(); return Promise.reject(err); }
+    return Promise.race([request, deadline]).then(function (response) {
+      if (response && response.ok === false) { stop(); return response; }
+      ['json','text'].forEach(function (method) {
+        if (typeof response[method] !== 'function') return;
+        var original = response[method];
+        response[method] = function () {
+          var body;
+          try { body = original.apply(response, arguments); }
+          catch (err) { stop(); return Promise.reject(err); }
+          return Promise.race([body, deadline]).then(function (value) { stop(); return value; }, function (err) { stop(); throw err; });
+        };
+      });
+      return response;
+    }, function (err) { stop(); throw err; });
+  }
   var saved = storageGet('tools_compact');
   var requested = new URLSearchParams(location.search).get('compact');
   var compact = requested !== null ? requested === '1' : (saved === null ? window.innerWidth <= 280 : saved === 'true');
   document.documentElement.classList.toggle('compact', compact);
-  window.ToolUI = {escape:escapeText, httpURL:httpURL, setHTML:setHTML, replaceHTML:replaceHTML, text:text, storageGet:storageGet, storageSet:storageSet};
+  window.ToolUI = {escape:escapeText, httpURL:httpURL, setHTML:setHTML, replaceHTML:replaceHTML, text:text, storageGet:storageGet, storageSet:storageSet, fetch:fetchWithTimeout};
   document.addEventListener('DOMContentLoaded', function () {
     var nav = document.createElement('nav'); nav.className = 'tool-nav'; nav.setAttribute('aria-label','Site');
     var prefix = document.body.classList.contains('game-page') ? '../' : '';

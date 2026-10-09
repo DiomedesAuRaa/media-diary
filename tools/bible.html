@@ -406,7 +406,7 @@
             // Fetch the entire chapter
             const url = `https://bible-api.com/${encodeURIComponent(passage)}?translation=web&single_chapter_book_matching=indifferent`;
             
-            fetch(url)
+            ToolUI.fetch(url)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Chapter not found');
