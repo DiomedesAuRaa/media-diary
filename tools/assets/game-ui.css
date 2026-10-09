@@ -1,0 +1,58 @@
+/* Shared game layout follows tool navigation while preserving game board palettes. */
+html body.game-page { width:100%; max-width:38rem; padding:1rem; }
+html body.game-page .shell { width:100%; height:auto; min-height:24rem; max-height:none; overflow:visible; }
+html body.game-page .area { min-height:17rem; flex:none; padding:5px; }
+html body.game-page .skeys { height:auto; min-height:44px; flex-wrap:wrap; }
+html body.game-page .sk { min-height:44px; font-size:14px; }
+html body.game-page .navdrawer { width:100%; max-height:80vh; overflow-y:auto; z-index:30; }
+html body.game-page .navdrawer a { padding:.6rem; font-size:16px; }
+html body.game-page #board { width:min(100%,320px); grid-template-columns:repeat(4,minmax(0,1fr)); grid-template-rows:repeat(4,1fr); aspect-ratio:1; box-sizing:border-box; }
+html body.game-page .tile { width:auto; height:auto; font-size:20px; }
+html body.game-page #grid { width:min(100%,320px); }
+html body.game-page .keyboard { padding:5px; }
+html body.game-page .key { max-width:none; min-width:0; min-height:44px; font-size:15px; }
+html body.game-page canvas { max-width:100%; height:auto; }
+html body.game-page .tapbanner { position:static; padding:8px; background:#172c40; width:100%; }
+html body.game-page .tapbanner .tt { font-size:14px; }
+html body.game-page .tapbanner .ts { font-size:12px; }
+html body.game-page .area:focus-visible, html body.game-page #grid:focus-visible { outline:3px solid var(--tool-focus); outline-offset:1px; }
+html body.game-page .word-input { margin:6px; }
+html body.game-page .word-input input { width:100%; }
+html body.game-page .navdrawer[hidden] { display:none; }
+html body.game-page .hdr { height:auto; min-height:36px; flex-wrap:wrap; gap:5px; }
+html body.game-page .hs span, html body.game-page .tbox .tl, html body.game-page .hmeta { font-size:12px; }
+html.compact body.game-page { padding:3px; }
+html.compact body.game-page .shell { min-height:0; }
+html.compact body.game-page .area { min-height:220px; padding:2px; }
+html.compact body.game-page .skeys, html.compact body.game-page .sk { font-size:12px; }
+html.compact body.game-page .key { font-size:12px; }
+html.compact body.game-page .navdrawer a { padding:5px; font-size:14px; }
+html.compact body.game-page .hs span, html.compact body.game-page .tbox .tl, html.compact body.game-page .hmeta { font-size:11px; }
+
+@media (max-width:280px) {
+  html.compact body.game-page .skeys, html.compact body.game-page .sk, html.compact body.game-page .key { min-height:29px; font-size:12px; }
+}
+
+/* Keep gameplay tiles and score colors page-owned; align navigation and controls. */
+html body.game-page .hdr,
+html body.game-page .skeys,
+html body.game-page .navdrawer,
+html body.game-page .navclose,
+html body.game-page .tapbanner { background:#111f2d; border-color:#33485c; }
+html body.game-page .htitle,
+html body.game-page .overlay h2,
+html body.game-page .tapbanner .tt,
+html body.game-page .navclose button,
+html body.game-page .navdrawer a.cur,
+html body.game-page .sk.l,
+html body.game-page .sk.r { color:#70dfd0; }
+html body.game-page .navdrawer a,
+html body.game-page .navclose span,
+html body.game-page .tapbanner .ts,
+html body.game-page .hs span,
+html body.game-page .tbox .tl,
+html body.game-page .hmeta { color:#a9bacb; }
+html body.game-page .navdrawer a { border-color:#33485c; }
+html body.game-page .obtn { background:#a66a18; color:#fff7e6; }
+html body.game-page .navclose button,
+html body.game-page .sk { background-color:transparent; }

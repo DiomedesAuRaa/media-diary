@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minesweeper</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:240px;max-width:240px;height:320px;max-height:320px;overflow:hidden;
+  background:#0d1b2a;color:#fff;font-family:'Segoe UI',Arial,sans-serif;font-size:12px;
+  user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.shell{display:flex;flex-direction:column;width:240px;height:320px;overflow:hidden;position:relative}
+.hdr{background:#1a2f45;padding:4px 8px;display:flex;align-items:center;
+  justify-content:space-between;border-bottom:1px solid #243b55;flex-shrink:0;height:30px}
+.htitle{font-size:13px;font-weight:bold;color:#00c8ff;letter-spacing:1px}
+.hscores{display:flex;gap:8px}
+.hs{text-align:center}
+.hs span{font-size:8px;color:#8aafc8;text-transform:uppercase;display:block}
+.hs b{font-size:13px;font-weight:bold;color:#fff}
+.hs b.hi{color:#00c8ff}
+.area{flex:1;display:flex;align-items:center;justify-content:center;
+  background:#0d1b2a;position:relative;overflow:hidden;flex-direction:column;gap:3px;padding:3px}
+.drow{display:flex;gap:3px;width:100%}
+.dbtn{flex:1;background:#243b55;border:none;color:#8aafc8;font-size:10px;padding:3px;
+  border-radius:4px;cursor:pointer;text-align:center}
+.dbtn.active{background:#ff6b35;color:#fff;font-weight:bold}
+#board{display:grid;gap:2px}
+.cell{display:flex;align-items:center;justify-content:center;font-weight:700;
+  border-radius:3px;cursor:pointer;background:#243b55;color:#fff}
+.cell.rev{background:#1a2f45}
+.cell.flag{background:#7b1a1a}
+.cell.boom{background:#cc2222}
+.cell.cur{outline:2px solid #00c8ff;outline-offset:-2px}
+.cell[data-n="1"]{color:#64b5f6}.cell[data-n="2"]{color:#81c784}
+.cell[data-n="3"]{color:#e57373}.cell[data-n="4"]{color:#ba68c8}
+.cell[data-n="5"]{color:#ff8a65}.cell[data-n="6"]{color:#4dd0e1}
+.cell[data-n="7"]{color:#fff176}.cell[data-n="8"]{color:#cfd8dc}
+.overlay{position:absolute;inset:0;background:rgba(13,27,42,0.93);display:none;
+  flex-direction:column;align-items:center;justify-content:center;gap:8px;z-index:8}
+.overlay.show{display:flex}
+.overlay h2{font-size:18px;color:#00c8ff}
+.overlay p{font-size:11px;color:#8aafc8;text-align:center;line-height:1.5}
+.obtn{background:#ff6b35;color:#fff;border:none;padding:6px 20px;border-radius:20px;font-size:12px;font-weight:bold;cursor:pointer}
+.tapbanner{position:absolute;inset:0;background:rgba(13,27,42,0.88);display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;z-index:10;cursor:pointer}
+.tapbanner .ti{font-size:26px}.tapbanner .tt{font-size:11px;font-weight:bold;color:#00c8ff}
+.tapbanner .ts{font-size:9px;color:#8aafc8}
+.skeys{background:#0a1628;border-top:1px solid #243b55;display:flex;height:26px;flex-shrink:0}
+.sk{flex:1;height:100%;background:none;border:none;color:#fff;font-size:11px;font-weight:bold;
+  cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sk:active{background:#243b55}
+.sk.l{justify-content:flex-start;padding-left:8px;color:#00c8ff}
+.sk.r{justify-content:flex-end;padding-right:8px;color:#00c8ff}
+.navdrawer{position:absolute;top:0;left:0;right:0;background:#1a2f45;
+  border-bottom:2px solid #00c8ff;z-index:20;transform:translateY(-100%);transition:transform .15s}
+.navdrawer.open{transform:translateY(0)}
+.navdrawer a{display:block;padding:7px 10px;color:#8aafc8;text-decoration:none;font-size:12px;border-bottom:1px solid #243b55}
+.navdrawer a.cur{color:#00c8ff;font-weight:bold}
+.navclose{display:flex;align-items:center;justify-content:space-between;padding:5px 10px;background:#243b55}
+.navclose span{font-size:11px;color:#8aafc8}
+.navclose button{background:none;border:none;color:#00c8ff;font-size:14px;cursor:pointer}
+#kc{position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none;border:none;outline:none}
+</style>
+<link rel="stylesheet" href="../assets/tool-ui.css">
+<link rel="stylesheet" href="../assets/game-ui.css">
+<script src="../assets/tool-ui.js"></script>
+</head>
+<body class="game-page">
+
+<div class="shell">
+  <div class="navdrawer" id="nav" aria-label="Games" aria-hidden="true" hidden>
+    <div class="navclose"><span>NAVIGATE</span><button aria-label="Close games menu" onclick="closeNav()">&#x2715;</button></div>
+    <a href="../home.html">&#x2190; Home</a>
+    <a href="2048.html">2048</a><a href="snake.html">Snake</a>
+    <a href="minesweeper.html" class="cur">Minesweeper</a>
+    <a href="tetris.html">Tetris</a><a href="wordle.html">Wordle</a>
+  </div>
+  <div class="hdr">
+    <span class="htitle">MINES</span>
+    <div class="hscores">
+      <div class="hs"><span>TIME</span><b id="timer">0s</b></div>
+      <div class="hs"><span>MINES</span><b id="mleft">0</b></div>
+      <div class="hs"><span>BEST</span><b class="hi" id="best">--</b></div>
+    </div>
+  </div>
+  <div class="area" id="area" tabindex="0" role="region" aria-label="Game board. Focus here to play. Escape opens menu." onclick="activate()">
+    <div class="overlay show" id="ovr">
+      <h2 id="ovrtitle">MINES</h2>
+      <p id="ovrmsg">Arrows=move  Enter=reveal<br>F=flag  R=new game</p>
+      <button class="obtn" onclick="event.stopPropagation();newGame();activate()">START</button>
+    </div>
+    <div class="tapbanner" id="tap" tabindex="0" role="button" onclick="activate()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();activate();}">
+      <div class="ti">&#x25BA;</div><div class="tt">TAP TO ACTIVATE KEYS</div>
+      <div class="ts">then use arrow keys</div>
+    </div>
+    <div class="drow">
+      <button type="button" class="dbtn active" id="d-easy" onclick="setDiff('easy');event.stopPropagation()">Easy 8x8</button>
+      <button type="button" class="dbtn" id="d-medium" onclick="setDiff('medium');event.stopPropagation()">Med 10x10</button>
+      <button type="button" class="dbtn" id="d-hard" onclick="setDiff('hard');event.stopPropagation()">Hard 12x12</button>
+    </div>
+    <div id="board"></div>
+  </div>
+  <div class="skeys">
+    <button class="sk l" onclick="newGame()">New</button>
+    <button class="sk" id="flagbtn" onclick="toggleFlagMode()">Flag: OFF</button>
+    <button class="sk r" onclick="toggleNav()">Menu</button>
+  </div>
+</div>
+<script>
+var kc=document.getElementById('area'),active=false;
+function activate(){kc.focus();active=true;document.getElementById('tap').style.display='none';}
+function deactivate(){active=false;document.getElementById('tap').style.display='flex';}
+function toggleNav() {
+  var nav = document.getElementById('nav');
+  if (nav.classList.contains('open')) { closeNav(); return; }
+  nav.hidden = false; nav.classList.add('open'); active = false;
+  nav.setAttribute('aria-hidden','false');
+  nav.querySelector('button,a').focus();
+}
+function closeNav() {
+  var nav = document.getElementById('nav'); nav.classList.remove('open');
+  nav.setAttribute('aria-hidden','true'); nav.hidden = true; activate();
+}
+
+window.addEventListener('keydown', function(e) {
+  if (e.target !== kc || document.getElementById('nav').classList.contains('open')) return;
+  if (e.key === 'Escape') { e.preventDefault(); toggleNav(); return; }
+  var dirs = ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' ','Enter','Backspace'];
+  if (dirs.indexOf(e.key) !== -1) { e.preventDefault(); e.stopImmediatePropagation(); }
+  if (typeof handleKey === 'function') handleKey(e.key);
+}, {capture:true, passive:false});
+
+
+var LS='games_mines_scores',TOPN=10;
+var DIFFS={easy:{c:8,r:8,m:10},medium:{c:10,r:10,m:20},hard:{c:12,r:12,m:35}};
+var diff='easy',cols,rows,mineCount;
+var board,revealed,flagged,mines;
+var started,over,won,elapsed,timerInt;
+var cursor={x:0,y:0},flagMode=false,firstClick=true;
+
+function setDiff(d){
+  diff=d;
+  ['easy','medium','hard'].forEach(function(k){
+    document.getElementById('d-'+k).className='dbtn'+(k===d?' active':'');
+  });
+  newGame();
+}
+
+function newGame(){
+  var cfg=DIFFS[diff];cols=cfg.c;rows=cfg.r;mineCount=cfg.m;
+  board=[];revealed=[];flagged=[];mines=new Set();
+  for(var r=0;r<rows;r++){board.push([]);revealed.push([]);flagged.push([]);
+    for(var c=0;c<cols;c++){board[r].push(0);revealed[r].push(false);flagged[r].push(false);}}
+  started=false;over=false;won=false;firstClick=true;elapsed=0;flagMode=false;
+  clearInterval(timerInt);
+  cursor={x:Math.floor(cols/2),y:Math.floor(rows/2)};
+  document.getElementById('timer').textContent='0s';
+  document.getElementById('mleft').textContent=mineCount;
+  document.getElementById('flagbtn').textContent='Flag: OFF';
+  document.getElementById('flagbtn').style.color='';
+  document.getElementById('best').textContent=getBestFor(diff)||'--';
+  hideOverlay();renderBoard();activate();
+}
+
+function placeMines(sx,sy){
+  var safe=new Set();
+  for(var dy=-1;dy<=1;dy++)for(var dx=-1;dx<=1;dx++){
+    var nx=sx+dx,ny=sy+dy;if(nx>=0&&nx<cols&&ny>=0&&ny<rows)safe.add(ny*cols+nx);
+  }
+  while(mines.size<mineCount){
+    var i=Math.floor(Math.random()*cols*rows);
+    if(!safe.has(i))mines.add(i);
+  }
+  for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+    if(mines.has(r*cols+c)){board[r][c]=-1;continue;}
+    var cnt=0;
+    for(var dy=-1;dy<=1;dy++)for(var dx=-1;dx<=1;dx++){
+      var nr=r+dy,nc=c+dx;
+      if(nr>=0&&nr<rows&&nc>=0&&nc<cols&&mines.has(nr*cols+nc))cnt++;
+    }
+    board[r][c]=cnt;
+  }
+}
+
+function reveal(c,r){
+  if(over||revealed[r][c]||flagged[r][c])return;
+  if(firstClick){firstClick=false;placeMines(c,r);started=true;
+    timerInt=setInterval(function(){elapsed++;document.getElementById('timer').textContent=elapsed+'s';},1000);}
+  if(mines.has(r*cols+c)){
+    for(var rr=0;rr<rows;rr++)for(var cc=0;cc<cols;cc++)if(mines.has(rr*cols+cc))revealed[rr][cc]=true;
+    over=true;clearInterval(timerInt);
+    setTimeout(function(){showOverlay('BOOM!','You hit a mine at '+elapsed+'s');},200);
+    renderBoard();return;
+  }
+  var q=[[c,r]];
+  while(q.length){
+    var p=q.pop(),qc=p[0],qr=p[1];
+    if(qc<0||qc>=cols||qr<0||qr>=rows||revealed[qr][qc]||flagged[qr][qc])continue;
+    revealed[qr][qc]=true;
+    if(board[qr][qc]===0)for(var dy=-1;dy<=1;dy++)for(var dx=-1;dx<=1;dx++)if(dx||dy)q.push([qc+dx,qr+dy]);
+  }
+  checkWin();renderBoard();
+}
+
+function toggleFlag(c,r){
+  if(over||revealed[r][c])return;
+  flagged[r][c]=!flagged[r][c];
+  var fl=0;flagged.forEach(function(row){row.forEach(function(f){if(f)fl++;});});
+  document.getElementById('mleft').textContent=mineCount-fl;
+  renderBoard();
+}
+
+function checkWin(){
+  var unrev=0;
+  for(var r=0;r<rows;r++)for(var c=0;c<cols;c++)if(!revealed[r][c]&&!mines.has(r*cols+c))unrev++;
+  if(!unrev){over=true;won=true;clearInterval(timerInt);saveScore();
+    setTimeout(function(){showOverlay('CLEARED!',elapsed+'s on '+diff);},150);}
+}
+
+function renderBoard(){
+  var bd=document.getElementById('board');
+  var avail=226,cs=Math.max(16,Math.floor(avail/cols));
+  bd.style.gridTemplateColumns='repeat('+cols+','+cs+'px)';
+  bd.style.gridTemplateRows='repeat('+rows+','+cs+'px)';
+  bd.style.gap='2px';bd.innerHTML='';
+  for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+    var el=document.createElement('div');
+    el.className='cell';el.style.width=el.style.height=cs+'px';el.style.fontSize=Math.max(8,cs-6)+'px';
+    var mine=mines.has(r*cols+c);
+    if(revealed[r][c]&&mine){el.classList.add('boom');el.textContent='💣';}
+    else if(revealed[r][c]){el.classList.add('rev');var n=board[r][c];if(n>0){el.textContent=n;el.setAttribute('data-n',n);}}
+    else if(flagged[r][c]){el.classList.add('flag');el.textContent='⚑';}
+    if(cursor.x===c&&cursor.y===r&&!over)el.classList.add('cur');
+    (function(cc,rr){
+      el.addEventListener('click',function(e){e.stopPropagation();flagMode?toggleFlag(cc,rr):reveal(cc,rr);activate();});
+      var lt;
+      el.addEventListener('touchstart',function(){lt=setTimeout(function(){toggleFlag(cc,rr);},500);},{passive:true});
+      el.addEventListener('touchend',function(){clearTimeout(lt);},{passive:true});
+    })(c,r);
+    bd.appendChild(el);
+  }
+}
+
+function moveCursor(dx,dy){
+  cursor.x=Math.max(0,Math.min(cols-1,cursor.x+dx));
+  cursor.y=Math.max(0,Math.min(rows-1,cursor.y+dy));
+  renderBoard();
+}
+function activateCell(){flagMode?toggleFlag(cursor.x,cursor.y):reveal(cursor.x,cursor.y);}
+function toggleFlagMode(){
+  flagMode=!flagMode;
+  var b=document.getElementById('flagbtn');
+  b.textContent='Flag: '+(flagMode?'ON':'OFF');
+  b.style.color=flagMode?'#ff6b35':'';
+}
+
+function getBestFor(d){
+  try{var s=JSON.parse(localStorage.getItem(LS)||'[]').filter(function(x){return x.diff===d;});return s.length?s[0].time:null;}catch(e){return null;}
+}
+function saveScore(){
+  if(!won)return;
+  try{var s=JSON.parse(localStorage.getItem(LS)||'[]');
+    s.push({time:elapsed,diff:diff,date:new Date().toISOString().split('T')[0]});
+    s.sort(function(a,b){return a.time-b.time;});
+    localStorage.setItem(LS,JSON.stringify(s.slice(0,TOPN)));}catch(e){}
+}
+function showOverlay(t,m){document.getElementById('ovrtitle').textContent=t;ToolUI.setHTML(document.getElementById('ovrmsg'),m);document.getElementById('ovr').classList.add('show');}
+function hideOverlay(){document.getElementById('ovr').classList.remove('show');}
+function handleKey(key) {
+  var mv = {
+    ArrowUp:[0,-1], ArrowDown:[0,1], ArrowLeft:[-1,0], ArrowRight:[1,0],
+    '2':[0,-1], '8':[0,1], '4':[-1,0], '6':[1,0]
+  };
+  if (mv[key]) { moveCursor(mv[key][0], mv[key][1]); return; }
+  if (key==='Enter'||key===' '||key==='5') { activateCell(); return; }
+  if (key.toLowerCase()==='f'||key==='#') { toggleFlag(cursor.x, cursor.y); return; }
+  if (key.toLowerCase()==='r'||key==='0') newGame();
+}
+window.addEventListener('load',function(){newGame();});
+</script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%2317a2b8%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2752%25%27%20font-size%3D%2744%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%20font-family%3D%27Apple%20Color%20Emoji%2CSegoe%20UI%20Emoji%2CSegoe%20UI%20Symbol%2CEmojiSymbols%2Csans-serif%27%20fill%3D%27%23ffffff%27%3E%F0%9F%93%8A%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <title>Sports Standings</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; font-size: 12px; background: #000; color: #fff; padding: 5px; max-width: 240px; }
+
+        /* ── Header ── */
+        .header { position: sticky; top: 0; background: #000; z-index: 100; padding-bottom: 2px; border-bottom: 1px solid #fff; }
+        .back-btn { display: inline-block; padding: 2px 6px; margin: 2px 0; background: #222; color: #0ff; text-decoration: none; font-size: 10px; border-radius: 3px; }
+        .back-btn:active { background: #333; }
+        h1 { font-size: 14px; text-align: center; padding: 4px 0; margin: 0; }
+
+        /* ── League nav (matches scores.html) ── */
+        .league-nav {
+            position: sticky; top: 38px; z-index: 99;
+            background: #111; border-bottom: 1px solid #333;
+            padding: 4px; display: flex; gap: 4px;
+            overflow-x: auto; white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        .league-nav::-webkit-scrollbar { display: none; }
+        .league-nav button {
+            color: #0ff; text-decoration: none; font-size: 9px;
+            font-weight: bold; padding: 3px 7px;
+            border: 1px solid #333; border-radius: 10px;
+            flex-shrink: 0; display: inline-block;
+            cursor: pointer;
+        }
+        .league-nav button.active { background: #0ff; color: #000; }
+        .league-nav button:active { opacity: 0.7; }
+
+        /* ── Controls ── */
+        .refresh-btn { display: block; width: 100%; padding: 5px; margin: 5px 0; background: #0ff; color: #000; border: none; font-weight: bold; font-size: 11px; cursor: pointer; }
+        .last-update { text-align: center; font-size: 9px; color: #666; margin: 2px 0; }
+
+        /* ── Standings ── */
+        .division-section { margin-bottom: 12px; border-bottom: 1px solid #444; padding-bottom: 8px; }
+        .division-title { font-size: 13px; font-weight: bold; color: #0ff; margin-bottom: 5px; padding: 3px 0; border-left: 3px solid currentColor; padding-left: 5px; }
+        .standings-table { width: 100%; font-size: 10px; }
+        .standings-header { display: flex; background: #222; padding: 4px 2px; font-weight: bold; border-bottom: 1px solid #444; }
+        .standings-row { display: flex; padding: 3px 2px; border-bottom: 1px solid #333; }
+        .standings-row.priority { background: #1a1a00; border-left: 3px solid #ffd700; }
+
+        .col-rank  { width: 18px; text-align: center; flex-shrink: 0; }
+        .col-team  { flex: 1; padding-left: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .col-w     { width: 22px; text-align: center; flex-shrink: 0; }
+        .col-l     { width: 22px; text-align: center; flex-shrink: 0; }
+        .col-pct   { width: 32px; text-align: center; flex-shrink: 0; }
+        .col-gb    { width: 24px; text-align: center; flex-shrink: 0; }
+
+        .team-priority { color: #ffd700; font-weight: bold; }
+        .loading { text-align: center; padding: 20px; color: #888; }
+        .error { text-align: center; padding: 10px; color: #f00; font-size: 11px; }
+        .config-error { background: #300; color: #f88; padding: 6px; font-size: 10px; margin: 4px 0; border-left: 3px solid #f00; }
+        .no-standings { padding: 10px; color: #666; font-size: 11px; text-align: center; }
+    </style>
+    <link rel="stylesheet" href="assets/tool-ui.css">
+    <script src="assets/tool-ui.js"></script>
+</head>
+<body class="sports-page">
+    <div class="header">
+        <a href="home.html" class="back-btn">&lt;- Back</a>
+        <h1>STANDINGS</h1>
+        <div class="last-update" id="currentDate"></div>
+    </div>
+
+    <div class="league-picker" id="league-picker-wrap" hidden>
+        <label for="league-picker">League</label>
+        <select id="league-picker"><option value="">Choose a league</option></select>
+    </div>
+    <nav class="league-nav" id="league-nav" aria-label="Choose league">
+        <span style="color:#666;font-size:9px;padding:3px 4px;">Loading...</span>
+    </nav>
+
+    <button class="refresh-btn" id="refresh-standings" type="button">REFRESH</button>
+    <div class="last-update" id="lastUpdate"></div>
+    <div id="content"><div class="loading">Loading config...</div></div>
+
+    <script>
+        var STANDINGS_API = 'https://site.api.espn.com/apis/v2/sports';
+        var RANKINGS_API  = 'https://site.api.espn.com/apis/site/v2/sports';
+        var CONFIG_URL    = 'sports-config.json';
+
+        var PRIORITY_TEAMS   = [];
+        var LEAGUES          = [];   // full league objects from config
+        var currentLeague    = null; // currently selected league object
+
+        // ── Config ─────────────────────────────────────────────────────────
+        async function loadConfig() {
+            var res = await fetch(CONFIG_URL + '?t=' + Date.now());
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            var cfg = await res.json();
+            PRIORITY_TEAMS = cfg.priority_teams || [];
+            // Only keep leagues that are enabled and have standings
+            LEAGUES = (cfg.leagues || []).filter(function(l) {
+                return l.enabled !== false && l.standings === true;
+            });
+        }
+
+        // ── Nav ─────────────────────────────────────────────────────────────
+        function buildNav() {
+            var nav = document.getElementById('league-nav');
+            var picker = document.getElementById('league-picker');
+            ToolUI.setHTML(nav, '');
+            ToolUI.setHTML(picker, '<option value="">Choose a league</option>');
+            LEAGUES.forEach(function(league, i) {
+                var a = document.createElement('button');
+                a.type = 'button';
+                a.setAttribute('aria-pressed', String(i === 0));
+                a.textContent   = league.name;
+                a.style.borderColor = league.color || '#0ff';
+                a.style.color       = league.color || '#0ff';
+                a.dataset.idx       = i;
+                var option = document.createElement('option');
+                option.value = String(i);
+                option.textContent = league.name;
+                picker.appendChild(option);
+                if (i === 0) a.classList.add('active');
+                a.addEventListener('click', function() {
+                    document.querySelectorAll('.league-nav button').forEach(function(el) { el.classList.remove('active'); el.setAttribute('aria-pressed', 'false'); });
+                    a.classList.add('active');
+                    a.setAttribute('aria-pressed', 'true');
+                    currentLeague = LEAGUES[parseInt(a.dataset.idx)];
+                    picker.value = a.dataset.idx;
+                    loadStandings();
+                });
+                nav.appendChild(a);
+            });
+            document.getElementById('league-picker-wrap').hidden = LEAGUES.length === 0;
+            document.body.classList.toggle('league-picker-ready', LEAGUES.length > 0);
+            picker.value = LEAGUES.length ? '0' : '';
+        }
+
+        // ── Helpers ────────────────────────────────────────────────────────
+        function isPriority(teamName) {
+            var upper = (teamName || '').toUpperCase();
+            return PRIORITY_TEAMS.some(function(p) { return upper.includes(p.toUpperCase()); });
+        }
+
+        function getStat(stats, names) {
+            for (var i = 0; i < names.length; i++) {
+                var s = stats.find(function(x) { return x.name === names[i] || x.abbreviation === names[i]; });
+                if (s) return s.displayValue || (s.value !== undefined ? String(s.value) : '-');
+            }
+            return '-';
+        }
+
+        // ── Renderers ──────────────────────────────────────────────────────
+        function renderRow(entry, idx) {
+            var team   = entry.team || {};
+            var stats  = entry.stats || [];
+            var name   = team.abbreviation || team.shortDisplayName || team.displayName || '?';
+            var full   = team.displayName || name;
+            var prior  = isPriority(full);
+
+            var rank = getStat(stats, ['rank','playoffSeed','divisionrank','conferenceRank','RK']) ;
+            if (rank === '-') rank = idx + 1;
+
+            var w   = getStat(stats, ['wins','W','wins']);
+            var l   = getStat(stats, ['losses','L','losses']);
+            var pct = getStat(stats, ['winPercent','winpercent','PCT','pointsPercentage','points']);
+            var gb  = getStat(stats, ['gamesBehind','GB','pointsBehind']);
+
+            return '<div class="standings-row' + (prior ? ' priority' : '') + '">' +
+                '<div class="col-rank">' + ToolUI.escape(rank) + '</div>' +
+                '<div class="col-team' + (prior ? ' team-priority' : '') + '">' + ToolUI.escape(name) + '</div>' +
+                '<div class="col-w">' + ToolUI.escape(w) + '</div>' +
+                '<div class="col-l">' + ToolUI.escape(l) + '</div>' +
+                '<div class="col-pct">' + ToolUI.escape(pct) + '</div>' +
+                '<div class="col-gb">' + ToolUI.escape(gb) + '</div>' +
+                '</div>';
+        }
+
+        function renderHeader() {
+            return '<div class="standings-header">' +
+                '<div class="col-rank">#</div>' +
+                '<div class="col-team">TEAM</div>' +
+                '<div class="col-w">W</div>' +
+                '<div class="col-l">L</div>' +
+                '<div class="col-pct">PCT</div>' +
+                '<div class="col-gb">GB</div>' +
+                '</div>';
+        }
+
+        function renderDivisionBlock(divName, entries, color) {
+            if (!entries || entries.length === 0) return '';
+            var sorted = entries.slice().sort(function(a, b) {
+                var ra = parseInt(getStat(a.stats||[], ['rank','playoffSeed','divisionrank','conferenceRank','RK'])) || 999;
+                var rb = parseInt(getStat(b.stats||[], ['rank','playoffSeed','divisionrank','conferenceRank','RK'])) || 999;
+                return ra - rb;
+            });
+            return '<div class="division-section">' +
+                '<div class="division-title" style="border-left-color:' + (/^#[0-9a-f]{3,8}$/i.test(color || '') ? color : '#0ff') + ';color:' + (/^#[0-9a-f]{3,8}$/i.test(color || '') ? color : '#0ff') + '">' + ToolUI.escape(divName) + '</div>' +
+                '<div class="standings-table">' +
+                renderHeader() +
+                sorted.map(function(e, i) { return renderRow(e, i); }).join('') +
+                '</div></div>';
+        }
+
+        // ── Fetchers ───────────────────────────────────────────────────────
+        async function fetchDivisionStandings(league) {
+            var url = STANDINGS_API + '/' + league.espn_path + '/standings';
+            var res = await fetch(url);
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            var data = await res.json();
+
+            var divisions = data.children || data.standings || [];
+            if (divisions.length === 0) return '<div class="error">No standings data</div>';
+
+            return divisions.map(function(div) {
+                var entries = (div.standings && div.standings.entries) || [];
+                return renderDivisionBlock(div.name || div.abbreviation || 'Division', entries, league.color);
+            }).filter(Boolean).join('');
+        }
+
+        async function fetchSoccerStandings(league) {
+            var url = STANDINGS_API + '/' + league.espn_path + '/standings';
+            var res = await fetch(url);
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            var data = await res.json();
+
+            // Soccer uses children[0].standings or flat standings
+            var groups = data.children || [];
+            if (groups.length > 0) {
+                return groups.map(function(g) {
+                    var entries = (g.standings && g.standings.entries) || [];
+                    return renderDivisionBlock(g.name || league.name, entries, league.color);
+                }).filter(Boolean).join('');
+            }
+
+            // Flat format
+            var entries = (data.standings && data.standings.entries) || [];
+            return renderDivisionBlock(league.name, entries, league.color);
+        }
+
+        async function fetchRankings(league) {
+            var url = RANKINGS_API + '/' + league.espn_path + '/rankings';
+            var res = await fetch(url);
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            var data = await res.json();
+
+            var rankings = data.rankings || [];
+            if (rankings.length === 0) return '<div class="error">No rankings available</div>';
+
+            // Prefer AP Top 25, then CFP, then first
+            var poll = rankings.find(function(r) { return r.name && r.name.includes('AP Top 25'); }) ||
+                       rankings.find(function(r) { return r.shortName && r.shortName.includes('AP'); }) ||
+                       rankings.find(function(r) { return r.type === 'cfp'; }) ||
+                       rankings[0];
+
+            if (!poll || !poll.ranks) return '<div class="error">No poll data</div>';
+
+            var entries = poll.ranks.map(function(rank) {
+                var rec = rank.recordSummary || '';
+                var parts = rec.split('-');
+                return {
+                    team: {
+                        displayName:      rank.team.location || rank.team.name,
+                        abbreviation:     rank.team.abbreviation,
+                        shortDisplayName: rank.team.nickname
+                    },
+                    stats: [
+                        { name: 'rank',        displayValue: String(rank.current) },
+                        { name: 'wins',        displayValue: parts[0] || '-' },
+                        { name: 'losses',      displayValue: parts[1] || '-' },
+                        { name: 'winPercent',  displayValue: '-' },
+                        { name: 'gamesBehind', displayValue: rank.previous ? String(rank.current - rank.previous) : '-' }
+                    ]
+                };
+            });
+
+            return renderDivisionBlock(poll.shortName || poll.name || 'Rankings', entries, league.color);
+        }
+
+        // ── F1 Standings ───────────────────────────────────────────────────
+        async function fetchF1Standings(league) {
+            // Try driver standings first, fall back to season results
+            var url = 'https://site.api.espn.com/apis/v2/sports/racing/f1/standings';
+            var res = await fetch(url);
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            var data = await res.json();
+
+            var groups = data.children || [];
+            if (groups.length > 0) {
+                return groups.map(function(g) {
+                    var entries = (g.standings && g.standings.entries) || [];
+                    return renderDivisionBlock(g.name || 'Drivers', entries, league.color);
+                }).filter(Boolean).join('');
+            }
+
+            var entries = (data.standings && data.standings.entries) || [];
+            if (entries.length > 0) {
+                return renderDivisionBlock('Driver Standings', entries, league.color);
+            }
+
+            return '<div class="no-standings">F1 standings not available in off-season</div>';
+        }
+
+        // ── Main ───────────────────────────────────────────────────────────
+        var standingsVersion = 0;
+        async function loadStandings() {
+            var requestVersion = ++standingsVersion;
+            var content = document.getElementById('content');
+            if (!currentLeague) return;
+
+            ToolUI.setHTML(content, '<div class="loading">Loading ' + ToolUI.escape(currentLeague.name) + ' standings...</div>');
+            content.setAttribute('aria-busy', 'true');
+
+            try {
+                var html = '';
+                var type = currentLeague.standings_type || 'division';
+
+                if (type === 'rankings') {
+                    html = await fetchRankings(currentLeague);
+                } else if (type === 'soccer') {
+                    html = await fetchSoccerStandings(currentLeague);
+                } else if (type === 'f1') {
+                    html = await fetchF1Standings(currentLeague);
+                } else {
+                    html = await fetchDivisionStandings(currentLeague);
+                }
+
+                if (requestVersion !== standingsVersion) return;
+                ToolUI.setHTML(content, html || '<div class="no-standings">No standings available</div>');
+                content.setAttribute('aria-busy', 'false');
+                updateTimestamp();
+            } catch(err) {
+                if (requestVersion !== standingsVersion) return;
+                ToolUI.setHTML(content, '<div class="error">Unable to load ' + ToolUI.escape(currentLeague.name) + ' standings. <button type="button" id="retry-standings">Retry</button></div>');
+                content.setAttribute('aria-busy', 'false');
+                document.getElementById('retry-standings').addEventListener('click', loadStandings);
+                console.error(err);
+            }
+        }
+
+        function updateTimestamp() {
+            var now = new Date();
+            document.getElementById('currentDate').textContent =
+                now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+            document.getElementById('lastUpdate').textContent =
+                'Updated: ' + now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
+        }
+
+
+
+        document.getElementById('refresh-standings').addEventListener('click', loadStandings);
+        document.getElementById('league-picker').addEventListener('change', function() {
+            var tab = document.querySelector('.league-nav button[data-idx="' + this.value + '"]');
+            if (tab) tab.click();
+        });
+        async function retryStandingsConfig() {
+            try {
+                await loadConfig();
+                if (!LEAGUES.length) { ToolUI.setHTML(document.getElementById('content'), '<div class="no-standings">No leagues with standings enabled in config.</div>'); return; }
+                buildNav(); currentLeague = LEAGUES[0]; loadStandings();
+            } catch(retryErr) {
+                ToolUI.setHTML(document.getElementById('content'), '<div class="config-error">Could not load sports config. <button type="button" id="retry-config">Retry</button></div>');
+                document.getElementById('retry-config').addEventListener('click', retryStandingsConfig);
+            }
+        }
+        // Boot
+        (async function() {
+            try {
+                await loadConfig();
+            } catch(err) {
+                ToolUI.setHTML(document.getElementById('content'), '<div class="config-error">Could not load sports-config.json: ' + ToolUI.escape(err.message) + ' <button type="button" id="retry-config">Retry</button></div>');
+                document.getElementById('retry-config').addEventListener('click', retryStandingsConfig);
+                return;
+            }
+            if (LEAGUES.length === 0) {
+                ToolUI.setHTML(document.getElementById('content'), '<div class="no-standings">No leagues with standings enabled in config.</div>');
+                return;
+            }
+            buildNav();
+            currentLeague = LEAGUES[0];
+            loadStandings();
+        })();
+    </script>
+</body>
+</html>

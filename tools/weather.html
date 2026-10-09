@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%23ffc107%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2752%25%27%20font-size%3D%2744%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%20font-family%3D%27Apple%20Color%20Emoji%2CSegoe%20UI%20Emoji%2CSegoe%20UI%20Symbol%2CEmojiSymbols%2Csans-serif%27%20fill%3D%27%23ffffff%27%3E%F0%9F%8C%A4%EF%B8%8F%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <title>Weather</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            background: #000;
+            color: #fff;
+            padding: 5px;
+            max-width: 240px;
+        }
+        
+        .header {
+            position: sticky;
+            top: 0;
+            background: #000;
+            z-index: 100;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #fff;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 2px 6px;
+            margin: 2px 0;
+            background: #222;
+            color: #0ff;
+            text-decoration: none;
+            font-size: 10px;
+            border-radius: 3px;
+        }
+        
+        .back-btn:active {
+            background: #333;
+        }
+        
+        h1 {
+            font-size: 14px;
+            text-align: center;
+            padding: 4px 0;
+            margin: 0;
+        }
+        
+        .current {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 8px;
+        }
+        
+        .weather-row {
+            background: #111;
+            margin: 4px 0;
+            padding: 5px;
+            border-left: 3px solid #0ff;
+        }
+        
+        .label {
+            font-size: 10px;
+            color: #888;
+            margin-bottom: 2px;
+        }
+        
+        .value {
+            font-size: 12px;
+            font-weight: bold;
+            color: #0ff;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #0ff;
+            margin: 8px 0 4px 0;
+            padding: 3px 0;
+        }
+        
+        .hourly {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .hour {
+            background: #111;
+            padding: 4px;
+            border-left: 3px solid #0ff;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .hour-time {
+            font-weight: bold;
+            color: #0ff;
+            min-width: 40px;
+        }
+        
+        .hour-details {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+            justify-content: flex-end;
+        }
+        
+        .hour-temp {
+            font-weight: bold;
+        }
+        
+        .hour-prob {
+            color: #f00;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/tool-ui.css">
+    <script src="assets/tool-ui.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="home.html" class="back-btn">← Back</a>
+        <h1>Local Weather</h1>
+    </div>
+
+    <p id="weather-location">Atlanta, Georgia</p>
+    <form id="location-form" class="location-form">
+        <label for="city-input">Choose a city or ZIP code</label>
+        <input id="city-input" type="search" maxlength="100" placeholder="City or ZIP code" required>
+        <button type="submit">Find</button>
+    </form>
+    <div id="location-results"></div>
+    <button id="device-location" type="button">Use device location</button>
+    <button id="reset-location" type="button">Atlanta</button>
+    <p id="location-status" role="status" aria-live="polite"></p>
+    <button id="retry-forecast" type="button" hidden>Retry forecast</button>
+    <p class="last-update">Saved on this browser only. City searches and forecasts use Open-Meteo; device location is optional.</p>
+    <div class="current">
+        <div class="weather-row">
+            <div class="label">Temperature</div>
+            <div class="value" id="temp">—</div>
+        </div>
+        <div class="weather-row">
+            <div class="label">Condition</div>
+            <div class="value" id="desc">—</div>
+        </div>
+        <div class="weather-row">
+            <div class="label">Wind</div>
+            <div class="value" id="winds">—</div>
+        </div>
+        <div class="weather-row">
+            <div class="label">Precipitation</div>
+            <div class="value" id="precip">—</div>
+        </div>
+        <div class="weather-row">
+            <div class="label">Local time</div>
+            <div class="value" id="time">—</div>
+        </div>
+    </div>
+
+    <div class="section-title">Hour by Hour (next 24h)</div>
+    <div id="hourly" class="hourly"></div>
+
+    <script>
+    let forecastVersion = 0;
+    function loadWeather(location){
+        const requestVersion = ++forecastVersion;
+        const lat = location.lat;
+        const lon = location.lon;
+        document.getElementById('weather-location').textContent = location.name;
+        document.getElementById('hourly').replaceChildren();
+        document.getElementById('location-status').textContent = 'Loading forecast…';
+        const elTemp = document.getElementById('temp');
+        const elDesc = document.getElementById('desc');
+        const elWinds = document.getElementById('winds');
+        const elTime = document.getElementById('time');
+        const elPrecip = document.getElementById('precip');
+
+        const weatherCodes = {
+            0: 'Clear', 1: 'Mainly clear', 2: 'Partly cloudy', 3: 'Overcast',
+            45: 'Fog', 48: 'Depositing rime fog',
+            51: 'Light drizzle', 53: 'Moderate drizzle', 55: 'Dense drizzle',
+            61: 'Slight rain', 63: 'Moderate rain', 65: 'Heavy rain',
+            71: 'Slight snow', 73: 'Moderate snow', 75: 'Heavy snow',
+            80: 'Rain showers', 81: 'Heavy rain showers', 82: 'Violent rain showers'
+        };
+
+        function cToF(c){ return Math.round((c*9/5)+32); }
+
+        document.getElementById('retry-forecast').hidden = true;
+        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,precipitation,precipitation_probability&timezone=auto`)
+        .then(r=>r.ok? r.json(): Promise.reject('no data'))
+        .then(data=>{
+            if (requestVersion !== forecastVersion) return;
+            document.getElementById('location-status').textContent = 'Forecast fetched ' + new Date().toLocaleTimeString();
+            const cw = data.current_weather;
+            if(!cw){ throw 'no current_weather'; }
+            const tempC = Math.round(cw.temperature);
+            elTemp.textContent = cToF(tempC) + '°F';
+            elDesc.textContent = weatherCodes[cw.weathercode] || ('Code ' + cw.weathercode);
+            elWinds.textContent = cw.windspeed + ' ' + ((data.current_weather_units && data.current_weather_units.windspeed) || 'km/h');
+            // show time if available
+            if(data.timezone) elTime.textContent = new Intl.DateTimeFormat(undefined, {dateStyle:'short', timeStyle:'short', timeZone:data.timezone}).format(new Date());
+
+            // precipitation: find matching hourly index for current weather time
+            if(data.hourly && Array.isArray(data.hourly.time) && Array.isArray(data.hourly.precipitation)){
+                const times = data.hourly.time;
+                const amounts = data.hourly.precipitation;
+                const probs = data.hourly.precipitation_probability || [];
+                const target = cw.time;
+                let idx = times.indexOf(target);
+                if(idx === -1){
+                    idx = times.findIndex(t => t >= target);
+                    if (idx < 0) idx = Math.max(0, times.length - 1);
+                }
+                const mm = Number(amounts[idx]);
+                const prob = probs[idx] !== undefined ? probs[idx] : null;
+                let precipitationText = Number.isFinite(mm) ? mm.toFixed(1) + ' mm / ' + (mm / 25.4).toFixed(2) + ' in' : '—';
+                if (prob !== null) precipitationText += ' (' + prob + '% chance)';
+                elPrecip.textContent = precipitationText;
+            } else {
+                elPrecip.textContent = '—';
+            }
+
+            // hourly forecast - start from current hour, show next 24 hours
+            if(data.hourly && Array.isArray(data.hourly.time)){
+                const times = data.hourly.time;
+                const temps = data.hourly.temperature_2m || [];
+                const probs = data.hourly.precipitation_probability || [];
+                const container = document.getElementById('hourly');
+                let startIdx = times.findIndex(t => t >= cw.time);
+                if(startIdx === -1) startIdx = 0;
+                
+                for(let i=startIdx;i<Math.min(startIdx+24,times.length);i++){
+                    const h = times[i].slice(11, 16);
+                    const tempC = Math.round(temps[i]);
+                    const tempF = cToF(tempC);
+                    const prob = probs[i] !== undefined ? probs[i] : 0;
+                    const row = ToolUI.text('div', '', 'hour');
+                    const details = ToolUI.text('div', '', 'hour-details');
+                    details.append(ToolUI.text('span', tempF + '°F', 'hour-temp'), ToolUI.text('span', prob + '%', 'hour-prob'));
+                    row.append(ToolUI.text('div', h, 'hour-time'), details);
+                    container.appendChild(row);
+                }
+            }
+        })
+        .catch(err=>{
+            if (requestVersion !== forecastVersion) return;
+            document.getElementById('location-status').textContent = 'Forecast unavailable. Try again later.';
+            document.getElementById('retry-forecast').hidden = false;
+            elTemp.textContent = 'Unavailable';
+            elDesc.textContent = 'Unable to fetch';
+            elWinds.textContent = '—';
+            elTime.textContent = '—';
+            elPrecip.textContent = '—';
+        });
+    }
+    const defaultLocation = {lat:33.749, lon:-84.388, name:'Atlanta, Georgia'};
+    let selectedLocation = defaultLocation;
+    function validLocation(value) {
+        return value && Number.isFinite(value.lat) && Number.isFinite(value.lon) && Math.abs(value.lat) <= 90 && Math.abs(value.lon) <= 180 && typeof value.name === 'string';
+    }
+    function chooseLocation(value) {
+        if (!validLocation(value)) return;
+        selectedLocation = value;
+        ToolUI.storageSet('portfolio_weather_location', JSON.stringify(value));
+        document.getElementById('location-results').replaceChildren();
+        loadWeather(value);
+    }
+    let remembered;
+    try { remembered = JSON.parse(ToolUI.storageGet('portfolio_weather_location')); } catch (_) {}
+    selectedLocation = validLocation(remembered) ? remembered : defaultLocation;
+    loadWeather(selectedLocation);
+    document.getElementById('retry-forecast').addEventListener('click', () => loadWeather(selectedLocation));
+    document.getElementById('location-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const status = document.getElementById('location-status');
+        status.textContent = 'Finding cities…';
+        const results = document.getElementById('location-results'); results.replaceChildren();
+        try {
+            const response = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(document.getElementById('city-input').value.trim()) + '&count=5&language=en&format=json');
+            if (!response.ok) throw new Error('unavailable');
+            const data = await response.json();
+            (data.results || []).forEach(city => {
+                const name = [city.name, city.admin1, city.country].filter(Boolean).join(', ');
+                const button = ToolUI.text('button', name); button.type = 'button';
+                button.addEventListener('click', () => chooseLocation({lat:Number(city.latitude),lon:Number(city.longitude),name:name}));
+                results.appendChild(button);
+            });
+            status.textContent = data.results && data.results.length ? 'Choose a city below.' : 'No cities found. Try a nearby city.';
+        } catch (_) { status.textContent = 'City search unavailable. Your current setting is unchanged.'; }
+    });
+    document.getElementById('device-location').addEventListener('click', function() {
+        const status = document.getElementById('location-status');
+        if (!navigator.geolocation) { status.textContent = 'Device location unavailable. Choose a city instead.'; return; }
+        status.textContent = 'Waiting for location permission…';
+        navigator.geolocation.getCurrentPosition(position => {
+            chooseLocation({lat:position.coords.latitude,lon:position.coords.longitude,name:'Device location'});
+        }, () => { status.textContent = 'Location unavailable or permission declined. Choose a city instead.'; }, {timeout:10000,maximumAge:300000});
+    });
+    document.getElementById('reset-location').addEventListener('click', () => chooseLocation(defaultLocation));
+    </script>
+</body>
+</html>

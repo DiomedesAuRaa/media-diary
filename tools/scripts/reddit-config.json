@@ -1,0 +1,38 @@
+{
+  "subreddits": [
+    "cfb",
+    "nfl",
+    "nba",
+    "baseball",
+    "CoDCompetitive",
+    "soccer",
+    "formula1",
+    "MichiganWolverines",
+    "DetroitLions",
+    "DetroitPistons",
+    "movies",
+    "BillSimmons"
+  ],
+  "feeds": [
+    {
+      "label": "Best of Hour",
+      "sort": "top",
+      "timeframe": "hour"
+    },
+    {
+      "label": "Best of 24h",
+      "sort": "top",
+      "timeframe": "day"
+    },
+    {
+      "label": "Best of Week",
+      "sort": "top",
+      "timeframe": "week"
+    },
+    {
+      "label": "Hot",
+      "sort": "hot",
+      "timeframe": null
+    }
+  ]
+}

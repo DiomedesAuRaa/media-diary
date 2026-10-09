@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wordle</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:240px;max-width:240px;height:320px;max-height:320px;overflow:hidden;
+  background:#0d1b2a;color:#fff;font-family:'Segoe UI',Arial,sans-serif;font-size:12px;
+  user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.shell{display:flex;flex-direction:column;width:240px;height:320px;overflow-y:auto;position:relative}
+.hdr{background:#1a2f45;padding:4px 8px;display:flex;align-items:center;
+  justify-content:space-between;border-bottom:1px solid #243b55;flex-shrink:0;height:30px}
+.htitle{font-size:13px;font-weight:bold;color:#00c8ff;letter-spacing:1px}
+.hmeta{font-size:9px;color:#8aafc8}
+.hmeta strong{color:#00c8ff}
+.grid-wrap{display:flex;justify-content:center;padding:6px 0;flex-shrink:0}
+#grid{display:grid;grid-template-rows:repeat(6,1fr);grid-template-columns:repeat(5,1fr);gap:4px;width:220px}
+.tile{aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:900;border:2px solid #243b55;background:#1a2f45;
+  color:#fff;text-transform:uppercase;border-radius:3px}
+.tile.filled{border-color:#8aafc8;animation:wpop .1s ease}
+.tile.correct{background:#2e7d32;border-color:#2e7d32}
+.tile.present{background:#f57c00;border-color:#f57c00}
+.tile.absent{background:#37474f;border-color:#37474f}
+.tile.shake{animation:wshake .4s ease}
+@keyframes wpop{0%{transform:scale(1.1)}100%{transform:scale(1)}}
+@keyframes wshake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.rbar{background:#1a2f45;padding:5px 8px;font-size:11px;flex-shrink:0;
+  border-top:1px solid #243b55;border-bottom:1px solid #243b55;display:none}
+.rbar.show{display:block}
+.rbar strong{color:#00c8ff}
+.rbar .rsub{color:#8aafc8;font-size:10px;margin-top:2px}
+.kb{display:flex;flex-direction:column;gap:4px;padding:4px;flex-shrink:0}
+.kbrow{display:flex;gap:3px;justify-content:center}
+.key{height:34px;min-width:18px;flex:1;max-width:26px;background:#243b55;border:none;
+  border-radius:3px;font-size:11px;font-weight:700;color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;text-transform:uppercase}
+.key.wide{max-width:36px;font-size:9px}
+.key:active{filter:brightness(1.4)}
+.key.correct{background:#2e7d32}.key.present{background:#f57c00}.key.absent{background:#455a64}
+.skeys{background:#0a1628;border-top:1px solid #243b55;display:flex;height:26px;flex-shrink:0}
+.sk{flex:1;height:100%;background:none;border:none;color:#fff;font-size:11px;font-weight:bold;
+  cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sk:active{background:#243b55}
+.sk.l{justify-content:flex-start;padding-left:8px;color:#00c8ff}
+.sk.r{justify-content:flex-end;padding-right:8px;color:#00c8ff}
+.navdrawer{position:fixed;top:0;left:0;width:240px;background:#1a2f45;
+  border-bottom:2px solid #00c8ff;z-index:20;transform:translateY(-100%);transition:transform .15s}
+.navdrawer.open{transform:translateY(0)}
+.navdrawer a{display:block;padding:7px 10px;color:#8aafc8;text-decoration:none;font-size:12px;border-bottom:1px solid #243b55}
+.navdrawer a.cur{color:#00c8ff;font-weight:bold}
+.navclose{display:flex;align-items:center;justify-content:space-between;padding:5px 10px;background:#243b55}
+.navclose span{font-size:11px;color:#8aafc8}
+.navclose button{background:none;border:none;color:#00c8ff;font-size:14px;cursor:pointer}
+#kc{position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none;border:none;outline:none}
+.toast{position:fixed;top:38px;left:50%;transform:translateX(-50%);
+  background:rgba(255,255,255,0.92);color:#000;font-size:11px;font-weight:bold;
+  padding:4px 12px;border-radius:14px;opacity:0;transition:opacity .2s;z-index:30;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+</style>
+<link rel="stylesheet" href="../assets/tool-ui.css">
+<link rel="stylesheet" href="../assets/game-ui.css">
+<script src="../assets/tool-ui.js"></script>
+</head>
+<body class="game-page">
+<div class="toast" id="toast"></div>
+
+<div class="shell">
+  <div class="navdrawer" id="nav" aria-label="Games" aria-hidden="true" hidden>
+    <div class="navclose"><span>NAVIGATE</span><button aria-label="Close games menu" onclick="closeNav()">&#x2715;</button></div>
+    <a href="../home.html">&#x2190; Home</a>
+    <a href="2048.html">2048</a><a href="snake.html">Snake</a>
+    <a href="minesweeper.html">Minesweeper</a><a href="tetris.html">Tetris</a>
+    <a href="wordle.html" class="cur">Wordle</a>
+  </div>
+  <div class="hdr">
+    <span class="htitle">WORDLE</span>
+    <div class="hmeta" id="hmeta">
+      <span id="pnum">#--</span> &nbsp;
+      Streak:<strong id="streak">0</strong>&#x1F525;
+    </div>
+  </div>
+  <div class="grid-wrap"><div id="grid" tabindex="0" role="region" aria-label="Game board. Focus here to play. Escape opens menu."></div></div>
+  <div class="rbar" id="rbar">
+    <strong id="rtitle">--</strong>
+    <div class="rsub" id="rsub"></div>
+  </div>
+  <div class="kb" id="kb">
+    <div class="kbrow" id="kr0"></div>
+    <div class="kbrow" id="kr1"></div>
+    <div class="kbrow" id="kr2"></div>
+  </div>
+  <div class="skeys">
+    <button class="sk l" onclick="resetForDemo()">Practice</button>
+    <button class="sk" onclick="copyShare()">Share</button>
+    <button class="sk r" onclick="toggleNav()">Menu</button>
+  </div>
+</div>
+<form class="word-input" id="guess-form">
+  <label for="guess-input">Type a five-letter guess</label>
+  <input id="guess-input" type="text" maxlength="5" autocomplete="off" autocapitalize="none" spellcheck="false" pattern="[A-Za-z]{5}">
+  <button type="submit">Guess</button>
+  <p id="guess-status" role="status"></p>
+</form>
+<script>
+var kc=document.getElementById('grid'),active=false;
+function activate(){kc.focus();active=true;}
+function toggleNav() {
+  var nav = document.getElementById('nav');
+  if (nav.classList.contains('open')) { closeNav(); return; }
+  nav.hidden = false; nav.classList.add('open'); active = false;
+  nav.setAttribute('aria-hidden','false');
+  nav.querySelector('button,a').focus();
+}
+function closeNav() {
+  var nav = document.getElementById('nav'); nav.classList.remove('open');
+  nav.setAttribute('aria-hidden','true'); nav.hidden = true; activate();
+}
+
+window.addEventListener('keydown', function(e) {
+  if (e.target !== kc || document.getElementById('nav').classList.contains('open')) return;
+  if (e.key === 'Escape') { e.preventDefault(); toggleNav(); return; }
+  var dirs = ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' ','Enter','Backspace'];
+  if (dirs.indexOf(e.key) !== -1) { e.preventDefault(); e.stopImmediatePropagation(); }
+  if (typeof handleKey === 'function') handleKey(e.key);
+}, {capture:true, passive:false});
+/* For Wordle, always keep focus active since keyboard is the primary input */
+
+
+document.getElementById('guess-form').addEventListener('submit', function(e) {
+  e.preventDefault(); if (gameOver) return;
+  curGuess = document.getElementById('guess-input').value.toLowerCase().replace(/[^a-z]/g,'').slice(0,5);
+  var before = guesses.length; submitGuess();
+  if (guesses.length > before) document.getElementById('guess-input').value = '';
+  document.getElementById('guess-status').textContent = guesses.length > before ? (gameOver ? 'Game finished.' : 'Guess added.') : 'Enter a five-letter word from the word list.';
+});
+var LS='games_wordle_scores',TOPN=30;
+var KB_ROWS=['qwertyuiop','asdfghjkl','\x08zxcvbnm\r'];
+var EPOCH=new Date('2025-01-01').getTime();
+
+var WORDS='about above abuse actor acute admit adobe adopt after again agent agile agree ahead alarm album alert alien align alike alive allow alone along aloud alpha altar alter among ample angel anger angle angry anime annex annoy apple apply apron arena argue arise armor aroma array aside asset atlas atone attic audit avail avert avoid award aware badly baker basic basin beach beard beast began begin being below bench berry bevel bidet biker birch bison black blade blame bland blast blaze bleed blend bless blind blink bliss bloat block blood bloom blown blues blunt blurt blush board bonus boost booth bored bound brain brake brand brave brawl break breed brick bride brief brine bring brink broil broke brook broth brush build built bulge bumpy burst buyer bylaw cadet camel cameo canal candy cargo carry cause cedar chain chair chaos charm chart chase cheap cheat check cheek cheer chess chest chief china choir chord chunk civic civil clack claim clamp clang clash clasp clean clear click cliff climb cling clock clone close cloth cloud clout clown clunk coach crack craft crane crash crave craze creak creek creep crest crimp crisp cross crowd crown crude cruel crumb crush crypt cubic curve cycle daddy dairy dance dandy dealt debug decay decor decoy delve dense depot depth derby deter devil digit dimly dirty disco dodge dogma doing dopey doubt dough dowry drank drawl dream dried drift drink drool droop drove drown druid drums dryer duchy dummy dunce duped dusty dwarf dwell dying eager eagle early earth eight elect elite ember emote empty enjoy envoy equip ethic evade event every exert exile exist extra fable facet faint fairy faith fancy farce fatal fault favor feast ferry fetch fever field fiend fight filth final fixed fizzy fjord flaky flame flank flare flash flask flesh flick fling flock flood flora floss flout flown fluke flunk flute focus folio folly forge forth forum found foyer frail frame freak fresh friar front frost froth froze fully fungi funky funny futon fuzzy gaudy gaunt gauze gavel gawky glare gleam glean glide glint gloat gloom gloss glove gnash godly goose grace grade graft grain grasp graze greet grief grill grimy gripe groan groin groom grope gross group grove growl gruel gruff grump guava guile guise gusto hairy handy hatch haunt haves hazel heady heart heavy hedge helix hence heron hippo hired hoist holly homer honey honor horde hotel hound hover humid hurry icily icing ideal idiom idiot inept infer ingot inlay input inter intro irony issue ivory jaunt jazzy jelly joust joker jumbo kaput kayak kinky knife knoll kudos label lance lanky lapel large laser latch later latte lathe layer leach leaky leapt leech leery legal lemma lemon level liege liken limbo lingo lipid liter liver livid local lofty logic loose lousy lover lowly lumpy lusty lying lyric magic maker mania manly maple march marry masse match matte maxim media medic melee mercy merge messy metal midst might mimic mirth miser mixed model money month moody morph mossy motel motor motto moult mound mourn muddy muggy munch murky nadir naive nasty needy nerve newly night noble noise nomad north notch novel nudge nymph occur ocean offal often olive optic orbit order other ought outdo outer oxide ozone padre panic papal paper party pasta pasty patch patio patsy pause peace pearl pedal penal petty phase piano pithy pixel pizza place plaid plain plane plank plant plaza plead pleat plied plumb plume plunk plush poach podgy point poker polar polka poppy porch posse pouch pouty power prawn press price pride prime primp print prism prize probe prone proof prose prove prowl psalm pudgy pulse punch purge quack quaff quake qualm quark quart quasi quill quilt quirk quota quote rabbi radar rainy rally ranch rangy rapid raven raspy reach realm rebus rebel recap reedy regal reign relay remit repay repel rerun reset resin retro revel rhyme rider rigid risky rivet robot rocky rogue rondo roomy roped rosin rouge rough rouse rowdy rugby ruler rumba rusty sadly saint savvy scald scalp scoff scold scone scoop scorn scout scowl scram screw scrub seize shack shaft shaky shale shall shame shank share shark shawl sheen shelf shell shift shire shirt shoal shook shore shout shred shrub shrug shunt siege sigma silly since sixth sixty skiff skimp skull slack slant slurp smack small smash smear smirk smite smock snaky snare sneak sneer snide sniff snore solar sonar sorry south sower spark spawn spear speck spend spire splat split spoil spoke spoof sport spout spree sprig spunk squad squat squid stain stale stalk stall stamp stark stash stave stead steer stern stick stiff still sting stink stoic stomp stone stout stove strap stray strew strip strut study stump stung style suave suede suite sulky sunny super surge swamp swank swarm swear sweat sweep swept swift swirl taint tangy taunt tawny tease terse their thorn three threw throb throw tiger timid titan token tonic topaz total touch towel toxic track trait tramp trend tribe trice trick tried tripe troll troth trout trove truce trump trunk tryst tulip tumor tuned tunic twang tweak twirl twist tying udder ultra uncut unfit unify unity until unwed upset urban usher usual utter uvula vague vapor vault vaunt vegan vigor vigil viral vital vivid vocal vodka vouch waver weary wedge weedy weigh weird whack whale whiff while whirl whisk witty women world wordy wrath wring wrote yacht yearn yield young zilch zippy zoned'.split(' ').filter(function(w){return w.length===5;});
+
+function todayIdx(){
+  var n=new Date(),utc=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate());
+  return Math.floor((utc-EPOCH)/86400000)%WORDS.length;
+}
+function todayStr(){
+  var n=new Date();
+  return n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0');
+}
+
+var answer,guesses,curGuess,gameOver,practiceMode,keyState={};
+
+function initGame(practice){
+  practiceMode=practice;
+  answer=practice?WORDS[Math.floor(Math.random()*WORDS.length)].toLowerCase():WORDS[todayIdx()].toLowerCase();
+  guesses=[];curGuess='';gameOver=false;keyState={};
+  document.getElementById('rbar').classList.remove('show');
+  saveState();
+}
+
+function saveState(){
+  if(practiceMode)return;
+  localStorage.setItem('wordle_state',JSON.stringify({date:todayStr(),guesses:guesses,gameOver:gameOver,keyState:keyState}));
+}
+
+function loadTodayState(){
+  try{
+    var s=JSON.parse(localStorage.getItem('wordle_state'));
+    if(s&&s.date===todayStr()&&!s.practiceMode){
+      answer=WORDS[todayIdx()].toLowerCase();
+      guesses=s.guesses||[];curGuess='';gameOver=s.gameOver||false;keyState=s.keyState||{};
+      return true;
+    }
+  }catch(e){}
+  return false;
+}
+
+function evalGuess(g){
+  var res=Array(5).fill('absent'),ans=answer.split(''),gu=g.split(''),used=Array(5).fill(false);
+  for(var i=0;i<5;i++)if(gu[i]===ans[i]){res[i]='correct';used[i]=true;}
+  for(var i=0;i<5;i++){
+    if(res[i]==='correct')continue;
+    for(var j=0;j<5;j++){if(!used[j]&&gu[i]===ans[j]){res[i]='present';used[j]=true;break;}}
+  }
+  return res;
+}
+
+function updateKeyState(g,res){
+  var pri={correct:3,present:2,absent:1};
+  g.split('').forEach(function(l,i){
+    var cur=keyState[l];
+    if(!cur||pri[res[i]]>pri[cur])keyState[l]=res[i];
+  });
+}
+
+function renderGrid(){
+  for(var r=0;r<6;r++)for(var c=0;c<5;c++){
+    var t=document.getElementById('t'+r+c);
+    if(!t)continue;
+    if(r<guesses.length){
+      var res=evalGuess(guesses[r]);
+      t.textContent=guesses[r][c].toUpperCase();t.className='tile '+res[c];
+    } else if(r===guesses.length&&!gameOver){
+      t.textContent=curGuess[c]?curGuess[c].toUpperCase():'';
+      t.className='tile'+(curGuess[c]?' filled':'');
+    } else {
+      t.textContent='';t.className='tile';
+    }
+  }
+}
+
+function renderKeys(){
+  document.querySelectorAll('.key').forEach(function(btn){
+    var k=btn.dataset.key;
+    if(!k)return;
+    var base='key'+(k==='\x08'||k==='\r'?' wide':'');
+    btn.className=keyState[k]?base+' '+keyState[k]:base;
+  });
+}
+
+function handleKey(key){
+  if(gameOver)return;
+  if(key==='\x08'||key==='Backspace'||key==='*'){curGuess=curGuess.slice(0,-1);renderGrid();return;}
+  if(key==='\r'||key==='Enter'||key==='5'){submitGuess();return;}
+  if(/^[a-zA-Z]$/.test(key)&&curGuess.length<5){curGuess+=key.toLowerCase();renderGrid();}
+}
+
+function submitGuess(){
+  if(curGuess.length<5){shakeCurrent();showToast('Not enough letters');return;}
+  if(WORDS.indexOf(curGuess)===-1){shakeCurrent();showToast('Not in word list');return;}
+  var res=evalGuess(curGuess);
+  var row=guesses.length;
+  guesses.push(curGuess);updateKeyState(curGuess,res);curGuess='';
+  renderGrid();renderKeys();
+  var won=res.every(function(r){return r==='correct';});
+  if(won){gameOver=true;saveScore(guesses.length);
+    var msgs=['Genius!','Magnificent!','Impressive!','Splendid!','Great!','Phew!'];
+    showToast(msgs[guesses.length-1]||'Yes!');
+    setTimeout(function(){showResult(true);},400);}
+  else if(guesses.length>=6){gameOver=true;setTimeout(function(){showResult(false);},200);}
+  saveState();
+}
+
+function shakeCurrent(){
+  var r=guesses.length;
+  for(var c=0;c<5;c++){var t=document.getElementById('t'+r+c);if(t){t.classList.remove('shake');void t.offsetWidth;t.classList.add('shake');}}
+}
+
+function showResult(won){
+  var bar=document.getElementById('rbar');bar.classList.add('show');
+  document.getElementById('rtitle').textContent=won?'Solved in '+guesses.length+'/6!':'Word: '+answer.toUpperCase();
+  document.getElementById('rsub').textContent=won?answer.toUpperCase():('Better luck tomorrow!');
+}
+
+function copyShare(){
+  var cols={correct:'🟧',present:'🟨',absent:'⬜'};
+  var hdr='Wordle #'+todayIdx()+' '+guesses.length+'/6\n';
+  var rows=guesses.map(function(g){return evalGuess(g).map(function(r){return cols[r];}).join('');}).join('\n');
+  if(navigator.clipboard)navigator.clipboard.writeText(hdr+rows).then(function(){showToast('Copied!');});
+  else showToast('Copy from console');
+}
+
+function resetForDemo(){initGame(true);buildGrid();renderGrid();renderKeys();updateMeta();}
+
+function saveScore(n){
+  if(practiceMode)return;
+  try{
+    var s=JSON.parse(localStorage.getItem(LS)||'[]');
+    if(s.some(function(x){return x.date===todayStr();}))return;
+    s.unshift({date:todayStr(),word:answer,guesses:n,won:true,puzzle:todayIdx()});
+    localStorage.setItem(LS,JSON.stringify(s.slice(0,TOPN)));
+  }catch(e){}
+  updateMeta();
+}
+
+function updateMeta(){
+  document.getElementById('pnum').textContent='#'+todayIdx();
+  try{
+    var s=JSON.parse(localStorage.getItem(LS)||'[]');
+    var streak=0,d=new Date();
+    for(var i=0;i<60;i++){
+      var ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+      if(s.some(function(x){return x.date===ds&&x.won;})){streak++;d.setDate(d.getDate()-1);}else break;
+    }
+    document.getElementById('streak').textContent=streak;
+  }catch(e){}
+}
+
+var _tt;
+function showToast(msg){
+  var el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');
+  clearTimeout(_tt);_tt=setTimeout(function(){el.classList.remove('show');},1400);
+}
+
+function buildGrid(){
+  var g=document.getElementById('grid');g.innerHTML='';
+  for(var r=0;r<6;r++)for(var c=0;c<5;c++){
+    var t=document.createElement('div');t.className='tile';t.id='t'+r+c;g.appendChild(t);
+  }
+}
+
+function buildKeys(){
+  KB_ROWS.forEach(function(row,ri){
+    var el=document.getElementById('kr'+ri);el.innerHTML='';
+    row.split('').forEach(function(k){
+      var btn=document.createElement('button');
+      btn.className='key'+(k==='\x08'||k==='\r'?' wide':'');
+      btn.textContent=k==='\x08'?'DEL':k==='\r'?'ENT':k.toUpperCase();
+      btn.dataset.key=k;
+      btn.addEventListener('click',function(){handleKey(k);activate();});
+      el.appendChild(btn);
+    });
+  });
+}
+
+window.addEventListener('load',function(){
+  buildGrid();buildKeys();
+  if(!loadTodayState())initGame(false);
+  guesses.forEach(function(g,r){
+    var res=evalGuess(g);
+    for(var c=0;c<5;c++){var t=document.getElementById('t'+r+c);if(t){t.textContent=g[c].toUpperCase();t.className='tile '+res[c];}}
+  });
+  renderKeys();updateMeta();
+  if(gameOver){var won=guesses.length>0&&evalGuess(guesses[guesses.length-1]).every(function(r){return r==='correct';});showResult(won);}
+  activate();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%23ff4500%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2752%25%27%20font-size%3D%2744%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%20font-family%3D%27Apple%20Color%20Emoji%2CSegoe%20UI%20Emoji%2CSegoe%20UI%20Symbol%2CEmojiSymbols%2Csans-serif%27%20fill%3D%27%23ffffff%27%3E%F0%9F%94%B4%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <title>Reddit Daily Digest</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6; color: #1a1a1b;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px; min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px; margin: 0 auto; background: white;
+            border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden;
+        }
+
+        /* ── Header ── */
+        header {
+            background: linear-gradient(135deg, #FF4500, #ff6b35);
+            color: white; padding: 30px 40px; text-align: center;
+        }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 600; }
+        .header-meta {
+            font-size: 0.95em; opacity: 0.9;
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+        }
+        .home-link {
+            display: inline-block; margin-bottom: 20px; padding: 10px 20px;
+            background: rgba(255,255,255,0.2); color: white; text-decoration: none;
+            border-radius: 6px; font-weight: 600; transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .home-link:hover { background: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.5); }
+
+        /* ── Stale data warning ── */
+        .stale-banner {
+            background: #fff3cd; color: #856404; padding: 10px 20px;
+            font-weight: 600; text-align: center; font-size: 0.9em;
+            border-bottom: 1px solid #ffc107; display: none;
+        }
+        .stale-banner.visible { display: block; }
+
+        /* ── Global feed switcher ── */
+        .feed-nav {
+            background: #1a1a1b; padding: 12px 20px;
+            display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+            border-bottom: 2px solid #FF4500;
+        }
+        .feed-tab {
+            background: transparent; color: #ccc; border: 1px solid #444;
+            padding: 6px 16px; border-radius: 20px; cursor: pointer;
+            font-size: 0.9em; font-weight: 600; transition: all 0.2s; white-space: nowrap;
+        }
+        .feed-tab:hover { background: #333; color: white; border-color: #666; }
+        .feed-tab.active { background: #FF4500; color: white; border-color: #FF4500; }
+
+        /* ── Sticky subreddit nav ── */
+        .subreddit-nav {
+            position: sticky; top: 0; z-index: 100;
+            background: #272729; padding: 8px 20px;
+            display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .subreddit-nav a {
+            color: #ccc; text-decoration: none; font-size: 0.8em; font-weight: 600;
+            padding: 4px 10px; border-radius: 12px; border: 1px solid #444;
+            transition: all 0.2s; white-space: nowrap;
+        }
+        .subreddit-nav a:hover { background: #FF4500; color: white; border-color: #FF4500; }
+        .nav-label {
+            color: #888; font-size: 0.75em; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.05em; margin-right: 4px;
+        }
+
+        /* ── Filter ── */
+        .filter-section {
+            background: #f6f7f8; padding: 20px; border-bottom: 1px solid #edeff1;
+            display: flex; gap: 15px; align-items: center; flex-wrap: wrap;
+        }
+        .filter-section label { font-weight: 600; color: #1a1a1b; }
+        .filter-section select {
+            padding: 8px 12px; border: 2px solid #FF4500; border-radius: 4px;
+            font-size: 1em; background: white; color: #1a1a1b;
+            cursor: pointer; font-weight: 600;
+        }
+        .filter-section select:hover { border-color: #ff6b35; background: #fff9f5; }
+
+        /* ── Content ── */
+        .content { padding: 40px; }
+        .loading { text-align: center; padding: 40px; font-size: 1.1em; color: #7c7c7c; }
+        .error {
+            background: #ffe6e6; color: #d32f2f; padding: 20px; margin: 20px;
+            border-radius: 6px; border-left: 4px solid #d32f2f;
+        }
+
+        /* ── Subreddit ── */
+        .subreddit { margin-bottom: 60px; }
+        .subreddit.hidden { display: none; }
+        .subreddit-header {
+            background: linear-gradient(135deg, #FF4500, #ff6b35); color: white;
+            padding: 15px 25px; border-radius: 6px; margin-bottom: 25px;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .subreddit-header-top {
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .subreddit-header h2 { font-size: 1.8em; font-weight: 600; }
+        .subreddit-header-right { display: flex; align-items: center; gap: 10px; }
+
+        /* Error badge shown when a feed failed to load for this sub */
+        .feed-error-badge {
+            background: rgba(255,255,255,0.25); color: white;
+            font-size: 0.75em; font-weight: 600; padding: 3px 10px;
+            border-radius: 10px; border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .collapse-btn {
+            background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.4);
+            color: white; padding: 5px 14px; border-radius: 4px;
+            font-size: 0.85em; font-weight: 600; cursor: pointer; transition: background 0.2s;
+        }
+        .collapse-btn:hover { background: rgba(255,255,255,0.35); }
+        .subreddit-posts.collapsed { display: none; }
+
+        /* ── Feed post lists (only active feed visible) ── */
+        .feed-posts { display: none; }
+        .feed-posts.active { display: block; }
+
+        /* ── Per-subreddit feed tabs ── */
+        .sub-feed-tabs {
+            display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;
+        }
+        .sub-feed-tab {
+            background: rgba(255,255,255,0.15); color: white;
+            border: 1px solid rgba(255,255,255,0.35);
+            padding: 4px 12px; border-radius: 14px; cursor: pointer;
+            font-size: 0.8em; font-weight: 600; transition: all 0.2s; white-space: nowrap;
+        }
+        .sub-feed-tab:hover { background: rgba(255,255,255,0.3); }
+        .sub-feed-tab.active { background: white; color: #FF4500; border-color: white; }
+
+        /* ── Posts ── */
+        .post {
+            background: #ffffff; border: 1px solid #ccc; border-radius: 8px;
+            padding: 20px; margin-bottom: 20px; transition: box-shadow 0.2s;
+        }
+        .post:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .post-header { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #edeff1; }
+        .post-title { font-size: 1.4em; color: #1a1a1b; margin-bottom: 10px;
+                      font-weight: 600; line-height: 1.3; }
+        .post-flair {
+            display: inline-block; font-size: 0.55em; background: #FF4500; color: white;
+            padding: 2px 8px; border-radius: 10px; vertical-align: middle;
+            margin-left: 8px; font-weight: 600;
+        }
+        .post-meta { color: #7c7c7c; font-size: 0.85em; display: flex; gap: 15px; flex-wrap: wrap; }
+        .upvote-ratio { color: #FF4500; font-weight: 600; }
+
+        .post-content {
+            color: #1a1a1b; margin: 15px 0; line-height: 1.8; padding: 15px;
+            background: #f6f7f8; border-radius: 6px;
+            white-space: pre-wrap; word-wrap: break-word;
+            max-height: 300px; overflow-y: auto;
+        }
+        .post-link {
+            display: inline-block; color: #0079D3; text-decoration: none; font-weight: 600;
+            margin: 10px 0; padding: 8px 16px; background: #f6f7f8;
+            border-radius: 4px; transition: background 0.2s;
+        }
+        .post-link:hover { background: #e9eaeb; text-decoration: underline; }
+
+        /* ── Comments ── */
+        .comment {
+            background: #f6f7f8; padding: 15px; margin-bottom: 12px;
+            border-radius: 6px; border-left: 3px solid #FF4500;
+        }
+        .comment-meta { color: #7c7c7c; font-size: 0.85em; margin-bottom: 8px; font-weight: 600; }
+        .comment-author { color: #0079D3; }
+        .comment-score  { color: #FF4500; }
+        .comment-body { color: #1a1a1b; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word; }
+
+        .comments-toggle {
+            background: #0079D3; color: white; border: none; padding: 10px 16px;
+            border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.95em;
+            transition: background 0.2s; margin-bottom: 15px;
+        }
+        .comments-toggle:hover { background: #0066b3; }
+        .comments-content { display: none; }
+        .comments-content.expanded { display: block; }
+
+        /* ── Back to top ── */
+        #back-to-top {
+            position: fixed; bottom: 30px; right: 30px; background: #FF4500; color: white;
+            border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 1.3em;
+            cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: none; align-items: center; justify-content: center;
+            transition: background 0.2s, transform 0.2s; z-index: 200;
+        }
+        #back-to-top:hover { background: #cc3700; transform: translateY(-2px); }
+        #back-to-top.visible { display: flex; }
+
+        /* ── Footer ── */
+        footer { background: #1a1a1b; color: white; text-align: center; padding: 20px; font-size: 0.9em; }
+        footer p { opacity: 0.8; margin: 5px 0; }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            body { padding: 0; }
+            .container { border-radius: 0; }
+            .content { padding: 10px; }
+
+            /* Collapse header to a single tight bar */
+            header { padding: 8px 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; text-align: left; }
+            header h1 { font-size: 1.1em; margin: 0; flex: 1; }
+            .home-link { margin: 0; padding: 6px 10px; font-size: 0.8em; white-space: nowrap; }
+            .header-meta { display: none; }
+
+            .stale-banner { padding: 6px 12px; font-size: 0.8em; }
+
+            /* Feed nav: single scrollable row */
+            .feed-nav { padding: 6px 10px; gap: 6px; flex-wrap: nowrap; overflow-x: auto; }
+            .feed-tab { padding: 5px 12px; font-size: 0.82em; }
+
+            /* Jump nav hidden on mobile */
+            .subreddit-nav { display: none; }
+
+            /* Filter compact */
+            .filter-section { padding: 8px 10px; gap: 8px; }
+            .filter-section label { display: none; }
+            .filter-section select { width: 100%; font-size: 0.9em; padding: 6px 8px; }
+
+            /* Subreddit headers tighter */
+            .subreddit-header { padding: 10px 14px; gap: 6px; margin-bottom: 12px; }
+            .subreddit-header h2 { font-size: 1.1em; }
+            .sub-feed-tabs { gap: 5px; margin-top: 4px; }
+            .sub-feed-tab { padding: 3px 10px; font-size: 0.78em; }
+            .collapse-btn { padding: 4px 10px; font-size: 0.78em; }
+
+            .post { padding: 12px; margin-bottom: 10px; }
+            .post-title { font-size: 1.05em; }
+            .post-meta { font-size: 0.75em; gap: 8px; }
+            #back-to-top { bottom: 16px; right: 16px; width: 42px; height: 42px; font-size: 1.1em; }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/tool-ui.css">
+    <script src="assets/tool-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="home.html" class="home-link">← Back to Home</a>
+            <h1>📰 Reddit Daily Digest</h1>
+            <div class="header-meta">
+                <span id="date">Loading...</span>
+                <span id="stats">Loading...</span>
+            </div>
+        </header>
+
+        <div class="stale-banner" id="stale-banner">
+            ⚠️ Data may be stale — last updated over 2 hours ago
+        </div>
+
+        <!-- Global feed switcher: one click switches ALL subreddits -->
+        <nav class="feed-nav" id="feed-nav" role="tablist" aria-label="Reddit feeds">
+            <!-- populated by JS once JSON is loaded -->
+        </nav>
+
+        <nav class="subreddit-nav" id="subreddit-nav">
+            <span class="nav-label">Jump to:</span>
+            <!-- populated by JS -->
+        </nav>
+
+        <div class="filter-section">
+            <label for="subreddit-filter">Filter by subreddit:</label>
+            <select id="subreddit-filter">
+                <option value="">All Subreddits</option>
+            </select>
+        </div>
+
+        <div id="content" class="content" role="tabpanel">
+            <div class="loading">⏳ Loading Reddit digest data...</div>
+        </div>
+
+        <footer>
+            <p>📡 Last updated: <span id="last-updated">Loading...</span></p>
+            <p>This page auto-refreshes every 5 minutes</p>
+        </footer>
+    </div>
+
+    <button id="back-to-top" title="Back to top">↑</button>
+
+    <script>
+        const DATA_URL         = 'reddit-digest.json';
+        const REFRESH_INTERVAL = 5 * 60 * 1000;
+        const STALE_THRESHOLD  = 2 * 60 * 60 * 1000; // 2 hours in ms
+
+        let allDigestData = null;
+        let activeFeed = ToolUI.storageGet('activeFeed') || null;
+
+        // ── Utilities ──────────────────────────────────────────────────────
+        function escapeHtml(text) { return ToolUI.escape(text); }
+
+        function fmtScore(n) {
+            n = Number(n) || 0;
+            return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : n;
+        }
+
+        function timeAgo(utc) {
+            const diff = Date.now() / 1000 - utc;
+            if (diff < 3600)  return `${Math.floor(diff / 60)}m ago`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+            return `${Math.floor(diff / 86400)}d ago`;
+        }
+
+        function getDomain(url) {
+            try { return new URL(url).hostname.replace('www.', ''); }
+            catch { return ''; }
+        }
+
+        // ── Back to top ────────────────────────────────────────────────────
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ── Data loading ───────────────────────────────────────────────────
+        async function loadDigestData() {
+            try {
+                const response = await fetch(DATA_URL + '?t=' + Date.now());
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                allDigestData = data;
+
+                // ── Normalize v1 → v2 schema BEFORE anything else touches the data
+                // v1: { data: { subreddit: [...posts] } }
+                // v2: { data: { subreddit: { "Feed Label": [...posts] } }, feeds: [...] }
+                const defaultFeedLabel = (data.feeds && data.feeds[0]) || 'Best of 24h';
+                for (const [subreddit, val] of Object.entries(data.data)) {
+                    if (Array.isArray(val)) {
+                        data.data[subreddit] = { [defaultFeedLabel]: val };
+                    }
+                }
+                if (!data.feeds || data.feeds.length === 0) {
+                    const firstSub = Object.values(data.data)[0];
+                    data.feeds = firstSub ? Object.keys(firstSub) : [defaultFeedLabel];
+                }
+                // ── End normalization ──
+
+                checkStaleness(data.generated_at);
+                if (data.refresh_status && data.refresh_status !== 'ok') document.getElementById('stale-banner').classList.add('visible');
+                buildFeedNav(data.feeds);
+                populateSubredditFilter(data);
+                buildSubredditNav(data);
+                renderDigest(data);
+                scheduleRefresh();
+            } catch (err) {
+                console.error('Error loading digest data:', err);
+                ToolUI.setHTML(document.getElementById('content'), `<div class="error">⚠️ Error loading Reddit digest data: ${escapeHtml(err.message)} <button type="button" id="retry-digest">Retry</button></div>`);
+                document.getElementById('retry-digest').addEventListener('click', loadDigestData);
+                scheduleRefresh();
+            }
+        }
+
+        // Some generated feeds use a human-readable UTC timestamp that older
+        // mobile browsers parse inconsistently. Normalize it to ISO UTC first.
+        function parseDigestDate(value) {
+            if (typeof value === 'string') {
+                const utc = value.match(/^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2}) UTC$/);
+                if (utc) value = utc[1] + 'T' + utc[2] + 'Z';
+            }
+            const date = new Date(value);
+            return Number.isNaN(date.getTime()) ? null : date;
+        }
+
+        // ── Stale banner ───────────────────────────────────────────────────
+        function checkStaleness(generatedAt) {
+            const date = parseDigestDate(generatedAt);
+            const age = date ? Date.now() - date.getTime() : Infinity;
+            document.getElementById('stale-banner')
+                    .classList.toggle('visible', age > STALE_THRESHOLD);
+        }
+
+        // ── Global feed switcher ───────────────────────────────────────────
+        function buildFeedNav(feeds) {
+            const nav = document.getElementById('feed-nav');
+            ToolUI.setHTML(nav, '');
+            if (!nav.dataset.keyboardReady) {
+                nav.dataset.keyboardReady = 'true';
+                nav.addEventListener('keydown', event => moveTabFocus(event, nav, '.feed-tab'));
+            }
+
+            // Default to first feed if nothing saved or saved value is gone
+            if (!activeFeed || !feeds.includes(activeFeed)) {
+                activeFeed = feeds[0] || '';
+            }
+
+            feeds.forEach(label => {
+                const btn = document.createElement('button');
+                btn.className  = 'feed-tab' + (label === activeFeed ? ' active' : '');
+                btn.setAttribute('role', 'tab');
+                btn.setAttribute('aria-selected', String(label === activeFeed));
+                btn.setAttribute('aria-controls', 'content');
+                btn.tabIndex = label === activeFeed ? 0 : -1;
+                btn.dataset.feed = label;
+                btn.textContent  = label;
+                btn.addEventListener('click', () => switchGlobalFeed(label));
+                nav.appendChild(btn);
+            });
+        }
+
+        function moveTabFocus(event, container, selector) {
+            if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+            const tabs = Array.from(container.querySelectorAll(selector));
+            const index = tabs.indexOf(event.target);
+            if (index < 0 || !tabs.length) return;
+            event.preventDefault();
+            const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+            tabs[next].focus(); tabs[next].click();
+        }
+
+        function switchGlobalFeed(label) {
+            activeFeed = label;
+            ToolUI.storageSet('activeFeed', label);
+
+            // Update global tab buttons
+            document.querySelectorAll('.feed-tab')
+                .forEach(btn => { const selected = btn.dataset.feed === label; btn.classList.toggle('active', selected); btn.setAttribute('aria-selected', String(selected)); btn.tabIndex = selected ? 0 : -1; });
+
+            // Swap every subreddit to the same feed, and sync per-sub tabs
+            document.querySelectorAll('.subreddit').forEach(subDiv => {
+                const subreddit = subDiv.id.replace('sub-', '');
+                switchSubFeed(subreddit, label, /* updateGlobal= */ false);
+            });
+        }
+
+        function switchSubFeed(subreddit, label, updateGlobal = true) {
+            // Swap visible feed-posts for this subreddit only
+            const postsWrapper = document.getElementById(`posts-${subreddit}`);
+            if (!postsWrapper) return;
+            postsWrapper.querySelectorAll('.feed-posts').forEach(el => {
+                el.classList.toggle('active', el.dataset.feed === label);
+            });
+
+            // Update this subreddit's tab pills
+            const tabsContainer = document.getElementById(`sub-tabs-${subreddit}`);
+            if (tabsContainer) {
+                tabsContainer.querySelectorAll('.sub-feed-tab').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.feed === label);
+                    btn.setAttribute('aria-selected', String(btn.dataset.feed === label));
+                    btn.tabIndex = btn.dataset.feed === label ? 0 : -1;
+                });
+            }
+        }
+
+        // ── Subreddit nav ──────────────────────────────────────────────────
+        function buildSubredditNav(data) {
+            const nav = document.getElementById('subreddit-nav');
+            nav.querySelectorAll('a').forEach(a => a.remove());
+
+            Object.keys(data.data).forEach(subreddit => {
+                const a = document.createElement('a');
+                a.href        = `#sub-${subreddit}`;
+                a.textContent = `r/${subreddit}`;
+                a.addEventListener('click', e => {
+                    e.preventDefault();
+                    const postsDiv = document.getElementById(`posts-${subreddit}`);
+                    if (postsDiv?.classList.contains('collapsed')) toggleSubreddit(subreddit);
+                    document.getElementById(`sub-${subreddit}`)
+                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+                nav.appendChild(a);
+            });
+        }
+
+        // ── Filter dropdown ────────────────────────────────────────────────
+        function populateSubredditFilter(data) {
+            const sel = document.getElementById('subreddit-filter');
+            while (sel.options.length > 1) sel.remove(1);
+
+            Object.keys(data.data).sort().forEach(subreddit => {
+                const opt = document.createElement('option');
+                opt.value       = subreddit;
+                opt.textContent = `r/${subreddit}`;
+                sel.appendChild(opt);
+            });
+
+            sel.onchange = e => filterBySubreddit(e.target.value);
+        }
+
+        function filterBySubreddit(selected) {
+            document.querySelectorAll('.subreddit').forEach(div => {
+                if (!selected) { div.classList.remove('hidden'); return; }
+                const name = div.querySelector('.subreddit-header h2')
+                               .textContent.replace('r/', '');
+                div.classList.toggle('hidden', name !== selected);
+            });
+        }
+
+        // ── Collapse ───────────────────────────────────────────────────────
+        function toggleSubreddit(subreddit) {
+            const postsDiv  = document.getElementById(`posts-${subreddit}`);
+            const btn       = document.getElementById(`collapse-btn-${subreddit}`);
+            const collapsed = postsDiv.classList.toggle('collapsed');
+            btn.textContent = collapsed ? '▶ Expand' : '▼ Collapse';
+            btn.setAttribute('aria-expanded', String(!collapsed));
+        }
+
+        // ── Render ─────────────────────────────────────────────────────────
+        function renderDigest(data) {
+            const contentDiv  = document.getElementById('content');
+            const fetchErrors = data.fetch_errors || {};
+            ToolUI.setHTML(contentDiv, '');
+
+            // Header meta
+            const generatedAt = parseDigestDate(data.generated_at);
+            document.getElementById('date').textContent = generatedAt ?
+                generatedAt.toLocaleDateString('en-US', {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                }) : 'Date unavailable';
+            document.getElementById('stats').textContent =
+                `${data.subreddits_count || Object.keys(data.data).length} subreddits • ${data.total_posts || 0} posts`;
+            const lastAttempt = parseDigestDate(data.last_attempt_at);
+            document.getElementById('last-updated').textContent =
+                (generatedAt ? generatedAt.toLocaleString() : 'Time unavailable') + (data.refresh_status ? ' · ' + data.refresh_status : '') + (lastAttempt ? ' · Attempt: ' + lastAttempt.toLocaleString() : '');
+
+            for (const [subreddit, feedsData] of Object.entries(data.data)) {
+                const subredditDiv = document.createElement('div');
+                subredditDiv.className = 'subreddit';
+                subredditDiv.id        = `sub-${subreddit}`;
+
+                // Error badge (feeds that failed for this sub)
+                const subErrors    = fetchErrors[subreddit] || [];
+                const errorBadge   = subErrors.length
+                    ? `<span class="feed-error-badge" title="Failed feeds: ${escapeHtml(subErrors.join(', '))}">⚠️ ${subErrors.length} feed${subErrors.length > 1 ? 's' : ''} failed</span>`
+                    : '';
+
+                const feedLabels = Object.keys(feedsData);
+
+                ToolUI.setHTML(subredditDiv, `
+                    <div class="subreddit-header">
+                        <div class="subreddit-header-top">
+                            <h2>r/${escapeHtml(subreddit)}</h2>
+                            <div class="subreddit-header-right">
+                                ${errorBadge}
+                                <button class="collapse-btn" id="collapse-btn-${escapeHtml(subreddit)}" aria-expanded="true">▼ Collapse</button>
+                            </div>
+                        </div>
+                        <div class="sub-feed-tabs" id="sub-tabs-${escapeHtml(subreddit)}" role="tablist" aria-label="Feeds for r/${escapeHtml(subreddit)}">
+                            ${feedLabels.map(label => `
+                                <button class="sub-feed-tab${label === activeFeed ? ' active' : ''}"
+                                        data-feed="${escapeHtml(label)}" role="tab" aria-selected="${label === activeFeed}" aria-controls="posts-${escapeHtml(subreddit)}" tabindex="${label === activeFeed ? '0' : '-1'}">
+                                    ${escapeHtml(label)}
+                                </button>`).join('')}
+                        </div>
+                    </div>
+                    <div class="subreddit-posts" id="posts-${escapeHtml(subreddit)}" role="tabpanel"></div>`);
+
+                const collapseButton = subredditDiv.querySelector('.collapse-btn');
+                collapseButton.addEventListener('click', () => toggleSubreddit(subreddit));
+                subredditDiv.querySelectorAll('.sub-feed-tab').forEach(button => {
+                    button.addEventListener('click', () => switchSubFeed(subreddit, button.dataset.feed));
+                });
+                subredditDiv.querySelector('.sub-feed-tabs').addEventListener('keydown', event => moveTabFocus(event, subredditDiv, '.sub-feed-tab'));
+                const postsWrapper = subredditDiv.querySelector('.subreddit-posts');
+
+                // One div per feed; only the active one has class="active"
+                for (const [feedLabel, posts] of Object.entries(feedsData)) {
+                    const feedDiv = document.createElement('div');
+                    feedDiv.className    = 'feed-posts' + (feedLabel === activeFeed ? ' active' : '');
+                    feedDiv.dataset.feed = feedLabel;
+
+                    if (!posts || posts.length === 0) {
+                        ToolUI.setHTML(feedDiv, `<p style="color:#7c7c7c;padding:20px 0">
+                            No posts available for <strong>${escapeHtml(feedLabel)}</strong>.</p>`);
+                    } else {
+                        let page = 0;
+                        const renderPage = () => {
+                            feedDiv.replaceChildren();
+                            const count = document.documentElement.classList.contains('compact') ? 5 : 15;
+                            const first = page * count;
+                            const status = data.feed_status && data.feed_status[subreddit] && data.feed_status[subreddit][feedLabel];
+                            if (status) {
+                                const feedDate = parseDigestDate(status.generated_at);
+                                feedDiv.appendChild(ToolUI.text('p', (status.status === 'ok' ? 'Feed updated: ' : status.status + ' · Last good: ') + (feedDate ? feedDate.toLocaleString() : 'Unknown'), 'last-update'));
+                            }
+                            posts.slice(first, first + count).forEach((post, index) => {
+                                const feedSlug = feedLabel.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+                                feedDiv.appendChild(buildPostEl(post, first + index + 1, `${subreddit}_${feedSlug}_${post.id}`));
+                            });
+                            if (posts.length > count) {
+                                const pager = ToolUI.text('nav', '', 'tool-pagination'); pager.setAttribute('aria-label','Posts');
+                                const previous = ToolUI.text('button', 'Previous'), next = ToolUI.text('button','Next');
+                                previous.disabled = page === 0; next.disabled = first + count >= posts.length;
+                                previous.addEventListener('click', () => { page--; renderPage(); previous.focus(); });
+                                next.addEventListener('click', () => { page++; renderPage(); });
+                                pager.append(previous, ToolUI.text('span', (page + 1) + ' / ' + Math.ceil(posts.length / count)), next);
+                                feedDiv.appendChild(pager);
+                            }
+                        };
+                        renderPage();
+
+                    }
+
+                    postsWrapper.appendChild(feedDiv);
+                }
+
+                contentDiv.appendChild(subredditDiv);
+            }
+        }
+
+        function buildPostEl(post, index, instanceId) {
+            instanceId = instanceId || post.id;
+            const postDiv    = document.createElement('div');
+            postDiv.className = 'post';
+
+            const hasRedditMetadata = post.metadata_source !== 'rss';
+            const upvotePct  = Math.round(post.upvote_ratio * 100);
+            const flairHtml  = post.flair
+                ? `<span class="post-flair">${escapeHtml(post.flair)}</span>` : '';
+            const timeStr    = post.created_utc ? timeAgo(post.created_utc) : '';
+            const domain     = (!post.is_self && post.link_url) ? getDomain(post.link_url) : '';
+
+            let contentHtml = '';
+            if (post.selftext) {
+                contentHtml = `<div class="post-content">${escapeHtml(post.selftext)}</div>`;
+            } else if (domain) {
+                contentHtml = `<div style="margin:8px 0;font-size:0.85em;color:#7c7c7c">
+                    🔗 <a href="${escapeHtml(ToolUI.httpURL(post.link_url))}" target="_blank" rel="noopener noreferrer"
+                          style="color:#0079D3">${escapeHtml(domain)}</a></div>`;
+            }
+
+            let commentsHtml = '';
+            const comments = (post.comments || []).filter(c => c.author !== 'AutoModerator');
+            if (comments.length > 0) {
+                post = { ...post, comments }; // shadow with filtered copy
+                commentsHtml = `<button class="comments-toggle" aria-expanded="false">
+                    💬 Show Top ${comments.length} Comments</button>
+                <div class="comments comments-content" id="comments-${escapeHtml(instanceId)}">
+                    <div style="font-weight:600;margin-bottom:12px;color:#1a1a1b">💬 Top Comments:</div>
+                    ${comments.map(c => `
+                        <div class="comment">
+                            <div class="comment-meta">
+                                <span class="comment-author">u/${escapeHtml(c.author)}</span>
+                                <span class="comment-score">• ⬆️ ${fmtScore(c.score)} points</span>
+                            </div>
+                            <div class="comment-body">${escapeHtml(c.body)}</div>
+                        </div>`).join('')}
+                </div>`;
+            }
+
+            ToolUI.setHTML(postDiv, `
+                <div class="post-header">
+                    <div class="post-title">${index}. ${escapeHtml(post.title)} ${flairHtml}</div>
+                    <div class="post-meta">
+                        <span>👤 u/${escapeHtml(post.author)}</span>
+                        ${hasRedditMetadata ? `<span>⬆️ ${fmtScore(post.score)}</span>
+                        <span class="upvote-ratio">${upvotePct}%</span>
+                        <span>💬 ${fmtScore(post.num_comments)}</span>` : '<span>RSS · votes/comments unavailable</span>'}
+                        ${timeStr ? `<span>🕐 ${timeStr}</span>` : ''}
+                    </div>
+                </div>
+                ${contentHtml}
+
+                ${commentsHtml}`);
+
+            const commentButton = postDiv.querySelector('.comments-toggle');
+            if (commentButton) commentButton.addEventListener('click', () => toggleComments(instanceId, commentButton));
+            return postDiv;
+        }
+
+        // ── Comment toggle ─────────────────────────────────────────────────
+        function toggleComments(postId, btn) {
+            const div = document.getElementById(`comments-${postId}`);
+
+            div.classList.toggle('expanded');
+            btn.setAttribute('aria-expanded', String(div.classList.contains('expanded')));
+            btn.textContent = div.classList.contains('expanded')
+                ? btn.textContent.replace('Show', 'Hide')
+                : btn.textContent.replace('Hide', 'Show');
+        }
+
+        function scheduleRefresh() {
+            setTimeout(loadDigestData, REFRESH_INTERVAL);
+        }
+
+        loadDigestData();
+    </script>
+</body>
+</html>

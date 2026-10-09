@@ -1,0 +1,994 @@
+{
+  "schema_version": 2,
+  "timestamp": "2026-10-08T22:37:29+00:00",
+  "generated_at": "2026-10-08 22:37:29 UTC",
+  "subreddits_count": 12,
+  "total_posts": 35,
+  "feeds": [
+    "Best of Hour",
+    "Best of 24h",
+    "Best of Week",
+    "Hot"
+  ],
+  "comments_feed": "Disabled for RSS",
+  "fetch_errors": {
+    "cfb": [
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "nfl": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "nba": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "baseball": [
+      "Best of Hour",
+      "Best of 24h",
+      "Hot"
+    ],
+    "CoDCompetitive": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "soccer": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "formula1": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "MichiganWolverines": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "DetroitLions": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "DetroitPistons": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "movies": [
+      "Best of Hour",
+      "Best of Week",
+      "Hot"
+    ],
+    "BillSimmons": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ]
+  },
+  "data": {
+    "cfb": {
+      "Best of Hour": [
+        {
+          "title": "[Everett] Cody Campbell group Saving College Sports warning that UNC, FSU, Miami and Clemson could tank college sports bill in the House by pushing \"to raise the conference cap from 20 to 22 while also sunsetting the entire provision so that they have the right to immediately bolt from the ACC\"",
+          "author": "lowes18",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1x13pbi/everett_cody_campbell_group_saving_college_sports/",
+          "selftext": "",
+          "created_utc": 1791495752,
+          "num_comments": 0,
+          "id": "1x13pbi",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x13pbi/everett_cody_campbell_group_saving_college_sports/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Sherrone’s Stuff: Inside the 46 Boxes Michigan Shipped Its Fired Coach",
+          "author": "defensecowboy",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1x146hu/sherrones_stuff_inside_the_46_boxes_michigan/",
+          "selftext": "",
+          "created_utc": 1791496937,
+          "num_comments": 0,
+          "id": "1x146hu",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x146hu/sherrones_stuff_inside_the_46_boxes_michigan/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Game Thread] USF @ UTSA (7:30 PM ET)",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1x14t07/game_thread_usf_utsa_730_pm_et/",
+          "selftext": "",
+          "created_utc": 1791498606,
+          "num_comments": 0,
+          "id": "1x14t07",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x14t07/game_thread_usf_utsa_730_pm_et/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Game Thread] Missouri State @ WKU (7:00 PM ET)",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1x144mu/game_thread_missouri_state_wku_700_pm_et/",
+          "selftext": "",
+          "created_utc": 1791496812,
+          "num_comments": 0,
+          "id": "1x144mu",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x144mu/game_thread_missouri_state_wku_700_pm_et/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Game Thread] South Alabama @ Arkansas State (7:30 PM ET)",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1x14t11/game_thread_south_alabama_arkansas_state_730_pm_et/",
+          "selftext": "",
+          "created_utc": 1791498607,
+          "num_comments": 0,
+          "id": "1x14t11",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x14t11/game_thread_south_alabama_arkansas_state_730_pm_et/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        }
+      ],
+      "Best of 24h": [
+        {
+          "title": "[Ian Rapoport] The NFL has informed teams that it will NOT be holding a Supplemental Draft, meaning Texas Tech QB Brendan Sorsby will not be eligible to enter the NFL in 2026. The CBA allows the league to decide whether to hold a Supplemental Draft, and this year, it won’t.",
+          "author": "The_Stratman",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1udnu28/ian_rapoport_the_nfl_has_informed_teams_that_it/",
+          "selftext": "",
+          "created_utc": 1782254190.0,
+          "num_comments": 0,
+          "id": "1udnu28",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1udnu28/ian_rapoport_the_nfl_has_informed_teams_that_it/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Here is the full contents of the letter the NFL sent to Brendan Sorsby:",
+          "author": "noah_divine",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1udnztp/here_is_the_full_contents_of_the_letter_the_nfl/",
+          "selftext": "",
+          "created_utc": 1782254534.0,
+          "num_comments": 0,
+          "id": "1udnztp",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1udnztp/here_is_the_full_contents_of_the_letter_the_nfl/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Thamel] Brendan Sorsby's attorney, Jeffrey Kessler, tells ESPN of the NFL's decision to not hold a supplemental draft: \"It is a violation of the CBA and the law. We will pursue this immediately with the NFLPA.\"",
+          "author": "noah_divine",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1udo5uh/thamel_brendan_sorsbys_attorney_jeffrey_kessler/",
+          "selftext": "",
+          "created_utc": 1782254892.0,
+          "num_comments": 0,
+          "id": "1udo5uh",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1udo5uh/thamel_brendan_sorsbys_attorney_jeffrey_kessler/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Thamel] The NCAA Division I Cabinet unanimously approved the organization’s age-based eligibility proposal, which gives athletes five years eligibility over five seasons. This marks a big win for the NCAA, as they attempt to bring consistency to the landscape.",
+          "author": "Fonzie5",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1udoyqs/thamel_the_ncaa_division_i_cabinet_unanimously/",
+          "selftext": "",
+          "created_utc": 1782256607.0,
+          "num_comments": 0,
+          "id": "1udoyqs",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1udoyqs/thamel_the_ncaa_division_i_cabinet_unanimously/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "4 potential options for Brendan Sorsby after NFL declines to hold supplemental draft",
+          "author": "jaxstan19",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1udpnhp/4_potential_options_for_brendan_sorsby_after_nfl/",
+          "selftext": "",
+          "created_utc": 1782258098.0,
+          "num_comments": 0,
+          "id": "1udpnhp",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1udpnhp/4_potential_options_for_brendan_sorsby_after_nfl/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        }
+      ],
+      "Best of Week": [],
+      "Hot": []
+    },
+    "nfl": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [],
+      "Hot": []
+    },
+    "nba": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [
+        {
+          "title": "[Charania] BLOCKBUSTER: The Milwaukee Bucks are trading franchise icon Giannis Antetokounmpo and Bobby Portis to the Miami Heat for Tyler Herro, Kel'el Ware, Jaime Jaquez Jr., Kasparas Jakucionis, 3 first-round picks (including No. 13), 1 pick swap and 1 second-rounder, sources tell ESPN.",
+          "author": "Turbostrider27",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1ud6bzb/charania_blockbuster_the_milwaukee_bucks_are/",
+          "selftext": "",
+          "created_utc": 1782204617.0,
+          "num_comments": 0,
+          "id": "1ud6bzb",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1ud6bzb/charania_blockbuster_the_milwaukee_bucks_are/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Highlight] KAT and Mayor Mamdani lean back together on the Knicks’ float",
+          "author": "Leegend124",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1u98gjt/highlight_kat_and_mayor_mamdani_lean_back/",
+          "selftext": "",
+          "created_utc": 1781812420.0,
+          "num_comments": 0,
+          "id": "1u98gjt",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1u98gjt/highlight_kat_and_mayor_mamdani_lean_back/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "NYC Mayor Mamdani's passionate speech about the Knicks journey to the championship.",
+          "author": "Caldris",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1u9bu55/nyc_mayor_mamdanis_passionate_speech_about_the/",
+          "selftext": "",
+          "created_utc": 1781819975.0,
+          "num_comments": 0,
+          "id": "1u9bu55",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1u9bu55/nyc_mayor_mamdanis_passionate_speech_about_the/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "NYPD confuses Tyler Kolek for a fan jumping the barricade",
+          "author": "HokageEzio",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1u9cs1k/nypd_confuses_tyler_kolek_for_a_fan_jumping_the/",
+          "selftext": "",
+          "created_utc": 1781822044.0,
+          "num_comments": 0,
+          "id": "1u9cs1k",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1u9cs1k/nypd_confuses_tyler_kolek_for_a_fan_jumping_the/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "NYC Mayor Mamdani's Entire Speech at Knicks Parade",
+          "author": "Caldris",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1u9d2w8/nyc_mayor_mamdanis_entire_speech_at_knicks_parade/",
+          "selftext": "",
+          "created_utc": 1781822712.0,
+          "num_comments": 0,
+          "id": "1u9d2w8",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1u9d2w8/nyc_mayor_mamdanis_entire_speech_at_knicks_parade/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        }
+      ],
+      "Hot": []
+    },
+    "baseball": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [
+        {
+          "title": "THE NEW YORK YANKEES HAVE BEEN ELIMINATED FROM 2026 WORLD SERIES CONTENTION",
+          "author": "CosmicPegasus",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1x0g9kv/the_new_york_yankees_have_been_eliminated_from/",
+          "selftext": "",
+          "created_utc": 1791429199,
+          "num_comments": 0,
+          "id": "1x0g9kv",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1x0g9kv/the_new_york_yankees_have_been_eliminated_from/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[HIGHLIGHT] JACKSON CHOURIO! WALKS IT OFF! BREWERS GO UP 2-0!",
+          "author": "MLBOfficial",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1wxtlwx/highlight_jackson_chourio_walks_it_off_brewers_go/",
+          "selftext": "",
+          "created_utc": 1791156229,
+          "num_comments": 0,
+          "id": "1wxtlwx",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1wxtlwx/highlight_jackson_chourio_walks_it_off_brewers_go/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[highlight] Junior Caminero- “Let the Yankees fans talk now. Let them watch the whole thing. Talk Now. What ya gonna say? Daaaaa Yankees lose”",
+          "author": "WayAcrossTheWorld",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1x0rfl0/highlight_junior_caminero_let_the_yankees_fans/",
+          "selftext": "",
+          "created_utc": 1791467377,
+          "num_comments": 0,
+          "id": "1x0rfl0",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1x0rfl0/highlight_junior_caminero_let_the_yankees_fans/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Talkin'Baseball] Chris Sale and Yoshinobu Yamamoto show each other respect before facing off in NLDS Game 3",
+          "author": "VirtuousFool",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1wzfx6f/talkinbaseball_chris_sale_and_yoshinobu_yamamoto/",
+          "selftext": "",
+          "created_utc": 1791324843,
+          "num_comments": 0,
+          "id": "1wzfx6f",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1wzfx6f/talkinbaseball_chris_sale_and_yoshinobu_yamamoto/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Highlight] Ty France's high fly ball hits the roof and is caught by Chourio",
+          "author": "Large_banana_hammock",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1wx6a0u/highlight_ty_frances_high_fly_ball_hits_the_roof/",
+          "selftext": "",
+          "created_utc": 1791086900,
+          "num_comments": 0,
+          "id": "1wx6a0u",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1wx6a0u/highlight_ty_frances_high_fly_ball_hits_the_roof/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        }
+      ],
+      "Hot": []
+    },
+    "CoDCompetitive": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [],
+      "Hot": []
+    },
+    "soccer": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [
+        {
+          "title": "Australian World Cup fans were caught chanting: “Aussie boys are on a bender, Donald Trump is a sex offender.\"",
+          "author": "SimRP",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1u8qjvz/australian_world_cup_fans_were_caught_chanting/",
+          "selftext": "",
+          "created_utc": 1781757974.0,
+          "num_comments": 0,
+          "id": "1u8qjvz",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1u8qjvz/australian_world_cup_fans_were_caught_chanting/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Norway players and fans doing Viking Row",
+          "author": "Gato_Puro",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1ud4556/norway_players_and_fans_doing_viking_row/",
+          "selftext": "",
+          "created_utc": 1782198328.0,
+          "num_comments": 0,
+          "id": "1ud4556",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1ud4556/norway_players_and_fans_doing_viking_row/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Banner seen at USA vs Australia",
+          "author": "iRustic",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1uad33m/banner_seen_at_usa_vs_australia/",
+          "selftext": "",
+          "created_utc": 1781919513.0,
+          "num_comments": 0,
+          "id": "1uad33m",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1uad33m/banner_seen_at_usa_vs_australia/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "[Czechia 1-1 South Africa] Schick waves off the referee and walks away; Mokoena reacts in disbelief",
+          "author": "punchinglines",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1ua2cr9/czechia_11_south_africa_schick_waves_off_the/",
+          "selftext": "",
+          "created_utc": 1781894512.0,
+          "num_comments": 0,
+          "id": "1ua2cr9",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1ua2cr9/czechia_11_south_africa_schick_waves_off_the/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Thierry Henry and Zlatan having a kick about backstage in the studio",
+          "author": "WarriorkingNL",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1uary3n/thierry_henry_and_zlatan_having_a_kick_about/",
+          "selftext": "",
+          "created_utc": 1781964715.0,
+          "num_comments": 0,
+          "id": "1uary3n",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1uary3n/thierry_henry_and_zlatan_having_a_kick_about/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        }
+      ],
+      "Hot": []
+    },
+    "formula1": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [],
+      "Hot": []
+    },
+    "MichiganWolverines": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [],
+      "Hot": []
+    },
+    "DetroitLions": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [],
+      "Hot": [
+        {
+          "title": "Daily Discussion Thread June 24",
+          "author": "AutoModerator",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1ue981m/daily_discussion_thread_june_24/",
+          "selftext": "",
+          "created_utc": 1782313229.0,
+          "num_comments": 0,
+          "id": "1ue981m",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1ue981m/daily_discussion_thread_june_24/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Detroit Lions' 2026 Draft Selections",
+          "author": "JCameron181",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1svp0ld/detroit_lions_2026_draft_selections/",
+          "selftext": "",
+          "created_utc": 1777171774.0,
+          "num_comments": 0,
+          "id": "1svp0ld",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1svp0ld/detroit_lions_2026_draft_selections/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Kerby Joseph Via Instagram. Shout out to Moe.",
+          "author": "derrfurr23",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1udzgxx/kerby_joseph_via_instagram_shout_out_to_moe/",
+          "selftext": "",
+          "created_utc": 1782281755.0,
+          "num_comments": 0,
+          "id": "1udzgxx",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1udzgxx/kerby_joseph_via_instagram_shout_out_to_moe/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Do you think that Dan Campbell will be the Lions eventually be the franchise leader in all time Head Coaching wins?",
+          "author": "33GoodSamaritans",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1udy0yv/do_you_think_that_dan_campbell_will_be_the_lions/",
+          "selftext": "",
+          "created_utc": 1782277816.0,
+          "num_comments": 0,
+          "id": "1udy0yv",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1udy0yv/do_you_think_that_dan_campbell_will_be_the_lions/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Pitts has officially reset the TE market. LaPorta in all likelihood will command a 3 year, 60 million deal in order to keep him.",
+          "author": "PETZING_ELITE_OC_DET",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1ue26rt/pitts_has_officially_reset_the_te_market_laporta/",
+          "selftext": "",
+          "created_utc": 1782289463.0,
+          "num_comments": 0,
+          "id": "1ue26rt",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1ue26rt/pitts_has_officially_reset_the_te_market_laporta/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        }
+      ]
+    },
+    "DetroitPistons": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [],
+      "Hot": []
+    },
+    "movies": {
+      "Best of Hour": [],
+      "Best of 24h": [
+        {
+          "title": "Guillermo del Toro Says Over 1,300 Human Artists Turned 'Pan's Labyrinth' into a Brand New 3D Theatrical Experience",
+          "author": "MarvelsGrantMan136",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0s1xb/guillermo_del_toro_says_over_1300_human_artists/",
+          "selftext": "",
+          "created_utc": 1791468897,
+          "num_comments": 0,
+          "id": "1x0s1xb",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0s1xb/guillermo_del_toro_says_over_1300_human_artists/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Nana Patekar, Indian Star of ‘Parinda’ and ‘Krantiveer,’ Dies at 75",
+          "author": "Fearless-Song9148",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0hoq8/nana_patekar_indian_star_of_parinda_and/",
+          "selftext": "",
+          "created_utc": 1791433816,
+          "num_comments": 0,
+          "id": "1x0hoq8",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0hoq8/nana_patekar_indian_star_of_parinda_and/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "'Cyberpunk 2077' Movie In The Works At Paramount",
+          "author": "ChiefLeef22",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
+          "selftext": "",
+          "created_utc": 1791482464,
+          "num_comments": 0,
+          "id": "1x0xy17",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "David Zaslav Gets $606 Million Payout From Paramount-Warner Bros. Merger",
+          "author": "MarvelsGrantMan136",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "selftext": "",
+          "created_utc": 1791493507,
+          "num_comments": 0,
+          "id": "1x12s13",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Ben Affleck and Matt Damon’s Artists Equity Launches New Indie Banner: Artists Equity Independent Pictures",
+          "author": "Galt1776-Part2",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0i5fv/ben_affleck_and_matt_damons_artists_equity/",
+          "selftext": "",
+          "created_utc": 1791435403,
+          "num_comments": 0,
+          "id": "1x0i5fv",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0i5fv/ben_affleck_and_matt_damons_artists_equity/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        }
+      ],
+      "Best of Week": [],
+      "Hot": []
+    },
+    "BillSimmons": {
+      "Best of Hour": [],
+      "Best of 24h": [],
+      "Best of Week": [],
+      "Hot": []
+    }
+  },
+  "refresh_status": "partial",
+  "last_attempt_at": "2026-10-08T22:37:29+00:00",
+  "feed_status": {
+    "cfb": {
+      "Best of Hour": {
+        "status": "ok",
+        "generated_at": "2026-10-08T22:37:29+00:00",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "stale",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "nfl": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "nba": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "stale",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "baseball": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "ok",
+        "generated_at": "2026-10-08T22:37:29+00:00",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "CoDCompetitive": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "soccer": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "stale",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "formula1": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "MichiganWolverines": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "DetroitLions": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "DetroitPistons": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "movies": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "ok",
+        "generated_at": "2026-10-08T22:37:29+00:00",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    },
+    "BillSimmons": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of 24h": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Best of Week": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-08T22:37:29+00:00"
+      }
+    }
+  }
+}

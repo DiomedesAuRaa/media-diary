@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%236f42c1%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2752%25%27%20font-size%3D%2744%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%20font-family%3D%27Apple%20Color%20Emoji%2CSegoe%20UI%20Emoji%2CSegoe%20UI%20Symbol%2CEmojiSymbols%2Csans-serif%27%20fill%3D%27%23ffffff%27%3E%F0%9F%8E%A7%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <title>Podcasts</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            background: #000;
+            color: #fff;
+            padding: 5px;
+            max-width: 240px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: #000;
+            z-index: 100;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #fff;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 4px 8px;
+            margin: 5px 0;
+            background: #222;
+            color: #f90;
+            text-decoration: none;
+            font-size: 11px;
+            border-radius: 3px;
+        }
+
+        .back-btn:active { background: #333; }
+
+        h1 { font-size: 16px; text-align: center; padding: 8px 0; margin: 0; }
+
+        .show-tabs {
+            display: flex;
+            gap: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .tab {
+            padding: 5px 10px;
+            background: #222;
+            border: 1px solid #444;
+            color: #aaa;
+            font-size: 11px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .tab.active { background: #f90; color: #000; border-color: #f90; }
+
+        .refresh-btn {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            background: #f90;
+            color: #000;
+            border: none;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .last-update { text-align: center; font-size: 10px; color: #666; margin: 4px 0; }
+
+        .episode {
+            background: #111;
+            margin: 4px 0;
+            padding: 5px;
+            border-left: 3px solid #f90;
+            cursor: pointer;
+        }
+
+        .episode.active-ep { border-left-color: #0ff; background: #001a1a; }
+        .episode:active { background: #222; }
+
+        .episode-title {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .episode-meta { font-size: 10px; color: #888; }
+
+        .episode-progress {
+            font-size: 9px;
+            color: #0ff;
+            margin-top: 2px;
+        }
+
+        /* Player bar */
+        .player-bar {
+            position: sticky;
+            bottom: 0;
+            background: #111;
+            border-top: 2px solid #f90;
+            padding: 5px;
+            display: none;
+        }
+
+        .now-playing-label { font-size: 9px; color: #f90; margin-bottom: 2px; }
+
+        .now-playing-title {
+            font-size: 10px;
+            color: #fff;
+            margin-bottom: 4px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        audio { width: 100%; }
+
+        .skip-btns {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .skip-btn {
+            flex: 1;
+            padding: 6px 0;
+            background: #222;
+            color: #f90;
+            border: 1px solid #444;
+            font-size: 11px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .skip-btn:active { background: #333; }
+
+        .loading { text-align: center; padding: 20px; color: #888; }
+        .error { text-align: center; padding: 10px; color: #f00; font-size: 11px; }
+    </style>
+    <link rel="stylesheet" href="assets/tool-ui.css">
+    <script src="assets/tool-ui.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="home.html" class="back-btn">← Back</a>
+        <h1>🎙 PODCASTS</h1>
+        <div class="last-update" id="currentDate"></div>
+    </div>
+
+    <div class="show-tabs" id="showTabs" role="tablist" aria-label="Podcast shows"></div>
+
+    <button class="refresh-btn" id="refreshEpisodes">↻ REFRESH</button>
+    <div class="last-update" id="lastUpdate"></div>
+
+    <div id="content" role="tabpanel">
+        <div class="loading">Loading...</div>
+    </div>
+
+    <div class="player-bar" id="playerBar">
+        <div class="now-playing-label">NOW PLAYING</div>
+        <div class="now-playing-title" id="nowPlayingTitle"></div>
+        <audio id="audio" controls preload="none"></audio>
+        <div class="skip-btns">
+            <button class="skip-btn" data-skip="-30">« 30s</button>
+            <button class="skip-btn" data-skip="-10">« 10s</button>
+            <button class="skip-btn" data-skip="10">10s »</button>
+            <button class="skip-btn" data-skip="30">30s »</button>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'podcast_progress';
+        let currentShow = 0;
+        let episodePage = 0;
+        let shows = [];
+        let currentUrl = null;
+
+        // --- localStorage helpers ---
+        function saveProgress(url, position) {
+            try {
+                const all = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                all[url] = { position: position, saved: Date.now() };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
+            } catch(e) {}
+        }
+
+        function getProgress(url) {
+            try {
+                const all = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                return all[url] ? all[url].position : 0;
+            } catch(e) { return 0; }
+        }
+
+        function formatTime(secs) {
+            const h = Math.floor(secs / 3600);
+            const m = Math.floor((secs % 3600) / 60);
+            const s = Math.floor(secs % 60);
+            if (h > 0) return h + 'h ' + m + 'm';
+            if (m > 0) return m + 'm ' + s + 's';
+            return s + 's';
+        }
+
+        // --- Audio setup ---
+        const audio = document.getElementById('audio');
+
+        // Save position every 5 seconds while playing
+        audio.addEventListener('timeupdate', function() {
+            if (currentUrl && audio.currentTime > 5) {
+                // Save every 5 seconds (throttled)
+                if (Math.floor(audio.currentTime) % 5 === 0) {
+                    saveProgress(currentUrl, audio.currentTime);
+                }
+            }
+        });
+
+        // Also save on pause/unload so nothing is lost
+        audio.addEventListener('pause', function() {
+            if (currentUrl) saveProgress(currentUrl, audio.currentTime);
+        });
+
+        window.addEventListener('beforeunload', function() {
+            if (currentUrl) saveProgress(currentUrl, audio.currentTime);
+        });
+
+        function skip(seconds) {
+            audio.currentTime = Math.max(0, audio.currentTime + seconds);
+        }
+
+        // --- Build All tab ---
+        function buildAllTab(rawShows) {
+            const all = [];
+            for (let s = 0; s < rawShows.length; s++) {
+                const show = rawShows[s];
+                if (!show.episodes) continue;
+                for (let e = 0; e < show.episodes.length; e++) {
+                    const ep = show.episodes[e];
+                    all.push({
+                        title: ep.title,
+                        date: ep.date,
+                        dateSort: ep.dateSort || '',
+                        audioUrl: ep.audioUrl,
+                        showName: show.name
+                    });
+                }
+            }
+            all.sort((a, b) => {
+                if (a.dateSort > b.dateSort) return -1;
+                if (a.dateSort < b.dateSort) return 1;
+                return 0;
+            });
+            const dates = rawShows.map(show => show.generatedAt).filter(Boolean).sort();
+            const stale = rawShows.some(show => show.fetchStatus === 'stale' || show.fetchStatus === 'unavailable');
+            return {name:'All', episodes:all, generatedAt:dates.length === rawShows.length ? dates[0] : null, fetchStatus:stale ? 'stale' : 'ok'};
+        }
+
+        // --- Render ---
+        function renderTabs() {
+            const container = document.getElementById('showTabs');
+            ToolUI.setHTML(container, '');
+            shows.forEach((show, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'tab' + (i === currentShow ? ' active' : '');
+                btn.setAttribute('role', 'tab');
+                btn.setAttribute('aria-selected', String(i === currentShow));
+                btn.setAttribute('aria-controls', 'content');
+                btn.tabIndex = i === currentShow ? 0 : -1;
+                btn.textContent = show.name;
+                btn.addEventListener('click', function() {
+                    currentShow = i; episodePage = 0;
+                    document.querySelectorAll('.tab').forEach((t, j) => {
+                        t.setAttribute('aria-selected', String(j === i));
+                        t.tabIndex = j === i ? 0 : -1;
+                        if (j === i) t.classList.add('active');
+                        else t.classList.remove('active');
+                    });
+                    renderEpisodes();
+                });
+                container.appendChild(btn);
+            });
+        }
+
+        function renderEpisodes() {
+            const content = document.getElementById('content');
+            const show = shows[currentShow];
+
+            if (!show || !show.episodes || !show.episodes.length) {
+                ToolUI.setHTML(content, '<div class="error">No episodes available.</div>');
+                return;
+            }
+
+            const batch = document.documentElement.classList.contains('compact') ? 5 : 15;
+            const episodes = show.episodes.filter(ep => ToolUI.httpURL(ep.audioUrl));
+            episodePage = Math.min(episodePage, Math.max(0, Math.ceil(episodes.length / batch) - 1));
+            const fragment = document.createDocumentFragment();
+            episodes.slice(episodePage * batch, (episodePage + 1) * batch).forEach(ep => {
+                const url = ToolUI.httpURL(ep.audioUrl);
+                const button = ToolUI.text('button', '', 'episode' + (url === currentUrl ? ' active-ep' : ''));
+                button.type = 'button';
+                button.append(ToolUI.text('div', ep.title, 'episode-title'),
+                    ToolUI.text('div', (ep.showName ? ep.showName + ' · ' : '') + (ep.date || ''), 'episode-meta'));
+                const saved = getProgress(url);
+                if (saved > 10) button.appendChild(ToolUI.text('div', 'Resume at ' + formatTime(saved), 'episode-progress'));
+                button.addEventListener('click', () => playEpisode(url, String(ep.title || 'Episode')));
+                fragment.appendChild(button);
+            });
+            content.replaceChildren(fragment);
+            if (!episodes.length) content.appendChild(ToolUI.text('p', 'No playable episodes.', 'error'));
+            if (episodes.length > batch) {
+                const pager = ToolUI.text('nav', '', 'tool-pagination'); pager.setAttribute('aria-label', 'Episodes');
+                const prev = ToolUI.text('button', 'Previous'), next = ToolUI.text('button', 'Next');
+                prev.disabled = episodePage === 0; next.disabled = (episodePage + 1) * batch >= episodes.length;
+                prev.addEventListener('click', () => { episodePage--; renderEpisodes(); });
+                next.addEventListener('click', () => { episodePage++; renderEpisodes(); });
+                pager.append(prev, ToolUI.text('span', (episodePage + 1) + ' / ' + Math.ceil(episodes.length / batch)), next);
+                content.appendChild(pager);
+            }
+            const generated = show.generatedAt ? new Date(show.generatedAt) : null;
+            const stamp = generated && !isNaN(generated.getTime()) ? generated.toLocaleString() : 'Unknown refresh time';
+            const stale = show.fetchStatus === 'stale' || (generated && Date.now() - generated.getTime() > 2 * 60 * 60 * 1000);
+            document.getElementById('lastUpdate').textContent = (stale ? 'Stale · ' : '') + 'Feed: ' + stamp;
+        }
+        document.addEventListener('tool-layout-change', () => { episodePage = 0; renderEpisodes(); });
+
+        function playEpisode(url, title) {
+            url = ToolUI.httpURL(url);
+            if (!url) return;
+            currentUrl = url;
+            const bar = document.getElementById('playerBar');
+            document.getElementById('nowPlayingTitle').textContent = title;
+
+            const saved = getProgress(url);
+
+            // Only set src and seek if this is a different episode
+            // Avoids re-downloading if user taps the same episode again
+            if (audio.dataset.loadedUrl !== url) {
+                audio.src = url;
+                audio.dataset.loadedUrl = url;
+
+                if (saved > 10) {
+                    // Seek only once metadata is ready — no double-buffer on range-supporting servers
+                    // On servers without range support this still downloads once, not twice
+                    audio.addEventListener('canplay', function onCanPlay() {
+                        audio.currentTime = saved;
+                        audio.removeEventListener('canplay', onCanPlay);
+                    });
+                }
+            }
+
+            bar.style.display = 'block';
+            const playback = audio.play();
+            if (playback && playback.catch) playback.catch(() => { document.getElementById('lastUpdate').textContent = 'Playback unavailable. Try the audio Play control.'; });
+
+            renderEpisodes();
+        }
+
+        async function loadEpisodes() {
+            const content = document.getElementById('content');
+            ToolUI.setHTML(content, '<div class="loading">Loading...</div>');
+            try {
+                const response = await fetch('podcast-manifest.json', {cache: 'no-cache'});
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                const raw = await response.json();
+                if (!raw.length) { ToolUI.setHTML(content, '<div class="error">No shows found.</div>'); return; }
+                shows = [buildAllTab(raw)].concat(raw);
+                currentShow = Math.min(currentShow, shows.length - 1);
+                episodePage = 0;
+                renderTabs();
+                renderEpisodes();
+            } catch(e) {
+                ToolUI.setHTML(content, '<div class="error">Could not load manifest. <button type="button" id="retryManifest">Retry</button></div>');
+                document.getElementById('retryManifest').addEventListener('click', loadEpisodes);
+            }
+        }
+
+        document.getElementById('refreshEpisodes').addEventListener('click', loadEpisodes);
+        document.querySelectorAll('.skip-btn').forEach(button => button.addEventListener('click', () => skip(Number(button.dataset.skip))));
+        document.getElementById('showTabs').addEventListener('keydown', event => {
+            if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+            const tabs = Array.from(document.querySelectorAll('#showTabs [role="tab"]'));
+            if (!tabs.length) return;
+            event.preventDefault();
+            const index = tabs.indexOf(event.target);
+            const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+            tabs[next].focus(); tabs[next].click();
+        });
+        loadEpisodes();
+    </script>
+</body>
+</html>

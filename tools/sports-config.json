@@ -1,0 +1,126 @@
+{
+    "priority_teams": [
+      "DET",
+      "Detroit",
+      "Lions",
+      "Pistons",
+      "Tigers",
+      "Red Wings",
+      "MICH",
+      "Michigan",
+      "Wolverines"
+    ],
+    "leagues": [
+      {
+        "name": "NFL",
+        "enabled": true,
+        "espn_path": "football/nfl",
+        "color": "#004d40",
+        "standings": true,
+        "standings_type": "division"
+      },
+      {
+        "name": "NBA",
+        "enabled": true,
+        "espn_path": "basketball/nba",
+        "color": "#ff6b35",
+        "standings": true,
+        "standings_type": "division"
+      },
+      {
+        "name": "MLB",
+        "enabled": true,
+        "espn_path": "baseball/mlb",
+        "color": "#003087",
+        "standings": true,
+        "standings_type": "division"
+      },
+      {
+        "name": "NHL",
+        "enabled": true,
+        "espn_path": "hockey/nhl",
+        "color": "#c8102e",
+        "standings": true,
+        "standings_type": "division"
+      },
+      {
+        "name": "NCAAFB",
+        "enabled": true,
+        "espn_path": "football/college-football",
+        "color": "#8b0000",
+        "standings": true,
+        "standings_type": "rankings"
+      },
+      {
+        "name": "NCAAB",
+        "enabled": true,
+        "espn_path": "basketball/mens-college-basketball",
+        "color": "#ff8c00",
+        "standings": true,
+        "standings_type": "rankings"
+      },
+      {
+        "name": "F1",
+        "enabled": true,
+        "espn_path": "racing/f1",
+        "color": "#e10600",
+        "standings": false
+      },
+      {
+        "name": "MLS",
+        "enabled": true,
+        "espn_path": "soccer/usa.1",
+        "color": "#00a651",
+        "standings": true,
+        "standings_type": "soccer"
+      },
+      {
+        "name": "EPL",
+        "enabled": true,
+        "espn_path": "soccer/eng.1",
+        "color": "#3d195b",
+        "standings": true,
+        "standings_type": "soccer"
+      },
+      {
+        "name": "La Liga",
+        "enabled": true,
+        "espn_path": "soccer/esp.1",
+        "color": "#ee8707",
+        "standings": true,
+        "standings_type": "soccer"
+      },
+      {
+        "name": "Bundesliga",
+        "enabled": true,
+        "espn_path": "soccer/ger.1",
+        "color": "#d3010c",
+        "standings": true,
+        "standings_type": "soccer"
+      },
+      {
+        "name": "Serie A",
+        "enabled": true,
+        "espn_path": "soccer/ita.1",
+        "color": "#024494",
+        "standings": true,
+        "standings_type": "soccer"
+      },
+      {
+        "name": "Ligue 1",
+        "enabled": true,
+        "espn_path": "soccer/fra.1",
+        "color": "#091c3e",
+        "standings": true,
+        "standings_type": "soccer"
+      },
+      {
+        "name": "UCL",
+        "enabled": true,
+        "espn_path": "soccer/uefa.champions",
+        "color": "#001489",
+        "standings": true,
+        "standings_type": "soccer"
+      }
+    ]
+  }

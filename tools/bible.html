@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%238b4513%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2752%25%27%20font-size%3D%2744%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%20font-family%3D%27Apple%20Color%20Emoji%2CSegoe%20UI%20Emoji%2CSegoe%20UI%20Symbol%2CEmojiSymbols%2Csans-serif%27%20fill%3D%27%23ffffff%27%3E%F0%9F%93%96%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <title>Bible - World English Bible</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            background: #000;
+            color: #fff;
+            padding: 5px;
+            max-width: 240px;
+        }
+        
+        .header {
+            position: sticky;
+            top: 0;
+            background: #000;
+            z-index: 100;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #fff;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 2px 6px;
+            margin: 2px 0;
+            background: #222;
+            color: #0ff;
+            text-decoration: none;
+            font-size: 10px;
+            border-radius: 3px;
+        }
+        
+        .back-btn:active {
+            background: #333;
+        }
+        
+        h1 {
+            font-size: 14px;
+            text-align: center;
+            padding: 4px 0;
+            margin: 0;
+        }
+        
+        .selection-panel {
+            margin: 8px 0;
+        }
+        
+        .selector {
+            display: none;
+        }
+        
+        .selector.active {
+            display: block;
+        }
+        
+        label {
+            display: block;
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 2px;
+            margin-top: 6px;
+        }
+        
+        select {
+            width: 100%;
+            padding: 4px;
+            font-size: 11px;
+            background: #111;
+            color: #0ff;
+            border: 1px solid #0ff;
+            border-radius: 2px;
+            margin-bottom: 6px;
+        }
+        
+        select option {
+            background: #000;
+            color: #0ff;
+        }
+        
+        .verse-display {
+            background: #111;
+            border-left: 3px solid #0ff;
+            padding: 8px;
+            margin-top: 12px;
+            border-radius: 2px;
+            max-height: 400px;
+            overflow-y: scroll;
+            display: none;
+        }
+        
+        .verse-display.active {
+            display: block;
+        }
+        
+        .verse-reference {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 6px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+            position: sticky;
+            top: 0;
+            background: #111;
+        }
+        
+        .verse-text {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #0ff;
+        }
+        
+        .verse-item {
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .verse-item:last-child {
+            border-bottom: none;
+        }
+        
+        .verse-number {
+            font-size: 9px;
+            color: #0a0;
+            font-weight: bold;
+            margin-right: 3px;
+        }
+        
+        .verse-text sup {
+            font-size: 9px;
+            color: #0a0;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #888;
+            font-size: 10px;
+            margin-top: 10px;
+        }
+        
+        .error {
+            color: #f00;
+            font-size: 10px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/tool-ui.css">
+    <script src="assets/tool-ui.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="home.html" class="back-btn">← Back</a>
+        <h1>Bible (World English Bible)</h1>
+    </div>
+    
+    <div class="selection-panel">
+        <!-- Testament Selection -->
+        <div class="selector active" id="testament-selector">
+            <label for="testament">Testament:</label>
+            <select id="testament">
+                <option value="">-- Select Testament --</option>
+                <option value="old">Old Testament</option>
+                <option value="new">New Testament</option>
+            </select>
+        </div>
+        
+        <!-- Book Selection -->
+        <div class="selector" id="book-selector">
+            <label for="book">Book:</label>
+            <select id="book">
+                <option value="">-- Select Book --</option>
+            </select>
+        </div>
+        
+        <!-- Chapter Selection -->
+        <div class="selector" id="chapter-selector">
+            <label for="chapter">Chapter:</label>
+            <select id="chapter">
+                <option value="">-- Select Chapter --</option>
+            </select>
+        </div>
+        
+        <!-- Verse Selection -->
+        <div class="selector" id="verse-selector">
+            <label for="verse">Verse:</label>
+            <select id="verse">
+                <option value="">-- Select Verse --</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="loading" class="loading" role="status" aria-live="polite"></div>
+    <div id="error" class="error" role="alert"></div>
+    
+    <div class="verse-display" id="verse-display">
+        <div class="verse-reference" id="verse-ref"></div>
+        <div id="verse-content"></div>
+    </div>
+    
+    <script>
+        const oldTestament = [
+            { name: 'Genesis', abbr: 'GEN' },
+            { name: 'Exodus', abbr: 'EXO' },
+            { name: 'Leviticus', abbr: 'LEV' },
+            { name: 'Numbers', abbr: 'NUM' },
+            { name: 'Deuteronomy', abbr: 'DEU' },
+            { name: 'Joshua', abbr: 'JOS' },
+            { name: 'Judges', abbr: 'JDG' },
+            { name: 'Ruth', abbr: 'RUT' },
+            { name: '1 Samuel', abbr: '1SA' },
+            { name: '2 Samuel', abbr: '2SA' },
+            { name: '1 Kings', abbr: '1KI' },
+            { name: '2 Kings', abbr: '2KI' },
+            { name: '1 Chronicles', abbr: '1CH' },
+            { name: '2 Chronicles', abbr: '2CH' },
+            { name: 'Ezra', abbr: 'EZR' },
+            { name: 'Nehemiah', abbr: 'NEH' },
+            { name: 'Esther', abbr: 'EST' },
+            { name: 'Job', abbr: 'JOB' },
+            { name: 'Psalms', abbr: 'PSA' },
+            { name: 'Proverbs', abbr: 'PRO' },
+            { name: 'Ecclesiastes', abbr: 'ECC' },
+            { name: 'Song of Solomon', abbr: 'SOS' },
+            { name: 'Isaiah', abbr: 'ISA' },
+            { name: 'Jeremiah', abbr: 'JER' },
+            { name: 'Lamentations', abbr: 'LAM' },
+            { name: 'Ezekiel', abbr: 'EZK' },
+            { name: 'Daniel', abbr: 'DAN' },
+            { name: 'Hosea', abbr: 'HOS' },
+            { name: 'Joel', abbr: 'JOE' },
+            { name: 'Amos', abbr: 'AMO' },
+            { name: 'Obadiah', abbr: 'OBA' },
+            { name: 'Jonah', abbr: 'JON' },
+            { name: 'Micah', abbr: 'MIC' },
+            { name: 'Nahum', abbr: 'NAH' },
+            { name: 'Habakkuk', abbr: 'HAB' },
+            { name: 'Zephaniah', abbr: 'ZEP' },
+            { name: 'Haggai', abbr: 'HAG' },
+            { name: 'Zechariah', abbr: 'ZEC' },
+            { name: 'Malachi', abbr: 'MAL' }
+        ];
+        
+        const newTestament = [
+            { name: 'Matthew', abbr: 'MAT' },
+            { name: 'Mark', abbr: 'MRK' },
+            { name: 'Luke', abbr: 'LUK' },
+            { name: 'John', abbr: 'JHN' },
+            { name: 'Acts', abbr: 'ACT' },
+            { name: 'Romans', abbr: 'ROM' },
+            { name: '1 Corinthians', abbr: '1CO' },
+            { name: '2 Corinthians', abbr: '2CO' },
+            { name: 'Galatians', abbr: 'GAL' },
+            { name: 'Ephesians', abbr: 'EPH' },
+            { name: 'Philippians', abbr: 'PHP' },
+            { name: 'Colossians', abbr: 'COL' },
+            { name: '1 Thessalonians', abbr: '1TH' },
+            { name: '2 Thessalonians', abbr: '2TH' },
+            { name: '1 Timothy', abbr: '1TI' },
+            { name: '2 Timothy', abbr: '2TI' },
+            { name: 'Titus', abbr: 'TIT' },
+            { name: 'Philemon', abbr: 'PHM' },
+            { name: 'Hebrews', abbr: 'HEB' },
+            { name: 'James', abbr: 'JAS' },
+            { name: '1 Peter', abbr: '1PE' },
+            { name: '2 Peter', abbr: '2PE' },
+            { name: '1 John', abbr: '1JN' },
+            { name: '2 John', abbr: '2JN' },
+            { name: '3 John', abbr: '3JN' },
+            { name: 'Jude', abbr: 'JUD' },
+            { name: 'Revelation', abbr: 'REV' }
+        ];
+        
+        let currentBooks = [];
+        let currentBook = null;
+        let maxChapters = 0;
+        let currentChapter = [];
+        let currentVerseIndex = 0;
+        
+        function handleTestamentChange() {
+            const testament = document.getElementById('testament').value;
+            const bookSelect = document.getElementById('book');
+            
+            if (testament === 'old') {
+                currentBooks = oldTestament;
+            } else if (testament === 'new') {
+                currentBooks = newTestament;
+            } else {
+                currentBooks = [];
+            }
+            
+            ToolUI.setHTML(bookSelect, '<option value="">-- Select Book --</option>');
+            currentBooks.forEach(book => {
+                const option = document.createElement('option');
+                option.value = book.abbr;
+                option.textContent = book.name;
+                bookSelect.appendChild(option);
+            });
+            
+            document.getElementById('book-selector').classList.add('active');
+            resetChapterVerse();
+        }
+        
+        function handleBookChange() {
+            const bookAbbr = document.getElementById('book').value;
+            const bookName = currentBooks.find(b => b.abbr === bookAbbr)?.name;
+            
+            if (!bookAbbr || !bookName) return;
+            
+            currentBook = { abbr: bookAbbr, name: bookName };
+            fetchChapterCount(bookName);
+        }
+        
+        function fetchChapterCount(bookName) {
+            showLoading('Fetching chapters...');
+            
+            // Estimate chapter count based on book
+            const chapterMap = {
+                'Genesis': 50, 'Exodus': 40, 'Leviticus': 27, 'Numbers': 36, 'Deuteronomy': 34,
+                'Joshua': 24, 'Judges': 21, 'Ruth': 4, '1 Samuel': 31, '2 Samuel': 24,
+                '1 Kings': 22, '2 Kings': 25, '1 Chronicles': 29, '2 Chronicles': 36, 'Ezra': 10,
+                'Nehemiah': 13, 'Esther': 10, 'Job': 42, 'Psalms': 150, 'Proverbs': 31,
+                'Ecclesiastes': 12, 'Song of Solomon': 8, 'Isaiah': 66, 'Jeremiah': 52, 'Lamentations': 5,
+                'Ezekiel': 48, 'Daniel': 12, 'Hosea': 14, 'Joel': 3, 'Amos': 9,
+                'Obadiah': 1, 'Jonah': 4, 'Micah': 7, 'Nahum': 3, 'Habakkuk': 3,
+                'Zephaniah': 3, 'Haggai': 2, 'Zechariah': 14, 'Malachi': 4,
+                'Matthew': 28, 'Mark': 16, 'Luke': 24, 'John': 21, 'Acts': 28,
+                'Romans': 16, '1 Corinthians': 16, '2 Corinthians': 13, 'Galatians': 6, 'Ephesians': 6,
+                'Philippians': 4, 'Colossians': 4, '1 Thessalonians': 5, '2 Thessalonians': 3,
+                '1 Timothy': 6, '2 Timothy': 4, 'Titus': 3, 'Philemon': 1, 'Hebrews': 13,
+                'James': 5, '1 Peter': 5, '2 Peter': 3, '1 John': 5, '2 John': 1,
+                '3 John': 1, 'Jude': 1, 'Revelation': 22
+            };
+            
+            maxChapters = chapterMap[bookName] || 1;
+            populateChapters();
+            hideLoading();
+        }
+        
+        function populateChapters() {
+            const chapterSelect = document.getElementById('chapter');
+            ToolUI.setHTML(chapterSelect, '<option value="">-- Select Chapter --</option>');
+            
+            for (let i = 1; i <= maxChapters; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = `Chapter ${i}`;
+                chapterSelect.appendChild(option);
+            }
+            
+            document.getElementById('chapter-selector').classList.add('active');
+            resetVerse();
+        }
+        
+        function handleChapterChange() {
+            const chapter = document.getElementById('chapter').value;
+            
+            if (!chapter) return;
+            
+            // Estimate verse choices; the selected chapter response supplies the actual verses.
+            const verseSelect = document.getElementById('verse');
+            ToolUI.setHTML(verseSelect, '<option value="">-- Select Verse --</option>');
+            
+            // Estimate verses in chapter (most are 20-40)
+            let verseCount = 40;
+            
+            for (let i = 1; i <= verseCount; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = `Verse ${i}`;
+                verseSelect.appendChild(option);
+            }
+            
+            document.getElementById('verse-selector').classList.add('active');
+        }
+        
+        function handleVerseChange() {
+            const chapter = document.getElementById('chapter').value;
+            const verse = document.getElementById('verse').value;
+            
+            if (!chapter || !verse || !currentBook) return;
+            
+            fetchChapter(currentBook.name, chapter, verse);
+        }
+        
+        let chapterRequest = 0;
+        function fetchChapter(book, chapter, startVerse) {
+            const requestVersion = ++chapterRequest;
+            showLoading('Loading chapter...');
+            document.getElementById('error').replaceChildren();
+            
+            const passage = `${book} ${chapter}`;
+            
+            // Fetch the entire chapter
+            const url = `https://bible-api.com/${encodeURIComponent(passage)}?translation=web&single_chapter_book_matching=indifferent`;
+            
+            fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Chapter not found');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (requestVersion !== chapterRequest) return;
+                if (data.verses && data.verses.length > 0) {
+                    currentChapter = data.verses;
+                    
+                    // Find the verse index to start at
+                    const startVerseNum = parseInt(startVerse);
+                    currentVerseIndex = currentChapter.findIndex(v => v.verse === startVerseNum);
+                    
+                    if (currentVerseIndex === -1) {
+                        currentVerseIndex = 0; // Default to first verse if not found
+                    }
+
+                    const verseSelect = document.getElementById('verse');
+                    const verseCount = Math.max(...currentChapter.map(v => v.verse));
+                    ToolUI.setHTML(verseSelect, '<option value="">-- Select Verse --</option>');
+                    for (let verseNum = 1; verseNum <= verseCount; verseNum++) {
+                        const option = document.createElement('option');
+                        option.value = verseNum;
+                        option.textContent = `Verse ${verseNum}`;
+                        verseSelect.appendChild(option);
+                    }
+                    verseSelect.value = String(currentChapter[currentVerseIndex].verse);
+                    
+                    displayCurrentVerse();
+                    hideLoading();
+                } else {
+                    showError('Chapter not found', () => fetchChapter(book, chapter, startVerse));
+                }
+            })
+            .catch(error => {
+                if (requestVersion !== chapterRequest) return;
+                console.error('Error:', error);
+                showError('Error loading chapter', () => fetchChapter(book, chapter, startVerse));
+            });
+        }
+        
+        function displayCurrentVerse() {
+            if (currentChapter.length === 0) return;
+            
+            const reference = `${currentChapter[0].book_name} ${currentChapter[0].chapter}`;
+            document.getElementById('verse-ref').textContent = reference;
+            
+            const verses = document.createDocumentFragment();
+            currentChapter.forEach((verseObj, index) => {
+                const row = ToolUI.text('div', '', 'verse-item');
+                row.id = `verse-${index}`;
+                row.append(ToolUI.text('span', verseObj.verse, 'verse-number'),
+                    ToolUI.text('span', String(verseObj.text || '').trim(), 'verse-text'));
+                verses.appendChild(row);
+            });
+            document.getElementById('verse-content').replaceChildren(verses);
+            document.getElementById('verse-display').classList.add('active');
+            
+            // Scroll to current verse
+            const currentVerseElement = document.getElementById(`verse-${currentVerseIndex}`);
+            if (currentVerseElement) {
+                currentVerseElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+        
+        function previousVerse() {
+            if (currentVerseIndex > 0) {
+                currentVerseIndex--;
+                displayCurrentVerse();
+            }
+        }
+        
+        function nextVerse() {
+            if (currentVerseIndex < currentChapter.length - 1) {
+                currentVerseIndex++;
+                displayCurrentVerse();
+            }
+        }
+        
+        function resetChapterVerse() {
+            document.getElementById('chapter-selector').classList.remove('active');
+            document.getElementById('verse-selector').classList.remove('active');
+            document.getElementById('verse-display').classList.remove('active');
+        }
+        
+        function resetVerse() {
+            document.getElementById('verse-selector').classList.remove('active');
+            document.getElementById('verse-display').classList.remove('active');
+        }
+        
+        function showLoading(message) {
+            document.getElementById('loading').textContent = message;
+        }
+        
+        function hideLoading() {
+            document.getElementById('loading').textContent = '';
+        }
+        
+        function showError(message, retry) {
+            hideLoading();
+            const error = document.getElementById('error');
+            error.replaceChildren(ToolUI.text('span', message));
+            if (retry) {
+                const button = ToolUI.text('button', 'Retry'); button.type = 'button';
+                button.addEventListener('click', retry);
+                error.append(' ', button);
+            }
+        }
+
+        document.getElementById('testament').addEventListener('change', handleTestamentChange);
+        document.getElementById('book').addEventListener('change', handleBookChange);
+        document.getElementById('chapter').addEventListener('change', handleChapterChange);
+        document.getElementById('verse').addEventListener('change', handleVerseChange);
+    </script>
+</body>
+</html>

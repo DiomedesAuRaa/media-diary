@@ -1,0 +1,261 @@
+/* Shared service interface. Page content may keep its own domain colors. */
+:root {
+  color-scheme: dark;
+  --tool-bg: #0b1420;
+  --tool-surface: #111f2d;
+  --tool-surface-raised: #17283a;
+  --tool-border: #33485c;
+  --tool-text: #e8eef5;
+  --tool-muted: #a9bacb;
+  --tool-link: #70dfd0;
+  --tool-accent: #58d6c3;
+  --tool-focus: #f2bd61;
+  --tool-danger: #ff9b91;
+}
+html { color-scheme:dark; width:auto; max-width:none; height:auto; max-height:none; background:var(--tool-bg); }
+html body { width:auto; max-width:58rem; min-height:100vh; height:auto; max-height:none; margin:0 auto; padding:1rem; background:var(--tool-bg); color:var(--tool-text); font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; overflow-wrap:anywhere; overflow:auto; }
+html body a { color:var(--tool-link); text-underline-offset:.16em; }
+html body a:hover { color:#a4f0e6; }
+.tool-nav { display:flex; align-items:center; flex-wrap:wrap; gap:.4rem; padding:0 0 .65rem; margin:0 0 .75rem; border-bottom:1px solid var(--tool-border); }
+.tool-nav a, .tool-nav button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.45rem .75rem; border:1px solid transparent; border-radius:.45rem; font-size:.95rem; font-weight:650; text-decoration:none; }
+.tool-nav a { color:var(--tool-text); }
+.tool-nav a:hover { background:var(--tool-surface-raised); border-color:var(--tool-border); }
+.tool-nav button { margin:0 0 0 auto; border-color:var(--tool-border); background:var(--tool-surface-raised); color:var(--tool-link); cursor:pointer; }
+.tool-nav button[aria-pressed="true"] { border-color:var(--tool-accent); background:#163d42; color:#c6fff4; }
+html button, html select, html input, html textarea { font:inherit; max-width:100%; }
+html button, html select, html input:not([type="checkbox"]):not([type="radio"]), html textarea { min-height:44px; }
+html button { cursor:pointer; }
+html :is(a,button,input,select,textarea,[tabindex]):focus-visible { outline:3px solid var(--tool-focus) !important; outline-offset:2px; }
+html body h1 { color:var(--tool-text); font-size:clamp(1.35rem,4vw,1.85rem); line-height:1.2; margin:.45rem 0 .7rem; }
+html body h2 { color:var(--tool-text); font-size:1.15rem; line-height:1.25; margin:1.2rem 0 .5rem; }
+html body :is(.header,.league-nav,.subreddit-nav) { position:static; }
+html body :is(.league-nav,.show-tabs,.tabs,.feed-nav,.sub-feed-tabs,.subreddit-nav) { display:flex; flex-wrap:wrap; overflow:visible; white-space:normal; gap:.4rem; }
+html .back-btn[hidden], html .home-link[hidden] { display:none; }
+html .refresh-btn { width:auto; min-width:7rem; padding:.4rem .75rem; font-size:1rem; }
+html :is(.tab,.league-nav a,.league-nav button,.feed-tab,.sub-feed-tab) { font-size:.9rem; padding:.4rem .65rem; }
+html :is(.last-update,.article-meta,.episode-meta,.game-status) { font-size:.875rem; color:var(--tool-muted); }
+html :is(.article-title,.episode-title,.team-row,.verse-text) { font-size:1rem; }
+html :is(.article,.episode,.game) { padding:.7rem; margin:.55rem 0; }
+html .episode { width:100%; color:inherit; text-align:left; cursor:pointer; }
+html .standings-table { font-size:.95rem; }
+html .player-bar { width:100%; max-width:58rem; box-sizing:border-box; }
+html :is(.post-content,.comment-body,.article-title,.episode-title) { overflow-wrap:anywhere; }
+html .post-meta { flex-wrap:wrap; }
+html .container { border-radius:.5rem; }
+html header { padding:.65rem; }
+html header h1 { font-size:1.35rem; }
+html .header-meta { gap:.5rem; }
+html .home-link { margin-bottom:.5rem; }
+html :is(.subreddit-header,.filter-bar,.subreddit-nav,.feed-nav) { padding:.65rem; }
+html .post { padding:.8rem; }
+html .post-title { font-size:1rem; }
+html .comments-toggle { font-size:.9rem; }
+.tool-pagination { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.45rem; margin:.8rem 0; }
+.tool-pagination span { font-size:.9rem; color:var(--tool-muted); }
+.location-form { display:flex; gap:.5rem; flex-wrap:wrap; margin:.65rem 0; }
+.location-form label { width:100%; }
+.location-form input { flex:1; min-width:7rem; }
+html.compact body { font-size:14px; padding:4px; line-height:1.35; }
+html.compact .tool-nav { gap:.25rem; padding-bottom:4px; margin-bottom:4px; }
+html.compact .tool-nav a, html.compact .tool-nav button { padding:3px 7px; }
+html.compact body h1 { font-size:17px; }
+html.compact .header-meta { font-size:12px; }
+html.compact :is(.tab,.league-nav a,.league-nav button,.feed-tab,.sub-feed-tab) { padding:3px 5px; font-size:12px; }
+html.compact :is(.article,.episode,.game,.post) { padding:5px; margin:4px 0; }
+html.compact :is(.article-title,.episode-title,.team-row,.verse-text,.post-title) { font-size:14px; }
+html.compact :is(.last-update,.episode-meta,.article-meta,.game-status,.post-meta) { font-size:12px; }
+html.compact .standings-table { font-size:12px; }
+html.compact .col-team { white-space:normal; }
+html.compact .post-content { max-height:8rem; overflow:auto; }
+html.compact :is(.header-meta,.subreddit-header-top) { flex-wrap:wrap; }
+/* Service hub uses the same palette as service pages and games. */
+.utility-home { max-width:62rem; }
+.utility-home main { padding:.2rem 0 1rem; }
+.utility-home .intro { max-width:62ch; color:var(--tool-muted); }
+.utility-home .service-section { margin:1.35rem 0; }
+.utility-home .service-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap:.65rem; padding:0; list-style:none; }
+.utility-home .service-card { min-width:0; }
+.utility-home .service-card a { display:flex; flex-direction:column; justify-content:center; min-height:5.25rem; height:100%; padding:.8rem .9rem; color:var(--tool-text); background:var(--tool-surface); border:1px solid var(--tool-border); border-radius:.55rem; text-decoration:none; }
+.utility-home .service-card a:hover { background:var(--tool-surface-raised); border-color:var(--tool-accent); }
+.utility-home .service-card strong { color:var(--tool-link); font-size:1rem; }
+.utility-home .service-card span { margin-top:.2rem; color:var(--tool-muted); font-size:.88rem; }
+.utility-home footer { padding:.8rem 0; color:var(--tool-muted); font-size:.85rem; }
+@media (max-width:340px) {
+  html body { padding:.45rem; font-size:15px; }
+  .tool-nav { gap:.15rem; }
+  .tool-nav a,.tool-nav button { padding:.3rem .45rem; font-size:.88rem; }
+  .utility-home .service-grid { grid-template-columns:1fr; gap:.5rem; }
+  .utility-home .service-card a { min-height:3.6rem; padding:.5rem .65rem; }
+}
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
+.utility-home .skip { position:absolute; left:-10000px; top:0; z-index:100; padding:.5rem .75rem; color:var(--tool-bg); background:var(--tool-focus); }
+.utility-home .skip:focus { left:.5rem; }
+
+/* Normalize legacy service chrome across pages with different inline themes. */
+html body:not(.game-page) {
+  background:var(--tool-bg); color:var(--tool-text); border-color:var(--tool-border);
+}
+html body:not(.game-page) .container,
+html body:not(.game-page) .subreddit-header,
+html body:not(.game-page) .header,
+html body:not(.game-page) header,
+html body:not(.game-page) .feed-nav,
+html body:not(.game-page) .subreddit-nav,
+html body:not(.game-page) .filter-section,
+html body:not(.game-page) .player-bar,
+html body:not(.game-page) .toolbar,
+html body:not(.game-page) .league-nav {
+  background:var(--tool-surface); color:var(--tool-text); border-color:var(--tool-border); box-shadow:none;
+}
+html body:not(.game-page) .header { position:static; }
+html body:not(.game-page) .container { border:1px solid var(--tool-border); }
+html body:not(.game-page) .filter-section { border-bottom:1px solid var(--tool-border); }
+html body:not(.game-page) footer { background:transparent; color:var(--tool-muted); border-color:var(--tool-border); }
+html body:not(.game-page) .back-btn,
+html body:not(.game-page) .skip-btn,
+html body:not(.game-page) .tab,
+html body:not(.game-page) .feed-tab,
+html body:not(.game-page) .sub-feed-tab,
+html body:not(.game-page) .league-nav a,
+html body:not(.game-page) .league-nav button,
+html body:not(.game-page) .subreddit-nav a {
+  background:var(--tool-surface-raised); color:var(--tool-text); border:1px solid var(--tool-border); border-radius:.4rem; text-decoration:none;
+}
+html body:not(.game-page) .tab.active,
+html body:not(.game-page) .feed-tab.active,
+html body:not(.game-page) .sub-feed-tab.active,
+html body:not(.game-page) .league-nav .active,
+html body:not(.game-page) .league-nav [aria-pressed="true"],
+html body:not(.game-page) .league-nav [aria-selected="true"] {
+  background:#163d42; color:#c6fff4; border-color:var(--tool-accent);
+}
+html body:not(.game-page) .refresh-btn,
+html body:not(.game-page) .comments-toggle,
+html body:not(.game-page) .collapse-btn,
+html body:not(.game-page) #back-to-top {
+  background:#16433f; color:#d6fff6; border:1px solid var(--tool-accent); border-radius:.45rem;
+}
+html body:not(.game-page) .refresh-btn:hover,
+html body:not(.game-page) .comments-toggle:hover,
+html body:not(.game-page) .collapse-btn:hover,
+html body:not(.game-page) #back-to-top:hover { background:#1d554f; color:#fff; }
+html body:not(.game-page) button:disabled,
+html body:not(.game-page) button[disabled] { background:#1b2937; color:#8798a8; border-color:#334354; }
+html body:not(.game-page) .article,
+html body:not(.game-page) .episode,
+html body:not(.game-page) .post,
+html body:not(.game-page) .comment,
+html body:not(.game-page) .weather-row,
+html body:not(.game-page) .hour,
+html body:not(.game-page) .verse-display,
+html body:not(.game-page) .standings-header,
+html body:not(.game-page) .current,
+html body:not(.game-page) .sport-section,
+html body:not(.game-page) .news-section,
+html body:not(.game-page) .selection-panel {
+  background:var(--tool-surface); color:var(--tool-text); border-color:var(--tool-border); box-shadow:none;
+}
+html body:not(.game-page) .article:active,
+html body:not(.game-page) .episode:active,
+html body:not(.game-page) .game:active,
+html body:not(.game-page) .post:hover { background:var(--tool-surface-raised); }
+html body:not(.game-page) .post-header,
+html body:not(.game-page) .verse-reference,
+html body:not(.game-page) .verse-item { border-color:var(--tool-border); }
+html body:not(.game-page) .post-content { background:#0d1824; color:var(--tool-text); }
+html body:not(.game-page) .post-title,
+html body:not(.game-page) .comment-body,
+html body:not(.game-page) .filter-section label { color:var(--tool-text); }
+html body:not(.game-page) .post-meta,
+html body:not(.game-page) .comment-meta,
+html body:not(.game-page) .comment-author,
+html body:not(.game-page) .source-count,
+html body:not(.game-page) .nav-label,
+html body:not(.game-page) .label,
+html body:not(.game-page) .last-update,
+html body:not(.game-page) .article-meta,
+html body:not(.game-page) .episode-meta,
+html body:not(.game-page) .loading,
+html body:not(.game-page) .loading-feed,
+html body:not(.game-page) .cache-info,
+html body:not(.game-page) .cached-badge,
+html body:not(.game-page) .no-standings { color:var(--tool-muted); }
+html body:not(.game-page) .source-title,
+html body:not(.game-page) .section-title,
+html body:not(.game-page) .sport-title,
+html body:not(.game-page) .now-playing-label,
+html body:not(.game-page) .episode-progress,
+html body:not(.game-page) .value,
+html body:not(.game-page) .verse-text { color:var(--tool-link); }
+html body:not(.game-page) .post-link,
+html body:not(.game-page) .comment-author { color:var(--tool-link); }
+html body:not(.game-page) .post-flair { background:#392d17; color:#ffe2a5; }
+html body:not(.game-page) .upvote-ratio,
+html body:not(.game-page) .comment-score { color:var(--tool-focus); }
+html body:not(.game-page) .stale-banner { background:#392d17; color:#ffe2a5; border-color:#806336; }
+html body:not(.game-page) .error,
+html body:not(.game-page) .error-feed,
+html body:not(.game-page) .config-error { background:#321c24; color:#ffc4c0; border-color:#8a4850; }
+html body:not(.game-page) .error { border-radius:.45rem; }
+html body:not(.game-page) .error button { margin:.4rem; }
+html body:not(.game-page) input,
+html body:not(.game-page) select,
+html body:not(.game-page) textarea,
+html body:not(.game-page) .filter-section select {
+  background:#0d1824; color:var(--tool-text); border:1px solid #526b80; border-radius:.4rem;
+}
+html body:not(.game-page) select option { background:var(--tool-surface); color:var(--tool-text); }
+html body:not(.game-page) .progress-bar { background:var(--tool-border); }
+html body:not(.game-page) .progress-fill { background:var(--tool-accent); }
+html body:not(.game-page) .tool-nav { position:static; background:var(--tool-bg); }
+
+/* Compact mode keeps iPhone touch targets full size; dense controls are for 280px and below. */
+html.compact body { font-size:14px; padding:4px; line-height:1.35; }
+html.compact .tool-nav { gap:.25rem; padding-bottom:4px; margin-bottom:4px; }
+html.compact .tool-nav a, html.compact .tool-nav button { padding:3px 7px; font-size:13px; }
+html.compact body h1 { font-size:17px; }
+html.compact .header-meta { font-size:12px; }
+html.compact .tab, html.compact .league-nav a, html.compact .league-nav button, html.compact .feed-tab, html.compact .sub-feed-tab { padding:3px 5px; font-size:12px; }
+html.compact .article, html.compact .episode, html.compact .game, html.compact .post { padding:5px; margin:4px 0; }
+html.compact .article-title, html.compact .episode-title, html.compact .team-row, html.compact .verse-text, html.compact .post-title { font-size:14px; }
+html.compact .last-update, html.compact .episode-meta, html.compact .article-meta, html.compact .game-status, html.compact .post-meta { font-size:12px; }
+html.compact .standings-table { font-size:12px; }
+html.compact .col-team { white-space:normal; }
+html.compact .post-content { max-height:8rem; overflow:auto; }
+html.compact .header-meta, html.compact .subreddit-header-top { flex-wrap:wrap; }
+@media (max-width:280px) {
+  html.compact button, html.compact select, html.compact input:not([type="checkbox"]):not([type="radio"]), html.compact textarea,
+  html.compact .tool-nav a, html.compact .tool-nav button { min-height:29px; font-size:13px; }
+  html.compact body.game-page .skeys, html.compact body.game-page .sk, html.compact body.game-page .key { min-height:29px; font-size:12px; }
+}
+@media (max-width:768px) { html body:not(.game-page) .subreddit-nav { display:none; } }
+
+/* Grid link height includes its padding and border so cards keep the real row gap. */
+.utility-home .service-grid,
+.utility-home .service-card,
+.utility-home .service-card a { box-sizing:border-box; }
+
+/* League selectors are category navigation; team and score colors remain data-owned. */
+html body:not(.game-page) .league-nav a,
+html body:not(.game-page) .league-nav button {
+  background:var(--tool-surface-raised) !important;
+  color:var(--tool-muted) !important;
+  border:1px solid var(--tool-border) !important;
+}
+html body:not(.game-page) .league-nav .active,
+html body:not(.game-page) .league-nav [aria-pressed="true"],
+html body:not(.game-page) .league-nav [aria-selected="true"] {
+  background:#163d42 !important;
+  color:#c6fff4 !important;
+  border-color:var(--tool-accent) !important;
+}
+
+/* At Nokia widths, use a native league picker once its options are ready. */
+html body.sports-page .league-picker { display:none; }
+html body.sports-page .league-picker[hidden] { display:none !important; }
+html body.sports-page .league-picker label { display:block; color:var(--tool-muted); margin:0 0 .2rem; }
+html body.sports-page .league-picker select { width:100%; }
+@media (max-width:280px) {
+  html body.sports-page.league-picker-ready .league-picker:not([hidden]) { display:block; margin:.3rem 0; }
+  html body.sports-page.league-picker-ready #league-nav { display:none !important; }
+}
