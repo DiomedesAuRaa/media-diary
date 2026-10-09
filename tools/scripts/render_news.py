@@ -4,6 +4,7 @@ import argparse
 import html
 import json
 import math
+import re
 from pathlib import Path
 
 try:
@@ -23,6 +24,36 @@ def route(category, page, mode):
     if category == "top" and page == 1 and mode == "full":
         return "news.html"
     return f"news-{category}-{page}-{mode}.html"
+
+
+def validate_rendered_routes(outputs):
+    """Fail a build if generated static navigation points at a missing page."""
+    for filename, body in outputs.items():
+        root = re.search(r'<html\b([^>]*)>', body)
+        if not root:
+            raise ValueError(f"Rendered route has no html root: {filename}")
+        attrs = root.group(1)
+        category = re.search(r'data-news-category="([a-z0-9-]+)"', attrs)
+        page = re.search(r'data-news-page="([1-9][0-9]*)"', attrs)
+        if not category or not page:
+            raise ValueError(f"Rendered route lacks category/page metadata: {filename}")
+        is_default = filename == "news.html"
+        if is_default:
+            if category.group(1) != "top" or page.group(1) != "1" or "data-compact=" in attrs:
+                raise ValueError("Default news.html must remain top page 1 with automatic compact selection")
+        else:
+            named = re.fullmatch(r"news-([a-z0-9-]+)-([1-9][0-9]*)-(full|compact)\.html", filename)
+            if not named or named.group(1) != category.group(1) or named.group(2) != page.group(1):
+                raise ValueError(f"Filename and route metadata disagree: {filename}")
+            mode = "compact" if filename.endswith("-compact.html") else "full"
+            expected = f'data-compact="{1 if mode == "compact" else 0}"'
+            if expected not in attrs or (mode == "compact") != ('class="compact"' in attrs):
+                raise ValueError(f"Compact declaration does not match static route: {filename}")
+        for href in re.findall(r'href="([^"]+)"', body):
+            if href.startswith("news") and not href.startswith("https://"):
+                target = re.split(r"[?#]", href, 1)[0]
+                if target not in outputs:
+                    raise ValueError(f"Broken static news link in {filename}: {href}")
 
 
 def render(root: Path, config_path=None):
@@ -96,7 +127,16 @@ def render(root: Path, config_path=None):
                 replacement = '<script>window.NEWS_PAGE_COUNTS=%s;</script><nav class="category-links" aria-label="News categories">%s</nav><nav class="pager" aria-label="News pages and display mode">%s</nav><div class="cache-info">Updated %s · collection attempted %s</div><main class="category%s" id="cat-%s"><h2>%s</h2>%s%s</main>' % (
                     json.dumps(page_counts), "".join(nav), "".join(links), esc(digest.get("generatedAt") or "not yet"), esc(digest["lastAttemptAt"]), " compact" if mode == "compact" else "", esc(category), esc(heading), "".join(article_markup), status)
                 page_html = template.replace(marker, replacement).replace("<!-- GENERATED_AT -->", esc(digest.get("generatedAt") or "not yet"))
+                root_attrs = f'data-news-category="{esc(category)}" data-news-page="{page}"'
+                if route(category, page, mode) != "news.html":
+                    root_attrs += f' data-compact="{1 if mode == "compact" else 0}"'
+                    if mode == "compact":
+                        root_attrs += ' class="compact"'
+                page_html, replacements = re.subn(r'<html\b([^>]*)>', lambda match: f'<html{match.group(1)} {root_attrs}>', page_html, count=1)
+                if replacements != 1:
+                    raise ValueError("news.html template must contain an html root element")
                 outputs[route(category, page, mode)] = page_html
+    validate_rendered_routes(outputs)
     for filename, body in outputs.items():
         destination = root / filename
         temporary = destination.with_suffix(destination.suffix + ".tmp")

@@ -5,6 +5,7 @@
   <meta name="description" content="A compact digest of public RSS headlines.">
   <title>News | Media Diary</title>
   <link rel="stylesheet" href="assets/tool-ui.css">
+  <script src="assets/tool-ui.js"></script>
   <style>
     :root { color-scheme: dark; }
     body { max-width:760px; margin:0 auto; padding:12px; background:#050b16; color:#d7e4f3; font:14px/1.45 system-ui,sans-serif; }
@@ -31,16 +32,41 @@
   <script>
   (() => {
     const params = new URLSearchParams(location.search);
-    if (![...params.keys()].some(key => ['category','page','compact'].includes(key))) return;
-    const category = params.get('category') || 'top';
-    const compact = params.get('compact') === '1';
-    const mode = compact ? 'compact' : 'full';
-    const requestedPage = Math.max(1, Number.parseInt(params.get('page') || '1', 10) || 1);
     const categories = ['top','general','tech','sports','business','science','devops'];
-    if (!categories.includes(category)) return;
-    const page = Math.min(requestedPage, window.NEWS_PAGE_COUNTS?.[category]?.[mode] || 1);
-    let route = category === 'top' && !compact && page === 1 ? 'news.html' : `news-${category}-${page}-${compact ? 'compact' : 'full'}.html`;
-    if (route !== location.pathname.split('/').pop()) location.replace(route + location.hash);
+    const pathMatch = location.pathname.split('/').pop().match(/^news-(top|general|tech|sports|business|science|devops)-([1-9][0-9]*)-(full|compact)\.html$/);
+    function currentState() {
+      const root = document.documentElement;
+      const pathCategory = pathMatch ? pathMatch[1] : (root.dataset.newsCategory || 'top');
+      const pathPage = pathMatch ? Number(pathMatch[2]) : (Number(root.dataset.newsPage) || 1);
+      const requestedCategory = params.get('category');
+      const category = categories.includes(requestedCategory) ? requestedCategory : pathCategory;
+      const hasCompactQuery = params.get('compact') === '1' || params.get('compact') === '0';
+      const compact = hasCompactQuery ? params.get('compact') === '1' :
+        (root.hasAttribute('data-compact') ? root.dataset.compact === '1' : root.classList.contains('compact'));
+      const rawPage = params.has('page') ? Number.parseInt(params.get('page'), 10) : pathPage;
+      const mode = compact ? 'compact' : 'full';
+      const maxPage = window.NEWS_PAGE_COUNTS?.[category]?.[mode] || 1;
+      const page = Math.max(1, Math.min(maxPage, Number.isFinite(rawPage) ? rawPage : pathPage));
+      return {category, page, compact};
+    }
+    function route(state) {
+      return state.category === 'top' && state.page === 1 && !state.compact ? 'news.html' :
+        `news-${state.category}-${state.page}-${state.compact ? 'compact' : 'full'}.html`;
+    }
+    function goToState(state) {
+      const target = route(state);
+      if (target !== location.pathname.split('/').pop()) {
+        location.replace(target + location.search + location.hash);
+      }
+    }
+    goToState(currentState());
+    document.addEventListener('tool-layout-change', () => {
+      const state = currentState();
+      state.compact = document.documentElement.classList.contains('compact');
+      const mode = state.compact ? 'compact' : 'full';
+      state.page = Math.min(state.page, window.NEWS_PAGE_COUNTS?.[state.category]?.[mode] || 1);
+      goToState(state);
+    });
   })();
   </script>
 </body>

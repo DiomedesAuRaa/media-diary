@@ -72,7 +72,8 @@
   }
   var saved = storageGet('tools_compact');
   var requested = new URLSearchParams(location.search).get('compact');
-  var compact = requested !== null ? requested === '1' : (saved === null ? window.innerWidth <= 280 : saved === 'true');
+  var declared = document.documentElement.getAttribute('data-compact');
+  var compact = requested !== null ? requested === '1' : (declared !== null ? declared === '1' : (saved === null ? window.innerWidth <= 280 : saved === 'true'));
   document.documentElement.classList.toggle('compact', compact);
   window.ToolUI = {escape:escapeText, httpURL:httpURL, setHTML:setHTML, replaceHTML:replaceHTML, text:text, storageGet:storageGet, storageSet:storageSet, fetch:fetchWithTimeout};
   document.addEventListener('DOMContentLoaded', function () {
