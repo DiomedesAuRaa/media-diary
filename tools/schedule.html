@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sports Schedule</title>
+  <link rel="stylesheet" href="assets/tool-ui.css">
+  <script src="assets/tool-ui.js"></script>
+  <style>
+    body { max-width: 58rem; }
+    .intro,.coverage,.muted { color:var(--tool-muted); }
+    .controls { display:flex; flex-wrap:wrap; align-items:end; gap:.6rem; margin:1rem 0; }
+    .controls label { display:grid; gap:.2rem; }
+    .controls select { min-width:10rem; }
+    .favorite-toggle { min-height:44px; }
+    .notice { padding:.7rem; margin:.7rem 0; border-left:3px solid var(--tool-accent); background:var(--tool-surface); }
+    .game { border:1px solid var(--tool-border); border-left:4px solid var(--tool-accent); border-radius:.4rem; background:var(--tool-surface); padding:.7rem; margin:.65rem 0; }
+    .game.favorite { border-left-color:#f2bd61; }
+    .game time,.meta { color:var(--tool-muted); font-size:.9rem; }
+    .schedule-link { display:inline-flex; align-items:center; min-height:44px; padding:.25rem .2rem; }
+    .matchup { font-size:1.05rem; font-weight:700; margin:.25rem 0; }
+    .broadcast { color:#b5eadf; }
+    .day { margin-top:1rem; }
+    .coverage-list { padding-left:1.2rem; }
+    @media (max-width:360px) { .controls>* { width:100%; } .controls select { width:100%; } }
+    @media (max-width:280px) { .schedule-link { min-height:29px; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <main id="main">
+    <h1>Upcoming sports</h1>
+    <p class="intro">Games returned by the latest league scoreboards, shown in your device’s local time. The scoreboards may not contain every game in the next 7 days.</p>
+    <div class="controls">
+      <label for="league">League
+        <select id="league"><option value="all">All leagues</option></select>
+      </label>
+      <button class="favorite-toggle" id="favorites" type="button" aria-pressed="false">Show favorite teams only</button>
+      <button id="reload" type="button">Reload snapshot</button>
+    </div>
+    <p class="coverage" id="updated" role="status"></p>
+    <div id="content" aria-live="polite"><p>Loading schedule…</p></div>
+  </main>
+  <noscript><p>Sports schedule needs JavaScript to read the validated published scoreboard snapshot.</p></noscript>
+  <script>
+  (function () {
+    'use strict';
+    var SNAPSHOT_URL = 'sports-snapshot.json';
+    var CONFIG_URL = 'sports-config.json';
+    var WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+    var config = null, snapshot = null, favoritesOnly = false, requestId = 0;
+    var content = document.getElementById('content');
+    var select = document.getElementById('league');
+    var updated = document.getElementById('updated');
+
+    function text(tag, value, className) { return ToolUI.text(tag, value, className); }
+    function localTime(value) {
+      var date = new Date(value);
+      return Number.isFinite(date.getTime()) ? date.toLocaleString([], {weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit', timeZoneName:'short'}) : 'Start time unavailable';
+    }
+    function isStale(entry, now) {
+      var generated = entry && entry.generatedAt ? Date.parse(entry.generatedAt) : NaN;
+      return !Number.isFinite(generated) || entry.status === 'stale' || now - generated > 30 * 60 * 1000;
+    }
+    function teamName(row) {
+      if (!row) return '';
+      if (row.team) return row.team.shortDisplayName || row.team.displayName || row.team.abbreviation || '';
+      if (row.athlete) return row.athlete.shortName || row.athlete.displayName || '';
+      return '';
+    }
+    function favorite(comp, terms) {
+      return (comp.competitors || []).some(function (row) {
+        return row && ToolUI.favoriteTeam(row.team, terms);
+      });
+    }
+    function safeGameURL(comp) {
+      var links = Array.isArray(comp.links) ? comp.links : [];
+      var link = links.find(function (row) { return /game(info|cast)|match|race/i.test(row.text || ''); }) || links[0];
+      return link ? ToolUI.httpURL(link.href) : null;
+    }
+    function providerSchedule(league) {
+      var paths = {
+        'football/nfl': 'nfl/scoreboard',
+        'basketball/nba': 'nba/scoreboard',
+        'baseball/mlb': 'mlb/scoreboard',
+        'hockey/nhl': 'nhl/scoreboard',
+        'football/college-football': 'college-football/scoreboard',
+        'basketball/mens-college-basketball': 'mens-college-basketball/scoreboard',
+        'racing/f1': 'f1/schedule'
+      };
+      var path = league && typeof league.espn_path === 'string' ? league.espn_path : '';
+      if (Object.prototype.hasOwnProperty.call(paths, path)) return {href:'https://www.espn.com/' + paths[path], label:'Provider schedule'};
+      var soccer = /^soccer\/([a-z0-9.]+)$/.exec(path);
+      if (soccer) return {href:'https://www.espn.com/soccer/scoreboard/_/league/' + soccer[1], label:'Provider schedule'};
+      return {href:'https://www.espn.com/', label:'Provider sports'};
+    }
+    function collect(now) {
+      var games = [], reports = [];
+      (config.leagues || []).forEach(function (league) {
+        if (!league.enabled) return;
+        var url = 'https://site.api.espn.com/apis/site/v2/sports/' + league.espn_path + '/scoreboard';
+        var entry = snapshot.entries[url];
+        if (!entry || !entry.payload || entry.status === 'unavailable') {
+          var unavailable = entry && entry.status ? ' (' + entry.status + ')' : '';
+          var provider = providerSchedule(league);
+          reports.push({name:league.name, detail:'No published scoreboard payload' + unavailable, href:provider.href, linkLabel:provider.label});
+          return;
+        }
+        var dates = [];
+        (entry.payload.events || []).forEach(function (event) {
+          (event.competitions || []).forEach(function (comp) {
+            var start = Date.parse(comp.date);
+            if (Number.isFinite(start)) dates.push(start);
+            var status = comp.status || {}, type = status.type || {};
+            var state = String(type.state || '').toLowerCase(), statusName = String(type.name || '').toLowerCase();
+            var isFinished = type.completed === true || state === 'post' || /final|postponed|cancel+ed|canceled|delayed/.test(statusName);
+            if (!Number.isFinite(start) || isFinished || start < now || start > now + WINDOW_MS) return;
+            var match = Object.assign({}, comp, {_league:league, _favorite:favorite(comp, config.priority_teams || []), _entry:entry});
+            games.push(match);
+          });
+        });
+        var nextWindowCount = (entry.payload.events || []).reduce(function (count, event) {
+          return count + (event.competitions || []).filter(function (comp) {
+            var start = Date.parse(comp.date), type = comp.status && comp.status.type || {};
+            var state = String(type.state || '').toLowerCase(), name = String(type.name || '').toLowerCase();
+            return Number.isFinite(start) && start >= now && start <= now + WINDOW_MS
+              && type.completed !== true && state !== 'post' && !/final|postponed|cancel+ed|canceled|delayed/.test(name);
+          }).length;
+        }, 0);
+        var coverage = dates.length ? 'scoreboard events dated ' + new Date(Math.min.apply(null, dates)).toLocaleDateString() + ' through ' + new Date(Math.max.apply(null, dates)).toLocaleDateString() + '; ' + nextWindowCount + ' eligible upcoming events in this 7-day window' : 'scoreboard returned no dated events';
+        var stale = isStale(entry, now);
+        coverage += ' · generated ' + (entry.generatedAt ? localTime(entry.generatedAt) : 'time unavailable');
+        if (stale) coverage += ' · saved data may be stale';
+        var provider = providerSchedule(league);
+        reports.push({name:league.name, detail:coverage, href:provider.href, linkLabel:provider.label});
+      });
+      games.sort(function (a,b) { return Date.parse(a.date) - Date.parse(b.date); });
+      return {games:games,reports:reports};
+    }
+    function gameNode(comp) {
+      var card = text('article', '', 'game' + (comp._favorite ? ' favorite' : ''));
+      var league = comp._league;
+      card.style.borderLeftColor = /^#[0-9a-f]{3,8}$/i.test(league.color || '') ? league.color : '';
+      var meta = text('div', league.name + (isStale(comp._entry, Date.now()) ? ' · saved data may be stale' : ''), 'meta');
+      var time = text('time', localTime(comp.date));
+      time.dateTime = comp.date;
+      var sides = (comp.competitors || []).map(teamName).filter(Boolean);
+      var name = comp.name || comp.shortName || 'Scheduled event';
+      var matchup = text('p', sides.length ? sides.join(' vs. ') : name, 'matchup');
+      var details = text('p', name === matchup.textContent ? '' : name, 'meta');
+      card.append(meta, time, matchup);
+      if (details.textContent) card.append(details);
+      var providers = (comp.broadcasts || []).flatMap(function (row) { return row.names || []; }).filter(Boolean);
+      if (providers.length) card.append(text('p', 'Broadcast: ' + Array.from(new Set(providers)).join(', '), 'broadcast'));
+      else card.append(text('p', 'Broadcast information not provided in this scoreboard.', 'meta'));
+      var url = safeGameURL(comp);
+      if (url) { var link = text('a', 'Game details', 'schedule-link'); link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; card.append(link); }
+      return card;
+    }
+    function render() {
+      if (!config || !snapshot) return;
+      var now = Date.now(), result = collect(now), leagueName = select.value;
+      var games = result.games.filter(function (game) {
+        return (leagueName === 'all' || game._league.name === leagueName) && (!favoritesOnly || game._favorite);
+      });
+      updated.textContent = 'Snapshot attempt: ' + (snapshot.lastAttemptAt ? localTime(snapshot.lastAttemptAt) : 'unknown') + '. Upcoming window: now through ' + new Date(now + WINDOW_MS).toLocaleDateString() + '.';
+      content.replaceChildren();
+      var caveat = text('p', 'These are upcoming games returned by the latest scoreboards; this is not a complete 7-day calendar. A missing favorite game can reflect scoreboard coverage.', 'notice');
+      content.append(caveat);
+      var next = games.find(function (game) { return game._favorite; });
+      if (next) {
+        var nextBox = text('section', '', 'notice');
+        nextBox.append(text('h2', 'Next listed favorite-team game'), gameNode(next));
+        content.append(nextBox);
+      } else content.append(text('p', 'No favorite-team game appears in the returned scoreboards for the selected league and window. Check coverage below before treating that as a schedule result.', 'notice'));
+      if (!games.length) content.append(text('p', 'No games match these filters in the returned scoreboards.'));
+      var day = '';
+      games.forEach(function (game) {
+        var dayKey = new Date(game.date).toLocaleDateString([], {weekday:'long', month:'long', day:'numeric'});
+        if (day !== dayKey) { day = dayKey; content.append(text('h2', day, 'day')); }
+        content.append(gameNode(game));
+      });
+      var heading = text('h2', 'Published scoreboard coverage');
+      var list = text('ul', '', 'coverage-list');
+      result.reports.filter(function (row) { return leagueName === 'all' || row.name === leagueName; }).forEach(function (row) {
+        var item = text('li', row.name + ': ' + row.detail + ' · ');
+        var link = text('a', row.linkLabel || 'Provider sports', 'schedule-link'); link.href = ToolUI.httpURL(row.href) || 'https://www.espn.com/'; link.target = '_blank'; link.rel = 'noopener noreferrer';
+        item.append(link); list.append(item);
+      });
+      content.append(heading, list);
+    }
+    async function load() {
+      var id = ++requestId;
+      content.replaceChildren(text('p', 'Loading schedule…'));
+      try {
+        var responses = await Promise.all([ToolUI.fetch(CONFIG_URL, {cache:'no-cache'}), ToolUI.fetch(SNAPSHOT_URL, {cache:'no-cache'})]);
+        if (responses.some(function (r) { return !r.ok; })) throw new Error('Published schedule data could not be loaded.');
+        var values = await Promise.all(responses.map(function (r) { return r.json(); }));
+        if (id !== requestId) return;
+        var nextConfig = values[0], nextSnapshot = values[1];
+        if (!nextConfig || !Array.isArray(nextConfig.leagues) || !Array.isArray(nextConfig.priority_teams)
+            || !nextSnapshot || nextSnapshot.version !== 1 || !nextSnapshot.entries) throw new Error('Published schedule data is invalid.');
+        config = nextConfig; snapshot = nextSnapshot;
+        var selected = select.value;
+        select.replaceChildren(new Option('All leagues', 'all'));
+        config.leagues.filter(function (league) { return league.enabled; }).forEach(function (league) { select.append(new Option(league.name, league.name)); });
+        if (Array.from(select.options).some(function (option) { return option.value === selected; })) select.value = selected;
+        render();
+      } catch (error) {
+        if (id !== requestId) return;
+        content.replaceChildren(text('p', (error.message || 'Could not load schedule.') + ' '));
+        var retry = text('button', 'Retry'); retry.type = 'button'; retry.addEventListener('click', load); content.lastChild.append(retry);
+      }
+    }
+    document.getElementById('favorites').addEventListener('click', function (event) {
+      favoritesOnly = !favoritesOnly; event.currentTarget.setAttribute('aria-pressed', String(favoritesOnly));
+      event.currentTarget.textContent = favoritesOnly ? 'Show all games' : 'Show favorite teams only'; render();
+    });
+    select.addEventListener('change', render);
+    document.getElementById('reload').addEventListener('click', load);
+    load();
+  }());
+  </script>
+</body>
+</html>

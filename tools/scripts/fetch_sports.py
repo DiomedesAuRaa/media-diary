@@ -64,6 +64,17 @@ def _project_competition(competition, event=None):
     result["links"] = [
         _pick(link, ("href", "text")) for link in competition.get("links", []) if isinstance(link, dict)
     ]
+    # ESPN exposes broadcast names separately from its larger geoBroadcasts object.
+    # Keep only public market labels and names for the schedule tool.
+    broadcasts = competition.get("broadcasts", [])
+    if isinstance(broadcasts, list):
+        result["broadcasts"] = [
+            {"market": row["market"], "names": row["names"]}
+            for row in broadcasts
+            if isinstance(row, dict) and isinstance(row.get("market"), str)
+            and isinstance(row.get("names"), list)
+            and all(isinstance(name, str) for name in row["names"])
+        ]
     competitors = competition.get("competitors", [])
     if not isinstance(competitors, list):
         raise ValueError("ESPN event has invalid competitor data")

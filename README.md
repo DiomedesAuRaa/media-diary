@@ -26,6 +26,14 @@ Feed generator tests need `tools/requirements-podcast.txt`. Fetch jobs must vali
 
 The games preserve their existing localStorage keys. The legacy Portfolio score JSON files are not consumed by the game pages and are not included in the combined source or artifact.
 
+## Daily tools
+
+`tools/today.html` combines current weather, six published top headlines and configured favorite-team games. Sections load independently and provide their own error/retry states. Weather defaults to Atlanta and honors the existing device-local city preference. It never requests device location automatically.
+
+`tools/schedule.html` shows upcoming games returned by the published scoreboards within the next seven days, with device-local kickoff times and broadcast names where supplied. It explicitly describes scoreboard coverage; a missing game is not evidence that a team has no upcoming fixture. League and favorite filters are ordinary native controls. Favorite aliases match complete provider team names or abbreviations, preventing Michigan State from matching Michigan.
+
+Feed health reports and their refresh scheduler remain private Mac operations files, outside this repository and the Pages artifact.
+
 ## Sports data
 
 Scores and standings read `tools/sports-snapshot.json` from this site. ESPN's browser CORS responses can block direct requests, so the scheduled sports workflow collects the configured public endpoints every 15 minutes and publishes a validated snapshot. Each endpoint retains its last successful data on refresh failure; the UI labels saved and stale data with collection times. These are periodic snapshots, not second-by-second live scores. GitHub schedule timing and deployment can add delay.

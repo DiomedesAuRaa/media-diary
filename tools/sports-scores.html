@@ -150,9 +150,7 @@
         }
 
         function isPriorityTeam(team) {
-            if (!team || !team.team) return false;
-            var name = (team.team.abbreviation || team.team.shortDisplayName || team.team.displayName || '').toUpperCase();
-            return PRIORITY_TEAMS.some(function(p) { return name.includes(p.toUpperCase()); });
+            return ToolUI.favoriteTeam(team && team.team, PRIORITY_TEAMS);
         }
 
         function renderRace(comp, isPriority, showSport) {

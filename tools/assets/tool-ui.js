@@ -41,6 +41,13 @@
   function text(tag, value, className) { var el = document.createElement(tag); el.textContent = String(value == null ? '' : value); if (className) el.className = className; return el; }
   function storageGet(key) { try { return localStorage.getItem(key); } catch (_) { return null; } }
   function storageSet(key, value) { try { localStorage.setItem(key, value); } catch (_) {} }
+  function favoriteTeam(team, aliases) {
+    if (!team || !Array.isArray(aliases)) return false;
+    function normalized(value) { return typeof value === 'string' ? value.trim().toLowerCase().replace(/\s+/g, ' ') : ''; }
+    // Nicknames such as Tigers and Lions are shared by unrelated clubs.
+    var names = ['abbreviation', 'displayName'].map(function (key) { return normalized(team[key]); }).filter(Boolean);
+    return aliases.some(function (alias) { var name = normalized(alias); return name && names.indexOf(name) !== -1; });
+  }
   function fetchWithTimeout(input, init) {
     var timeoutMs = 12000, controller = typeof window.AbortController === 'function' ? new window.AbortController() : null;
     var options = init ? Object.assign({}, init) : {};
@@ -75,7 +82,7 @@
   var declared = document.documentElement.getAttribute('data-compact');
   var compact = requested !== null ? requested === '1' : (declared !== null ? declared === '1' : (saved === null ? window.innerWidth <= 280 : saved === 'true'));
   document.documentElement.classList.toggle('compact', compact);
-  window.ToolUI = {escape:escapeText, httpURL:httpURL, setHTML:setHTML, replaceHTML:replaceHTML, text:text, storageGet:storageGet, storageSet:storageSet, fetch:fetchWithTimeout};
+  window.ToolUI = {escape:escapeText, httpURL:httpURL, setHTML:setHTML, replaceHTML:replaceHTML, text:text, storageGet:storageGet, storageSet:storageSet, favoriteTeam:favoriteTeam, fetch:fetchWithTimeout};
   document.addEventListener('DOMContentLoaded', function () {
     // Keep repeated site navigation out of the way for keyboard readers.
     var content = document.querySelector('main, h1, .hdr');

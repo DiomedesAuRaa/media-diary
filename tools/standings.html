@@ -173,9 +173,8 @@
         }
 
         // ── Helpers ────────────────────────────────────────────────────────
-        function isPriority(teamName) {
-            var upper = (teamName || '').toUpperCase();
-            return PRIORITY_TEAMS.some(function(p) { return upper.includes(p.toUpperCase()); });
+        function isPriority(team) {
+            return ToolUI.favoriteTeam(team, PRIORITY_TEAMS);
         }
 
         function getStat(stats, names) {
@@ -192,7 +191,7 @@
             var stats  = entry.stats || [];
             var name   = team.abbreviation || team.shortDisplayName || team.displayName || '?';
             var full   = team.displayName || name;
-            var prior  = isPriority(full);
+            var prior  = isPriority(team);
 
             var rank = getStat(stats, ['rank','playoffSeed','divisionrank','conferenceRank','RK']) ;
             if (rank === '-') rank = idx + 1;

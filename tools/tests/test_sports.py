@@ -37,6 +37,8 @@ def raw_payload(url):
             "shortName": "CMP",
             "status": {"type": {"name": "STATUS_FINAL", "shortDetail": "Final", "ignored": True}, "period": 4, "ignored": True},
             "links": [{"href": "https://www.espn.com/gamecast/1", "text": "Gamecast", "ignored": True}],
+            "broadcasts": [{"market": "national", "names": ["Prime Video"], "ignored": True}],
+            "geoBroadcasts": [{"media": {"shortName": "ignored"}}],
             "competitors": competitors,
             "ignored": "large vendor data omitted",
         }
@@ -78,6 +80,8 @@ class SportsSnapshotTests(unittest.TestCase):
         self.assertEqual(len(scoreboard["events"]), 2)
         self.assertEqual(scoreboard["events"][0]["competitions"][0]["competitors"][0]["score"], "0")
         self.assertNotIn("ignoredVendorBlob", scoreboard)
+        self.assertEqual(scoreboard["events"][0]["competitions"][0]["broadcasts"], [{"market": "national", "names": ["Prime Video"]}])
+        self.assertNotIn("geoBroadcasts", scoreboard["events"][0]["competitions"][0])
         self.assertEqual(scoreboard["events"][0]["competitions"][0]["competitors"][0]["team"], {
             "abbreviation": "AWY", "shortDisplayName": "Away", "displayName": "Away Team"
         })
@@ -143,6 +147,10 @@ class SportsSnapshotTests(unittest.TestCase):
         url = next(url for url in snapshot["entries"] if url.endswith("/scoreboard") and "/racing/" not in url)
         bad = copy.deepcopy(snapshot)
         del bad["entries"][url]["payload"]["events"][0]["competitions"][0]["status"]
+        with self.assertRaises(ValueError):
+            validate_sports.validate_snapshot(bad, CONFIG)
+        bad = copy.deepcopy(snapshot)
+        bad["entries"][url]["payload"]["events"][0]["competitions"][0]["broadcasts"] = [{"market": "national", "names": [42]}]
         with self.assertRaises(ValueError):
             validate_sports.validate_snapshot(bad, CONFIG)
         bad = copy.deepcopy(snapshot)

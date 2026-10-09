@@ -21,13 +21,13 @@ DIARY_DATA = (
 DIARY_PAGES = ('index.html', 'compact.html')
 DIARY_ASSETS = ('diary.css', 'diary.js')
 TOOL_PAGES = (
-    'home.html', 'bible.html', 'podcast-directory.html', 'reddit-digest.html',
+    'home.html', 'today.html', 'schedule.html', 'bible.html', 'podcast-directory.html', 'reddit-digest.html',
     'news.html', 'weather.html', 'standings.html', 'sports-scores.html',
     'games/2048.html', 'games/minesweeper.html', 'games/snake.html',
     'games/tetris.html', 'games/wordle.html',
 )
 TOOL_DATA = ('podcast-manifest.json', 'reddit-digest.json', 'sports-config.json', 'sports-snapshot.json', 'news-digest.json')
-TOOL_ASSETS = ('assets/tool-ui.css', 'assets/tool-ui.js', 'assets/game-ui.css')
+TOOL_ASSETS = ('assets/tool-ui.css', 'assets/tool-ui.js', 'assets/game-ui.css', 'assets/today.js')
 
 def assert_no_symlink_components(path: Path, boundary: Path):
     path, boundary = Path(path).absolute(), Path(boundary).absolute()

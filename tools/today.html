@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A small daily briefing with Atlanta weather, top headlines and favorite team games.">
+  <title>Today | Media Diary</title>
+  <link rel="stylesheet" href="assets/tool-ui.css">
+  <script src="assets/tool-ui.js" defer></script>
+  <script src="assets/today.js" defer></script>
+  <style>
+    body { max-width:58rem; }
+    .today-header { margin:.3rem 0 1rem; }
+    .today-header p,.section-meta,.muted { color:var(--tool-muted); }
+    .brief-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; align-items:start; }
+    .brief-card { min-width:0; padding:.85rem; background:var(--tool-surface); border:1px solid var(--tool-border); border-radius:.55rem; }
+    .brief-card h2 { margin:.1rem 0 .3rem; }
+    .brief-card p { margin:.35rem 0; }
+    .brief-card > p a,.brief-card > a { display:inline-flex; align-items:center; min-height:44px; }
+    .brief-card.weather { grid-column:1/-1; }
+    .section-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:.35rem .8rem; justify-content:space-between; }
+    .section-meta { font-size:.8rem; }
+    .weather-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.5rem; margin:.6rem 0; }
+    .weather-stat { padding:.55rem; background:var(--tool-surface-raised); border-radius:.4rem; min-width:0; }
+    .weather-stat dt { color:var(--tool-muted); font-size:.78rem; }
+    .weather-stat dd { margin:0; font-weight:700; overflow-wrap:anywhere; }
+    .story-list,.game-list { margin:.55rem 0 0; padding:0; list-style:none; }
+    .story-list li,.game-list li { padding:.55rem 0; border-top:1px solid var(--tool-border); }
+    .story-list a { display:flex; align-items:center; min-height:44px; color:var(--tool-text); font-weight:650; }
+    .story-meta { color:var(--tool-muted); font-size:.78rem; display:block; }
+    .status-line { min-height:1.5em; color:var(--tool-muted); font-size:.85rem; }
+    .error-line { color:var(--tool-danger); }
+    .retry { min-height:38px; }
+    .game-score { font-weight:700; }
+    .game-label { color:var(--tool-muted); font-size:.8rem; }
+    @media(max-width:560px) { .brief-grid { grid-template-columns:1fr; } .brief-card.weather { grid-column:auto; } .weather-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:280px) { body { padding:.4rem; font-size:13px; } .brief-card { padding:.55rem; } .weather-grid { gap:.25rem; } .weather-stat { padding:.4rem; } .retry { min-height:30px; } }
+  </style>
+</head>
+<body>
+  <main id="main">
+    <noscript><p>Today’s briefing needs JavaScript. Read the <a href="news.html">published headlines</a> or <a href="../index.html">browse the diary</a>.</p></noscript>
+    <header class="today-header">
+      <h1>Today</h1>
+      <p id="today-date">Your quick daily briefing.</p>
+    </header>
+    <div class="brief-grid">
+      <section class="brief-card weather" aria-labelledby="weather-heading">
+        <div class="section-head"><h2 id="weather-heading">Weather</h2><span class="section-meta" id="weather-location">Atlanta, Georgia</span></div>
+        <p id="weather-meta" class="section-meta">Loading current conditions…</p>
+        <dl class="weather-grid">
+          <div class="weather-stat"><dt>Now</dt><dd id="weather-now">—</dd></div>
+          <div class="weather-stat"><dt>Conditions</dt><dd id="weather-condition">—</dd></div>
+          <div class="weather-stat"><dt>Wind</dt><dd id="weather-wind">—</dd></div>
+          <div class="weather-stat"><dt>Today</dt><dd id="weather-range">—</dd></div>
+        </dl>
+        <p class="status-line" id="weather-status" role="status" aria-live="polite"></p>
+        <button class="retry" id="weather-retry" type="button" hidden>Retry weather</button>
+        <a href="weather.html">Weather details and city settings</a>
+      </section>
+      <section class="brief-card" aria-labelledby="news-heading">
+        <div class="section-head"><h2 id="news-heading">Top headlines</h2><span class="section-meta" id="news-meta">Public snapshot</span></div>
+        <p class="status-line" id="news-status" role="status" aria-live="polite">Loading headlines…</p>
+        <ul class="story-list" id="news-list"></ul>
+        <button class="retry" id="news-retry" type="button" hidden>Retry headlines</button>
+        <p><a href="news.html">More headlines</a></p>
+      </section>
+      <section class="brief-card" aria-labelledby="sports-heading">
+        <div class="section-head"><h2 id="sports-heading">Favorite teams</h2><span class="section-meta" id="sports-meta">Recent and upcoming</span></div>
+        <p class="status-line" id="sports-status" role="status" aria-live="polite">Loading games…</p>
+        <h3>Live</h3><ul class="game-list" id="live-games"></ul>
+        <h3>Recent</h3><ul class="game-list" id="recent-games"></ul>
+        <h3>Upcoming</h3><ul class="game-list" id="upcoming-games"></ul>
+        <button class="retry" id="sports-retry" type="button" hidden>Retry games</button>
+        <p><a href="sports-scores.html">All sports scores</a></p>
+        <p><a href="schedule.html">Schedule</a></p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

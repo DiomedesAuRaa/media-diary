@@ -168,11 +168,20 @@ def _validate_scoreboard(payload, racing=False):
         if not isinstance(event["competitions"], list) or not 1 <= len(event["competitions"]) <= 20:
             raise ValueError("Invalid ESPN competitions")
         for competition in event["competitions"]:
-            _has_fields(competition, {"date", "name", "shortName", "status", "links", "competitors"}, {"date", "status", "competitors"})
+            _has_fields(competition, {"date", "name", "shortName", "status", "links", "competitors", "broadcasts"}, {"date", "status", "competitors"})
             if not isinstance(competition["date"], str) or not competition["date"]:
                 raise ValueError("Competition date is required")
             _validate_status(competition.get("status"), required=True)
             _validate_links(competition.get("links"))
+            broadcasts = competition.get("broadcasts", [])
+            if not isinstance(broadcasts, list) or len(broadcasts) > 50:
+                raise ValueError("Invalid projected ESPN broadcasts")
+            for broadcast in broadcasts:
+                _has_fields(broadcast, {"market", "names"}, {"market", "names"})
+                if (not isinstance(broadcast["market"], str) or len(broadcast["market"]) > 100
+                        or not isinstance(broadcast["names"], list) or len(broadcast["names"]) > 30
+                        or any(not isinstance(name, str) or not name or len(name) > 100 for name in broadcast["names"])):
+                    raise ValueError("Invalid projected ESPN broadcast names")
             competitors = competition["competitors"]
             if not isinstance(competitors, list) or len(competitors) > 100:
                 raise ValueError("Invalid ESPN competitors")
