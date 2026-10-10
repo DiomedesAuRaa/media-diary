@@ -34,7 +34,7 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "stale"
   },
   {
@@ -71,8 +71,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT9322877000.mp3"
       }
     ],
-    "generatedAt": "2026-10-10T07:31:23+00:00",
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "generatedAt": "2026-10-10T13:58:21+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -109,8 +109,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT9250434841.mp3"
       }
     ],
-    "generatedAt": "2026-10-10T07:31:23+00:00",
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "generatedAt": "2026-10-10T13:58:21+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -147,8 +147,8 @@
         "audioUrl": "https://www.podtrac.com/pts/redirect.mp3/pdst.fm/e/traffic.megaphone.fm/FOXM6569301607.mp3"
       }
     ],
-    "generatedAt": "2026-10-10T07:31:23+00:00",
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "generatedAt": "2026-10-10T13:58:21+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -185,8 +185,8 @@
         "audioUrl": "https://mgln.ai/e/617/pscrb.fm/rss/p/traffic.megaphone.fm/LEW7653780451.mp3"
       }
     ],
-    "generatedAt": "2026-10-10T07:31:23+00:00",
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "generatedAt": "2026-10-10T13:58:21+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -223,8 +223,8 @@
         "audioUrl": "http://feeds.thevillagechurch.net/link/13086/17443022/f1010020852741829c3b964722899a4f_20260906_JP_Standalone_NEW.mp3"
       }
     ],
-    "generatedAt": "2026-10-10T07:31:23+00:00",
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "generatedAt": "2026-10-10T13:58:21+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -261,8 +261,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT3356256063.mp3"
       }
     ],
-    "generatedAt": "2026-10-10T07:31:23+00:00",
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "generatedAt": "2026-10-10T13:58:21+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -299,8 +299,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT7142023545.mp3"
       }
     ],
-    "generatedAt": "2026-10-10T07:31:23+00:00",
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "generatedAt": "2026-10-10T13:58:21+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -338,12 +338,18 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "stale"
   },
   {
     "name": "P1 with Matt and Tommy",
     "episodes": [
+      {
+        "title": "Reaction to Singapore GP sprint",
+        "date": "Oct 10, 2026",
+        "dateSort": "2026-10-10",
+        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6aca1eea7220f2050407b5b1/media.mp3"
+      },
       {
         "title": "Reaction to Singapore GP sprint qualifying",
         "date": "Oct 09, 2026",
@@ -367,16 +373,10 @@
         "date": "Oct 04, 2026",
         "dateSort": "2026-10-04",
         "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6ac27d3b4a18a6b7a38bca6f/media.mp3"
-      },
-      {
-        "title": "Reaction to Bahrain GP (in Malaysia) qualifying",
-        "date": "Oct 03, 2026",
-        "dateSort": "2026-10-03",
-        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6ac0fcaa665d97c5014c81b6/media.mp3"
       }
     ],
-    "generatedAt": "2026-10-10T07:31:23+00:00",
-    "lastAttemptAt": "2026-10-10T07:31:23+00:00",
+    "generatedAt": "2026-10-10T13:58:21+00:00",
+    "lastAttemptAt": "2026-10-10T13:58:21+00:00",
     "fetchStatus": "ok"
   }
 ]
