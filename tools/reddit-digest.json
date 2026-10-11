@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-10-10T22:59:53+00:00",
-  "generated_at": "2026-10-10 22:59:53 UTC",
+  "timestamp": "2026-10-11T14:26:03+00:00",
+  "generated_at": "2026-10-11 14:26:03 UTC",
   "subreddits_count": 12,
-  "total_posts": 60,
+  "total_posts": 65,
   "feeds": [
     "Best of Hour",
     "Best of 24h",
@@ -14,6 +14,7 @@
   "fetch_errors": {
     "cfb": [
       "Best of 24h",
+      "Best of Week",
       "Hot"
     ],
     "nfl": [
@@ -49,12 +50,12 @@
     "formula1": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week",
       "Hot"
     ],
     "MichiganWolverines": [
       "Best of Hour",
       "Best of 24h",
+      "Best of Week",
       "Hot"
     ],
     "DetroitLions": [
@@ -86,16 +87,16 @@
     "cfb": {
       "Best of Hour": [
         {
-          "title": "[Highlight] Texas vs Oklahoma: Arch Manning pick six gives Oklahoma the lead!",
-          "author": "Moose4KU",
+          "title": "Lane Kiffin says he expected Kentucky to go for its game-winning 2-point conversion in Wildcats' 35-34 OT win over No. 10 LSU",
+          "author": "Fragrant-Helicopter1",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x2sdwi/highlight_texas_vs_oklahoma_arch_manning_pick_six/",
+          "url": "https://www.reddit.com/r/CFB/comments/1x395cm/lane_kiffin_says_he_expected_kentucky_to_go_for/",
           "selftext": "",
-          "created_utc": 1791672687,
+          "created_utc": 1791727754,
           "num_comments": 0,
-          "id": "1x2sdwi",
+          "id": "1x395cm",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x2sdwi/highlight_texas_vs_oklahoma_arch_manning_pick_six/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x395cm/lane_kiffin_says_he_expected_kentucky_to_go_for/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -103,16 +104,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "[Postgame Thread] Notre Dame Defeats Stanford 58-7",
-          "author": "CFB_Referee",
+          "title": "Steve Sarkisian will still call plays, not considering staff changes after Texas' loss to Oklahoma",
+          "author": "BigDanRTW",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x2sc99/postgame_thread_notre_dame_defeats_stanford_587/",
+          "url": "https://www.reddit.com/r/CFB/comments/1x397z6/steve_sarkisian_will_still_call_plays_not/",
           "selftext": "",
-          "created_utc": 1791672558,
+          "created_utc": 1791727946,
           "num_comments": 0,
-          "id": "1x2sc99",
+          "id": "1x397z6",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x2sc99/postgame_thread_notre_dame_defeats_stanford_587/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x397z6/steve_sarkisian_will_still_call_plays_not/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -120,16 +121,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "[Postgame Thread] Navy Defeats Tulsa 34-26",
-          "author": "CFB_Referee",
+          "title": "[D3football] No. 2 Wheaton tops No. 1 North Central, 13-10 in a dramatic rally in Naperville",
+          "author": "Davidellias",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x2s7d2/postgame_thread_navy_defeats_tulsa_3426/",
+          "url": "https://www.reddit.com/r/CFB/comments/1x38o85/d3football_no_2_wheaton_tops_no_1_north_central/",
           "selftext": "",
-          "created_utc": 1791672168,
+          "created_utc": 1791726508,
           "num_comments": 0,
-          "id": "1x2s7d2",
+          "id": "1x38o85",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x2s7d2/postgame_thread_navy_defeats_tulsa_3426/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x38o85/d3football_no_2_wheaton_tops_no_1_north_central/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -137,16 +138,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "[Postgame Thread] North Texas Defeats Charlotte 50-10",
-          "author": "CFB_Referee",
+          "title": "Week 6 List of Undefeated FBS Teams (85->52->35->22->15->9)",
+          "author": "WeirdIndividualGuy",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x2s42z/postgame_thread_north_texas_defeats_charlotte_5010/",
+          "url": "https://www.reddit.com/r/CFB/comments/1x39fv7/week_6_list_of_undefeated_fbs_teams_85523522159/",
           "selftext": "",
-          "created_utc": 1791671913,
+          "created_utc": 1791728496,
           "num_comments": 0,
-          "id": "1x2s42z",
+          "id": "1x39fv7",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x2s42z/postgame_thread_north_texas_defeats_charlotte_5010/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x39fv7/week_6_list_of_undefeated_fbs_teams_85523522159/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -154,16 +155,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "[Postgame Thread] Western Michigan Defeats Kent State 38-7",
+          "title": "Serious Postgame Discussion Thread, 2026-10-11",
           "author": "CFB_Referee",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x2s8qa/postgame_thread_western_michigan_defeats_kent/",
+          "url": "https://www.reddit.com/r/CFB/comments/1x38xgk/serious_postgame_discussion_thread_20261011/",
           "selftext": "",
-          "created_utc": 1791672277,
+          "created_utc": 1791727206,
           "num_comments": 0,
-          "id": "1x2s8qa",
+          "id": "1x38xgk",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x2s8qa/postgame_thread_western_michigan_defeats_kent/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x38xgk/serious_postgame_discussion_thread_20261011/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -709,7 +710,93 @@
     "formula1": {
       "Best of Hour": [],
       "Best of 24h": [],
-      "Best of Week": [],
+      "Best of Week": [
+        {
+          "title": "[Valtteri Bottas] Yes I’m riding to Singapore",
+          "author": "memloh",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1wyhl2o/valtteri_bottas_yes_im_riding_to_singapore/",
+          "selftext": "",
+          "created_utc": 1791227991,
+          "num_comments": 0,
+          "id": "1wyhl2o",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1wyhl2o/valtteri_bottas_yes_im_riding_to_singapore/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Valtteri Bottas] 419.67km commute; Well arrived in Singapore this arvo.",
+          "author": "memloh",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1x0dnbn/valtteri_bottas_41967km_commute_well_arrived_in/",
+          "selftext": "",
+          "created_utc": 1791421321,
+          "num_comments": 0,
+          "id": "1x0dnbn",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1x0dnbn/valtteri_bottas_41967km_commute_well_arrived_in/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "An exhausted Lewis Hamilton after Sepang Podium",
+          "author": "femmd",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1wxwwm3/an_exhausted_lewis_hamilton_after_sepang_podium/",
+          "selftext": "",
+          "created_utc": 1791166166,
+          "num_comments": 0,
+          "id": "1wxwwm3",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1wxwwm3/an_exhausted_lewis_hamilton_after_sepang_podium/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[The Race] What Bottas saw when he cycled from Malaysia to Singapore.",
+          "author": "LightningMcqueen2011",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1x0qzds/the_race_what_bottas_saw_when_he_cycled_from/",
+          "selftext": "",
+          "created_utc": 1791466224,
+          "num_comments": 0,
+          "id": "1x0qzds",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1x0qzds/the_race_what_bottas_saw_when_he_cycled_from/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Valterri Bottas has completed his cycling trip to Singapore",
+          "author": "Objective-Pizza5920",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1wzrxyx/valterri_bottas_has_completed_his_cycling_trip_to/",
+          "selftext": "",
+          "created_utc": 1791364749,
+          "num_comments": 0,
+          "id": "1wzrxyx",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1wzrxyx/valterri_bottas_has_completed_his_cycling_trip_to/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Hot": []
     },
     "MichiganWolverines": {
@@ -1164,270 +1251,270 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-10-10T22:59:53+00:00",
+  "last_attempt_at": "2026-10-11T14:26:03+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "ok",
-        "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "generated_at": "2026-10-11T14:26:03+00:00",
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "nfl": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "nba": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "baseball": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-09T23:37:28+00:00",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "CoDCompetitive": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "soccer": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "formula1": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "status": "ok",
+        "generated_at": "2026-10-11T14:26:03+00:00",
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "MichiganWolverines": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "DetroitLions": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "DetroitPistons": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "movies": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-09T23:37:28+00:00",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     },
     "BillSimmons": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-10T22:59:53+00:00"
+        "last_attempt_at": "2026-10-11T14:26:03+00:00"
       }
     }
   }
