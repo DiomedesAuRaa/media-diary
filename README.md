@@ -36,6 +36,8 @@ Feed health reports and their refresh scheduler remain private Mac operations fi
 
 ## Sports data
 
-Scores and standings read `tools/sports-snapshot.json` from this site. ESPN's browser CORS responses can block direct requests, so the scheduled sports workflow collects the configured public endpoints every 15 minutes and publishes a validated snapshot. Each endpoint retains its last successful data on refresh failure; the UI labels saved and stale data with collection times. These are periodic snapshots, not second-by-second live scores. GitHub schedule timing and deployment can add delay.
+Scores fetch current scoreboards directly from ESPN's browser-accessible `site.web.api.espn.com` host when opened, with at most three requests running at once. Selected leagues and favorite games that are live or starting soon can refresh every minute while the page is visible. Retrieval times describe when the browser received data. Failed requests retain saved results or fall back to `tools/sports-snapshot.json`, with errors and original timestamps shown. No new public server or API key is required.
+
+Standings, Today and schedule still read the published snapshot. The sports workflow requests a refresh every 15 minutes, but GitHub scheduling and deployment can add substantial delay. Each endpoint retains its last successful data on refresh failure. The direct ESPN routes are unofficial and can change; the snapshot remains an important fallback.
 
 The collector uses no provider credentials and keeps only the fields needed by the renderers. Sports, news, podcast, Reddit and ordinary Pages deployments share one publication queue and always build the full current site. Only Actions owns these schedules; a future Mac collector must replace that ownership rather than create a second publisher. Keep private APIs, runtime state and credentials in the private backend/deployment workspace.

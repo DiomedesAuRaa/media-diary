@@ -36,6 +36,7 @@ class PublicBuildTests(unittest.TestCase):
         self.assertIn('tools/today.html', files)
         self.assertIn('tools/schedule.html', files)
         self.assertIn('tools/assets/today.js', files)
+        self.assertIn('tools/assets/live-scores.js', files)
         self.assertTrue((self.output/'tools/news.html').is_file())
         self.assertEqual({p for p in files if p.endswith('.json')}, {
             'movies.json','books.json','tv.json','movies_watchlist.json','books_watchlist.json','tv_watchlist.json',

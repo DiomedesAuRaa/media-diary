@@ -85,6 +85,7 @@
             var res = await ToolUI.fetch(CONFIG_URL + '?t=' + Date.now());
             if (!res.ok) throw new Error('HTTP ' + res.status);
             var cfg = await res.json();
+            window.SPORTS_CONFIG_ROOT = cfg;
             PRIORITY_TEAMS = cfg.priority_teams || [];
             SPORTS_CONFIG  = {};
             (cfg.leagues || []).forEach(function(league) {
@@ -131,12 +132,17 @@
             return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
         }
 
+        function isGameLive(comp) {
+            var type = comp && comp.status && comp.status.type;
+            return !!(type && (type.name === 'STATUS_IN_PROGRESS' || type.state === 'in'));
+        }
+
         function getGameStatus(comp) {
             var s = comp && comp.status ? comp.status : {};
             var type = s.type || {};
             var typeName = type.name || '';
             var gameDate = comp && comp.date ? formatDate(comp.date) : '';
-            if (typeName === 'STATUS_IN_PROGRESS')
+            if (isGameLive(comp))
                 return '<span class="live">LIVE - ' + ToolUI.escape((type.shortDetail || '')) + '</span>';
             if (typeName === 'STATUS_FINAL') {
                 var f = type.shortDetail || 'FINAL';
@@ -154,7 +160,7 @@
         }
 
         function renderRace(comp, isPriority, showSport) {
-            var isLive  = !!(comp.status && comp.status.type && comp.status.type.name === 'STATUS_IN_PROGRESS');
+            var isLive  = isGameLive(comp);
             var status  = getGameStatus(comp);
             var pLabel  = isPriority ? '<span style="color:#ffd700;font-weight:bold;">* </span>' : '';
             var sLabel  = (showSport && comp._sportName) ? '<span style="color:#0ff;font-size:10px;">[' + ToolUI.escape(comp._sportName) + (comp._snapshotStatus === 'stale' ? ' · saved data' : '') + ']</span> ' : '';
@@ -199,7 +205,7 @@
             var home = competitors.find(function(t) { return t && t.homeAway === 'home'; });
             var away = competitors.find(function(t) { return t && t.homeAway === 'away'; });
             if (!home || !away || !home.team || !away.team) return '';
-            var isLive = !!(comp.status && comp.status.type && comp.status.type.name === 'STATUS_IN_PROGRESS');
+            var isLive = isGameLive(comp);
             var pStyle = isPriority ? 'border-left:3px solid #ffd700;background:#1a1a00;' : '';
             var pLabel = isPriority ? '<span style="color:#ffd700;font-weight:bold;">* </span>' : '';
             var sLabel = (showSport && comp._sportName) ? '<span style="color:#0ff;font-size:10px;">[' + ToolUI.escape(comp._sportName) + (comp._snapshotStatus === 'stale' ? ' · saved data' : '') + ']</span> ' : '';
@@ -245,7 +251,7 @@
                     }
                 });
                 if (events.length > 0 && validEventCount === 0) throw new Error('Snapshot entries do not contain usable events');
-                return { priorityGames: priorityGames, regularGames: regularGames, hasGames: validEventCount > 0, invalidEventCount: invalidEventCount, sportName: sportName, color: config.color, status: isSnapshotStale(entry) ? 'stale' : 'ok', generatedAt: entry.generatedAt, lastAttemptAt: entry.lastAttemptAt };
+                return { priorityGames: priorityGames, regularGames: regularGames, hasGames: validEventCount > 0, invalidEventCount: invalidEventCount, sportName: sportName, color: config.color, status: isSnapshotStale(entry) ? 'stale' : 'ok', generatedAt: entry.generatedAt, lastAttemptAt: entry.lastAttemptAt, retrievedAt: entry.retrievedAt };
             } catch(err) {
                 var snapshotEntry = SPORTS_SNAPSHOT && SPORTS_SNAPSHOT.entries[config.url];
                 return { priorityGames: [], regularGames: [], hasGames: false, sportName: sportName, color: config.color, error: true, status: snapshotEntry && snapshotEntry.status || 'unavailable', generatedAt: snapshotEntry && snapshotEntry.generatedAt, lastAttemptAt: snapshotEntry && snapshotEntry.lastAttemptAt };
@@ -276,7 +282,7 @@
             var more = count < result.regularGames.length
                 ? '<button type="button" data-show-more="' + index + '">Show 10 more (' + (result.regularGames.length - count) + ' left)</button>'
                 : '';
-            var staleNote = result.status === 'stale' ? '<p class="last-update">Showing saved data from ' + ToolUI.escape(formatSnapshotTime(result.generatedAt)) + '.</p>' : '';
+            var staleNote = result.status === 'stale' ? '<p class="last-update">Showing saved data from ' + ToolUI.escape(formatSnapshotTime(result.generatedAt)) + '.</p>' : (result.retrievedAt ? '<p class="last-update">Retrieved ' + ToolUI.escape(formatSnapshotTime(result.retrievedAt)) + '.</p>' : '');
             var invalidNote = result.invalidEventCount ? '<p class="last-update" role="status">Some incomplete game records were skipped.</p>' : '';
             return '<div class="sport-section" id="' + sectionId + '"><div class="sport-title" style="border-left:3px solid ' + result.color + ';padding-left:5px;">' + ToolUI.escape(result.sportName) + '</div>' + staleNote + invalidNote + games + more + '</div>';
         }
@@ -324,7 +330,6 @@
                 if (requestVersion !== scoresRequestVersion || !snapshot) return;
                 var results = Object.entries(SPORTS_CONFIG).map(function(e) { return fetchSportScores(e[0], e[1]); });
                 scoreResults = results;
-                expandedScoreCounts = {};
                 var allPriority = [];
                 results.forEach(function(r) { allPriority = allPriority.concat(r.priorityGames); });
                 var failedResults = results.filter(function(r) { return r.error; });
@@ -353,6 +358,7 @@
                 } else if (failedResults.length > 0 || staleResults.length > 0) {
                     html = '<p class="error" role="status">' + (failedResults.length ? 'Some league data is unavailable.' : '') + (failedResults.length && staleResults.length ? ' ' : '') + (staleResults.length ? 'Some leagues are using saved data.' : '') + ' Use Refresh to check again.</p>' + html;
                 }
+                if (LIVE_SCORE_ERRORS.length) html = '<p class="error" role="status">Live scores could not be checked for ' + ToolUI.escape(LIVE_SCORE_ERRORS.join(', ')) + '; showing saved data where available.</p>' + html;
                 ToolUI.setHTML(content, html);
                 content.setAttribute('aria-busy', 'false');
                 buildLeagueNav(results, allPriority.length > 0);
@@ -417,7 +423,9 @@
 
         function syncLeaguePicker() {
             var picker = document.getElementById('league-picker');
-            var target = decodeURIComponent(location.hash.slice(1));
+            var target;
+            try { target = decodeURIComponent(location.hash.slice(1)); }
+            catch(e) { target = ''; }
             picker.value = Array.from(picker.options).some(function(option) { return option.value === target; }) ? target : '';
         }
         document.getElementById('league-picker').addEventListener('change', function() {
@@ -439,7 +447,6 @@
 
 
 
-        document.getElementById('refresh-scores').addEventListener('click', function() { loadScores(true); });
         async function retryConfigLoad() {
             try { await loadConfig(); loadScores(true); }
             catch(retryErr) {
@@ -447,17 +454,7 @@
                 document.getElementById('retry-config').addEventListener('click', retryConfigLoad);
             }
         }
-        (async function() {
-            try {
-                await loadConfig();
-            } catch(err) {
-                ToolUI.setHTML(document.getElementById('content'), '<div class="config-error">Could not load sports-config.json: ' + ToolUI.escape(err.message) + '. <button type="button" id="retry-config">Retry</button></div>');
-                document.getElementById('retry-config').addEventListener('click', retryConfigLoad);
-                return;
-            }
-            loadScores();
-            setInterval(function() { loadScores(true); }, 120000);
-        })();
     </script>
+    <script src="assets/live-scores.js"></script>
 </body>
 </html>

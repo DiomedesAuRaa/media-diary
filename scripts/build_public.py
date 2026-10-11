@@ -27,7 +27,7 @@ TOOL_PAGES = (
     'games/tetris.html', 'games/wordle.html',
 )
 TOOL_DATA = ('podcast-manifest.json', 'reddit-digest.json', 'sports-config.json', 'sports-snapshot.json', 'news-digest.json')
-TOOL_ASSETS = ('assets/tool-ui.css', 'assets/tool-ui.js', 'assets/game-ui.css', 'assets/today.js')
+TOOL_ASSETS = ('assets/tool-ui.css', 'assets/tool-ui.js', 'assets/game-ui.css', 'assets/today.js', 'assets/live-scores.js')
 
 def assert_no_symlink_components(path: Path, boundary: Path):
     path, boundary = Path(path).absolute(), Path(boundary).absolute()
