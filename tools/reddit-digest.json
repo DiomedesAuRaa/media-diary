@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-10-12T17:03:43+00:00",
-  "generated_at": "2026-10-12 17:03:43 UTC",
+  "timestamp": "2026-10-13T01:40:22+00:00",
+  "generated_at": "2026-10-13 01:40:22 UTC",
   "subreddits_count": 12,
-  "total_posts": 71,
+  "total_posts": 81,
   "feeds": [
     "Best of Hour",
     "Best of 24h",
@@ -13,6 +13,7 @@
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
     "cfb": [
+      "Best of Hour",
       "Best of 24h",
       "Best of Week",
       "Hot"
@@ -24,6 +25,7 @@
       "Hot"
     ],
     "nba": [
+      "Best of Hour",
       "Best of 24h",
       "Best of Week",
       "Hot"
@@ -36,7 +38,6 @@
     ],
     "CoDCompetitive": [
       "Best of Hour",
-      "Best of 24h",
       "Best of Week",
       "Hot"
     ],
@@ -66,6 +67,7 @@
     ],
     "DetroitPistons": [
       "Best of Hour",
+      "Best of 24h",
       "Best of Week",
       "Hot"
     ],
@@ -77,7 +79,6 @@
     ],
     "BillSimmons": [
       "Best of Hour",
-      "Best of 24h",
       "Best of Week",
       "Hot"
     ]
@@ -684,7 +685,93 @@
     },
     "CoDCompetitive": {
       "Best of Hour": [],
-      "Best of 24h": [],
+      "Best of 24h": [
+        {
+          "title": "Maven’s ex was not surprised",
+          "author": "DickSuckingGoat",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x4dhh6/mavens_ex_was_not_surprised/",
+          "selftext": "",
+          "created_utc": 1791838045,
+          "num_comments": 0,
+          "id": "1x4dhh6",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x4dhh6/mavens_ex_was_not_surprised/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Afro completed his first 5k run. Feel like I've been seeing a lot of Cod players going on runs lately IDK.",
+          "author": "leggitt27",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x41cqt/afro_completed_his_first_5k_run_feel_like_ive/",
+          "selftext": "",
+          "created_utc": 1791810352,
+          "num_comments": 0,
+          "id": "1x41cqt",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x41cqt/afro_completed_his_first_5k_run_feel_like_ive/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Rumors are flying around that Falcons are having financial issues",
+          "author": "Frayzar1",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x45fuh/rumors_are_flying_around_that_falcons_are_having/",
+          "selftext": "",
+          "created_utc": 1791820168,
+          "num_comments": 0,
+          "id": "1x45fuh",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x45fuh/rumors_are_flying_around_that_falcons_are_having/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "The CDL have announced the monster invitational.",
+          "author": "leggitt27",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x4adom/the_cdl_have_announced_the_monster_invitational/",
+          "selftext": "",
+          "created_utc": 1791831030,
+          "num_comments": 0,
+          "id": "1x4adom",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x4adom/the_cdl_have_announced_the_monster_invitational/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "LA Thieves part ways with Nium for the 2027 season",
+          "author": "arunvenu_",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x4e6lg/la_thieves_part_ways_with_nium_for_the_2027_season/",
+          "selftext": "",
+          "created_utc": 1791839674,
+          "num_comments": 0,
+          "id": "1x4e6lg",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x4e6lg/la_thieves_part_ways_with_nium_for_the_2027_season/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of Week": [],
       "Hot": []
     },
@@ -1348,276 +1435,362 @@
     },
     "BillSimmons": {
       "Best of Hour": [],
-      "Best of 24h": [],
+      "Best of 24h": [
+        {
+          "title": "Zach Lowe throwing shade at users of ChatGBT",
+          "author": "High-Letter",
+          "score": 0,
+          "url": "https://www.reddit.com/r/billsimmons/comments/1x45075/zach_lowe_throwing_shade_at_users_of_chatgbt/",
+          "selftext": "",
+          "created_utc": 1791819182,
+          "num_comments": 0,
+          "id": "1x45075",
+          "subreddit": "BillSimmons",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x45075/zach_lowe_throwing_shade_at_users_of_chatgbt/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Bill deciding to call them the Redskins all of the sudden",
+          "author": "justgotpregnant",
+          "score": 0,
+          "url": "https://www.reddit.com/r/billsimmons/comments/1x4hw8f/bill_deciding_to_call_them_the_redskins_all_of/",
+          "selftext": "",
+          "created_utc": 1791849540,
+          "num_comments": 0,
+          "id": "1x4hw8f",
+          "subreddit": "BillSimmons",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x4hw8f/bill_deciding_to_call_them_the_redskins_all_of/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "I don't what to say about it, Minnesota is 5-O, congrats",
+          "author": "asscendedmaster",
+          "score": 0,
+          "url": "https://www.reddit.com/r/billsimmons/comments/1x448f5/i_dont_what_to_say_about_it_minnesota_is_5o/",
+          "selftext": "",
+          "created_utc": 1791817396,
+          "num_comments": 0,
+          "id": "1x448f5",
+          "subreddit": "BillSimmons",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x448f5/i_dont_what_to_say_about_it_minnesota_is_5o/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Say what you want about Cowherd but his backwards hat is an all time sports take that continues to age like wine",
+          "author": "SouthIsland48",
+          "score": 0,
+          "url": "https://www.reddit.com/r/billsimmons/comments/1x4bdyf/say_what_you_want_about_cowherd_but_his_backwards/",
+          "selftext": "",
+          "created_utc": 1791833266,
+          "num_comments": 0,
+          "id": "1x4bdyf",
+          "subreddit": "BillSimmons",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x4bdyf/say_what_you_want_about_cowherd_but_his_backwards/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Cousin Sal hearing his co-host's daughter was offered a 'Pickle Party'",
+          "author": "SceneOfShadows",
+          "score": 0,
+          "url": "https://www.reddit.com/r/billsimmons/comments/1x4cwdw/cousin_sal_hearing_his_cohosts_daughter_was/",
+          "selftext": "",
+          "created_utc": 1791836687,
+          "num_comments": 0,
+          "id": "1x4cwdw",
+          "subreddit": "BillSimmons",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x4cwdw/cousin_sal_hearing_his_cohosts_daughter_was/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of Week": [],
       "Hot": []
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-10-12T17:03:43+00:00",
+  "last_attempt_at": "2026-10-13T01:40:22+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-12T17:03:43+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "nfl": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "nba": {
       "Best of Hour": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-12T17:03:43+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "baseball": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "CoDCompetitive": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "status": "ok",
+        "generated_at": "2026-10-13T01:40:22+00:00",
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "soccer": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "formula1": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "MichiganWolverines": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "DetroitLions": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "DetroitPistons": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-12T17:03:43+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "movies": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     },
     "BillSimmons": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of 24h": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "status": "ok",
+        "generated_at": "2026-10-13T01:40:22+00:00",
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-12T17:03:43+00:00"
+        "last_attempt_at": "2026-10-13T01:40:22+00:00"
       }
     }
   }
