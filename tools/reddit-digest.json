@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-10-14T22:44:24+00:00",
-  "generated_at": "2026-10-14 22:44:24 UTC",
+  "timestamp": "2026-10-15T12:54:35+00:00",
+  "generated_at": "2026-10-15 12:54:35 UTC",
   "subreddits_count": 12,
-  "total_posts": 100,
+  "total_posts": 110,
   "feeds": [
     "Best of Hour",
     "Best of 24h",
@@ -13,6 +13,7 @@
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
     "cfb": [
+      "Best of Hour",
       "Best of 24h",
       "Best of Week",
       "Hot"
@@ -26,8 +27,7 @@
     "nba": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week",
-      "Hot"
+      "Best of Week"
     ],
     "baseball": [
       "Best of Hour",
@@ -37,6 +37,7 @@
     ],
     "CoDCompetitive": [
       "Best of Hour",
+      "Best of 24h",
       "Best of Week",
       "Hot"
     ],
@@ -67,8 +68,7 @@
     "DetroitPistons": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week",
-      "Hot"
+      "Best of Week"
     ],
     "movies": [
       "Best of Hour",
@@ -79,6 +79,7 @@
     "BillSimmons": [
       "Best of Hour",
       "Best of 24h",
+      "Best of Week",
       "Hot"
     ]
   },
@@ -588,7 +589,93 @@
           "comments": []
         }
       ],
-      "Hot": []
+      "Hot": [
+        {
+          "title": "Weekly Friday Self-Promotion and Fan Art Thread",
+          "author": "NBA_MOD",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x1jhh8/weekly_friday_selfpromotion_and_fan_art_thread/",
+          "selftext": "",
+          "created_utc": 1791547211,
+          "num_comments": 0,
+          "id": "1x1jhh8",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x1jhh8/weekly_friday_selfpromotion_and_fan_art_thread/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Daily Discussion Thread + Game Thread Index",
+          "author": "nba-scores",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x5sr7m/daily_discussion_thread_game_thread_index/",
+          "selftext": "",
+          "created_utc": 1791988215,
+          "num_comments": 0,
+          "id": "1x5sr7m",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x5sr7m/daily_discussion_thread_game_thread_index/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Blake Griffin says that, at the end of the day, basketball players are just people playing a game that some kids made up to kill time in gym class, and that they shouldn't go around acting like they're God's chosen ones.",
+          "author": "Existing-Sky9914",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x6ij39/blake_griffin_says_that_at_the_end_of_the_day/",
+          "selftext": "",
+          "created_utc": 1792061636,
+          "num_comments": 0,
+          "id": "1x6ij39",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x6ij39/blake_griffin_says_that_at_the_end_of_the_day/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Wemby Went Perfect in the Guess The Shot Challenge",
+          "author": "New-Process-6463",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x69eta/wemby_went_perfect_in_the_guess_the_shot_challenge/",
+          "selftext": "",
+          "created_utc": 1792029358,
+          "num_comments": 0,
+          "id": "1x69eta",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x69eta/wemby_went_perfect_in_the_guess_the_shot_challenge/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Scottie Barnes’ pants fall down during a pre-game 360 dunk.",
+          "author": "ToronoRapture",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x61r59/scottie_barnes_pants_fall_down_during_a_pregame/",
+          "selftext": "",
+          "created_utc": 1792008699,
+          "num_comments": 0,
+          "id": "1x61r59",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x61r59/scottie_barnes_pants_fall_down_during_a_pregame/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ]
     },
     "baseball": {
       "Best of Hour": [],
@@ -1348,7 +1435,93 @@
         }
       ],
       "Best of Week": [],
-      "Hot": []
+      "Hot": [
+        {
+          "title": "🏀 GIVEAWAY: 2-5 LOWER BOWL TICKETS to the Pistons Season Opener vs. the Celtics! 🎟️",
+          "author": "KarimFF7",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1www2kt/giveaway_25_lower_bowl_tickets_to_the_pistons/",
+          "selftext": "",
+          "created_utc": 1791056581,
+          "num_comments": 0,
+          "id": "1www2kt",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1www2kt/giveaway_25_lower_bowl_tickets_to_the_pistons/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "12 ft tall Jalen \"Paul Bunyan\" Duren and some smallfry",
+          "author": "liglet",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x6kju2/12_ft_tall_jalen_paul_bunyan_duren_and_some/",
+          "selftext": "",
+          "created_utc": 1792068003,
+          "num_comments": 0,
+          "id": "1x6kju2",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x6kju2/12_ft_tall_jalen_paul_bunyan_duren_and_some/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Secret r/DetroitPistons mod",
+          "author": "SuperDizz",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x68ran/secret_rdetroitpistons_mod/",
+          "selftext": "",
+          "created_utc": 1792027380,
+          "num_comments": 0,
+          "id": "1x68ran",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x68ran/secret_rdetroitpistons_mod/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Jalen Duren with 24 pts in the first half going 8-9 from the field and 8-8 at the FT line",
+          "author": "SappyGilmore",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x6bzsq/jalen_duren_with_24_pts_in_the_first_half_going/",
+          "selftext": "",
+          "created_utc": 1792037489,
+          "num_comments": 0,
+          "id": "1x6bzsq",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x6bzsq/jalen_duren_with_24_pts_in_the_first_half_going/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "I know its preseason. But we look so good.",
+          "author": "LTgolf17",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x6aliq/i_know_its_preseason_but_we_look_so_good/",
+          "selftext": "",
+          "created_utc": 1792032999,
+          "num_comments": 0,
+          "id": "1x6aliq",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x6aliq/i_know_its_preseason_but_we_look_so_good/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ]
     },
     "movies": {
       "Best of Hour": [],
@@ -1858,270 +2031,270 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-10-14T22:44:24+00:00",
+  "last_attempt_at": "2026-10-15T12:54:35+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "nfl": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "nba": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-12T17:03:43+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "status": "ok",
+        "generated_at": "2026-10-15T12:54:35+00:00",
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "baseball": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "CoDCompetitive": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "soccer": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T13:08:12+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "formula1": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "MichiganWolverines": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "DetroitLions": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "DetroitPistons": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-12T17:03:43+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "status": "ok",
+        "generated_at": "2026-10-15T12:54:35+00:00",
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "movies": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     },
     "BillSimmons": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-13T23:28:23+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-13T01:40:22+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Best of Week": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-14T22:44:24+00:00"
+        "last_attempt_at": "2026-10-15T12:54:35+00:00"
       }
     }
   }
