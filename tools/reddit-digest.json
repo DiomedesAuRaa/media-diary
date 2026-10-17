@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-10-16T22:15:23+00:00",
-  "generated_at": "2026-10-16 22:15:23 UTC",
+  "timestamp": "2026-10-17T11:47:37+00:00",
+  "generated_at": "2026-10-17 11:47:37 UTC",
   "subreddits_count": 12,
-  "total_posts": 123,
+  "total_posts": 119,
   "feeds": [
     "Best of Hour",
     "Best of 24h",
@@ -26,7 +26,6 @@
     "nba": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week",
       "Hot"
     ],
     "baseball": [
@@ -36,6 +35,7 @@
       "Hot"
     ],
     "CoDCompetitive": [
+      "Best of Hour",
       "Best of 24h",
       "Best of Week",
       "Hot"
@@ -67,8 +67,7 @@
     "DetroitPistons": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week",
-      "Hot"
+      "Best of Week"
     ],
     "movies": [
       "Best of Hour",
@@ -78,6 +77,7 @@
     ],
     "BillSimmons": [
       "Best of Hour",
+      "Best of 24h",
       "Best of Week",
       "Hot"
     ]
@@ -86,84 +86,16 @@
     "cfb": {
       "Best of Hour": [
         {
-          "title": "[Duarte] Houston had three players named to the AP’s Midseason All-America team — center Anthony Boswell and left guard Shadre Hurst on first team and tight end Patrick Overmyer to second team. UH’s three selections are the most in Big 12 and tied for the most nationally with UCLA.",
-          "author": "ohitsthedeathstar",
+          "title": "WAKE THE FREAKING FALL RAIN UP IT'S GAMEDAY!",
+          "author": "JohnRamos85",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x7sscc/duarte_houston_had_three_players_named_to_the_aps/",
+          "url": "https://www.reddit.com/r/CFB/comments/1x8881f/wake_the_freaking_fall_rain_up_its_gameday/",
           "selftext": "",
-          "created_utc": 1792186687,
+          "created_utc": 1792237536,
           "num_comments": 0,
-          "id": "1x7sscc",
+          "id": "1x8881f",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x7sscc/duarte_houston_had_three_players_named_to_the_aps/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Nakos] Florida expected to start QB Tramell Jones at Texas",
-          "author": "Arkehn",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x7sxx0/nakos_florida_expected_to_start_qb_tramell_jones/",
-          "selftext": "",
-          "created_utc": 1792187094,
-          "num_comments": 0,
-          "id": "1x7sxx0",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x7sxx0/nakos_florida_expected_to_start_qb_tramell_jones/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Natty or Bust Mentality",
-          "author": "Tony_Paychecks",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x7scrr/natty_or_bust_mentality/",
-          "selftext": "",
-          "created_utc": 1792185589,
-          "num_comments": 0,
-          "id": "1x7scrr",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x7scrr/natty_or_bust_mentality/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Drake University unveils statue of football star Johnny Bright",
-          "author": "Windows_66",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x7t4nq/drake_university_unveils_statue_of_football_star/",
-          "selftext": "",
-          "created_utc": 1792187576,
-          "num_comments": 0,
-          "id": "1x7t4nq",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x7t4nq/drake_university_unveils_statue_of_football_star/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Game Thread] Columbia @ Penn (7:00 PM ET)",
-          "author": "CFB_Referee",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x7tbgx/game_thread_columbia_penn_700_pm_et/",
-          "selftext": "",
-          "created_utc": 1792188011,
-          "num_comments": 0,
-          "id": "1x7tbgx",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x7tbgx/game_thread_columbia_penn_700_pm_et/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x8881f/wake_the_freaking_fall_rain_up_its_gameday/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -525,84 +457,89 @@
       "Best of 24h": [],
       "Best of Week": [
         {
-          "title": "[Charania] BLOCKBUSTER: The Milwaukee Bucks are trading franchise icon Giannis Antetokounmpo and Bobby Portis to the Miami Heat for Tyler Herro, Kel'el Ware, Jaime Jaquez Jr., Kasparas Jakucionis, 3 first-round picks (including No. 13), 1 pick swap and 1 second-rounder, sources tell ESPN.",
-          "author": "Turbostrider27",
+          "title": "Steve Kerr is in disbelief after seeing look-alike sitting behind him in the crowd",
+          "author": "Mission_Pay_3373",
           "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1ud6bzb/charania_blockbuster_the_milwaukee_bucks_are/",
+          "url": "https://www.reddit.com/r/nba/comments/1x82adj/steve_kerr_is_in_disbelief_after_seeing_lookalike/",
           "selftext": "",
-          "created_utc": 1782204617.0,
+          "created_utc": 1792215722,
           "num_comments": 0,
-          "id": "1ud6bzb",
+          "id": "1x82adj",
           "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1ud6bzb/charania_blockbuster_the_milwaukee_bucks_are/",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x82adj/steve_kerr_is_in_disbelief_after_seeing_lookalike/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
-          "comments": []
+          "comments": [],
+          "metadata_source": "rss"
         },
         {
-          "title": "[Highlight] KAT and Mayor Mamdani lean back together on the Knicks’ float",
-          "author": "Leegend124",
+          "title": "Wemby blocks a shot, then does a euro step self lob off the glass.",
+          "author": "PastaCheed",
           "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1u98gjt/highlight_kat_and_mayor_mamdani_lean_back/",
+          "url": "https://www.reddit.com/r/nba/comments/1x7waqi/wemby_blocks_a_shot_then_does_a_euro_step_self/",
           "selftext": "",
-          "created_utc": 1781812420.0,
+          "created_utc": 1792196182,
           "num_comments": 0,
-          "id": "1u98gjt",
+          "id": "1x7waqi",
           "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1u98gjt/highlight_kat_and_mayor_mamdani_lean_back/",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x7waqi/wemby_blocks_a_shot_then_does_a_euro_step_self/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
-          "comments": []
+          "comments": [],
+          "metadata_source": "rss"
         },
         {
-          "title": "NYC Mayor Mamdani's passionate speech about the Knicks journey to the championship.",
-          "author": "Caldris",
+          "title": "Blake Griffin says that, at the end of the day, basketball players are just people playing a game that some kids made up to kill time in gym class, and that they shouldn't go around acting like they're God's chosen ones.",
+          "author": "Existing-Sky9914",
           "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1u9bu55/nyc_mayor_mamdanis_passionate_speech_about_the/",
+          "url": "https://www.reddit.com/r/nba/comments/1x6ij39/blake_griffin_says_that_at_the_end_of_the_day/",
           "selftext": "",
-          "created_utc": 1781819975.0,
+          "created_utc": 1792061636,
           "num_comments": 0,
-          "id": "1u9bu55",
+          "id": "1x6ij39",
           "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1u9bu55/nyc_mayor_mamdanis_passionate_speech_about_the/",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x6ij39/blake_griffin_says_that_at_the_end_of_the_day/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
-          "comments": []
+          "comments": [],
+          "metadata_source": "rss"
         },
         {
-          "title": "NYPD confuses Tyler Kolek for a fan jumping the barricade",
-          "author": "HokageEzio",
+          "title": "Brandin Podziemski equips Stephen Curry idle animations",
+          "author": "KarrotMovies",
           "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1u9cs1k/nypd_confuses_tyler_kolek_for_a_fan_jumping_the/",
+          "url": "https://www.reddit.com/r/nba/comments/1x5w6k8/brandin_podziemski_equips_stephen_curry_idle/",
           "selftext": "",
-          "created_utc": 1781822044.0,
+          "created_utc": 1791996082,
           "num_comments": 0,
-          "id": "1u9cs1k",
+          "id": "1x5w6k8",
           "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1u9cs1k/nypd_confuses_tyler_kolek_for_a_fan_jumping_the/",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x5w6k8/brandin_podziemski_equips_stephen_curry_idle/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
-          "comments": []
+          "comments": [],
+          "metadata_source": "rss"
         },
         {
-          "title": "NYC Mayor Mamdani's Entire Speech at Knicks Parade",
-          "author": "Caldris",
+          "title": "[Highlight] Ben Simmons hits the step back fadeaway jumper off the dribble",
+          "author": "MrBuckBuck",
           "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1u9d2w8/nyc_mayor_mamdanis_entire_speech_at_knicks_parade/",
+          "url": "https://www.reddit.com/r/nba/comments/1x2vizl/highlight_ben_simmons_hits_the_step_back_fadeaway/",
           "selftext": "",
-          "created_utc": 1781822712.0,
+          "created_utc": 1791682120,
           "num_comments": 0,
-          "id": "1u9d2w8",
+          "id": "1x2vizl",
           "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1u9d2w8/nyc_mayor_mamdanis_entire_speech_at_knicks_parade/",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x2vizl/highlight_ben_simmons_hits_the_step_back_fadeaway/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
-          "comments": []
+          "comments": [],
+          "metadata_source": "rss"
         }
       ],
       "Hot": [
@@ -1574,16 +1511,16 @@
       "Best of Week": [],
       "Hot": [
         {
-          "title": "🏀 GIVEAWAY: 2-5 LOWER BOWL TICKETS to the Pistons Season Opener vs. the Celtics! 🎟️",
-          "author": "KarimFF7",
+          "title": "I know it’s early but Okorie already looks like a steal",
+          "author": "AcadiaTemporary5737",
           "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1www2kt/giveaway_25_lower_bowl_tickets_to_the_pistons/",
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x81m38/i_know_its_early_but_okorie_already_looks_like_a/",
           "selftext": "",
-          "created_utc": 1791056581,
+          "created_utc": 1792213361,
           "num_comments": 0,
-          "id": "1www2kt",
+          "id": "1x81m38",
           "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1www2kt/giveaway_25_lower_bowl_tickets_to_the_pistons/",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x81m38/i_know_its_early_but_okorie_already_looks_like_a/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1591,16 +1528,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "12 ft tall Jalen \"Paul Bunyan\" Duren and some smallfry",
-          "author": "liglet",
+          "title": "Ebukaaa",
+          "author": "asheslotl",
           "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x6kju2/12_ft_tall_jalen_paul_bunyan_duren_and_some/",
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x7yii2/ebukaaa/",
           "selftext": "",
-          "created_utc": 1792068003,
+          "created_utc": 1792203027,
           "num_comments": 0,
-          "id": "1x6kju2",
+          "id": "1x7yii2",
           "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x6kju2/12_ft_tall_jalen_paul_bunyan_duren_and_some/",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x7yii2/ebukaaa/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1608,16 +1545,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Secret r/DetroitPistons mod",
-          "author": "SuperDizz",
+          "title": "[Vincent] Ron Holland sets his sights on making the All-Defense team: \"With the way I play defense and the way Ausar Thompson guards, I feel like we'll be able to make some noise this year. He was runner-up for Defensive Player of the Year, and I feel like I can get up there.\"",
+          "author": "UnderstandingFun7493",
           "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x68ran/secret_rdetroitpistons_mod/",
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x81026/vincent_ron_holland_sets_his_sights_on_making_the/",
           "selftext": "",
-          "created_utc": 1792027380,
+          "created_utc": 1792211238,
           "num_comments": 0,
-          "id": "1x68ran",
+          "id": "1x81026",
           "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x68ran/secret_rdetroitpistons_mod/",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x81026/vincent_ron_holland_sets_his_sights_on_making_the/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1625,16 +1562,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Jalen Duren with 24 pts in the first half going 8-9 from the field and 8-8 at the FT line",
-          "author": "SappyGilmore",
+          "title": "[Piston Powered]Ebuka Okorie is making life tough for JB Bickerstaff sooner than expected",
+          "author": "Left_Dance_8954",
           "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x6bzsq/jalen_duren_with_24_pts_in_the_first_half_going/",
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x87g9l/piston_poweredebuka_okorie_is_making_life_tough/",
           "selftext": "",
-          "created_utc": 1792037489,
+          "created_utc": 1792234870,
           "num_comments": 0,
-          "id": "1x6bzsq",
+          "id": "1x87g9l",
           "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x6bzsq/jalen_duren_with_24_pts_in_the_first_half_going/",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x87g9l/piston_poweredebuka_okorie_is_making_life_tough/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1642,16 +1579,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "I know its preseason. But we look so good.",
-          "author": "LTgolf17",
+          "title": "WE REALLY GAVE CADE 2 ELITE LOB THREATS 😤",
+          "author": "HealthyBuddy2944",
           "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x6aliq/i_know_its_preseason_but_we_look_so_good/",
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1x7wvhh/we_really_gave_cade_2_elite_lob_threats/",
           "selftext": "",
-          "created_utc": 1792032999,
+          "created_utc": 1792197913,
           "num_comments": 0,
-          "id": "1x6aliq",
+          "id": "1x7wvhh",
           "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x6aliq/i_know_its_preseason_but_we_look_so_good/",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x7wvhh/we_really_gave_cade_2_elite_lob_threats/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2254,270 +2191,270 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-10-16T22:15:23+00:00",
+  "last_attempt_at": "2026-10-17T11:47:37+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "ok",
-        "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "generated_at": "2026-10-17T11:47:37+00:00",
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "nfl": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "nba": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
-        "status": "stale",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "status": "ok",
+        "generated_at": "2026-10-17T11:47:37+00:00",
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "baseball": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "CoDCompetitive": {
       "Best of Hour": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "soccer": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T13:08:12+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "formula1": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "MichiganWolverines": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "DetroitLions": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "DetroitPistons": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "status": "ok",
+        "generated_at": "2026-10-17T11:47:37+00:00",
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "movies": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     },
     "BillSimmons": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-13T23:28:23+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of 24h": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-16T22:15:23+00:00"
+        "last_attempt_at": "2026-10-17T11:47:37+00:00"
       }
     }
   }
