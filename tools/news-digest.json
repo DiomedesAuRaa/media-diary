@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-17T00:26:58+00:00",
-  "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+  "generatedAt": "2026-10-17T05:34:33+00:00",
+  "lastAttemptAt": "2026-10-17T05:34:33+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,8 +10,8 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Katie Zacharia is out as press secretary, White House says",
@@ -61,13 +61,23 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
+        {
+          "title": "Trump waives several Russia sanctions as new US law takes effect",
+          "url": "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Third runway at Heathrow Airport would drive growth, Healey says",
+          "url": "https://www.bbc.co.uk/news/articles/cw0k07d2nj43o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
+        },
         {
           "title": "Oregon teacher fought school attacker before armed dad shot suspect 'multiple times'",
           "url": "https://www.bbc.co.uk/news/articles/cv98zw1k8kp3o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
+          "date": "2026-10-17"
         },
         {
           "title": "Analysis: Zacharia was thrown into a whirlwind - and failed at a critical time for Trump",
@@ -75,23 +85,8 @@
           "date": "2026-10-16"
         },
         {
-          "title": "Watch: Will Ukraine get the support needed as tensions with US rise?",
-          "url": "https://www.bbc.co.uk/news/videos/cm2ke1v8e4geo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "Inside Ukrainian offensive pushing Russia back - with Starlink playing a key role",
-          "url": "https://www.bbc.co.uk/news/articles/cvx284w16z1po?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "Nurse stole £750k from 99-year-old woman for cosmetic surgery and home improvements",
-          "url": "https://www.bbc.co.uk/news/articles/cm9qzx43rlzjo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "Man killed by tiger may have had medical records breached by NHS staff",
-          "url": "https://www.bbc.co.uk/news/articles/c875prd12vkqo?at_medium=RSS&at_campaign=rss",
+          "title": "Five days, one briefing: How Katie Zacharia’s short tenure unfolded",
+          "url": "https://www.bbc.co.uk/news/videos/c6j47ewnn0vyo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-16"
         },
         {
@@ -100,9 +95,14 @@
           "date": "2026-10-16"
         },
         {
-          "title": "Watch: Did Tesla really just unveil a flying car?",
-          "url": "https://www.bbc.co.uk/news/videos/ckly4mj1g3n9o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
+          "title": "Miranda's tears, joy and dance moves steal show as deadly boredom sets in on The Celebrity Traitors",
+          "url": "https://www.bbc.co.uk/news/articles/cq70pre80gwko?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Faisal Islam: What I learned from a week with the world's top finance leaders",
+          "url": "https://www.bbc.co.uk/news/articles/cm4g189jvnxjo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
         }
       ]
     },
@@ -112,17 +112,32 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
-          "title": "Inside Ukrainian offensive pushing Russia back - with Starlink playing a key role",
-          "url": "https://www.bbc.co.uk/news/articles/cvx284w16z1po?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
+          "title": "Brazil sees record fall in Amazon deforestation as key election looms",
+          "url": "https://www.bbc.co.uk/news/articles/cqe8rzg6zl00o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Trump waives several Russia sanctions as new US law takes effect",
+          "url": "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
         },
         {
           "title": "Oregon teacher fought school attacker before armed dad shot suspect 'multiple times'",
           "url": "https://www.bbc.co.uk/news/articles/cv98zw1k8kp3o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Three men jailed for 158 years each for murdering Australian and US surfers in Mexico",
+          "url": "https://www.bbc.co.uk/news/articles/c3kgqjkzw29wo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Inside Ukrainian offensive pushing Russia back - with Starlink playing a key role",
+          "url": "https://www.bbc.co.uk/news/articles/cvx284w16z1po?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-16"
         },
         {
@@ -131,28 +146,13 @@
           "date": "2026-10-16"
         },
         {
-          "title": "Katie Zacharia leaving her White House role less than five days on the job",
+          "title": "Katie Zacharia leaving White House role less than five days into job",
           "url": "https://www.bbc.co.uk/news/articles/c32l4ekpvzl8o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
+          "date": "2026-10-17"
         },
         {
           "title": "Trump 'completely wrong' to restrict support for Ukraine, Italian minister tells BBC",
           "url": "https://www.bbc.co.uk/news/articles/c64g18ljjd8do?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "Trial of German steakhouse heiress that sparked a huge spy scandal",
-          "url": "https://www.bbc.co.uk/news/articles/cwvgdn3d656vo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "Pope pictured for first time since surgery and cancer diagnosis",
-          "url": "https://www.bbc.co.uk/news/articles/cw146ej00yn7o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "Trump denies limiting Ukraine access to Starlink network",
-          "url": "https://www.bbc.co.uk/news/articles/ckz65g34wyd8o?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-16"
         }
       ]
@@ -163,48 +163,48 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
-          "title": "Iran war live: Trump claims US Navy blockade stops Iranian ships in Hormuz",
-          "url": "https://www.aljazeera.com/news/liveblog/2026/10/17/draft-2?traffic_source=rss",
+          "title": "Russian attacks in Ukraine kill at least 8, cut power to 1 million",
+          "url": "https://www.aljazeera.com/news/2026/10/17/russian-attacks-in-ukraine-kill-at-least-8-cut-power-to-1-million?traffic_source=rss",
           "date": "2026-10-17"
         },
         {
-          "title": "Trump mocks Middle Eastern names with ‘Mohammed’ joke",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/16/trump-mocks-middle-eastern-names-with-mohammed-joke?traffic_source=rss",
-          "date": "2026-10-16"
+          "title": "Three Mexicans jailed for 158 years each for killing Australian, US surfers",
+          "url": "https://www.aljazeera.com/news/2026/10/17/three-mexicans-jailed-for-158-years-each-for-killing-australian-us-surfers?traffic_source=rss",
+          "date": "2026-10-17"
         },
         {
-          "title": "Albanian PM blames ‘foreign hands’ for unrest as student protests intensify",
-          "url": "https://www.aljazeera.com/news/2026/10/16/albanian-pm-blames-foreign-hands-for-unrest-as-student-protests-intensify?traffic_source=rss",
-          "date": "2026-10-16"
+          "title": "The Israeli politicians seeking to replace Netanyahu",
+          "url": "https://www.aljazeera.com/news/2026/10/17/the-israeli-politicians-seeking-to-replace-netanyahu?traffic_source=rss",
+          "date": "2026-10-17"
         },
         {
-          "title": "Leeds vs Manchester United: Premier League – teams, prediction, lineups",
-          "url": "https://www.aljazeera.com/sports/2026/10/16/leeds-vs-manchester-united-premier-league-teams-prediction-lineups?traffic_source=rss",
-          "date": "2026-10-16"
+          "title": "Trump waives Russia sanctions as rift with Zelenskyy widens",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/17/trump-waives-russia-sanctions-as-rift-with-zelenskyy-widens?traffic_source=rss",
+          "date": "2026-10-17"
         },
         {
-          "title": "Italy probes Israel’s Katz over abuse, sexual assault of flotilla activists",
-          "url": "https://www.aljazeera.com/news/2026/10/16/italy-probes-israels-katz-over-abuse-sexual-assault-of-flotilla-activists?traffic_source=rss",
-          "date": "2026-10-16"
+          "title": "Trump puts on hold new Russia sanctions he signed into law",
+          "url": "https://www.aljazeera.com/news/2026/10/17/trump-puts-on-hold-new-russia-sanctions-he-signed-into-law?traffic_source=rss",
+          "date": "2026-10-17"
         },
         {
-          "title": "Families demand justice after Pakistan school collapse",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/16/families-demand-justice-after-pakistan-school-collapse?traffic_source=rss",
-          "date": "2026-10-16"
+          "title": "Albania’s PM blames ‘foreign hands’ for protests",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/17/albanias-pm-blames-foreign-hands-for-protests?traffic_source=rss",
+          "date": "2026-10-17"
         },
         {
-          "title": "Yemen’s government says Houthis fired two missiles at Aden airport",
-          "url": "https://www.aljazeera.com/news/2026/10/16/yemens-government-says-houthis-fired-two-missiles-at-aden-airport?traffic_source=rss",
-          "date": "2026-10-16"
+          "title": "Southern California wildfire engulfs homes, prompts evacuation orders",
+          "url": "https://www.aljazeera.com/news/2026/10/17/southern-california-wildfire-engulfs-homes-prompts-evacuation-orders?traffic_source=rss",
+          "date": "2026-10-17"
         },
         {
-          "title": "Meta employees say Lula’s accounts restricted in Brazil election: Report",
-          "url": "https://www.aljazeera.com/economy/2026/10/16/meta-employees-say-lulas-accounts-restricted-in-brazil-election-report?traffic_source=rss",
-          "date": "2026-10-16"
+          "title": "Cameroonians await government reshuffle after Biya’s return",
+          "url": "https://www.aljazeera.com/news/2026/10/17/cameroonians-await-government-reshuffle-after-biyas-return?traffic_source=rss",
+          "date": "2026-10-17"
         }
       ]
     },
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "LGBTQ+ people go into hiding in Senegal as hundreds are arrested",
@@ -243,6 +243,11 @@
           "date": "2026-10-09"
         },
         {
+          "title": "Mexican judge sentences three men to 158 years in prison for murders of Australian and US surfers​",
+          "url": "https://www.theguardian.com/australia-news/2026/oct/17/mexican-judge-sentences-three-men-to-158-years-in-prison-for-murders-of-australian-and-us-surfers-ntwnfb",
+          "date": "2026-10-17"
+        },
+        {
           "title": "Brazilian Amazon deforestation falls to lowest on record as pivotal vote looms",
           "url": "https://www.theguardian.com/environment/2026/oct/16/brazil-amazon-deforestation-lowest-on-record-election",
           "date": "2026-10-16"
@@ -250,11 +255,6 @@
         {
           "title": "Brazil’s Lula says he now backs lowering age of criminal responsibility to 16",
           "url": "https://www.theguardian.com/world/2026/oct/16/brazil-lula-age-criminal-responsibility",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "‘Opening the lid of a horrible secret’: Jamaicans confront enslavement with taboo-busting stories on screen",
-          "url": "https://www.theguardian.com/news/2026/oct/16/jamaicans-confront-enslavement-taboo-busting-stories-on-screen-possession",
           "date": "2026-10-16"
         }
       ]
@@ -265,8 +265,8 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Israeli settlers beat Palestinians and a U.S. photojournalist in West Bank attacks",
@@ -316,17 +316,32 @@
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
-          "title": "Why harnesses matter for energy (and token) efficiency",
-          "url": "https://neuralwatt.com/news/why-harnesses-matter-for-energy-efficiency",
+          "title": "\"In every study that considered the question\"",
+          "url": "https://unsung.aresluna.org/in-every-study-that-considered-the-question/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Butlerian Jihad",
+          "url": "https://dune.fandom.com/wiki/Butlerian_Jihad",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Flexport Is Hiring a Biz Ops Leader in Office of CEO",
+          "url": "https://www.flexport.com/company/careers/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Show HN: Fakeipedia – Wikipedia for worlds that don't exist",
+          "url": "https://fakeipedia.org",
           "date": "2026-10-16"
         },
         {
-          "title": "I never authorized an integration that scans my secrets",
-          "url": "https://github.com/home-assistant/home-assistant.io/issues/49314",
+          "title": "Nine-Inch Snails",
+          "url": "https://www.theatlantic.com/science/2026/10/giant-african-snails-florida-invasion/688850/",
           "date": "2026-10-16"
         },
         {
@@ -343,21 +358,6 @@
           "title": "You could have invented transformers from memory",
           "url": "https://alexwang.ai/posts/associative-memory/",
           "date": "2026-10-16"
-        },
-        {
-          "title": "Claude reveals ECDSA curve origins",
-          "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "C++26: The New Debugging Header",
-          "url": "https://www.sandordargo.com/blog/2026/09/30/cpp26-debugging",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "Llama.cpp on a jailbroken PS5: run any GGUF model natively on the console",
-          "url": "https://github.com/cobanov/PS5LM",
-          "date": "2026-10-16"
         }
       ]
     },
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "OpenAI models hacked a crypto wallet and breached more websites",
@@ -418,8 +418,8 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "All the news about the iPhone Duo",
@@ -469,8 +469,8 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "The Leap Second Is No More",
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
@@ -572,7 +572,7 @@
       "url": "https://www.espn.com/espn/rss/news",
       "status": "stale",
       "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Buccaneers explode in third quarter in win over Cowboys",
@@ -622,13 +622,28 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
-          "title": "Oregon to start Brock Thomas at QB over Dylan Raiola: Ducks make key change as CFP hopes hang in balance",
+          "title": "Kamario Taylor injury presents LSU, Lane Kiffin a layup they can't afford to miss in CFP chase",
+          "url": "https://www.cbssports.com/college-football/news/kamario-taylor-injury-mississippi-state-lsu-lane-kiffin-cfp-chase/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "DeWanna Bonner could be the WNBA Finals' biggest X-Factor -- and she took an unlikely path to the Dream",
+          "url": "https://www.cbssports.com/wnba/news/dewanna-bonner-wnba-finals-biggest-x-factor-unlikely-path-dream/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "2026 MLB playoff bracket, schedule, scores: ALCS Game 4 now set for Saturday after rain out",
+          "url": "https://www.cbssports.com/mlb/news/2026-mlb-playoff-bracket-schedule-scores-results-how-to-watch/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Oregon likely to start Brock Thomas at QB: Ducks make key change as CFP hopes hang in balance",
           "url": "https://www.cbssports.com/college-football/news/oregon-brock-thomas-starting-qb-dylan-raiola-cfp-hopes/",
-          "date": "2026-10-16"
+          "date": "2026-10-17"
         },
         {
           "title": "Ohio State vs. Indiana prediction, odds, time: Week 7 college football picks by proven model",
@@ -646,23 +661,8 @@
           "date": "2026-10-16"
         },
         {
-          "title": "2026 MLB playoff bracket, schedule, scores: Brewers advance to World Series; Dodgers eliminated in NLCS sweep",
-          "url": "https://www.cbssports.com/mlb/news/2026-mlb-playoff-bracket-schedule-scores-results-how-to-watch/",
-          "date": "2026-10-16"
-        },
-        {
           "title": "Self-learning AI releases NFL picks, score predictions for every Week 6 game",
           "url": "https://www.cbssports.com/betting/news/nfl-picks-score-predictions-best-bets-ai-projections-for-every-week-6-2026-game/",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "Jamey Eisenberg's Week 6 Fantasy football sleepers and DFS picks: Kirk Cousins, Tre Tucker look to rebound",
-          "url": "https://www.cbssports.com/fantasy/football/news/jamey-eisenbergs-2026-week-6-fantasy-football-sleepers/",
-          "date": "2026-10-16"
-        },
-        {
-          "title": "NBA over/under predictions for every Western Conference team: Lakers undervalued, Warriors in for a long year",
-          "url": "https://www.cbssports.com/nba/news/nba-western-conference-over-under-win-total-predictions-thunder-spurs-lakers-warriors/",
           "date": "2026-10-16"
         }
       ]
@@ -673,47 +673,47 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
-          "title": "Valkyries-Dream matchup draws a crowd at WNBA Finals media day",
-          "url": "https://sports.yahoo.com/articles/valkyries-dream-matchup-draws-crowd-002103133.html",
+          "title": "PFL Chicago results: Jena Bishop stuns Liz Carmouche to win flyweight title",
+          "url": "https://sports.yahoo.com/articles/pfl-chicago-results-jena-bishop-053115679.html",
           "date": "2026-10-17"
         },
         {
-          "title": "Detroit Tigers Reportedly Hiring World Series Champion",
-          "url": "https://sports.yahoo.com/articles/detroit-tigers-reportedly-hiring-world-001745468.html",
+          "title": "Valkyries bring Bay Area music stars to WNBA Finals",
+          "url": "https://sports.yahoo.com/articles/valkyries-bring-bay-area-music-053019020.html",
           "date": "2026-10-17"
         },
         {
-          "title": "Ohio State vs. Indiana predictions from our Buckeyes Wire writers",
-          "url": "https://sports.yahoo.com/articles/ohio-state-vs-indiana-predictions-001659515.html",
+          "title": "Cobblers land used to clear club's £20m debt",
+          "url": "https://sports.yahoo.com/articles/cobblers-land-used-clear-clubs-052916615.html",
           "date": "2026-10-17"
         },
         {
-          "title": "QB Faizon Brandon no longer on SEC injury report for Tennessee vs Alabama",
-          "url": "https://sports.yahoo.com/articles/qb-faizon-brandon-no-longer-001539974.html",
+          "title": "Game balls for SW Florida high school football top Week 9 performers",
+          "url": "https://sports.yahoo.com/articles/game-balls-sw-florida-high-052829292.html",
           "date": "2026-10-17"
         },
         {
-          "title": "QB Faizon Brandon no longer on SEC injury report for Tennessee vs Alabama",
-          "url": "https://sports.yahoo.com/articles/qb-faizon-brandon-no-longer-001539995.html",
+          "title": "Roughing the passer for body weight? Purdue football tries to understand what to do differently",
+          "url": "https://sports.yahoo.com/articles/roughing-passer-body-weight-purdue-052747122.html",
           "date": "2026-10-17"
         },
         {
-          "title": "Zambia women's national team players to miss NWSL games while undergoing Ebola travel restriction protocols",
-          "url": "https://sports.yahoo.com/soccer/article/zambia-womens-national-team-players-to-miss-nwsl-games-while-undergoing-ebola-travel-restriction-protocols-001539808.html",
+          "title": "Friday's high school football scores for Lafayette area and Indiana state",
+          "url": "https://sports.yahoo.com/articles/fridays-high-school-football-scores-052639353.html",
           "date": "2026-10-17"
         },
         {
-          "title": "Alabama football offensive line starter ruled out for Tennessee",
-          "url": "https://sports.yahoo.com/articles/alabama-football-offensive-line-starter-001223345.html",
+          "title": "USA TODAY Sports Super 15 regional high school football scores, Week 9",
+          "url": "https://sports.yahoo.com/articles/usa-today-sports-super-15-052501829.html",
           "date": "2026-10-17"
         },
         {
-          "title": "🚨 Line-ups confirmed for Boca v Talleres",
-          "url": "https://sports.yahoo.com/articles/line-ups-confirmed-boca-v-001100004.html",
+          "title": "Man Utd’s official media team speak out to confirm ‘good news’ ahead of Leeds trip",
+          "url": "https://sports.yahoo.com/articles/man-utd-official-media-team-052500654.html",
           "date": "2026-10-17"
         }
       ]
@@ -724,8 +724,8 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Nowhere to hide: Tech selloff hits software and chip stocks alike",
@@ -775,8 +775,8 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Brent oil touches $110 as Iran escalates Hormuz attacks, Ukraine vows to hit Russian refineries",
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": []
     },
     {
@@ -846,8 +846,8 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "“Crawzilla” was huge. Then scientists found an even bigger crayfish",
@@ -897,9 +897,14 @@
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
+        {
+          "title": "APOD: 2026 October 17 – 3D 67P",
+          "url": "https://science.nasa.gov/image-article/apod-2026-october-17-3d-67p/",
+          "date": "2026-10-17"
+        },
         {
           "title": "NASA Names Stephen Cash Marshall Space Flight Center Director",
           "url": "https://www.nasa.gov/news-release/nasa-names-stephen-cash-marshall-space-flight-center-director/",
@@ -934,11 +939,6 @@
           "title": "NASA to Help Unlock Mysteries of Mars’ Moons in Upcoming Mission",
           "url": "https://science.nasa.gov/directorates/smd/planetary-science-division/nasa-to-help-unlock-mysteries-of-mars-moons-in-upcoming-mission/",
           "date": "2026-10-15"
-        },
-        {
-          "title": "NASA Satellites Observe Historic 2026 El Niño",
-          "url": "https://science.nasa.gov/earth/nasa-satellites-observe-historic-2026-el-nino/",
-          "date": "2026-10-15"
         }
       ]
     },
@@ -948,8 +948,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Japan is launching a mission to Mars’s largest moon Phobos",
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Briefing Chat: An invisible tattoo that appears under UV light – and then disappears",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": []
     },
     {
@@ -1060,8 +1060,8 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "AI agents turn one request into about 20. Kubernetes is evolving to handle it.",
@@ -1112,7 +1112,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1162,8 +1162,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "Deploying, maintaining, and migrating production n8n on EKS",
@@ -1213,8 +1213,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-17T00:26:58+00:00",
-      "lastAttemptAt": "2026-10-17T00:26:58+00:00",
+      "generatedAt": "2026-10-17T05:34:33+00:00",
+      "lastAttemptAt": "2026-10-17T05:34:33+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #538",
