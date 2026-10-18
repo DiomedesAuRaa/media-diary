@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-17T22:16:26+00:00",
-  "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+  "generatedAt": "2026-10-18T00:04:23+00:00",
+  "lastAttemptAt": "2026-10-18T00:04:23+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,9 +10,14 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
+        {
+          "title": "Oregon governor Tina Kotek reacts to Silver Rail Elementary school shooting",
+          "url": "https://www.npr.org/2026/10/17/nx-s1-6005814/oregon-governor-tina-kotek-reacts-to-silver-rail-elementary-school-shooting",
+          "date": "2026-10-17"
+        },
         {
           "title": "Scuffles and fires break out as protesters rally across France, joining students",
           "url": "https://www.npr.org/2026/10/17/nx-s1-6006773/student-protests-france",
@@ -47,11 +52,6 @@
           "title": "Decades after apartheid, South Africans seek justice for crimes of the past",
           "url": "https://www.npr.org/2026/10/17/nx-s1-5987671/south-africa-justice-sharpeville-apartheid",
           "date": "2026-10-17"
-        },
-        {
-          "title": "Sidewalk sleepers: They have nowhere else to stay while a loved one is in the hospital",
-          "url": "https://www.npr.org/2026/10/17/g-s1-147874/hospital-diagnosis-patients-india-sidewalk",
-          "date": "2026-10-17"
         }
       ]
     },
@@ -61,8 +61,8 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Violent clashes, looting and buildings ablaze in France as over 1,000 arrested after protests",
@@ -95,14 +95,14 @@
           "date": "2026-10-17"
         },
         {
-          "title": "Chelsea's Martinez taken to hospital for 'precautionary tests'",
-          "url": "https://www.bbc.co.uk/sport/football/articles/c6rryqq00yp4o?at_medium=RSS&at_campaign=rss",
+          "title": "Dubois destroys Wardley in two rounds to retain title",
+          "url": "https://www.bbc.co.uk/sport/boxing/articles/c6gelq3zdy8wo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-17"
         },
         {
-          "title": "Not sure what to wear for Halloween? These outfits are set to be the most popular this year",
-          "url": "https://www.bbc.co.uk/news/articles/crn4ej7vdwdno?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-16"
+          "title": "Photos show luxury boat with 50m pool and water slides near Kim Jong Un's summer retreat",
+          "url": "https://www.bbc.co.uk/news/articles/cmy4xnyyg1lyo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-17"
         }
       ]
     },
@@ -112,8 +112,8 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Violent clashes, looting and buildings ablaze in France as over 1,000 arrested after protests",
@@ -151,8 +151,8 @@
           "date": "2026-10-17"
         },
         {
-          "title": "Nursery owner in China jailed for life after hundreds of children poisoned",
-          "url": "https://www.bbc.co.uk/news/articles/cqe9lx54g7x9o?at_medium=RSS&at_campaign=rss",
+          "title": "Three men jailed for 158 years each for murdering Australian and US surfers in Mexico",
+          "url": "https://www.bbc.co.uk/news/articles/c3kgqjkzw29wo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-17"
         }
       ]
@@ -163,9 +163,19 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
+        {
+          "title": "US ambassador urges Israel to prosecute attackers of American journalist",
+          "url": "https://www.aljazeera.com/news/2026/10/17/us-ambassador-calls-on-israel-to-prosecute-settlers-over-journalist-attack?traffic_source=rss",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Saudi-led coalition intercepts drones as Egypt weighs sending help",
+          "url": "https://www.aljazeera.com/news/2026/10/17/saudi-led-coalition-intercepts-drones-as-egypt-weighs-sending-help?traffic_source=rss",
+          "date": "2026-10-17"
+        },
         {
           "title": "Photos: No Kings rallies in US urge midterm voters to cast ballots early",
           "url": "https://www.aljazeera.com/gallery/2026/10/17/photos-no-kings-rallies-in-us-urge-midterm-voters-to-cast-ballots-early?traffic_source=rss",
@@ -195,16 +205,6 @@
           "title": "Iranian TV airs video said to show tanker explosion in Hormuz",
           "url": "https://www.aljazeera.com/video/newsfeed/2026/10/17/iranian-tv-airs-video-said-to-show-tanker-explosion-in-hormuz?traffic_source=rss",
           "date": "2026-10-17"
-        },
-        {
-          "title": "At least 17 killed in stampede at religious gathering in India",
-          "url": "https://www.aljazeera.com/news/2026/10/17/at-least-17-killed-in-stampede-at-religious-gathering-in-india?traffic_source=rss",
-          "date": "2026-10-17"
-        },
-        {
-          "title": "Albanian police fire rubber bullets as protests against Rama escalate",
-          "url": "https://www.aljazeera.com/news/2026/10/17/albanian-police-fire-rubber-bullets-as-protests-against-rama-escalate?traffic_source=rss",
-          "date": "2026-10-17"
         }
       ]
     },
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "LGBTQ+ people go into hiding in Senegal as hundreds are arrested",
@@ -265,8 +265,8 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Student protests widen into greater social unrest in France",
@@ -316,22 +316,27 @@
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
+        {
+          "title": "Retired Penn professor arrested for blocking Uber Eats robot",
+          "url": "https://www.phillyvoice.com/philly-woman-arrested-uber-eats-robot-protest/?l",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "JDK 28",
+          "url": "https://openjdk.org/projects/jdk/28/",
+          "date": "2026-10-17"
+        },
         {
           "title": "Chrome and Edge are removing XSLT: what breaks and what does not",
           "url": "https://doctor-seo.net/en/blog/news/chrome-edge-removing-xslt/",
           "date": "2026-10-17"
         },
         {
-          "title": "Microsoft and CMU Team Up to Train Early Career Software Engineers",
+          "title": "Microsoft and CMU team up to train early career software engineers",
           "url": "https://www.cs.cmu.edu/news/2026/microsoft-cmu-praise",
-          "date": "2026-10-17"
-        },
-        {
-          "title": "Pattern Matching Beats Narrative Reasoning",
-          "url": "https://blog.scottstevenson.net/p/pattern-matching-beats-narrative",
           "date": "2026-10-17"
         },
         {
@@ -340,18 +345,13 @@
           "date": "2026-10-17"
         },
         {
-          "title": "Codex is EATING my Mac's disk space",
+          "title": "Codex Desktop continuously generates Crashpad pending dumps",
           "url": "https://github.com/openai/codex/issues/25921",
           "date": "2026-10-17"
         },
         {
           "title": "I Became a Citizen of Japan",
           "url": "https://www.derekwessman.com/blog-1/natural",
-          "date": "2026-10-17"
-        },
-        {
-          "title": "Development statistics for the 7.2 kernel",
-          "url": "https://lwn.net/Articles/1088776/",
           "date": "2026-10-17"
         },
         {
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Science says your boss should talk less in meetings",
@@ -418,8 +418,8 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "TikTok bans Musk documentary account",
@@ -469,8 +469,8 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Encryption Is Getting Squeezed From All Sides",
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
@@ -572,7 +572,7 @@
       "url": "https://www.espn.com/espn/rss/news",
       "status": "stale",
       "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Buccaneers explode in third quarter in win over Cowboys",
@@ -622,9 +622,34 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
+        {
+          "title": "Auburn takes down Georgia: Tigers score massive upset over No. 1 Bulldogs on walk-off FG",
+          "url": "https://www.cbssports.com/college-football/news/auburn-georgia-upset-over-no-1-walk-of-fg/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Notre Dame vs. BYU prediction, pick, odds, spread: Irish hit the road for top-10 showdown with Cougars",
+          "url": "https://www.cbssports.com/college-football/news/notre-dame-byu-prediction-picks-odds-spread-where-to-watch-live/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Miami vs. Florida State prediction, pick, odds, spread: Red-hot Hurricanes take on floundering Seminoles",
+          "url": "https://www.cbssports.com/college-football/news/miami-florida-state-prediction-picks-odds-spread-where-to-watch-live/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Knicks finalize roster as James Wiseman gets last spot over Bruce Brown",
+          "url": "https://www.cbssports.com/nba/news/knicks-finalize-roster-james-wiseman-bruce-brown/",
+          "date": "2026-10-17"
+        },
+        {
+          "title": "Daniel Dubois runs through Fabio Wardley with second-round TKO to retain heavyweight title",
+          "url": "https://www.cbssports.com/boxing/news/daniel-dubois-vs-fabio-wardley-results-highlights-winner-heavyweight-title/",
+          "date": "2026-10-17"
+        },
         {
           "title": "College football week 7 overreactions: Big changes needed at Texas with former No. 1 Longhorns in freefall",
           "url": "https://www.cbssports.com/college-football/news/college-football-week-7-overreactions-big-changes-needed-at-texas-with-former-no-1-longhorns-in-freefall/",
@@ -639,31 +664,6 @@
           "title": "Michigan benches QB Bryce Underwood vs. Penn State: Tommy Carr replaces former five-star recruit",
           "url": "https://www.cbssports.com/college-football/news/michigan-benches-bryce-underwood-tommy-carr-penn-state/",
           "date": "2026-10-17"
-        },
-        {
-          "title": "Rays vs. Guardians prediction, odds, time: 2026 ALCS Game 4 picks by proven model",
-          "url": "https://www.cbssports.com/betting/news/rays-guardians-prediction-odds-line-start-time-2026-alcs-game-4-picks-best-bets/",
-          "date": "2026-10-17"
-        },
-        {
-          "title": "Use DraftKings promo code to get $200 in bonus bets, free NBA League Pass for BYU-Notre Dame, college football",
-          "url": "https://www.cbssports.com/betting/news/use-draftkings-promo-code-get-200-in-bonus-bets-free-nba-league-pass-for-byu-notre-dame-college-football-saturday/",
-          "date": "2026-10-17"
-        },
-        {
-          "title": "Ohio State QB Julian Sayin to miss 'several weeks' after suffering injury in win vs. Indiana",
-          "url": "https://www.cbssports.com/college-football/news/julian-sayin-injury-ohio-state-qb-indiana/",
-          "date": "2026-10-17"
-        },
-        {
-          "title": "NFL fines Raiders' Maxx Crosby nearly $24,000 to top list of Week 5 discipline",
-          "url": "https://www.cbssports.com/nfl/news/nfl-fines-raiders-maxx-crosby-nearly-24000-week-5-discipline/",
-          "date": "2026-10-17"
-        },
-        {
-          "title": "Week 6 NFL betting guide, props, spreads: Model, expert, parlay, DFS and season-long fantasy picks revealed",
-          "url": "https://www.cbssports.com/betting/news/week-6-nfl-betting-guide-player-props-parlay-dfs-fantasy-picks/",
-          "date": "2026-10-17"
         }
       ]
     },
@@ -673,47 +673,47 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
-          "title": "WATCH: Texas A&M HC provides update on junior wide receiver",
-          "url": "https://sports.yahoo.com/articles/watch-texas-m-hc-provides-221237549.html",
+          "title": "UFC Edmonton ‘Buckley vs. Malott’ play-by-play, results & round scoring",
+          "url": "https://sports.yahoo.com/articles/ufc-edmonton-buckley-vs-malott-235707722.html",
           "date": "2026-10-17"
         },
         {
-          "title": "Boston Celtics have waived Tucker DeVries, Hayden …",
-          "url": "https://sports.yahoo.com/articles/boston-celtics-waived-tucker-devries-221058327.html",
+          "title": "Chambliss accounts for 4 touchdowns as No. 9 Mississippi beats No. 13 Missouri 31-3",
+          "url": "https://sports.yahoo.com/articles/chambliss-accounts-4-touchdowns-no-235319812.html",
           "date": "2026-10-17"
         },
         {
-          "title": "Wolves will keep the 2-way he had open to see what …",
-          "url": "https://sports.yahoo.com/articles/wolves-keep-2-way-had-221057313.html",
+          "title": "Angel Reese reveals her immediate plan after Dream’s WNBA Finals Game 1 loss to Valkyries",
+          "url": "https://sports.yahoo.com/articles/angel-reese-reveals-her-immediate-235223082.html",
           "date": "2026-10-17"
         },
         {
-          "title": "So Cissé is ONLY two-way eligible this season with …",
-          "url": "https://sports.yahoo.com/articles/ciss-only-two-way-eligible-221055477.html",
+          "title": "Prep football: White Plains punches first postseason ticket since 1994",
+          "url": "https://sports.yahoo.com/articles/prep-football-white-plains-punches-235100891.html",
           "date": "2026-10-17"
         },
         {
-          "title": "How to watch Louisville vs Syracuse: Live stream College Football, TV channel",
-          "url": "https://sports.yahoo.com/articles/watch-louisville-vs-syracuse-live-221000586.html",
+          "title": "Summit League volleyball: South Dakota State picks up road win over North Dakota",
+          "url": "https://sports.yahoo.com/articles/summit-league-volleyball-south-dakota-235100689.html",
           "date": "2026-10-17"
         },
         {
-          "title": "WNBA Finals: Atlanta Dream drop Game 1 to Golden State Valkyries",
-          "url": "https://sports.yahoo.com/articles/wnba-finals-atlanta-dream-drop-215928304.html",
+          "title": "3 keys for Packers offense vs. Cowboys defense: Capitalize on mistakes",
+          "url": "https://sports.yahoo.com/articles/3-keys-packers-offense-vs-235058248.html",
           "date": "2026-10-17"
         },
         {
-          "title": "Texas Longhorns' College Football Playoff hopes dying after nasty loss to Florida | Golden",
-          "url": "https://sports.yahoo.com/articles/texas-longhorns-college-football-playoff-220905499.html",
+          "title": "Jeremiah Smith had NSFW smack talk for Indiana after Ohio State's win",
+          "url": "https://sports.yahoo.com/articles/jeremiah-smith-had-nsfw-smack-235020187.html",
           "date": "2026-10-17"
         },
         {
-          "title": "No. 1 Ferris State football overcomes early deficit to beat No. 1 GVSU",
-          "url": "https://sports.yahoo.com/articles/no-1-ferris-state-football-220847181.html",
+          "title": "Prep football: After early blow, Piedmont scores 48 unanswered to down Vincent",
+          "url": "https://sports.yahoo.com/articles/prep-football-early-blow-piedmont-235000229.html",
           "date": "2026-10-17"
         }
       ]
@@ -724,8 +724,8 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Can a $55,000 robot load the dishwasher? Inside my afternoon with two humanoid housekeepers.",
@@ -775,8 +775,8 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Trump waives broad new Russia sanctions, Zelenskyy condemns it as 'wrong'",
@@ -814,9 +814,9 @@
           "date": "2026-10-17"
         },
         {
-          "title": "Airport attacks put aviation in crosshairs of geopolitical conflicts",
-          "url": "https://www.cnbc.com/2026/10/13/riyadh-airport-attacks-aviation.html",
-          "date": "2026-10-13"
+          "title": "KFC to switch to Coca-Cola beverages in U.S. restaurants for the first time in decades",
+          "url": "https://www.cnbc.com/2026/10/15/kfc-coca-cola-pepsi-switch.html",
+          "date": "2026-10-16"
         }
       ]
     },
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": []
     },
     {
@@ -846,8 +846,8 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Scientists discover how deep sleep builds muscle, burns fat, and boosts the brain",
@@ -897,8 +897,8 @@
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "APOD: 2026 October 17 – 3D 67P",
@@ -948,8 +948,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Noise-cancelling headphones prevent vomiting after surgery",
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Briefing Chat: An invisible tattoo that appears under UV light – and then disappears",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": []
     },
     {
@@ -1060,8 +1060,8 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Here are the engineering lessons we learned when live-streaming sports to 32 million people",
@@ -1112,7 +1112,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1162,8 +1162,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "Deploying, maintaining, and migrating production n8n on EKS",
@@ -1213,8 +1213,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-17T22:16:26+00:00",
-      "lastAttemptAt": "2026-10-17T22:16:26+00:00",
+      "generatedAt": "2026-10-18T00:04:23+00:00",
+      "lastAttemptAt": "2026-10-18T00:04:23+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #538",
