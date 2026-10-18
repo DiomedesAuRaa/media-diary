@@ -14,6 +14,7 @@
   "fetch_errors": {
     "cfb": [
       "Best of Hour",
+      "Best of 24h",
       "Best of Week",
       "Hot"
     ],
@@ -56,6 +57,7 @@
     "MichiganWolverines": [
       "Best of Hour",
       "Best of 24h",
+      "Best of Week",
       "Hot"
     ],
     "DetroitLions": [
@@ -2350,271 +2352,271 @@
       ]
     }
   },
-  "refresh_status": "partial",
-  "last_attempt_at": "2026-10-18T12:12:57+00:00",
+  "refresh_status": "stale",
+  "last_attempt_at": "2026-10-18T21:58:01+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-18T12:12:57+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "nfl": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "nba": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-17T11:47:37+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "baseball": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "CoDCompetitive": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "soccer": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T13:08:12+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "formula1": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "MichiganWolverines": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-18T12:12:57+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "DetroitLions": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "DetroitPistons": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-17T11:47:37+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "movies": {
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     },
     "BillSimmons": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-13T23:28:23+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-18T12:12:57+00:00"
+        "last_attempt_at": "2026-10-18T21:58:01+00:00"
       }
     }
   }
