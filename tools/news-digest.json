@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T20:38:26+00:00",
-  "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+  "generatedAt": "2026-10-18T23:08:59+00:00",
+  "lastAttemptAt": "2026-10-18T23:08:59+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,8 +10,8 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Ukraine and the U.S. are at odds over Starshield. Here's what to know",
@@ -61,11 +61,11 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
-          "title": "Macron calls for calm in France and warns rioting must not escalate",
+          "title": "Macron calls for 'calm and order' after riots across France",
           "url": "https://www.bbc.co.uk/news/articles/cw240zl08dm5o?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-18"
         },
@@ -85,8 +85,8 @@
           "date": "2026-10-18"
         },
         {
-          "title": "Watch: Police hunt for synthetic drugs in Chicago jail",
-          "url": "https://www.bbc.co.uk/news/videos/cq8ez4jz1z04o?at_medium=RSS&at_campaign=rss",
+          "title": "Inside Chicago's battle against the synthetic drugs flooding the US",
+          "url": "https://www.bbc.co.uk/news/videos/c84g166kz003o?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-18"
         },
         {
@@ -112,16 +112,11 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
-          "title": "Burnt out cars and shattered glass on Paris streets after protests turn to riots and looting",
-          "url": "https://www.bbc.co.uk/news/articles/c574pdzl0k4no?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-18"
-        },
-        {
-          "title": "Macron calls for calm in France and warns rioting must not escalate",
+          "title": "Macron calls for 'calm and order' after riots across France",
           "url": "https://www.bbc.co.uk/news/articles/cw240zl08dm5o?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-18"
         },
@@ -131,13 +126,23 @@
           "date": "2026-10-18"
         },
         {
+          "title": "Trump says suspension of Russia sanctions is to keep peace negotiations going",
+          "url": "https://www.bbc.co.uk/news/articles/c9p8gz7zx4peo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-18"
+        },
+        {
+          "title": "Inside Chicago's battle against the synthetic drugs flooding the US",
+          "url": "https://www.bbc.co.uk/news/videos/c84g166kz003o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-18"
+        },
+        {
           "title": "Oil facilities hit in deadly overnight attack on St Petersburg",
           "url": "https://www.bbc.co.uk/news/articles/c3eweygrjzd7o?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-18"
         },
         {
-          "title": "A wave of homemade, synthetic drugs sweeps US and deepens crisis",
-          "url": "https://www.bbc.co.uk/news/articles/cmx2wvyv5j17o?at_medium=RSS&at_campaign=rss",
+          "title": "Cindy Crawford 'beyond heartbroken' after death of son Presley at 27",
+          "url": "https://www.bbc.co.uk/news/articles/cwzrd6123jyyo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-18"
         },
         {
@@ -146,14 +151,9 @@
           "date": "2026-10-18"
         },
         {
-          "title": "Trump waives several Russia sanctions as row with Zelensky intensifies",
-          "url": "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&at_campaign=rss",
+          "title": "Search for Amelia Earhart's plane resumes after stormy weather",
+          "url": "https://www.bbc.co.uk/news/articles/cv70pxe5j90eo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-18"
-        },
-        {
-          "title": "Anti-government protesters battle with police in Albania",
-          "url": "https://www.bbc.co.uk/news/articles/crwydey50xeno?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-17"
         }
       ]
     },
@@ -163,9 +163,29 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
+        {
+          "title": "Venezuela opposition renews support for Maria Corina Machado as leader",
+          "url": "https://www.aljazeera.com/news/2026/10/18/venezuela-opposition-renews-support-for-maria-corina-machado-as-leader?traffic_source=rss",
+          "date": "2026-10-18"
+        },
+        {
+          "title": "Alberta independence referendum: Will separatists survive a loss?",
+          "url": "https://www.aljazeera.com/news/2026/10/18/alberta-independence-referendum-will-separatists-survive-a-loss?traffic_source=rss",
+          "date": "2026-10-18"
+        },
+        {
+          "title": "Macron condemns violence after riots lead to looting and mass arrests",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/18/macron-condemns-violence-after-riots-lead-to-looting-and-mass-arrests?traffic_source=rss",
+          "date": "2026-10-18"
+        },
+        {
+          "title": "Fire engulfs Albania’s Supreme Court as protests enter fifth day",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/18/albania-protests-supreme-court-fire?traffic_source=rss",
+          "date": "2026-10-18"
+        },
         {
           "title": "‘Anger and shame’: Macron denounces France’s nationwide rioting, looting",
           "url": "https://www.aljazeera.com/news/2026/10/18/macron-denounces-frances-nationwide-rioting-looting?traffic_source=rss",
@@ -185,26 +205,6 @@
           "title": "How will Europe deal with youth-led protests?",
           "url": "https://www.aljazeera.com/video/inside-story/2026/10/18/how-will-europe-deal-with-youth-led-protests?traffic_source=rss",
           "date": "2026-10-18"
-        },
-        {
-          "title": "Clarence Seedorf calls out genocide in first Corinthians press conference",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/18/clarence-seedorf-calls-out-genocide-in-first-corinthians-press-conference?traffic_source=rss",
-          "date": "2026-10-18"
-        },
-        {
-          "title": "Russia’s war on Ukraine ‘must be brought to an end’, Zelenskyy says",
-          "url": "https://www.aljazeera.com/news/2026/10/18/russias-war-on-ukraine-must-be-brought-to-an-end-zelenskyy-says?traffic_source=rss",
-          "date": "2026-10-18"
-        },
-        {
-          "title": "GCC condemns Houthi attacks on Saudi Arabia as Yemen fighting intensifies",
-          "url": "https://www.aljazeera.com/news/2026/10/18/gcc-condemns-houthi-attacks-on-saudi-arabia-as-yemen-fighting-intensifies?traffic_source=rss",
-          "date": "2026-10-18"
-        },
-        {
-          "title": "Gaza bodybuilders find solace in strongman competition among the ruins",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/18/gaza-bodybuilders-find-solace-in-strongman-competition-among-the-ruins?traffic_source=rss",
-          "date": "2026-10-18"
         }
       ]
     },
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Hilarious quips and ‘100,000-volt’ energy: the hypemen (and women) redefining Afrobeats music",
@@ -265,9 +265,19 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
+        {
+          "title": "Political rivals implicated under Pakistan's anti-terror law",
+          "url": "https://www.npr.org/2026/10/18/nx-s1-6004833/political-rivals-implicated-under-pakistans-anti-terror-law",
+          "date": "2026-10-18"
+        },
+        {
+          "title": "'Life is absolutely brutal in Gaza,' says World Food Programme head",
+          "url": "https://www.npr.org/2026/10/18/nx-s1-6001709/life-is-absolutely-brutal-in-gaza-says-world-food-programme-head",
+          "date": "2026-10-18"
+        },
         {
           "title": "Ukraine and the U.S. are at odds over Starshield. Here's what to know",
           "url": "https://www.npr.org/2026/10/18/nx-s1-6007382/ukraine-us-starshield-starlink-what-to-know-trump",
@@ -297,16 +307,6 @@
           "title": "France's Macron vows to hold accountable those who 'sought to bring down the Republic'",
           "url": "https://www.npr.org/2026/10/17/nx-s1-6006773/student-protests-france",
           "date": "2026-10-17"
-        },
-        {
-          "title": "Pope Leo XIV leaves hospital days after lung cancer surgery",
-          "url": "https://www.npr.org/2026/10/17/nx-s1-6006762/pope-leo-xiv-leaves-hospital-days-after-lung-cancer-surgery",
-          "date": "2026-10-17"
-        },
-        {
-          "title": "Zelenskyy urges support for new US sanctions on Russia after Trump puts them on hold",
-          "url": "https://www.npr.org/2026/10/17/nx-s1-6006745/us-sanctions-russia",
-          "date": "2026-10-17"
         }
       ]
     },
@@ -315,48 +315,48 @@
       "category": "tech",
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
-      "status": "stale",
-      "generatedAt": "2026-10-18T17:20:47+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "status": "ok",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
-          "title": "Someone Behind the Software",
-          "url": "https://karrisaarinen.com/posts/someone-behind-the-software/",
+          "title": "Show HN: WhatsApp MCP running free on Cloudflare",
+          "url": "https://github.com/finereli/whatsapp-mcp",
           "date": "2026-10-18"
         },
         {
-          "title": "The Intel 8087 chip: floating-point addition and subtraction",
-          "url": "https://www.righto.com/2026/10/8087-addition-subtraction-microcode.html",
+          "title": "Show HN: OmniPTY – Opinionated terminal emulator for macOS and Linux",
+          "url": "https://github.com/omnipty-terminal/omnipty",
           "date": "2026-10-18"
         },
         {
-          "title": "macOS 15.8.2 Breaks OpenGL",
-          "url": "https://developer.apple.com/forums/verify-human/verify.html?next=/forums/thread/850550",
+          "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+          "url": "https://arxiv.org/abs/2610.18861",
           "date": "2026-10-18"
         },
         {
-          "title": "Will it be a golden age or a dark age for mathematics (and science)?",
-          "url": "https://terrytao.wordpress.com/2026/10/18/will-it-be-a-golden-age-or-a-dark-age-for-mathematics-and-science/",
+          "title": "Netflix vmaf: Perceptual video quality assessment based on multi-method fusion",
+          "url": "https://github.com/Netflix/vmaf",
           "date": "2026-10-18"
         },
         {
-          "title": "Websites are closing their doors to AI agents",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+          "title": "Free Pascal compiler now supports dynamic packages",
+          "url": "https://www.getlazarus.org/dynamic/",
           "date": "2026-10-18"
         },
         {
-          "title": "Java sealed classes and exhaustive pattern matching",
-          "url": "https://neilmadden.blog/2026/04/24/java-sealed-classes-and-exhaustive-pattern-matching/",
+          "title": "Florida's HOAs and condo associations are making the housing crisis worse",
+          "url": "https://hoaspy.com/hoa/fl/florida-hoa-housing-crisis.html",
           "date": "2026-10-18"
         },
         {
-          "title": "Anthropic's proposed AI safety bill only kicks in if 50 deaths or $1B in damages",
-          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
+          "title": "PalmOS Lemmings",
+          "url": "https://github.com/ardiri/palmos-lemmings",
           "date": "2026-10-18"
         },
         {
-          "title": "RepRapMicron",
-          "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
+          "title": "Namecheap just seized and disabled all my domains",
+          "url": "https://www.reddit.com/r/sysadmin/comments/1x8cycd/namecheap_just_seized_and_disabled_all_my_domains/",
           "date": "2026-10-18"
         }
       ]
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Anthropic gives outside AI watchdog “employee-like” access",
@@ -418,9 +418,14 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
+        {
+          "title": "A Savannah police officer gave her Flock login to her ICE agent husband",
+          "url": "https://www.theverge.com/policy/1013573/spd-officer-fired-flock-ice-husband",
+          "date": "2026-10-18"
+        },
         {
           "title": "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
           "url": "https://www.theverge.com/entertainment/1013545/mister-organ-horror-documentary-review",
@@ -455,11 +460,6 @@
           "title": "The best gadget I bought this year is a milk frother",
           "url": "https://www.theverge.com/gadgets/1013257/milk-frother-cold-foam-gadget",
           "date": "2026-10-18"
-        },
-        {
-          "title": "How overhead projectors took over your classroom",
-          "url": "https://www.theverge.com/podcast/1013473/overhead-projector-version-history",
-          "date": "2026-10-18"
         }
       ]
     },
@@ -469,8 +469,8 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "20 Best Gifts for Men, Manly Men, and Manly Man Men (2026)",
@@ -493,11 +493,6 @@
           "date": "2026-10-18"
         },
         {
-          "title": "Magnesium May Not Reach Your Brain, Despite Supplement Label Promises",
-          "url": "https://www.wired.com/story/magnesium-may-not-reach-your-brain-despite-supplement-label-promises/",
-          "date": "2026-10-18"
-        },
-        {
           "title": "The Best AirPods Cases We’ve Used In Our Day-to-Day Lives (2026)",
           "url": "https://www.wired.com/story/best-airpods-case/",
           "date": "2026-10-18"
@@ -505,6 +500,11 @@
         {
           "title": "Climate Change Has It In for the World’s Best Surfing",
           "url": "https://www.wired.com/story/climate-change-has-it-in-for-the-worlds-best-surfing/",
+          "date": "2026-10-18"
+        },
+        {
+          "title": "Magnesium May Not Reach Your Brain, Despite Supplement Label Promises",
+          "url": "https://www.wired.com/story/magnesium-may-not-reach-your-brain-despite-supplement-label-promises/",
           "date": "2026-10-18"
         },
         {
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
@@ -572,7 +572,7 @@
       "url": "https://www.espn.com/espn/rss/news",
       "status": "stale",
       "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Buccaneers explode in third quarter in win over Cowboys",
@@ -622,47 +622,47 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
-          "title": "Jameis Winston benched: Giants make move to J.J. McCarthy during Saints blowout",
-          "url": "https://www.cbssports.com/nfl/news/jameis-winston-benched-giants-j-j-mccarthy-makes-debut/",
+          "title": "Cowboys vs. Packers prediction, spread, odds, time: 'Sunday Night Football' picks from advanced model",
+          "url": "https://www.cbssports.com/betting/news/cowboys-packers-prediction-odds-spread-time-week-6-sunday-night-football-picks-nfl-best-bets/",
           "date": "2026-10-18"
         },
         {
-          "title": "Week 6 NFL betting promos: Claim over $3,000 in bonuses from top online betting apps, sportsbooks",
-          "url": "https://www.cbssports.com/betting/news/week-6-nfl-betting-promos-claim-over-3000-in-bonuses-from-top-online-betting-apps-sportsbooks/",
+          "title": "NFL Week 6 winners and losers: Giants face QB, RB turmoil while Browns take control of AFC North",
+          "url": "https://www.cbssports.com/nfl/news/nfl-week-6-winners-losers-giants-browns-travis-hunter/",
           "date": "2026-10-18"
         },
         {
-          "title": "AP Top 25 poll: Miami takes over at No. 1, BYU surges to No. 2 in college football rankings",
-          "url": "https://www.cbssports.com/college-football/news/ap-top-25-college-football-rankings-miami-byu/",
+          "title": "Cowboys vs. Packers picks, prediction, player props: Expert's NFL Week 6 best bets for Sunday Night Football",
+          "url": "https://www.cbssports.com/betting/news/cowboys-vs-packers-picks-prediction-player-props-experts-nfl-week-6-best-bets-for-sunday-night-football/",
           "date": "2026-10-18"
         },
         {
-          "title": "Use DraftKings promo code to get $200 in bonus bets, free NBA League Pass for NFL betting, Chiefs-Chargers",
-          "url": "https://www.cbssports.com/nfl/news/use-draftkings-promo-code-to-get-200-bonus-bets-free-nba-league-pass-nfl-betting-chiefs-chargers/",
+          "title": "Cowboys vs. Packers odds, picks, NFL predictions: Use Kalshi promo code CBSSPORTS55 for $55 bonus for Week 6",
+          "url": "https://www.cbssports.com/prediction/news/cowboys-vs-packers-odds-picks-nfl-predictions-use-kalshi-promo-code-cbssports55-for-55-bonus-for-week-6/",
           "date": "2026-10-18"
         },
         {
-          "title": "College football's ranked-win leaders: Teams with the most victories vs. current AP Top 25",
-          "url": "https://www.cbssports.com/college-football/news/college-football-rankings-wins-ap-top-25-opponents/",
+          "title": "Cowboys vs. Packers odds, picks: Sunday Night Football first touchdown predictions for NFL Week 6",
+          "url": "https://www.cbssports.com/prediction/news/cowboys-vs-packers-odds-picks-sunday-night-football-first-touchdown-predictions-for-nfl-week-6/",
           "date": "2026-10-18"
         },
         {
-          "title": "Use BetMGM bonus code CBSSPORTS to get $1,500 bonus bets for Chargers-Chiefs, Cowboys-Packers, NFL Week 6",
-          "url": "https://www.cbssports.com/betting/news/use-betmgm-bonus-code-cbssports-to-get-1500-bonus-bets-chargers-chiefs-cowboys-packers-nfl-week-6/",
+          "title": "LOOK: Josh Allen channels Brett Favre with unbelievable backhanded touchdown pass",
+          "url": "https://www.cbssports.com/nfl/news/josh-allen-touchdown-pass-bills-nfl-play-of-the-year-2026/",
           "date": "2026-10-18"
         },
         {
-          "title": "Premier League Power Rankings: Brighton continue to impress, Aston Villa surge",
-          "url": "https://www.cbssports.com/soccer/news/premier-league-power-rankings-brighton-aston-villa/",
+          "title": "NFL Week 6 grades for every team that played so far: Browns, Steelers earn high marks, Colts get 'F'",
+          "url": "https://www.cbssports.com/nfl/news/nfl-grades-week-6-browns-ravens-afc-colts-2026/",
           "date": "2026-10-18"
         },
         {
-          "title": "Rays vs. Guardians prediction, odds, time: 2026 ALCS Game 5 picks by proven model",
-          "url": "https://www.cbssports.com/betting/news/rays-guardians-prediction-odds-time-2026-alcs-best-bets-game-5-picks/",
+          "title": "Cowboys vs. Packers prediction, odds, start time, betting preview: Sunday Night Football picks, best bets",
+          "url": "https://www.cbssports.com/betting/news/cowboys-vs-packers-prediction-odds-start-time-betting-preview-sunday-night-football-picks-best-bets/",
           "date": "2026-10-18"
         }
       ]
@@ -673,47 +673,47 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
-          "title": "Mark Andrews limited to just one catch in Week 6",
-          "url": "https://sports.yahoo.com/articles/mark-andrews-limited-just-one-203123811.html",
+          "title": "Chiefs CB Christian Roland-Wallace ejected after throwing punch vs. Chargers",
+          "url": "https://sports.yahoo.com/nfl/article/chiefs-cb-christian-roland-wallace-ejected-after-throwing-punch-vs-chargers-230643641.html",
           "date": "2026-10-18"
         },
         {
-          "title": "Lautaro Martinez’s injury lay-off is matter of concern for Inter in the long and short terms",
-          "url": "https://sports.yahoo.com/articles/lautaro-martinez-injury-lay-off-203000838.html",
+          "title": "Colts sticking with QB Daniel Jones after latest turnover-filled loss to Titans: 'He's got to play better'",
+          "url": "https://sports.yahoo.com/nfl/article/colts-sticking-with-qb-daniel-jones-after-latest-turnover-filled-loss-to-titans-hes-got-to-play-better-230552657.html",
           "date": "2026-10-18"
         },
         {
-          "title": "Duke Player Faces Calls To Be Cut After Swatting At Female Athletic Trainer",
-          "url": "https://sports.yahoo.com/articles/duke-player-faces-calls-cut-203000957.html",
+          "title": "Cardinals send reeling Rams to 2-4 and in danger of missing the playoffs with late rally aided by controversial penalty",
+          "url": "https://sports.yahoo.com/nfl/breaking-news/article/cardinals-send-reeling-rams-to-2-4-and-in-danger-of-missing-the-playoffs-with-late-rally-aided-by-controversial-penalty-230531865.html",
           "date": "2026-10-18"
         },
         {
-          "title": "Defense and special teams lead Titans to surprising, comeback win over Colts | Estes",
-          "url": "https://sports.yahoo.com/articles/defense-special-teams-lead-titans-202953117.html",
+          "title": "Bills' C.J. Gardner-Johnson ejected after spitting toward Raiders players",
+          "url": "https://sports.yahoo.com/articles/bills-c-j-gardner-johnson-230227372.html",
           "date": "2026-10-18"
         },
         {
-          "title": "4 takeaways from Eagles' clunker with Tanner McKee vs Panthers in Week 6",
-          "url": "https://sports.yahoo.com/articles/4-takeaways-eagles-clunker-tanner-202936473.html",
+          "title": "Giants' QB plans get complicated after Jameis Winston collapse, J.J. McCarthy surge",
+          "url": "https://sports.yahoo.com/articles/giants-qb-plans-complicated-jameis-230123251.html",
           "date": "2026-10-18"
         },
         {
-          "title": "NFL Week 6 Winners and Losers: With another listless loss, Eagles face possibility of major changes",
-          "url": "https://sports.yahoo.com/nfl/article/nfl-week-6-winners-and-losers-with-another-listless-loss-eagles-face-possibility-of-major-changes-202841055.html",
+          "title": "CBS NFL broadcasters take C.J. Gardner-Johnson to task over ‘selfish’ ejection for spitting",
+          "url": "https://sports.yahoo.com/articles/cbs-nfl-broadcasters-c-j-230048988.html",
           "date": "2026-10-18"
         },
         {
-          "title": "Patriots Beat Jets 26-19 as Treasure Coast products Gabe Jacas, Jamien Sherwood shine",
-          "url": "https://sports.yahoo.com/articles/patriots-beat-jets-26-19-202801907.html",
+          "title": "Bengals’ updated AFC North outlook after bye-week chaos",
+          "url": "https://sports.yahoo.com/articles/bengals-updated-afc-north-outlook-230035076.html",
           "date": "2026-10-18"
         },
         {
-          "title": "J.J. McCarthy throws first touchdown pass for Giants, nearly leads game-tying comeback",
-          "url": "https://sports.yahoo.com/nfl/article/jj-mccarthy-throws-first-touchdown-pass-for-giants-nearly-leads-game-tying-comeback-202747705.html",
+          "title": "‘Patience is the key’ – Hamza Abdelkarim offered Barcelona advice",
+          "url": "https://sports.yahoo.com/articles/patience-key-hamza-abdelkarim-offered-230000495.html",
           "date": "2026-10-18"
         }
       ]
@@ -724,8 +724,8 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "My wife says we can’t afford to retire. I vetoed her $8,000 trip to Italy. We’re in our 60s and have $4 million. Do I keep working?",
@@ -775,22 +775,22 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
+        {
+          "title": "Brent crude hovers near $109 a barrel as Ukraine resumes energy strikes, tankers attacked in Middle East",
+          "url": "https://www.cnbc.com/2026/10/18/oil-price-today-ukraine-russia-iran-strait-hormuz.html",
+          "date": "2026-10-18"
+        },
+        {
+          "title": "Anthropic commits 5% of shares to new public benefit fund that could address AI job disruption",
+          "url": "https://www.cnbc.com/2026/10/18/anthropic-ai-public-benefit-fund.html",
+          "date": "2026-10-18"
+        },
         {
           "title": "Bessent warns Zelenskyy to 'be very careful' about claims U.S. is throttling Starlink",
           "url": "https://www.cnbc.com/2026/10/18/bessent-zelenskyy-starlink-ukarine-war.html",
-          "date": "2026-10-18"
-        },
-        {
-          "title": "Iran says it has a 'new operational plan' if the U.S. resumes attacks, as shipping vessels report strikes",
-          "url": "https://www.cnbc.com/2026/10/18/iran-us-war-rezaei-operational-plan-shipping-attacks.html",
-          "date": "2026-10-18"
-        },
-        {
-          "title": "Why hedge funds could be making a bond market shock more likely",
-          "url": "https://www.cnbc.com/2026/10/18/hedge-funds-bond-market-turmoil.html",
           "date": "2026-10-18"
         },
         {
@@ -799,13 +799,13 @@
           "date": "2026-10-18"
         },
         {
-          "title": "Roth conversions: When the ‘juice isn't really worth the squeeze,’ according to a top-ranked advisor",
-          "url": "https://www.cnbc.com/2026/10/18/roth-conversion-2026.html",
+          "title": "Why hedge funds could be making a bond market shock more likely",
+          "url": "https://www.cnbc.com/2026/10/18/hedge-funds-bond-market-turmoil.html",
           "date": "2026-10-18"
         },
         {
-          "title": "Boomers are buying into the promise of monthly income from options ETFs, but there's a tax catch",
-          "url": "https://www.cnbc.com/2026/10/18/retirement-income-funds-taxes.html",
+          "title": "Iran says it has a 'new operational plan' if the U.S. resumes attacks, as shipping vessels report strikes",
+          "url": "https://www.cnbc.com/2026/10/18/iran-us-war-rezaei-operational-plan-shipping-attacks.html",
           "date": "2026-10-18"
         },
         {
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": []
     },
     {
@@ -846,8 +846,8 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Physicists create a bizarre new quantum state called a fractional fermi sea",
@@ -897,8 +897,8 @@
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "APOD: 2026 October 18 – Sonified: Eagle Nebula Pillars",
@@ -948,8 +948,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Noise-cancelling headphones prevent vomiting after surgery",
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Briefing Chat: An invisible tattoo that appears under UV light – and then disappears",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "stale",
       "generatedAt": "2026-10-18T04:27:22+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "A skeptic's first contact with Kubernetes (2024)",
@@ -1066,8 +1066,8 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Gemini 4 Argon vs. Claude Opus 5.5: Half the price and about half as accurate",
@@ -1118,7 +1118,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1168,8 +1168,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "Deploying, maintaining, and migrating production n8n on EKS",
@@ -1219,8 +1219,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-18T20:38:26+00:00",
-      "lastAttemptAt": "2026-10-18T20:38:26+00:00",
+      "generatedAt": "2026-10-18T23:08:59+00:00",
+      "lastAttemptAt": "2026-10-18T23:08:59+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #538",
