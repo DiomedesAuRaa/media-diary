@@ -300,7 +300,7 @@
     <script>
         const DATA_URL         = 'reddit-digest.json';
         const REFRESH_INTERVAL = 5 * 60 * 1000;
-        const STALE_THRESHOLD  = 2 * 60 * 60 * 1000; // 2 hours in ms
+        const STALE_THRESHOLD  = 18 * 60 * 60 * 1000; // Twice-daily collection plus scheduling grace.
 
         let allDigestData = null;
         let activeFeed = ToolUI.storageGet('activeFeed') || null;
@@ -388,6 +388,7 @@
         // Some generated feeds use a human-readable UTC timestamp that older
         // mobile browsers parse inconsistently. Normalize it to ISO UTC first.
         function parseDigestDate(value) {
+            if (value == null || value === '') return null;
             if (typeof value === 'string') {
                 const utc = value.match(/^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2}) UTC$/);
                 if (utc) value = utc[1] + 'T' + utc[2] + 'Z';
@@ -403,7 +404,7 @@
             const banner = document.getElementById('stale-banner');
             const stale = age > STALE_THRESHOLD;
             banner.textContent = stale
-                ? '⚠️ This published digest is over 2 hours old. Saved posts remain available.'
+                ? '⚠️ This published digest is older than expected. Saved posts remain available; check each feed’s last successful update.'
                 : '⚠️ Some feeds could not refresh. Saved posts remain available where a last-good snapshot exists.';
             banner.classList.toggle('visible', stale);
         }
@@ -643,6 +644,12 @@
 
                 // One div per feed; only the active one has class="active"
                 for (const [feedLabel, posts] of Object.entries(feedsData)) {
+                    const failureMessages = {
+                        access_denied: 'Reddit denied access. Collection stopped for this refresh.',
+                        rate_limited: 'Reddit limited requests. Collection stopped for this refresh.',
+                        budget_exhausted: 'The refresh time limit was reached.',
+                        fetch_failed: 'This feed could not be refreshed.'
+                    };
                     const feedDiv = document.createElement('div');
                     feedDiv.className    = 'feed-posts' + (feedLabel === localActiveFeed ? ' active' : '');
                     feedDiv.dataset.feed = feedLabel;
@@ -651,9 +658,9 @@
 
                     if (!posts || posts.length === 0) {
                         const status = data.feed_status && data.feed_status[subreddit] && data.feed_status[subreddit][feedLabel];
-                        const message = status?.status === 'unavailable'
+                        const message = (failureMessages[status?.reason] ? failureMessages[status.reason] + ' ' : '') + (status?.status === 'unavailable'
                             ? 'This source did not return posts on the last refresh; no saved posts are available.'
-                            : `No saved posts are available for ${feedLabel}.`;
+                            : `No saved posts are available for ${feedLabel}.`);
                         feedDiv.appendChild(ToolUI.text('p', message, 'empty'));
                     } else {
                         let page = 0;
@@ -663,6 +670,7 @@
                             const first = page * count;
                             const status = data.feed_status && data.feed_status[subreddit] && data.feed_status[subreddit][feedLabel];
                             if (status) {
+                                if (failureMessages[status.reason]) feedDiv.appendChild(ToolUI.text('p', failureMessages[status.reason] + ' Showing saved posts.', 'last-update'));
                                 const feedDate = parseDigestDate(status.generated_at);
                                 feedDiv.appendChild(ToolUI.text('p', (status.status === 'ok' ? 'Feed updated: ' : status.status + ' · Last good: ') + (feedDate ? feedDate.toLocaleString() : 'Unknown'), 'last-update'));
                             }

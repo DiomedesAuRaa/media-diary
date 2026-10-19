@@ -33,6 +33,7 @@ def validate_config(config):
 def parse_posts(body, subreddit):
     feed = feedparser.parse(body)
     posts = []
+    seen = set()
     for entry in feed.entries:
         url = entry.get('link', '')
         try:
@@ -49,6 +50,10 @@ def parse_posts(body, subreddit):
             author = author[2:]
         parsed = entry.get('published_parsed') or entry.get('updated_parsed')
         identifier = str(entry.get('id', '')).split('_')[-1][:200]
+        key = identifier or url
+        if key in seen:
+            continue
+        seen.add(key)
         posts.append({'title': title[:1000], 'author': author[:200], 'score': 0, 'url': url, 'selftext': '', 'created_utc': calendar.timegm(parsed) if parsed else 0, 'num_comments': 0, 'id': identifier, 'subreddit': subreddit, 'link_url': url, 'is_self': 'reddit.com/r/' in url, 'upvote_ratio': 0, 'flair': '', 'comments': [], 'metadata_source': 'rss'})
         if len(posts) == 5:
             break
@@ -63,10 +68,10 @@ def refresh(config, previous, fetch=None, now=None, delay=2, budget=600):
     stamp = now or datetime.now(timezone.utc).isoformat(timespec='seconds')
     # Keep each RSS request short so the overall refresh budget can stop before
     # the workflow timeout even when a feed stalls.
-    fetch = fetch or (lambda url: fetch_bytes(url, attempts=1, max_redirects=3, total_timeout=20))
     data, errors, statuses = {}, {}, {}
     successes = 0
     deadline = time.monotonic() + budget
+    stopped = None
     for subreddit in config['subreddits']:
         data[subreddit], statuses[subreddit] = {}, {}
         for feed in config['feeds']:
@@ -74,23 +79,38 @@ def refresh(config, previous, fetch=None, now=None, delay=2, budget=600):
             prior = previous.get('data', {}).get(subreddit, {}).get(label, [])
             old_status = previous.get('feed_status', {}).get(subreddit, {}).get(label, {})
             generated = old_status.get('generated_at', previous.get('timestamp'))
+            reason = None
             try:
+                if stopped:
+                    raise ValueError(stopped)
                 if time.monotonic() >= deadline:
                     raise ValueError('Refresh budget exhausted')
                 if delay:
-                    time.sleep(delay)
+                    time.sleep(min(delay, max(0, deadline - time.monotonic())))
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise ValueError('Refresh budget exhausted')
                 url = 'https://www.reddit.com/r/%s/%s.rss' % (subreddit, feed['sort'])
+                query = {'limit': 5}
                 if feed['sort'] == 'top' and feed['timeframe']:
-                    url += '?' + urlencode({'t': feed['timeframe']})
-                posts = parse_posts(fetch(url), subreddit)
+                    query['t'] = feed['timeframe']
+                url += '?' + urlencode(query)
+                body = fetch(url) if fetch else fetch_bytes(url, attempts=1, max_redirects=3, total_timeout=min(20, remaining))
+                posts = parse_posts(body, subreddit)
                 successes += 1
                 generated, status = stamp, 'ok'
-            except (requests.RequestException, ValueError, OSError):
+            except (requests.RequestException, ValueError, OSError) as exc:
+                code = exc.response.status_code if isinstance(exc, requests.HTTPError) and exc.response is not None else None
+                if code in (403, 429):
+                    stopped = 'access_denied' if code == 403 else 'rate_limited'
+                reason = stopped or ('budget_exhausted' if time.monotonic() >= deadline else 'fetch_failed')
                 posts = prior
                 status = 'stale' if prior else 'unavailable'
                 errors.setdefault(subreddit, []).append(label)
             data[subreddit][label] = posts
             statuses[subreddit][label] = {'status': status, 'generated_at': generated, 'last_attempt_at': stamp}
+            if reason:
+                statuses[subreddit][label]['reason'] = reason
     count = len(config['subreddits']) * len(config['feeds'])
     refresh_status = 'ok' if successes == count else 'partial' if successes else 'stale' if any(posts for feeds in data.values() for posts in feeds.values()) else 'unavailable'
     timestamp = stamp if successes else previous.get('timestamp')

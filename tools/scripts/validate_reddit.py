@@ -46,8 +46,10 @@ def validate(path, config_path=CONFIG_PATH):
             raise ValueError('Missing refresh provenance')
         for label,posts in feed_data.items():
             status=data['feed_status'][subreddit][label]
-            if not isinstance(status,dict) or set(status) != {'status','generated_at','last_attempt_at'} or status['status'] not in ('ok','stale','unavailable'):
+            if not isinstance(status,dict) or not {'status','generated_at','last_attempt_at'}.issubset(status) or set(status) - {'status','generated_at','last_attempt_at','reason'} or status['status'] not in ('ok','stale','unavailable'):
                 raise ValueError('Invalid feed provenance')
+            if 'reason' in status and status['reason'] not in ('access_denied','rate_limited','budget_exhausted','fetch_failed'):
+                raise ValueError('Invalid refresh reason')
             if not isinstance(posts,list) or len(posts)>5:
                 raise ValueError('Invalid posts')
             total+=len(posts)
