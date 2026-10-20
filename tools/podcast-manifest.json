@@ -34,7 +34,7 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "stale"
   },
   {
@@ -71,8 +71,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT7602991549.mp3"
       }
     ],
-    "generatedAt": "2026-10-20T10:04:13+00:00",
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "generatedAt": "2026-10-20T15:05:35+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -109,8 +109,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT3950816608.mp3"
       }
     ],
-    "generatedAt": "2026-10-20T10:04:13+00:00",
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "generatedAt": "2026-10-20T15:05:35+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -147,8 +147,8 @@
         "audioUrl": "https://www.podtrac.com/pts/redirect.mp3/pdst.fm/e/traffic.megaphone.fm/FOXM9334327261.mp3"
       }
     ],
-    "generatedAt": "2026-10-20T10:04:13+00:00",
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "generatedAt": "2026-10-20T15:05:35+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -185,8 +185,8 @@
         "audioUrl": "https://mgln.ai/e/617/pscrb.fm/rss/p/traffic.megaphone.fm/LEW2554458061.mp3"
       }
     ],
-    "generatedAt": "2026-10-20T10:04:13+00:00",
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "generatedAt": "2026-10-20T15:05:35+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -223,8 +223,8 @@
         "audioUrl": "http://feeds.thevillagechurch.net/link/13086/17468758/cd8ce4e289e841379e2e92c759026100_20260920_MC_BLJ_Wk2.mp3"
       }
     ],
-    "generatedAt": "2026-10-20T10:04:13+00:00",
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "generatedAt": "2026-10-20T15:05:35+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -261,8 +261,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT6223807260.mp3"
       }
     ],
-    "generatedAt": "2026-10-20T10:04:13+00:00",
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "generatedAt": "2026-10-20T15:05:35+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -299,8 +299,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT9148496522.mp3"
       }
     ],
-    "generatedAt": "2026-10-20T10:04:13+00:00",
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "generatedAt": "2026-10-20T15:05:35+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -338,12 +338,18 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "stale"
   },
   {
     "name": "P1 with Matt and Tommy",
     "episodes": [
+      {
+        "title": "Our 2026 United States GP predictions",
+        "date": "Oct 20, 2026",
+        "dateSort": "2026-10-20",
+        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6ad74f07b142b5f0c5b8e515/media.mp3"
+      },
       {
         "title": "Singapore GP Driver Ratings",
         "date": "Oct 14, 2026",
@@ -367,16 +373,10 @@
         "date": "Oct 10, 2026",
         "dateSort": "2026-10-10",
         "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6aca1eea7220f2050407b5b1/media.mp3"
-      },
-      {
-        "title": "Reaction to Singapore GP sprint qualifying",
-        "date": "Oct 09, 2026",
-        "dateSort": "2026-10-09",
-        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6ac9051b316f9061f333339f/media.mp3"
       }
     ],
-    "generatedAt": "2026-10-20T10:04:13+00:00",
-    "lastAttemptAt": "2026-10-20T10:04:13+00:00",
+    "generatedAt": "2026-10-20T15:05:35+00:00",
+    "lastAttemptAt": "2026-10-20T15:05:35+00:00",
     "fetchStatus": "ok"
   }
 ]
