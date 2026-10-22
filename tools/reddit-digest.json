@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-10-21T22:50:04+00:00",
-  "generated_at": "2026-10-21 22:50:04 UTC",
+  "timestamp": "2026-10-22T13:15:02+00:00",
+  "generated_at": "2026-10-22 13:15:02 UTC",
   "subreddits_count": 12,
-  "total_posts": 127,
+  "total_posts": 125,
   "feeds": [
     "Best of Hour",
     "Best of 24h",
@@ -88,16 +88,16 @@
     "cfb": {
       "Best of Hour": [
         {
-          "title": "[Ryan Clarke] Oregon tight end Jamari Johnson was cited for Class A speeding in Springfield on the same night as Evan Stewart’s DUII arrest. Police say Johnson NOT involved in the high-speed pursuit involving two vehicles, which is still under investigation.",
-          "author": "AkfurAshkenzic",
+          "title": "[Dellenger] In the \"second tier\" of college sports' caste system, Miami is positioning itself for a conference move while exploring football independence and fighting against a federal bill. \"If we have to go independent,\" the president says, \"I like our chances.\"",
+          "author": "Tarlcabot18",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xc1nn3/ryan_clarke_oregon_tight_end_jamari_johnson_was/",
+          "url": "https://www.reddit.com/r/CFB/comments/1xchflc/dellenger_in_the_second_tier_of_college_sports/",
           "selftext": "",
-          "created_utc": 1792622157,
+          "created_utc": 1792672727,
           "num_comments": 0,
-          "id": "1xc1nn3",
+          "id": "1xchflc",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xc1nn3/ryan_clarke_oregon_tight_end_jamari_johnson_was/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xchflc/dellenger_in_the_second_tier_of_college_sports/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -105,50 +105,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Why are gambling lines treated as game predictions instead of money-making tools?",
-          "author": "zach_sullivan",
+          "title": "Fans of teams that are perpetually 6-6,7-5, or worse, do you think you'd be happier as a fan if your team was in a \"B-league with other teams at your caliber, where bigger seasons and titles would be more commonly available to your school?",
+          "author": "wlane13",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xc1o87/why_are_gambling_lines_treated_as_game/",
+          "url": "https://www.reddit.com/r/CFB/comments/1xchmj3/fans_of_teams_that_are_perpetually_6675_or_worse/",
           "selftext": "",
-          "created_utc": 1792622200,
+          "created_utc": 1792673273,
           "num_comments": 0,
-          "id": "1xc1o87",
+          "id": "1xchmj3",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xc1o87/why_are_gambling_lines_treated_as_game/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Week 8 Matchup Preview Thread: UTSA vs Tulane",
-          "author": "JKess207",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xc1cf8/week_8_matchup_preview_thread_utsa_vs_tulane/",
-          "selftext": "",
-          "created_utc": 1792621347,
-          "num_comments": 0,
-          "id": "1xc1cf8",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xc1cf8/week_8_matchup_preview_thread_utsa_vs_tulane/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Week 8 Matchup Preview Thread: Baylor vs Kansas",
-          "author": "CambodianDrywall",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xc1rml/week_8_matchup_preview_thread_baylor_vs_kansas/",
-          "selftext": "",
-          "created_utc": 1792622450,
-          "num_comments": 0,
-          "id": "1xc1rml",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xc1rml/week_8_matchup_preview_thread_baylor_vs_kansas/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xchmj3/fans_of_teams_that_are_perpetually_6675_or_worse/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2335,30 +2301,30 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-10-21T22:50:04+00:00",
+  "last_attempt_at": "2026-10-22T13:15:02+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "ok",
-        "generated_at": "2026-10-21T22:50:04+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00"
+        "generated_at": "2026-10-22T13:15:02+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-20T22:44:57+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2366,25 +2332,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2392,25 +2358,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-17T11:47:37+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2418,25 +2384,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2444,25 +2410,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2470,25 +2436,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T13:08:12+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2496,25 +2462,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2522,25 +2488,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-18T12:12:57+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2548,25 +2514,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2574,25 +2540,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-17T11:47:37+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2600,25 +2566,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2626,25 +2592,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-13T23:28:23+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-21T22:50:04+00:00",
+        "last_attempt_at": "2026-10-22T13:15:02+00:00",
         "reason": "rate_limited"
       }
     }
