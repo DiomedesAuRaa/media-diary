@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T01:07:48+00:00",
-  "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+  "generatedAt": "2026-10-25T06:04:44+00:00",
+  "lastAttemptAt": "2026-10-25T06:04:44+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,9 +10,14 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
+        {
+          "title": "Drought, fire and high diesel prices 'addin' up tough' for Oregon ranchers",
+          "url": "https://www.npr.org/2026/10/25/nx-s1-5992998/drought-fire-and-high-diesel-prices-addin-up-tough-for-oregon-ranchers",
+          "date": "2026-10-25"
+        },
         {
           "title": "Archdiocese of New York agrees to $800 million settlement over sexual abuse claims",
           "url": "https://www.npr.org/2026/10/24/nx-s1-6015522/new-york-archdiocese-settlement-agreement",
@@ -47,11 +52,6 @@
           "title": "Is your Medicare Advantage plan ending next year? Here's what to know",
           "url": "https://www.npr.org/2026/10/24/nx-s1-6014612/medicare-advantage-open-enrollment-cancelled-plan",
           "date": "2026-10-24"
-        },
-        {
-          "title": "U.S. birth rate drops to record low, but older women are having more babies",
-          "url": "https://www.npr.org/2026/10/24/nx-s1-6012804/birth-rate-population-cdc",
-          "date": "2026-10-24"
         }
       ]
     },
@@ -61,28 +61,18 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
-        {
-          "title": "Almost 1,000 arrested as clashes follow another day of mass protests across France",
-          "url": "https://www.bbc.co.uk/news/articles/c95ynd587ynzo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-24"
-        },
-        {
-          "title": "Watch: BBC in Paris as police charge protesters and use tear gas during unrest",
-          "url": "https://www.bbc.co.uk/news/videos/cm89zqw9lx1do?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-24"
-        },
         {
           "title": "Storm Boelo amber warnings kick in as parts of UK brace for 80mph gusts",
           "url": "https://www.bbc.co.uk/news/articles/cmr4ydglq9r3o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-24"
+          "date": "2026-10-25"
         },
         {
-          "title": "Ukraine depends on Starlink - can Europe plug the gap?",
-          "url": "https://www.bbc.co.uk/news/articles/c65yn97xe7ypo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-24"
+          "title": "Meghan broke contact with father in letter citing abuse claims",
+          "url": "https://www.bbc.co.uk/news/articles/cqzjxg7l19yxo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-25"
         },
         {
           "title": "Burnham open to 'honest discussion' on EU free movement",
@@ -90,9 +80,19 @@
           "date": "2026-10-25"
         },
         {
-          "title": "Met Police says letter with claims about Meghan's father not shared with other law enforcement",
-          "url": "https://www.bbc.co.uk/news/articles/c39wz740e0nyo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-24"
+          "title": "Four ways Labour could raise money in the Budget without hiking income tax",
+          "url": "https://www.bbc.co.uk/news/articles/c65yn9p55np2o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-25"
+        },
+        {
+          "title": "Ukraine depends on Starlink - can Europe plug the gap?",
+          "url": "https://www.bbc.co.uk/news/articles/c65yn97xe7ypo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-25"
+        },
+        {
+          "title": "Israel to close West Bank crossings on election day as crackdown escalates",
+          "url": "https://www.bbc.co.uk/news/articles/c6y93ylpl5p2o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-25"
         },
         {
           "title": "Voters in Brazil to choose between Lula and Bolsonaro's son",
@@ -112,13 +112,13 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Almost 1,000 arrested as clashes follow another day of mass protests across France",
           "url": "https://www.bbc.co.uk/news/articles/c95ynd587ynzo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-24"
+          "date": "2026-10-25"
         },
         {
           "title": "Ukraine says Starlink connection 'now stable' after network limits",
@@ -163,48 +163,48 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
-          "title": "Obama slams Trump’s ‘cruelty and corruption’ at Ohio rally for Democrats",
-          "url": "https://www.aljazeera.com/news/2026/10/25/obama-slams-trumps-cruelty-and-corruption-at-ohio-rally-for-democrats?traffic_source=rss",
+          "title": "Nigeria’s missing: Families in the northeast still wait for answers",
+          "url": "https://www.aljazeera.com/news/2026/10/25/nigerias-missing-families-in-the-northeast-still-wait-for-answers?traffic_source=rss",
           "date": "2026-10-25"
         },
         {
-          "title": "Violence breaks out across Europe after another day of protests",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/25/10-25-sv-europe-protests-wrap?traffic_source=rss",
+          "title": "Election posters, mass tourism and property: Israel’s footprint in Cyprus",
+          "url": "https://www.aljazeera.com/features/2026/10/25/election-posters-mass-tourism-and-property-israels-footprint-in-cyprus?traffic_source=rss",
           "date": "2026-10-25"
         },
         {
-          "title": "Iran war live: Trump hints at possible Sunday Iran attack or deal reached",
-          "url": "https://www.aljazeera.com/news/liveblog/2026/10/25/iran-war-live-trump-hints-at-possible-sunday-iran-attack-or-deal-reached?traffic_source=rss",
+          "title": "Bots, deepfakes and surveillance: Israel’s election goes to war online",
+          "url": "https://www.aljazeera.com/news/2026/10/25/bots-deepfakes-and-surveillance-israels-election-goes-to-war-online?traffic_source=rss",
           "date": "2026-10-25"
         },
         {
-          "title": "Trump lauds Melania over Russia-Ukraine localised ceasefire deal",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/24/trump-lauds-melania-over-russia-ukraine-localised-ceasefire-deal?traffic_source=rss",
-          "date": "2026-10-24"
+          "title": "Serbia votes in election pitting longtime leader against student movement",
+          "url": "https://www.aljazeera.com/news/2026/10/25/serbia-votes-in-election-pitting-longtime-leader-against-student-movement?traffic_source=rss",
+          "date": "2026-10-25"
         },
         {
-          "title": "Gunmen kill at least 10 people in eastern Nigeria, police say",
-          "url": "https://www.aljazeera.com/news/2026/10/24/gunmen-kill-at-least-10-people-in-eastern-nigeria-police-say?traffic_source=rss",
-          "date": "2026-10-24"
+          "title": "Obama joins El-Sayed in Michigan rally cry before key midterms",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/25/obama-joins-el-sayed-in-michigan-rally-cry-before-key-midterms?traffic_source=rss",
+          "date": "2026-10-25"
         },
         {
-          "title": "How have Democrats’ policies shifted since the last major US election?",
-          "url": "https://www.aljazeera.com/economy/2026/10/24/how-have-democrats-policies-shifted-since-the-last-major-us-election?traffic_source=rss",
-          "date": "2026-10-24"
+          "title": "New York Archdiocese agrees to pay $800m to 1,300 sexual abuse survivors",
+          "url": "https://www.aljazeera.com/news/2026/10/25/new-york-archdiocese-agrees-to-pay-800m-to-1300-sexual-abuse-survivors?traffic_source=rss",
+          "date": "2026-10-25"
         },
         {
-          "title": "Brazil’s Lula, Bolsonaro draw thousands to election-eve rallies",
-          "url": "https://www.aljazeera.com/news/2026/10/24/brazils-lula-bolsonaro-draw-thousands-to-election-eve-rallies?traffic_source=rss",
-          "date": "2026-10-24"
+          "title": "Thousands rally in Turkiye over journalist arrests, media shutdowns",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/25/10-25-turkiye-media-crackdown-sv?traffic_source=rss",
+          "date": "2026-10-25"
         },
         {
-          "title": "Brazil’s candidates hold final rallies before knife-edge run off",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/24/brazils-candidates-hold-final-rallies-before-knife-edge-run-off?traffic_source=rss",
-          "date": "2026-10-24"
+          "title": "El Clasico awaits a Yamal vs Mbappe showdown on Mourinho’s return to La Liga",
+          "url": "https://www.aljazeera.com/sports/2026/10/25/el-clasico-awaits-a-yamal-vs-mbappe-showdown-on-mourinhos-return-to-la-liga?traffic_source=rss",
+          "date": "2026-10-25"
         }
       ]
     },
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Mystery over source of Ebola infection in Nigeria fuels concern about spread of virus",
@@ -265,8 +265,8 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Protests roil France once again as police seek to quell violence",
@@ -315,13 +315,38 @@
       "category": "tech",
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
-      "status": "stale",
-      "generatedAt": "2026-10-24T23:10:07+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "status": "ok",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
-          "title": "Argus – a free, open-source agentic security operations platform – MIT",
-          "url": "https://thomasunise.com/argus",
+          "title": "Five Qwen3.8-27B models match Fable 5 Using GVS5H Harness",
+          "url": "https://github.com/slee-persis/GVS5H",
+          "date": "2026-10-25"
+        },
+        {
+          "title": "Xbox Turns Down Netflix $500M Offer",
+          "url": "https://www.darkhorizons.com/xbox-turns-down-netflix-500-million-offer/",
+          "date": "2026-10-25"
+        },
+        {
+          "title": "Meta employees say Lula’s accounts restricted in Brazil election: Report",
+          "url": "https://www.aljazeera.com/economy/2026/10/16/meta-employees-say-lulas-accounts-restricted-in-brazil-election-report",
+          "date": "2026-10-25"
+        },
+        {
+          "title": "Cerebras Deploys Trillion-Parameter AI Models",
+          "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
+          "date": "2026-10-25"
+        },
+        {
+          "title": "Why Gopher in 2026?",
+          "url": "https://gopher.muffinlabs.com/sdf.org/users/nervtoji/phlog/001.txt",
+          "date": "2026-10-24"
+        },
+        {
+          "title": "America has lost 200k of jobs in media, film and the arts. How much is AI?",
+          "url": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
           "date": "2026-10-24"
         },
         {
@@ -333,31 +358,6 @@
           "title": "Small Programs and Languages",
           "url": "https://ratfactor.com/cards/pl-small",
           "date": "2026-10-24"
-        },
-        {
-          "title": "The Importance of Limitations for Creativity and Learning",
-          "url": "https://ratfactor.com/cards/limitations",
-          "date": "2026-10-24"
-        },
-        {
-          "title": "Show HN: Steal My Bitcoin",
-          "url": "https://stealmybitcoin.com/",
-          "date": "2026-10-24"
-        },
-        {
-          "title": "No signs of AI payoff outside the tech sector",
-          "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
-          "date": "2026-10-24"
-        },
-        {
-          "title": "Listen and read USA nuclear forces Emergency Action Messages, heard on 11175 kHz",
-          "url": "https://missileer.watch",
-          "date": "2026-10-24"
-        },
-        {
-          "title": "SpeedCrunch 1.1",
-          "url": "https://www.speedcrunch.org/",
-          "date": "2026-10-24"
         }
       ]
     },
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "A 1,000-mile cloud on Mars may reveal physics never seen in nature",
@@ -418,8 +418,8 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Blue Planet III is keeping the rough edges in the age of AI",
@@ -469,8 +469,8 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "The PHP Meltdown Shows How AI Makes Bugs More Exploitable",
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "The Download: testing six tech promises and biotech’s blind spots",
@@ -572,7 +572,7 @@
       "url": "https://www.espn.com/espn/rss/news",
       "status": "stale",
       "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Buccaneers explode in third quarter in win over Cowboys",
@@ -622,8 +622,8 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "College football winners, losers in Week 8: Big 12 loses momentum amid upsets, Miami's dominance continues",
@@ -631,39 +631,39 @@
           "date": "2026-10-25"
         },
         {
-          "title": "Utah vs. Houston odds, picks, college football predictions: Use Polymarket promo code CBSSPORTS for $25 bonus",
-          "url": "https://www.cbssports.com/prediction/news/utah-vs-houston-odds-picks-college-football-predictions-use-polymarket-promo-code-cbssports-for-25-bonus/",
+          "title": "The Rays are making too many mistakes to stand a chance against the relentless Brewers",
+          "url": "https://www.cbssports.com/mlb/news/2026-world-series-brewers-rays-mistakes/",
           "date": "2026-10-25"
         },
         {
-          "title": "Dana White explains why UFC booked Carlos Prates vs. Michael Morales: 'You can't hold up divisions like this'",
-          "url": "https://www.cbssports.com/ufc/news/dana-white-carlos-prates-vs-michael-morales-ufc-336-islam-makhachev/",
+          "title": "O'Shaquie Foster dominates Emanuel Navarrete to become unified junior lightweight champion",
+          "url": "https://www.cbssports.com/boxing/news/oshaquie-foster-vs-emanuel-navarrete-results-highlights-winner/",
           "date": "2026-10-25"
         },
         {
-          "title": "Utah State vs. Texas State live stream, where to watch online, CBS Sports Network finder, odds",
-          "url": "https://www.cbssports.com/college-football/news/college-football-schedule-week-8-cbs-sports-network-2026/",
+          "title": "Tomorrow's Top 25 Today: Texas vaults back into top 10 as BYU, Texas Tech fall in college football rankings",
+          "url": "https://www.cbssports.com/college-football/news/college-football-rankings-tomorrows-top-25-ap-poll-texas-byu-texas-tech/",
           "date": "2026-10-25"
         },
         {
-          "title": "Houston vs. Utah prediction, pick, odds, spread: Cougars, Utes meet with CFP and Big 12 title implications",
-          "url": "https://www.cbssports.com/college-football/news/houston-utah-prediction-picks-odds-spread-where-to-watch-live/",
+          "title": "2026 MLB playoff bracket: Schedule and scores as Brewers take 2-0 World Series lead over Rays",
+          "url": "https://www.cbssports.com/mlb/news/2026-mlb-playoff-bracket-schedule-scores-results-how-to-watch/",
           "date": "2026-10-25"
         },
         {
-          "title": "Ole Miss vs. Texas prediction, pick, odds, spread: Arch Manning, Longhorns fight to save their season",
-          "url": "https://www.cbssports.com/college-football/news/ole-miss-texas-prediction-picks-odds-spread-where-to-watch-live/",
+          "title": "The time has come for USC to pony up and pay Lincoln Riley's buyout after bottom falls out against Wisconsin",
+          "url": "https://www.cbssports.com/college-football/news/usc-lincoln-rileys-buyout-wisconsin/",
           "date": "2026-10-25"
         },
         {
-          "title": "USC vs. Wisconsin prediction, pick, odds, spread: Trojans, Badgers look to keep Big Ten hopes alive",
-          "url": "https://www.cbssports.com/college-football/news/usc-wisconsin-prediction-picks-odds-spread-where-to-watch-live/",
+          "title": "Prisco's Week 7 NFL picks: Lions edge Packers, Steelers top Saints in Paris",
+          "url": "https://www.cbssports.com/nfl/news/priscos-week-7-nfl-picks-odds-expert-picks-upsets/",
           "date": "2026-10-25"
         },
         {
-          "title": "UCF stuns No. 2 BYU in double overtime for first top-five win in program history",
-          "url": "https://www.cbssports.com/college-football/news/ucf-no-2-byu-double-overtime-win/",
-          "date": "2026-10-24"
+          "title": "Big 12 College Football Playoff picture thrown into chaos: BYU, Texas Tech upset losses alter landscape",
+          "url": "https://www.cbssports.com/college-football/news/cincinnatis-upset-texas-tech-big-12-college-football-playoff-picture-teams/",
+          "date": "2026-10-25"
         }
       ]
     },
@@ -673,47 +673,47 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
-          "title": "Steph Curry's brother is already calling out Warriors center woes",
-          "url": "https://sports.yahoo.com/articles/steph-currys-brother-already-calling-010034021.html",
+          "title": "Drawn in same group, India-Pakistan set to clash on November 22 in Rising Asia Cup",
+          "url": "https://sports.yahoo.com/articles/drawn-same-group-india-pakistan-060000746.html",
           "date": "2026-10-25"
         },
         {
-          "title": "Bruins vs. Sharks Score, Live Updates, Highlights From NHL Game",
-          "url": "https://sports.yahoo.com/articles/bruins-vs-sharks-score-live-220001652.html",
+          "title": "'It is one to learn for the future' - Xabi Alonso confirms crunch talks with Cole Palmer after Chelsea star’s red card against Tottenham",
+          "url": "https://sports.yahoo.com/articles/one-learn-future-xabi-alonso-055707499.html",
           "date": "2026-10-25"
         },
         {
-          "title": "Brandon Miller scores 34 points as the Hornets beat the winless Heat 115-110",
-          "url": "https://sports.yahoo.com/articles/brandon-miller-scores-34-points-005937915.html",
+          "title": "Coaches Poll Prediction: How High Will Notre Dame, Georgia, and Indiana Rise?",
+          "url": "https://sports.yahoo.com/articles/coaches-poll-prediction-high-notre-055427396.html",
           "date": "2026-10-25"
         },
         {
-          "title": "Analyzing Ball State football's homecoming victory over Sacramento State",
-          "url": "https://sports.yahoo.com/articles/analyzing-ball-state-footballs-homecoming-005818822.html",
+          "title": "Brewers' Ashby nears postseason scoreless relief record with World Series save",
+          "url": "https://sports.yahoo.com/articles/brewers-ashby-nears-postseason-scoreless-055357389.html",
           "date": "2026-10-25"
         },
         {
-          "title": "What is the Vikings biggest issue on offense in 2026?",
-          "url": "https://sports.yahoo.com/articles/vikings-biggest-issue-offense-2026-005525611.html",
+          "title": "Steve Sarkisian likes the edgy Arch Manning who helped Texas avoid meltdown against Ole Miss",
+          "url": "https://sports.yahoo.com/articles/steve-sarkisian-likes-edgy-arch-055348622.html",
           "date": "2026-10-25"
         },
         {
-          "title": "Bray Hubbard reveals how Alabama football pulled off Kalen DeBoer's birthday surprise",
-          "url": "https://sports.yahoo.com/articles/bray-hubbard-reveals-alabama-football-005500186.html",
+          "title": "Yahoo Top 10: BYU's stunning upset loss shakes up college football picture",
+          "url": "https://sports.yahoo.com/college-football/article/yahoo-top-10-byus-stunning-upset-loss-shakes-up-college-football-picture-055329978.html",
           "date": "2026-10-25"
         },
         {
-          "title": "South Carolina’s Tennessee upset sparks massive storming of field",
-          "url": "https://sports.yahoo.com/articles/south-carolina-tennessee-upset-sparks-005459837.html",
+          "title": "Undermanned Warriors put up fight but can't get past Devin Booker, Suns in Phoenix",
+          "url": "https://sports.yahoo.com/articles/undermanned-warriors-put-fight-cant-055248942.html",
           "date": "2026-10-25"
         },
         {
-          "title": "Caleb Williams Makes History as Bears Stop Streaking Patriots",
-          "url": "https://sports.yahoo.com/articles/caleb-williams-makes-history-bears-005256284.html",
+          "title": "No. 10 Utah remains the last undefeated Big 12 team standing after 21-13 win over No. 14 Houston",
+          "url": "https://sports.yahoo.com/college-football/breaking-news/article/no-10-utah-remains-the-last-undefeated-big-12-team-standing-after-21-13-win-over-no-14-houston-055237247.html",
           "date": "2026-10-25"
         }
       ]
@@ -724,8 +724,8 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "My father-in-law, 81, sold his $75,000 home to pay his daughter’s $50,000 debt. How can I keep him from becoming destitute?",
@@ -775,8 +775,8 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Amgen says drug combo cuts risk of death by 58% in patients with aggressive lung cancer",
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": []
     },
     {
@@ -846,8 +846,8 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "A hidden bias in human language challenges 70 years of science",
@@ -896,9 +896,9 @@
       "category": "science",
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
-      "status": "ok",
+      "status": "stale",
       "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "APOD: 2026 October 24 – Rosetta’s Selfie",
@@ -948,8 +948,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Personalised cancer vaccine expected to be approved next year",
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Author Correction: DYNLL1 binds to MRE11 to limit DNA end resection in BRCA1-deficient cells",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "stale",
       "generatedAt": "2026-10-22T01:29:02+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Show HN: I built a Markdown and raw HTML blog platform scoring 99 on PageSpeed",
@@ -1066,8 +1066,8 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "AWS says its AI security agent fixes 89% of bugs — but there’s a catch",
@@ -1118,7 +1118,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1168,8 +1168,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "Multi-tenant GPU Kubernetes on simulated hardware with Kamaji and HAMi",
@@ -1219,8 +1219,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-25T01:07:48+00:00",
-      "lastAttemptAt": "2026-10-25T01:07:48+00:00",
+      "generatedAt": "2026-10-25T06:04:44+00:00",
+      "lastAttemptAt": "2026-10-25T06:04:44+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #539",
