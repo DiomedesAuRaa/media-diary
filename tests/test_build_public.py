@@ -40,6 +40,7 @@ class PublicBuildTests(unittest.TestCase):
         self.assertTrue((self.output/'tools/news.html').is_file())
         self.assertEqual({p for p in files if p.endswith('.json')}, {
             'movies.json','books.json','tv.json','movies_watchlist.json','books_watchlist.json','tv_watchlist.json',
+            'details-index.json',
             'tools/podcast-manifest.json','tools/reddit-digest.json','tools/sports-config.json','tools/sports-snapshot.json','tools/news-digest.json'})
         self.assertFalse(any('/scripts/' in '/' + p or '/tests/' in '/' + p or p.endswith('.csv') for p in files))
         self.assertFalse(any(p.startswith(('app/','public_diary/','data/')) for p in files))
@@ -47,7 +48,10 @@ class PublicBuildTests(unittest.TestCase):
         tool_pages = {p for p in files if p.startswith('tools/') and p.endswith('.html')}
         self.assertTrue({'tools/home.html','tools/bible.html','tools/podcast-directory.html','tools/reddit-digest.html','tools/news.html','tools/weather.html','tools/standings.html','tools/sports-scores.html','tools/games/2048.html','tools/games/minesweeper.html','tools/games/snake.html','tools/games/tetris.html','tools/games/wordle.html'}.issubset(tool_pages))
         self.assertTrue((self.output/'compact.html').is_file())
-        self.assertTrue(all(p == 'index.html' or p == 'compact.html' or p.startswith('tools/') or p.endswith('-full.html') or p.endswith('-compact.html') for p in files if p.endswith('.html')))
+        self.assertTrue(all(p == 'index.html' or p == 'compact.html' or p.startswith(('tools/','details/')) or p.endswith('-full.html') or p.endswith('-compact.html') for p in files if p.endswith('.html')))
+        route_index=json.loads((self.output/'details-index.json').read_text())
+        self.assertEqual(set(route_index), {'movies','movies_watchlist','books','books_watchlist','tv','tv_watchlist'})
+        self.assertTrue(all(path.startswith('details/') and path.endswith('.html') for routes in route_index.values() for path in routes))
         for path in self.output.rglob('*.json'): json.loads(path.read_text())
 
     def test_all_local_html_assets_and_navigation_resolve(self):

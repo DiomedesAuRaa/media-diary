@@ -4,7 +4,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from public_diary.presentation import browse, filtered, normalized
+from public_diary.presentation import browse, detail, detail_name, filtered, normalized, records, year_summary
 
 
 class PublicPresentationTests(unittest.TestCase):
@@ -59,6 +59,42 @@ class PublicPresentationTests(unittest.TestCase):
     def test_empty_year_result_names_active_filters(self):
         html = browse(self.data, normalized({'year': '1999'}))
         self.assertIn('No entries match these filters.', html)
+
+    def test_detail_routes_and_title_match_history_are_projected_and_escaped(self):
+        self.data['movies'] = [
+            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2024-01-01', 'Date Released':'1999', 'Rating':'8', 'Director':'A & B', 'Private':'secret'},
+            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2025-02-02', 'Date Released':'2001', 'Rating':'9', 'Director':'Other', 'Private':'secret2'},
+            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2025-02-02', 'Date Released':'2001', 'Rating':'9', 'Director':'Other', 'Private':'secret2'},
+        ]
+        items=records(self.data)
+        self.assertNotEqual(items[1]['key'],items[2]['key'])
+        self.assertNotIn('Private',items[1]['row'])
+        self.assertEqual(detail_name(items[1]), 'details/movies-diary-'+items[1]['key']+'.html')
+        html=detail(self.data,items[1])
+        self.assertIn('Entries with this title',html)
+        self.assertIn('may refer to different editions',html)
+        self.assertIn('Release date',html)
+        self.assertIn('Director',html)
+        self.assertIn('&lt;b&gt;Same&lt;/b&gt;',html)
+        self.assertIn('A &amp; B',html)
+        self.assertNotIn('secret',html)
+        self.assertEqual(3,html.count('<li><a href="movies-diary-'))
+
+    def test_native_and_enhanced_detail_links_share_bounded_return_state(self):
+        html=browse(self.data,normalized({'year':'2024','type':'movies','sort':'title','page':'2','compact':'1'}))
+        self.assertIn('details/movies-diary-',html)
+        self.assertIn('q=&amp;page=1',html)
+        self.assertIn('year=2024',html)
+        js=(ROOT/'public_diary/static/diary.js').read_text()
+        self.assertIn("anchor.href=row.detail+href(state).slice(href(state).indexOf('?'))",js)
+        self.assertIn("detailMain.querySelector('.back').href='../'+bn+'?'+bp.toString()",js)
+
+    def test_year_summary_is_all_media_and_independent_of_search(self):
+        html=year_summary(self.data,'2024')
+        self.assertIn('<details class="year-summary" data-year-summary>',html)
+        for kind in ('movies','books','tv'):
+            self.assertIn('data-summary-type="'+kind+'"',html)
+        self.assertIn('do not verify identity',html)
 
 
 if __name__ == '__main__':

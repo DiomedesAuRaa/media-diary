@@ -11,7 +11,7 @@ from pathlib import Path
 
 REPO_ROOT=Path(__file__).resolve().parent.parent
 sys.path.insert(0,str(REPO_ROOT))
-from public_diary.presentation import PUBLIC_FIELDS, browse, normalized, filtered, static_name
+from public_diary.presentation import PUBLIC_FIELDS, browse, detail, detail_name, records, normalized, filtered, static_name
 DATA_DIR=REPO_ROOT/'data'
 DOCS_DIR=REPO_ROOT/'docs'
 EXPORTS={name+suffix:DATA_DIR/f'{name+suffix}.csv' for name in PUBLIC_FIELDS for suffix in ('','_watchlist')}
@@ -28,8 +28,17 @@ def export_csv(name,csv_path):
 
 def generate():
     data={name:export_csv(name,path) for name,path in EXPORTS.items()}
+    route_index={name:[detail_name(item,mode) for item in records(data,mode) if item['type']==typ]
+                 for typ in PUBLIC_FIELDS for mode in ('diary','later')
+                 for name in (typ if mode=='diary' else typ+'_watchlist',)}
+    (DOCS_DIR/'details-index.json').write_text(json.dumps(route_index,separators=(',',':')),encoding='utf-8')
     assets=DOCS_DIR/'assets';assets.mkdir(parents=True,exist_ok=True)
     for name in ('diary.css','diary.js'):shutil.copyfile(REPO_ROOT/'public_diary'/'static'/name,assets/name)
+    details=DOCS_DIR/'details';details.mkdir(parents=True,exist_ok=True)
+    for old in details.glob('*.html'): old.unlink()
+    for mode in ('diary','later'):
+        for item in records(data,mode):
+            (DOCS_DIR/detail_name(item,mode)).write_text(detail(data,item,mode),encoding='utf-8')
     # Delete only our own prior page names; unrelated documents are left alone.
     for page in DOCS_DIR.glob('*-*-*-*-*.html'):
         if page.name.split('-')[0] in ('all','movies','books','tv'):page.unlink()

@@ -15,6 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DIARY_DATA = (
+    'details-index.json',
     'movies.json', 'books.json', 'tv.json',
     'movies_watchlist.json', 'books_watchlist.json', 'tv_watchlist.json',
 )
@@ -153,6 +154,9 @@ def populate(output: Path):
         for source in generated.glob('*-*-*-*-*.html'):
             if source.name.split('-', 1)[0] in ('all','movies','books','tv'):
                 copy_checked(source, output / source.name, generated)
+        # Detail routes are generated only from PUBLIC_FIELDS-projected diary rows.
+        for source in (generated / 'details').glob('*.html'):
+            copy_checked(source, output / 'details' / source.name, generated)
     tools = ROOT / 'tools'
     validate_sports_config(tools / 'sports-config.json')
     subprocess.run([sys.executable, str(tools / 'scripts/validate_sports.py'), str(tools / 'sports-snapshot.json'), '--config', str(tools / 'sports-config.json')], check=True)
