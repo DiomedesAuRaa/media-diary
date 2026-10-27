@@ -34,7 +34,7 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "stale"
   },
   {
@@ -71,8 +71,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT3359867305.mp3"
       }
     ],
-    "generatedAt": "2026-10-27T05:23:22+00:00",
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "generatedAt": "2026-10-27T10:47:05+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -109,8 +109,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT5849779457.mp3"
       }
     ],
-    "generatedAt": "2026-10-27T05:23:22+00:00",
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "generatedAt": "2026-10-27T10:47:05+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -147,8 +147,8 @@
         "audioUrl": "https://www.podtrac.com/pts/redirect.mp3/pdst.fm/e/traffic.megaphone.fm/FOXM5725019814.mp3"
       }
     ],
-    "generatedAt": "2026-10-27T05:23:22+00:00",
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "generatedAt": "2026-10-27T10:47:05+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -185,8 +185,8 @@
         "audioUrl": "https://mgln.ai/e/617/pscrb.fm/rss/p/traffic.megaphone.fm/LEW3627198715.mp3"
       }
     ],
-    "generatedAt": "2026-10-27T05:23:22+00:00",
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "generatedAt": "2026-10-27T10:47:05+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -223,8 +223,8 @@
         "audioUrl": "http://feeds.thevillagechurch.net/link/13086/17476753/cbb1240fa7f94d68a9179e397e1dd9dc_20260927_MK_BLJ_Wk3.mp3"
       }
     ],
-    "generatedAt": "2026-10-27T05:23:22+00:00",
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "generatedAt": "2026-10-27T10:47:05+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -261,13 +261,19 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT3907387195.mp3"
       }
     ],
-    "generatedAt": "2026-10-27T05:23:22+00:00",
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "generatedAt": "2026-10-27T10:47:05+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "ok"
   },
   {
     "name": "Big Picture",
     "episodes": [
+      {
+        "title": "The Halloween Movie Draft",
+        "date": "Oct 27, 2026",
+        "dateSort": "2026-10-27",
+        "audioUrl": "https://traffic.megaphone.fm/GLT6602992460.mp3"
+      },
       {
         "title": "The 10 Best Horror Movies of 2026 and \u2018Clayface.\u2019 Plus, \u2018Street Fighter\u2019 With Shea Serrano!",
         "date": "Oct 23, 2026",
@@ -291,16 +297,10 @@
         "date": "Oct 13, 2026",
         "dateSort": "2026-10-13",
         "audioUrl": "https://traffic.megaphone.fm/GLT5730428682.mp3"
-      },
-      {
-        "title": "\u2018The Social Reckoning\u2019 Is No \u2018The Social Network,\u2019 and the Top Five Most Unnecessary Legasequels. Plus: The Best Movies at NYFF!",
-        "date": "Oct 09, 2026",
-        "dateSort": "2026-10-09",
-        "audioUrl": "https://traffic.megaphone.fm/GLT1575635158.mp3"
       }
     ],
-    "generatedAt": "2026-10-27T05:23:22+00:00",
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "generatedAt": "2026-10-27T10:47:05+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -338,7 +338,7 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "stale"
   },
   {
@@ -375,8 +375,8 @@
         "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6ad74f07b142b5f0c5b8e515/media.mp3"
       }
     ],
-    "generatedAt": "2026-10-27T05:23:22+00:00",
-    "lastAttemptAt": "2026-10-27T05:23:22+00:00",
+    "generatedAt": "2026-10-27T10:47:05+00:00",
+    "lastAttemptAt": "2026-10-27T10:47:05+00:00",
     "fetchStatus": "ok"
   }
 ]
