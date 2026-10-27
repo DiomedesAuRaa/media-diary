@@ -1,0 +1,65 @@
+import sys
+from pathlib import Path
+import unittest
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from public_diary.presentation import browse, filtered, normalized
+
+
+class PublicPresentationTests(unittest.TestCase):
+    def setUp(self):
+        self.data = {
+            'movies': [
+                {'Movie': 'Older', 'Date Watched/Rated': '12/20/20', 'Date Released': '', 'Rating': '8', 'Director': ''},
+                {'Movie': '<script>alert(1)</script>', 'Date Watched/Rated': '2024-02-29', 'Date Released': '', 'Rating': '9', 'Director': ''},
+                {'Movie': 'Bad date', 'Date Watched/Rated': '02/30/24', 'Date Released': '', 'Rating': '7', 'Director': ''},
+            ],
+            'books': [], 'tv': [], 'movies_watchlist': [], 'books_watchlist': [], 'tv_watchlist': [],
+        }
+
+    def test_normalization_and_year_filter(self):
+        self.assertEqual('all', normalized({})['type'])
+        self.assertEqual('all', normalized({'mode': 'later', 'year': '2024'})['year'])
+        state = normalized({'year': '2024'})
+        self.assertEqual(['<script>alert(1)</script>'], [r['row']['Movie'] for r in filtered(self.data, state)])
+
+    def test_year_is_honest_without_javascript_and_keeps_urls_small(self):
+        html = browse(self.data, normalized({}))
+        self.assertIn('id="year" name="year" disabled', html)
+        self.assertIn('id="q" name="q" type="search"', html)
+        self.assertIn('placeholder="Search diary" value="" disabled', html)
+        self.assertIn('name="sort" disabled', html)
+        self.assertIn('<button disabled>Find</button>', html)
+        self.assertIn('<noscript><p class="no-js">Search and year filters need JavaScript.', html)
+        self.assertIn('href="tools/"', html)
+        self.assertNotIn('Portfolio', html)
+        self.assertNotIn('/log?', html)
+        self.assertIn('href="all-diary-recent-1-compact.html"', browse(self.data, normalized({'compact': '1'})))
+
+    def test_renderer_escapes_public_titles(self):
+        html = browse(self.data, normalized({'year': '2024'}))
+        self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt;', html)
+        self.assertNotIn('<script>alert(1)</script>', html)
+
+    def test_year_and_search_survive_category_and_sort_links(self):
+        html = browse(self.data, normalized({'year': '2024', 'q': 'find me', 'sort': 'title'}))
+        self.assertIn('movies-diary-title-1-full.html?type=movies', html)
+        self.assertIn('year=2024', html)
+        self.assertIn('q=find+me', html)
+        script = (ROOT / 'public_diary' / 'static' / 'diary.js').read_text()
+        self.assertIn("['type','mode','q','sort','page','compact','year']", script)
+        self.assertIn('Number(state.year)<1000', script)
+        self.assertIn("year:match[2]==='later'?'all':state.year", script)
+        self.assertIn('textContent=text', script)
+        self.assertNotIn('innerHTML', script)
+        self.assertIn("history.pushState(state,'',href(state))", script)
+        self.assertIn('if(e.state){state=e.state;load();}', script)
+
+    def test_empty_year_result_names_active_filters(self):
+        html = browse(self.data, normalized({'year': '1999'}))
+        self.assertIn('No entries match these filters.', html)
+
+
+if __name__ == '__main__':
+    unittest.main()

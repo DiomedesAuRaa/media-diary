@@ -61,7 +61,7 @@ class PublicBuildTests(unittest.TestCase):
                     if not target.exists(): missing.append((page.relative_to(self.output),ref))
         self.assertEqual(missing, [])
         diary=(self.output/'index.html').read_text()
-        self.assertIn('href="tools/home.html"', diary)
+        self.assertIn('href="tools/"', diary)
         self.assertIn('href="../"', (self.output/'tools/home.html').read_text())
 
     def test_workflow_output_path_and_forbidden_paths(self):
