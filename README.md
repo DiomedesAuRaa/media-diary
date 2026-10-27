@@ -2,7 +2,7 @@
 
 This repository builds the read-only public media diary at the existing project root and the personal tools hub at `/media-diary/tools/`. The separate career site remains at its existing `Portfolio` URL.
 
-The public diary exporter reads six CSVs in `data/` and exports only the approved fields in `public_diary/presentation.py`: title, date, release/publication date, rating and creator (director, author or show creator). Ratings, dates and watch/read lists are public. Review those records before committing changes.
+The public diary exporter reads six CSVs in `data/` and exports only the approved fields in `public_diary/presentation.py`: title, date, release/publication date, rating, creator (director, author or show creator), and the optional `Note` field (up to 2,000 characters). Notes are intentionally public and appear on individual entry detail pages. Older CSVs without a `Note` header remain valid and export an empty note. Ratings, dates and watch/read lists are public. Review those records before committing changes.
 
 Tool feed inputs are public too. `tools/sub.yaml` lists podcast subscriptions; `tools/scripts/reddit-config.json` lists selected communities and feed types; `tools/scripts/news-config.json` selects RSS news sources/categories; `tools/sports-config.json` selects leagues. The news digest, podcast manifest and Reddit digest contain feed results and timestamps and are published as JSON. News headlines are rendered into static HTML during the build and do not call a proxy at page load. Weather city choice, compact mode, game progress and high scores stay in browser localStorage and are not included in the artifact. The browser uses the same GitHub Pages origin as the career site, so localStorage is shared by both project paths.
 

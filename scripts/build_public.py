@@ -88,7 +88,8 @@ def validate_inputs(public_fields):
         with path.open(encoding='utf-8', newline='') as handle:
             header = next(csv.reader(handle), None)
         media_type = name.removesuffix('_watchlist.csv').removesuffix('.csv')
-        if not header or not set(public_fields[media_type]).issubset(header):
+        required_fields = set(public_fields[media_type]) - {'Note'}
+        if not header or not required_fields.issubset(header):
             raise ValueError(f'Invalid diary dataset columns: data/{name}')
 
 def validate_sports_config(path: Path):

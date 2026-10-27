@@ -2,6 +2,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from urllib.parse import urlsplit
+import csv
 import importlib.util
 import json
 import tempfile
@@ -113,6 +114,38 @@ class PublicBuildTests(unittest.TestCase):
                 with self.assertRaises(ValueError): builder.validate_inputs({'movies': ('Movie',), 'books': ('Book',), 'tv': ('Show',)})
         finally:
             builder.ROOT=old_root
+
+    def test_old_csv_without_optional_note_remains_valid_and_exports_empty_note(self):
+        old_root, old_validator = builder.ROOT, builder.validate_source_tree
+        try:
+            with TemporaryDirectory(prefix='combined-apps-legacy-', dir=ROOT.parent) as temp:
+                base=Path(temp); data=base/'data'; data.mkdir(); docs=base/'docs'; docs.mkdir()
+                builder.ROOT=base; builder.validate_source_tree=lambda: None
+                fields={'movies':('Movie','Date Watched/Rated','Date Released','Rating','Director','Note'),
+                        'books':('Book','Date Read/Rated','Date Published','Rating','Author','Note'),
+                        'tv':('Show','Date Watched/Rated','Date Premiered','Rating','Creator','Note')}
+                required={kind:tuple(field for field in columns if field!='Note') for kind,columns in fields.items()}
+                datasets=(('movies.csv','movies'),('books.csv','books'),('tv.csv','tv'),
+                          ('movies_watchlist.csv','movies'),('books_watchlist.csv','books'),('tv_watchlist.csv','tv'))
+                for filename,kind in datasets:
+                    columns=required[kind]
+                    (data/filename).write_text(','.join(columns)+'\n'+','.join(['A']*len(columns))+'\n')
+                builder.validate_inputs(fields)
+                exporter_spec=importlib.util.spec_from_file_location('legacy_export',ROOT/'scripts/export_json.py')
+                exporter=importlib.util.module_from_spec(exporter_spec); exporter_spec.loader.exec_module(exporter)
+                exporter.DATA_DIR=data; exporter.DOCS_DIR=docs
+                rows=exporter.export_csv('movies',data/'movies.csv')
+                self.assertEqual('',rows[0]['Note'])
+                self.assertEqual('',json.loads((docs/'movies.json').read_text())['entries'][0]['Note'])
+                note='Café 🎬\nA second line, with a comma.'
+                note_path=data/'movies_with_note.csv'
+                with note_path.open('w',encoding='utf-8',newline='') as handle:
+                    writer=csv.writer(handle); writer.writerow(fields['movies']); writer.writerow(['A','','','','',note])
+                rows=exporter.export_csv('movies',note_path)
+                self.assertEqual(note,rows[0]['Note'])
+                self.assertEqual(note,json.loads((docs/'movies.json').read_text())['entries'][0]['Note'])
+        finally:
+            builder.ROOT=old_root; builder.validate_source_tree=old_validator
 
     def test_symlinked_public_inputs_are_rejected(self):
         with TemporaryDirectory(prefix='combined-apps-input-', dir=ROOT.parent) as temp:

@@ -42,6 +42,18 @@ class PublicPresentationTests(unittest.TestCase):
         self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt;', html)
         self.assertNotIn('<script>alert(1)</script>', html)
 
+    def test_note_does_not_change_existing_public_key_and_duplicate_occurrences_stay_unique(self):
+        first=records({'movies':[{'Movie':'Same','Note':'first'}]})[0]
+        second=records({'movies':[{'Movie':'Same','Note':'second'}]})[0]
+        self.assertEqual(first['key'],second['key'])
+        old_public_row={'Movie':'Same','Date Watched/Rated':'','Date Released':'','Rating':'','Director':''}
+        from public_diary.presentation import row_key
+        self.assertEqual(first['key'],row_key(old_public_row)+'-0')
+        duplicates=records({'movies':[{'Movie':'Same','Note':'first'},{'Movie':'Same','Note':'second'}]})
+        self.assertEqual([row_key(old_public_row)+'-0',row_key(old_public_row)+'-1'],[item['key'] for item in duplicates])
+        listing=browse({'movies':[{'Movie':'Same','Note':'secret note'}]},normalized({}))
+        self.assertNotIn('secret note',listing)
+
     def test_year_and_search_survive_category_and_sort_links(self):
         html = browse(self.data, normalized({'year': '2024', 'q': 'find me', 'sort': 'title'}))
         self.assertIn('movies-diary-title-1-full.html?type=movies', html)
@@ -62,9 +74,9 @@ class PublicPresentationTests(unittest.TestCase):
 
     def test_detail_routes_and_title_match_history_are_projected_and_escaped(self):
         self.data['movies'] = [
-            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2024-01-01', 'Date Released':'1999', 'Rating':'8', 'Director':'A & B', 'Private':'secret'},
-            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2025-02-02', 'Date Released':'2001', 'Rating':'9', 'Director':'Other', 'Private':'secret2'},
-            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2025-02-02', 'Date Released':'2001', 'Rating':'9', 'Director':'Other', 'Private':'secret2'},
+            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2024-01-01', 'Date Released':'1999', 'Rating':'8', 'Director':'A & B', 'Note':'first line\n<script>x</script>', 'Private':'secret'},
+            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2025-02-02', 'Date Released':'2001', 'Rating':'9', 'Director':'Other', 'Note':'second', 'Private':'secret2'},
+            {'Movie':'<b>Same</b>', 'Date Watched/Rated':'2025-02-02', 'Date Released':'2001', 'Rating':'9', 'Director':'Other', 'Note':'second', 'Private':'secret2'},
         ]
         items=records(self.data)
         self.assertNotEqual(items[1]['key'],items[2]['key'])
@@ -76,9 +88,24 @@ class PublicPresentationTests(unittest.TestCase):
         self.assertIn('Release date',html)
         self.assertIn('Director',html)
         self.assertIn('&lt;b&gt;Same&lt;/b&gt;',html)
-        self.assertIn('A &amp; B',html)
         self.assertNotIn('secret',html)
-        self.assertEqual(3,html.count('<li><a href="movies-diary-'))
+        self.assertEqual(2,html.count('<a href="movies-diary-'))
+        self.assertIn('<span>Current entry</span>',html)
+        self.assertIn('View session',html)
+        self.assertIn('Date watched: 2025-02-02 · Director: Other · Release date: 2001 · Rating: 9/10',html)
+        self.assertIn('<dt>Note</dt><dd class="rating-note">second</dd>',html)
+        self.assertNotIn('<script>x</script>',html)
+        self.assertNotIn('secret',html)
+        long_note='é🎬\n'*900
+        self.assertEqual(long_note,records({'movies':[{'Movie':'x','Note':long_note}]})[0]['row']['Note'])
+
+    def test_watchlist_history_never_marks_diary_row_as_current(self):
+        row={'Movie':'Same','Date Watched/Rated':'2025-01-01','Rating':'8','Note':'n'}
+        data={'movies':[row], 'movies_watchlist':[row]}
+        item=records(data,'later')[0]
+        html=detail(data,item,'later')
+        self.assertNotIn('<span>Current entry</span>',html)
+        self.assertIn('View session',html)
 
     def test_native_and_enhanced_detail_links_share_bounded_return_state(self):
         html=browse(self.data,normalized({'year':'2024','type':'movies','sort':'title','page':'2','compact':'1'}))
@@ -88,6 +115,7 @@ class PublicPresentationTests(unittest.TestCase):
         js=(ROOT/'public_diary/static/diary.js').read_text()
         self.assertIn("anchor.href=row.detail+href(state).slice(href(state).indexOf('?'))",js)
         self.assertIn("detailMain.querySelector('.back').href='../'+bn+'?'+bp.toString()",js)
+        self.assertIn("detailMain.querySelectorAll('.match-history a')",js)
 
     def test_year_summary_is_all_media_and_independent_of_search(self):
         html=year_summary(self.data,'2024')

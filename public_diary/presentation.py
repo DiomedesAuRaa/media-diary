@@ -9,15 +9,18 @@ from public_diary.config import MEDIA_TYPES
 
 LABELS = {'all': 'All', 'movies': 'Movies', 'books': 'Books', 'tv': 'TV'}
 PUBLIC_FIELDS = {
-    'movies': ('Movie', 'Date Watched/Rated', 'Date Released', 'Rating', 'Director'),
-    'books': ('Book', 'Date Read/Rated', 'Date Published', 'Rating', 'Author'),
-    'tv': ('Show', 'Date Watched/Rated', 'Date Premiered', 'Rating', 'Creator'),
+    'movies': ('Movie', 'Date Watched/Rated', 'Date Released', 'Rating', 'Director', 'Note'),
+    'books': ('Book', 'Date Read/Rated', 'Date Published', 'Rating', 'Author', 'Note'),
+    'tv': ('Show', 'Date Watched/Rated', 'Date Premiered', 'Rating', 'Creator', 'Note'),
 }
 
 def esc(value): return escape(str(value or ''), quote=True)
 
 def row_key(row):
-    return hashlib.sha256(json.dumps(row, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:24]
+    # Public detail URLs predate Note. Keep Note out of this read-only route key
+    # so adding an annotation does not invalidate existing bookmarks.
+    identity={field:value for field,value in row.items() if field!='Note'}
+    return hashlib.sha256(json.dumps(identity, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:24]
 
 def records(data, mode='diary'):
     result=[]
@@ -97,7 +100,9 @@ def detail(data, item, mode='diary'):
     fields.extend([('Rating', (row.get('Rating','')+'/10') if row.get('Rating') else ''),
                    (('Release date' if typ!='books' else 'Publication date'),row.get(publication,'')),
                    (('Director' if typ=='movies' else 'Author' if typ=='books' else 'Creator'),row.get(creator,''))])
-    details=''.join(f'<dt>{esc(label)}</dt><dd>{esc(value) if value else "—"}</dd>' for label,value in fields)
+    if row.get('Note'):
+        fields.append(('Note',row['Note']))
+    details=''.join(f'<dt>{esc(label)}</dt><dd class="rating-note">{esc(value) if value else "—"}</dd>' if label=='Note' else f'<dt>{esc(label)}</dt><dd>{esc(value) if value else "—"}</dd>' for label,value in fields)
     # Title matches are a readable history aid, not a claim that records share an identity.
     matches=[]
     folded=title.casefold().strip()
@@ -105,7 +110,12 @@ def detail(data, item, mode='diary'):
         if candidate['type']!=typ or candidate['row'].get(cfg['title_column'],'').casefold().strip()!=folded:
             continue
         cr=candidate['row']; matches.append((candidate,cr.get(date,''),cr.get(cfg['api_fields'][1],''),cr.get(cfg['api_fields'][0],''),cr.get('Rating','')))
-    match_html=''.join(f'<li><a href="{esc(typ+"-diary-"+candidate["key"]+".html")}">{esc(candidate["row"].get(cfg["title_column"],title))}</a> · {esc("Date read" if typ=="books" else "Date watched")}: {esc(d) if d else "—"} · {esc(creator_label(typ))}: {esc(c) if c else "—"} · {esc("Publication date" if typ=="books" else "Release date")}: {esc(y) if y else "—"} · Rating: {esc(rating)+"/10" if rating else "—"}</li>' for candidate,d,c,y,rating in matches)
+    match_parts=[]
+    for candidate,d,c,y,rating in matches:
+        link=(f'<span>Current entry</span>' if mode=='diary' and candidate['key']==item['key'] else
+              f'<a href="{esc(typ+"-diary-"+candidate["key"]+".html")}">View session</a>')
+        match_parts.append(f'<li>{link} · {esc("Date read" if typ=="books" else "Date watched")}: {esc(d) if d else "—"} · {esc(creator_label(typ))}: {esc(c) if c else "—"} · {esc("Publication date" if typ=="books" else "Release date")}: {esc(y) if y else "—"} · Rating: {esc(rating)+"/10" if rating else "—"}</li>')
+    match_html=''.join(match_parts)
     back=f'../{typ}-{mode}-recent-1-full.html'
     body=f'''<main id="main" data-detail="1"><a class="back" href="{back}">← Back to diary</a><h1>{esc(title)}</h1><p class="detail-kind">{esc(LABELS[typ])}</p><dl class="detail-fields">{details}</dl><section aria-labelledby="history-title"><h2 id="history-title">Entries with this title</h2><p>These entries share a title and may refer to different editions, releases, or occasions.</p><ul class="match-history">{match_html or '<li>No diary title matches.</li>'}</ul></section></main>'''
     return shell(body,title=f'{title} · Media Diary',prefix='../')
