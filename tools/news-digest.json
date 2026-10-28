@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-27T23:45:04+00:00",
-  "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+  "generatedAt": "2026-10-28T05:36:43+00:00",
+  "lastAttemptAt": "2026-10-28T05:36:43+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,16 +10,21 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
+        {
+          "title": "U.S. to issue visas to Flávio Bolsonaro as his whereabouts remain unclear",
+          "url": "https://www.npr.org/2026/10/27/nx-s1-6019678/u-s-to-issue-visas-to-flavio-bolsonaro-as-his-whereabouts-remain-unclear",
+          "date": "2026-10-28"
+        },
         {
           "title": "Southwest flood damage estimates are hundreds of millions for New Mexico alone",
           "url": "https://www.npr.org/2026/10/27/nx-s1-6019352/southwest-flood-damage-estimates-are-hundreds-of-millions-for-new-mexico-alone",
           "date": "2026-10-27"
         },
         {
-          "title": "Israel's election has a high turnout, lifting opposition hopes of beating Netanyahu",
+          "title": "Israel's voter turnout soars as Netanyahu faces a tight election",
           "url": "https://www.npr.org/2026/10/27/nx-s1-6019381/israel-elections",
           "date": "2026-10-27"
         },
@@ -47,11 +52,6 @@
           "title": "A 'Green Army' is out to thwart El Niño flooding",
           "url": "https://www.npr.org/2026/10/27/nx-s1-6010370/el-nino-floods-nairobi-green-army",
           "date": "2026-10-27"
-        },
-        {
-          "title": "Democrats have a midterm edge, poll shows. And, Israelis vote in high-stakes election",
-          "url": "https://www.npr.org/2026/10/27/g-s1-150052/up-first-newsletter-midterms-polling-data-voter-fraud-israel-prime-minister-elections",
-          "date": "2026-10-27"
         }
       ]
     },
@@ -61,47 +61,47 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
+        {
+          "title": "Israeli exit polls suggest no clear winner in pivotal general election",
+          "url": "https://www.bbc.co.uk/news/articles/cq1kdgxw302zo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Watch: What happens now after close vote in Israeli election?",
+          "url": "https://www.bbc.co.uk/news/videos/cm79p5pxqey2o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-28"
+        },
         {
           "title": "Chris Mason: Budget needs to go some way towards delivering PM's promises",
           "url": "https://www.bbc.co.uk/news/articles/c6y43wkln1k2o?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-27"
         },
         {
-          "title": "Minimum wage set to rise but 18-20 year-olds will not get bigger increase",
-          "url": "https://www.bbc.co.uk/news/articles/c6d93gq1xdgno?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-27"
+          "title": "Defeated presidential candidate Flávio Bolsonaro arrives in US after Brazil cancels his passports",
+          "url": "https://www.bbc.co.uk/news/articles/ckly0xpxp243o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-28"
         },
         {
           "title": "King acknowledges 'suffering of the past' as Caribbean tour begins",
           "url": "https://www.bbc.co.uk/news/articles/cmwyv8ld22z1o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-27"
+          "date": "2026-10-28"
         },
         {
-          "title": "Two in court over alleged Iran-linked plot at RAF Fairford",
-          "url": "https://www.bbc.co.uk/news/articles/cqly3v5vz4kko?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-27"
+          "title": "Thick fog to create dangerous driving conditions for UK commuters",
+          "url": "https://www.bbc.co.uk/weather/articles/c6x2wr0dwzx1o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-28"
         },
         {
-          "title": "Men abused woman after her husband drugged and advertised her online, court told",
-          "url": "https://www.bbc.co.uk/news/articles/c5m2d83kmkkyo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-27"
+          "title": "Neil Young again sues Trump campaign for playing Rockin' in the Free World at rally",
+          "url": "https://www.bbc.co.uk/news/articles/cqr7y3d0dvm5o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-28"
         },
         {
           "title": "Landline switchover could cut people off in emergency, minister warned",
           "url": "https://www.bbc.co.uk/news/articles/c6x29g1nlr51o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Ceasefire extended across Ukraine's Kherson region, officials say",
-          "url": "https://www.bbc.co.uk/news/articles/c6lye1w9p2l8o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Norway and Finland leaders hold rare call with Putin",
-          "url": "https://www.bbc.co.uk/news/articles/c6vgj813mlelo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-27"
         }
       ]
@@ -112,8 +112,8 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "Norway and Finland leaders hold rare call with Putin",
@@ -148,7 +148,7 @@
         {
           "title": "Alexander brothers each sentenced to 30 years in prison in sex trafficking case",
           "url": "https://www.bbc.co.uk/news/articles/cqn498mng08ro?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-27"
+          "date": "2026-10-28"
         },
         {
           "title": "Egypt court fines journalist Lina Attalah and orders news site's closure",
@@ -163,48 +163,48 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
-          "title": "Gaza’s women filmmakers turn pain into cinema as new academy launches",
-          "url": "https://www.aljazeera.com/news/2026/10/27/gazas-women-filmmakers-turn-pain-into-cinema-as-new-academy-launches?traffic_source=rss",
-          "date": "2026-10-27"
+          "title": "Mbappe faces backlash in China for meme fiasco",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/28/mbappe-faces-backlash-in-china-for-meme-fiasco?traffic_source=rss",
+          "date": "2026-10-28"
         },
         {
-          "title": "President Lula calls Bolsonaro’s Brazil exit ‘shameful’",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/27/president-lula-calls-bolsonaros-brazil-exit?traffic_source=rss",
-          "date": "2026-10-27"
+          "title": "Mahmoud Khalil credits Palestinian activism for reshaping US politics",
+          "url": "https://www.aljazeera.com/news/2026/10/28/mahmoud-khalil-credits-palestinian-activism-for-reshaping-us-politics?traffic_source=rss",
+          "date": "2026-10-28"
         },
         {
-          "title": "A bad day for Ben-Gvir as he addresses his supporters",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/27/a-bad-day-for-ben-gvir-as-he-addresses-his-supporters?traffic_source=rss",
-          "date": "2026-10-27"
+          "title": "Bolsonaro ally denies knowledge of senator’s plan to flee Brazil",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/28/bolsonaro-ally-denies-knowledge-of-senators-plan-to-flee-brazil?traffic_source=rss",
+          "date": "2026-10-28"
         },
         {
-          "title": "No clear mandate projected in Israel election: What’s next?",
-          "url": "https://www.aljazeera.com/news/2026/10/27/no-clear-mandate-projected-in-israel-election-whats-next?traffic_source=rss",
-          "date": "2026-10-27"
+          "title": "Global stock markets rise as investors continue to bet on AI",
+          "url": "https://www.aljazeera.com/news/2026/10/28/global-stock-markets-rise-as-investors-continue-to-bet-on-ai?traffic_source=rss",
+          "date": "2026-10-28"
         },
         {
-          "title": "Smotrich dances in Israel despite far-right decline",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/27/smotrich-dances-in-israel-despite-far-right-decline?traffic_source=rss",
-          "date": "2026-10-27"
+          "title": "Syria-Jordan border reopens amid probe into deadly air strikes",
+          "url": "https://www.aljazeera.com/news/2026/10/28/syria-jordan-border-reopens-amid-probe-into-deadly-airstrikes?traffic_source=rss",
+          "date": "2026-10-28"
         },
         {
-          "title": "Arab towns in Israel celebrate historic Knesset gains with fireworks",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/27/arab-towns-in-israel-celebrate-historic-knesset-gains-with-fireworks?traffic_source=rss",
-          "date": "2026-10-27"
+          "title": "Five key takeaways from Israel’s parliamentary elections",
+          "url": "https://www.aljazeera.com/news/2026/10/28/five-key-takeaways-from-israels-parliamentary-elections?traffic_source=rss",
+          "date": "2026-10-28"
         },
         {
-          "title": "‘Go home, Ben-Gvir’; Arab Bloc celebrates record turnout in Israel election",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/27/go-home-ben-gvir-arab-bloc-celebrates-record-turnout-in-israel-election?traffic_source=rss",
-          "date": "2026-10-27"
+          "title": "Netanyahu: Coalition with Arab parties would be ‘shameful’",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/28/netanyahu-coalition-with-arab-parties-would-be?traffic_source=rss",
+          "date": "2026-10-28"
         },
         {
-          "title": "Iran war live: Pezeshkian says Middle East can solve own issues without US",
-          "url": "https://www.aljazeera.com/news/liveblog/2026/10/27/iran-war-live-pezeshkian-says-middle-east-can-solve-own-issues-without-us?traffic_source=rss",
-          "date": "2026-10-27"
+          "title": "Arab parties on track to win record seats in Israel election, polls show",
+          "url": "https://www.aljazeera.com/news/2026/10/28/arab-parties-could-win-18-seats-in-israeli-elections-exit-polls-suggest?traffic_source=rss",
+          "date": "2026-10-28"
         }
       ]
     },
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "UK sanctions Sudanese military leaders implicated in El Fasher ‘campaign of rape’",
@@ -243,6 +243,11 @@
           "date": "2026-10-23"
         },
         {
+          "title": "King Charles to discuss legacy of slavery with Commonwealth leaders at summit",
+          "url": "https://www.theguardian.com/world/2026/oct/28/king-charles-confirms-he-will-discuss-legacy-of-slavery-at-commonwealth-summit",
+          "date": "2026-10-28"
+        },
+        {
           "title": "Trump shows off tanker with ‘1m barrels of oil’ and floats Venezuela as 51st state",
           "url": "https://www.theguardian.com/us-news/2026/oct/27/trump-oil-tanker-venezuela",
           "date": "2026-10-27"
@@ -250,11 +255,6 @@
         {
           "title": "Flávio Bolsonaro flees Brazil after presidential election loss, reports say",
           "url": "https://www.theguardian.com/world/2026/oct/27/flavio-bolsonaro-brazil-argentina-fled",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Olivia Chow elected as Toronto mayor for second term in victory for progressives",
-          "url": "https://www.theguardian.com/world/2026/oct/27/olivia-chow-toronto-mayor-election-results",
           "date": "2026-10-27"
         }
       ]
@@ -265,11 +265,16 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
-          "title": "Israel's election has a high turnout, lifting opposition hopes of beating Netanyahu",
+          "title": "U.S. to issue visas to Flávio Bolsonaro as his whereabouts remain unclear",
+          "url": "https://www.npr.org/2026/10/27/nx-s1-6019678/u-s-to-issue-visas-to-flavio-bolsonaro-as-his-whereabouts-remain-unclear",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Israel's voter turnout soars as Netanyahu faces a tight election",
           "url": "https://www.npr.org/2026/10/27/nx-s1-6019381/israel-elections",
           "date": "2026-10-27"
         },
@@ -302,11 +307,6 @@
           "title": "A quick guide to Israel's high-stakes election",
           "url": "https://www.npr.org/2026/10/27/g-s1-149944/israel-election-guide",
           "date": "2026-10-27"
-        },
-        {
-          "title": "Australian judge rejects prisoner's human rights challenge to Vegemite ban",
-          "url": "https://www.npr.org/2026/10/26/g-s1-149923/australian-judge-rejects-prisoners-human-rights-challenge-to-vegemite-ban",
-          "date": "2026-10-26"
         }
       ]
     },
@@ -315,48 +315,48 @@
       "category": "tech",
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
-      "status": "stale",
-      "generatedAt": "2026-10-27T14:27:42+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "status": "ok",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
-          "title": "Giving chat feedback gives Anthropic your data",
-          "url": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training",
+          "title": "Git for US Legislation",
+          "url": "https://lexifina.com/blog/git-for-the-us-code",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Moxnox 1.0: NT-Like, POSIX-Compatible OS Running Atop Btrfs",
+          "url": "https://github.com/maharmstone/moxnox",
           "date": "2026-10-27"
         },
         {
-          "title": "Wiz: No successful PHP2Shell exploits seen so far; exposure down 67%",
-          "url": "https://www.wiz.io/blog/php2shell-exploitation-so-far",
+          "title": "Reviewers rarely talk about reliability. Owners bring it up twice as often",
+          "url": "https://www.bettascore.ai/research/reliability-reviewers-vs-owners",
           "date": "2026-10-27"
         },
         {
-          "title": "Here Be Monsters: What Do You Still Need to Know When Agents Do the Work?",
-          "url": "https://blog.adrq.dev/here-be-monsters-what-do-you-still-need-to-know-when-agents-do-the-work",
+          "title": "Expanding our partnership with GSA to bring Claude to all levels of government",
+          "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
           "date": "2026-10-27"
         },
         {
-          "title": "Greg Abbott Took $9M from Data-Center Donors. Now He Regulates Them",
-          "url": "https://www.gadgetreview.com/greg-abbott-took-9m-from-data-center-donors-now-he-regulates-them",
+          "title": "Early progress on accelerating drug development with Claude",
+          "url": "https://www.anthropic.com/research/early-progress-drug-development",
           "date": "2026-10-27"
         },
         {
-          "title": "New iMac with M6",
-          "url": "https://www.apple.com/imac/",
+          "title": "Raspberry Pi Zero 3W and Pi 4 Model A spotted in device trees",
+          "url": "https://bret.dk/raspberry-pi-zero-3-w-pi-4-model-a/",
           "date": "2026-10-27"
         },
         {
-          "title": "Software may be getting worse, but it used to be horrible",
-          "url": "https://www.bitlog.com/2026/10/27/software-may-be-getting-worse-but-it-used-to-be-horrible/",
+          "title": "Code-execution flaw in UEFI firmware threatens most servers on planet Earth",
+          "url": "https://arstechnica.com/security/2026/10/code-execution-flaw-in-uefi-firmware-threatens-most-servers-on-planet-earth/",
           "date": "2026-10-27"
         },
         {
-          "title": "Python's experimental JIT to be removed",
-          "url": "https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Wikipedia's Cleanup of AI-Generated Content",
-          "url": "https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup",
+          "title": "Four Months of Zig",
+          "url": "https://gracefulliberty.com/articles/four-months-of-zig/",
           "date": "2026-10-27"
         }
       ]
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "Apple refreshes the iMac, entry-level MacBook Pro with the M6 chip",
@@ -418,8 +418,8 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "Here’s why the iPhone Duo’s hinge could be cracking the screen",
@@ -469,48 +469,48 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
-          "title": "Anthropic Says It Will Revolutionize Biology—Some Day",
-          "url": "https://www.wired.com/story/anthropic-says-it-will-revolutionize-biology-some-day/",
-          "date": "2026-10-27"
+          "title": "LG Promo Codes and Coupons for October 2026",
+          "url": "https://www.wired.com/story/lg-promo-code/",
+          "date": "2026-10-28"
         },
         {
-          "title": "Best Skylight Calendar Alternative on Sale: Save $100 on Everblog HomeCal (2026)",
-          "url": "https://www.wired.com/story/everblog-homecal-deal-october-2026/",
-          "date": "2026-10-27"
+          "title": "Google Workspace Promo Codes: 14% Off for October 2026",
+          "url": "https://www.wired.com/story/google-workspace-promo-code/",
+          "date": "2026-10-28"
         },
         {
-          "title": "Motorola Deal: Get a Free Smartwatch and Earbuds When You Buy a Razr",
-          "url": "https://www.wired.com/story/motorola-razr-deal-october-2026/",
-          "date": "2026-10-27"
+          "title": "Nike Promo Codes and Discounts: 30% for October 2026",
+          "url": "https://www.wired.com/story/nike-promo-code/",
+          "date": "2026-10-28"
         },
         {
-          "title": "Anthropic Flags Gas Supply as One of Its Biggest Near-Term Risks",
-          "url": "https://www.wired.com/story/anthropic-ipo-identifies-gas-supply-as-big-near-term-risks/",
-          "date": "2026-10-27"
+          "title": "Peacock Promo Codes: 40% Off October 2026",
+          "url": "https://www.wired.com/story/peacock-promo-code/",
+          "date": "2026-10-28"
         },
         {
-          "title": "Early Black Friday Deals 2026",
-          "url": "https://www.wired.com/story/black-friday-deals-10-27-2026/",
-          "date": "2026-10-27"
+          "title": "Paramount+ Coupon Codes and Deals for 2026",
+          "url": "https://www.wired.com/story/paramount-plus-coupon-code/",
+          "date": "2026-10-28"
         },
         {
-          "title": "Quince’s Merino Wool Tee Doesn’t Cost a Fortune",
-          "url": "https://www.wired.com/story/quince-merino-wool-base-layer-tee-rave/",
-          "date": "2026-10-27"
+          "title": "NordVPN Coupons: 75% Off, Plus 3 Months Free in October 2026",
+          "url": "https://www.wired.com/story/nordvpn-coupon/",
+          "date": "2026-10-28"
         },
         {
-          "title": "A 28-Year-Old DOGE Operative Gutted USAID. HR Had No Record of Him Working There",
-          "url": "https://www.wired.com/story/a-28-year-old-doge-operative-gutted-usaid-hr-had-no-record-of-him-working-there/",
-          "date": "2026-10-27"
+          "title": "Disney Plus Discount Codes: 52% Off October 2026",
+          "url": "https://www.wired.com/story/disney-plus-discounts/",
+          "date": "2026-10-28"
         },
         {
-          "title": "UK Home Office May Face Investigation Over Use of OpenAI Tech",
-          "url": "https://www.wired.com/story/uk-home-office-may-face-investigation-over-use-of-openai-tools/",
-          "date": "2026-10-27"
+          "title": "30% VistaPrint Coupon & Promo Codes | October 2026",
+          "url": "https://www.wired.com/story/vistaprint-coupon-code/",
+          "date": "2026-10-28"
         }
       ]
     },
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "The Download: Anthropic’s IPO, smarter power grids, and exercise pills",
@@ -572,7 +572,7 @@
       "url": "https://www.espn.com/espn/rss/news",
       "status": "stale",
       "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "Buccaneers explode in third quarter in win over Cowboys",
@@ -622,9 +622,39 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
+        {
+          "title": "Nick Martinez, bullpen save the Rays from World Series elimination, but Game 4 win merely a stay of execution",
+          "url": "https://www.cbssports.com/mlb/news/world-series-game-4-rays-bullpen-elimination-nick-martinez/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "2026 MLB playoff bracket: Schedule and scores as Rays stave off World Series elimination vs. Brewers",
+          "url": "https://www.cbssports.com/mlb/news/2026-mlb-playoff-bracket-schedule-scores-results-how-to-watch/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "How can Timberwolves survive Anthony Edwards' absence? LaMelo Ball must level up, but there's another key",
+          "url": "https://www.cbssports.com/nba/news/anthony-edwards-injury-update-timetable-timberwolves-lamelo-ball/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Dream owners decry midday Finals Game 6 after scheduling chaos: 'Earned the right to be taken seriously'",
+          "url": "https://www.cbssports.com/wnba/news/wnba-finals-game-6-atlanta-dream-owners-state-farm-arena/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Pistons vs. Knicks NBA parlay picks: Shorthanded Detroit due first loss and New York first win Tuesday",
+          "url": "https://www.cbssports.com/betting/news/pistons-vs-knicks-nba-parlay-picks-short-handed-detroit-due-first-loss-new-york-first-win-tuesday/",
+          "date": "2026-10-27"
+        },
+        {
+          "title": "Pistons vs. Knicks prediction, odds, betting preview, start time: NBA picks, best bets on Tuesday, Oct. 27",
+          "url": "https://www.cbssports.com/betting/news/pistons-vs-knicks-prediction-odds-betting-preview-start-time-nba-picks-best-bets-tuesday-oct-27/",
+          "date": "2026-10-27"
+        },
         {
           "title": "Brewers vs. Rays prediction, odds, time: 2026 World Series Game 4 picks by proven model",
           "url": "https://www.cbssports.com/betting/news/brewers-rays-prediction-odds-line-time-2026-world-series-game-4-picks-best-bets/",
@@ -633,36 +663,6 @@
         {
           "title": "Brewers vs. Rays World Series odds, Game 4 predictions: Use Kalshi promo code CBSSPORTS55 for $55 bonus",
           "url": "https://www.cbssports.com/prediction/news/brewers-vs-rays-world-series-odds-game-4-predictions-use-kalshi-promo-code-cbssports55-for-55-bonus/",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "2026 NBA odds, picks, predictions, best bets, player props: Experts, model targeting Julius Randle on Tuesday",
-          "url": "https://www.cbssports.com/betting/news/2026-nba-odds-picks-predictions-best-bets-player-props-experts-model-targeting-julius-randle-on-tuesday/",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "DeForest Buckner trade grades: 49ers get reunion with three-time Pro Bowler, Colts work toward rebuild",
-          "url": "https://www.cbssports.com/nfl/news/deforest-buckner-trade-grades-49ers-colts/",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Game 4 Brewers vs. Rays MLB picks: Expect Tampa Bay to show pulse Tuesday on verge of being swept at home",
-          "url": "https://www.cbssports.com/betting/news/game-4-brewers-vs-rays-mlb-picks-expect-tampa-bay-to-show-pulse-tuesday-on-verge-of-being-swept-at-home/",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "DeForest Buckner trade: Colts send DT to 49ers in exchange for 2027 fourth-round pick",
-          "url": "https://www.cbssports.com/nfl/news/deforest-buckner-trade-colts-49ers/",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Knicks vs. Pistons prediction, odds, time: 2026 NBA picks for Tuesday, Oct. 27 from advanced model",
-          "url": "https://www.cbssports.com/betting/news/knicks-pistons-prediction-odds-time-2026-nba-picks-best-bets-tuesday-october-27/",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Sam Houston vs. Missouri State prediction, odds, time: Week 9 Tuesday college football picks from proven model",
-          "url": "https://www.cbssports.com/betting/news/sam-houston-missouri-state-prediction-odds-time-2026-week-9-tuesday-college-football-picks-best-bets/",
           "date": "2026-10-27"
         }
       ]
@@ -673,48 +673,48 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
-          "title": "Tiger Woods expected to play in TGL season-opener in December, his first competition since rollover crash and arrest",
-          "url": "https://sports.yahoo.com/golf/article/tiger-woods-expected-to-play-in-tgl-season-opener-in-december-his-first-competition-since-rollover-crash-and-arrest-234102740.html",
-          "date": "2026-10-27"
+          "title": "Why Casey Woods called Missouri State a 'fighting football team'",
+          "url": "https://sports.yahoo.com/articles/why-casey-woods-called-missouri-052706784.html",
+          "date": "2026-10-28"
         },
         {
-          "title": "How the Timberwolves can survive two months without Anthony Edwards",
-          "url": "https://sports.yahoo.com/articles/timberwolves-survive-two-months-without-233855019.html",
-          "date": "2026-10-27"
+          "title": "‘We all want to put it right’: Man Utd player sends message to fans after confirmation Carrick will be staying put",
+          "url": "https://sports.yahoo.com/articles/want-put-man-utd-player-052500097.html",
+          "date": "2026-10-28"
         },
         {
-          "title": "Rams sign LB Jon Rhattigan, release two practice squad players",
-          "url": "https://sports.yahoo.com/articles/rams-sign-lb-jon-rhattigan-233705830.html",
-          "date": "2026-10-27"
+          "title": "Bears’ Montez Sweat makes humbling admission on PED suspension",
+          "url": "https://sports.yahoo.com/articles/bears-montez-sweat-makes-humbling-052339475.html",
+          "date": "2026-10-28"
         },
         {
-          "title": "2026 NFL trade deadline tracker: Grades, analysis and details from every key deal",
-          "url": "https://sports.yahoo.com/nfl/article/2026-nfl-trade-deadline-tracker-grades-analysis-and-details-from-every-key-deal-233619744.html",
-          "date": "2026-10-27"
+          "title": "Askarov Resurgence Continues, But Sabres Shut Out Sharks 2-0",
+          "url": "https://sports.yahoo.com/articles/askarov-resurgence-continues-sabres-shut-052226458.html",
+          "date": "2026-10-28"
         },
         {
-          "title": "Where does Fleetwood beating Arsenal rank in biggest cup upsets?",
-          "url": "https://sports.yahoo.com/articles/where-does-fleetwood-beating-arsenal-233525696.html",
-          "date": "2026-10-27"
+          "title": "Jacksonville State vs New Mexico State Prediction: The Big Moment For the Aggies",
+          "url": "https://sports.yahoo.com/articles/jacksonville-state-vs-mexico-state-052142102.html",
+          "date": "2026-10-28"
         },
         {
-          "title": "T-Wolves to lose Edwards for two months: reports",
-          "url": "https://sports.yahoo.com/articles/t-wolves-lose-edwards-two-233519513.html",
-          "date": "2026-10-27"
+          "title": "Junior Caminero injury update after Rays star leaves World Series Game 4",
+          "url": "https://sports.yahoo.com/articles/junior-caminero-injury-rays-star-051924874.html",
+          "date": "2026-10-28"
         },
         {
-          "title": "World Series Game 4: Brewers at Rays, 8:00 p.m. ET",
-          "url": "https://sports.yahoo.com/articles/world-series-game-4-brewers-233500750.html",
-          "date": "2026-10-27"
+          "title": "Hronek’s OT power-play goal caps the Canucks’ 6-5 comeback win over the Ducks",
+          "url": "https://sports.yahoo.com/articles/hronek-ot-power-play-goal-051822487.html",
+          "date": "2026-10-28"
         },
         {
-          "title": "World Series Game 4 thread: Tampa Bay Rays vs. Milwaukee Brewers",
-          "url": "https://sports.yahoo.com/articles/today-pinstripe-alley-10-26-103000524.html",
-          "date": "2026-10-27"
+          "title": "Brewers fans left hungry and hopeful after nail-biting Game 4 loss",
+          "url": "https://sports.yahoo.com/articles/brewers-fans-left-hungry-hopeful-051657515.html",
+          "date": "2026-10-28"
         }
       ]
     },
@@ -724,9 +724,14 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
+        {
+          "title": "A leading Silicon Valley cheerleader just showed all the reasons to be worried about the AI bubble",
+          "url": "https://www.marketwatch.com/story/a-leading-silicon-valley-cheerleader-just-showed-all-the-reasons-to-be-worried-about-the-ai-bubble-e3b32fe1?mod=mw_rss_topstories",
+          "date": "2026-10-28"
+        },
         {
           "title": "Retail traders buy the dip on chip stocks — but Robinhood gets burned by the crypto market",
           "url": "https://www.marketwatch.com/story/retail-traders-buy-the-dip-on-chip-stocks-but-robinhood-gets-burned-by-the-crypto-market-33cea913?mod=mw_rss_topstories",
@@ -761,11 +766,6 @@
           "title": "The big reason Boeing’s stock is falling so hard after earnings",
           "url": "https://www.marketwatch.com/story/the-big-reason-boeings-stock-is-falling-so-hard-after-earnings-d31b400d?mod=mw_rss_topstories",
           "date": "2026-10-27"
-        },
-        {
-          "title": "How Broadcom’s stock can surge and overcome ‘the biggest dislocation in the market’",
-          "url": "https://www.marketwatch.com/story/how-broadcoms-stock-can-surge-and-overcome-the-biggest-dislocation-in-the-market-9719e2a8?mod=mw_rss_topstories",
-          "date": "2026-10-27"
         }
       ]
     },
@@ -775,43 +775,43 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
+        {
+          "title": "Trump says Iran war will end 'when I want it to' as costs reportedly balloon to $47 billion",
+          "url": "https://www.cnbc.com/2026/10/28/us-iran-war-trump-hormuz-costs-centcom.html",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Israel election appears to have no clear winner with Netanyahu, opponent Eisenkot far short of majorities",
+          "url": "https://www.cnbc.com/2026/10/28/israel-election-netanyahu-trump-gaza-.html",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Meta- and Google-backed Jio Platforms’ shares soar over 21% on trading debut after record IPO",
+          "url": "https://www.cnbc.com/2026/10/28/jio-ipo-india-listing-.html",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "SK Hynix shares soar over 8% as profit beats, chipmaker to return $25 billion to investors",
+          "url": "https://www.cnbc.com/2026/10/28/sk-hynix-third-quarter-profit.html",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Indian investors rush to Nvidia, SpaceX, Apple as local trading apps roll out access to U.S. stocks",
+          "url": "https://www.cnbc.com/2026/10/28/india-us-stocks-retail-access.html",
+          "date": "2026-10-28"
+        },
         {
           "title": "Early third-quarter earnings show a 'resilient' U.S. consumer, with signs of strain",
           "url": "https://www.cnbc.com/2026/10/27/q3-earnings-resilient-consumer.html",
           "date": "2026-10-27"
         },
         {
-          "title": "Speaker Mike Johnson calls election-transfer concerns ‘absurd’",
-          "url": "https://www.cnbc.com/2026/10/27/speaker-johnson-peaceful-transfer-midterms.html",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "SK Hynix third-quarter profit sharply beats estimates on AI memory boost",
-          "url": "https://www.cnbc.com/2026/10/28/sk-hynix-third-quarter-profit.html",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Amazon's anti-tokenmaxxing memo says engineers should be pickier about using AI",
-          "url": "https://www.cnbc.com/2026/10/27/amazon-ai-coding-tokenmaxxing.html",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Trump administration may let more Russian diesel onto market, energy secretary tells CNBC",
-          "url": "https://www.cnbc.com/2026/10/27/trump-putin-zelenskyy-russia-ukraine-diesel.html",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Grand jury rejects DOJ bid to indict ex-Trump WH aide Cassidy Hutchinson: Reports",
-          "url": "https://www.cnbc.com/2026/10/27/cassidy-hutchinson-doj-grand-jury-trump.html",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Chart: Anthropic's cash pile towers over nearly every U.S. company",
-          "url": "https://www.cnbc.com/2026/10/27/anthropic-cash-investments-ipo.html",
-          "date": "2026-10-27"
+          "title": "Trump jokes $5,000 would buy 'a hamburger and maybe a small dessert' at Mar-a-Lago as cost of living looms over midterms",
+          "url": "https://www.cnbc.com/2026/10/28/trump-jokes-5000-cash-would-buy-hamburger-and-dessert-at-mar-a-lago.html",
+          "date": "2026-10-28"
         },
         {
           "title": "Anthropic's IPO could be 'speculative fiction' or a 'generational moment' — investors are split",
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": []
     },
     {
@@ -846,9 +846,19 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
+        {
+          "title": "A simple daily fiber supplement reduced arthritis pain and improved strength",
+          "url": "https://www.sciencedaily.com/releases/2026/10/261027230715.htm",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "The autistic brain processes faces differently than scientists thought",
+          "url": "https://www.sciencedaily.com/releases/2026/10/261027063824.htm",
+          "date": "2026-10-28"
+        },
         {
           "title": "Low testosterone may make sugar far more harmful to your liver",
           "url": "https://www.sciencedaily.com/releases/2026/10/261026225622.htm",
@@ -860,6 +870,16 @@
           "date": "2026-10-27"
         },
         {
+          "title": "Scientists discover the immune system’s hidden sense of touch",
+          "url": "https://www.sciencedaily.com/releases/2026/10/261026225617.htm",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "The asteroid that killed the dinosaurs may have helped ants conquer the world",
+          "url": "https://www.sciencedaily.com/releases/2026/10/261026225608.htm",
+          "date": "2026-10-28"
+        },
+        {
           "title": "Common drugs may help dangerous viruses spread through the body",
           "url": "https://www.sciencedaily.com/releases/2026/10/261026225606.htm",
           "date": "2026-10-27"
@@ -867,26 +887,6 @@
         {
           "title": "James Webb discovers a scorching lava planet with a “giant sunscreen”",
           "url": "https://www.sciencedaily.com/releases/2026/10/261026225603.htm",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Smithsonian scientists just recreated the first 2 billion years of the Universe",
-          "url": "https://www.sciencedaily.com/releases/2026/10/261026225600.htm",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Do spiders dream? Scientists just found a surprising clue",
-          "url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "Exercise doesn't just strengthen your heart. It rewires it",
-          "url": "https://www.sciencedaily.com/releases/2026/10/261025222848.htm",
-          "date": "2026-10-26"
-        },
-        {
-          "title": "Scientists discover a surprising clue to why some brains resist Alzheimer’s",
-          "url": "https://www.sciencedaily.com/releases/2026/10/261025222538.htm",
           "date": "2026-10-27"
         }
       ]
@@ -896,10 +896,20 @@
       "category": "science",
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
-      "status": "stale",
-      "generatedAt": "2026-10-27T20:03:41+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "status": "ok",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
+        {
+          "title": "APOD: 2026 October 28 – The Mutual Occultation of Ganymede and Io",
+          "url": "https://science.nasa.gov/image-article/apod-2026-october-28-the-mutual-occultation-of-ganymede-and-io/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "The Land of the Standing-Up Rocks",
+          "url": "https://science.nasa.gov/earth/earth-observatory/the-land-of-the-standing-up-rocks/",
+          "date": "2026-10-28"
+        },
         {
           "title": "NASA Invites Media to Crew Completion of Yearlong Mars Simulation",
           "url": "https://www.nasa.gov/news-release/nasa-invites-media-to-crew-completion-of-yearlong-mars-simulation/",
@@ -929,16 +939,6 @@
           "title": "NASA’s Perseverance Views Dust at Neretva Vallis",
           "url": "https://science.nasa.gov/photojournal/nasas-perseverance-views-dust-at-neretva-vallis/",
           "date": "2026-10-26"
-        },
-        {
-          "title": "NASA’s Perseverance Offers Clues to Protect Crews From Mars Dust",
-          "url": "https://www.nasa.gov/missions/mars-2020-perseverance/nasas-perseverance-offers-clues-to-protect-crews-from-mars-dust/",
-          "date": "2026-10-26"
-        },
-        {
-          "title": "NEO Surveyor’s Sunshade Gets Inspected",
-          "url": "https://science.nasa.gov/photojournal/neo-surveyors-sunshade-gets-inspected/",
-          "date": "2026-10-26"
         }
       ]
     },
@@ -948,8 +948,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "The understanding that even bees have feelings is changing our view of consciousness",
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "The Nobel prize in economic science has a serious gender problem",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "stale",
       "generatedAt": "2026-10-22T01:29:02+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "Show HN: I built a Markdown and raw HTML blog platform scoring 99 on PageSpeed",
@@ -1066,8 +1066,8 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "Google built AI agents a world to practice in. The physics still aren’t quite right.",
@@ -1118,7 +1118,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1168,8 +1168,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "Over 500 Golden Kubestronauts: The evolving standard for cloud native mastery",
@@ -1219,8 +1219,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-27T23:45:04+00:00",
-      "lastAttemptAt": "2026-10-27T23:45:04+00:00",
+      "generatedAt": "2026-10-28T05:36:43+00:00",
+      "lastAttemptAt": "2026-10-28T05:36:43+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #540",
