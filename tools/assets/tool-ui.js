@@ -97,7 +97,7 @@
     var nav = document.createElement('nav'); nav.className = 'tool-nav'; nav.setAttribute('aria-label','Site');
     var prefix = document.body.classList.contains('game-page') ? '../' : '';
     var home = text('a','Home'); home.href = prefix + 'home.html';
-    var services = text('a','Services'); services.href = prefix + 'home.html#services';
+    var services = text('a','Today'); services.href = prefix + 'today.html';
     var mode = text('button','Compact'); mode.type = 'button'; mode.setAttribute('aria-label','Toggle compact view'); mode.setAttribute('aria-pressed', String(compact));
     mode.addEventListener('click', function () {
       compact = !compact; document.documentElement.classList.toggle('compact',compact);
@@ -106,6 +106,9 @@
       document.dispatchEvent(new Event('tool-layout-change'));
     });
     nav.append(home,services,mode);
+    [home, services].forEach(function (link) {
+      if (new URL(link.href).pathname === location.pathname) link.setAttribute('aria-current', 'page');
+    });
     var first = document.body.querySelector('a.skip, a.tool-skip');
     if (first) first.insertAdjacentElement('afterend', nav);
     else document.body.insertBefore(nav,document.body.firstChild);

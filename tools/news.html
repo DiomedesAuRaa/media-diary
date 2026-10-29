@@ -21,9 +21,16 @@
     .headline a { color:var(--tool-text); text-decoration:none; font-size:14px; } .headline a:hover { text-decoration:underline; }
     .headline-meta,.cache-info,.status,.empty { color:var(--tool-muted); font-size:11px; }
     .status { padding:6px; background:var(--tool-surface); }
-    .compact .headline { padding:5px 3px; } .compact .headline a { font-size:12px; } .compact .category h2 { font-size:14px; }
+    #news-picker { display:none; }
+    .header .snapshot-meta { max-width:65%; }
+    .news-picker button { padding:3px 8px; }
+    .compact .headline { padding:5px 3px; } .compact .headline a { font-size:14px; } .compact .category h2 { font-size:14px; }
     @media(max-width:280px) {
-      .category-links { flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; padding:6px 0; }
+      .category-links { flex-wrap:wrap; padding:6px 0; }
+      .news-picker-ready .category-links > .category-link { display:none; }
+      .news-picker-ready #news-picker { display:flex; align-items:center; flex-wrap:wrap; gap:4px; width:100%; }
+      #news-picker label { width:100%; }
+      #news-picker select { flex:1; min-width:0; }
       .category-link { flex:0 0 auto; }
       .pager { padding:6px 0; }
       .cache-info { margin-top:8px; }
@@ -33,7 +40,7 @@
   </style>
 </head>
 <body>
-  <header class="header"><a href="home.html" class="back-btn">← Back</a><h1>NEWS</h1><div class="snapshot-meta">Public RSS headlines<br>Updated <span id="updated"><!-- GENERATED_AT --></span></div></header>
+  <header class="header"><a href="home.html" class="back-btn">← Back</a><h1>NEWS</h1><div class="snapshot-meta">Updated <span id="updated"><!-- GENERATED_AT --></span></div></header>
   <!-- NEWS_SECTIONS -->
   <script>
   (() => {
@@ -66,6 +73,16 @@
       }
     }
     goToState(currentState());
+    const picker = document.getElementById('news-picker');
+    if (picker) {
+      picker.hidden = false;
+      document.documentElement.classList.add('news-picker-ready');
+      picker.addEventListener('submit', event => {
+        event.preventDefault();
+        const target = document.getElementById('news-category').value;
+        if (/^news(?:-(?:top|general|tech|sports|business|science|devops)-1-(?:compact|full))?\.html$/.test(target)) location.assign(target);
+      });
+    }
     document.addEventListener('tool-layout-change', () => {
       const state = currentState();
       state.compact = document.documentElement.classList.contains('compact');

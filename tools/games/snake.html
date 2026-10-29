@@ -77,12 +77,8 @@ canvas{display:block;image-rendering:pixelated}
   <div class="area" id="area" tabindex="0" role="region" aria-label="Game board. Focus here to play. Escape opens menu." onclick="activate()">
     <div class="overlay show" id="ovr">
       <h2 id="ovrtitle">SNAKE</h2>
-      <p id="ovrmsg">Eat the food to grow<br>Don't hit the walls!</p>
-      <button class="obtn" onclick="event.stopPropagation();startGame();activate()">PLAY</button>
-    </div>
-    <div class="tapbanner" id="tap" tabindex="0" role="button" onclick="activate()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();activate();}">
-      <div class="ti">&#x25BA;</div><div class="tt">TAP TO ACTIVATE KEYS</div>
-      <div class="ts">then use arrow keys</div>
+      <p id="ovrmsg">Eat food and avoid the walls.<br>2=up · 4=left · 6=right · 8=down</p>
+      <button class="obtn" id="ovrbtn" onclick="event.stopPropagation();overlayAction()">START</button>
     </div>
     <canvas id="c" width="220" height="220"></canvas>
     <div class="spd">spd
@@ -92,7 +88,7 @@ canvas{display:block;image-rendering:pixelated}
   </div>
   <div class="skeys">
     <button class="sk l" onclick="startGame()">New</button>
-    <button class="sk" id="skmid">tap to play</button>
+    <button class="sk" id="pausebtn" onclick="togglePause()">Pause</button>
     <button class="sk r" onclick="toggleNav()">Menu</button>
   </div>
   <!-- D-pad for on-screen directional control -->
@@ -107,11 +103,11 @@ canvas{display:block;image-rendering:pixelated}
 </div>
 <script>
 var kc=document.getElementById('area'),active=false;
-function activate(){kc.focus();active=true;document.getElementById('tap').style.display='none';}
-function deactivate(){active=false;document.getElementById('tap').style.display='flex';}
+function activate(){kc.focus();active=true;}
 function toggleNav() {
   var nav = document.getElementById('nav');
   if (nav.classList.contains('open')) { closeNav(); return; }
+  pauseForLeave();
   nav.hidden = false; nav.classList.add('open'); active = false;
   nav.setAttribute('aria-hidden','false');
   nav.querySelector('button,a').focus();
@@ -136,7 +132,7 @@ var canvas,ctx,snake,dir,nextDir,food,gameScore,loop,running,dead;
 function startGame(){
   clearInterval(loop);
   snake=[{x:10,y:10},{x:9,y:10}];dir={x:1,y:0};nextDir={x:1,y:0};
-  gameScore=0;dead=false;running=true;
+  gameScore=0;dead=false;running=true;paused=false;
   placeFood();hideOverlay();updateUI();scheduleLoop();activate();
 }
 function scheduleLoop(){
@@ -147,7 +143,7 @@ function scheduleLoop(){
   for(var i=1;i<=5;i++)document.getElementById('p'+i).className='pip'+(i<=lv?' on':'');
 }
 function tick(){
-  if (document.activeElement !== kc || document.getElementById('nav').classList.contains('open') || document.hidden) return;
+  if (paused || document.activeElement !== kc || document.getElementById('nav').classList.contains('open') || document.hidden) return;
   dir=nextDir;
   var h={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
   if(h.x<0||h.x>=COLS||h.y<0||h.y>=ROWS){die();return;}
@@ -193,7 +189,7 @@ function updateUI(){
   document.getElementById('len').textContent=snake.length;
   var s=JSON.parse(localStorage.getItem(LS)||'[]');
   document.getElementById('best').textContent=Math.max(s.length?s[0].score:0,gameScore);
-  document.getElementById('skmid').textContent=running?('len:'+snake.length):'tap to play';
+  document.getElementById('pausebtn').textContent=paused?'Resume':'Pause';
 }
 function saveScore(){
   if(!gameScore)return;
@@ -202,8 +198,12 @@ function saveScore(){
   s.sort(function(a,b){return b.score-a.score;});
   localStorage.setItem(LS,JSON.stringify(s.slice(0,TOPN)));
 }
-function showOverlay(t,m){document.getElementById('ovrtitle').textContent=t;ToolUI.setHTML(document.getElementById('ovrmsg'),m);document.getElementById('ovr').classList.add('show');}
+function showOverlay(t,m){document.getElementById('ovrtitle').textContent=t;ToolUI.setHTML(document.getElementById('ovrmsg'),m);document.getElementById('ovrbtn').textContent=paused?'RESUME':(dead?'PLAY AGAIN':'START');document.getElementById('ovr').classList.add('show');}
 function hideOverlay(){document.getElementById('ovr').classList.remove('show');}
+var paused=false;
+function pauseForLeave(){if(!running||dead||paused)return;paused=true;showOverlay('PAUSED','Press Enter or 5 to resume. P also pauses or resumes.');updateUI();}
+function togglePause(){if(!running||dead)return;paused=!paused;if(paused)showOverlay('PAUSED','Press Enter or 5 to resume. P also pauses or resumes.');else hideOverlay();updateUI();if(!paused)activate();}
+function overlayAction(){if(paused){togglePause();return;}startGame();}
 function handleKey(key) {
   var map = {
     ArrowUp:[0,-1], ArrowDown:[0,1], ArrowLeft:[-1,0], ArrowRight:[1,0],
@@ -211,8 +211,13 @@ function handleKey(key) {
     w:[0,-1], s:[0,1], a:[-1,0], d:[1,0]
   };
   if (map[key]) { setDir(map[key][0], map[key][1]); return; }
-  if (key===' '||key==='Enter'||key==='5') { if (!running) startGame(); }
+  if (key==='p'||key==='P'||(key==='5'&&running&&!paused)) { togglePause(); return; }
+  if (paused) { if(key==='Enter'||key==='5'||key===' ')togglePause(); return; }
+  if (key===' '||key==='Enter'||key==='5') { if (!running||dead) startGame(); }
 }
+kc.addEventListener('blur',function(e){var target=e.relatedTarget;var nav=document.getElementById('nav');if(!nav.classList.contains('open')&&target&&document.querySelector('.shell').contains(target))return;pauseForLeave();});
+window.addEventListener('blur',pauseForLeave);
+document.addEventListener('visibilitychange',function(){if(document.hidden)pauseForLeave();});
 var tx=0,ty=0;
 document.getElementById('area').addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
 document.getElementById('area').addEventListener('touchend',function(e){

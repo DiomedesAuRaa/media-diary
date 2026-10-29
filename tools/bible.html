@@ -52,6 +52,10 @@
             margin: 0;
         }
         
+        .chapter-navigation { display: flex; gap: 6px; margin: 8px 0; }
+        .chapter-navigation button, #continue-reading { flex: 1; padding: 6px; background: #111; color: #0ff; border: 1px solid #0ff; border-radius: 3px; font-size: 10px; }
+        .chapter-navigation button:disabled, #continue-reading:disabled { opacity: .45; }
+        .resume-passage { width: 100%; padding: 6px; margin: 4px 0; background: #111; color: #0ff; border: 1px solid #0ff; border-radius: 3px; font-size: 10px; }
         .selection-panel {
             margin: 8px 0;
         }
@@ -166,6 +170,7 @@
         <h1>Bible (World English Bible)</h1>
     </div>
     
+    <button type="button" id="resume-passage" class="resume-passage" hidden></button>
     <div class="selection-panel">
         <!-- Testament Selection -->
         <div class="selector active" id="testament-selector">
@@ -202,11 +207,16 @@
         </div>
     </div>
     
+    <nav class="chapter-navigation" aria-label="Chapter navigation">
+        <button type="button" id="previous-chapter" disabled>← Previous chapter</button>
+        <button type="button" id="next-chapter" disabled>Next chapter →</button>
+    </nav>
     <div id="loading" class="loading" role="status" aria-live="polite"></div>
     <div id="error" class="error" role="alert"></div>
     
     <div class="verse-display" id="verse-display">
         <div class="verse-reference" id="verse-ref"></div>
+        <button type="button" id="continue-reading" hidden>Next verse</button>
         <div id="verse-content"></div>
     </div>
     <noscript><p role="status">Bible passages need JavaScript to load the World English Bible. Read the <a href="../index.html">static diary</a> or <a href="news.html">static headlines</a>.</p></noscript>
@@ -291,6 +301,7 @@
         let currentVerseIndex = 0;
         
         function handleTestamentChange() {
+            currentBook = null;
             const testament = document.getElementById('testament').value;
             const bookSelect = document.getElementById('book');
             
@@ -324,32 +335,26 @@
             fetchChapterCount(bookName);
         }
         
+        const chapterCounts = {
+            'Genesis':50,'Exodus':40,'Leviticus':27,'Numbers':36,'Deuteronomy':34,'Joshua':24,'Judges':21,'Ruth':4,
+            '1 Samuel':31,'2 Samuel':24,'1 Kings':22,'2 Kings':25,'1 Chronicles':29,'2 Chronicles':36,'Ezra':10,'Nehemiah':13,
+            'Esther':10,'Job':42,'Psalms':150,'Proverbs':31,'Ecclesiastes':12,'Song of Solomon':8,'Isaiah':66,'Jeremiah':52,
+            'Lamentations':5,'Ezekiel':48,'Daniel':12,'Hosea':14,'Joel':3,'Amos':9,'Obadiah':1,'Jonah':4,'Micah':7,'Nahum':3,
+            'Habakkuk':3,'Zephaniah':3,'Haggai':2,'Zechariah':14,'Malachi':4,'Matthew':28,'Mark':16,'Luke':24,'John':21,'Acts':28,
+            'Romans':16,'1 Corinthians':16,'2 Corinthians':13,'Galatians':6,'Ephesians':6,'Philippians':4,'Colossians':4,
+            '1 Thessalonians':5,'2 Thessalonians':3,'1 Timothy':6,'2 Timothy':4,'Titus':3,'Philemon':1,'Hebrews':13,'James':5,
+            '1 Peter':5,'2 Peter':3,'1 John':5,'2 John':1,'3 John':1,'Jude':1,'Revelation':22
+        };
+
         function fetchChapterCount(bookName) {
-            showLoading('Fetching chapters...');
-            
-            // Estimate chapter count based on book
-            const chapterMap = {
-                'Genesis': 50, 'Exodus': 40, 'Leviticus': 27, 'Numbers': 36, 'Deuteronomy': 34,
-                'Joshua': 24, 'Judges': 21, 'Ruth': 4, '1 Samuel': 31, '2 Samuel': 24,
-                '1 Kings': 22, '2 Kings': 25, '1 Chronicles': 29, '2 Chronicles': 36, 'Ezra': 10,
-                'Nehemiah': 13, 'Esther': 10, 'Job': 42, 'Psalms': 150, 'Proverbs': 31,
-                'Ecclesiastes': 12, 'Song of Solomon': 8, 'Isaiah': 66, 'Jeremiah': 52, 'Lamentations': 5,
-                'Ezekiel': 48, 'Daniel': 12, 'Hosea': 14, 'Joel': 3, 'Amos': 9,
-                'Obadiah': 1, 'Jonah': 4, 'Micah': 7, 'Nahum': 3, 'Habakkuk': 3,
-                'Zephaniah': 3, 'Haggai': 2, 'Zechariah': 14, 'Malachi': 4,
-                'Matthew': 28, 'Mark': 16, 'Luke': 24, 'John': 21, 'Acts': 28,
-                'Romans': 16, '1 Corinthians': 16, '2 Corinthians': 13, 'Galatians': 6, 'Ephesians': 6,
-                'Philippians': 4, 'Colossians': 4, '1 Thessalonians': 5, '2 Thessalonians': 3,
-                '1 Timothy': 6, '2 Timothy': 4, 'Titus': 3, 'Philemon': 1, 'Hebrews': 13,
-                'James': 5, '1 Peter': 5, '2 Peter': 3, '1 John': 5, '2 John': 1,
-                '3 John': 1, 'Jude': 1, 'Revelation': 22
-            };
-            
-            maxChapters = chapterMap[bookName] || 1;
+            // Chapter counts are stable book metadata; verse choices always come
+            // from the selected chapter response below.
+            maxChapters = chapterCounts[bookName] || 1;
             populateChapters();
             hideLoading();
+            updateChapterButtons();
         }
-        
+
         function populateChapters() {
             const chapterSelect = document.getElementById('chapter');
             ToolUI.setHTML(chapterSelect, '<option value="">-- Select Chapter --</option>');
@@ -367,93 +372,64 @@
         
         function handleChapterChange() {
             const chapter = document.getElementById('chapter').value;
-            
-            if (!chapter) return;
-            
-            // Estimate verse choices; the selected chapter response supplies the actual verses.
-            const verseSelect = document.getElementById('verse');
-            ToolUI.setHTML(verseSelect, '<option value="">-- Select Verse --</option>');
-            
-            // Estimate verses in chapter (most are 20-40)
-            let verseCount = 40;
-            
-            for (let i = 1; i <= verseCount; i++) {
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = `Verse ${i}`;
-                verseSelect.appendChild(option);
-            }
-            
-            document.getElementById('verse-selector').classList.add('active');
+            if (!chapter || !currentBook) return;
+            loadChapter(currentBook.name, Number(chapter), null, true);
         }
-        
+
         function handleVerseChange() {
-            const chapter = document.getElementById('chapter').value;
-            const verse = document.getElementById('verse').value;
-            
-            if (!chapter || !verse || !currentBook) return;
-            
-            fetchChapter(currentBook.name, chapter, verse);
+            const verse = Number(document.getElementById('verse').value);
+            if (!verse || !currentChapter.length) return;
+            const index = currentChapter.findIndex(item => Number(item.verse) === verse);
+            if (index < 0) return;
+            currentVerseIndex = index;
+            displayCurrentVerse();
+            writePassageState(true);
         }
-        
+
         let chapterRequest = 0;
-        function fetchChapter(book, chapter, startVerse) {
+        function loadChapter(book, chapter, startVerse, pushState) {
             const requestVersion = ++chapterRequest;
-            showLoading('Loading chapter...');
+            showLoading(`Loading ${book} ${chapter}...`);
             document.getElementById('error').replaceChildren();
             document.getElementById('verse-display').classList.remove('active');
             document.getElementById('verse-content').replaceChildren();
             document.getElementById('verse-ref').textContent = '';
-            
-            const passage = `${book} ${chapter}`;
-            
-            // Fetch the entire chapter
-            const url = `https://bible-api.com/${encodeURIComponent(passage)}?translation=web&single_chapter_book_matching=indifferent`;
-            
-            ToolUI.fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Chapter not found');
-                }
+            const url = `https://bible-api.com/${encodeURIComponent(`${book} ${chapter}`)}?translation=web&single_chapter_book_matching=indifferent`;
+            ToolUI.fetch(url).then(response => {
+                if (!response.ok) throw new Error('Chapter not found');
                 return response.json();
-            })
-            .then(data => {
+            }).then(data => {
                 if (requestVersion !== chapterRequest) return;
-                if (data.verses && data.verses.length > 0) {
-                    currentChapter = data.verses;
-                    
-                    // Find the verse index to start at
-                    const startVerseNum = parseInt(startVerse);
-                    currentVerseIndex = currentChapter.findIndex(v => v.verse === startVerseNum);
-                    
-                    if (currentVerseIndex === -1) {
-                        currentVerseIndex = 0; // Default to first verse if not found
-                    }
-
-                    const verseSelect = document.getElementById('verse');
-                    const verseCount = Math.max(...currentChapter.map(v => v.verse));
-                    ToolUI.setHTML(verseSelect, '<option value="">-- Select Verse --</option>');
-                    for (let verseNum = 1; verseNum <= verseCount; verseNum++) {
-                        const option = document.createElement('option');
-                        option.value = verseNum;
-                        option.textContent = `Verse ${verseNum}`;
-                        verseSelect.appendChild(option);
-                    }
-                    verseSelect.value = String(currentChapter[currentVerseIndex].verse);
-                    
-                    displayCurrentVerse();
-                    hideLoading();
-                } else {
-                    showError('Chapter not found', () => fetchChapter(book, chapter, startVerse));
-                }
-            })
-            .catch(error => {
+                if (!Array.isArray(data.verses) || !data.verses.length) throw new Error('Chapter not found');
+                currentChapter = data.verses;
+                const verseSelect = document.getElementById('verse');
+                ToolUI.setHTML(verseSelect, '<option value="">-- Select Verse --</option>');
+                currentChapter.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.verse;
+                    option.textContent = `Verse ${item.verse}`;
+                    verseSelect.appendChild(option);
+                });
+                let index = startVerse == null ? 0 : currentChapter.findIndex(item => Number(item.verse) === Number(startVerse));
+                currentVerseIndex = index < 0 ? 0 : index;
+                verseSelect.value = String(currentChapter[currentVerseIndex].verse);
+                document.getElementById('chapter').value = String(chapter);
+                updateChapterButtons();
+                displayCurrentVerse();
+                document.getElementById('resume-passage').hidden = true;
+                writePassageState(Boolean(pushState));
+                hideLoading();
+            }).catch(error => {
                 if (requestVersion !== chapterRequest) return;
                 console.error('Error:', error);
-                showError('Error loading chapter', () => fetchChapter(book, chapter, startVerse));
+                showError('Could not load this World English Bible chapter.', () => loadChapter(book, chapter, startVerse, pushState));
             });
         }
-        
+
+        function fetchChapter(book, chapter, startVerse) {
+            loadChapter(book, Number(chapter), startVerse, true);
+        }
+
         function displayCurrentVerse() {
             if (currentChapter.length === 0) return;
             
@@ -470,6 +446,11 @@
             });
             document.getElementById('verse-content').replaceChildren(verses);
             document.getElementById('verse-display').classList.add('active');
+            const continueButton = document.getElementById('continue-reading');
+            continueButton.hidden = false;
+            continueButton.textContent = currentVerseIndex < currentChapter.length - 1 ? 'Next verse' : (Number(document.getElementById('chapter').value) < maxChapters ? 'Next chapter' : 'End of book');
+            continueButton.disabled = currentVerseIndex === currentChapter.length - 1 && Number(document.getElementById('chapter').value) >= maxChapters;
+            updateChapterButtons();
             
             // Scroll to current verse
             const currentVerseElement = document.getElementById(`verse-${currentVerseIndex}`);
@@ -478,20 +459,125 @@
             }
         }
         
-        function previousVerse() {
-            if (currentVerseIndex > 0) {
-                currentVerseIndex--;
-                displayCurrentVerse();
-            }
+        function updateChapterButtons() {
+            const chapter = Number(document.getElementById('chapter').value || 0);
+            document.getElementById('previous-chapter').disabled = !currentBook || chapter <= 1;
+            document.getElementById('next-chapter').disabled = !currentBook || chapter >= maxChapters;
         }
-        
-        function nextVerse() {
+
+        function moveChapter(delta) {
+            const chapter = Number(document.getElementById('chapter').value || 0) + delta;
+            if (!currentBook || chapter < 1 || chapter > maxChapters) return;
+            document.getElementById('chapter').value = String(chapter);
+            loadChapter(currentBook.name, chapter, null, true);
+        }
+
+        function continueReading() {
+            if (!currentChapter.length) return;
             if (currentVerseIndex < currentChapter.length - 1) {
                 currentVerseIndex++;
+                document.getElementById('verse').value = String(currentChapter[currentVerseIndex].verse);
                 displayCurrentVerse();
+                writePassageState(true);
+            } else if (Number(document.getElementById('chapter').value) < maxChapters) {
+                moveChapter(1);
             }
         }
-        
+
+        function writePassageState(push) {
+            if (!currentBook || !currentChapter.length) return;
+            const verse = currentChapter[currentVerseIndex]?.verse || 1;
+            const url = new URL(location.href);
+            url.hash = `passage=${encodeURIComponent(currentBook.abbr)}/${Number(document.getElementById('chapter').value)}/${verse}`;
+            const state = { biblePassage: { book: currentBook.abbr, chapter: Number(document.getElementById('chapter').value), verse: Number(verse) } };
+            if (push) history.pushState(state, '', url);
+            else history.replaceState(state, '', url);
+            saveLastPassage(state.biblePassage);
+        }
+
+        function saveLastPassage(passage) {
+            passage = passage || (currentBook && currentChapter.length ? {
+                book: currentBook.abbr,
+                chapter: Number(document.getElementById('chapter').value),
+                verse: Number(currentChapter[currentVerseIndex]?.verse || 1)
+            } : null);
+            if (passage) ToolUI.storageSet('tools_bible_passage', JSON.stringify(passage));
+        }
+
+        function validPassage(passage) {
+            if (!passage || typeof passage !== 'object' || !Number.isInteger(passage.chapter) || !Number.isInteger(passage.verse) || passage.verse < 1) return null;
+            const book = [...oldTestament, ...newTestament].find(item => item.abbr === passage.book);
+            if (!book || passage.chapter < 1 || passage.chapter > (chapterCounts[book.name] || 0)) return null;
+            return { book, chapter: passage.chapter, verse: passage.verse };
+        }
+
+        function readLastPassage() {
+            try { return validPassage(JSON.parse(ToolUI.storageGet('tools_bible_passage') || 'null')); }
+            catch (_) { return null; }
+        }
+
+        function resumeLastPassage() {
+            const passage = readLastPassage();
+            if (passage) loadPassage(passage, true);
+        }
+
+        function loadPassage(passage, pushState) {
+            const valid = validPassage(passage);
+            if (!valid) return false;
+            const book = valid.book;
+            const testament = oldTestament.includes(book) ? 'old' : 'new';
+            document.getElementById('testament').value = testament;
+            handleTestamentChange();
+            document.getElementById('book').value = book.abbr;
+            currentBook = book;
+            fetchChapterCount(book.name);
+            document.getElementById('chapter').value = String(valid.chapter);
+            loadChapter(book.name, valid.chapter, valid.verse, pushState);
+            return true;
+        }
+
+        function restorePassageFromURL() {
+            const match = location.hash.match(/^#passage=([A-Za-z0-9]{3})\/(\d+)\/(\d+)$/);
+            if (!match) return false;
+            const passage = validPassage({ book: match[1], chapter: Number(match[2]), verse: Number(match[3]) });
+            return passage ? loadPassage(passage, false) : false;
+        }
+
+        function showResumePassage() {
+            const button = document.getElementById('resume-passage');
+            const saved = readLastPassage();
+            if (!saved) { button.hidden = true; return; }
+            button.textContent = `Continue reading ${saved.book.name} ${saved.chapter}:${saved.verse}`;
+            button.hidden = false;
+        }
+
+        function resetToInitialState() {
+            chapterRequest++;
+            currentBook = null;
+            currentBooks = [];
+            maxChapters = 0;
+            currentChapter = [];
+            currentVerseIndex = 0;
+            document.getElementById('testament').value = '';
+            ToolUI.setHTML(document.getElementById('book'), '<option value="">-- Select Book --</option>');
+            ToolUI.setHTML(document.getElementById('chapter'), '<option value="">-- Select Chapter --</option>');
+            ToolUI.setHTML(document.getElementById('verse'), '<option value="">-- Select Verse --</option>');
+            document.getElementById('book-selector').classList.remove('active');
+            document.getElementById('chapter-selector').classList.remove('active');
+            document.getElementById('verse-selector').classList.remove('active');
+            document.getElementById('verse-display').classList.remove('active');
+            document.getElementById('verse-display').setAttribute('aria-busy', 'false');
+            document.getElementById('verse-content').replaceChildren();
+            document.getElementById('verse-ref').textContent = '';
+            document.getElementById('continue-reading').hidden = true;
+            document.getElementById('loading').textContent = '';
+            document.getElementById('error').replaceChildren();
+            document.getElementById('previous-chapter').disabled = true;
+            document.getElementById('next-chapter').disabled = true;
+            if (location.hash.startsWith('#passage=')) history.replaceState(null, '', location.pathname + location.search);
+            showResumePassage();
+        }
+
         function resetChapterVerse() {
             chapterRequest++;
             currentChapter = [];
@@ -500,6 +586,8 @@
             document.getElementById('verse-display').classList.remove('active');
             document.getElementById('verse-content').replaceChildren();
             document.getElementById('verse-ref').textContent = '';
+            document.getElementById('continue-reading').hidden = true;
+            updateChapterButtons();
         }
         
         function resetVerse() {
@@ -536,6 +624,17 @@
         document.getElementById('book').addEventListener('change', handleBookChange);
         document.getElementById('chapter').addEventListener('change', handleChapterChange);
         document.getElementById('verse').addEventListener('change', handleVerseChange);
+        document.getElementById('previous-chapter').addEventListener('click', () => moveChapter(-1));
+        document.getElementById('next-chapter').addEventListener('click', () => moveChapter(1));
+        document.getElementById('continue-reading').addEventListener('click', continueReading);
+        document.getElementById('resume-passage').addEventListener('click', resumeLastPassage);
+        window.addEventListener('popstate', () => {
+            if (!restorePassageFromURL()) {
+                resetToInitialState();
+                document.getElementById('testament').focus();
+            }
+        });
+        if (!restorePassageFromURL()) resetToInitialState();
     </script>
 </body>
 </html>

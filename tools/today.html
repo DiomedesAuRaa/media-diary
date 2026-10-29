@@ -13,12 +13,11 @@
     body { max-width:58rem; }
     .today-header { margin:.3rem 0 1rem; }
     .today-header p,.section-meta,.muted { color:var(--tool-muted); }
-    .brief-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; align-items:start; }
+    .brief-grid { display:flex; flex-direction:column; gap:.65rem; align-items:stretch; }
     .brief-card { min-width:0; padding:.85rem; background:var(--tool-surface); border:1px solid var(--tool-border); border-radius:.55rem; }
     .brief-card h2 { margin:.1rem 0 .3rem; }
     .brief-card p { margin:.35rem 0; }
     .brief-card > p a,.brief-card > a { display:inline-flex; align-items:center; min-height:44px; }
-    .brief-card.weather { grid-column:1/-1; }
     .section-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:.35rem .8rem; justify-content:space-between; }
     .section-meta { font-size:.8rem; }
     .weather-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.5rem; margin:.6rem 0; }
@@ -34,8 +33,8 @@
     .retry { min-height:38px; }
     .game-score { font-weight:700; }
     .game-label { color:var(--tool-muted); font-size:.8rem; }
-    @media(max-width:560px) { .brief-grid { grid-template-columns:1fr; } .brief-card.weather { grid-column:auto; } .weather-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media(max-width:280px) { body { padding:.4rem; font-size:13px; } .brief-card { padding:.55rem; } .weather-grid { gap:.25rem; } .weather-stat { padding:.4rem; } .retry { min-height:30px; } }
+    @media(max-width:560px) { .weather-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:280px) { body { padding:.4rem; font-size:13px; } .brief-card { padding:.55rem; } .weather-grid { gap:.25rem; } .weather-stat { padding:.4rem; } .retry,.brief-card > p a,.brief-card > a { min-height:29px; } }
   </style>
 </head>
 <body>
@@ -59,22 +58,21 @@
         <button class="retry" id="weather-retry" type="button" hidden>Retry weather</button>
         <a href="weather.html">Weather details and city settings</a>
       </section>
+      <section class="brief-card" aria-labelledby="sports-heading">
+        <div class="section-head"><h2 id="sports-heading">Favorite teams</h2><span class="section-meta" id="sports-meta">Next and recent</span></div>
+        <p class="status-line" id="sports-status" role="status" aria-live="polite">Loading games…</p>
+        <h3>Next game</h3><ul class="game-list" id="upcoming-games"></ul>
+        <h3>Recent</h3><ul class="game-list" id="recent-games"></ul>
+        <button class="retry" id="sports-retry" type="button" hidden>Retry games</button>
+        <p><a href="sports-scores.html">All sports scores</a></p>
+        <p><a href="schedule.html">Schedule</a></p>
+      </section>
       <section class="brief-card" aria-labelledby="news-heading">
-        <div class="section-head"><h2 id="news-heading">Top headlines</h2><span class="section-meta" id="news-meta">Public snapshot</span></div>
+        <div class="section-head"><h2 id="news-heading">Headlines</h2><span class="section-meta" id="news-meta">Public snapshot</span></div>
         <p class="status-line" id="news-status" role="status" aria-live="polite">Loading headlines…</p>
         <ul class="story-list" id="news-list"></ul>
         <button class="retry" id="news-retry" type="button" hidden>Retry headlines</button>
         <p><a href="news.html">More headlines</a></p>
-      </section>
-      <section class="brief-card" aria-labelledby="sports-heading">
-        <div class="section-head"><h2 id="sports-heading">Favorite teams</h2><span class="section-meta" id="sports-meta">Recent and upcoming</span></div>
-        <p class="status-line" id="sports-status" role="status" aria-live="polite">Loading games…</p>
-        <h3>Live</h3><ul class="game-list" id="live-games"></ul>
-        <h3>Recent</h3><ul class="game-list" id="recent-games"></ul>
-        <h3>Upcoming</h3><ul class="game-list" id="upcoming-games"></ul>
-        <button class="retry" id="sports-retry" type="button" hidden>Retry games</button>
-        <p><a href="sports-scores.html">All sports scores</a></p>
-        <p><a href="schedule.html">Schedule</a></p>
       </section>
     </div>
   </main>

@@ -77,12 +77,8 @@ canvas{display:block;image-rendering:pixelated}
   <div class="area" id="area" tabindex="0" role="region" aria-label="Game board. Focus here to play. Escape opens menu." onclick="activate()">
     <div class="overlay show" id="ovr">
       <h2 id="ovrtitle">TETRIS</h2>
-      <p id="ovrmsg">Left/Right=move  Up=rotate<br>Down=soft  Space=hard drop</p>
-      <button class="obtn" onclick="event.stopPropagation();startGame();activate()">PLAY</button>
-    </div>
-    <div class="tapbanner" id="tap" tabindex="0" role="button" onclick="activate()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();activate();}">
-      <div class="ti">&#x25BA;</div><div class="tt">TAP TO ACTIVATE KEYS</div>
-      <div class="ts">then use arrow keys</div>
+      <p id="ovrmsg">2 / Up = rotate · 4=left · 6=right<br>8 / Down = soft drop · 5 / Space = hard drop · # / P = pause</p>
+      <button class="obtn" id="ovrbtn" onclick="event.stopPropagation();overlayAction()">START</button>
     </div>
     <div class="playwrap">
       <canvas id="c" width="160" height="256"></canvas>
@@ -102,11 +98,11 @@ canvas{display:block;image-rendering:pixelated}
 </div>
 <script>
 var kc=document.getElementById('area'),active=false;
-function activate(){kc.focus();active=true;document.getElementById('tap').style.display='none';}
-function deactivate(){active=false;document.getElementById('tap').style.display='flex';}
+function activate(){kc.focus();active=true;}
 function toggleNav() {
   var nav = document.getElementById('nav');
   if (nav.classList.contains('open')) { closeNav(); return; }
+  pauseForLeave();
   nav.hidden = false; nav.classList.add('open'); active = false;
   nav.setAttribute('aria-hidden','false');
   nav.querySelector('button,a').focus();
@@ -192,10 +188,13 @@ function lock(){
   updateUI();spawn();draw();
 }
 function endGame(){clearInterval(dropTimer);over=true;running=false;saveScore();showOverlay('GAME OVER','Score: '+score.toLocaleString()+' Lines: '+lines);}
+function pauseForLeave(){if(!running||over||paused)return;paused=true;document.getElementById('pausebtn').textContent='Resume';showOverlay('PAUSED','Press Enter to resume. Press # or P to pause or resume.');}
 function togglePause(){
   if(!running)return;paused=!paused;
   document.getElementById('pausebtn').textContent=paused?'Resume':'Pause';
-  if(paused)showOverlay('PAUSED','Press P to resume');else hideOverlay();
+  if(paused)showOverlay('PAUSED','Press Enter to resume. Press # or P to pause or resume.');else hideOverlay();
+  document.getElementById('ovrbtn').textContent=paused?'RESUME':'START';
+  if(!paused)activate();
 }
 function ghostY(){var g=0;while(!collides(cur,0,g+1))g++;return cur.y+g;}
 function drawCell(c,x,y,color){
@@ -235,12 +234,13 @@ function saveScore(){
   if(!score)return;
   try{var s=JSON.parse(localStorage.getItem(LS)||'[]');s.push({score:score,lines:lines,date:new Date().toISOString().split('T')[0]});s.sort(function(a,b){return b.score-a.score;});localStorage.setItem(LS,JSON.stringify(s.slice(0,TOPN)));}catch(e){}
 }
-function showOverlay(t,m){document.getElementById('ovrtitle').textContent=t;ToolUI.setHTML(document.getElementById('ovrmsg'),m);document.getElementById('ovr').classList.add('show');}
+function showOverlay(t,m){document.getElementById('ovrtitle').textContent=t;ToolUI.setHTML(document.getElementById('ovrmsg'),m);document.getElementById('ovrbtn').textContent=t==='PAUSED'?'RESUME':(t==='GAME OVER'?'PLAY AGAIN':'START');document.getElementById('ovr').classList.add('show');}
 function hideOverlay(){document.getElementById('ovr').classList.remove('show');}
+function overlayAction(){if(paused){togglePause();return;}startGame();}
 function handleKey(key) {
-  if (!running||over) return;
-  if (key==='p'||key==='P'||key==='Escape') { togglePause(); return; }
-  if (paused) return;
+  if (!running||over) { if(key==='Enter'||key===' '||key==='5'||key==='0')startGame(); return; }
+  if (key==='p'||key==='P'||key==='#') { togglePause(); return; }
+  if (paused) { if(key==='Enter')togglePause(); return; }
   if (key==='ArrowLeft' ||key==='4'||key==='a') moveLeft();
   else if (key==='ArrowRight'||key==='6'||key==='d') moveRight();
   else if (key==='ArrowDown' ||key==='8'||key==='s') softDrop();
@@ -248,6 +248,9 @@ function handleKey(key) {
   else if (key===' '||key==='5') hardDrop();
   else if (key==='0') startGame();
 }
+kc.addEventListener('blur',function(e){var target=e.relatedTarget;var nav=document.getElementById('nav');if(!nav.classList.contains('open')&&target&&document.querySelector('.shell').contains(target))return;pauseForLeave();});
+window.addEventListener('blur',pauseForLeave);
+document.addEventListener('visibilitychange',function(){if(document.hidden)pauseForLeave();});
 /* swipe */
 var tx=0,ty=0,sl=false;
 document.getElementById('area').addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY;sl=false;},{passive:true});

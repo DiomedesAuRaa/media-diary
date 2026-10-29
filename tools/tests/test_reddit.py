@@ -41,6 +41,25 @@ class RedditRefreshTests(unittest.TestCase):
             self.assertEqual(actual['data'], previous['data'])
             self.assertTrue(all(s['reason'] == reason for s in actual['feed_status']['nfl'].values()))
 
+    def test_blocked_probe_rotates_across_configured_feed_list(self):
+        config = {'subreddits': [f'sub{i}' for i in range(12)], 'feeds': [
+            {'label': f'Feed {i}', 'sort': 'hot', 'timeframe': None} for i in range(4)
+        ]}
+        first_previous = {'last_attempt_at': '2026-10-07T00:00:00+00:00'}
+        second_previous = {'last_attempt_at': '2026-10-07T12:00:00+00:00'}
+        def first_probe(previous, now):
+            calls = []
+            def blocked(url):
+                calls.append(url)
+                response = requests.Response(); response.status_code = 429
+                raise requests.HTTPError(response=response)
+            fetch_reddit.refresh(config, previous, fetch=blocked, now=now, delay=0)
+            self.assertEqual(len(calls), 1)
+            return calls[0]
+        first = first_probe(first_previous, '2026-10-07T12:00:00+00:00')
+        second = first_probe(second_previous, '2026-10-08T00:00:00+00:00')
+        self.assertNotEqual(first, second)
+
     def test_ordinary_http_failure_does_not_skip_other_feeds(self):
         def missing(url):
             if 'hot.rss' in url:
