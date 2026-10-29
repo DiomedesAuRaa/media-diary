@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T23:12:11+00:00",
-  "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+  "generatedAt": "2026-10-29T02:25:02+00:00",
+  "lastAttemptAt": "2026-10-29T02:25:02+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,12 +10,27 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
+        {
+          "title": "Forecasters are predicting a warmer and wetter winter. Here's how El Niño will affect your region.",
+          "url": "https://www.npr.org/2026/10/28/nx-s1-6009547/el-nino-forecast-us-winter",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "Judge denies the Justice Department's bid to stop processing California ballots",
+          "url": "https://www.npr.org/2026/10/28/nx-s1-6021478/doj-california-ballots-denied",
+          "date": "2026-10-29"
+        },
         {
           "title": "Trump administration will allow pharmacies to make popular peptides",
           "url": "https://www.npr.org/2026/10/28/nx-s1-6021030/peptides-compounding-enforcement",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Brazilian political drama unfolds as defeated Flavio Bolsonaro arrives in Miami",
+          "url": "https://www.npr.org/2026/10/28/nx-s1-6020518/brazilian-political-drama-unfolds-as-defeated-flavio-bolsonaro-arrives-in-miami",
           "date": "2026-10-28"
         },
         {
@@ -37,21 +52,6 @@
           "title": "Dolores Huerta, influential labor leader, feminist and civil rights icon, dies at 96",
           "url": "https://www.npr.org/2026/10/28/nx-s1-6020543/dolores-huerta-dies",
           "date": "2026-10-28"
-        },
-        {
-          "title": "What's gone up even faster than gas or rent? The cost of caregiving",
-          "url": "https://www.npr.org/2026/10/28/nx-s1-6019319/caregiving-costs-aarp-affordability",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Israel's election too close to call. And, the Ebola outbreak reaches grim milestone",
-          "url": "https://www.npr.org/2026/10/28/g-s1-150313/up-first-newsletter-midterm-campaign-trump-israel-elections-federal-reserve-ebola-outbreak",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Dozens are dead in a high-speed train crash in Spain",
-          "url": "https://www.npr.org/2026/10/28/nx-s1-6020217/spain-train-disaster",
-          "date": "2026-10-28"
         }
       ]
     },
@@ -61,8 +61,8 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Healey unveils £100 for energy bills and bank tax in first Budget",
@@ -70,14 +70,9 @@
           "date": "2026-10-28"
         },
         {
-          "title": "Budget key points at a glance",
-          "url": "https://www.bbc.co.uk/news/articles/c6x2zrjl7kjno?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Chris Mason: Budget felt cautious despite its range of small measures",
-          "url": "https://www.bbc.co.uk/news/articles/cm78pljvqvxeo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-28"
+          "title": "I earn £30,000. I'm angry there was no fuel duty cut in the Budget",
+          "url": "https://www.bbc.co.uk/news/articles/cmx235r9wr3yo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-29"
         },
         {
           "title": "High-speed train crash kills at least 68 people in Spain",
@@ -85,9 +80,14 @@
           "date": "2026-10-28"
         },
         {
-          "title": "Watch: At the scene of Spain's deadly train crash",
-          "url": "https://www.bbc.co.uk/news/videos/cw5ynjgy3vvgo?at_medium=RSS&at_campaign=rss",
+          "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
+          "url": "https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&at_campaign=rss",
           "date": "2026-10-28"
+        },
+        {
+          "title": "Flávio Bolsonaro denies fleeing Brazil after landing in Miami",
+          "url": "https://www.bbc.co.uk/news/articles/c6kglwe4lxwzo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-29"
         },
         {
           "title": "Death of US actress Hayden Panettiere ruled accidental, ending local police probe",
@@ -95,14 +95,14 @@
           "date": "2026-10-28"
         },
         {
-          "title": "King Charles shows off dance moves on second day of Caribbean tour",
-          "url": "https://www.bbc.co.uk/news/articles/ckzd670vpj09o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-28"
+          "title": "Family row over George Michael items up for auction - including Faith guitar",
+          "url": "https://www.bbc.co.uk/news/articles/cmr4y51gd5yro?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-29"
         },
         {
-          "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
-          "url": "https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-28"
+          "title": "King Charles shows off dance moves on second day of Caribbean tour",
+          "url": "https://www.bbc.co.uk/news/articles/ckzd670vpj09o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-10-29"
         }
       ]
     },
@@ -112,8 +112,8 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "High-speed train crash kills at least 68 people in Spain",
@@ -128,7 +128,7 @@
         {
           "title": "Flávio Bolsonaro denies fleeing Brazil after landing in Miami",
           "url": "https://www.bbc.co.uk/news/articles/c6kglwe4lxwzo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-10-28"
+          "date": "2026-10-29"
         },
         {
           "title": "Netanyahu's bloc leading Israel election but short of majority, partial results show",
@@ -163,9 +163,34 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
+        {
+          "title": "Riot police deployed in Madrid as protests erupt over deadly train crash",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/29/riot-police-deployed-in-madrid-as-protests-erupt-over-deadly-train-crash?traffic_source=rss",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "Israelis rally for Jewish-Arab government after election gains",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/29/israelis-rally-for-jewish-arab-government-after-election-gains?traffic_source=rss",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "No clear winner in Israel election with nearly 90 percent of votes counted",
+          "url": "https://www.aljazeera.com/news/2026/10/29/no-clear-winner-in-israeli-election-with-nearly-90-percent-of-votes-counted?traffic_source=rss",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "Iran war live: Tehran presses 7-day Hormuz plan; Trump denies peace talks",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/10/29/iran-war-live-tehran-presses-7-day-hormuz-plan-trump-denies-peace-talks?traffic_source=rss",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "Romania extends pre-trial detention of far-right politician Calin Georgescu",
+          "url": "https://www.aljazeera.com/news/2026/10/28/romania-extends-pre-trial-detention-of-far-right-politician-calin-georgescu?traffic_source=rss",
+          "date": "2026-10-28"
+        },
         {
           "title": "UN experts sound alarm at excessive use of force in French student protests",
           "url": "https://www.aljazeera.com/news/2026/10/28/un-experts-sound-alarm-at-excessive-use-of-force-in-french-student-protests?traffic_source=rss",
@@ -180,31 +205,6 @@
           "title": "Indonesian students demand action on wildfires and rising costs",
           "url": "https://www.aljazeera.com/video/newsfeed/2026/10/28/aje-onl-nf_indonesian-students-demand-action-on-wildfires-281026?traffic_source=rss",
           "date": "2026-10-28"
-        },
-        {
-          "title": "What’s next for Brazil’s Flavio Bolsonaro after election defeat?",
-          "url": "https://www.aljazeera.com/news/2026/10/28/whats-next-for-brazils-flavio-bolsonaro-after-election-defeat?traffic_source=rss",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "UN votes to condemn embargo of Cuba despite US lobbying push",
-          "url": "https://www.aljazeera.com/news/2026/10/28/un-votes-to-condemn-embargo-of-cuba-despite-us-lobbying-push?traffic_source=rss",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Rwanda’s milk bars",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/28/rwandas-milk-bars?traffic_source=rss",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "US envoy reads anti-Castro book during Cuban FM’s UN address",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/28/us-envoy-reads-anti-castro-book-during-cuban-fms-un-address?traffic_source=rss",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Spain demands answers after deadliest train disaster in over a decade",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/10/28/spain-demands-answers-after-deadliest-train-disaster-in-over-a-decade?traffic_source=rss",
-          "date": "2026-10-28"
         }
       ]
     },
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Egypt fines prominent editor Lina Attalah and shuts independent news outlet Mada Masr",
@@ -265,9 +265,14 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
+        {
+          "title": "Brazilian political drama unfolds as defeated Flavio Bolsonaro arrives in Miami",
+          "url": "https://www.npr.org/2026/10/28/nx-s1-6020518/brazilian-political-drama-unfolds-as-defeated-flavio-bolsonaro-arrives-in-miami",
+          "date": "2026-10-28"
+        },
         {
           "title": "Israel's election too close to call. And, the Ebola outbreak reaches grim milestone",
           "url": "https://www.npr.org/2026/10/28/g-s1-150313/up-first-newsletter-midterm-campaign-trump-israel-elections-federal-reserve-ebola-outbreak",
@@ -300,13 +305,8 @@
         },
         {
           "title": "Flávio Bolsonaro arrives in Florida after fleeing Brazil",
-          "url": "https://www.npr.org/2026/10/27/nx-s1-6019678/u-s-to-issue-visas-to-flavio-bolsonaro-as-his-whereabouts-remain-unclear",
+          "url": "https://www.npr.org/2026/10/27/nx-s1-6019678/bolsonaro-brazil-lula-election-trump",
           "date": "2026-10-28"
-        },
-        {
-          "title": "Israel's voter turnout soars as Netanyahu faces a tight election",
-          "url": "https://www.npr.org/2026/10/27/nx-s1-6019381/israel-elections",
-          "date": "2026-10-27"
         }
       ]
     },
@@ -316,12 +316,32 @@
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
-          "title": "Claude Code found 145K photos I deleted from my iPhone sitting in a hidden cache",
-          "url": "https://twitter.com/coolerwave/status/2114088769112477849",
+          "title": "MicroZig to Adopt Strict No LLM / No AI Policy",
+          "url": "https://github.com/ZigEmbeddedGroup/microzig/blob/main/CODE_OF_CONDUCT.md",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5",
+          "url": "https://divagr.com/blog/qwenputer",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "GitLab Security Incident: Attempted Exploitation of CVE-2026-97229",
+          "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "The first wired XR glasses powered by Android XR",
+          "url": "https://blog.google/products-and-platforms/platforms/android/xreal-aura/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "StackOverflow now gets fewer than 1000 questions a month",
+          "url": "https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1",
           "date": "2026-10-28"
         },
         {
@@ -338,26 +358,6 @@
           "title": "Nango (YC W23) Is Hiring Across Eng, FDE, Marketing, DevRel",
           "url": "https://nango.dev/careers",
           "date": "2026-10-28"
-        },
-        {
-          "title": "The case of the 9 bit AES key",
-          "url": "https://v12.sh/blog/the-case-of-the-9bit-aes-key",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Leak website releases data on DHS employees",
-          "url": "https://www.reuters.com/legal/government/leak-website-releases-data-tens-thousands-dhs-employees-2026-10-28/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Scaling Hierarchical Networks",
-          "url": "https://www.cartesia.ai/blog/from-tokens-to-bytes-part-1",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Spiders Spin 'Silk Dope' into Nature's Toughest Material",
-          "url": "https://www.quantamagazine.org/how-spiders-spin-silk-dope-into-natures-toughest-material-20261028/",
-          "date": "2026-10-28"
         }
       ]
     },
@@ -367,9 +367,24 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
+        {
+          "title": "ULA's Vulcan rocket is set to return to flight on Friday the 13th",
+          "url": "https://arstechnica.com/space/2026/10/ulas-vulcan-rocket-is-set-to-return-to-flight-on-friday-the-13th/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "As US ties fray, Europe plans first undersea cable link to Greenland",
+          "url": "https://arstechnica.com/gadgets/2026/10/as-us-ties-fray-europe-plans-first-undersea-cable-link-to-greenland/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Peptide peddlers cheer as RFK Jr. unilaterally grants access, overruling FDA",
+          "url": "https://arstechnica.com/health/2026/10/peptide-peddlers-cheer-as-rfk-jr-unilaterally-grants-access-overruling-fda/",
+          "date": "2026-10-28"
+        },
         {
           "title": "Trump admin sues Utah to save Kalshi from the state's total ban on gambling",
           "url": "https://arstechnica.com/tech-policy/2026/10/trump-admin-sues-utah-to-save-kalshi-from-the-states-total-ban-on-gambling/",
@@ -394,21 +409,6 @@
           "title": "Amazon turns its most capable smart speaker into a smart camera, too",
           "url": "https://arstechnica.com/gadgets/2026/10/amazon-adds-a-camera-to-its-best-sounding-smart-speaker-for-30-extra/",
           "date": "2026-10-28"
-        },
-        {
-          "title": "Cadillac Escalade IQ review: Huge battery, huge range, huge SUV",
-          "url": "https://arstechnica.com/cars/2026/10/cadillac-escalade-iq-review-4-tons-of-electric-american-luxury-on-wheels/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Google AI gets cagey when asked who won the 2020 elections",
-          "url": "https://arstechnica.com/ai/2026/10/google-ai-gets-cagey-when-asked-who-won-the-2020-elections/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Florida county won’t investigate sketchy Flock cameras removed by mystery owners",
-          "url": "https://arstechnica.com/tech-policy/2026/10/florida-county-wont-investigate-sketchy-flock-cameras-removed-by-mystery-owners/",
-          "date": "2026-10-28"
         }
       ]
     },
@@ -418,8 +418,8 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Adam Mosseri says negativity around AI is ‘going to get worse’",
@@ -469,8 +469,8 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "The 2,000-Nit OLED in Apple’s New MacBook Is a Big Deal",
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Creating AI value with enterprise context",
@@ -572,7 +572,7 @@
       "url": "https://www.espn.com/espn/rss/news",
       "status": "stale",
       "generatedAt": "2026-10-09T09:43:49+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Buccaneers explode in third quarter in win over Cowboys",
@@ -622,47 +622,47 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
+        {
+          "title": "UWCL Star Power Index: Lily Yohannes shines against Inter Milan; Alessia Russo carries Arsenal",
+          "url": "https://www.cbssports.com/soccer/news/uwcl-star-power-index-lily-yohannes-shines-against-inter-milan/",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "Fantasy football Week 8 Start 'Em & Sit 'Em: Trevor Lawrence enters electric mode in juicy matchup vs. Colts",
+          "url": "https://www.cbssports.com/fantasy/football/news/fantasy-football-week-8-start-em-sit-em-trevor-lawrence-enters-electric-mode-in-juicy-matchup-vs-colts/",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "NFL Week 8 injury report: Lamar Jackson practices in full, Lions star Kerby Joseph returns",
+          "url": "https://www.cbssports.com/nfl/news/nfl-week-8-injury-report-lamar-jackson-kerby-joseph-updates/",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "2026 MLB playoff bracket: Schedule and scores as Brewers take second shot at first World Series title",
+          "url": "https://www.cbssports.com/mlb/news/2026-mlb-playoff-bracket-schedule-scores-results-how-to-watch/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "PrizePicks promo code and app review: Play $5, Get $50",
+          "url": "https://www.cbssports.com/betting/news/prizepicks/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "CFB Jacksonville State vs. New Mexico State picks: Running games likely to determine key CUSA matchup outcome",
+          "url": "https://www.cbssports.com/betting/news/cfb-jacksonville-state-vs-new-mexico-state-picks-running-games-likely-to-determine-key-cusa-matchup-outcome/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Pressure mounts on Ruben Amorim's AC Milan after 4-2 home defeat ahead crucial Inter clash",
+          "url": "https://www.cbssports.com/soccer/news/pressure-mounts-on-ruben-amorims-ac-milan/",
+          "date": "2026-10-28"
+        },
         {
           "title": "Brewers vs. Rays odds, World Series Game 5 predictions: Use best Kalshi promo code CBSSPORTS55 for $55 bonus",
           "url": "https://www.cbssports.com/prediction/news/brewers-vs-rays-odds-world-series-game-5-predictions-use-best-kalshi-promo-code-cbssports55-55-bonus/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "2026 NBA odds, picks, predictions, best bets, player props: Experts, model backing 76ers on Wednesday",
-          "url": "https://www.cbssports.com/betting/news/2026-nba-odds-picks-predictions-best-bets-player-props-experts-model-backing-76ers-on-wednesday/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Knicks vs. Bulls odds, prediction, time: 2026 NBA picks for Wednesday, Oct. 28 by proven model",
-          "url": "https://www.cbssports.com/betting/news/knicks-bulls-odds-prediction-time-2026-nba-picks-best-bets-wednesday-october-28/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Jacksonville State vs. New Mexico State odds: Week 9 Wednesday college football picks by proven model",
-          "url": "https://www.cbssports.com/betting/news/jacksonville-state-new-mexico-state-predictions-odds-time-2026-college-football-wednesday-picks-best-bets/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "2027 WNBA Draft Lottery odds: Who has the best chance at the No. 1 pick?",
-          "url": "https://www.cbssports.com/wnba/news/2027-wnba-draft-lottery-odds/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Brewers vs. Rays prediction, odds, time: 2026 World Series Game 5 picks by proven model",
-          "url": "https://www.cbssports.com/betting/news/brewers-rays-prediction-odds-time-2026-world-series-game-5-picks-best-bets/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Middle Tennessee-Kennesaw State odds, picks, predictions: Use Polymarket promo code CBSSPORTS for $25 bonus",
-          "url": "https://www.cbssports.com/prediction/news/middle-tennessee-kennesaw-state-odds-picks-predictions-use-polymarket-promo-code-cbssports-for-25-bonus/",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Use DraftKings promo code to get $200 bonus, free NBA League Pass for Rays-Brewers, World Series Game 5, NBA",
-          "url": "https://www.cbssports.com/betting/news/use-draftkings-promo-code-to-get-200-bonus-free-nba-league-pass-rays-brewers-world-series-game-5-nba/",
           "date": "2026-10-28"
         }
       ]
@@ -673,48 +673,48 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
-          "title": "Ernie Johnson to retire from 'Inside the NBA' in June after a 37-year run as host",
-          "url": "https://sports.yahoo.com/articles/ernie-johnson-retire-inside-nba-230600291.html",
-          "date": "2026-10-28"
+          "title": "Jacob Misiorowski injury update after Brewers ace pulled from World Series game",
+          "url": "https://sports.yahoo.com/articles/jacob-misiorowski-injury-brewers-ace-021854977.html",
+          "date": "2026-10-29"
         },
         {
-          "title": "Seahawks try out two receivers in the wake of Rashid Shaheed’s injury",
-          "url": "https://sports.yahoo.com/articles/seahawks-try-two-receivers-wake-230526397.html",
-          "date": "2026-10-28"
+          "title": "McAfee Details FBI ‘GameDay’ Guidance in Tennessee After Kirk Shooting",
+          "url": "https://sports.yahoo.com/articles/mcafee-details-fbi-gameday-guidance-021720606.html",
+          "date": "2026-10-29"
         },
         {
-          "title": "WPL 2027 auction: From Chamari Athapaththu to Uma Chetry, five big names left unsold",
-          "url": "https://sports.yahoo.com/articles/wpl-2027-auction-chamari-athapaththu-230500063.html",
-          "date": "2026-10-28"
+          "title": "Maxey scores 27 points and leads the 76ers to a 114-109 victory over the Pacers",
+          "url": "https://sports.yahoo.com/articles/maxey-scores-27-points-leads-021604613.html",
+          "date": "2026-10-29"
         },
         {
-          "title": "Packers-Lions most watched television program this NFL season",
-          "url": "https://sports.yahoo.com/articles/packers-lions-most-watched-television-230405068.html",
-          "date": "2026-10-28"
+          "title": "Pacers' 17-0 third-quarter run turns into 114-109 to LeBron James, Sixers",
+          "url": "https://sports.yahoo.com/articles/pacers-17-0-third-quarter-021546040.html",
+          "date": "2026-10-29"
         },
         {
-          "title": "With Julian Sayin out, Ohio State coach Ryan Day won't name starting QB ahead of game vs. USC",
-          "url": "https://sports.yahoo.com/college-football/breaking-news/article/with-julian-sayin-out-ohio-state-coach-ryan-day-wont-name-starting-qb-ahead-of-game-vs-usc-230400957.html",
-          "date": "2026-10-28"
+          "title": "3 takeaways from Arkansas basketball's exhibition win over Memphis",
+          "url": "https://sports.yahoo.com/articles/3-takeaways-arkansas-basketballs-exhibition-021158835.html",
+          "date": "2026-10-29"
         },
         {
-          "title": "East Lake Cup: María José Marín, Billy Davis clinch wins for Arkansas, Auburn",
-          "url": "https://sports.yahoo.com/articles/east-lake-cup-mar-jos-230337831.html",
-          "date": "2026-10-28"
+          "title": "DeVonta Smith not practicing Wednesday",
+          "url": "https://sports.yahoo.com/articles/devonta-smith-not-practicing-wednesday-021100066.html",
+          "date": "2026-10-29"
         },
         {
-          "title": "49ers release struggling cornerback Jack Jones. What's the next move at that position?",
-          "url": "https://sports.yahoo.com/articles/49ers-release-struggling-cornerback-jack-230331425.html",
-          "date": "2026-10-28"
+          "title": "Venice volleyball defeats Jupiter to win regionals, head to state semifinal",
+          "url": "https://sports.yahoo.com/articles/venice-volleyball-defeats-jupiter-win-021016519.html",
+          "date": "2026-10-29"
         },
         {
-          "title": "Monitoring the weather for Notre Dame VS Miami",
-          "url": "https://sports.yahoo.com/articles/monitoring-weather-notre-dame-vs-230314245.html",
-          "date": "2026-10-28"
+          "title": "Josh Sargent scores go-ahead goal in 86th minute to help Toronto FC beat D.C. United 2-1",
+          "url": "https://sports.yahoo.com/articles/josh-sargent-scores-ahead-goal-020942141.html",
+          "date": "2026-10-29"
         }
       ]
     },
@@ -724,9 +724,34 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
+        {
+          "title": "Why Alphabet’s stock could see its worst drop in years after the latest results",
+          "url": "https://www.marketwatch.com/story/why-alphabets-stock-could-see-its-worst-drop-in-years-after-the-latest-results-6b64cf98?mod=mw_rss_topstories",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "Lumentum’s stock pops as investors cheer a possible sale to Marvell",
+          "url": "https://www.marketwatch.com/story/lumentums-stock-pops-as-investors-cheer-a-possible-sale-to-marvell-07c1d0e8?mod=mw_rss_topstories",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "‘Just watch Judge Judy’: I’m in my 70s. Why do people keep making the same avoidable financial mistakes?",
+          "url": "https://www.marketwatch.com/story/you-need-only-watch-episodes-of-judge-judy-im-in-my-70s-why-do-people-keep-making-the-same-avoidable-financial-mistakes-bbf60fe4?mod=mw_rss_topstories",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "The major reason Microsoft’s stock is heading higher after earnings",
+          "url": "https://www.marketwatch.com/story/the-major-reason-microsofts-stock-is-heading-higher-after-earnings-c019a036?mod=mw_rss_topstories",
+          "date": "2026-10-29"
+        },
+        {
+          "title": "Fortinet’s stock is taking a dive after earnings. Here’s why.",
+          "url": "https://www.marketwatch.com/story/fortinets-stock-is-taking-a-dive-after-earnings-heres-why-d407896e?mod=mw_rss_topstories",
+          "date": "2026-10-28"
+        },
         {
           "title": "ServiceNow’s stock slides as earnings miss overshadows a raised AI outlook",
           "url": "https://www.marketwatch.com/story/servicenows-stock-slides-as-earnings-miss-clouds-a-raised-ai-outlook-96e48385?mod=mw_rss_topstories",
@@ -741,31 +766,6 @@
           "title": "Chipotle now has more demand from lower-income diners than higher-income ones",
           "url": "https://www.marketwatch.com/story/chipotle-expects-modestly-higher-sales-this-year-as-drive-thru-chipotlanes-come-to-more-stores-4f255bbc?mod=mw_rss_topstories",
           "date": "2026-10-28"
-        },
-        {
-          "title": "Lumentum’s stock pops as investors cheer a possible sale to Marvell",
-          "url": "https://www.marketwatch.com/story/lumentums-stock-pops-as-investors-cheer-a-possible-sale-to-marvell-07c1d0e8?mod=mw_rss_topstories",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "We stopped helping our neighbors with free home repairs and our friendship cooled. Who’s to blame?",
-          "url": "https://www.marketwatch.com/story/we-stopped-helping-our-neighbors-with-free-home-repairs-and-our-friendship-cooled-whos-to-blame-d20b0720?mod=mw_rss_topstories",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "My wife cried when I found out she had only $80,000 in her 401(k). I have $2.2 million. Am I wrong to be shocked?",
-          "url": "https://www.marketwatch.com/story/my-wife-has-only-80-000-saved-for-retirement-i-have-2-2-million-am-i-wrong-to-be-shocked-3e27b490?mod=mw_rss_topstories",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "We’re in our 70s. Should we pay off our 2.5% mortgage — or put the money in a high-yield savings account?",
-          "url": "https://www.marketwatch.com/story/we-are-in-our-70s-should-we-pay-off-our-2-5-mortgage-or-build-up-our-savings-5a35e9c1?mod=mw_rss_topstories",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Why did the Fed hold off on raising interest rates? Warsh says it’s because an ‘information-rich’ period is coming.",
-          "url": "https://www.marketwatch.com/story/why-did-the-fed-hold-off-on-raising-interest-rates-warsh-says-its-because-an-information-rich-period-is-coming-098ced8d?mod=mw_rss_topstories",
-          "date": "2026-10-28"
         }
       ]
     },
@@ -775,13 +775,18 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Alphabet sinks 10% as it holds 2026 capex unchanged, expects significant increase in 2027",
           "url": "https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html",
           "date": "2026-10-28"
+        },
+        {
+          "title": "Samsung Electronics shares slid despite record profit in the third-quarter",
+          "url": "https://www.cnbc.com/2026/10/29/samsung-electronics-third-quarter-earnings.html",
+          "date": "2026-10-29"
         },
         {
           "title": "Microsoft stock jumps 4% as cloud growth drives earnings and revenue beat",
@@ -794,24 +799,19 @@
           "date": "2026-10-28"
         },
         {
+          "title": "CoreWeave and other neocloud stocks drop after Microsoft capex comes in below expectations",
+          "url": "https://www.cnbc.com/2026/10/28/neocloud-stocks-drop-after-microsoft-revises-capex-down.html",
+          "date": "2026-10-29"
+        },
+        {
           "title": "Hands-on with Apple's first touchscreen laptop: Touch is totally optional",
           "url": "https://www.cnbc.com/2026/10/28/apple-touchscreen-macbook-pro-hands-on.html",
           "date": "2026-10-28"
         },
         {
-          "title": "Bond investor Jeff Gundlach on Fed's rate pause: 'What are you waiting for?'",
-          "url": "https://www.cnbc.com/2026/10/28/bond-investor-jeff-gundlach-talks-feds-rate-pause-with-cnbc.html",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "DoorDash's deal to buy Instacart coming as early as Thursday morning, sources tell CNBC",
-          "url": "https://www.cnbc.com/2026/10/28/doordash-instacart-maplebear.html",
-          "date": "2026-10-28"
-        },
-        {
-          "title": "Chipotle shares rise 7% after CEO says same-store sales growth will continue",
-          "url": "https://www.cnbc.com/2026/10/28/chipotle-mexican-grill-cmg-q3-2026-earnings.html",
-          "date": "2026-10-28"
+          "title": "China’s tech darlings are losing their shine. Here’s what’s behind the sell-off",
+          "url": "https://www.cnbc.com/2026/10/29/china-tech-stocks-selloff.html",
+          "date": "2026-10-29"
         },
         {
           "title": "10-year Treasury yield creeps higher even as Fed keeps rates the same",
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": []
     },
     {
@@ -846,8 +846,8 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "A single sauna session sends immune cells surging through your body",
@@ -896,10 +896,20 @@
       "category": "science",
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
-      "status": "stale",
-      "generatedAt": "2026-10-28T18:50:03+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "status": "ok",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
+        {
+          "title": "NASA Welcomes Vietnam as Newest Artemis Accords Signatory",
+          "url": "https://www.nasa.gov/organizations/oiir/nasa-welcomes-vietnam-as-newest-artemis-accords-signatory/",
+          "date": "2026-10-28"
+        },
+        {
+          "title": "Artemis III SLS Core Stage Joins Boosters at Kennedy",
+          "url": "https://www.nasa.gov/image-article/artemis-iii-sls-core-stage-joins-boosters-at-kennedy/",
+          "date": "2026-10-28"
+        },
         {
           "title": "NASA University Challenge Ignites Trajectory of Drone Entrepreneur",
           "url": "https://www.nasa.gov/aeronautics/nasa-challenge-drone-entrepreneur/",
@@ -929,16 +939,6 @@
           "title": "The Land of the Standing-Up Rocks",
           "url": "https://science.nasa.gov/earth/earth-observatory/the-land-of-the-standing-up-rocks/",
           "date": "2026-10-28"
-        },
-        {
-          "title": "NASA Invites Media to Crew Completion of Yearlong Mars Simulation",
-          "url": "https://www.nasa.gov/news-release/nasa-invites-media-to-crew-completion-of-yearlong-mars-simulation/",
-          "date": "2026-10-27"
-        },
-        {
-          "title": "NASA’s Neo Surveyor Sunshade",
-          "url": "https://www.nasa.gov/image-article/nasas-neo-surveyor-sunshade/",
-          "date": "2026-10-27"
         }
       ]
     },
@@ -948,8 +948,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Twisteddoodles on scientists in horror movies",
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Switchable Chlorine Atom Transfer Radical Reactions",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "stale",
       "generatedAt": "2026-10-28T18:50:03+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Converge (YC S23) Is Hiring a Founding Platform Engineer",
@@ -1066,8 +1066,8 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Google just handed its rivals the keys to Android",
@@ -1118,7 +1118,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1168,8 +1168,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "Volcano v1.16 Released: NamespaceQueue, fairshare, and a broader HyperNode ecosystem",
@@ -1219,8 +1219,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-10-28T23:12:11+00:00",
-      "lastAttemptAt": "2026-10-28T23:12:11+00:00",
+      "generatedAt": "2026-10-29T02:25:02+00:00",
+      "lastAttemptAt": "2026-10-29T02:25:02+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #540",
