@@ -266,3 +266,25 @@ html body.sports-page .league-picker select { width:100%; }
   html body.sports-page.league-picker-ready .league-picker:not([hidden]) { display:block; margin:.3rem 0; }
   html body.sports-page.league-picker-ready #league-nav { display:none !important; }
 }
+
+/* Pocket home is a list of destinations, with useful choices above the fold. */
+html.compact .utility-home .service-grid { display:block; margin:0; }
+html.compact .utility-home .service-section { margin:.55rem 0; }
+html.compact .utility-home .service-section h2 { font-size:13px; margin:.35rem 0; color:var(--tool-muted); }
+html.compact .utility-home .service-card { margin:0; }
+html.compact .utility-home .service-card a { display:flex; min-height:44px; padding:5px 7px; border-radius:0; border-width:0 0 1px; }
+html.compact .utility-home .service-card span { display:none; }
+html.compact .utility-home .service-card strong { font-size:14px; }
+.tool-nav a[aria-current="page"] { color:var(--tool-link); text-decoration:underline; }
+@media (max-width:280px) {
+  html .utility-home .service-grid { display:block; margin:0; }
+  html .utility-home .service-section { margin:.5rem 0; }
+  html .utility-home .service-section h2 { font-size:13px; margin:.35rem 0; }
+  html .utility-home .service-card a { min-height:29px; padding:4px 7px; border-radius:0; border-width:0 0 1px; }
+  html .utility-home .service-card span { display:none; }
+}
+@media (max-width:280px) {
+  html.compact .utility-home .service-card a { min-height:29px; padding:3px 7px; }
+  html body:not(.game-page) .header { padding:4px; margin-bottom:5px; }
+  html body:not(.game-page) .header h1 { margin:2px 0; font-size:17px; line-height:1.2; }
+}

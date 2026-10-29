@@ -162,6 +162,7 @@
                     a.classList.add('active');
                     a.setAttribute('aria-pressed', 'true');
                     currentLeague = LEAGUES[parseInt(a.dataset.idx)];
+                    try { localStorage.setItem('sports_standings_league', currentLeague.espn_path); } catch (_) {}
                     picker.value = a.dataset.idx;
                     loadStandings();
                 });
@@ -394,11 +395,19 @@
             var tab = document.querySelector('.league-nav button[data-idx="' + this.value + '"]');
             if (tab) tab.click();
         });
+        function rememberedLeagueIndex() {
+            try {
+                var saved = localStorage.getItem('sports_standings_league');
+                var found = LEAGUES.findIndex(function(league) { return league.espn_path === saved; });
+                if (found >= 0) return found;
+            } catch (_) {}
+            return 0;
+        }
         async function retryStandingsConfig() {
             try {
                 await loadConfig();
                 if (!LEAGUES.length) { ToolUI.setHTML(document.getElementById('content'), '<div class="no-standings">No leagues with standings enabled in config.</div>'); return; }
-                buildNav(); currentLeague = LEAGUES[0]; loadStandings();
+                buildNav(); document.querySelector('.league-nav button[data-idx="' + rememberedLeagueIndex() + '"]').click();
             } catch(retryErr) {
                 ToolUI.setHTML(document.getElementById('content'), '<div class="config-error">Could not load sports config. <button type="button" id="retry-config">Retry</button></div>');
                 document.getElementById('retry-config').addEventListener('click', retryStandingsConfig);
@@ -418,9 +427,17 @@
                 return;
             }
             buildNav();
-            currentLeague = LEAGUES[0];
-            loadStandings();
+            document.querySelector('.league-nav button[data-idx="' + rememberedLeagueIndex() + '"]').click();
         })();
     </script>
+    <style>
+      .league-picker { margin:.45rem 0; }
+      .league-picker label { display:block; margin-bottom:.15rem; }
+      .league-picker select { width:100%; }
+      @media(max-width:280px) {
+        .league-picker select,.league-nav button,.refresh-btn { min-height:29px; padding:.2rem .4rem; }
+        .league-nav { gap:.2rem; padding:.25rem; }
+      }
+    </style>
 </body>
 </html>

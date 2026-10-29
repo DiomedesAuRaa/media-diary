@@ -90,6 +90,17 @@
             cursor: pointer; font-weight: 600;
         }
         .filter-section select:hover { border-color: #ff6b35; background: #fff9f5; }
+        #feed-select { display: none; }
+        .snapshot-status { background: #ffedb5; color: #533700; border-left: 4px solid #a96b00; padding: 8px 12px; margin: 0 0 5px; font-size: .9em; font-weight: 600; }
+        .snapshot-details { color: #533700; background: #fff7df; padding: 4px 10px; margin-bottom: 12px; font-size: .85em; }
+        .snapshot-details summary { cursor: pointer; font-weight: 600; }
+        html.compact .sub-feed-tabs, html.compact .collapse-btn { display: none; }
+        .post-title a { color:inherit; text-decoration:underline; }
+        @media (max-width: 768px) { .sub-feed-tabs { display: none; } }
+        html.compact .feed-nav { display: none; }
+        html.compact #feed-select { display: block; }
+        html.compact .filter-section { display: grid; grid-template-columns: 1fr 1fr; }
+        html.compact .filter-section select { width: 100%; min-width: 0; }
 
         /* ── Content ── */
         .content { padding: 40px; }
@@ -277,10 +288,12 @@
         </nav>
 
         <div class="filter-section">
-            <label for="subreddit-filter">Filter by subreddit:</label>
-            <select id="subreddit-filter">
+            <label for="subreddit-filter">Community:</label>
+            <select id="subreddit-filter" aria-label="Community">
                 <option value="">All Subreddits</option>
             </select>
+            <label for="feed-select">Feed:</label>
+            <select id="feed-select" aria-label="Feed"></select>
         </div>
 
         <div id="content" class="content" role="tabpanel">
@@ -304,6 +317,8 @@
 
         let allDigestData = null;
         let activeFeed = ToolUI.storageGet('activeFeed') || null;
+        let selectedCommunity = null;
+        let initialRouteState = null;
         const activeSubFeeds = Object.create(null);
 
         // ── Utilities ──────────────────────────────────────────────────────
@@ -335,6 +350,50 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
+        function currentRoute() {
+            const match = location.hash.match(/^#r=([A-Za-z0-9_]{1,50})&feed=([^&]*)&page=(\d+)$/);
+            if (!match) return null;
+            try { return { community: match[1], feed: decodeURIComponent(match[2]), page: Math.max(0, Number(match[3]) - 1) }; }
+            catch { return null; }
+        }
+        function writeRoute(community, feed, page, push = true) {
+            if (!community || !feed) return;
+            const url = new URL(location.href);
+            url.hash = `r=${encodeURIComponent(community)}&feed=${encodeURIComponent(feed)}&page=${Math.max(1, page + 1)}`;
+            const state = { redditRoute: { community, feed, page } };
+            if (push) history.pushState(state, '', url);
+            else history.replaceState(state, '', url);
+        }
+        function restoreRoute() {
+            if (!allDigestData) return;
+            const route = currentRoute();
+            const communitySelect = document.getElementById('subreddit-filter');
+            if (route && allDigestData.data?.[route.community]) {
+                selectedCommunity = route.community;
+                const labels = Object.keys(allDigestData.data[route.community]);
+                const isUsable = label => allDigestData.data[route.community][label]?.length > 0 || allDigestData.feed_status?.[route.community]?.[label]?.status !== 'unavailable';
+                activeFeed = route.feed && labels.includes(route.feed) && isUsable(route.feed) ? route.feed : (labels.find(isUsable) || labels[0] || '');
+                communitySelect.value = route.community;
+                if (activeFeed !== route.feed) writeRoute(route.community, activeFeed, 0, false);
+            } else {
+                selectedCommunity = document.documentElement.classList.contains('compact') ? initialRouteState?.community : null;
+                activeFeed = initialRouteState?.feed || allDigestData.feeds?.[0] || '';
+                communitySelect.value = selectedCommunity || '';
+                if (location.hash.startsWith('#r=')) history.replaceState(null, '', location.pathname + location.search);
+            }
+            document.getElementById('feed-select').value = activeFeed;
+            document.querySelectorAll('.feed-tab').forEach(button => {
+                const selected = button.dataset.feed === activeFeed;
+                button.classList.toggle('active', selected);
+                button.setAttribute('aria-selected', String(selected));
+                button.tabIndex = selected ? 0 : -1;
+            });
+            renderDigest(allDigestData);
+            if (selectedCommunity) filterBySubreddit(selectedCommunity); else filterBySubreddit('');
+            (document.documentElement.classList.contains('compact') ? communitySelect : document.getElementById('feed-select')).focus();
+        }
+        window.addEventListener('popstate', restoreRoute);
+
         // ── Data loading ───────────────────────────────────────────────────
         async function loadDigestData() {
             try {
@@ -342,6 +401,7 @@
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
                 allDigestData = data;
+                const requestedRoute = currentRoute();
 
                 // ── Normalize v1 → v2 schema BEFORE anything else touches the data
                 // v1: { data: { subreddit: [...posts] } }
@@ -357,6 +417,13 @@
                     data.feeds = firstSub ? Object.keys(firstSub) : [defaultFeedLabel];
                 }
                 // ── End normalization ──
+                if (requestedRoute && data.data?.[requestedRoute.community]) {
+                    const labels = Object.keys(data.data[requestedRoute.community]);
+                    const available = labels.filter(label => data.data[requestedRoute.community][label]?.length || data.feed_status?.[requestedRoute.community]?.[label]?.status !== 'unavailable');
+                    selectedCommunity = requestedRoute.community;
+                    activeFeed = requestedRoute.feed && available.includes(requestedRoute.feed) ? requestedRoute.feed : (available[0] || labels[0] || data.feeds[0]);
+                    if (activeFeed !== requestedRoute.feed) writeRoute(selectedCommunity, activeFeed, 0, false);
+                }
 
                 checkStaleness(data.generated_at);
                 if (data.refresh_status && data.refresh_status !== 'ok') {
@@ -423,6 +490,13 @@
                 activeFeed = feeds[0] || '';
             }
 
+            const feedSelect = document.getElementById('feed-select');
+            ToolUI.setHTML(feedSelect, '');
+            feeds.forEach(label => {
+                const option = document.createElement('option'); option.value = label; option.textContent = label; feedSelect.appendChild(option);
+            });
+            feedSelect.value = activeFeed;
+            feedSelect.onchange = () => switchGlobalFeed(feedSelect.value);
             feeds.forEach(label => {
                 const btn = document.createElement('button');
                 btn.className  = 'feed-tab' + (label === activeFeed ? ' active' : '');
@@ -450,6 +524,7 @@
         function switchGlobalFeed(label) {
             activeFeed = label;
             ToolUI.storageSet('activeFeed', label);
+            document.getElementById('feed-select').value = label;
 
             // Update global tab buttons
             document.querySelectorAll('.feed-tab')
@@ -460,6 +535,9 @@
                 const subreddit = subDiv.id.replace('sub-', '');
                 chooseSubFeed(subreddit, label);
             });
+            const community = selectedCommunity;
+            if (community) writeRoute(community, label, 0, true);
+            else if (location.hash.startsWith('#r=')) history.pushState(null, '', location.pathname + location.search);
         }
 
         function chooseSubFeed(subreddit, requested) {
@@ -556,10 +634,21 @@
                 sel.appendChild(opt);
             });
 
-            sel.onchange = e => filterBySubreddit(e.target.value);
+            const route = currentRoute();
+            const compact = document.documentElement.classList.contains('compact');
+            if (route && data.data[route.community]) selectedCommunity = route.community;
+            else if (compact && !selectedCommunity) selectedCommunity = Object.keys(data.data)[0] || '';
+            sel.value = selectedCommunity || '';
+            sel.onchange = e => {
+                selectedCommunity = e.target.value || null;
+                filterBySubreddit(e.target.value);
+                if (e.target.value) writeRoute(e.target.value, activeFeed, 0, true);
+                else if (location.hash.startsWith('#r=')) history.pushState(null, '', location.pathname + location.search);
+            };
         }
 
         function filterBySubreddit(selected) {
+            selectedCommunity = selected || null;
             document.querySelectorAll('.subreddit').forEach(div => {
                 if (!selected) { div.classList.remove('hidden'); return; }
                 const name = div.querySelector('.subreddit-header h2')
@@ -637,7 +726,7 @@
                 const collapseButton = subredditDiv.querySelector('.collapse-btn');
                 collapseButton.addEventListener('click', () => toggleSubreddit(subreddit));
                 subredditDiv.querySelectorAll('.sub-feed-tab').forEach(button => {
-                    button.addEventListener('click', () => switchSubFeed(subreddit, button.dataset.feed));
+                    button.addEventListener('click', () => { switchSubFeed(subreddit, button.dataset.feed); writeRoute(subreddit, button.dataset.feed, 0, true); });
                 });
                 subredditDiv.querySelector('.sub-feed-tabs').addEventListener('keydown', event => moveTabFocus(event, subredditDiv, '.sub-feed-tab'));
                 const postsWrapper = subredditDiv.querySelector('.subreddit-posts');
@@ -663,16 +752,27 @@
                             : `No saved posts are available for ${feedLabel}.`);
                         feedDiv.appendChild(ToolUI.text('p', message, 'empty'));
                     } else {
-                        let page = 0;
+                        const route = currentRoute();
+                        let page = route?.community === subreddit && route.feed === feedLabel ? route.page : Number(feedDiv.dataset.initialPage || 0);
+                        const pageSize = () => document.documentElement.classList.contains('compact') ? 5 : 15;
                         const renderPage = () => {
                             feedDiv.replaceChildren();
-                            const count = document.documentElement.classList.contains('compact') ? 5 : 15;
+                            const count = pageSize();
+                            const maxPage = Math.max(0, Math.ceil(posts.length / count) - 1);
+                            page = Math.min(page, maxPage);
+                            if (route?.community === subreddit && route.feed === feedLabel && route.page > maxPage) writeRoute(subreddit, feedLabel, page, false);
                             const first = page * count;
                             const status = data.feed_status && data.feed_status[subreddit] && data.feed_status[subreddit][feedLabel];
                             if (status) {
                                 if (failureMessages[status.reason]) feedDiv.appendChild(ToolUI.text('p', failureMessages[status.reason] + ' Showing saved posts.', 'last-update'));
                                 const feedDate = parseDigestDate(status.generated_at);
-                                feedDiv.appendChild(ToolUI.text('p', (status.status === 'ok' ? 'Feed updated: ' : status.status + ' · Last good: ') + (feedDate ? feedDate.toLocaleString() : 'Unknown'), 'last-update'));
+                                feedDiv.appendChild(ToolUI.text('p', `Saved snapshot: ${feedDate ? feedDate.toLocaleString() : 'date unavailable'} · Status: ${status.status}`, 'snapshot-status'));
+                                const details = document.createElement('details'); details.className = 'snapshot-details';
+                                const summary = document.createElement('summary'); summary.textContent = 'Refresh details'; details.appendChild(summary);
+                                if (status.reason) { const reason = document.createElement('p'); reason.textContent = `Refresh reason: ${status.reason.replace(/_/g, ' ')}`; details.appendChild(reason); }
+                                const attemptDate = parseDigestDate(status.last_attempt_at);
+                                if (attemptDate) { const attempt = document.createElement('p'); attempt.textContent = `Last refresh attempt: ${attemptDate.toLocaleString()}`; details.appendChild(attempt); }
+                                feedDiv.appendChild(details);
                             }
                             posts.slice(first, first + count).forEach((post, index) => {
                                 const feedSlug = feedLabel.replace(/[^a-z0-9]/gi, '_').toLowerCase();
@@ -683,10 +783,10 @@
                                 const previous = ToolUI.text('button', 'Previous'), next = ToolUI.text('button','Next');
                                 previous.disabled = page === 0; next.disabled = first + count >= posts.length;
                                 previous.addEventListener('click', () => {
-                                    page--; renderPage(); feedDiv.querySelector('.tool-pagination button:first-child')?.focus();
+                                    page--; renderPage(); writeRoute(subreddit, feedLabel, page, true); (feedDiv.querySelector('.tool-pagination button:not(:disabled)') || feedDiv.querySelector('.post-link'))?.focus();
                                 });
                                 next.addEventListener('click', () => {
-                                    page++; renderPage();
+                                    page++; renderPage(); writeRoute(subreddit, feedLabel, page, true);
                                     (feedDiv.querySelector('.tool-pagination button:last-child:not(:disabled)') || feedDiv.querySelector('.tool-pagination button:first-child'))?.focus();
                                 });
                                 pager.append(previous, ToolUI.text('span', (page + 1) + ' / ' + Math.ceil(posts.length / count)), next);
@@ -704,6 +804,18 @@
 
                 contentDiv.appendChild(subredditDiv);
             }
+            const route = currentRoute();
+            if (route && data.data[route.community]) {
+                document.getElementById('subreddit-filter').value = route.community;
+                document.getElementById('feed-select').value = route.feed;
+                filterBySubreddit(route.community);
+            } else if (document.documentElement.classList.contains('compact')) {
+                const community = selectedCommunity || Object.keys(data.data)[0] || '';
+                document.getElementById('subreddit-filter').value = community;
+                filterBySubreddit(community);
+                if (community) writeRoute(community, activeFeed, 0, false);
+            }
+            if (!initialRouteState) initialRouteState = { community: Object.keys(data.data)[0] || '', feed: activeFeed || data.feeds[0] || '' };
         }
 
         function buildPostEl(post, index, instanceId) {
@@ -746,9 +858,10 @@
                 </div>`;
             }
 
+            const postURL = ToolUI.httpURL(post.url);
             ToolUI.setHTML(postDiv, `
                 <div class="post-header">
-                    <div class="post-title">${index}. ${escapeHtml(post.title)} ${flairHtml}</div>
+                    <div class="post-title">${index}. ${postURL ? `<a href="${escapeHtml(postURL)}">${escapeHtml(post.title)}</a>` : escapeHtml(post.title)} ${flairHtml}</div>
                     <div class="post-meta">
                         <span>👤 u/${escapeHtml(post.author)}</span>
                         ${hasRedditMetadata ? `<span>⬆️ ${fmtScore(post.score)}</span>

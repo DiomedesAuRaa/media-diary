@@ -41,13 +41,7 @@
 
         h1 { font-size: 16px; text-align: center; padding: 8px 0; margin: 0; }
 
-        .show-tabs {
-            display: flex;
-            gap: 5px;
-            margin: 10px 0;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
+        .show-tabs { display:flex; margin:8px 0; }
 
         .tab {
             padding: 5px 10px;
@@ -159,16 +153,17 @@
     <noscript><p class="error">JavaScript is required to load the saved episode list and play episodes. You can return to <a href="home.html">Tools</a>.</p></noscript>
     <div class="header">
         <a href="home.html" class="back-btn">← Back</a>
-        <h1>🎙 PODCASTS</h1>
+        <h1>Podcasts</h1>
         <div class="last-update" id="currentDate"></div>
     </div>
 
-    <div class="show-tabs" id="showTabs" role="tablist" aria-label="Podcast shows"></div>
+    <label class="show-picker-label" for="showPicker">Show</label>
+    <select class="show-picker" id="showPicker" aria-label="Choose a podcast show"><option>Loading shows…</option></select>
 
     <button class="refresh-btn" id="refreshEpisodes">↻ REFRESH</button>
     <div class="last-update" id="lastUpdate"></div>
 
-    <div id="content" role="tabpanel" aria-live="polite" aria-busy="true">
+    <div id="content" aria-live="polite" aria-busy="true">
         <div class="loading">Loading...</div>
     </div>
 
@@ -194,6 +189,7 @@
         let pendingResumeHandler = null;
         let playbackRequest = 0;
         let ignoreSwitchPause = false;
+        let routeApplied = false;
 
         // --- localStorage helpers ---
         function saveProgress(url, position) {
@@ -209,6 +205,13 @@
                 const all = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
                 return all[url] ? all[url].position : 0;
             } catch(e) { return 0; }
+        }
+
+        function getProgressDetail(url) {
+            try {
+                const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')[url];
+                return saved && Number.isFinite(Number(saved.position)) ? saved : null;
+            } catch(e) { return null; }
         }
 
         function clearProgress(url) {
@@ -300,28 +303,59 @@
 
         // --- Render ---
         function renderTabs() {
-            const container = document.getElementById('showTabs');
-            ToolUI.setHTML(container, '');
-            shows.forEach((show, i) => {
-                const btn = document.createElement('button');
-                btn.className = 'tab' + (i === currentShow ? ' active' : '');
-                btn.setAttribute('role', 'tab');
-                btn.setAttribute('aria-selected', String(i === currentShow));
-                btn.setAttribute('aria-controls', 'content');
-                btn.tabIndex = i === currentShow ? 0 : -1;
-                btn.textContent = show.name;
-                btn.addEventListener('click', function() {
-                    currentShow = i; episodePage = 0;
-                    document.querySelectorAll('.tab').forEach((t, j) => {
-                        t.setAttribute('aria-selected', String(j === i));
-                        t.tabIndex = j === i ? 0 : -1;
-                        if (j === i) t.classList.add('active');
-                        else t.classList.remove('active');
-                    });
-                    renderEpisodes();
-                });
-                container.appendChild(btn);
-            });
+            const picker = document.getElementById('showPicker');
+            picker.replaceChildren(...shows.map((show, i) => new Option(show.name, String(i))));
+            picker.value = String(currentShow);
+        }
+
+        function pageSize() { return document.documentElement.classList.contains('compact') ? 5 : 15; }
+
+        function maxEpisodePage(showIndex) {
+            const show = shows[showIndex];
+            const count = show && Array.isArray(show.episodes) ? show.episodes.filter(ep => ToolUI.httpURL(ep.audioUrl)).length : 0;
+            return Math.max(0, Math.ceil(count / pageSize()) - 1);
+        }
+
+        function routeHash() {
+            const show = shows[currentShow];
+            const name = show ? show.name : 'All';
+            return '#show=' + encodeURIComponent(name) + '&page=' + (episodePage + 1);
+        }
+
+        function pushRouteState() {
+            const next = routeHash();
+            if (location.hash !== next) history.pushState(null, '', next);
+        }
+
+        function readRoute() {
+            const match = /^#show=([^&]*)&page=(\d+)$/.exec(location.hash);
+            if (!match) return null;
+            try {
+                const name = decodeURIComponent(match[1]);
+                const page = Number(match[2]);
+                if (!Number.isSafeInteger(page) || page < 1) return null;
+                const index = shows.findIndex(show => show.name === name);
+                return index < 0 ? null : {show:index, page:page - 1};
+            } catch (_) { return null; }
+        }
+
+        function restoreRoute() {
+            if (!shows.length) return;
+            const active = document.activeElement;
+            const focusShowPicker = active && active.id === 'showPicker';
+            const focusPager = !!(active && active.closest && active.closest('.tool-pagination'));
+            const focusEpisodeUrl = active && active.dataset && active.dataset.episodeUrl;
+            const route = readRoute();
+            currentShow = route ? route.show : 0;
+            episodePage = route ? Math.min(route.page, maxEpisodePage(currentShow)) : 0;
+            document.getElementById('showPicker').value = String(currentShow);
+            renderEpisodes();
+            if (focusShowPicker) document.getElementById('showPicker').focus();
+            else if (focusPager) document.querySelector('.tool-pagination button:not(:disabled)')?.focus();
+            else if (focusEpisodeUrl) {
+                Array.from(document.querySelectorAll('.episode')).find(button => button.dataset.episodeUrl === focusEpisodeUrl)?.focus();
+            }
+            if (route && location.hash !== routeHash()) history.replaceState(null, '', routeHash());
         }
 
         function renderEpisodes() {
@@ -334,7 +368,7 @@
                 return;
             }
 
-            const batch = document.documentElement.classList.contains('compact') ? 5 : 15;
+            const batch = pageSize();
             const episodes = show.episodes.filter(ep => ToolUI.httpURL(ep.audioUrl));
             episodePage = Math.min(episodePage, Math.max(0, Math.ceil(episodes.length / batch) - 1));
             const fragment = document.createDocumentFragment();
@@ -342,6 +376,7 @@
                 const url = ToolUI.httpURL(ep.audioUrl);
                 const button = ToolUI.text('button', '', 'episode' + (url === currentUrl ? ' active-ep' : ''));
                 button.type = 'button';
+                button.dataset.episodeUrl = url;
                 button.append(ToolUI.text('div', ep.title, 'episode-title'),
                     ToolUI.text('div', (ep.showName ? ep.showName + ' · ' : '') + (ep.date || ''), 'episode-meta'));
                 const saved = getProgress(url);
@@ -351,6 +386,24 @@
             });
             content.replaceChildren(fragment);
             content.setAttribute('aria-busy', 'false');
+            const resumable = [];
+            shows.slice(1).forEach(show => (show.episodes || []).forEach(ep => {
+                const url = ToolUI.httpURL(ep.audioUrl), saved = url && getProgressDetail(url);
+                if (saved && Number(saved.position) > 10) resumable.push({url, saved, ep});
+            }));
+            resumable.sort((a,b) => Number(b.saved.saved || 0) - Number(a.saved.saved || 0));
+            if (resumable.length) {
+                const item = resumable[0], resume = ToolUI.text('section', '', 'continue-listening');
+                resume.appendChild(ToolUI.text('h2', 'Continue listening'));
+                const button = ToolUI.text('button', '', 'continue-button'); button.type = 'button';
+                button.append(ToolUI.text('strong', item.ep.title || 'Episode'), ToolUI.text('span', 'Resume at ' + formatTime(Number(item.saved.position)) + (item.ep.date ? ' · ' + item.ep.date : '')));
+                button.addEventListener('click', () => {
+                    const showIndex = shows.slice(1).findIndex(show => (show.episodes || []).some(ep => ToolUI.httpURL(ep.audioUrl) === item.url)) + 1;
+                    if (showIndex > 0) { currentShow = showIndex; document.getElementById('showPicker').value = String(showIndex); episodePage = 0; }
+                    playEpisode(item.url, String(item.ep.title || 'Episode'));
+                });
+                resume.appendChild(button); content.insertBefore(resume, content.firstChild);
+            }
             if (!episodes.length) content.appendChild(ToolUI.text('p', 'No playable episodes.', 'error'));
             if (episodes.length > batch) {
                 const pager = ToolUI.text('nav', '', 'tool-pagination'); pager.setAttribute('aria-label', 'Episodes');
@@ -358,10 +411,10 @@
                 const prev = ToolUI.text('button', 'Previous'), next = ToolUI.text('button', 'Next');
                 prev.disabled = episodePage === 0; next.disabled = (episodePage + 1) * batch >= episodes.length;
                 prev.addEventListener('click', () => {
-                    episodePage--; renderEpisodes(); content.querySelector('.tool-pagination button:not(:disabled)')?.focus();
+                    episodePage--; pushRouteState(); renderEpisodes(); content.querySelector('.tool-pagination button:not(:disabled)')?.focus();
                 });
                 next.addEventListener('click', () => {
-                    episodePage++; renderEpisodes();
+                    episodePage++; pushRouteState(); renderEpisodes();
                     (content.querySelector('.tool-pagination button:last-child:not(:disabled)') || content.querySelector('.tool-pagination button:first-child'))?.focus();
                 });
                 pager.append(prev, ToolUI.text('span', (episodePage + 1) + ' / ' + Math.ceil(episodes.length / batch)), next);
@@ -375,7 +428,10 @@
                 ? 'Feed unavailable · showing no saved episodes'
                 : (stale ? 'Saved snapshot · ' : 'Feed checked · ') + stamp;
         }
-        document.addEventListener('tool-layout-change', () => { episodePage = 0; renderEpisodes(); });
+        document.addEventListener('tool-layout-change', () => {
+            episodePage = Math.min(episodePage, maxEpisodePage(currentShow)); renderEpisodes();
+            if (location.hash.indexOf('#show=') === 0) history.replaceState(null, '', routeHash());
+        });
 
         function playEpisode(url, title) {
             url = ToolUI.httpURL(url);
@@ -422,6 +478,8 @@
             if (playback && playback.catch) playback.catch(() => { document.getElementById('lastUpdate').textContent = 'Playback unavailable. Try the audio Play control.'; });
 
             renderEpisodes();
+            const activeEpisode = Array.from(document.querySelectorAll('.episode')).find(button => button.dataset.episodeUrl === url);
+            if (activeEpisode) activeEpisode.focus();
         }
 
         async function loadEpisodes() {
@@ -434,10 +492,18 @@
                 const raw = await response.json();
                 if (!raw.length) { content.setAttribute('aria-busy', 'false'); ToolUI.setHTML(content, '<div class="error">No shows found.</div>'); return; }
                 shows = [buildAllTab(raw)].concat(raw);
-                currentShow = Math.min(currentShow, shows.length - 1);
-                episodePage = 0;
+                if (!routeApplied) {
+                    const route = readRoute();
+                    currentShow = route ? route.show : 0;
+                    episodePage = route ? Math.min(route.page, maxEpisodePage(currentShow)) : 0;
+                    routeApplied = true;
+                } else {
+                    currentShow = Math.min(currentShow, shows.length - 1);
+                    episodePage = Math.min(episodePage, maxEpisodePage(currentShow));
+                }
                 renderTabs();
                 renderEpisodes();
+                if (location.hash.indexOf('#show=') === 0 && location.hash !== routeHash()) history.replaceState(null, '', routeHash());
             } catch(e) {
                 content.setAttribute('aria-busy', 'false');
                 ToolUI.setHTML(content, '<div class="error">Could not load the saved episode list. <button type="button" id="retryManifest">Retry</button></div>');
@@ -448,16 +514,38 @@
         document.getElementById('refreshEpisodes').textContent = '↻ Reload episode list';
         document.getElementById('refreshEpisodes').addEventListener('click', loadEpisodes);
         document.querySelectorAll('.skip-btn').forEach(button => button.addEventListener('click', () => skip(Number(button.dataset.skip))));
-        document.getElementById('showTabs').addEventListener('keydown', event => {
-            if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-            const tabs = Array.from(document.querySelectorAll('#showTabs [role="tab"]'));
-            if (!tabs.length) return;
-            event.preventDefault();
-            const index = tabs.indexOf(event.target);
-            const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
-            tabs[next].focus(); tabs[next].click();
+        document.getElementById('showPicker').addEventListener('change', function() {
+            currentShow = Number(this.value) || 0; episodePage = 0; pushRouteState(); renderEpisodes();
         });
+        window.addEventListener('popstate', restoreRoute);
+        window.addEventListener('hashchange', restoreRoute);
+        document.getElementById('currentDate').textContent = 'Today · ' + new Date().toLocaleDateString([], {weekday:'short', month:'short', day:'numeric', year:'numeric'});
         loadEpisodes();
     </script>
+    <style>
+      body { max-width:58rem; padding:1rem; background:var(--tool-bg); color:var(--tool-text); font:16px/1.45 system-ui,sans-serif; }
+      .header { position:static; background:var(--tool-surface); border:1px solid var(--tool-border); border-radius:.5rem; padding:.45rem .65rem; }
+      .back-btn { min-height:44px; display:inline-flex; align-items:center; padding:.4rem .7rem; background:var(--tool-surface-raised); color:var(--tool-link); font-size:1rem; }
+      h1 { text-align:left; font-size:1.35rem; padding:.35rem 0; }
+      .show-picker-label { display:block; margin:.6rem 0 .15rem; color:var(--tool-muted); }
+      .show-picker { width:100%; min-height:44px; }
+      .refresh-btn { min-height:44px; }
+      .episode { width:100%; min-height:44px; text-align:left; color:var(--tool-text); cursor:pointer; }
+      .continue-listening { padding:.55rem .65rem; margin:.6rem 0; border:1px solid var(--tool-border); border-radius:.45rem; background:var(--tool-surface); }
+      .continue-listening h2 { margin:.1rem 0 .4rem; font-size:1rem; }
+      .continue-button { display:flex; flex-direction:column; align-items:flex-start; gap:.15rem; width:100%; min-height:48px; text-align:left; }
+      .continue-button span { color:var(--tool-muted); font-size:.9rem; }
+      .player-bar { position:sticky; bottom:0; z-index:5; padding:.6rem; border-top:2px solid var(--tool-accent); background:var(--tool-surface); }
+      .now-playing-label { color:var(--tool-link); font-size:.85rem; }
+      .now-playing-title { font-size:1rem; }
+      .skip-btn { min-height:44px; }
+      @media(max-width:280px) {
+        body { padding:.4rem; font-size:13px; }
+        .back-btn,.show-picker,.refresh-btn,.episode,.continue-button,.skip-btn { min-height:29px; }
+        .refresh-btn { padding:.2rem .4rem; }
+        .player-bar { padding:.35rem; }
+        .skip-btns { gap:.2rem; }
+      }
+    </style>
 </body>
 </html>

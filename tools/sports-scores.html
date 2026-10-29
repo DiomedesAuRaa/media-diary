@@ -46,6 +46,7 @@
     </style>
     <link rel="stylesheet" href="assets/tool-ui.css">
     <script src="assets/tool-ui.js"></script>
+    <script src="assets/score-display.js"></script>
 </head>
 <body class="sports-page">
     <div class="header">
@@ -54,8 +55,8 @@
         <div class="last-update" id="currentDate"></div>
     </div>
     <div class="league-picker" id="league-picker-wrap" hidden>
-        <label for="league-picker">Jump to league</label>
-        <select id="league-picker"><option value="">Choose a league</option></select>
+        <label for="league-picker">Scores</label>
+        <select id="league-picker"><option value="favorites">Favorite teams</option><option value="all">All leagues</option></select>
     </div>
     <nav class="league-nav" id="league-nav" aria-label="Jump to league"></nav>
     <button class="refresh-btn" id="refresh-scores" type="button">REFRESH</button>
@@ -219,8 +220,8 @@
             var close = link !== '#' ? '</a>' : '</div>';
             return open +
                 '<div class="game-status ' + (isLive ? 'live' : '') + '">' + pLabel + sLabel + getGameStatus(comp) + '</div>' +
-                '<div class="team-row"><span class="team-name ' + (away.winner ? 'winner' : '') + '">' + ToolUI.escape((away.team.abbreviation || away.team.shortDisplayName)) + '</span><span class="score ' + (away.winner ? 'winner' : '') + '">' + ToolUI.escape(away.score === null || away.score === undefined || away.score === '' ? '-' : String(away.score)) + '</span></div>' +
-                '<div class="team-row"><span class="team-name ' + (home.winner ? 'winner' : '') + '">' + ToolUI.escape((home.team.abbreviation || home.team.shortDisplayName)) + '</span><span class="score ' + (home.winner ? 'winner' : '') + '">' + ToolUI.escape(home.score === null || home.score === undefined || home.score === '' ? '-' : String(home.score)) + '</span></div>' +
+                '<div class="team-row"><span class="team-name ' + (away.winner ? 'winner' : '') + '">' + ToolUI.escape((away.team.abbreviation || away.team.shortDisplayName)) + '</span><span class="score ' + (away.winner ? 'winner' : '') + '">' + ToolUI.escape(SportsScoreDisplay.score(away.score, comp)) + '</span></div>' +
+                '<div class="team-row"><span class="team-name ' + (home.winner ? 'winner' : '') + '">' + ToolUI.escape((home.team.abbreviation || home.team.shortDisplayName)) + '</span><span class="score ' + (home.winner ? 'winner' : '') + '">' + ToolUI.escape(SportsScoreDisplay.score(home.score, comp)) + '</span></div>' +
                 close;
         }
 
@@ -348,17 +349,22 @@
                     }
                 });
                 if (failedResults.length === results.length && results.length > 0) {
-                    html = '<div class="error" role="alert">Scores could not load for any league. <button type="button" id="retry-scores">Retry</button></div>';
+                    var allFailureMessage = 'Scores could not load for any league.';
+                    if (LIVE_SCORE_ERRORS.length) allFailureMessage += ' Live checks failed for ' + ToolUI.escape(LIVE_SCORE_ERRORS.join(', ')) + '.';
+                    html = '<div class="error" role="alert">' + allFailureMessage + ' <button type="button" id="retry-scores">Retry</button></div>';
                     if (lastGoodScoreHTML) {
                         html += '<p class="last-update">Showing saved scores from ' + new Date(lastGoodScoreTimestamp).toLocaleTimeString() + '.</p>' + lastGoodScoreHTML;
                         document.getElementById('lastUpdate').textContent = 'Snapshot unavailable · saved scores from ' + new Date(lastGoodScoreTimestamp).toLocaleTimeString();
                     } else {
                         document.getElementById('lastUpdate').textContent = 'No league data in the published snapshot.';
                     }
-                } else if (failedResults.length > 0 || staleResults.length > 0) {
-                    html = '<p class="error" role="status">' + (failedResults.length ? 'Some league data is unavailable.' : '') + (failedResults.length && staleResults.length ? ' ' : '') + (staleResults.length ? 'Some leagues are using saved data.' : '') + ' Use Refresh to check again.</p>' + html;
+                } else {
+                    var statusNotes = [];
+                    if (failedResults.length) statusNotes.push('Some league data is unavailable.');
+                    if (staleResults.length) statusNotes.push('Some leagues are using saved data.');
+                    if (LIVE_SCORE_ERRORS.length) statusNotes.push('Live scores could not be checked for ' + ToolUI.escape(LIVE_SCORE_ERRORS.join(', ')) + '; showing saved data where available.');
+                    if (statusNotes.length) html = '<p class="error" role="status">' + statusNotes.join(' ') + ' Use Refresh to check again.</p>' + html;
                 }
-                if (LIVE_SCORE_ERRORS.length) html = '<p class="error" role="status">Live scores could not be checked for ' + ToolUI.escape(LIVE_SCORE_ERRORS.join(', ')) + '; showing saved data where available.</p>' + html;
                 ToolUI.setHTML(content, html);
                 content.setAttribute('aria-busy', 'false');
                 buildLeagueNav(results, allPriority.length > 0);
@@ -389,8 +395,11 @@
         function buildLeagueNav(results, hasFavorites) {
             var nav = document.getElementById('league-nav');
             var picker = document.getElementById('league-picker');
+            var selected = picker.value || 'favorites';
+            var hashSelection = readHashSelection(results);
+            if (hashSelection !== null) selected = hashSelection;
             ToolUI.setHTML(nav, '');
-            ToolUI.setHTML(picker, '<option value="">Choose a league</option>');
+            ToolUI.setHTML(picker, '<option value="favorites">Favorite teams</option><option value="all">All leagues</option>');
             if (hasFavorites) {
                 var a = document.createElement('a');
                 a.href = '#section-FAVORITES';
@@ -399,8 +408,10 @@
                 a.style.color = '#ffd700';
                 nav.appendChild(a);
             }
-            results.forEach(function(result) {
+            results.forEach(function(result, index) {
                 var section = document.getElementById('section-' + result.sportName.replace(/[^a-z0-9]/gi,'_'));
+                var option = document.createElement('option');
+                option.value = 'league-' + index; option.textContent = result.sportName; picker.appendChild(option);
                 if (!section) return;
                 var a = document.createElement('a');
                 a.href = '#section-' + result.sportName.replace(/[^a-z0-9]/gi,'_');
@@ -409,32 +420,55 @@
                 a.style.color = result.color;
                 nav.appendChild(a);
             });
-            Array.from(nav.querySelectorAll('a')).forEach(function(link) {
-                var option = document.createElement('option');
-                option.value = link.hash.slice(1);
-                option.textContent = link.textContent;
-                picker.appendChild(option);
-            });
-            var hasPickerOptions = picker.options.length > 1;
-            document.getElementById('league-picker-wrap').hidden = !hasPickerOptions;
-            document.body.classList.toggle('league-picker-ready', hasPickerOptions);
-            syncLeaguePicker();
+            document.getElementById('league-picker-wrap').hidden = results.length === 0;
+            picker.value = Array.from(picker.options).some(function(option) { return option.value === selected; }) ? selected : 'favorites';
+            applyLeagueFilter();
         }
 
-        function syncLeaguePicker() {
+        function readHashSelection(results) {
+            var id;
+            try { id = decodeURIComponent(location.hash.slice(1)); }
+            catch (_) { return null; }
+            if (id === 'all') return 'all';
+            if (id === 'section-FAVORITES') return 'favorites';
+            var index = results.findIndex(function(result) { return id === 'section-' + result.sportName.replace(/[^a-z0-9]/gi,'_'); });
+            return index >= 0 ? 'league-' + index : null;
+        }
+
+        function applyLeagueFilter() {
             var picker = document.getElementById('league-picker');
-            var target;
-            try { target = decodeURIComponent(location.hash.slice(1)); }
-            catch(e) { target = ''; }
-            picker.value = Array.from(picker.options).some(function(option) { return option.value === target; }) ? target : '';
+            var value = picker.value || 'favorites';
+            var favoriteSection = document.getElementById('section-FAVORITES');
+            if (favoriteSection) favoriteSection.hidden = value !== 'favorites' && value !== 'all';
+            scoreResults.forEach(function(result, index) {
+                var section = document.getElementById('section-' + result.sportName.replace(/[^a-z0-9]/gi,'_'));
+                if (section) section.hidden = value === 'favorites' || (value !== 'all' && value !== 'league-' + index);
+            });
+            if (value === 'favorites' && !document.querySelector('#section-FAVORITES')) {
+                var content = document.getElementById('content');
+                if (!content.querySelector('.favorites-empty')) {
+                    var note = document.createElement('p'); note.className = 'favorites-empty';
+                    note.textContent = 'No favorite-team games are listed right now. Choose All leagues to browse every enabled league.';
+                    content.insertBefore(note, content.firstChild);
+                }
+            } else {
+                var note = document.querySelector('.favorites-empty'); if (note) note.remove();
+            }
         }
         document.getElementById('league-picker').addEventListener('change', function() {
-            if (!this.value) return;
-            var hash = '#' + this.value;
-            if (location.hash === hash) document.getElementById(this.value).scrollIntoView();
-            else location.hash = hash;
+            applyLeagueFilter();
+            if (this.value === 'favorites') location.hash = 'section-FAVORITES';
+            else if (this.value === 'all') location.hash = 'all';
+            else if (this.value.indexOf('league-') === 0) {
+                var result = scoreResults[Number(this.value.slice(7))];
+                if (result) location.hash = 'section-' + result.sportName.replace(/[^a-z0-9]/gi,'_');
+            }
         });
-        window.addEventListener('hashchange', syncLeaguePicker);
+        window.addEventListener('hashchange', function() {
+            var selected = readHashSelection(scoreResults);
+            if (selected === null && !location.hash) selected = 'favorites';
+            if (selected !== null) { document.getElementById('league-picker').value = selected; applyLeagueFilter(); }
+        });
 
         function updateTimestamp(failedCount, snapshot, staleCount) {
             var now = new Date();
@@ -456,5 +490,15 @@
         }
     </script>
     <script src="assets/live-scores.js"></script>
+    <style>
+      .league-nav { display:none !important; }
+      body.sports-page .league-picker:not([hidden]) { display:block; margin:.55rem 0; }
+      .league-picker label { display:block; margin-bottom:.15rem; }
+      .league-picker select { width:100%; min-height:44px; }
+      @media(max-width:280px) {
+        .league-picker select, .refresh-btn { min-height:29px; padding:.2rem .4rem; }
+        .refresh-btn { margin:.25rem 0; }
+      }
+    </style>
 </body>
 </html>

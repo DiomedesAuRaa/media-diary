@@ -37,6 +37,15 @@ class PublicPresentationTests(unittest.TestCase):
         self.assertNotIn('/log?', html)
         self.assertIn('href="all-diary-recent-1-compact.html"', browse(self.data, normalized({'compact': '1'})))
 
+    def test_secondary_filters_disclose_active_state_without_hiding_search(self):
+        default = browse(self.data, normalized({'compact': '1'}))
+        self.assertIn('<details class="browse-filters" >', default)
+        self.assertLess(default.index('id="q"'), default.index('class="browse-filters"'))
+        active = browse(self.data, normalized({'year': '2024', 'sort': 'rating'}))
+        self.assertIn('<details class="browse-filters" open>', active)
+        self.assertIn('Apply filters', active)
+        self.assertIn('year=2024', active)
+
     def test_renderer_escapes_public_titles(self):
         html = browse(self.data, normalized({'year': '2024'}))
         self.assertIn('&lt;script&gt;alert(1)&lt;/script&gt;', html)

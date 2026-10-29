@@ -18,6 +18,20 @@ html body.game-page .tapbanner .ts { font-size:12px; }
 html body.game-page .area:focus-visible, html body.game-page #grid:focus-visible { outline:3px solid var(--tool-focus); outline-offset:1px; }
 html body.game-page .word-input { margin:6px; }
 html body.game-page .word-input input { width:100%; }
+html body.game-wordle .grid-wrap { width:100%; }
+html body.game-wordle #grid { width:min(220px,100%); }
+html body.game-wordle .word-input { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px; padding:3px 6px; margin:0; flex-shrink:0; }
+html body.game-wordle .word-input label, html body.game-wordle .word-input p { grid-column:1/-1; font-size:10px; line-height:1.2; color:var(--tool-muted); }
+html body.game-wordle .word-input input { width:100%; min-width:0; min-height:34px!important; height:34px; padding:3px 6px!important; font-size:15px!important; letter-spacing:2px; }
+html body.game-wordle .word-input input, html body.game-wordle .word-input button { min-height:44px!important; height:44px; }
+html body.game-wordle .word-input button { padding:3px 9px!important; font-size:12px; }
+html body.game-wordle #guess-status { min-height:0; }
+html body.game-wordle .virtual-keys { flex-shrink:0; padding:0 4px 4px; }
+html body.game-wordle .virtual-keys summary { font-size:10px; color:var(--tool-link); cursor:pointer; padding:3px 4px; }
+html body.game-minesweeper .area { min-height:0; overflow:visible; padding:5px; }
+html body.game-minesweeper #board { max-width:100%; }
+html body.game-page .obtn { min-height:44px; }
+html body.game-minesweeper .dbtn { min-height:44px; }
 html body.game-page .navdrawer[hidden] { display:none; }
 html body.game-page .hdr { height:auto; min-height:36px; flex-wrap:wrap; gap:5px; }
 html body.game-page .hs span, html body.game-page .tbox .tl, html body.game-page .hmeta { font-size:12px; }
@@ -31,6 +45,14 @@ html.compact body.game-page .hs span, html.compact body.game-page .tbox .tl, htm
 
 @media (max-width:280px) {
   html.compact body.game-page .skeys, html.compact body.game-page .sk, html.compact body.game-page .key { min-height:29px; font-size:12px; }
+  html body.game-wordle { padding:3px; }
+  html body.game-wordle .word-input input, html body.game-wordle .word-input button { min-height:34px!important; height:34px; }
+  html body.game-page .obtn, html body.game-minesweeper .dbtn { min-height:29px; }
+}
+
+@media (max-width:280px) {
+  html body.game-wordle #grid { width:127px; grid-template-columns:repeat(5,23px); grid-template-rows:repeat(6,23px); gap:3px; }
+  html body.game-wordle .tile { width:23px; height:23px; min-height:0; font-size:14px; }
 }
 
 /* Keep gameplay tiles and score colors page-owned; align navigation and controls. */
@@ -104,4 +126,20 @@ html body.game-2048 .overlay { top:7px; right:0; bottom:7px; left:0; }
   html body.game-2048 { padding:2px; }
   html body.game-2048 .hdr { padding-right:4px; padding-left:4px; }
   html body.game-2048 .skeys, html body.game-2048 .sk { min-height:29px; height:29px; font-size:11px; }
+}
+
+/* Short usable screens still scroll at the document level; shrink only the
+   legacy fixed-square fallback so the board and controls need less scrolling. */
+@media (max-height:280px) {
+  html body.game-2048 .hdr { height:26px; min-height:26px; }
+  html body.game-2048 .area { padding:3px 0; }
+  html body.game-2048 #board { width:180px; height:180px; padding:4px; }
+  html body.game-2048 .tile { width:38px; height:38px; margin:2px; line-height:38px; font-size:16px; }
+  html body.game-2048 .skeys, html body.game-2048 .sk { height:30px; min-height:30px; }
+}
+
+@media(max-width:280px){
+  html body.game-wordle .hdr{min-height:28px;padding:2px 6px}
+  html body.game-wordle .grid-wrap{padding:2px 0}
+  html body.game-wordle .word-input label{font-size:12px}
 }

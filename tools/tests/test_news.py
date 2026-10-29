@@ -111,6 +111,13 @@ class NewsTests(unittest.TestCase):
         self.assertEqual(second_page.count('<article class="headline"'), 4)
         compact = outputs["news-top-1-compact.html"]
         self.assertEqual(compact.count('<article class="headline"'), 8)
+        # The first compact page includes each available source before its second item.
+        first_titles = re.findall(r'<article class="headline"><a [^>]+>(.*?)</a>', compact)
+        self.assertIn('Headline 1-0', first_titles[:3])
+        self.assertIn('Headline 2-0', first_titles[:3])
+        self.assertIn('id="news-category"', compact)
+        self.assertNotIn('Collection attempted 2026-10-09T', compact)
+
         self.assertEqual(outputs["news-top-2-compact.html"].count('<article class="headline"'), 8)
         self.assertEqual(outputs["news-top-3-compact.html"].count('<article class="headline"'), 8)
         compact_links = [outputs[f"news-top-{page}-compact.html"] for page in (1, 2, 3)]

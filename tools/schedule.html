@@ -30,7 +30,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <main id="main">
     <h1>Upcoming sports</h1>
-    <p class="intro">Games returned by the latest league scoreboards, shown in your device’s local time. The scoreboards may not contain every game in the next 7 days.</p>
+    <p class="intro">Upcoming games · local time. Next favorite game appears first.</p>
     <div class="controls">
       <label for="league">League
         <select id="league"><option value="all">All leagues</option></select>
@@ -48,7 +48,7 @@
     var SNAPSHOT_URL = 'sports-snapshot.json';
     var CONFIG_URL = 'sports-config.json';
     var WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
-    var config = null, snapshot = null, favoritesOnly = false, requestId = 0;
+    var config = null, snapshot = null, favoritesOnly = false, requestId = 0, showCount = 10;
     var content = document.getElementById('content');
     var select = document.getElementById('league');
     var updated = document.getElementById('updated');
@@ -139,6 +139,7 @@
     }
     function gameNode(comp) {
       var card = text('article', '', 'game' + (comp._favorite ? ' favorite' : ''));
+      card.tabIndex = -1;
       var league = comp._league;
       card.style.borderLeftColor = /^#[0-9a-f]{3,8}$/i.test(league.color || '') ? league.color : '';
       var meta = text('div', league.name + (isStale(comp._entry, Date.now()) ? ' · saved data may be stale' : ''), 'meta');
@@ -165,7 +166,7 @@
       });
       updated.textContent = 'Snapshot attempt: ' + (snapshot.lastAttemptAt ? localTime(snapshot.lastAttemptAt) : 'unknown') + '. Upcoming window: now through ' + new Date(now + WINDOW_MS).toLocaleDateString() + '.';
       content.replaceChildren();
-      var caveat = text('p', 'These are upcoming games returned by the latest scoreboards; this is not a complete 7-day calendar. A missing favorite game can reflect scoreboard coverage.', 'notice');
+      var caveat = text('p', 'From the latest published scoreboards; coverage can be incomplete.', 'notice');
       content.append(caveat);
       var next = games.find(function (game) { return game._favorite; });
       if (next) {
@@ -174,12 +175,27 @@
         content.append(nextBox);
       } else content.append(text('p', 'No favorite-team game appears in the returned scoreboards for the selected league and window. Check coverage below before treating that as a schedule result.', 'notice'));
       if (!games.length) content.append(text('p', 'No games match these filters in the returned scoreboards.'));
+      var gameList = text('section', '', 'schedule-list'); gameList.tabIndex = -1; gameList.setAttribute('aria-label', 'Upcoming games');
       var day = '';
-      games.forEach(function (game) {
+      games.slice(0, showCount).forEach(function (game) {
         var dayKey = new Date(game.date).toLocaleDateString([], {weekday:'long', month:'long', day:'numeric'});
-        if (day !== dayKey) { day = dayKey; content.append(text('h2', day, 'day')); }
-        content.append(gameNode(game));
+        if (day !== dayKey) { day = dayKey; gameList.append(text('h2', day, 'day')); }
+        gameList.append(gameNode(game));
       });
+      content.append(gameList);
+      if (games.length > showCount) {
+        var more = text('button', 'Show 10 more (' + (games.length - showCount) + ' remaining)'); more.type = 'button';
+        more.addEventListener('click', function () {
+          var firstNewIndex = showCount;
+          showCount += 10; render();
+          var cards = content.querySelectorAll('.schedule-list .game');
+          (cards[firstNewIndex] || content.querySelector('.schedule-list')).focus();
+        });
+        more.dataset.moreGames = 'true'; content.append(more);
+      }
+      var coverage = text('details', '', 'coverage-details');
+      var summary = text('summary', 'Scoreboard coverage and details');
+      coverage.append(summary);
       var heading = text('h2', 'Published scoreboard coverage');
       var list = text('ul', '', 'coverage-list');
       result.reports.filter(function (row) { return leagueName === 'all' || row.name === leagueName; }).forEach(function (row) {
@@ -187,7 +203,7 @@
         var link = text('a', row.linkLabel || 'Provider sports', 'schedule-link'); link.href = ToolUI.httpURL(row.href) || 'https://www.espn.com/'; link.target = '_blank'; link.rel = 'noopener noreferrer';
         item.append(link); list.append(item);
       });
-      content.append(heading, list);
+      coverage.append(heading, list); content.append(coverage);
     }
     async function load() {
       var id = ++requestId;
@@ -213,13 +229,21 @@
       }
     }
     document.getElementById('favorites').addEventListener('click', function (event) {
+      showCount = 10;
       favoritesOnly = !favoritesOnly; event.currentTarget.setAttribute('aria-pressed', String(favoritesOnly));
       event.currentTarget.textContent = favoritesOnly ? 'Show all games' : 'Show favorite teams only'; render();
     });
-    select.addEventListener('change', render);
+    select.addEventListener('change', function () { showCount = 10; render(); });
     document.getElementById('reload').addEventListener('click', load);
     load();
   }());
   </script>
+  <style>
+    @media(max-width:280px) {
+      .controls select,.controls button,.schedule-link { min-height:29px; }
+      .controls { gap:.3rem; margin:.45rem 0; }
+      .game { padding:.45rem; margin:.4rem 0; }
+    }
+  </style>
 </body>
 </html>

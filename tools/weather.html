@@ -131,43 +131,30 @@
         <h1>Local Weather</h1>
     </div>
 
-    <p id="weather-location">Atlanta, Georgia</p>
-    <form id="location-form" class="location-form">
+    <section class="current" aria-label="Current conditions">
+      <p id="weather-location">Atlanta, Georgia</p>
+      <p id="location-status" role="status" aria-live="polite">Loading forecast…</p>
+      <div class="weather-row"><div class="label">Temperature</div><div class="value" id="temp">—</div></div>
+      <div class="weather-row"><div class="label">Condition</div><div class="value" id="desc">—</div></div>
+      <div class="weather-row"><div class="label">Rain this hour</div><div class="value" id="precip">—</div></div>
+      <div class="weather-row"><div class="label">Wind</div><div class="value" id="winds">—</div></div>
+      <div class="weather-row"><div class="label">Local time</div><div class="value" id="time">—</div></div>
+      <button id="retry-forecast" type="button" hidden>Retry forecast</button>
+    </section>
+    <details class="location-settings">
+      <summary>Change city or use device location</summary>
+      <p class="settings-note">City searches and forecasts are saved on this browser. Device location is optional.</p>
+      <form id="location-form" class="location-form">
         <label for="city-input">Choose a city or ZIP code</label>
         <input id="city-input" type="search" maxlength="100" placeholder="City or ZIP code" required>
         <button type="submit">Find</button>
-    </form>
-    <div id="location-results"></div>
-    <button id="device-location" type="button">Use device location</button>
-    <button id="reset-location" type="button">Atlanta</button>
-    <p id="location-status" role="status" aria-live="polite"></p>
-    <button id="retry-forecast" type="button" hidden>Retry forecast</button>
-    <p class="last-update">Saved on this browser only. City searches and forecasts use Open-Meteo; device location is optional.</p>
+      </form>
+      <div id="location-results"></div>
+      <button id="device-location" type="button">Use device location</button>
+      <button id="reset-location" type="button">Atlanta</button>
+    </details>
     <noscript><p role="status">Weather forecasts need JavaScript to load. Read the <a href="../index.html">static diary</a> or <a href="news.html">static headlines</a>.</p></noscript>
-    <div class="current">
-        <div class="weather-row">
-            <div class="label">Temperature</div>
-            <div class="value" id="temp">—</div>
-        </div>
-        <div class="weather-row">
-            <div class="label">Condition</div>
-            <div class="value" id="desc">—</div>
-        </div>
-        <div class="weather-row">
-            <div class="label">Wind</div>
-            <div class="value" id="winds">—</div>
-        </div>
-        <div class="weather-row">
-            <div class="label">Precipitation</div>
-            <div class="value" id="precip">—</div>
-        </div>
-        <div class="weather-row">
-            <div class="label">Local time</div>
-            <div class="value" id="time">—</div>
-        </div>
-    </div>
-
-    <div class="section-title">Hour by Hour (next 24h)</div>
+    <div class="section-title">Next 24 hours · °F · rain chance</div>
     <div id="hourly" class="hourly"></div>
 
     <script>
@@ -208,7 +195,8 @@
             const tempC = Math.round(cw.temperature);
             elTemp.textContent = cToF(tempC) + '°F';
             elDesc.textContent = weatherCodes[cw.weathercode] || ('Code ' + cw.weathercode);
-            elWinds.textContent = cw.windspeed + ' ' + ((data.current_weather_units && data.current_weather_units.windspeed) || 'km/h');
+            const windKmh = Number(cw.windspeed);
+            elWinds.textContent = Number.isFinite(windKmh) ? Math.round(windKmh / 1.609344) + ' mph' : '—';
             // show time if available
             if(data.timezone) elTime.textContent = new Intl.DateTimeFormat(undefined, {dateStyle:'short', timeStyle:'short', timeZone:data.timezone}).format(new Date());
 
@@ -225,8 +213,8 @@
                 }
                 const mm = Number(amounts[idx]);
                 const prob = probs[idx] !== undefined ? probs[idx] : null;
-                let precipitationText = Number.isFinite(mm) ? mm.toFixed(1) + ' mm / ' + (mm / 25.4).toFixed(2) + ' in' : '—';
-                if (prob !== null) precipitationText += ' (' + prob + '% chance)';
+                let precipitationText = Number.isFinite(mm) ? (mm / 25.4).toFixed(2) + ' in' : '—';
+                if (prob !== null) precipitationText += ' · ' + prob + '% chance';
                 elPrecip.textContent = precipitationText;
             } else {
                 elPrecip.textContent = '—';
@@ -313,5 +301,27 @@
     });
     document.getElementById('reset-location').addEventListener('click', () => chooseLocation(defaultLocation));
     </script>
+    <style>
+      body { max-width:58rem; padding:1rem; background:var(--tool-bg); color:var(--tool-text); font:16px/1.45 system-ui,sans-serif; }
+      .header { position:static; background:var(--tool-surface); border:1px solid var(--tool-border); border-radius:.5rem; padding:.45rem .65rem; }
+      .back-btn { min-height:44px; display:inline-flex; align-items:center; padding:.4rem .7rem; background:var(--tool-surface-raised); color:var(--tool-link); font-size:1rem; }
+      h1 { text-align:left; font-size:1.35rem; padding:.35rem 0; }
+      #weather-location { font-size:1.1rem; font-weight:700; margin:.7rem 0 .1rem; }
+      #location-status,.settings-note { color:var(--tool-muted); font-size:.9rem; margin:.2rem 0 .5rem; }
+      .current { padding:.55rem 0 .8rem; margin:0; border-color:var(--tool-border); }
+      .weather-row { display:flex; justify-content:space-between; align-items:baseline; gap:.8rem; margin:.3rem 0; padding:.55rem .7rem; background:var(--tool-surface); border:1px solid var(--tool-border); border-left:3px solid var(--tool-accent); border-radius:.35rem; }
+      .label { color:var(--tool-muted); font-size:.9rem; }
+      .value { color:var(--tool-text); font-size:1.05rem; text-align:right; }
+      details.location-settings { border:1px solid var(--tool-border); border-radius:.45rem; background:var(--tool-surface); padding:.25rem .65rem .65rem; margin:.4rem 0 1rem; }
+      .location-settings summary { cursor:pointer; min-height:44px; display:flex; align-items:center; color:var(--tool-link); font-weight:650; }
+      .location-settings button { min-height:44px; margin:.2rem .3rem .2rem 0; }
+      .section-title { color:var(--tool-text); font-size:1.1rem; margin:.8rem 0 .45rem; }
+      .hourly { display:grid; grid-template-columns:repeat(auto-fit,minmax(11rem,1fr)); gap:.45rem; }
+      .hour { background:var(--tool-surface); border:1px solid var(--tool-border); border-left:3px solid var(--tool-accent); padding:.55rem; font-size:.9rem; }
+      .hour-time { color:var(--tool-link); }
+      .hour-prob { color:var(--tool-muted); }
+      @media(max-width:280px) { body { padding:.4rem; font-size:13px; } .back-btn,.location-settings summary,.location-settings button,#retry-forecast,.location-form input,.location-form button { min-height:29px; } .hourly { grid-template-columns:1fr; } }
+      @media(min-width:281px) and (max-width:340px) { body { padding:.45rem; } .hourly { grid-template-columns:1fr; } }
+    </style>
 </body>
 </html>

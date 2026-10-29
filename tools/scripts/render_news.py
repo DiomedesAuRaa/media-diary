@@ -6,6 +6,8 @@ import json
 import math
 import re
 from pathlib import Path
+from datetime import datetime, timezone
+from itertools import zip_longest
 
 try:
     from .validate_news import validate_digest
@@ -56,6 +58,13 @@ def validate_rendered_routes(outputs):
                     raise ValueError(f"Broken static news link in {filename}: {href}")
 
 
+def readable_time(value):
+    if not value:
+        return "not yet"
+    date = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    return date.astimezone(timezone.utc).strftime("%b %d, %H:%M UTC")
+
+
 def render(root: Path, config_path=None):
     root = Path(root)
     template_path = root / "news.html"
@@ -73,12 +82,17 @@ def render(root: Path, config_path=None):
     statuses = {}
     for category in config["categories"]:
         entries, seen, notes = [], set(), []
-        for row in digest["feeds"]:
+        source_rows = [row for row in digest["feeds"] if row["category"] == category]
+        for row in source_rows:
             if row["category"] != category:
                 continue
             if row["status"] != "ok":
                 notes.append(row["name"] + " (" + row["status"] + ")")
-            for item in row["items"]:
+        # Round-robin sources so a compact first page is a digest, not one publisher.
+        for group in zip_longest(*(row["items"] for row in source_rows)):
+            for row, item in zip(source_rows, group):
+                if item is None:
+                    continue
                 key = (" ".join(item["title"].split()).casefold(), item["url"].rstrip("/").casefold())
                 if key not in seen:
                     seen.add(key)
@@ -113,6 +127,10 @@ def render(root: Path, config_path=None):
                     other_category_page = min(page, page_counts[other][mode])
                     nav.append('<a class="category-link" href="%s"%s>%s</a>' % (
                         esc(route(other, other_category_page, mode)), ' aria-current="page"' if current else "", esc(CATEGORY_NAMES.get(other, other.title()))))
+                choices = ''.join('<option value="%s"%s>%s</option>' % (
+                    esc(route(other, 1, mode)), ' selected' if other == category else '',
+                    esc(CATEGORY_NAMES.get(other, other.title()))) for other in config["categories"])
+                picker = '<form class="news-picker" id="news-picker" hidden><label for="news-category">Category</label><select id="news-category">%s</select><button type="submit">Go</button></form>' % choices
                 other_mode = "full" if mode == "compact" else "compact"
                 other_page = min(page, page_counts[category][other_mode])
                 links = ['<a class="%s" href="%s">%s</a>' % (
@@ -125,8 +143,8 @@ def render(root: Path, config_path=None):
                             esc(route(category, number, mode)), ' aria-current="page"' if number == page else "", number))
                 status = '<p class="status">Some feeds are using saved headlines or are temporarily unavailable: %s.</p>' % esc(", ".join(statuses[category])) if statuses[category] else ""
                 replacement = '<script>window.NEWS_PAGE_COUNTS=%s;</script><nav class="category-links" aria-label="News categories">%s</nav><main class="category%s" id="cat-%s"><h2>%s</h2>%s%s</main><nav class="pager" aria-label="News pages and display mode">%s</nav><div class="cache-info">Collection attempted %s</div>' % (
-                    json.dumps(page_counts), "".join(nav), " compact" if mode == "compact" else "", esc(category), esc(heading), "".join(article_markup), status, "".join(links), esc(digest["lastAttemptAt"]))
-                page_html = template.replace(marker, replacement).replace("<!-- GENERATED_AT -->", esc(digest.get("generatedAt") or "not yet"))
+                    json.dumps(page_counts), picker + "".join(nav), " compact" if mode == "compact" else "", esc(category), esc(heading), "".join(article_markup), status, "".join(links), esc(readable_time(digest["lastAttemptAt"])))
+                page_html = template.replace(marker, replacement).replace("<!-- GENERATED_AT -->", esc(readable_time(digest.get("generatedAt"))))
                 root_attrs = f'data-news-category="{esc(category)}" data-news-page="{page}"'
                 if route(category, page, mode) != "news.html":
                     root_attrs += f' data-compact="{1 if mode == "compact" else 0}"'

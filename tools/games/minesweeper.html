@@ -65,7 +65,7 @@ html,body{width:240px;max-width:240px;height:320px;max-height:320px;overflow:hid
 <link rel="stylesheet" href="../assets/game-ui.css">
 <script src="../assets/tool-ui.js"></script>
 </head>
-<body class="game-page">
+<body class="game-page game-minesweeper">
 
 <div class="shell">
   <div class="navdrawer" id="nav" aria-label="Games" aria-hidden="true" hidden>
@@ -86,12 +86,8 @@ html,body{width:240px;max-width:240px;height:320px;max-height:320px;overflow:hid
   <div class="area" id="area" tabindex="0" role="region" aria-label="Game board. Focus here to play. Escape opens menu." onclick="activate()">
     <div class="overlay show" id="ovr">
       <h2 id="ovrtitle">MINES</h2>
-      <p id="ovrmsg">Arrows=move  Enter=reveal<br>F=flag  R=new game</p>
-      <button class="obtn" onclick="event.stopPropagation();newGame();activate()">START</button>
-    </div>
-    <div class="tapbanner" id="tap" tabindex="0" role="button" onclick="activate()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();activate();}">
-      <div class="ti">&#x25BA;</div><div class="tt">TAP TO ACTIVATE KEYS</div>
-      <div class="ts">then use arrow keys</div>
+      <p id="ovrmsg">2=up · 4=left · 6=right · 8=down<br>Enter / 5=reveal · F=flag · Flag button=tap mode</p>
+      <button class="obtn" onclick="event.stopPropagation();hideOverlay();activate()">START</button>
     </div>
     <div class="drow">
       <button type="button" class="dbtn active" id="d-easy" onclick="setDiff('easy');event.stopPropagation()">Easy 8x8</button>
@@ -108,8 +104,7 @@ html,body{width:240px;max-width:240px;height:320px;max-height:320px;overflow:hid
 </div>
 <script>
 var kc=document.getElementById('area'),active=false;
-function activate(){kc.focus();active=true;document.getElementById('tap').style.display='none';}
-function deactivate(){active=false;document.getElementById('tap').style.display='flex';}
+function activate(){kc.focus();active=true;}
 function toggleNav() {
   var nav = document.getElementById('nav');
   if (nav.classList.contains('open')) { closeNav(); return; }
@@ -146,7 +141,7 @@ function setDiff(d){
   newGame();
 }
 
-function newGame(){
+function newGame(keepStart){
   var cfg=DIFFS[diff];cols=cfg.c;rows=cfg.r;mineCount=cfg.m;
   board=[];revealed=[];flagged=[];mines=new Set();
   for(var r=0;r<rows;r++){board.push([]);revealed.push([]);flagged.push([]);
@@ -159,7 +154,9 @@ function newGame(){
   document.getElementById('flagbtn').textContent='Flag: OFF';
   document.getElementById('flagbtn').style.color='';
   document.getElementById('best').textContent=getBestFor(diff)||'--';
-  hideOverlay();renderBoard();activate();
+  renderBoard();
+  if(keepStart){active=false;document.querySelector('#ovr .obtn').focus();}
+  else{hideOverlay();activate();}
 }
 
 function placeMines(sx,sy){
@@ -219,7 +216,8 @@ function checkWin(){
 
 function renderBoard(){
   var bd=document.getElementById('board');
-  var avail=226,cs=Math.max(16,Math.floor(avail/cols));
+  var avail=Math.min(226,Math.max(100,document.getElementById('area').clientWidth-12));
+  var cs=Math.max(8,Math.floor((avail-(cols-1)*2)/cols));
   bd.style.gridTemplateColumns='repeat('+cols+','+cs+'px)';
   bd.style.gridTemplateRows='repeat('+rows+','+cs+'px)';
   bd.style.gap='2px';bd.innerHTML='';
@@ -276,7 +274,7 @@ function handleKey(key) {
   if (key.toLowerCase()==='f'||key==='#') { toggleFlag(cursor.x, cursor.y); return; }
   if (key.toLowerCase()==='r'||key==='0') newGame();
 }
-window.addEventListener('load',function(){newGame();});
+window.addEventListener('load',function(){newGame(true);});
 </script>
 </body>
 </html>

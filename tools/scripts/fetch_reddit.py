@@ -72,45 +72,60 @@ def refresh(config, previous, fetch=None, now=None, delay=2, budget=600):
     successes = 0
     deadline = time.monotonic() + budget
     stopped = None
+    work = [(subreddit, feed) for subreddit in config['subreddits'] for feed in config['feeds']]
+    # A blocked first URL otherwise starves every later source forever because
+    # provider denial correctly stops the refresh. Rotate the probe point by
+    # the previous attempt's date and clock; scheduled runs sample different
+    # configured URLs while still issuing at most one request after a block.
+    prior_attempt = previous.get('last_attempt_at')
+    try:
+        probe_time = datetime.fromisoformat(str(prior_attempt).replace('Z', '+00:00')).astimezone(timezone.utc)
+    except (TypeError, ValueError):
+        probe_time = datetime.fromisoformat(stamp.replace('Z', '+00:00')).astimezone(timezone.utc)
+    # Mix date and clock fields so twice-daily schedule times do not land on
+    # the same modulo slot (12 hours is divisible by many feed-list lengths).
+    slot = probe_time.date().toordinal() * 17 + probe_time.hour * 7 + probe_time.minute
+    offset = slot % len(work)
+    work = work[offset:] + work[:offset]
     for subreddit in config['subreddits']:
         data[subreddit], statuses[subreddit] = {}, {}
-        for feed in config['feeds']:
-            label = feed['label']
-            prior = previous.get('data', {}).get(subreddit, {}).get(label, [])
-            old_status = previous.get('feed_status', {}).get(subreddit, {}).get(label, {})
-            generated = old_status.get('generated_at', previous.get('timestamp'))
-            reason = None
-            try:
-                if stopped:
-                    raise ValueError(stopped)
-                if time.monotonic() >= deadline:
-                    raise ValueError('Refresh budget exhausted')
-                if delay:
-                    time.sleep(min(delay, max(0, deadline - time.monotonic())))
-                remaining = deadline - time.monotonic()
-                if remaining <= 0:
-                    raise ValueError('Refresh budget exhausted')
-                url = 'https://www.reddit.com/r/%s/%s.rss' % (subreddit, feed['sort'])
-                query = {'limit': 5}
-                if feed['sort'] == 'top' and feed['timeframe']:
-                    query['t'] = feed['timeframe']
-                url += '?' + urlencode(query)
-                body = fetch(url) if fetch else fetch_bytes(url, attempts=1, max_redirects=3, total_timeout=min(20, remaining))
-                posts = parse_posts(body, subreddit)
-                successes += 1
-                generated, status = stamp, 'ok'
-            except (requests.RequestException, ValueError, OSError) as exc:
-                code = exc.response.status_code if isinstance(exc, requests.HTTPError) and exc.response is not None else None
-                if code in (403, 429):
-                    stopped = 'access_denied' if code == 403 else 'rate_limited'
-                reason = stopped or ('budget_exhausted' if time.monotonic() >= deadline else 'fetch_failed')
-                posts = prior
-                status = 'stale' if prior else 'unavailable'
-                errors.setdefault(subreddit, []).append(label)
-            data[subreddit][label] = posts
-            statuses[subreddit][label] = {'status': status, 'generated_at': generated, 'last_attempt_at': stamp}
-            if reason:
-                statuses[subreddit][label]['reason'] = reason
+    for subreddit, feed in work:
+        label = feed['label']
+        prior = previous.get('data', {}).get(subreddit, {}).get(label, [])
+        old_status = previous.get('feed_status', {}).get(subreddit, {}).get(label, {})
+        generated = old_status.get('generated_at', previous.get('timestamp'))
+        reason = None
+        try:
+            if stopped:
+                raise ValueError(stopped)
+            if time.monotonic() >= deadline:
+                raise ValueError('Refresh budget exhausted')
+            if delay:
+                time.sleep(min(delay, max(0, deadline - time.monotonic())))
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise ValueError('Refresh budget exhausted')
+            url = 'https://www.reddit.com/r/%s/%s.rss' % (subreddit, feed['sort'])
+            query = {'limit': 5}
+            if feed['sort'] == 'top' and feed['timeframe']:
+                query['t'] = feed['timeframe']
+            url += '?' + urlencode(query)
+            body = fetch(url) if fetch else fetch_bytes(url, attempts=1, max_redirects=3, total_timeout=min(20, remaining))
+            posts = parse_posts(body, subreddit)
+            successes += 1
+            generated, status = stamp, 'ok'
+        except (requests.RequestException, ValueError, OSError) as exc:
+            code = exc.response.status_code if isinstance(exc, requests.HTTPError) and exc.response is not None else None
+            if code in (403, 429):
+                stopped = 'access_denied' if code == 403 else 'rate_limited'
+            reason = stopped or ('budget_exhausted' if time.monotonic() >= deadline else 'fetch_failed')
+            posts = prior
+            status = 'stale' if prior else 'unavailable'
+            errors.setdefault(subreddit, []).append(label)
+        data[subreddit][label] = posts
+        statuses[subreddit][label] = {'status': status, 'generated_at': generated, 'last_attempt_at': stamp}
+        if reason:
+            statuses[subreddit][label]['reason'] = reason
     count = len(config['subreddits']) * len(config['feeds'])
     refresh_status = 'ok' if successes == count else 'partial' if successes else 'stale' if any(posts for feeds in data.values() for posts in feeds.values()) else 'unavailable'
     timestamp = stamp if successes else previous.get('timestamp')

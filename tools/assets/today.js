@@ -61,9 +61,9 @@
           .map(function (item) { return {title:item.title, url:ToolUI.httpURL(item.url), source:feed.name || 'News', date:item.date}; });
       });
       var stories = [], seen = Object.create(null), offset = 0;
-      while (stories.length < 6 && queues.some(function (queue) { return queue.length > offset; })) {
+      while (stories.length < 3 && queues.some(function (queue) { return queue.length > offset; })) {
         queues.forEach(function (queue) {
-          if (stories.length >= 6) return;
+          if (stories.length >= 3) return;
           var story = queue[offset];
           if (!story) return;
           var key = story.url.toLowerCase();
@@ -85,7 +85,7 @@
 
   var sportsRun = 0;
   function loadSports() {
-    var run = ++sportsRun; loading('sports-status','Loading games…','sports-retry'); $('live-games').replaceChildren(); $('recent-games').replaceChildren(); $('upcoming-games').replaceChildren();
+    var run = ++sportsRun; loading('sports-status','Loading games…','sports-retry'); $('recent-games').replaceChildren(); $('upcoming-games').replaceChildren();
     Promise.all([json('sports-snapshot.json'), json('sports-config.json')]).then(function (result) {
       if (run !== sportsRun) return;
       var snapshot = result[0], config = result[1];
@@ -141,7 +141,7 @@
         });
         if (!list.length) { var li = document.createElement('li'); li.className = 'muted'; li.textContent = 'No ' + kind + ' favorite team games in this snapshot window.'; target.appendChild(li); }
       }
-      render(live,'live-games','live'); render(recent,'recent-games','recent'); render(upcoming,'upcoming-games','upcoming');
+      render(live.concat(upcoming).sort(order).slice(0,1),'upcoming-games','upcoming'); render(recent,'recent-games','recent');
       $('sports-meta').textContent = (stale ? 'Saved snapshot may be stale' : 'Snapshot') + (stamp ? ' · checked ' + fmtStamp(stamp.toISOString()) : '');
       $('sports-status').textContent = (incomplete ? 'Some schedule entries are unavailable; saved games are shown where available. ' : '') + 'Favorite team games from the published schedule snapshot.';
     }).catch(function () { if (run === sportsRun) errorState('sports-status','Games are unavailable right now.','sports-retry'); });

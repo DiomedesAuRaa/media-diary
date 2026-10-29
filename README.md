@@ -28,7 +28,7 @@ The games preserve their existing localStorage keys. The legacy Portfolio score 
 
 ## Daily tools
 
-`tools/today.html` combines current weather, six published top headlines and configured favorite-team games. Sections load independently and provide their own error/retry states. Weather defaults to Atlanta and honors the existing device-local city preference. It never requests device location automatically.
+`tools/today.html` combines current weather, three published top headlines and configured favorite-team games. Sections load independently and provide their own error/retry states. Weather defaults to Atlanta and honors the existing device-local city preference. It never requests device location automatically.
 
 `tools/schedule.html` shows upcoming games returned by the published scoreboards within the next seven days, with device-local kickoff times and broadcast names where supplied. It explicitly describes scoreboard coverage; a missing game is not evidence that a team has no upcoming fixture. League and favorite filters are ordinary native controls. Favorite aliases match complete provider team names or abbreviations, preventing Michigan State from matching Michigan.
 
@@ -41,3 +41,13 @@ Scores fetch current scoreboards directly from ESPN's browser-accessible `site.w
 Standings, Today and schedule still read the published snapshot. The sports workflow requests a refresh every 15 minutes, but GitHub scheduling and deployment can add substantial delay. Each endpoint retains its last successful data on refresh failure. The direct ESPN routes are unofficial and can change; the snapshot remains an important fallback.
 
 The collector uses no provider credentials and keeps only the fields needed by the renderers. Sports, news, podcast, Reddit and ordinary Pages deployments share one publication queue and always build the full current site. Only Actions owns these schedules; a future Mac collector must replace that ownership rather than create a second publisher. Keep private APIs, runtime state and credentials in the private backend/deployment workspace.
+
+## Nokia-first presentation
+
+At keypad widths, the tools home shows short destination rows. Today leads with current weather and a favorite-team game; weather city controls and diary sort/year filters use native disclosures. Podcasts use a native show picker, keep episode progress on the device, and offer Continue listening when saved progress is available. Reload episode list reads the published manifest; it does not collect a new feed.
+
+Bible chapters load when selected. Verse choices come from the returned chapter, passage hashes support Back/bookmarks, and the last passage is saved only in this browser for explicit resume. Reddit compact browsing starts with one community, offers native feed selection and dated saved snapshots, and keeps refresh reasons in a disclosure. Its collector still stops after a provider access denial or rate limit; rotating the first probe improves coverage but cannot guarantee fresh posts.
+
+Games preserve their storage keys and scoped key capture. Snake/Tetris have explicit Start and Resume states and pause when leaving play; Wordle puts native text entry before the optional on-screen keyboard. The 2048 board retains explicit square fallbacks for older browsers.
+
+Score-display fixtures run with `node tools/tests/test_score_display.js`. Browser viewport checks are useful layout evidence, but physical Nokia rendering, keypad behavior and podcast audio still need handset verification.

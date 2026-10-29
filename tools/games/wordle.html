@@ -67,7 +67,7 @@ html,body{width:240px;max-width:240px;height:320px;max-height:320px;overflow:hid
 <link rel="stylesheet" href="../assets/game-ui.css">
 <script src="../assets/tool-ui.js"></script>
 </head>
-<body class="game-page">
+<body class="game-page game-wordle">
 <div class="toast" id="toast"></div>
 
 <div class="shell">
@@ -85,28 +85,32 @@ html,body{width:240px;max-width:240px;height:320px;max-height:320px;overflow:hid
       Streak:<strong id="streak">0</strong>&#x1F525;
     </div>
   </div>
+  <form class="word-input" id="guess-form">
+    <label for="guess-input">Five-letter guess</label>
+    <input id="guess-input" type="text" maxlength="5" autocomplete="off" autocapitalize="none" spellcheck="false" pattern="[A-Za-z]{5}" aria-describedby="guess-status">
+    <button type="submit">Guess</button>
+    <p id="guess-status" role="status"></p>
+  </form>
   <div class="grid-wrap"><div id="grid" tabindex="0" role="region" aria-label="Game board. Focus here to play. Escape opens menu."></div></div>
   <div class="rbar" id="rbar">
     <strong id="rtitle">--</strong>
     <div class="rsub" id="rsub"></div>
   </div>
-  <div class="kb" id="kb">
-    <div class="kbrow" id="kr0"></div>
-    <div class="kbrow" id="kr1"></div>
-    <div class="kbrow" id="kr2"></div>
-  </div>
+
+  <details class="virtual-keys">
+    <summary>Show on-screen keyboard</summary>
+    <div class="kb" id="kb">
+      <div class="kbrow" id="kr0"></div>
+      <div class="kbrow" id="kr1"></div>
+      <div class="kbrow" id="kr2"></div>
+    </div>
+  </details>
   <div class="skeys">
     <button class="sk l" onclick="resetForDemo()">Practice</button>
     <button class="sk" onclick="copyShare()">Share</button>
     <button class="sk r" onclick="toggleNav()">Menu</button>
   </div>
 </div>
-<form class="word-input" id="guess-form">
-  <label for="guess-input">Type a five-letter guess</label>
-  <input id="guess-input" type="text" maxlength="5" autocomplete="off" autocapitalize="none" spellcheck="false" pattern="[A-Za-z]{5}">
-  <button type="submit">Guess</button>
-  <p id="guess-status" role="status"></p>
-</form>
 <section class="share-fallback" id="share-fallback" hidden aria-label="Share results">
   <label for="share-text">Copy your results</label>
   <textarea id="share-text" readonly rows="5" aria-label="Wordle results to copy"></textarea>
@@ -133,9 +137,6 @@ window.addEventListener('keydown', function(e) {
   if (dirs.indexOf(e.key) !== -1) { e.preventDefault(); e.stopImmediatePropagation(); }
   if (typeof handleKey === 'function') handleKey(e.key);
 }, {capture:true, passive:false});
-/* For Wordle, always keep focus active since keyboard is the primary input */
-
-
 document.getElementById('guess-form').addEventListener('submit', function(e) {
   e.preventDefault(); if (gameOver) return;
   curGuess = document.getElementById('guess-input').value.toLowerCase().replace(/[^a-z]/g,'').slice(0,5);
@@ -337,7 +338,6 @@ window.addEventListener('load',function(){
   });
   renderKeys();updateMeta();
   if(gameOver){var won=guesses.length>0&&evalGuess(guesses[guesses.length-1]).every(function(r){return r==='correct';});showResult(won);}
-  activate();
 });
 </script>
 </body>
