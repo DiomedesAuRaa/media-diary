@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-10-29T14:42:02+00:00",
-  "generated_at": "2026-10-29 14:42:02 UTC",
+  "timestamp": "2026-10-29T23:40:11+00:00",
+  "generated_at": "2026-10-29 23:40:11 UTC",
   "subreddits_count": 12,
   "total_posts": 130,
   "feeds": [
@@ -12,16 +12,10 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "nfl": [
+    "nba": [
       "Hot",
       "Best of Hour",
       "Best of 24h"
-    ],
-    "nba": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
     ],
     "baseball": [
       "Best of Hour",
@@ -78,6 +72,12 @@
       "Hot"
     ],
     "cfb": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "nfl": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -385,6 +385,8 @@
       ]
     },
     "nfl": {
+      "Best of Hour": [],
+      "Best of 24h": [],
       "Best of Week": [
         {
           "title": "[Highlight] Giants RB Cam Skattebo made it clear he isn’t changing his running style after being penalized today for lowering his helmet. Skattebo says he’ll play for free if the fines keep coming and points out that the NFL promotes those same plays on its social media accounts.",
@@ -472,111 +474,21 @@
           "metadata_source": "rss"
         }
       ],
-      "Hot": [],
-      "Best of Hour": [],
-      "Best of 24h": []
+      "Hot": []
     },
     "nba": {
-      "Best of Hour": [
-        {
-          "title": "New Documentary: KAT Opens Up About the Knicks' Magical 2026 NBA Title Run",
-          "author": "bleacherreport",
-          "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x6yq4f/new_documentary_kat_opens_up_about_the_knicks/",
-          "selftext": "",
-          "created_utc": 1792101186,
-          "num_comments": 0,
-          "id": "1x6yq4f",
-          "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x6yq4f/new_documentary_kat_opens_up_about_the_knicks/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "How a Supersonics return re-shuffles NBA leaderboards",
-          "author": "bringbackpologrounds",
-          "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x6z268/how_a_supersonics_return_reshuffles_nba/",
-          "selftext": "",
-          "created_utc": 1792102053,
-          "num_comments": 0,
-          "id": "1x6z268",
-          "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x6z268/how_a_supersonics_return_reshuffles_nba/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Game Thread: Toronto Raptors (2-1) vs New York Knicks (0-4) Live Score | NBA | Oct 15, 2026",
-          "author": "nba-scores",
-          "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x6zkqr/game_thread_toronto_raptors_21_vs_new_york_knicks/",
-          "selftext": "",
-          "created_utc": 1792103415,
-          "num_comments": 0,
-          "id": "1x6zkqr",
-          "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x6zkqr/game_thread_toronto_raptors_21_vs_new_york_knicks/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Karl-Anthony Towns' MONSTER 46-PT Double-Double Performance at MSG! 😤| November 13, 2024",
-          "author": "AffectionatePoet5033",
-          "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x6yw45/karlanthony_towns_monster_46pt_doubledouble/",
-          "selftext": "",
-          "created_utc": 1792101626,
-          "num_comments": 0,
-          "id": "1x6yw45",
-          "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x6yw45/karlanthony_towns_monster_46pt_doubledouble/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Tee Morant \"After everything Ja has been through he realizes he has to pull back from certain things. He realizes he's always under a microscope. Somebody could do the same thing he does without getting the same criticism. Like the celebrations stuff, everyone do it but when it's Ja, it's magnified\"",
-          "author": "PianoJealous307",
-          "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x6zd6c/tee_morant_after_everything_ja_has_been_through/",
-          "selftext": "",
-          "created_utc": 1792102863,
-          "num_comments": 0,
-          "id": "1x6zd6c",
-          "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x6zd6c/tee_morant_after_everything_ja_has_been_through/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of 24h": [],
       "Best of Week": [
         {
-          "title": "Steve Kerr is in disbelief after seeing look-alike sitting behind him in the crowd",
-          "author": "Mission_Pay_3373",
+          "title": "Ernie Johnson announces below that this will be his final season as host of Inside The NBA",
+          "author": "jonsnowKITN",
           "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x82adj/steve_kerr_is_in_disbelief_after_seeing_lookalike/",
+          "url": "https://www.reddit.com/r/nba/comments/1xhvn2g/ernie_johnson_announces_below_that_this_will_be/",
           "selftext": "",
-          "created_utc": 1792215722,
+          "created_utc": 1793210758,
           "num_comments": 0,
-          "id": "1x82adj",
+          "id": "1xhvn2g",
           "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x82adj/steve_kerr_is_in_disbelief_after_seeing_lookalike/",
+          "link_url": "https://www.reddit.com/r/nba/comments/1xhvn2g/ernie_johnson_announces_below_that_this_will_be/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -584,67 +496,67 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Wemby blocks a shot, then does a euro step self lob off the glass.",
-          "author": "PastaCheed",
-          "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x7waqi/wemby_blocks_a_shot_then_does_a_euro_step_self/",
-          "selftext": "",
-          "created_utc": 1792196182,
-          "num_comments": 0,
-          "id": "1x7waqi",
-          "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x7waqi/wemby_blocks_a_shot_then_does_a_euro_step_self/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Blake Griffin says that, at the end of the day, basketball players are just people playing a game that some kids made up to kill time in gym class, and that they shouldn't go around acting like they're God's chosen ones.",
-          "author": "Existing-Sky9914",
-          "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x6ij39/blake_griffin_says_that_at_the_end_of_the_day/",
-          "selftext": "",
-          "created_utc": 1792061636,
-          "num_comments": 0,
-          "id": "1x6ij39",
-          "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x6ij39/blake_griffin_says_that_at_the_end_of_the_day/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Brandin Podziemski equips Stephen Curry idle animations",
-          "author": "KarrotMovies",
-          "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x5w6k8/brandin_podziemski_equips_stephen_curry_idle/",
-          "selftext": "",
-          "created_utc": 1791996082,
-          "num_comments": 0,
-          "id": "1x5w6k8",
-          "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x5w6k8/brandin_podziemski_equips_stephen_curry_idle/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Highlight] Ben Simmons hits the step back fadeaway jumper off the dribble",
+          "title": "Tyrese Maxey on whether he changes his baby's diaper:\"I'm a big diaper changing guy. I take pride in the speed that I'm able to change a diaper and keep her from crying. So I'm a big diaper change guy, big feed guy, big nap guy. I'm all of it, wake up in the middle of the night.",
           "author": "MrBuckBuck",
           "score": 0,
-          "url": "https://www.reddit.com/r/nba/comments/1x2vizl/highlight_ben_simmons_hits_the_step_back_fadeaway/",
+          "url": "https://www.reddit.com/r/nba/comments/1xi76r6/tyrese_maxey_on_whether_he_changes_his_babys/",
           "selftext": "",
-          "created_utc": 1791682120,
+          "created_utc": 1793238451,
           "num_comments": 0,
-          "id": "1x2vizl",
+          "id": "1xi76r6",
           "subreddit": "nba",
-          "link_url": "https://www.reddit.com/r/nba/comments/1x2vizl/highlight_ben_simmons_hits_the_step_back_fadeaway/",
+          "link_url": "https://www.reddit.com/r/nba/comments/1xi76r6/tyrese_maxey_on_whether_he_changes_his_babys/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "An emotional Chuck, Kenny and Shaq pay tribute to Ernie Johnson as he announces his retirement",
+          "author": "TimDunkinDonut",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1xi2rtr/an_emotional_chuck_kenny_and_shaq_pay_tribute_to/",
+          "selftext": "",
+          "created_utc": 1793226839,
+          "num_comments": 0,
+          "id": "1xi2rtr",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1xi2rtr/an_emotional_chuck_kenny_and_shaq_pay_tribute_to/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "LeBron James responds to the president taking shots at him with a one-liner: “Slow news day at the office, you know.”",
+          "author": "Extreme_Aardvark1",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1xd4epv/lebron_james_responds_to_the_president_taking/",
+          "selftext": "",
+          "created_utc": 1792730038,
+          "num_comments": 0,
+          "id": "1xd4epv",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1xd4epv/lebron_james_responds_to_the_president_taking/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Luka To Yaxel: \"Hey bro. You're 24 and a rookie. Relax.\"",
+          "author": "New-Process-6463",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1xdv4mr/luka_to_yaxel_hey_bro_youre_24_and_a_rookie_relax/",
+          "selftext": "",
+          "created_utc": 1792803123,
+          "num_comments": 0,
+          "id": "1xdv4mr",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1xdv4mr/luka_to_yaxel_hey_bro_youre_24_and_a_rookie_relax/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -738,7 +650,95 @@
           "comments": [],
           "metadata_source": "rss"
         }
-      ]
+      ],
+      "Best of Hour": [
+        {
+          "title": "New Documentary: KAT Opens Up About the Knicks' Magical 2026 NBA Title Run",
+          "author": "bleacherreport",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x6yq4f/new_documentary_kat_opens_up_about_the_knicks/",
+          "selftext": "",
+          "created_utc": 1792101186,
+          "num_comments": 0,
+          "id": "1x6yq4f",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x6yq4f/new_documentary_kat_opens_up_about_the_knicks/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "How a Supersonics return re-shuffles NBA leaderboards",
+          "author": "bringbackpologrounds",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x6z268/how_a_supersonics_return_reshuffles_nba/",
+          "selftext": "",
+          "created_utc": 1792102053,
+          "num_comments": 0,
+          "id": "1x6z268",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x6z268/how_a_supersonics_return_reshuffles_nba/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Game Thread: Toronto Raptors (2-1) vs New York Knicks (0-4) Live Score | NBA | Oct 15, 2026",
+          "author": "nba-scores",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x6zkqr/game_thread_toronto_raptors_21_vs_new_york_knicks/",
+          "selftext": "",
+          "created_utc": 1792103415,
+          "num_comments": 0,
+          "id": "1x6zkqr",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x6zkqr/game_thread_toronto_raptors_21_vs_new_york_knicks/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Karl-Anthony Towns' MONSTER 46-PT Double-Double Performance at MSG! 😤| November 13, 2024",
+          "author": "AffectionatePoet5033",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x6yw45/karlanthony_towns_monster_46pt_doubledouble/",
+          "selftext": "",
+          "created_utc": 1792101626,
+          "num_comments": 0,
+          "id": "1x6yw45",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x6yw45/karlanthony_towns_monster_46pt_doubledouble/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Tee Morant \"After everything Ja has been through he realizes he has to pull back from certain things. He realizes he's always under a microscope. Somebody could do the same thing he does without getting the same criticism. Like the celebrations stuff, everyone do it but when it's Ja, it's magnified\"",
+          "author": "PianoJealous307",
+          "score": 0,
+          "url": "https://www.reddit.com/r/nba/comments/1x6zd6c/tee_morant_after_everything_ja_has_been_through/",
+          "selftext": "",
+          "created_utc": 1792102863,
+          "num_comments": 0,
+          "id": "1x6zd6c",
+          "subreddit": "nba",
+          "link_url": "https://www.reddit.com/r/nba/comments/1x6zd6c/tee_morant_after_everything_ja_has_been_through/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Best of 24h": []
     },
     "baseball": {
       "Best of Hour": [],
@@ -2387,82 +2387,82 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-10-29T14:42:02+00:00",
+  "last_attempt_at": "2026-10-29T23:40:11+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-23T12:53:56+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
     "nfl": {
-      "Best of Week": {
-        "status": "ok",
-        "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00"
-      },
-      "Hot": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
-        "reason": "rate_limited"
-      },
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Week": {
+        "status": "stale",
+        "generated_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
     "nba": {
+      "Best of Week": {
+        "status": "ok",
+        "generated_at": "2026-10-29T23:40:11+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-10-15T12:54:35+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
+        "reason": "rate_limited"
+      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Week": {
-        "status": "stale",
-        "generated_at": "2026-10-17T11:47:37+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2470,25 +2470,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2496,25 +2496,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2522,25 +2522,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T13:08:12+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2548,25 +2548,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2574,25 +2574,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-18T12:12:57+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2600,25 +2600,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2626,25 +2626,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-17T11:47:37+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2652,25 +2652,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2678,25 +2678,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-13T23:28:23+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-29T14:42:02+00:00",
+        "last_attempt_at": "2026-10-29T23:40:11+00:00",
         "reason": "rate_limited"
       }
     }
