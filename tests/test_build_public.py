@@ -39,6 +39,8 @@ class PublicBuildTests(unittest.TestCase):
         self.assertIn('tools/assets/today.js', files)
         self.assertIn('tools/assets/live-scores.js', files)
         self.assertIn('tools/assets/score-display.js', files)
+        for asset in ('sports-data.js', 'sports-view.js', 'sports-view.css'):
+            self.assertIn('tools/assets/' + asset, files)
         self.assertTrue((self.output/'tools/news.html').is_file())
         self.assertEqual({p for p in files if p.endswith('.json')}, {
             'movies.json','books.json','tv.json','movies_watchlist.json','books_watchlist.json','tv_watchlist.json',

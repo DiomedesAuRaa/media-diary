@@ -28,7 +28,7 @@ TOOL_PAGES = (
     'games/tetris.html', 'games/wordle.html',
 )
 TOOL_DATA = ('podcast-manifest.json', 'reddit-digest.json', 'sports-config.json', 'sports-snapshot.json', 'news-digest.json')
-TOOL_ASSETS = ('assets/tool-ui.css', 'assets/tool-ui.js', 'assets/game-ui.css', 'assets/today.js', 'assets/live-scores.js', 'assets/score-display.js')
+TOOL_ASSETS = ('assets/tool-ui.css', 'assets/tool-ui.js', 'assets/game-ui.css', 'assets/today.js', 'assets/live-scores.js', 'assets/score-display.js', 'assets/sports-data.js', 'assets/sports-view.js', 'assets/sports-view.css')
 
 def assert_no_symlink_components(path: Path, boundary: Path):
     path, boundary = Path(path).absolute(), Path(boundary).absolute()
@@ -94,7 +94,7 @@ def validate_inputs(public_fields):
 
 def validate_sports_config(path: Path):
     config = json.loads(path.read_text(encoding='utf-8'))
-    if not isinstance(config, dict) or set(config) != {'priority_teams', 'leagues'}:
+    if not isinstance(config, dict) or not {'priority_teams', 'leagues'} <= set(config) or set(config) - {'priority_teams', 'leagues', 'favorite_team_ids'}:
         raise ValueError('Invalid sports configuration fields')
     teams, leagues = config['priority_teams'], config['leagues']
     if not isinstance(teams, list) or len(teams) > 100 or any(not isinstance(name, str) or not name.strip() or len(name) > 60 for name in teams):
@@ -120,6 +120,12 @@ def validate_sports_config(path: Path):
             raise ValueError('Invalid standings type')
         if 'scores_type' in league and league['scores_type'] not in {'default', 'racing'}:
             raise ValueError('Invalid scores type')
+    favorites = config.get('favorite_team_ids', {})
+    if not isinstance(favorites, dict) or set(favorites) - names:
+        raise ValueError('Invalid favorite league IDs')
+    for team_ids in favorites.values():
+        if not isinstance(team_ids, list) or not 1 <= len(team_ids) <= 30 or len(set(team_ids)) != len(team_ids) or any(not isinstance(team_id, str) or not re.fullmatch(r'[0-9]{1,12}', team_id) for team_id in team_ids):
+            raise ValueError('Invalid favorite team IDs')
     return config
 
 def validate_output(path: Path) -> Path:
