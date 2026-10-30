@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-10-30T14:37:57+00:00",
-  "generated_at": "2026-10-30 14:37:57 UTC",
+  "timestamp": "2026-10-30T23:19:53+00:00",
+  "generated_at": "2026-10-30 23:19:53 UTC",
   "subreddits_count": 12,
   "total_posts": 136,
   "feeds": [
@@ -12,7 +12,13 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
+    "soccer": [
+      "Hot",
+      "Best of Hour",
+      "Best of 24h"
+    ],
     "formula1": [
+      "Best of Hour",
       "Best of 24h",
       "Best of Week",
       "Hot"
@@ -76,11 +82,6 @@
       "Best of 24h",
       "Best of Week",
       "Hot"
-    ],
-    "soccer": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week"
     ]
   },
   "data": {
@@ -1028,6 +1029,93 @@
       "Hot": []
     },
     "soccer": {
+      "Best of Week": [
+        {
+          "title": "Harry Kane announced as the winner of the 2026 Ballon d'Or",
+          "author": "iShowElliex12",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xgbtum/harry_kane_announced_as_the_winner_of_the_2026/",
+          "selftext": "",
+          "created_utc": 1793055109,
+          "num_comments": 0,
+          "id": "1xgbtum",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xgbtum/harry_kane_announced_as_the_winner_of_the_2026/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Harry Kane on his Instagram right after winning the Ballon d’Or",
+          "author": "Wakanda-shit-is-that",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xgcgij/harry_kane_on_his_instagram_right_after_winning/",
+          "selftext": "",
+          "created_utc": 1793056680,
+          "num_comments": 0,
+          "id": "1xgcgij",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xgcgij/harry_kane_on_his_instagram_right_after_winning/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Scenes as Fleetwood Town knock Arsenal out of the Carabao Cup",
+          "author": "50lipaa",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xh6kqv/scenes_as_fleetwood_town_knock_arsenal_out_of_the/",
+          "selftext": "",
+          "created_utc": 1793139335,
+          "num_comments": 0,
+          "id": "1xh6kqv",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xh6kqv/scenes_as_fleetwood_town_knock_arsenal_out_of_the/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "José Mourinho: “I dedicate this win to the Barça fans who did not let me take my nap in the hotel today. They came to the hotel and kept singing all day, I couldn't take my nap. Well, I didn't nap, but I did beat their team. A big hug to them...\"",
+          "author": "ChiefLeef22",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xfp6er/josé_mourinho_i_dedicate_this_win_to_the_barça/",
+          "selftext": "",
+          "created_utc": 1792995866,
+          "num_comments": 0,
+          "id": "1xfp6er",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xfp6er/josé_mourinho_i_dedicate_this_win_to_the_barça/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "The two Ballon D'Or winners 2026, Alexia Putellas and Harry Kane",
+          "author": "AW8TE",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xgc6v4/the_two_ballon_dor_winners_2026_alexia_putellas/",
+          "selftext": "",
+          "created_utc": 1793055993,
+          "num_comments": 0,
+          "id": "1xgc6v4",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xgc6v4/the_two_ballon_dor_winners_2026_alexia_putellas/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Hot": [
         {
           "title": "Daily Discussion | October 30, 2026",
@@ -1168,94 +1256,7 @@
           "metadata_source": "rss"
         }
       ],
-      "Best of 24h": [],
-      "Best of Week": [
-        {
-          "title": "Cristiano Ronaldo’s comment on Messi’s latest Instagram Post",
-          "author": "gmez3",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1x03hs2/cristiano_ronaldos_comment_on_messis_latest/",
-          "selftext": "",
-          "created_utc": 1791395957,
-          "num_comments": 0,
-          "id": "1x03hs2",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1x03hs2/cristiano_ronaldos_comment_on_messis_latest/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Galatasaray fans banners for tonight's UCL match against Barcelona",
-          "author": "AgeNovel3566",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1x558r3/galatasaray_fans_banners_for_tonights_ucl_match/",
-          "selftext": "",
-          "created_utc": 1791917491,
-          "num_comments": 0,
-          "id": "1x558r3",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1x558r3/galatasaray_fans_banners_for_tonights_ucl_match/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Antonio Rudiger shielding the Referee from Vini. Jr as he's sent off hair pulling",
-          "author": "Successful-Hippo9679",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1x2pu2s/antonio_rudiger_shielding_the_referee_from_vini/",
-          "selftext": "",
-          "created_utc": 1791665715,
-          "num_comments": 0,
-          "id": "1x2pu2s",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1x2pu2s/antonio_rudiger_shielding_the_referee_from_vini/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Liverpool fans chanting \"You cheating bastards, you know what you are\" before the Liverpool-Man City match",
-          "author": "_cumblast_",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1x3acmm/liverpool_fans_chanting_you_cheating_bastards_you/",
-          "selftext": "",
-          "created_utc": 1791730795,
-          "num_comments": 0,
-          "id": "1x3acmm",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1x3acmm/liverpool_fans_chanting_you_cheating_bastards_you/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "The moment 2nd tier australian club South Melbourne beat A-League side Melbourne Victory to win Australian Cup.",
-          "author": "StunningSuccotash421",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1x2er61/the_moment_2nd_tier_australian_club_south/",
-          "selftext": "",
-          "created_utc": 1791637267,
-          "num_comments": 0,
-          "id": "1x2er61",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1x2er61/the_moment_2nd_tier_australian_club_south/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ]
+      "Best of 24h": []
     },
     "formula1": {
       "Best of Hour": [
@@ -2490,31 +2491,31 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-10-30T14:37:57+00:00",
+  "last_attempt_at": "2026-10-30T23:19:53+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-23T12:53:56+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2522,25 +2523,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2548,25 +2549,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2574,25 +2575,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2600,75 +2601,76 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
     "soccer": {
-      "Hot": {
+      "Best of Week": {
         "status": "ok",
+        "generated_at": "2026-10-30T23:19:53+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00"
+      },
+      "Hot": {
+        "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00"
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
+        "reason": "rate_limited"
       },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Week": {
-        "status": "stale",
-        "generated_at": "2026-10-14T13:08:12+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
     "formula1": {
       "Best of Hour": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00"
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
+        "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2676,25 +2678,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-18T12:12:57+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2702,25 +2704,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2728,25 +2730,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-17T11:47:37+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2754,25 +2756,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2780,25 +2782,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-13T23:28:23+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-10-30T14:37:57+00:00",
+        "last_attempt_at": "2026-10-30T23:19:53+00:00",
         "reason": "rate_limited"
       }
     }
