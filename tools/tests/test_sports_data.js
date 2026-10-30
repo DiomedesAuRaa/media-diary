@@ -100,6 +100,8 @@ async function testF1EmptyCompetitorsAndMalformedPartial() {
   assert.equal(partial.events('NFL',result).length,1);
 }
 async function testDateFilteringUsesLocalCompetitionDate() {
+  const prior=process.env.TZ; process.env.TZ='America/New_York';
+  try {
   const snapshot={version:1,lastAttemptAt:STAMP,entries:{}};
   snapshot.entries['https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard']={
     payload:{events:[{id:'mixed',date:'2026-10-12T01:00:00Z',name:'Mixed event',competitions:[
@@ -112,6 +114,7 @@ async function testDateFilteringUsesLocalCompetitionDate() {
   assert.equal(saved.source,'snapshot');
   assert.equal(saved.payload.events[0].competitions.length,1);
   assert.equal(api.events('NFL',saved).length,1);
+  } finally { if (prior === undefined) delete process.env.TZ; else process.env.TZ=prior; }
 }
 async function testScheduleDateFetchConcurrencyAndDedup() {
   let active=0,maxActive=0; const dates=[];
