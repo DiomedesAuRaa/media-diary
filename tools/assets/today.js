@@ -83,68 +83,103 @@
   }
   $('news-retry').addEventListener('click', loadNews); loadNews();
 
-  var sportsRun = 0;
-  function loadSports() {
-    var run = ++sportsRun; loading('sports-status','Loading games…','sports-retry'); $('recent-games').replaceChildren(); $('upcoming-games').replaceChildren();
-    Promise.all([json('sports-snapshot.json'), json('sports-config.json')]).then(function (result) {
+  var sportsRun = 0, sportsConfig = null, sportsEntries = [];
+  function favoriteLeagues(config) {
+    var map = config.favorite_team_ids || {};
+    var names = Object.keys(map).filter(function (name) { return Array.isArray(map[name]) && map[name].length; });
+    if (!names.length) names = ['NFL','NBA','MLB','NHL','NCAAFB','NCAAB'];
+    return (config.leagues || []).filter(function (league) { return league.enabled !== false && names.indexOf(league.name) >= 0; });
+  }
+  function eventData() {
+    var byId = Object.create(null);
+    sportsEntries.forEach(function (row) {
+      if (!row.entry || !row.entry.payload) return;
+      try {
+        SportsData.events(row.league, row.entry).forEach(function (event) {
+          if (!event.favorite) return;
+          var candidate = Object.assign({leagueName:row.league.name, entry:row.entry, context:row.context}, event);
+          var previous = byId[event.id];
+          if (!previous || (candidate.context === 'today' && previous.context !== 'today') || (previous.entry.source !== 'live' && candidate.entry.source === 'live')) byId[event.id] = candidate;
+        });
+      } catch (_) {}
+    });
+    return Object.keys(byId).map(function (id) { return byId[id]; });
+  }
+  function renderSports() {
+    var now = Date.now(), events = eventData().filter(function (event) {
+      var date = safeTime(event.date); return date && !/cancel|postpon|delay/i.test(event.status || '');
+    });
+    var live = events.filter(function (event) { return event.state === 'in' || event.state === 'live'; });
+    var upcoming = events.filter(function (event) { var date = new Date(event.date).getTime(); return (event.state === 'pre' || event.state === 'scheduled' || !event.state) && date >= now; });
+    var recent = events.filter(function (event) { var date = new Date(event.date).getTime(); return (event.state === 'post' || event.state === 'final' || event.state === 'completed') && date <= now && now - date < 10 * 86400000; });
+    live.sort(function (a,b) { return new Date(a.date)-new Date(b.date); });
+    upcoming.sort(function (a,b) { return new Date(a.date)-new Date(b.date); });
+    recent.sort(function (a,b) { return new Date(b.date)-new Date(a.date); });
+    function render(list, id, kind) {
+      var target = $(id); target.replaceChildren();
+      list.slice(0, kind === 'upcoming' ? 1 : 2).forEach(function (event) {
+        var li = document.createElement('li'), line = document.createElement('div'), meta = document.createElement('span');
+        var participants = event.participants || [];
+        var names = participants.map(function (p) { return p.name || p.abbr || 'Team'; });
+        line.className = 'game-score';
+        if (event.state === 'in' || event.state === 'live' || event.state === 'post' || event.state === 'final' || event.state === 'completed') {
+          var status = {status:{type:{name:event.state === 'post' || event.state === 'final' || event.state === 'completed' ? 'STATUS_FINAL' : 'STATUS_IN_PROGRESS', state:event.state}}};
+          line.textContent = names.join(' ') + ' · ' + participants.map(function (p) { return SportsScoreDisplay.score(p.score, status); }).join('–');
+        } else line.textContent = names.join(' · ') || event.name;
+        meta.className = 'game-label';
+        var provenance = event.context === 'today' && event.entry && event.entry.source === 'live' ? 'Retrieved ' + fmtStamp(event.entry.retrievedAt || event.entry.generatedAt) : (event.context === 'schedule' ? 'Saved schedule' : 'Saved score') + ' · ' + fmtStamp(event.entry && event.entry.generatedAt);
+        meta.textContent = (event.state === 'in' || event.state === 'live' ? 'LIVE · ' : '') + fmtTime(event.date) + (event.status ? ' · ' + event.status : '') + ' · ' + provenance;
+        li.append(line, meta); target.appendChild(li);
+      });
+      if (!list.length) { var empty = document.createElement('li'); empty.className = 'muted'; empty.textContent = 'No ' + kind + ' favorite-team games are listed.'; target.appendChild(empty); }
+    }
+    render(live.concat(upcoming).sort(function (a,b) { return new Date(a.date)-new Date(b.date); }), 'upcoming-games', 'upcoming');
+    render(recent, 'recent-games', 'recent');
+    var available = sportsEntries.filter(function (row) { return row.entry && row.entry.payload; });
+    var stale = available.some(function (row) { return row.entry.status === 'stale' || row.entry.source === 'snapshot' || row.entry.source === 'cache'; });
+    $('sports-meta').textContent = 'Local game times · saved schedule and today’s scores';
+    var todayRows = sportsEntries.filter(function (row) { return row.context === 'today' && row.entry && row.entry.payload; });
+    var todayLatest = todayRows.map(function (row) { return row.entry.retrievedAt || row.entry.generatedAt; }).filter(Boolean).sort().pop();
+    var liveToday = todayRows.some(function (row) { return row.entry.source === 'live'; });
+    $('sports-status').textContent = todayRows.length ? (liveToday ? 'Today’s scores retrieved ' : 'Today’s saved scores · last retrieved ') + fmtStamp(todayLatest) + (stale ? ' · future and recent games may use saved data' : '') : available.length ? 'Saved favorite-team schedule data.' : 'Favorite-team game feeds are unavailable.';
+    $('sports-retry').hidden = available.length > 0;
+  }
+  async function loadSports() {
+    var run = ++sportsRun;
+    loading('sports-status','Loading favorite-team games…','sports-retry');
+    try {
+      sportsConfig = sportsConfig || await SportsData.config();
       if (run !== sportsRun) return;
-      var snapshot = result[0], config = result[1];
-      if (!snapshot || snapshot.version !== 1 || !snapshot.entries || typeof snapshot.entries !== 'object' || !Array.isArray(config.priority_teams) || !Array.isArray(config.leagues)) throw new Error('invalid');
-      var favoriteTokens = config.priority_teams.map(function (v) { return String(v).toLowerCase(); });
-      var scoreBase = 'https://site.api.espn.com/apis/site/v2/sports/';
-      var scoreUrls = config.leagues.filter(function (league) { return league && league.enabled === true && typeof league.espn_path === 'string'; })
-        .map(function (league) { return scoreBase + league.espn_path + '/scoreboard'; });
-      var now = Date.now(), live = [], recent = [], upcoming = [], stale = false, incomplete = scoreUrls.length === 0, stamp = null;
-      scoreUrls.forEach(function (url) {
-        var expected = snapshot.entries[url];
-        if (!expected || !expected.payload || !Array.isArray(expected.payload.events)) incomplete = true;
-      });
-      Object.keys(snapshot.entries).forEach(function (key) {
-        if (scoreUrls.indexOf(key) === -1) return;
-        var entry = snapshot.entries[key];
-        if (!entry || !entry.payload || !Array.isArray(entry.payload.events)) { incomplete = true; return; }
-        var generated = safeTime(entry.generatedAt); if (generated && (!stamp || generated > stamp)) stamp = generated;
-        var entryAge = safeTime(entry.generatedAt);
-        if (entry.status !== 'ok' || !entryAge || now - entryAge.getTime() > 30 * 60 * 1000) stale = true;
-        entry.payload.events.forEach(function (event) {
-          var competition = event && event.competitions && event.competitions[0];
-          if (!competition || !Array.isArray(competition.competitors) || !competition.status || !competition.status.type) return;
-          var teams = competition.competitors;
-          if (!teams.some(function (competitor) { return competitor && ToolUI.favoriteTeam(competitor.team, favoriteTokens); })) return;
-          var date = safeTime(competition.date || event.date); if (!date) return;
-          var state = competition.status.type.state;
-          var type = competition.status.type;
-          var typeName = String(type.name || '').toUpperCase();
-          var statusText = [type.shortDetail, type.detail, type.description, competition.status.displayClock].filter(Boolean).join(' ');
-          if (/CANCEL|POSTPON|DELAY/.test(typeName) || /\b(cancelled|canceled|postponed|delayed)\b/i.test(statusText)) return;
-          var done = state === 'post' || type.completed === true || typeName === 'STATUS_FINAL';
-          var isLive = state === 'in' || typeName === 'STATUS_IN_PROGRESS';
-          var game = {date:date, teams:teams, competition:competition, status:competition.status.type.shortDetail || competition.status.type.detail || '', done:done, live:isLive};
-          if (done && date.getTime() <= now && now - date.getTime() < 10 * 86400000) recent.push(game);
-          else if (isLive) live.push(game);
-          else if (!done && date.getTime() >= now && date.getTime() < now + 14 * 86400000) upcoming.push(game);
+      var leagues = favoriteLeagues(sportsConfig);
+      if (!leagues.length) throw new Error('No favorite leagues are configured');
+      sportsEntries = [];
+      var now = new Date(), today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+      var yesterdayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+      var yesterday = yesterdayDate.getFullYear() + '-' + String(yesterdayDate.getMonth()+1).padStart(2,'0') + '-' + String(yesterdayDate.getDate()).padStart(2,'0');
+      await Promise.all(leagues.map(async function (league) {
+        async function addSaved(kind, date) {
+          try {
+            var entry = await SportsData.saved(league, kind, {date:date});
+            if (run !== sportsRun) return;
+            if (entry && entry.payload) { sportsEntries.push({league:league,entry:entry,context:kind === 'schedule' ? 'schedule' : 'recent'}); renderSports(); }
+          } catch (_) {}
+        }
+        var savedTask = Promise.all([addSaved('schedule', today), addSaved('scores', yesterday)]);
+        var liveTask = SportsData.load(league, 'scores', {date:today, shouldContinue:function () { return run === sportsRun; }}).then(function(entry) {
+          if (run !== sportsRun) return;
+          var index = sportsEntries.findIndex(function (row) { return row.league.name === league.name && row.context === 'today'; });
+          if (index >= 0) sportsEntries[index].entry = entry; else sportsEntries.push({league:league,entry:entry,context:'today'});
+          renderSports();
+        }).catch(function() {
+          if (run !== sportsRun) return;
+          if (!sportsEntries.some(function (row) { return row.league.name === league.name; })) sportsEntries.push({league:league,entry:{status:'unavailable'}});
+          renderSports();
         });
-      });
-      function order(a,b) { return a.date - b.date; }
-      recent.sort(function (a,b) { return b.date-a.date; }); live.sort(order); upcoming.sort(order);
-      function render(list, id, kind) {
-        var target = $(id);
-        list.slice(0,3).forEach(function (game) {
-          var li = document.createElement('li'), line = document.createElement('div'), meta = document.createElement('span');
-          var names = game.teams.map(function (t) { var name = t && t.team && (t.team.shortDisplayName || t.team.displayName || t.team.abbreviation); return String(name || 'Team'); });
-          line.className = 'game-score';
-          if (game.done || game.live) {
-            var scores = game.teams.map(function (t) { return t && t.score != null ? String(t.score) : '—'; }); line.textContent = names.join(' ') + ' · ' + scores.join('–');
-          } else line.textContent = names.join(' · ');
-          meta.className = 'game-label'; meta.textContent = (game.live ? 'LIVE · ' : '') + fmtTime(game.date) + (game.status ? ' · ' + game.status : '');
-          li.append(line,meta); target.appendChild(li);
-        });
-        if (!list.length) { var li = document.createElement('li'); li.className = 'muted'; li.textContent = 'No ' + kind + ' favorite team games in this snapshot window.'; target.appendChild(li); }
-      }
-      render(live.concat(upcoming).sort(order).slice(0,1),'upcoming-games','upcoming'); render(recent,'recent-games','recent');
-      $('sports-meta').textContent = (stale ? 'Saved snapshot may be stale' : 'Snapshot') + (stamp ? ' · checked ' + fmtStamp(stamp.toISOString()) : '');
-      $('sports-status').textContent = (incomplete ? 'Some schedule entries are unavailable; saved games are shown where available. ' : '') + 'Favorite team games from the published schedule snapshot.';
-    }).catch(function () { if (run === sportsRun) errorState('sports-status','Games are unavailable right now.','sports-retry'); });
+        await Promise.all([savedTask, liveTask]);
+      }));
+    } catch (_) {
+      if (run === sportsRun) errorState('sports-status','Favorite-team games are unavailable right now.','sports-retry');
+    }
   }
   $('sports-retry').addEventListener('click', loadSports); loadSports();
 })();

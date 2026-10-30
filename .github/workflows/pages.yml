@@ -25,6 +25,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Test scheduled and live score display
         run: node tools/tests/test_score_display.js
+      - name: Test shared sports API client
+        run: node tools/tests/test_sports_data.js
       - name: Build complete curated artifact
         run: python scripts/build_public.py --output _site
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3

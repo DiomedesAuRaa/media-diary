@@ -36,11 +36,15 @@ Feed health reports and their refresh scheduler remain private Mac operations fi
 
 ## Sports data
 
-Scores fetch current scoreboards directly from ESPN's browser-accessible `site.web.api.espn.com` host when opened, with at most three requests running at once. Selected leagues and favorite games that are live or starting soon can refresh every minute while the page is visible. Retrieval times describe when the browser received data. Failed requests retain saved results or fall back to `tools/sports-snapshot.json`, with errors and original timestamps shown. No new public server or API key is required.
+All sports views use `tools/assets/sports-data.js`: scores, upcoming games, standings/rankings and favorite games on Today. ESPN remains the no-key provider because it covers the configured mix of professional, college, soccer and racing leagues. Its public site endpoints are unofficial, with no established stability guarantee; this integration does not provide an SLA.
 
-Standings, Today and schedule still read the published snapshot. The sports workflow requests a refresh every 15 minutes, but GitHub scheduling and deployment can add substantial delay. Each endpoint retains its last successful data on refresh failure. The direct ESPN routes are unofficial and can change; the snapshot remains an important fallback.
+The browser requests only the selected league or configured favorite leagues initially, through the browser-accessible `site.web.api.espn.com` host. One shared client handles at most three concurrent requests, in-flight reuse, deadlines, device caching, projection and saved snapshot fallback. Scores use explicit calendar dates. Upcoming games request each day separately because the tested date-range requests returned errors. NCAA query groups/limits are chosen from observed endpoint behavior, not assumed pagination. A completed date window means each requested date was fetched; it is not an independent guarantee of exhaustive provider coverage.
 
-The collector uses no provider credentials and keeps only the fields needed by the renderers. Sports, news, podcast, Reddit and ordinary Pages deployments share one publication queue and always build the full current site. Only Actions owns these schedules; a future Mac collector must replace that ownership rather than create a second publisher. Keep private APIs, runtime state and credentials in the private backend/deployment workspace.
+Provider event, competition and team IDs are retained. Favorite IDs are scoped by league; legacy snapshots without IDs remain supported. Each F1 competition is a distinct session, and scheduled sessions without drivers are valid. Retrieval times describe when data was received, not an invented provider update time. Failed refreshes preserve last-good provenance. No API key, subscription, new server or public access to the private diary writer is required.
+
+The scheduled collector publishes a bounded multi-day fallback and standings/rankings. GitHub requests a refresh every 15 minutes, but scheduling and publishing delays mean the snapshot is not a live feed. Browser refreshes do not wait for a Pages deployment. All publishers still build the full curated site and share the existing publication queue.
+
+Run client fixtures with `node tools/tests/test_sports_data.js` and collector fixtures with `python -m unittest discover -s tools/tests -p 'test_sports.py'`. Neither fixture suite fetches or publishes live data.
 
 ## Nokia-first presentation
 

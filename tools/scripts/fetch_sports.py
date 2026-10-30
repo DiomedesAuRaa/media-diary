@@ -6,17 +6,17 @@ import os
 import queue
 import threading
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urlencode, urljoin, urlparse, urlsplit
 from urllib.request import HTTPRedirectHandler, ProxyHandler, Request, build_opener
 
-from validate_sports import MAX_SNAPSHOT_BYTES, expected_urls, normalize_previous, validate_json_tree, validate_payload, validate_snapshot
+from validate_sports import MAX_SNAPSHOT_BYTES, _validate_scoreboard, expected_urls, normalize_previous, validate_json_tree, validate_payload, validate_snapshot
 
-MAX_WORKERS = 4
-TOTAL_FETCH_BUDGET = 45
-REQUEST_TIMEOUT = 10
+MAX_WORKERS = 6
+TOTAL_FETCH_BUDGET = 240
+REQUEST_TIMEOUT = 12
 MAX_ENTRY_BYTES = 4 * 1024 * 1024
 SCORE_BASE = "https://site.api.espn.com/apis/site/v2/sports/"
 STANDINGS_BASE = "https://site.api.espn.com/apis/v2/sports/"
@@ -28,6 +28,11 @@ def _pick(obj, keys):
     if not isinstance(obj, dict):
         return {}
     return {key: obj[key] for key in keys if key in obj}
+
+
+def _provider_id(obj):
+    value = obj.get("id") if isinstance(obj, dict) else None
+    return str(value) if isinstance(value, (str, int)) and not isinstance(value, bool) and str(value) else None
 
 
 def _project_status(status):
@@ -44,7 +49,10 @@ def _project_competitor(competitor):
     team = competitor.get("team") if isinstance(competitor, dict) else None
     athlete = competitor.get("athlete") if isinstance(competitor, dict) else None
     if isinstance(team, dict):
-        result["team"] = _pick(team, ("abbreviation", "shortDisplayName", "displayName"))
+        result["team"] = {**_pick(team, ("abbreviation", "shortDisplayName", "displayName"))}
+        team_id = _provider_id(team)
+        if team_id:
+            result["team"]["id"] = team_id
     if isinstance(athlete, dict):
         result["athlete"] = _pick(athlete, ("shortName", "displayName"))
     return result
@@ -54,6 +62,12 @@ def _project_competition(competition, event=None):
     if not isinstance(competition, dict):
         raise ValueError("ESPN event has no competition data")
     result = _pick(competition, ("date", "name", "shortName"))
+    competition_id = _provider_id(competition)
+    if competition_id:
+        result["id"] = competition_id
+    kind = competition.get("type")
+    if isinstance(kind, dict):
+        result["type"] = _pick(kind, ("abbreviation",))
     if not result.get("name") and isinstance(event, dict) and event.get("name"):
         result["name"] = event["name"]
     if not result.get("shortName") and isinstance(event, dict) and event.get("shortName"):
@@ -78,28 +92,55 @@ def _project_competition(competition, event=None):
     competitors = competition.get("competitors", [])
     if not isinstance(competitors, list):
         raise ValueError("ESPN event has invalid competitor data")
-    result["competitors"] = [_project_competitor(competitor) for competitor in competitors if isinstance(competitor, dict)]
+    if any(not isinstance(competitor, dict) for competitor in competitors):
+        raise ValueError("ESPN event has unsupported competitor data")
+    result["competitors"] = [_project_competitor(competitor) for competitor in competitors]
     return result
 
 
-def _project_scoreboard(payload):
+def _project_scoreboard(payload, racing=False):
     events = payload.get("events")
     if not isinstance(events, list):
         raise ValueError("ESPN scoreboard has no event list")
     projected = []
     for event in events:
         if not isinstance(event, dict) or not isinstance(event.get("competitions"), list) or not event["competitions"]:
-            raise ValueError("ESPN scoreboard event has no competition")
-        projected.append({
+            raise ValueError("ESPN scoreboard contains an unsupported event")
+        competitions = []
+        for item in event["competitions"]:
+            if not isinstance(item, dict):
+                raise ValueError("ESPN scoreboard contains an unsupported competition")
+            competition = _project_competition(item, event)
+            candidate = {"competitions": [competition], "status": _project_status(event.get("status"))}
+            _validate_scoreboard({"events": [candidate]}, racing=racing)
+            competitions.append(competition)
+        row = {
             **_pick(event, ("date", "name", "shortName")),
             "status": _project_status(event.get("status")),
-            "competitions": [_project_competition(item, event) for item in event["competitions"]],
-        })
+            "competitions": competitions,
+        }
+        event_id = _provider_id(event)
+        if event_id:
+            row["id"] = event_id
+        projected.append(row)
     return {"events": projected}
 
 
+def _endpoint_path(url):
+    return urlsplit(url).path
+
+
+def _canonical_url(url):
+    parsed = urlsplit(url)
+    return parsed._replace(query="", fragment="").geturl()
+
+
 def _project_team(team):
-    return _pick(team, ("abbreviation", "shortDisplayName", "displayName"))
+    result = _pick(team, ("abbreviation", "shortDisplayName", "displayName"))
+    team_id = _provider_id(team)
+    if team_id:
+        result["id"] = team_id
+    return result
 
 
 def _project_stat(stat):
@@ -153,6 +194,9 @@ def _project_rankings(payload):
                 row = _pick(rank, ("current", "previous", "recordSummary"))
                 team = rank.get("team")
                 row["team"] = _pick(team, ("location", "name", "abbreviation", "nickname")) if isinstance(team, dict) else {}
+                team_id = _provider_id(team)
+                if team_id:
+                    row["team"]["id"] = team_id
                 item["ranks"].append(row)
         projected.append(item)
     return {"rankings": projected}
@@ -160,15 +204,16 @@ def _project_rankings(payload):
 
 def project_payload(url, payload, racing_urls=()):
     validate_json_tree(payload)
-    if url.endswith("/scoreboard"):
-        projected = _project_scoreboard(payload)
-    elif url.endswith("/rankings"):
+    canonical = _canonical_url(url)
+    if _endpoint_path(url).endswith("/scoreboard"):
+        projected = _project_scoreboard(payload, racing=canonical in racing_urls)
+    elif _endpoint_path(url).endswith("/rankings"):
         projected = _project_rankings(payload)
-    elif url.endswith("/standings"):
+    elif _endpoint_path(url).endswith("/standings"):
         projected = _project_standings(payload)
     else:
         raise ValueError("Unknown ESPN endpoint type")
-    validate_payload(url, projected, racing_urls)
+    validate_payload(canonical, projected, racing_urls)
     return projected
 
 
@@ -229,6 +274,87 @@ def stamp_now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+def _scoreboard_request_url(url, requested_date):
+    path = _endpoint_path(url)
+    limit = 100
+    query = {"dates": requested_date.replace("-", "")}
+    if path.endswith("/football/college-football/scoreboard"):
+        query["groups"] = "80"  # ESPN's FBS group; the configured NCAAFB poll is FBS-only.
+    elif path.endswith("/basketball/mens-college-basketball/scoreboard"):
+        query["groups"] = "50"  # ESPN's Division I men's basketball group.
+        limit = 365  # One day can exceed a normal league scoreboard's event count.
+    query["limit"] = limit
+    return url + "?" + urlencode(query)
+
+
+def _parse_provider_datetime(value):
+    if not isinstance(value, str) or not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.utcoffset() is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def _merge_scoreboards(day_payloads, window_start, window_end):
+    """Merge overlapping day responses by ESPN IDs, then keep the requested time window."""
+    events, event_order = {}, []
+    for requested_date in sorted(day_payloads):
+        for event in day_payloads[requested_date]["events"]:
+            competitions = []
+            for competition in event["competitions"]:
+                start = _parse_provider_datetime(competition.get("date"))
+                if start is not None and window_start <= start <= window_end:
+                    competitions.append(competition)
+            if not competitions:
+                continue
+            event_id = event.get("id")
+            if event_id:
+                event_key = ("id", event_id)
+            else:
+                event_key = ("fallback", event.get("date"), event.get("name"), event.get("shortName"))
+            if event_key not in events:
+                events[event_key] = {key: value for key, value in event.items() if key != "competitions"}
+                events[event_key]["competitions"] = []
+                events[event_key]["_competition_keys"] = set()
+                event_order.append(event_key)
+            merged = events[event_key]
+            # Use the latest provider representation of event-level status/labels.
+            merged.update({key: value for key, value in event.items() if key != "competitions"})
+            for competition in competitions:
+                competition_id = competition.get("id")
+                competition_key = ("id", competition_id) if competition_id else (
+                    "fallback", competition.get("date"), competition.get("name"), competition.get("shortName"),
+                    (competition.get("type") or {}).get("abbreviation"),
+                )
+                if competition_key in merged["_competition_keys"]:
+                    index = next(i for i, item in enumerate(merged["competitions"]) if _competition_key(item) == competition_key)
+                    merged["competitions"][index] = competition
+                else:
+                    merged["_competition_keys"].add(competition_key)
+                    merged["competitions"].append(competition)
+    result = []
+    for event_key in event_order:
+        event = events[event_key]
+        event.pop("_competition_keys", None)
+        if event["competitions"]:
+            result.append(event)
+    return {"events": result}
+
+
+def _competition_key(competition):
+    competition_id = competition.get("id")
+    if competition_id:
+        return ("id", competition_id)
+    return (
+        "fallback", competition.get("date"), competition.get("name"), competition.get("shortName"),
+        (competition.get("type") or {}).get("abbreviation"),
+    )
+
+
 def refresh(config, previous=None, fetch=None, now=None, budget=TOTAL_FETCH_BUDGET):
     urls = expected_urls(config)
     prior = normalize_previous(previous, config)
@@ -240,56 +366,94 @@ def refresh(config, previous=None, fetch=None, now=None, budget=TOTAL_FETCH_BUDG
         SCORE_BASE + league["espn_path"] + "/scoreboard"
         for league in config["leagues"] if league["enabled"] and league.get("scores_type") == "racing"
     }
+    current_time = datetime.fromisoformat(stamp.replace("Z", "+00:00")).astimezone(timezone.utc)
+    query_start = current_time.date() - timedelta(days=1)
+    query_end = current_time.date() + timedelta(days=7)
+    query_dates = [(query_start + timedelta(days=index)).isoformat() for index in range((query_end - query_start).days + 1)]
+    window_start = current_time
+    window_end = current_time + timedelta(days=7)
+    scoreboard_urls = {url for url in urls if _endpoint_path(url).endswith("/scoreboard")}
     deadline = time.monotonic() + budget
     work, completed = queue.Queue(), queue.Queue()
     for url in urls:
-        work.put(url)
+        if url in scoreboard_urls:
+            for requested_date in query_dates:
+                work.put((url, requested_date))
+        else:
+            work.put((url, None))
+    task_count = work.qsize()
 
     def worker():
         while time.monotonic() < deadline:
             try:
-                url = work.get_nowait()
+                url, requested_date = work.get_nowait()
             except queue.Empty:
                 return
             try:
-                projected = project_payload(url, fetcher(url), racing_urls)
-                completed.put((url, validate_payload(url, projected, racing_urls), None))
+                request_url = _scoreboard_request_url(url, requested_date) if requested_date else url
+                projected = project_payload(request_url, fetcher(request_url), racing_urls)
+                completed.put((url, requested_date, validate_payload(url, projected, racing_urls), None))
             except Exception as exc:
-                completed.put((url, None, exc))
+                completed.put((url, requested_date, None, exc))
             finally:
                 work.task_done()
 
     for _ in range(min(MAX_WORKERS, len(urls))):
         threading.Thread(target=worker, daemon=True).start()
 
-    entries = {}
+    scoreboard_results = {url: {} for url in scoreboard_urls}
+    scoreboard_errors = {url: set() for url in scoreboard_urls}
+    single_results = {}
     received = 0
-    while received < len(urls) and time.monotonic() < deadline:
+    while received < task_count and time.monotonic() < deadline:
         try:
-            url, payload, error = completed.get(timeout=max(0.01, deadline - time.monotonic()))
+            url, requested_date, payload, error = completed.get(timeout=max(0.01, deadline - time.monotonic()))
         except queue.Empty:
             break
         received += 1
-        if error is None:
-            entries[url] = {"payload": payload, "generatedAt": stamp, "lastAttemptAt": stamp, "status": "ok"}
-        else:
-            old = prior.get(url)
-            entries[url] = {
-                "payload": old["payload"] if old else None,
-                "generatedAt": old["generatedAt"] if old else None,
-                "lastAttemptAt": stamp,
-                "status": "stale" if old and old["payload"] is not None else "unavailable",
-            }
-    for url in urls:
-        if url not in entries:
-            old = prior.get(url)
-            entries[url] = {
-                "payload": old["payload"] if old else None,
-                "generatedAt": old["generatedAt"] if old else None,
-                "lastAttemptAt": stamp,
-                "status": "stale" if old and old["payload"] is not None else "unavailable",
-            }
+        if url in scoreboard_urls:
+            if error is None:
+                scoreboard_results[url][requested_date] = payload
+            else:
+                scoreboard_errors[url].add(requested_date)
+        elif error is None:
+            single_results[url] = payload
 
+    entries = {}
+    # ESPN has no trustworthy total-page count here; complete means every
+    # requested calendar-day query succeeded, not that the provider guarantees
+    # its returned event list is exhaustive.
+    coverage = {"start": query_start.isoformat(), "end": query_end.isoformat(), "dates": query_dates, "complete": True}
+    for url in urls:
+        old = prior.get(url)
+        if url in scoreboard_urls:
+            successful_dates = sorted(scoreboard_results[url])
+            complete = successful_dates == query_dates and not scoreboard_errors[url]
+            if complete:
+                payload = _merge_scoreboards(scoreboard_results[url], window_start, window_end)
+                entries[url] = {"payload": validate_payload(url, payload, racing_urls), "generatedAt": stamp, "lastAttemptAt": stamp, "status": "ok", "coverage": coverage}
+            else:
+                entry = {
+                    "payload": old["payload"] if old else None,
+                    "generatedAt": old["generatedAt"] if old else None,
+                    "lastAttemptAt": stamp,
+                    "status": "stale" if old and old["payload"] is not None else "unavailable",
+                }
+                if old and old["payload"] is not None:
+                    if old.get("coverage") is not None:
+                        entry["coverage"] = old["coverage"]
+                else:
+                    entry["coverage"] = {"start": query_start.isoformat(), "end": query_end.isoformat(), "dates": successful_dates, "complete": False}
+                entries[url] = entry
+        elif url in single_results:
+            entries[url] = {"payload": single_results[url], "generatedAt": stamp, "lastAttemptAt": stamp, "status": "ok"}
+        else:
+            entries[url] = {
+                "payload": old["payload"] if old else None,
+                "generatedAt": old["generatedAt"] if old else None,
+                "lastAttemptAt": stamp,
+                "status": "stale" if old and old["payload"] is not None else "unavailable",
+            }
     entries = {url: entries[url] for url in urls}
     return {"version": 1, "lastAttemptAt": stamp, "entries": entries}
 

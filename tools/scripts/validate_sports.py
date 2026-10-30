@@ -4,7 +4,7 @@ import argparse
 import json
 import math
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -35,7 +35,7 @@ def timestamp(value, optional=False):
 
 
 def validate_config(config):
-    if not isinstance(config, dict) or set(config) != {"priority_teams", "leagues"}:
+    if not isinstance(config, dict) or set(config) - {"priority_teams", "leagues", "favorite_team_ids"} or not {"priority_teams", "leagues"} <= set(config):
         raise ValueError("Invalid sports configuration")
     priorities, leagues = config["priority_teams"], config["leagues"]
     if not isinstance(priorities, list) or any(not isinstance(x, str) or not x or len(x) > 100 for x in priorities):
@@ -62,6 +62,17 @@ def validate_config(config):
             raise ValueError("Invalid standings type")
         if league.get("scores_type", "default") not in {"default", "racing"}:
             raise ValueError("Invalid scores type")
+    favorite_ids = config.get("favorite_team_ids", {})
+    if not isinstance(favorite_ids, dict):
+        raise ValueError("Invalid favorite team IDs")
+    league_names = {league["name"] for league in leagues}
+    for name, ids in favorite_ids.items():
+        if name not in league_names or not isinstance(ids, list) or not ids or len(ids) > 30:
+            raise ValueError("Invalid favorite team ID mapping")
+        if any(not isinstance(team_id, str) or not re.fullmatch(r"[0-9]{1,12}", team_id) for team_id in ids):
+            raise ValueError("Invalid favorite team ID")
+        if len(ids) != len(set(ids)):
+            raise ValueError("Duplicate favorite team ID")
 
 
 def expected_urls(config):
@@ -163,12 +174,20 @@ def _validate_scoreboard(payload, racing=False):
     if not isinstance(events, list) or len(events) > MAX_EVENTS:
         raise ValueError("Invalid ESPN event list")
     for event in events:
-        _has_fields(event, {"date", "name", "shortName", "status", "competitions"}, {"competitions"})
+        _has_fields(event, {"id", "date", "name", "shortName", "status", "competitions"}, {"competitions"})
+        if "id" in event and (not isinstance(event["id"], str) or not event["id"] or len(event["id"]) > 100):
+            raise ValueError("Invalid ESPN event ID")
         _validate_status(event.get("status"))
         if not isinstance(event["competitions"], list) or not 1 <= len(event["competitions"]) <= 20:
             raise ValueError("Invalid ESPN competitions")
         for competition in event["competitions"]:
-            _has_fields(competition, {"date", "name", "shortName", "status", "links", "competitors", "broadcasts"}, {"date", "status", "competitors"})
+            _has_fields(competition, {"id", "date", "name", "shortName", "type", "status", "links", "competitors", "broadcasts"}, {"date", "status", "competitors"})
+            if "id" in competition and (not isinstance(competition["id"], str) or not competition["id"] or len(competition["id"]) > 100):
+                raise ValueError("Invalid ESPN competition ID")
+            if "type" in competition:
+                _has_fields(competition["type"], {"abbreviation"})
+                if "abbreviation" in competition["type"] and (not isinstance(competition["type"]["abbreviation"], str) or len(competition["type"]["abbreviation"]) > 50):
+                    raise ValueError("Invalid ESPN competition type")
             if not isinstance(competition["date"], str) or not competition["date"]:
                 raise ValueError("Competition date is required")
             _validate_status(competition.get("status"), required=True)
@@ -185,13 +204,17 @@ def _validate_scoreboard(payload, racing=False):
             competitors = competition["competitors"]
             if not isinstance(competitors, list) or len(competitors) > 100:
                 raise ValueError("Invalid ESPN competitors")
+            if racing and not competitors and competition["status"]["type"].get("state") != "pre":
+                raise ValueError("Empty F1 competitors are valid only for a scheduled session")
             sides = set()
             for competitor in competitors:
                 _has_fields(competitor, {"homeAway", "winner", "score", "order", "displayClock", "team", "athlete"})
                 if competitor.get("homeAway") in {"home", "away"}:
                     sides.add(competitor["homeAway"])
                 if competitor.get("team") is not None:
-                    _has_fields(competitor["team"], {"abbreviation", "shortDisplayName", "displayName"})
+                    _has_fields(competitor["team"], {"id", "abbreviation", "shortDisplayName", "displayName"})
+                    if "id" in competitor["team"] and (not isinstance(competitor["team"]["id"], str) or not competitor["team"]["id"] or len(competitor["team"]["id"]) > 100):
+                        raise ValueError("Invalid ESPN team ID")
                     if not (competitor["team"].get("abbreviation") or competitor["team"].get("shortDisplayName")):
                         raise ValueError("Team scoreboard competitor has no display name")
                 if competitor.get("athlete") is not None:
@@ -218,7 +241,9 @@ def _validate_standings_group(group, depth=0):
             raise ValueError("Invalid standings entries")
         for entry in standings["entries"]:
             _has_fields(entry, {"team", "stats"}, {"team", "stats"})
-            _has_fields(entry["team"], {"abbreviation", "shortDisplayName", "displayName"})
+            _has_fields(entry["team"], {"id", "abbreviation", "shortDisplayName", "displayName"})
+            if "id" in entry["team"] and (not isinstance(entry["team"]["id"], str) or not entry["team"]["id"] or len(entry["team"]["id"]) > 100):
+                raise ValueError("Invalid ESPN team ID")
             if not isinstance(entry["stats"], list) or len(entry["stats"]) > 100:
                 raise ValueError("Invalid standings stats")
             for stat in entry["stats"]:
@@ -251,7 +276,9 @@ def _validate_rankings(payload):
             raise ValueError("Invalid ranking rows")
         for rank in ranking["ranks"]:
             _has_fields(rank, {"current", "previous", "recordSummary", "team"}, {"team"})
-            _has_fields(rank["team"], {"location", "name", "abbreviation", "nickname"})
+            _has_fields(rank["team"], {"id", "location", "name", "abbreviation", "nickname"})
+            if "id" in rank["team"] and (not isinstance(rank["team"]["id"], str) or not rank["team"]["id"] or len(rank["team"]["id"]) > 100):
+                raise ValueError("Invalid ESPN team ID")
 
 
 def validate_payload(url, payload, racing_urls=()):
@@ -275,8 +302,39 @@ def validate_entry(url, row, racing=False):
         raise ValueError("Invalid ESPN endpoint port") from exc
     if parsed.scheme != "https" or parsed.hostname != "site.api.espn.com" or parsed.username or parsed.password or port not in (None, 443):
         raise ValueError("Unsafe ESPN endpoint")
-    if not isinstance(row, dict) or set(row) != {"payload", "generatedAt", "lastAttemptAt", "status"} or row["status"] not in STATUSES:
+    if not isinstance(row, dict) or set(row) - {"payload", "generatedAt", "lastAttemptAt", "status", "coverage"} or not {"payload", "generatedAt", "lastAttemptAt", "status"} <= set(row) or row["status"] not in STATUSES:
         raise ValueError("Invalid sports entry fields")
+    if "coverage" in row:
+        if not url.endswith("/scoreboard"):
+            raise ValueError("Only scoreboard entries may include coverage")
+        coverage = row["coverage"]
+        if not isinstance(coverage, dict) or set(coverage) != {"start", "end", "dates", "complete"}:
+            raise ValueError("Invalid scoreboard coverage")
+        if not isinstance(coverage["start"], str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", coverage["start"]):
+            raise ValueError("Invalid scoreboard coverage start")
+        if not isinstance(coverage["end"], str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", coverage["end"]):
+            raise ValueError("Invalid scoreboard coverage end")
+        if not isinstance(coverage["dates"], list) or any(not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value) for value in coverage["dates"]):
+            raise ValueError("Invalid scoreboard coverage dates")
+        try:
+            start = datetime.fromisoformat(coverage["start"])
+            end = datetime.fromisoformat(coverage["end"])
+            listed = [datetime.fromisoformat(value) for value in coverage["dates"]]
+        except (TypeError, ValueError) as exc:
+            raise ValueError("Invalid scoreboard coverage dates") from exc
+        if (start.tzinfo is not None or end.tzinfo is not None or start > end
+                or not isinstance(coverage["dates"], list) or len(listed) > 400
+                or any(value.tzinfo is not None for value in listed)
+                or len(set(coverage["dates"])) != len(coverage["dates"])
+                or any(value < start or value > end for value in listed)
+                or coverage["dates"] != sorted(coverage["dates"])
+                or type(coverage["complete"]) is not bool):
+            raise ValueError("Invalid scoreboard coverage window")
+        expected_dates = [(start + timedelta(days=offset)).date().isoformat() for offset in range((end - start).days + 1)]
+        if coverage["complete"] != (coverage["dates"] == expected_dates):
+            raise ValueError("Coverage completion does not match queried dates")
+        if (row["status"] == "ok" and not coverage["complete"]) or (row["status"] == "unavailable" and coverage["complete"]):
+            raise ValueError("Scoreboard status does not match coverage")
     timestamp(row["generatedAt"], optional=True)
     timestamp(row["lastAttemptAt"])
     if row["status"] == "unavailable":

@@ -10,6 +10,14 @@
       "Michigan",
       "Wolverines"
     ],
+  "favorite_team_ids": {
+    "NFL": ["8"],
+    "NBA": ["8"],
+    "MLB": ["6"],
+    "NHL": ["5"],
+    "NCAAFB": ["130"],
+    "NCAAB": ["130"]
+  },
     "leagues": [
       {
         "name": "NFL",
