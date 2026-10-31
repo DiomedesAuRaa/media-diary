@@ -34,7 +34,7 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "stale"
   },
   {
@@ -71,8 +71,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT9200094173.mp3"
       }
     ],
-    "generatedAt": "2026-10-31T00:56:58+00:00",
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "generatedAt": "2026-10-31T06:46:30+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -109,8 +109,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT3992023792.mp3"
       }
     ],
-    "generatedAt": "2026-10-31T00:56:58+00:00",
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "generatedAt": "2026-10-31T06:46:30+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -147,8 +147,8 @@
         "audioUrl": "https://www.podtrac.com/pts/redirect.mp3/pdst.fm/e/traffic.megaphone.fm/FOXM8324723450.mp3"
       }
     ],
-    "generatedAt": "2026-10-31T00:56:58+00:00",
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "generatedAt": "2026-10-31T06:46:30+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -185,8 +185,8 @@
         "audioUrl": "https://mgln.ai/e/617/pscrb.fm/rss/p/traffic.megaphone.fm/LEW3627198715.mp3"
       }
     ],
-    "generatedAt": "2026-10-31T00:56:58+00:00",
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "generatedAt": "2026-10-31T06:46:30+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -223,8 +223,8 @@
         "audioUrl": "http://feeds.thevillagechurch.net/link/13086/17476753/cbb1240fa7f94d68a9179e397e1dd9dc_20260927_MK_BLJ_Wk3.mp3"
       }
     ],
-    "generatedAt": "2026-10-31T00:56:58+00:00",
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "generatedAt": "2026-10-31T06:46:30+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -261,8 +261,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT9188516880.mp3"
       }
     ],
-    "generatedAt": "2026-10-31T00:56:58+00:00",
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "generatedAt": "2026-10-31T06:46:30+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -299,8 +299,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT2549937012.mp3"
       }
     ],
-    "generatedAt": "2026-10-31T00:56:58+00:00",
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "generatedAt": "2026-10-31T06:46:30+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -338,12 +338,18 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "stale"
   },
   {
     "name": "P1 with Matt and Tommy",
     "episodes": [
+      {
+        "title": "Reaction to Mexico GP practice",
+        "date": "Oct 31, 2026",
+        "dateSort": "2026-10-31",
+        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6ae544f2cb3dbb0f31fc88b5/media.mp3"
+      },
       {
         "title": "Our 2026 Mexico GP predictions",
         "date": "Oct 29, 2026",
@@ -367,16 +373,10 @@
         "date": "Oct 24, 2026",
         "dateSort": "2026-10-24",
         "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6add3dd5734488c5d5328f6d/media.mp3"
-      },
-      {
-        "title": "Reaction to United States GP practice",
-        "date": "Oct 23, 2026",
-        "dateSort": "2026-10-23",
-        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6adbe1b31bad63ae4a83a80b/media.mp3"
       }
     ],
-    "generatedAt": "2026-10-31T00:56:58+00:00",
-    "lastAttemptAt": "2026-10-31T00:56:58+00:00",
+    "generatedAt": "2026-10-31T06:46:30+00:00",
+    "lastAttemptAt": "2026-10-31T06:46:30+00:00",
     "fetchStatus": "ok"
   }
 ]
