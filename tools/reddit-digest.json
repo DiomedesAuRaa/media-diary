@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-01T23:10:34+00:00",
-  "generated_at": "2026-11-01 23:10:34 UTC",
+  "timestamp": "2026-11-02T17:30:15+00:00",
+  "generated_at": "2026-11-02 17:30:15 UTC",
   "subreddits_count": 12,
   "total_posts": 146,
   "feeds": [
@@ -12,10 +12,22 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "nfl": [
+    "BillSimmons": [
+      "Best of 24h",
       "Best of Week",
-      "Hot",
-      "Best of Hour"
+      "Hot"
+    ],
+    "cfb": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "nfl": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
     ],
     "nba": [
       "Best of Hour",
@@ -66,18 +78,6 @@
       "Hot"
     ],
     "movies": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "BillSimmons": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "cfb": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -385,6 +385,7 @@
       ]
     },
     "nfl": {
+      "Best of Hour": [],
       "Best of 24h": [
         {
           "title": "[Highlight] Bucs get the win with 0 pass completions, Tampa is the first team to win a game with no completed passes since the Bills on Sept. 29, 1974",
@@ -559,8 +560,7 @@
           "metadata_source": "rss"
         }
       ],
-      "Hot": [],
-      "Best of Hour": []
+      "Hot": []
     },
     "nba": {
       "Best of Hour": [
@@ -2331,16 +2331,16 @@
     "BillSimmons": {
       "Best of Hour": [
         {
-          "title": "What horror movie would you want to see on the Rewatchables?",
-          "author": "Guy_montag47",
+          "title": "[Highlight] Victor Wembanyama: Everything is a choice. You can choose to be an influencer, a philanthropist, or to promote gambling and alcohol off the court",
+          "author": "Busy-Operation7896",
           "score": 0,
-          "url": "https://www.reddit.com/r/billsimmons/comments/1x5bgj2/what_horror_movie_would_you_want_to_see_on_the/",
+          "url": "https://www.reddit.com/r/billsimmons/comments/1xm1xkr/highlight_victor_wembanyama_everything_is_a/",
           "selftext": "",
-          "created_utc": 1791932498,
+          "created_utc": 1793637092,
           "num_comments": 0,
-          "id": "1x5bgj2",
+          "id": "1xm1xkr",
           "subreddit": "BillSimmons",
-          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x5bgj2/what_horror_movie_would_you_want_to_see_on_the/",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1xm1xkr/highlight_victor_wembanyama_everything_is_a/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2348,16 +2348,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Bill vs Sal - who do you want in your parent corner?",
-          "author": "NovelContent4208",
+          "title": "Biggest statistical collapses from players in the prime of their career (can't be injury related)?",
+          "author": "TJTrapJesus",
           "score": 0,
-          "url": "https://www.reddit.com/r/billsimmons/comments/1x5c0ky/bill_vs_sal_who_do_you_want_in_your_parent_corner/",
+          "url": "https://www.reddit.com/r/billsimmons/comments/1xm2ezr/biggest_statistical_collapses_from_players_in_the/",
           "selftext": "",
-          "created_utc": 1791934013,
+          "created_utc": 1793638160,
           "num_comments": 0,
-          "id": "1x5c0ky",
+          "id": "1xm2ezr",
           "subreddit": "BillSimmons",
-          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x5c0ky/bill_vs_sal_who_do_you_want_in_your_parent_corner/",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1xm2ezr/biggest_statistical_collapses_from_players_in_the/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2365,16 +2365,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Rahssillo",
-          "author": "Additional-Tip-952",
+          "title": "Did Bill say he felt vindicated on taking the Vikings under?",
+          "author": "mpschettig",
           "score": 0,
-          "url": "https://www.reddit.com/r/billsimmons/comments/1x5c14j/rahssillo/",
+          "url": "https://www.reddit.com/r/billsimmons/comments/1xm33ef/did_bill_say_he_felt_vindicated_on_taking_the/",
           "selftext": "",
-          "created_utc": 1791934058,
+          "created_utc": 1793639623,
           "num_comments": 0,
-          "id": "1x5c14j",
+          "id": "1xm33ef",
           "subreddit": "BillSimmons",
-          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x5c14j/rahssillo/",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1xm33ef/did_bill_say_he_felt_vindicated_on_taking_the/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2382,16 +2382,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Remove stats/online banter/media narratives/players legacies. What is your favorite sport to watch. If you didn't know anything about any team or player would league(s) would you like the most?",
-          "author": "TomBradyisaphony",
+          "title": "It happened this weekend",
+          "author": "BigBadBootyDaddy10",
           "score": 0,
-          "url": "https://www.reddit.com/r/billsimmons/comments/1x5baee/remove_statsonline_bantermedia_narrativesplayers/",
+          "url": "https://www.reddit.com/r/billsimmons/comments/1xm2w66/it_happened_this_weekend/",
           "selftext": "",
-          "created_utc": 1791932045,
+          "created_utc": 1793639195,
           "num_comments": 0,
-          "id": "1x5baee",
+          "id": "1xm2w66",
           "subreddit": "BillSimmons",
-          "link_url": "https://www.reddit.com/r/billsimmons/comments/1x5baee/remove_statsonline_bantermedia_narrativesplayers/",
+          "link_url": "https://www.reddit.com/r/billsimmons/comments/1xm2w66/it_happened_this_weekend/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2663,56 +2663,57 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-01T23:10:34+00:00",
+  "last_attempt_at": "2026-11-02T17:30:15+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-23T12:53:56+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T22:53:16+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
     "nfl": {
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
+        "reason": "rate_limited"
+      },
       "Best of 24h": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00"
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
+        "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Hour": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2720,25 +2721,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2746,25 +2747,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-01T14:34:06+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2772,25 +2773,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2798,25 +2799,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2824,25 +2825,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2850,25 +2851,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-18T12:12:57+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2876,25 +2877,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2902,25 +2903,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-17T11:47:37+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2928,51 +2929,50 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     },
     "BillSimmons": {
       "Best of Hour": {
-        "status": "stale",
-        "generated_at": "2026-10-13T23:28:23+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
-        "reason": "rate_limited"
+        "status": "ok",
+        "generated_at": "2026-11-02T17:30:15+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-01T23:10:34+00:00",
+        "last_attempt_at": "2026-11-02T17:30:15+00:00",
         "reason": "rate_limited"
       }
     }
