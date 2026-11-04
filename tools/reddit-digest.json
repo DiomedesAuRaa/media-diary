@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-03T15:30:55+00:00",
-  "generated_at": "2026-11-03 15:30:55 UTC",
+  "timestamp": "2026-11-04T00:14:05+00:00",
+  "generated_at": "2026-11-04 00:14:05 UTC",
   "subreddits_count": 12,
   "total_posts": 147,
   "feeds": [
@@ -12,7 +12,43 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
+    "movies": [
+      "Hot",
+      "Best of Hour",
+      "Best of 24h"
+    ],
+    "BillSimmons": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "cfb": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "nfl": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "nba": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "baseball": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
     "CoDCompetitive": [
+      "Best of Hour",
       "Best of 24h",
       "Best of Week",
       "Hot"
@@ -46,41 +82,6 @@
       "Best of 24h",
       "Best of Week",
       "Hot"
-    ],
-    "movies": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "BillSimmons": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "cfb": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "nfl": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "nba": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "baseball": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week"
     ]
   },
   "data": {
@@ -826,93 +827,6 @@
       ]
     },
     "baseball": {
-      "Hot": [
-        {
-          "title": "[General Discussion] Around the Horn & Game Thread Index - 11/3/26",
-          "author": "DodgerBot",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xmojcc/general_discussion_around_the_horn_game_thread/",
-          "selftext": "",
-          "created_utc": 1793698207,
-          "num_comments": 0,
-          "id": "1xmojcc",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xmojcc/general_discussion_around_the_horn_game_thread/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "I'm Anthony Castrovince, senior writer for MLB.com. I’ll be covering the offseason, including the ongoing CBA negotiations. AMA at 2pm ET!",
-          "author": "Anthony_Castrovince",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xm3nhl/im_anthony_castrovince_senior_writer_for_mlbcom/",
-          "selftext": "",
-          "created_utc": 1793640786,
-          "num_comments": 0,
-          "id": "1xm3nhl",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xm3nhl/im_anthony_castrovince_senior_writer_for_mlbcom/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Matt Carpenter] Teaching from experience. Unfortunately. 😂⚾️",
-          "author": "malliabu",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xms8y9/matt_carpenter_teaching_from_experience/",
-          "selftext": "",
-          "created_utc": 1793710639,
-          "num_comments": 0,
-          "id": "1xms8y9",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xms8y9/matt_carpenter_teaching_from_experience/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "At his current pace, Giancarlo Stanton will pass Rickey Henderson as the all time stolen base leader sometime in the 3360 Season.",
-          "author": "JonMatrix",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xmkehr/at_his_current_pace_giancarlo_stanton_will_pass/",
-          "selftext": "",
-          "created_utc": 1793683074,
-          "num_comments": 0,
-          "id": "1xmkehr",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xmkehr/at_his_current_pace_giancarlo_stanton_will_pass/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Kid Names EVERY WORLD SERIES WINNER For a 100% on the Midterm",
-          "author": "habichuelacondulce",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xm7v2k/kid_names_every_world_series_winner_for_a_100_on/",
-          "selftext": "",
-          "created_utc": 1793649823,
-          "num_comments": 0,
-          "id": "1xm7v2k",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xm7v2k/kid_names_every_world_series_winner_for_a_100_on/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of Hour": [],
       "Best of 24h": [],
       "Best of Week": [
@@ -995,6 +909,93 @@
           "id": "1wzpkrt",
           "subreddit": "baseball",
           "link_url": "https://www.reddit.com/r/baseball/comments/1wzpkrt/manny_machado_was_shocked_to_see_justin_verlander/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Hot": [
+        {
+          "title": "[General Discussion] Around the Horn & Game Thread Index - 11/3/26",
+          "author": "DodgerBot",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xmojcc/general_discussion_around_the_horn_game_thread/",
+          "selftext": "",
+          "created_utc": 1793698207,
+          "num_comments": 0,
+          "id": "1xmojcc",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xmojcc/general_discussion_around_the_horn_game_thread/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "I'm Anthony Castrovince, senior writer for MLB.com. I’ll be covering the offseason, including the ongoing CBA negotiations. AMA at 2pm ET!",
+          "author": "Anthony_Castrovince",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xm3nhl/im_anthony_castrovince_senior_writer_for_mlbcom/",
+          "selftext": "",
+          "created_utc": 1793640786,
+          "num_comments": 0,
+          "id": "1xm3nhl",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xm3nhl/im_anthony_castrovince_senior_writer_for_mlbcom/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Matt Carpenter] Teaching from experience. Unfortunately. 😂⚾️",
+          "author": "malliabu",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xms8y9/matt_carpenter_teaching_from_experience/",
+          "selftext": "",
+          "created_utc": 1793710639,
+          "num_comments": 0,
+          "id": "1xms8y9",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xms8y9/matt_carpenter_teaching_from_experience/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "At his current pace, Giancarlo Stanton will pass Rickey Henderson as the all time stolen base leader sometime in the 3360 Season.",
+          "author": "JonMatrix",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xmkehr/at_his_current_pace_giancarlo_stanton_will_pass/",
+          "selftext": "",
+          "created_utc": 1793683074,
+          "num_comments": 0,
+          "id": "1xmkehr",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xmkehr/at_his_current_pace_giancarlo_stanton_will_pass/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Kid Names EVERY WORLD SERIES WINNER For a 100% on the Midterm",
+          "author": "habichuelacondulce",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xm7v2k/kid_names_every_world_series_winner_for_a_100_on/",
+          "selftext": "",
+          "created_utc": 1793649823,
+          "num_comments": 0,
+          "id": "1xm7v2k",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xm7v2k/kid_names_every_world_series_winner_for_a_100_on/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2086,101 +2087,18 @@
       ]
     },
     "movies": {
-      "Best of Hour": [],
-      "Best of 24h": [
-        {
-          "title": "Guillermo del Toro Says Over 1,300 Human Artists Turned 'Pan's Labyrinth' into a Brand New 3D Theatrical Experience",
-          "author": "MarvelsGrantMan136",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0s1xb/guillermo_del_toro_says_over_1300_human_artists/",
-          "selftext": "",
-          "created_utc": 1791468897,
-          "num_comments": 0,
-          "id": "1x0s1xb",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0s1xb/guillermo_del_toro_says_over_1300_human_artists/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "Nana Patekar, Indian Star of ‘Parinda’ and ‘Krantiveer,’ Dies at 75",
-          "author": "Fearless-Song9148",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0hoq8/nana_patekar_indian_star_of_parinda_and/",
-          "selftext": "",
-          "created_utc": 1791433816,
-          "num_comments": 0,
-          "id": "1x0hoq8",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0hoq8/nana_patekar_indian_star_of_parinda_and/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "'Cyberpunk 2077' Movie In The Works At Paramount",
-          "author": "ChiefLeef22",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
-          "selftext": "",
-          "created_utc": 1791482464,
-          "num_comments": 0,
-          "id": "1x0xy17",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "David Zaslav Gets $606 Million Payout From Paramount-Warner Bros. Merger",
-          "author": "MarvelsGrantMan136",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
-          "selftext": "",
-          "created_utc": 1791493507,
-          "num_comments": 0,
-          "id": "1x12s13",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "Ben Affleck and Matt Damon’s Artists Equity Launches New Indie Banner: Artists Equity Independent Pictures",
-          "author": "Galt1776-Part2",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0i5fv/ben_affleck_and_matt_damons_artists_equity/",
-          "selftext": "",
-          "created_utc": 1791435403,
-          "num_comments": 0,
-          "id": "1x0i5fv",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0i5fv/ben_affleck_and_matt_damons_artists_equity/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        }
-      ],
       "Best of Week": [
         {
-          "title": "Hi reddit!!! I'm James McAvoy. Ask me anything!",
-          "author": "JamesMcAvoyAMA",
+          "title": "Sir Patrick Stewart dead at 86.",
+          "author": "Minifig81",
           "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x1iu5u/hi_reddit_im_james_mcavoy_ask_me_anything/",
+          "url": "https://www.reddit.com/r/movies/comments/1xitw9q/sir_patrick_stewart_dead_at_86/",
           "selftext": "",
-          "created_utc": 1791545147,
+          "created_utc": 1793302717,
           "num_comments": 0,
-          "id": "1x1iu5u",
+          "id": "1xitw9q",
           "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x1iu5u/hi_reddit_im_james_mcavoy_ask_me_anything/",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xitw9q/sir_patrick_stewart_dead_at_86/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2188,16 +2106,50 @@
           "metadata_source": "rss"
         },
         {
-          "title": "New Poster for 'You Can See Everything'",
+          "title": "Hello my friends on reddit. I'm Ron Livingston. AMA!",
+          "author": "RonLivingstonAMA",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1xiire2/hello_my_friends_on_reddit_im_ron_livingston_ama/",
+          "selftext": "",
+          "created_utc": 1793277329,
+          "num_comments": 0,
+          "id": "1xiire2",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xiire2/hello_my_friends_on_reddit_im_ron_livingston_ama/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "My generation is incapable of watching movies.",
+          "author": "sam_da_man_07",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1xlsgfy/my_generation_is_incapable_of_watching_movies/",
+          "selftext": "",
+          "created_utc": 1793610722,
+          "num_comments": 0,
+          "id": "1xlsgfy",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xlsgfy/my_generation_is_incapable_of_watching_movies/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Disney Plans Thousands of Layoffs, Targeting 20% Cost Savings",
           "author": "MarvelsGrantMan136",
           "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1wzvwsv/new_poster_for_you_can_see_everything/",
+          "url": "https://www.reddit.com/r/movies/comments/1xmg4a0/disney_plans_thousands_of_layoffs_targeting_20/",
           "selftext": "",
-          "created_utc": 1791378044,
+          "created_utc": 1793670367,
           "num_comments": 0,
-          "id": "1wzvwsv",
+          "id": "1xmg4a0",
           "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1wzvwsv/new_poster_for_you_can_see_everything/",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xmg4a0/disney_plans_thousands_of_layoffs_targeting_20/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2205,50 +2157,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "‘The Batman Part II’ Production Paused As Matt Reeves Steps Away For Personal Reasons",
+          "title": "Michael Mann Accidentally Shoots Himself in the Leg at Firing Range",
           "author": "MarvelsGrantMan136",
           "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1wydx3h/the_batman_part_ii_production_paused_as_matt/",
+          "url": "https://www.reddit.com/r/movies/comments/1xl3p3f/michael_mann_accidentally_shoots_himself_in_the/",
           "selftext": "",
-          "created_utc": 1791219653,
+          "created_utc": 1793541422,
           "num_comments": 0,
-          "id": "1wydx3h",
+          "id": "1xl3p3f",
           "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1wydx3h/the_batman_part_ii_production_paused_as_matt/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Charles Dance Turns 80: The Commanding Actor Began His Film Career as a James Bond Henchman",
-          "author": "Glassbox315",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x2dvj2/charles_dance_turns_80_the_commanding_actor_began/",
-          "selftext": "",
-          "created_utc": 1791634565,
-          "num_comments": 0,
-          "id": "1x2dvj2",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x2dvj2/charles_dance_turns_80_the_commanding_actor_began/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "David Zaslav Gets $606 Million Payout From Paramount-Warner Bros. Merger",
-          "author": "MarvelsGrantMan136",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
-          "selftext": "",
-          "created_utc": 1791493507,
-          "num_comments": 0,
-          "id": "1x12s13",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xl3p3f/michael_mann_accidentally_shoots_himself_in_the/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2341,6 +2259,89 @@
           "flair": "",
           "comments": [],
           "metadata_source": "rss"
+        }
+      ],
+      "Best of Hour": [],
+      "Best of 24h": [
+        {
+          "title": "Guillermo del Toro Says Over 1,300 Human Artists Turned 'Pan's Labyrinth' into a Brand New 3D Theatrical Experience",
+          "author": "MarvelsGrantMan136",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0s1xb/guillermo_del_toro_says_over_1300_human_artists/",
+          "selftext": "",
+          "created_utc": 1791468897,
+          "num_comments": 0,
+          "id": "1x0s1xb",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0s1xb/guillermo_del_toro_says_over_1300_human_artists/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Nana Patekar, Indian Star of ‘Parinda’ and ‘Krantiveer,’ Dies at 75",
+          "author": "Fearless-Song9148",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0hoq8/nana_patekar_indian_star_of_parinda_and/",
+          "selftext": "",
+          "created_utc": 1791433816,
+          "num_comments": 0,
+          "id": "1x0hoq8",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0hoq8/nana_patekar_indian_star_of_parinda_and/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "'Cyberpunk 2077' Movie In The Works At Paramount",
+          "author": "ChiefLeef22",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
+          "selftext": "",
+          "created_utc": 1791482464,
+          "num_comments": 0,
+          "id": "1x0xy17",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "David Zaslav Gets $606 Million Payout From Paramount-Warner Bros. Merger",
+          "author": "MarvelsGrantMan136",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "selftext": "",
+          "created_utc": 1791493507,
+          "num_comments": 0,
+          "id": "1x12s13",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Ben Affleck and Matt Damon’s Artists Equity Launches New Indie Banner: Artists Equity Independent Pictures",
+          "author": "Galt1776-Part2",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0i5fv/ben_affleck_and_matt_damons_artists_equity/",
+          "selftext": "",
+          "created_utc": 1791435403,
+          "num_comments": 0,
+          "id": "1x0i5fv",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0i5fv/ben_affleck_and_matt_damons_artists_equity/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
         }
       ]
     },
@@ -2679,31 +2680,31 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-03T15:30:55+00:00",
+  "last_attempt_at": "2026-11-04T00:14:05+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-23T12:53:56+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T22:53:16+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2711,25 +2712,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2737,75 +2738,77 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
     "baseball": {
-      "Hot": {
-        "status": "ok",
-        "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00"
-      },
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
     "CoDCompetitive": {
       "Best of Hour": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00"
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
+        "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2813,25 +2816,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2839,25 +2842,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2865,25 +2868,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-18T12:12:57+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2891,25 +2894,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2917,51 +2920,50 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
     "movies": {
+      "Best of Week": {
+        "status": "ok",
+        "generated_at": "2026-11-04T00:14:05+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-10-09T10:04:26+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
+        "reason": "rate_limited"
+      },
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Week": {
-        "status": "stale",
-        "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2969,25 +2971,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-02T17:30:15+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-03T15:30:55+00:00",
+        "last_attempt_at": "2026-11-04T00:14:05+00:00",
         "reason": "rate_limited"
       }
     }
