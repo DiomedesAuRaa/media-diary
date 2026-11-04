@@ -34,7 +34,7 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "stale"
   },
   {
@@ -71,8 +71,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT1558666865.mp3"
       }
     ],
-    "generatedAt": "2026-11-04T16:36:06+00:00",
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "generatedAt": "2026-11-04T22:13:05+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -109,8 +109,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT4102344812.mp3"
       }
     ],
-    "generatedAt": "2026-11-04T16:36:06+00:00",
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "generatedAt": "2026-11-04T22:13:05+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -147,8 +147,8 @@
         "audioUrl": "https://www.podtrac.com/pts/redirect.mp3/pdst.fm/e/traffic.megaphone.fm/FOXM3104523578.mp3"
       }
     ],
-    "generatedAt": "2026-11-04T16:36:06+00:00",
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "generatedAt": "2026-11-04T22:13:05+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -185,8 +185,8 @@
         "audioUrl": "https://mgln.ai/e/617/pscrb.fm/rss/p/traffic.megaphone.fm/LEW3741176902.mp3"
       }
     ],
-    "generatedAt": "2026-11-04T16:36:06+00:00",
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "generatedAt": "2026-11-04T22:13:05+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -223,8 +223,8 @@
         "audioUrl": "http://feeds.thevillagechurch.net/link/13086/17489487/88cb160e424b45ecbd86382388c13db1_20261004_MC_BLJ_Wk4.mp3"
       }
     ],
-    "generatedAt": "2026-11-04T16:36:06+00:00",
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "generatedAt": "2026-11-04T22:13:05+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -261,8 +261,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT4074182441.mp3"
       }
     ],
-    "generatedAt": "2026-11-04T16:36:06+00:00",
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "generatedAt": "2026-11-04T22:13:05+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -299,8 +299,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT5060160066.mp3"
       }
     ],
-    "generatedAt": "2026-11-04T16:36:06+00:00",
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "generatedAt": "2026-11-04T22:13:05+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -338,12 +338,18 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "stale"
   },
   {
     "name": "P1 with Matt and Tommy",
     "episodes": [
+      {
+        "title": "Our 2026 Brazil GP predictions",
+        "date": "Nov 04, 2026",
+        "dateSort": "2026-11-04",
+        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6aeb6c6e96c3e6815a4fd174/media.mp3"
+      },
       {
         "title": "Mexico GP Driver Ratings",
         "date": "Nov 03, 2026",
@@ -367,16 +373,10 @@
         "date": "Oct 31, 2026",
         "dateSort": "2026-10-31",
         "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6ae544f2cb3dbb0f31fc88b5/media.mp3"
-      },
-      {
-        "title": "Our 2026 Mexico GP predictions",
-        "date": "Oct 29, 2026",
-        "dateSort": "2026-10-29",
-        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6ae33ae495f4c3bb10b63f6f/media.mp3"
       }
     ],
-    "generatedAt": "2026-11-04T16:36:06+00:00",
-    "lastAttemptAt": "2026-11-04T16:36:06+00:00",
+    "generatedAt": "2026-11-04T22:13:05+00:00",
+    "lastAttemptAt": "2026-11-04T22:13:05+00:00",
     "fetchStatus": "ok"
   }
 ]
