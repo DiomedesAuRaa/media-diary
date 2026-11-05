@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-05T00:34:20+00:00",
-  "generated_at": "2026-11-05 00:34:20 UTC",
+  "timestamp": "2026-11-05T15:51:11+00:00",
+  "generated_at": "2026-11-05 15:51:11 UTC",
   "subreddits_count": 12,
   "total_posts": 152,
   "feeds": [
@@ -12,10 +12,17 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "MichiganWolverines": [
-      "Hot",
+    "formula1": [
       "Best of Hour",
-      "Best of 24h"
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "MichiganWolverines": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
     ],
     "DetroitLions": [
       "Best of Hour",
@@ -74,14 +81,7 @@
     "soccer": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "formula1": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
+      "Best of Week"
     ]
   },
   "data": {
@@ -1218,6 +1218,93 @@
       ]
     },
     "soccer": {
+      "Hot": [
+        {
+          "title": "Daily Discussion | November 4, 2026",
+          "author": "globalscoreboard",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xo0ap7/daily_discussion_november_4_2026/",
+          "selftext": "",
+          "created_utc": 1793827249,
+          "num_comments": 0,
+          "id": "1xo0ap7",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xo0ap7/daily_discussion_november_4_2026/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Cristiano Ronaldo's message to announce his international retirement.",
+          "author": "OptimusCloyster",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xofgqs/cristiano_ronaldos_message_to_announce_his/",
+          "selftext": "",
+          "created_utc": 1793875121,
+          "num_comments": 0,
+          "id": "1xofgqs",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xofgqs/cristiano_ronaldos_message_to_announce_his/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "At the 34th minute of Dortmund's game vs Betis, Karetsas was called to replace the injured Guirassy but there was 1 problem: he had just decided to head to the toilet. Kovac was ready to bring Chukwuemeka instead, until Karetsas showed up at the last second. He then scored the winner in the 2nd half",
+          "author": "PianoJealous307",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xofaue/at_the_34th_minute_of_dortmunds_game_vs_betis/",
+          "selftext": "",
+          "created_utc": 1793874498,
+          "num_comments": 0,
+          "id": "1xofaue",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xofaue/at_the_34th_minute_of_dortmunds_game_vs_betis/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Rosenior on his time at Chelsea \"In a country where tolerance is important, what happened there has nothing to do with football. The clothes I wore became a joke, the way I spoke too. I’m not a joke! In England, there’s this preconceived notion of what a coach should be, how he should behave.\"",
+          "author": "kibme37",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xogdwb/rosenior_on_his_time_at_chelsea_in_a_country/",
+          "selftext": "",
+          "created_utc": 1793878415,
+          "num_comments": 0,
+          "id": "1xogdwb",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xogdwb/rosenior_on_his_time_at_chelsea_in_a_country/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Ornstein] Harry Kane signs new Bayern Munich deal to become highest-paid player in Europe",
+          "author": "nearly_headless_nic",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xoczir/ornstein_harry_kane_signs_new_bayern_munich_deal/",
+          "selftext": "",
+          "created_utc": 1793865359,
+          "num_comments": 0,
+          "id": "1xoczir",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xoczir/ornstein_harry_kane_signs_new_bayern_munich_deal/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of Hour": [
         {
           "title": "[The Athletic] FIFA Peace Prize could be scrapped a year on from Donald Trump win (Gift Article)",
@@ -1358,93 +1445,6 @@
           "comments": [],
           "metadata_source": "rss"
         }
-      ],
-      "Hot": [
-        {
-          "title": "Daily Discussion | October 30, 2026",
-          "author": "globalscoreboard",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xj4n3s/daily_discussion_october_30_2026/",
-          "selftext": "",
-          "created_utc": 1793330448,
-          "num_comments": 0,
-          "id": "1xj4n3s",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xj4n3s/daily_discussion_october_30_2026/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Free Talk Friday",
-          "author": "2soccer2bot",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xja9me/free_talk_friday/",
-          "selftext": "",
-          "created_utc": 1793350814,
-          "num_comments": 0,
-          "id": "1xja9me",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xja9me/free_talk_friday/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Owen \"I believe I don’t get the sort of credit that other people would get for winning the BdO. It's never been that important in England. When I was in Spain, they said I was a hero for winning it. I’m immensely proud of winning it. I look down the list of names who I beat and it’s awe-inspiring\"",
-          "author": "PianoJealous307",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xje815/owen_i_believe_i_dont_get_the_sort_of_credit_that/",
-          "selftext": "",
-          "created_utc": 1793363856,
-          "num_comments": 0,
-          "id": "1xje815",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xje815/owen_i_believe_i_dont_get_the_sort_of_credit_that/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Rayan Ait-Nouri is set to leave Man City in January, with intermediaries already holding discussions with clubs, including Man Utd. Ait-Nouri was bought by City last season for £31.8M plus £5.2M of bonuses, but is yet to feature in a PL game this season. City's asking price for him is around £30M",
-          "author": "PianoJealous307",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xjfnnu/rayan_aitnouri_is_set_to_leave_man_city_in/",
-          "selftext": "",
-          "created_utc": 1793367577,
-          "num_comments": 0,
-          "id": "1xjfnnu",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xjfnnu/rayan_aitnouri_is_set_to_leave_man_city_in/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Not only Mbappe: China is also angry at Real Madrid, as the club is accused of applying a double standard on racism. Real issued a public apology only 48 hours after the controversy, a reaction considered too late compared to the cases of racism against Vinicius which Real immediately condemned.",
-          "author": "PianoJealous307",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xjbtnz/not_only_mbappe_china_is_also_angry_at_real/",
-          "selftext": "",
-          "created_utc": 1793356504,
-          "num_comments": 0,
-          "id": "1xjbtnz",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xjbtnz/not_only_mbappe_china_is_also_angry_at_real/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
       ]
     },
     "formula1": {
@@ -1558,6 +1558,94 @@
       "Hot": []
     },
     "MichiganWolverines": {
+      "Best of Hour": [],
+      "Best of 24h": [
+        {
+          "title": "Michigan Hockey beats #1 Denver 4-1",
+          "author": "ArchAngelN7",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
+          "selftext": "",
+          "created_utc": 1792209343,
+          "num_comments": 0,
+          "id": "1x80fdb",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Processing To Greatness As A WOLVERINE",
+          "author": "Ol_School_1961",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8bhlo/processing_to_greatness_as_a_wolverine/",
+          "selftext": "",
+          "created_utc": 1792246969,
+          "num_comments": 0,
+          "id": "1x8bhlo",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8bhlo/processing_to_greatness_as_a_wolverine/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "When reality hits.",
+          "author": "SeemedLegalEnough",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kau7/when_reality_hits/",
+          "selftext": "",
+          "created_utc": 1792268750,
+          "num_comments": 0,
+          "id": "1x8kau7",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kau7/when_reality_hits/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Watching the offense rn",
+          "author": "epsilon0000000000",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kqp0/watching_the_offense_rn/",
+          "selftext": "",
+          "created_utc": 1792269899,
+          "num_comments": 0,
+          "id": "1x8kqp0",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kqp0/watching_the_offense_rn/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Thanks for everything Coach Joyner!",
+          "author": "michigan_matt",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x7vmwq/thanks_for_everything_coach_joyner/",
+          "selftext": "",
+          "created_utc": 1792194318,
+          "num_comments": 0,
+          "id": "1x7vmwq",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x7vmwq/thanks_for_everything_coach_joyner/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of Week": [
         {
           "title": "Ohio",
@@ -1725,94 +1813,6 @@
           "id": "1x44nyj",
           "subreddit": "MichiganWolverines",
           "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44nyj/andrew_sprague_not_returning_anytime_soon/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of Hour": [],
-      "Best of 24h": [
-        {
-          "title": "Michigan Hockey beats #1 Denver 4-1",
-          "author": "ArchAngelN7",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
-          "selftext": "",
-          "created_utc": 1792209343,
-          "num_comments": 0,
-          "id": "1x80fdb",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Processing To Greatness As A WOLVERINE",
-          "author": "Ol_School_1961",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8bhlo/processing_to_greatness_as_a_wolverine/",
-          "selftext": "",
-          "created_utc": 1792246969,
-          "num_comments": 0,
-          "id": "1x8bhlo",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8bhlo/processing_to_greatness_as_a_wolverine/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "When reality hits.",
-          "author": "SeemedLegalEnough",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kau7/when_reality_hits/",
-          "selftext": "",
-          "created_utc": 1792268750,
-          "num_comments": 0,
-          "id": "1x8kau7",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kau7/when_reality_hits/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Watching the offense rn",
-          "author": "epsilon0000000000",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kqp0/watching_the_offense_rn/",
-          "selftext": "",
-          "created_utc": 1792269899,
-          "num_comments": 0,
-          "id": "1x8kqp0",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kqp0/watching_the_offense_rn/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Thanks for everything Coach Joyner!",
-          "author": "michigan_matt",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x7vmwq/thanks_for_everything_coach_joyner/",
-          "selftext": "",
-          "created_utc": 1792194318,
-          "num_comments": 0,
-          "id": "1x7vmwq",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x7vmwq/thanks_for_everything_coach_joyner/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2766,31 +2766,31 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-05T00:34:20+00:00",
+  "last_attempt_at": "2026-11-05T15:51:11+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-23T12:53:56+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T22:53:16+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2798,25 +2798,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2824,25 +2824,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2850,25 +2850,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2876,51 +2876,50 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
     "soccer": {
+      "Hot": {
+        "status": "ok",
+        "generated_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00"
+      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2928,50 +2927,51 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
     "MichiganWolverines": {
-      "Best of Week": {
-        "status": "ok",
-        "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
-        "reason": "rate_limited"
-      },
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Week": {
+        "status": "stale",
+        "generated_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-10-13T15:19:51+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2979,25 +2979,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3005,25 +3005,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3031,25 +3031,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3057,25 +3057,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-02T17:30:15+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T15:51:11+00:00",
         "reason": "rate_limited"
       }
     }
