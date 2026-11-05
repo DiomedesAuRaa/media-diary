@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-04T15:49:40+00:00",
-  "generated_at": "2026-11-04 15:49:40 UTC",
+  "timestamp": "2026-11-05T00:34:20+00:00",
+  "generated_at": "2026-11-05 00:34:20 UTC",
   "subreddits_count": 12,
   "total_posts": 152,
   "feeds": [
@@ -12,10 +12,16 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "DetroitLions": [
+    "MichiganWolverines": [
       "Hot",
       "Best of Hour",
       "Best of 24h"
+    ],
+    "DetroitLions": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
     ],
     "DetroitPistons": [
       "Best of Hour",
@@ -72,12 +78,6 @@
       "Hot"
     ],
     "formula1": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "MichiganWolverines": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -1558,106 +1558,18 @@
       "Hot": []
     },
     "MichiganWolverines": {
-      "Best of Hour": [],
-      "Best of 24h": [
-        {
-          "title": "Michigan Hockey beats #1 Denver 4-1",
-          "author": "ArchAngelN7",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
-          "selftext": "",
-          "created_utc": 1792209343,
-          "num_comments": 0,
-          "id": "1x80fdb",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Processing To Greatness As A WOLVERINE",
-          "author": "Ol_School_1961",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8bhlo/processing_to_greatness_as_a_wolverine/",
-          "selftext": "",
-          "created_utc": 1792246969,
-          "num_comments": 0,
-          "id": "1x8bhlo",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8bhlo/processing_to_greatness_as_a_wolverine/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "When reality hits.",
-          "author": "SeemedLegalEnough",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kau7/when_reality_hits/",
-          "selftext": "",
-          "created_utc": 1792268750,
-          "num_comments": 0,
-          "id": "1x8kau7",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kau7/when_reality_hits/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Watching the offense rn",
-          "author": "epsilon0000000000",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kqp0/watching_the_offense_rn/",
-          "selftext": "",
-          "created_utc": 1792269899,
-          "num_comments": 0,
-          "id": "1x8kqp0",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kqp0/watching_the_offense_rn/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Thanks for everything Coach Joyner!",
-          "author": "michigan_matt",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x7vmwq/thanks_for_everything_coach_joyner/",
-          "selftext": "",
-          "created_utc": 1792194318,
-          "num_comments": 0,
-          "id": "1x7vmwq",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x7vmwq/thanks_for_everything_coach_joyner/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of Week": [
         {
-          "title": "A little timeline cleanse for everyone",
-          "author": "pauly696915",
+          "title": "Ohio",
+          "author": "Nice-Ambassador6293",
           "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x38ayx/a_little_timeline_cleanse_for_everyone/",
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1xksq8t/ohio/",
           "selftext": "",
-          "created_utc": 1791725492,
+          "created_utc": 1793502822,
           "num_comments": 0,
-          "id": "1x38ayx",
+          "id": "1xksq8t",
           "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x38ayx/a_little_timeline_cleanse_for_everyone/",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1xksq8t/ohio/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1665,16 +1577,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Official “ALL HAIL TOMMY CARR” thread",
-          "author": "USA_2_Canada_1",
+          "title": "Shoutout Bryce",
+          "author": "616GoBlue",
           "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8nzij/official_all_hail_tommy_carr_thread/",
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1xklhy9/shoutout_bryce/",
           "selftext": "",
-          "created_utc": 1792278693,
+          "created_utc": 1793481046,
           "num_comments": 0,
-          "id": "1x8nzij",
+          "id": "1xklhy9",
           "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8nzij/official_all_hail_tommy_carr_thread/",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1xklhy9/shoutout_bryce/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1682,16 +1594,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Regardless of how things went down today it was nice to see Bryce hyped/supportive for Tommy Carr after his touchdown",
-          "author": "chrisball96",
+          "title": "Tommy Carr Appreciation Post",
+          "author": "wildwing8",
           "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8qhnj/regardless_of_how_things_went_down_today_it_was/",
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1xkjorl/tommy_carr_appreciation_post/",
           "selftext": "",
-          "created_utc": 1792286148,
+          "created_utc": 1793476398,
           "num_comments": 0,
-          "id": "1x8qhnj",
+          "id": "1xkjorl",
           "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8qhnj/regardless_of_how_things_went_down_today_it_was/",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1xkjorl/tommy_carr_appreciation_post/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1699,16 +1611,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "Michigan Hockey beats #1 Denver 4-1",
-          "author": "ArchAngelN7",
+          "title": "Sir Patrick Stewart: \"Boldly go and beat the Buckeyes\"",
+          "author": "Danny886",
           "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1xjw6pa/sir_patrick_stewart_boldly_go_and_beat_the/",
           "selftext": "",
-          "created_utc": 1792209343,
+          "created_utc": 1793406732,
           "num_comments": 0,
-          "id": "1x80fdb",
+          "id": "1xjw6pa",
           "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1xjw6pa/sir_patrick_stewart_boldly_go_and_beat_the/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1716,16 +1628,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "TOMMY CARR IS IN",
-          "author": "Commercial-Paint273",
+          "title": "Day 6 of posting an embarrassing offensive stat everyday until Jason Beck is fired - when Michigan started a drive that did not come from a turnover over their last 3 games, they punted 17 times, threw 5 picks, fumbled once and scored THREE POINTS.",
+          "author": "Fire_Jason_Beck",
           "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8lwqg/tommy_carr_is_in/",
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1xjfwdw/day_6_of_posting_an_embarrassing_offensive_stat/",
           "selftext": "",
-          "created_utc": 1792272924,
+          "created_utc": 1793368197,
           "num_comments": 0,
-          "id": "1x8lwqg",
+          "id": "1xjfwdw",
           "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8lwqg/tommy_carr_is_in/",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1xjfwdw/day_6_of_posting_an_embarrassing_offensive_stat/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1819,9 +1731,99 @@
           "comments": [],
           "metadata_source": "rss"
         }
+      ],
+      "Best of Hour": [],
+      "Best of 24h": [
+        {
+          "title": "Michigan Hockey beats #1 Denver 4-1",
+          "author": "ArchAngelN7",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
+          "selftext": "",
+          "created_utc": 1792209343,
+          "num_comments": 0,
+          "id": "1x80fdb",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x80fdb/michigan_hockey_beats_1_denver_41/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Processing To Greatness As A WOLVERINE",
+          "author": "Ol_School_1961",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8bhlo/processing_to_greatness_as_a_wolverine/",
+          "selftext": "",
+          "created_utc": 1792246969,
+          "num_comments": 0,
+          "id": "1x8bhlo",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8bhlo/processing_to_greatness_as_a_wolverine/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "When reality hits.",
+          "author": "SeemedLegalEnough",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kau7/when_reality_hits/",
+          "selftext": "",
+          "created_utc": 1792268750,
+          "num_comments": 0,
+          "id": "1x8kau7",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kau7/when_reality_hits/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Watching the offense rn",
+          "author": "epsilon0000000000",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kqp0/watching_the_offense_rn/",
+          "selftext": "",
+          "created_utc": 1792269899,
+          "num_comments": 0,
+          "id": "1x8kqp0",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x8kqp0/watching_the_offense_rn/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Thanks for everything Coach Joyner!",
+          "author": "michigan_matt",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x7vmwq/thanks_for_everything_coach_joyner/",
+          "selftext": "",
+          "created_utc": 1792194318,
+          "num_comments": 0,
+          "id": "1x7vmwq",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x7vmwq/thanks_for_everything_coach_joyner/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
       ]
     },
     "DetroitLions": {
+      "Best of Hour": [],
+      "Best of 24h": [],
       "Best of Week": [
         {
           "title": "Hutch in tears after watching Jack Campbell go down",
@@ -1990,9 +1992,7 @@
           "flair": "",
           "comments": []
         }
-      ],
-      "Best of Hour": [],
-      "Best of 24h": []
+      ]
     },
     "DetroitPistons": {
       "Best of Hour": [],
@@ -2766,31 +2766,31 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-04T15:49:40+00:00",
+  "last_attempt_at": "2026-11-05T00:34:20+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-23T12:53:56+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T22:53:16+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2798,25 +2798,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2824,25 +2824,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2850,25 +2850,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2876,25 +2876,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2902,25 +2902,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2928,76 +2928,76 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
     "MichiganWolverines": {
+      "Best of Week": {
+        "status": "ok",
+        "generated_at": "2026-11-05T00:34:20+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-10-13T15:19:51+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "reason": "rate_limited"
+      },
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Week": {
-        "status": "stale",
-        "generated_at": "2026-10-18T12:12:57+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
     "DetroitLions": {
-      "Best of Week": {
-        "status": "ok",
-        "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
-        "reason": "rate_limited"
-      },
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Week": {
+        "status": "stale",
+        "generated_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3005,25 +3005,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3031,25 +3031,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3057,25 +3057,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-02T17:30:15+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-04T15:49:40+00:00",
+        "last_attempt_at": "2026-11-05T00:34:20+00:00",
         "reason": "rate_limited"
       }
     }
