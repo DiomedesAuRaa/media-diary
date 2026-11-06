@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-05T15:51:11+00:00",
-  "generated_at": "2026-11-05 15:51:11 UTC",
+  "timestamp": "2026-11-06T00:35:18+00:00",
+  "generated_at": "2026-11-06 00:35:18 UTC",
   "subreddits_count": 12,
   "total_posts": 152,
   "feeds": [
@@ -12,6 +12,41 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
+    "cfb": [
+      "Best of Week",
+      "Hot",
+      "Best of Hour"
+    ],
+    "nfl": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "nba": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "baseball": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "CoDCompetitive": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "soccer": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
     "formula1": [
       "Best of Hour",
       "Best of 24h",
@@ -47,93 +82,22 @@
       "Best of 24h",
       "Best of Week",
       "Hot"
-    ],
-    "cfb": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "nfl": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "nba": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "baseball": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "CoDCompetitive": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "soccer": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week"
     ]
   },
   "data": {
     "cfb": {
-      "Best of Hour": [
-        {
-          "title": "[Game Thread] Jacksonville State @ New Mexico State (8:00 PM ET)",
-          "author": "CFB_Referee",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xi3e4a/game_thread_jacksonville_state_new_mexico_state/",
-          "selftext": "",
-          "created_utc": 1793228406,
-          "num_comments": 0,
-          "id": "1xi3e4a",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xi3e4a/game_thread_jacksonville_state_new_mexico_state/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Heartland Trophy Week: Time for your yearly watch of Wisconsin @ Iowa, A Nature Film. A ritualistic struggle unfolds between the thick, burly Hakkai and Bajair clans, showcasing their unique combat",
-          "author": "SwampFoxBadger",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
-          "selftext": "",
-          "created_utc": 1793229308,
-          "num_comments": 0,
-          "id": "1xi3r3o",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of 24h": [
         {
-          "title": "[Highlight] James Madison @ Appalachian State - The Mountaineers hit the field goal to upset undefeated JMU in overtime and they storm the field",
-          "author": "Ok-Soil-5133",
+          "title": "[Jeff Rabjohns] \"Curt Cignetti on the TV presentation of the CFP rankings: “These people, and there are a whole bunch of them, they march out of the tent, and they’re given instructions on what to say, and they follow the company line. And I don’t need to go any further.” #iufb\" / X",
+          "author": "Big_Morf",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xd2r7e/highlight_james_madison_appalachian_state_the/",
+          "url": "https://www.reddit.com/r/CFB/comments/1xo7tx8/jeff_rabjohns_curt_cignetti_on_the_tv/",
           "selftext": "",
-          "created_utc": 1792724858,
+          "created_utc": 1793847617,
           "num_comments": 0,
-          "id": "1xd2r7e",
+          "id": "1xo7tx8",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xd2r7e/highlight_james_madison_appalachian_state_the/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xo7tx8/jeff_rabjohns_curt_cignetti_on_the_tv/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -141,16 +105,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "[On3] Texas HC coach Steve Sarkisian says Arch Manning is “edgy” right now: “I think that somebody texted me today that we lost the ‘Ah Shucks kid’, you know, and we’ve created something else. I don’t know if we lost him. We created this, you know. We did, all of us…",
-          "author": "Euphoric_Inspiration",
+          "title": "Curt Cignetti: “SEC gets a lot of love from ESPN… That's why you see all these SEC teams up there, and some good two-loss teams from the Big Ten not quite as high.“",
+          "author": "Frosty-Marzipan-9824",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xcp8av/on3_texas_hc_coach_steve_sarkisian_says_arch/",
+          "url": "https://www.reddit.com/r/CFB/comments/1xojvuf/curt_cignetti_sec_gets_a_lot_of_love_from_espn/",
           "selftext": "",
-          "created_utc": 1792690666,
+          "created_utc": 1793888528,
           "num_comments": 0,
-          "id": "1xcp8av",
+          "id": "1xojvuf",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xcp8av/on3_texas_hc_coach_steve_sarkisian_says_arch/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xojvuf/curt_cignetti_sec_gets_a_lot_of_love_from_espn/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -158,16 +122,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "10 Years Ago today Oklahoma beat Texas Tech 66-59, in a game that featured 1,708 total yards of offense and 17 total TDs.",
-          "author": "huazzy",
+          "title": "[Pablo Torre Finds Out]EXCLUSIVE: The Onion has the chance to sponsor the funniest bowl game of all time. Why won't Big Football let them?",
+          "author": "Honestly_",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xcjwd2/10_years_ago_today_oklahoma_beat_texas_tech_6659/",
+          "url": "https://www.reddit.com/r/CFB/comments/1xok4p2/pablo_torre_finds_outexclusive_the_onion_has_the/",
           "selftext": "",
-          "created_utc": 1792678805,
+          "created_utc": 1793889151,
           "num_comments": 0,
-          "id": "1xcjwd2",
+          "id": "1xok4p2",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xcjwd2/10_years_ago_today_oklahoma_beat_texas_tech_6659/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xok4p2/pablo_torre_finds_outexclusive_the_onion_has_the/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -175,16 +139,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "[Postgame Thread] Appalachian State Defeats James Madison 34-31",
-          "author": "CFB_Referee",
+          "title": "[Zenitz] Miami star wide receiver Malachi Toney is currently expected to undergo surgery due to the ankle injury…",
+          "author": "simbaslanding",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xd2pt3/postgame_thread_appalachian_state_defeats_james/",
+          "url": "https://www.reddit.com/r/CFB/comments/1xo4x0l/zenitz_miami_star_wide_receiver_malachi_toney_is/",
           "selftext": "",
-          "created_utc": 1792724743,
+          "created_utc": 1793839131,
           "num_comments": 0,
-          "id": "1xd2pt3",
+          "id": "1xo4x0l",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xd2pt3/postgame_thread_appalachian_state_defeats_james/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xo4x0l/zenitz_miami_star_wide_receiver_malachi_toney_is/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -192,16 +156,16 @@
           "metadata_source": "rss"
         },
         {
-          "title": "[Barnett] Fox's Joel Klatt told @dfwticket today that an SEC-B1G scheduling agreement will be announced \"almost immediately\" once the CFP expands to 24.",
-          "author": "Milk_Before_Cereal",
+          "title": "Kirk Ferentz on if he watches the CFP Selection Show: \"Geez, I can't wait! Yeah, that's tonight? Not to be a smart ass, but no. So, not to make fun of it, but it's great for TV, right? It's going to be televised? ESPN is loving it.\"",
+          "author": "Windows_66",
           "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xci9rh/barnett_foxs_joel_klatt_told_dfwticket_today_that/",
+          "url": "https://www.reddit.com/r/CFB/comments/1xo85iv/kirk_ferentz_on_if_he_watches_the_cfp_selection/",
           "selftext": "",
-          "created_utc": 1792674925,
+          "created_utc": 1793848576,
           "num_comments": 0,
-          "id": "1xci9rh",
+          "id": "1xo85iv",
           "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xci9rh/barnett_foxs_joel_klatt_told_dfwticket_today_that/",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xo85iv/kirk_ferentz_on_if_he_watches_the_cfp_selection/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -376,6 +340,42 @@
           "id": "1xkfkm7",
           "subreddit": "cfb",
           "link_url": "https://www.reddit.com/r/CFB/comments/1xkfkm7/highlight_arizona_texas_tech_noah_fifita_finds/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Best of Hour": [
+        {
+          "title": "[Game Thread] Jacksonville State @ New Mexico State (8:00 PM ET)",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xi3e4a/game_thread_jacksonville_state_new_mexico_state/",
+          "selftext": "",
+          "created_utc": 1793228406,
+          "num_comments": 0,
+          "id": "1xi3e4a",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xi3e4a/game_thread_jacksonville_state_new_mexico_state/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Heartland Trophy Week: Time for your yearly watch of Wisconsin @ Iowa, A Nature Film. A ritualistic struggle unfolds between the thick, burly Hakkai and Bajair clans, showcasing their unique combat",
+          "author": "SwampFoxBadger",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
+          "selftext": "",
+          "created_utc": 1793229308,
+          "num_comments": 0,
+          "id": "1xi3r3o",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1218,93 +1218,6 @@
       ]
     },
     "soccer": {
-      "Hot": [
-        {
-          "title": "Daily Discussion | November 4, 2026",
-          "author": "globalscoreboard",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xo0ap7/daily_discussion_november_4_2026/",
-          "selftext": "",
-          "created_utc": 1793827249,
-          "num_comments": 0,
-          "id": "1xo0ap7",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xo0ap7/daily_discussion_november_4_2026/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Cristiano Ronaldo's message to announce his international retirement.",
-          "author": "OptimusCloyster",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xofgqs/cristiano_ronaldos_message_to_announce_his/",
-          "selftext": "",
-          "created_utc": 1793875121,
-          "num_comments": 0,
-          "id": "1xofgqs",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xofgqs/cristiano_ronaldos_message_to_announce_his/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "At the 34th minute of Dortmund's game vs Betis, Karetsas was called to replace the injured Guirassy but there was 1 problem: he had just decided to head to the toilet. Kovac was ready to bring Chukwuemeka instead, until Karetsas showed up at the last second. He then scored the winner in the 2nd half",
-          "author": "PianoJealous307",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xofaue/at_the_34th_minute_of_dortmunds_game_vs_betis/",
-          "selftext": "",
-          "created_utc": 1793874498,
-          "num_comments": 0,
-          "id": "1xofaue",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xofaue/at_the_34th_minute_of_dortmunds_game_vs_betis/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Rosenior on his time at Chelsea \"In a country where tolerance is important, what happened there has nothing to do with football. The clothes I wore became a joke, the way I spoke too. I’m not a joke! In England, there’s this preconceived notion of what a coach should be, how he should behave.\"",
-          "author": "kibme37",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xogdwb/rosenior_on_his_time_at_chelsea_in_a_country/",
-          "selftext": "",
-          "created_utc": 1793878415,
-          "num_comments": 0,
-          "id": "1xogdwb",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xogdwb/rosenior_on_his_time_at_chelsea_in_a_country/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Ornstein] Harry Kane signs new Bayern Munich deal to become highest-paid player in Europe",
-          "author": "nearly_headless_nic",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xoczir/ornstein_harry_kane_signs_new_bayern_munich_deal/",
-          "selftext": "",
-          "created_utc": 1793865359,
-          "num_comments": 0,
-          "id": "1xoczir",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xoczir/ornstein_harry_kane_signs_new_bayern_munich_deal/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of Hour": [
         {
           "title": "[The Athletic] FIFA Peace Prize could be scrapped a year on from Donald Trump win (Gift Article)",
@@ -1439,6 +1352,93 @@
           "id": "1xgc6v4",
           "subreddit": "soccer",
           "link_url": "https://www.reddit.com/r/soccer/comments/1xgc6v4/the_two_ballon_dor_winners_2026_alexia_putellas/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Hot": [
+        {
+          "title": "Daily Discussion | November 4, 2026",
+          "author": "globalscoreboard",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xo0ap7/daily_discussion_november_4_2026/",
+          "selftext": "",
+          "created_utc": 1793827249,
+          "num_comments": 0,
+          "id": "1xo0ap7",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xo0ap7/daily_discussion_november_4_2026/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Cristiano Ronaldo's message to announce his international retirement.",
+          "author": "OptimusCloyster",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xofgqs/cristiano_ronaldos_message_to_announce_his/",
+          "selftext": "",
+          "created_utc": 1793875121,
+          "num_comments": 0,
+          "id": "1xofgqs",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xofgqs/cristiano_ronaldos_message_to_announce_his/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "At the 34th minute of Dortmund's game vs Betis, Karetsas was called to replace the injured Guirassy but there was 1 problem: he had just decided to head to the toilet. Kovac was ready to bring Chukwuemeka instead, until Karetsas showed up at the last second. He then scored the winner in the 2nd half",
+          "author": "PianoJealous307",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xofaue/at_the_34th_minute_of_dortmunds_game_vs_betis/",
+          "selftext": "",
+          "created_utc": 1793874498,
+          "num_comments": 0,
+          "id": "1xofaue",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xofaue/at_the_34th_minute_of_dortmunds_game_vs_betis/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Rosenior on his time at Chelsea \"In a country where tolerance is important, what happened there has nothing to do with football. The clothes I wore became a joke, the way I spoke too. I’m not a joke! In England, there’s this preconceived notion of what a coach should be, how he should behave.\"",
+          "author": "kibme37",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xogdwb/rosenior_on_his_time_at_chelsea_in_a_country/",
+          "selftext": "",
+          "created_utc": 1793878415,
+          "num_comments": 0,
+          "id": "1xogdwb",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xogdwb/rosenior_on_his_time_at_chelsea_in_a_country/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Ornstein] Harry Kane signs new Bayern Munich deal to become highest-paid player in Europe",
+          "author": "nearly_headless_nic",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xoczir/ornstein_harry_kane_signs_new_bayern_munich_deal/",
+          "selftext": "",
+          "created_utc": 1793865359,
+          "num_comments": 0,
+          "id": "1xoczir",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xoczir/ornstein_harry_kane_signs_new_bayern_munich_deal/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2766,31 +2766,30 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-05T15:51:11+00:00",
+  "last_attempt_at": "2026-11-06T00:35:18+00:00",
   "feed_status": {
     "cfb": {
-      "Best of Hour": {
-        "status": "stale",
-        "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
-        "reason": "rate_limited"
-      },
       "Best of 24h": {
-        "status": "stale",
-        "generated_at": "2026-10-23T12:53:56+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
-        "reason": "rate_limited"
+        "status": "ok",
+        "generated_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T22:53:16+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Hour": {
+        "status": "stale",
+        "generated_at": "2026-10-28T23:40:19+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2798,25 +2797,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2824,25 +2823,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2850,25 +2849,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2876,50 +2875,51 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
     "soccer": {
-      "Hot": {
-        "status": "ok",
-        "generated_at": "2026-11-05T15:51:11+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00"
-      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2927,25 +2927,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2953,25 +2953,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2979,25 +2979,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3005,25 +3005,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3031,25 +3031,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3057,25 +3057,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-02T17:30:15+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-05T15:51:11+00:00",
+        "last_attempt_at": "2026-11-06T00:35:18+00:00",
         "reason": "rate_limited"
       }
     }
