@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-06T00:35:18+00:00",
-  "generated_at": "2026-11-06 00:35:18 UTC",
+  "timestamp": "2026-11-06T15:25:51+00:00",
+  "generated_at": "2026-11-06 15:25:51 UTC",
   "subreddits_count": 12,
   "total_posts": 152,
   "feeds": [
@@ -12,10 +12,22 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "cfb": [
+    "movies": [
       "Best of Week",
       "Hot",
       "Best of Hour"
+    ],
+    "BillSimmons": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "cfb": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
     ],
     "nfl": [
       "Best of Hour",
@@ -70,22 +82,46 @@
       "Best of 24h",
       "Best of Week",
       "Hot"
-    ],
-    "movies": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "BillSimmons": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
     ]
   },
   "data": {
     "cfb": {
+      "Best of Hour": [
+        {
+          "title": "[Game Thread] Jacksonville State @ New Mexico State (8:00 PM ET)",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xi3e4a/game_thread_jacksonville_state_new_mexico_state/",
+          "selftext": "",
+          "created_utc": 1793228406,
+          "num_comments": 0,
+          "id": "1xi3e4a",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xi3e4a/game_thread_jacksonville_state_new_mexico_state/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Heartland Trophy Week: Time for your yearly watch of Wisconsin @ Iowa, A Nature Film. A ritualistic struggle unfolds between the thick, burly Hakkai and Bajair clans, showcasing their unique combat",
+          "author": "SwampFoxBadger",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
+          "selftext": "",
+          "created_utc": 1793229308,
+          "num_comments": 0,
+          "id": "1xi3r3o",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of 24h": [
         {
           "title": "[Jeff Rabjohns] \"Curt Cignetti on the TV presentation of the CFP rankings: “These people, and there are a whole bunch of them, they march out of the tent, and they’re given instructions on what to say, and they follow the company line. And I don’t need to go any further.” #iufb\" / X",
@@ -340,42 +376,6 @@
           "id": "1xkfkm7",
           "subreddit": "cfb",
           "link_url": "https://www.reddit.com/r/CFB/comments/1xkfkm7/highlight_arizona_texas_tech_noah_fifita_finds/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of Hour": [
-        {
-          "title": "[Game Thread] Jacksonville State @ New Mexico State (8:00 PM ET)",
-          "author": "CFB_Referee",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xi3e4a/game_thread_jacksonville_state_new_mexico_state/",
-          "selftext": "",
-          "created_utc": 1793228406,
-          "num_comments": 0,
-          "id": "1xi3e4a",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xi3e4a/game_thread_jacksonville_state_new_mexico_state/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Heartland Trophy Week: Time for your yearly watch of Wisconsin @ Iowa, A Nature Film. A ritualistic struggle unfolds between the thick, burly Hakkai and Bajair clans, showcasing their unique combat",
-          "author": "SwampFoxBadger",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
-          "selftext": "",
-          "created_utc": 1793229308,
-          "num_comments": 0,
-          "id": "1xi3r3o",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2173,87 +2173,91 @@
       ]
     },
     "movies": {
-      "Best of Hour": [],
       "Best of 24h": [
         {
-          "title": "Guillermo del Toro Says Over 1,300 Human Artists Turned 'Pan's Labyrinth' into a Brand New 3D Theatrical Experience",
+          "title": "The Onion: Alex Garland Regrets Blowing Most Of ‘Elden Ring’ Budget On DEX",
+          "author": "yourfavchoom",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1xp0cqu/the_onion_alex_garland_regrets_blowing_most_of/",
+          "selftext": "",
+          "created_utc": 1793928832,
+          "num_comments": 0,
+          "id": "1xp0cqu",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xp0cqu/the_onion_alex_garland_regrets_blowing_most_of/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "‘John Wick’ Animated Prequel Film Officially in the Works at Lionsgate, Keanu Reeves Returning",
           "author": "MarvelsGrantMan136",
           "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0s1xb/guillermo_del_toro_says_over_1300_human_artists/",
+          "url": "https://www.reddit.com/r/movies/comments/1xow0t2/john_wick_animated_prequel_film_officially_in_the/",
           "selftext": "",
-          "created_utc": 1791468897,
+          "created_utc": 1793916961,
           "num_comments": 0,
-          "id": "1x0s1xb",
+          "id": "1xow0t2",
           "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0s1xb/guillermo_del_toro_says_over_1300_human_artists/",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xow0t2/john_wick_animated_prequel_film_officially_in_the/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
-          "comments": []
+          "comments": [],
+          "metadata_source": "rss"
         },
         {
-          "title": "Nana Patekar, Indian Star of ‘Parinda’ and ‘Krantiveer,’ Dies at 75",
-          "author": "Fearless-Song9148",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0hoq8/nana_patekar_indian_star_of_parinda_and/",
-          "selftext": "",
-          "created_utc": 1791433816,
-          "num_comments": 0,
-          "id": "1x0hoq8",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0hoq8/nana_patekar_indian_star_of_parinda_and/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "'Cyberpunk 2077' Movie In The Works At Paramount",
-          "author": "ChiefLeef22",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
-          "selftext": "",
-          "created_utc": 1791482464,
-          "num_comments": 0,
-          "id": "1x0xy17",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "David Zaslav Gets $606 Million Payout From Paramount-Warner Bros. Merger",
+          "title": "New Image of Willem Dafoe in Robert Eggers’ ‘Werwulf’",
           "author": "MarvelsGrantMan136",
           "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "url": "https://www.reddit.com/r/movies/comments/1xoogk7/new_image_of_willem_dafoe_in_robert_eggers_werwulf/",
           "selftext": "",
-          "created_utc": 1791493507,
+          "created_utc": 1793899240,
           "num_comments": 0,
-          "id": "1x12s13",
+          "id": "1xoogk7",
           "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xoogk7/new_image_of_willem_dafoe_in_robert_eggers_werwulf/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
-          "comments": []
+          "comments": [],
+          "metadata_source": "rss"
         },
         {
-          "title": "Ben Affleck and Matt Damon’s Artists Equity Launches New Indie Banner: Artists Equity Independent Pictures",
-          "author": "Galt1776-Part2",
+          "title": "Kimmarie Johnson Dies: ‘Beverly Hills, 90210’ & ‘Dude, Where’s My Car?’ Actor Was 50",
+          "author": "Puzzled-Tap8042",
           "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0i5fv/ben_affleck_and_matt_damons_artists_equity/",
+          "url": "https://www.reddit.com/r/movies/comments/1xordzh/kimmarie_johnson_dies_beverly_hills_90210_dude/",
           "selftext": "",
-          "created_utc": 1791435403,
+          "created_utc": 1793905850,
           "num_comments": 0,
-          "id": "1x0i5fv",
+          "id": "1xordzh",
           "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0i5fv/ben_affleck_and_matt_damons_artists_equity/",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xordzh/kimmarie_johnson_dies_beverly_hills_90210_dude/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
-          "comments": []
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Philomena Cunk has launched a brilliant Letterboxd account",
+          "author": "Monsur_Ausuhnom",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1xoujme/philomena_cunk_has_launched_a_brilliant/",
+          "selftext": "",
+          "created_utc": 1793913383,
+          "num_comments": 0,
+          "id": "1xoujme",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1xoujme/philomena_cunk_has_launched_a_brilliant/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
         }
       ],
       "Best of Week": [
@@ -2429,7 +2433,8 @@
           "comments": [],
           "metadata_source": "rss"
         }
-      ]
+      ],
+      "Best of Hour": []
     },
     "BillSimmons": {
       "Best of Hour": [
@@ -2766,30 +2771,31 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-06T00:35:18+00:00",
+  "last_attempt_at": "2026-11-06T15:25:51+00:00",
   "feed_status": {
     "cfb": {
+      "Best of Hour": {
+        "status": "stale",
+        "generated_at": "2026-10-28T23:40:19+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
+        "reason": "rate_limited"
+      },
       "Best of 24h": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-11-06T00:35:18+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00"
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
+        "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T22:53:16+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Hour": {
-        "status": "stale",
-        "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2797,25 +2803,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2823,25 +2829,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2849,25 +2855,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2875,25 +2881,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2901,25 +2907,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-05T15:51:11+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2927,25 +2933,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2953,25 +2959,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2979,25 +2985,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3005,51 +3011,50 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
     "movies": {
-      "Best of Hour": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
-        "reason": "rate_limited"
-      },
       "Best of 24h": {
-        "status": "stale",
-        "generated_at": "2026-10-08T22:37:29+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
-        "reason": "rate_limited"
+        "status": "ok",
+        "generated_at": "2026-11-06T15:25:51+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Hour": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3057,25 +3062,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-02T17:30:15+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-06T00:35:18+00:00",
+        "last_attempt_at": "2026-11-06T15:25:51+00:00",
         "reason": "rate_limited"
       }
     }
