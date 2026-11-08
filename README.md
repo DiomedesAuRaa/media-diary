@@ -30,7 +30,7 @@ The games preserve their existing localStorage keys. The legacy Portfolio score 
 
 `tools/today.html` combines current weather, three published top headlines and configured favorite-team games. Sections load independently and provide their own error/retry states. Weather defaults to Atlanta and honors the existing device-local city preference. It never requests device location automatically.
 
-`tools/schedule.html` shows upcoming games returned by the published scoreboards within the next seven days, with device-local kickoff times and broadcast names where supplied. It explicitly describes scoreboard coverage; a missing game is not evidence that a team has no upcoming fixture. League and favorite filters are ordinary native controls. Favorite aliases match complete provider team names or abbreviations, preventing Michigan State from matching Michigan.
+`tools/schedule.html` shows upcoming games returned by the published scoreboards within the next seven days, with device-local kickoff times and broadcast names where supplied. It explicitly describes scoreboard coverage; a missing game is not evidence that a team has no upcoming fixture. Scores and Upcoming open with favorite-team games first, then all remaining returned games grouped by league in one scrollable view, without pagination. League and favorite filters remain ordinary native controls. Favorite aliases match complete provider team names or abbreviations, preventing Michigan State from matching Michigan.
 
 Feed health reports and their refresh scheduler remain private Mac operations files, outside this repository and the Pages artifact.
 
