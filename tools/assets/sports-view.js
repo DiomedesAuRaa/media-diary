@@ -86,7 +86,7 @@
         return {league:league, date:validLocalDate(date) ? date : today};
       }
     } catch (_) {}
-    return {league:'favorites', date:today};
+    return {league:'all', date:today};
   }
   function validLocalDate(value) {
     if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -103,7 +103,12 @@
     return preferred.filter(function (name) { return leagues.some(function (league) { return league.name === name; }); });
   }
   function targets() {
-    if (state.league === 'all') return leagues.slice();
+    if (state.league === 'all') {
+      var favorites = favoriteLeagueNames();
+      return leagues.slice().sort(function (a, b) {
+        return Number(favorites.indexOf(b.name) >= 0) - Number(favorites.indexOf(a.name) >= 0);
+      });
+    }
     if (state.league === 'favorites') {
       var names = favoriteLeagueNames();
       return leagues.filter(function (league) { return names.indexOf(league.name) >= 0; });
@@ -159,7 +164,7 @@
     if (event.date) time.dateTime = event.date;
     header.append(time);
     var participants = Array.isArray(event.participants) ? event.participants : [];
-    var title = text('h2', event.name || participants.map(function (p) { return p.name; }).filter(Boolean).join(' vs. ') || event.leagueName);
+    var title = text(state.league === 'all' ? 'h3' : 'h2', event.name || participants.map(function (p) { return p.name; }).filter(Boolean).join(' vs. ') || event.leagueName);
     if (participants.length && !event.session) title.className = 'sports-event-title-sr';
     card.append(header, title);
     if (participants.length) {
@@ -217,7 +222,7 @@
   function render(targetsList, statusOverride) {
     content.setAttribute('aria-busy', 'false');
     var all = selectedEvents(), emptyText, hasFeatured = false;
-    if (mode === 'schedule') {
+    if (mode === 'schedule' && state.league !== 'all') {
       var nextFavorite = all.find(function (event) { return event.favorite && (event.state === 'pre' || event.state === 'scheduled' || !event.state); });
       if (nextFavorite) {
         hasFeatured = true;
@@ -234,9 +239,27 @@
       var retry = text('button', 'Retry'); retry.type = 'button'; retry.addEventListener('click', function () { loadView(true); });
       error.append(' ', retry); content.append(error); return;
     }
-    if (!all.length && !hasFeatured && mode === 'scores') emptyText = 'No games in this league on ' + new Date(state.date + 'T12:00:00').toLocaleDateString() + '.';
+    if (!all.length && !hasFeatured && mode === 'scores') emptyText = (state.league === 'all' ? 'No games on ' : 'No games in this selection on ') + new Date(state.date + 'T12:00:00').toLocaleDateString() + '.';
     else if (!all.length && !hasFeatured) emptyText = state.league === 'favorites' ? 'No favorite-team events appear in the returned eight-day scoreboards.' : 'No upcoming events appear in the returned scoreboards for these dates.';
     if (emptyText) { content.append(text('p', emptyText, 'sports-empty')); return; }
+    if (state.league === 'all') {
+      function appendGroup(title, events) {
+        if (!events.length) return;
+        var section = text('section', '', 'sports-list sports-group');
+        section.setAttribute('aria-label', title);
+        section.append(text('h2', title, 'sports-group-title'));
+        events.forEach(function (event) { section.append(renderEvent(event)); });
+        content.append(section);
+      }
+      appendGroup('Favorite teams', all.filter(function (event) { return event.favorite; }));
+      if (!all.some(function (event) { return event.favorite; })) {
+        content.append(text('p', mode === 'scores' ? 'No favorite-team games on this date. All other games follow.' : 'No upcoming favorite-team games in these dates. All other games follow.', 'sports-meta'));
+      }
+      leagues.forEach(function (league) {
+        appendGroup(league.name, all.filter(function (event) { return !event.favorite && event.leagueName === league.name; }));
+      });
+      return;
+    }
     var list = text('section', '', 'sports-list'); list.setAttribute('aria-label', mode === 'schedule' ? 'Upcoming games' : 'Scores');
     page = Math.max(0, Math.min(page, Math.ceil(all.length / pageSize) - 1));
     var visible = all.slice(page * pageSize, (page + 1) * pageSize);
