@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T16:41:00+00:00",
-  "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+  "generatedAt": "2026-11-08T21:07:36+00:00",
+  "lastAttemptAt": "2026-11-08T21:07:36+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,9 +10,19 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
+        {
+          "title": "Europe to join U.S.-brokered Ukraine talks in Abu Dhabi, defying Kremlin objections",
+          "url": "https://www.npr.org/2026/11/08/nx-s1-6034014/europe-join-us-brokered-ukraine-talks-abu-dhabi-russia",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "No clear winner in New Zealand election, as leaders prepare for weeks of talks",
+          "url": "https://www.npr.org/2026/11/08/nx-s1-6033999/no-clear-winner-in-new-zealand-election-as-leaders-prepare-for-weeks-of-talks",
+          "date": "2026-11-08"
+        },
         {
           "title": "After a successful trip to Uruguay, Pope Leo heads to Argentina",
           "url": "https://www.npr.org/2026/11/08/nx-s1-6033992/after-a-successful-trip-to-uruguay-pope-leo-heads-to-argentina",
@@ -29,28 +39,18 @@
           "date": "2026-11-08"
         },
         {
+          "title": "One air ambulance service rethinks what it takes to practice medicine in the sky",
+          "url": "https://www.npr.org/2026/11/08/nx-s1-6017801/air-ambulance-service-rural-healthcare-staffing",
+          "date": "2026-11-08"
+        },
+        {
           "title": "A desert stirs to life: Chile's Atacama erupts in its biggest floral display in decades",
           "url": "https://www.npr.org/2026/11/08/nx-s1-6023812/chile-desert-el-nino",
           "date": "2026-11-08"
         },
         {
-          "title": "In Maine, a new approach to practicing medicine in the sky",
-          "url": "https://www.npr.org/2026/11/08/nx-s1-6017801/air-ambulance-service-rural-healthcare-staffing",
-          "date": "2026-11-08"
-        },
-        {
           "title": "How Gen Z voters helped fuel a blue wave for Democrats",
           "url": "https://www.npr.org/2026/11/08/nx-s1-6032829/gen-z-voters-midterm-elections",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "UFC's Dana White says he will meet with Trump Monday over offer to be White House press secretary",
-          "url": "https://www.npr.org/2026/11/08/nx-s1-6033900/ufc-dana-white-trump-white-house-press-secretary",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "Homelessness in the U.S. saw its largest drop in more than a decade last year",
-          "url": "https://www.npr.org/2026/11/07/nx-s1-6033491/homelessness-in-the-u-s-saw-its-largest-drop-in-more-than-a-decade-last-year",
           "date": "2026-11-08"
         }
       ]
@@ -61,17 +61,37 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
+        {
+          "title": "Nvidia launches investigation into CEO's affair with suspected Chinese spy",
+          "url": "https://www.bbc.co.uk/news/articles/c3dxw10rjn9no?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Surgeon having lunch near Krakow shooting undoubtedly saved officer's life, colleague says",
+          "url": "https://www.bbc.co.uk/news/articles/c5x2vw4e1gx1o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-08"
+        },
         {
           "title": "King leads solemn Remembrance Sunday service at Cenotaph",
           "url": "https://www.bbc.co.uk/news/articles/cqy8l0gyvvv2o?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-08"
         },
         {
-          "title": "Footage shows derailed carriages after fatal train crash in Egypt",
-          "url": "https://www.bbc.co.uk/news/videos/cw78p2km7d94o?at_medium=RSS&at_campaign=rss",
+          "title": "Maya Jama steps down as host of reality TV show Love Island",
+          "url": "https://www.bbc.co.uk/news/articles/cwzrd5jj47ndo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Seven dead and more than 100 injured after trains collide in Egypt",
+          "url": "https://www.bbc.co.uk/news/articles/cwvgr20mmmevo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "White House vows to keep up immigration crackdown after midterms defeat",
+          "url": "https://www.bbc.co.uk/news/articles/cmg476w7wnl2o?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-08"
         },
         {
@@ -83,26 +103,6 @@
           "title": "Nandy defends linking Erasmus student scheme to Remembrance Sunday after backlash",
           "url": "https://www.bbc.co.uk/news/articles/cmvg72p1zgvlo?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-08"
-        },
-        {
-          "title": "My parents chose to die together and I was left to grieve alone",
-          "url": "https://www.bbc.co.uk/news/articles/c81dwllzv113o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "The Trump coalition is shattered - what will Republicans do now?",
-          "url": "https://www.bbc.co.uk/news/articles/cm3r5gnxqz3jo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "He spent $50,000 on Labubus but now the craze is dying",
-          "url": "https://www.bbc.co.uk/news/articles/cmvg652l927lo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "Ambika Mod wants to change how South Asian women are seen on-screen",
-          "url": "https://www.bbc.co.uk/news/articles/c6rmy9jvgwleo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-08"
         }
       ]
     },
@@ -112,12 +112,27 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
-          "title": "What we know so far after Krakow gun attack",
-          "url": "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss",
+          "title": "Surgeon having lunch near Krakow shooting undoubtedly saved officer's life, colleague says",
+          "url": "https://www.bbc.co.uk/news/articles/c5x2vw4e1gx1o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Seven dead and more than 100 injured after trains collide in Egypt",
+          "url": "https://www.bbc.co.uk/news/articles/cwvgr20mmmevo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Homes and temples glow across India to mark Diwali",
+          "url": "https://www.bbc.co.uk/news/articles/cm70pdwz122ro?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Iran executes three men for 'armed unrest' after January protests",
+          "url": "https://www.bbc.co.uk/news/articles/ckly0ex633ydo?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-08"
         },
         {
@@ -128,21 +143,6 @@
         {
           "title": "'Flat', 'tired', 'cynical': Unusually gloomy Kiwis deliver New Zealand's tightest election in years",
           "url": "https://www.bbc.co.uk/news/articles/cxr5yyg2nj9eo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "Israel's president tasks opposition leader Eisenkot with forming government",
-          "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "US offers $20m reward for information about Iran's nuclear programme",
-          "url": "https://www.bbc.co.uk/news/articles/c6d091ev3p0jo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "UK cannot 'cherry pick' EU single market deal, Barnier tells BBC",
-          "url": "https://www.bbc.co.uk/news/articles/c9kgjj206nzpo?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-07"
         },
         {
@@ -163,47 +163,47 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
-          "title": "Israeli forces release Palestinian journalist Abou Shhadeh",
-          "url": "https://www.aljazeera.com/news/2026/11/8/israeli-forces-release-palestinian-journalist-abou-shhadeh?traffic_source=rss",
+          "title": "Pope Leo XIV delivers homily to thousands in Uruguay",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/8/pope-leo-xiv-delivers-homily-to-thousands-in-uruguay?traffic_source=rss",
           "date": "2026-11-08"
         },
         {
-          "title": "Egyptian embassy reopens in Libya for the first time in 12 years",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/8/egyptian-embassy-reopens-in-libya-for-the-first-time-in-12-years?traffic_source=rss",
+          "title": "Rangoli makers adapt to rising costs to preserve colourful Diwali tradition",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/8/_8-11-sv-rangoli-diwali-india-081126?traffic_source=rss",
           "date": "2026-11-08"
         },
         {
-          "title": "Tenerife’s Jesus De Miguel honoured in tearful tribute by teammates, fans",
-          "url": "https://www.aljazeera.com/sports/2026/11/8/tenerifes-jesus-de-miguel-honoured-in-tearful-tribute-by-teammates-fans?traffic_source=rss",
+          "title": "Iran threatens to ‘rain down hell’ if US escalates war",
+          "url": "https://www.aljazeera.com/news/2026/11/8/iran-threatens-to-rain-down-hell-if-us-escalates-war?traffic_source=rss",
           "date": "2026-11-08"
         },
         {
-          "title": "Palestinian journalist Abed Abou Shhadeh released after 5 days in detention",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/8/palestinian-journalist-abed-abou-shhadeh-released-after-5-days-in-detention?traffic_source=rss",
+          "title": "Al Jazeera tries Baseball5 at Youth Olympics",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/8/al-jazeera-tries-baseball5-at-youth-olympics?traffic_source=rss",
           "date": "2026-11-08"
         },
         {
-          "title": "Tearful Alex Eala loses Hong Kong Open final to Claire Liu in straight sets",
-          "url": "https://www.aljazeera.com/sports/2026/11/8/tearful-alex-eala-loses-hong-kong-open-final-to-claire-liu-in-straight-sets?traffic_source=rss",
+          "title": "Man United earn 4-4 draw against Aston Villa but remain in relegation zone",
+          "url": "https://www.aljazeera.com/sports/2026/11/8/man-united-earn-4-4-draw-against-aston-villa-but-remain-in-relegation-zone?traffic_source=rss",
           "date": "2026-11-08"
         },
         {
-          "title": "US task force to cut off Iran’s transport of advanced weapons: What we know",
-          "url": "https://www.aljazeera.com/news/2026/11/8/us-task-force-to-cut-off-irans-transport-of-advanced-weapons-what-we-know?traffic_source=rss",
+          "title": "After the midterms, where does the Republican Party stand?",
+          "url": "https://www.aljazeera.com/opinions/2026/11/8/after-the-midterms-where-does-the-republican-party-stand?traffic_source=rss",
           "date": "2026-11-08"
         },
         {
-          "title": "Spain win Padel World Cup in Qatar as sport’s popularity soars",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/8/spain-win-padel-world-cup-in-qatar-as-sports-popularity-soars-2?traffic_source=rss",
+          "title": "Carlos Alcaraz beats Ben Shelton to win Paris Masters tennis title",
+          "url": "https://www.aljazeera.com/sports/2026/11/8/carlos-alcaraz-beats-ben-shelton-to-win-paris-masters-tennis-title?traffic_source=rss",
           "date": "2026-11-08"
         },
         {
-          "title": "At least 21 dead as small boat sinks off Senegal",
-          "url": "https://www.aljazeera.com/news/2026/11/8/at-least-21-dead-as-small-boat-sinks-off-senegal?traffic_source=rss",
+          "title": "Eisenkot open to Netanyahu joining Israel’s next government",
+          "url": "https://www.aljazeera.com/news/2026/11/8/israels-president-tasks-eisenkot-to-form-new-coalition-government?traffic_source=rss",
           "date": "2026-11-08"
         }
       ]
@@ -214,9 +214,14 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
+        {
+          "title": "Collision of two trains in Egypt kills at least seven",
+          "url": "https://www.theguardian.com/world/2026/nov/08/egypt-two-trains-deadly-collision",
+          "date": "2026-11-08"
+        },
         {
           "title": "How African philosophies inspired a new approach to staging film festivals in Manchester",
           "url": "https://www.theguardian.com/news/2026/nov/08/african-philosophies-see-my-world-film-festival-manchester",
@@ -235,11 +240,6 @@
         {
           "title": "British healthcare worker with Ebola evacuated from DR Congo to UK",
           "url": "https://www.theguardian.com/world/2026/nov/04/british-healthcare-worker-ebola-evacuated-drc-to-uk-document-shows",
-          "date": "2026-11-04"
-        },
-        {
-          "title": "ANC faces anger over poor services as South Africans vote in local elections",
-          "url": "https://www.theguardian.com/world/2026/nov/04/anc-south-africa-local-elections-water-outages-power-cuts",
           "date": "2026-11-04"
         },
         {
@@ -265,9 +265,19 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
+        {
+          "title": "Europe to join U.S.-brokered Ukraine talks in Abu Dhabi, defying Kremlin objections",
+          "url": "https://www.npr.org/2026/11/08/nx-s1-6034014/europe-join-us-brokered-ukraine-talks-abu-dhabi-russia",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "No clear winner in New Zealand election, as leaders prepare for weeks of talks",
+          "url": "https://www.npr.org/2026/11/08/nx-s1-6033999/no-clear-winner-in-new-zealand-election-as-leaders-prepare-for-weeks-of-talks",
+          "date": "2026-11-08"
+        },
         {
           "title": "After a successful trip to Uruguay, Pope Leo heads to Argentina",
           "url": "https://www.npr.org/2026/11/08/nx-s1-6033992/after-a-successful-trip-to-uruguay-pope-leo-heads-to-argentina",
@@ -297,16 +307,6 @@
           "title": "Israel's president taps opposition candidate, not Netanyahu, to form a government",
           "url": "https://www.npr.org/2026/11/07/g-s1-152536/netanyahu-israel-government-eisenkot-herzog",
           "date": "2026-11-07"
-        },
-        {
-          "title": "Ousted Paraguayan president appears before prosecutors",
-          "url": "https://www.npr.org/2026/11/07/nx-s1-6033373/paraguay-president-ousted-bank-collapse",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "Israel's Arab-led parties in spotlight after inconclusive election",
-          "url": "https://www.npr.org/2026/11/06/g-s1-152138/israel-election-palestinian-arab-parties",
-          "date": "2026-11-06"
         }
       ]
     },
@@ -316,47 +316,47 @@
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
-          "title": "Top Astrophysicist Leaves U.S.",
-          "url": "https://www.nytimes.com/2026/11/07/science/space/holley-bockelmann-astrophysicist-space-trump.html",
+          "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
+          "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
           "date": "2026-11-08"
         },
         {
-          "title": "Tesla Hasn't Had a Successful New Product Launch Since JB Straubel Stepped Down",
-          "url": "https://cleantechnica.com/2026/11/07/tesla-hasnt-had-a-successful-new-product-launch-since-jb-straubel-stepped-down-as-cto/",
+          "title": "Starship Flight 15 on 11/13 plans to catch both booster and ship",
+          "url": "https://www.spacex.com/launches/starship-flight-15",
           "date": "2026-11-08"
         },
         {
-          "title": "Apple CEO Presses Software Chief to Pursue More Ambitious AI Strategy",
-          "url": "https://www.bloomberg.com/news/newsletters/2026-11-08/apple-explores-turning-siri-ai-into-chatgpt-dots-like-agent-ios-28-shake-up",
+          "title": "How I Fight AI Brain Fry",
+          "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry",
           "date": "2026-11-08"
         },
         {
-          "title": "Drones built to look like birds evaded detection at Air Force tech exercise",
-          "url": "https://taskandpurpose.com/news/drone-mimicking-bird-test/",
+          "title": "Outlook.com Is Quietly Rejecting Email from Domains Without DMARC",
+          "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc",
           "date": "2026-11-08"
         },
         {
-          "title": "OpenAI raises $11B at a $1.25T valuation",
-          "url": "https://247wallst.com/investing/2026/11/07/openai-just-raised-11-billion-at-a-1-25-trillion-valuation-below-the-1-4-trillion-it-first-sought/",
+          "title": "Dux: Free, open-source Wayland desktop shell with file manager and theming",
+          "url": "https://duxlabs.dev/",
           "date": "2026-11-08"
         },
         {
-          "title": "I'm not a fan of Deno's security model (2024)",
-          "url": "https://goldstein.lol/posts/deno-security/",
+          "title": "Silicon Valley Promises AI Will Cure Disease. Drugmaker CEOs Aren't Buying It",
+          "url": "https://www.wsj.com/tech/ai/silicon-valley-promises-ai-will-cure-disease-drugmaker-ceos-arent-buying-it-5218511c",
           "date": "2026-11-08"
         },
         {
-          "title": "How to prove equations using diagrams, part 1",
-          "url": "https://www.epatters.org/post/e-graphs-1/",
+          "title": "Playing Zork 1 on a CP/M emulator on Linux (2021)",
+          "url": "https://kevinboone.me/cpmzork.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Person of Interest",
-          "url": "https://krthr.co/person-of-interest/",
+          "title": "Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders",
+          "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
           "date": "2026-11-08"
         }
       ]
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "Physicists listened to electrical noise to crack a superconductor mystery",
@@ -418,9 +418,29 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
+        {
+          "title": "Epic Games Launcher is coming to SteamOS",
+          "url": "https://www.theverge.com/games/1029557/epic-games-launcher-is-coming-to-steamos",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Nvidia is investigating Jensen Huang’s relationship with a Chinese spy",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Apple is racing to make Siri more agentic",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Elvis and Eminem rights holders are suing Suno",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
+          "date": "2026-11-08"
+        },
         {
           "title": "Apple’s M5 MacBook Air is down to its lowest price since July",
           "url": "https://www.theverge.com/gadgets/1029019/apple-macbook-air-13-15-inch-m5-deal-sale",
@@ -440,26 +460,6 @@
           "title": "The UV-tracking Gem made me rethink how sunlight affects my health, not just my appearance",
           "url": "https://www.theverge.com/tech/1023230/the90-gem-necklace-hands-on-impressions",
           "date": "2026-11-07"
-        },
-        {
-          "title": "Costco members can get $5 off the reimagined Ocarina of Time",
-          "url": "https://www.theverge.com/gadgets/1028917/legend-of-zelda-ocarina-of-time-remake-switch-2-costco-deal-sale",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "Discogs’ Kevin Lewandowski can’t live without his AeroPress",
-          "url": "https://www.theverge.com/tech/1029474/discogs-kevin-lewandowski-aeropress-interview",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake",
-          "url": "https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "The US let Nvidia sell chips to an empty office in China",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
-          "date": "2026-11-07"
         }
       ]
     },
@@ -469,8 +469,8 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "8 Best Computer Speakers (2026) After Testing 30 Pairs",
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "The Download: a humanoid cleans house and Samsung builds for the AI boom",
@@ -572,7 +572,7 @@
       "url": "https://www.espn.com/espn/rss/news",
       "status": "stale",
       "generatedAt": "2026-11-05T09:26:38+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "Wemby delivers career performance with 52 points, 24 rebounds, 8 blocks",
@@ -622,47 +622,47 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
-          "title": "Self-learning AI releases NFL picks, score predictions for every Week 9 game",
-          "url": "https://www.cbssports.com/betting/news/nfl-picks-ai-score-predictions-best-bets-correct-scores-every-week-9-2026-game/",
+          "title": "Bills vs. Vikings prediction, odds, time: NFL Week 9 'Monday Night Football' picks from proven model",
+          "url": "https://www.cbssports.com/betting/news/bills-vikings-prediction-odds-time-nfl-week-9-monday-night-football-picks/",
           "date": "2026-11-08"
         },
         {
           "title": "Buccaneers vs. Bears prediction, odds, time: NFL Week 9 'Sunday Night Football' picks from proven model",
-          "url": "https://www.cbssports.com/betting/news/buccaneers-bears-prediction-odds-time-nfl-week-9-sunday-night-football-picks-best-bets/",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "Prisco's Week 9 NFL expert picks: Cowboys rebound with rout of Colts, Packers edge Patriots",
-          "url": "https://www.cbssports.com/nfl/news/pete-priscos-week-9-nfl-expert-picks/",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "NFL picks against the spread, Week 9 2026: Expert ATS picks, predictions, best bets, player props for Nov. 8",
-          "url": "https://www.cbssports.com/betting/news/nfl-picks-against-the-spread-week-9-2026-expert-ats-picks-predictions-best-bets-player-props-november-8/",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "Packers vs. Patriots odds, picks, prediction, spread, line: NFL Week 9 start time, betting preview, best bets",
-          "url": "https://www.cbssports.com/betting/news/packers-vs-patriots-odds-picks-prediction-spread-line-nfl-week-9-start-time-betting-preview-best-bets/",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "'Sunday Night Football' prediction, odds, time: Buccaneers vs. Bears picks from expert on 14-7 run",
-          "url": "https://www.cbssports.com/betting/news/sunday-night-football-prediction-odds-time-bears-buccaneers-expert-picks/",
+          "url": "https://www.cbssports.com/betting/news/buccaneers-bears-prediction-odds-time-spread-nfl-week-9-sunday-night-football-picks/",
           "date": "2026-11-08"
         },
         {
           "title": "Packers vs. Patriots prediction, odds, time: 2026 Week 9 NFL picks by advanced model",
-          "url": "https://www.cbssports.com/betting/news/packers-patriots-prediction-odds-time-2026-week-9-nfl-picks/",
+          "url": "https://www.cbssports.com/betting/news/packers-patriots-prediction-odds-time-2026-week-9-nfl-picks-best-bets/",
           "date": "2026-11-08"
         },
         {
-          "title": "College football grades: Notre Dame 'A' mark for marquee victory, Ohio State gets 'F' on Week 10 report card",
-          "url": "https://www.cbssports.com/college-football/news/college-football-grades-notre-dame-ohio-state-report-card/",
+          "title": "Giants' J.J. McCarthy returns against Eagles after hip injury sent QB to locker room",
+          "url": "https://www.cbssports.com/nfl/news/giants-j-j-mccarthy-hip-injury-update-vs-eagles/",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Use FanDuel promo code to get $200 bonus bets for Packers-Patriots, Buccaneers-Bears, NFL betting",
+          "url": "https://www.cbssports.com/betting/news/use-fanduel-promo-code-to-get-200-bonus-bets-packers-patriots-buccaneers-bears-nfl-betting/",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Chiefs looking to trade for wide receiver, GM Brett Veach tells NFL on CBS' Tracy Wolfson",
+          "url": "https://www.cbssports.com/nfl/news/chiefs-looking-to-trade-for-wide-receiver-nfl-trade-deadline/",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Packers vs. Patriots odds, picks, prediction, spread, line: Start time, NFL Week 9 betting preview, best bets",
+          "url": "https://www.cbssports.com/betting/news/packers-vs-patriots-odds-picks-prediction-spread-line-start-time-nfl-week-9-betting-preview-best-bets/",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Use BetMGM bonus code CBSSPORTS to get $1,500 in bonus bets for Packers-Patriots, Bears-Buccaneers, NFL picks",
+          "url": "https://www.cbssports.com/betting/news/use-betmgm-bonus-code-cbssports-to-get-1500-bonus-bets-packers-patriots-bears-buccaneers-nfl-picks/",
           "date": "2026-11-08"
         }
       ]
@@ -673,47 +673,47 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
-          "title": "NC State and Philip Rivers reportedly negotiating deal to make him the Wolfpack's next head coach",
-          "url": "https://sports.yahoo.com/college-football/breaking-news/article/nc-state-and-philip-rivers-reportedly-negotiating-deal-to-make-him-the-wolfpacks-next-head-coach-163923507.html",
+          "title": "Patriots vs. Packers Score, Live Updates, Highlights From Week 9 Game",
+          "url": "https://sports.yahoo.com/articles/patriots-vs-packers-score-live-203002633.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Broncos vs. Panthers gameday inactives for Week 9",
-          "url": "https://sports.yahoo.com/articles/broncos-vs-panthers-gameday-inactives-163605106.html",
+          "title": "Saliba Returns and Dowman Shines as Arsenal U21s Thrash Aston Villa 5-2",
+          "url": "https://sports.yahoo.com/articles/saliba-returns-dowman-shines-arsenal-210000905.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Washington Commanders vs Los Angeles Rams Inactives",
-          "url": "https://sports.yahoo.com/articles/washington-commanders-vs-los-angeles-163553235.html",
+          "title": "A red card turned La Salle's 3-0 lead into a championship thriller",
+          "url": "https://sports.yahoo.com/articles/red-card-turned-la-salles-205913798.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Minnetonka eighth-grader is drawing comparisons to Minnesota football legends",
-          "url": "https://sports.yahoo.com/articles/minnetonka-eighth-grader-drawing-comparisons-163549379.html",
+          "title": "Lane Kiffin taken to woodshed by angry LSU Tigers fans after Alabama embarrassment",
+          "url": "https://sports.yahoo.com/articles/lane-kiffin-taken-woodshed-angry-205750064.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Lions, Dolphins Week 9 inactives: Sione Vaki ACTIVE, Jacob Saylors OUT",
-          "url": "https://sports.yahoo.com/articles/lions-dolphins-week-9-inactives-163538542.html",
+          "title": "Instant analysis from Dolphins' Week 9 loss to Lions",
+          "url": "https://sports.yahoo.com/articles/instant-analysis-dolphins-week-9-205749080.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Social media reacts to Clemson’s tight ACC road win over Syracuse Orange",
-          "url": "https://sports.yahoo.com/articles/social-media-reacts-clemson-tight-163508585.html",
+          "title": "When is FA Cup second round draw? Ball numbers, time and how to watch",
+          "url": "https://sports.yahoo.com/articles/fa-cup-second-round-draw-092231635.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Napoli hold Serie A leaders Lazio, Milan cast aside Euro blues at Genoa",
-          "url": "https://sports.yahoo.com/articles/napoli-hold-leaders-lazio-serie-133936611.html",
+          "title": "Buccaneers vs. Bears prediction, odds, pick for Week 9 Sunday Night Football",
+          "url": "https://sports.yahoo.com/articles/buccaneers-vs-bears-prediction-odds-205611429.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Eagles-Giants inactives",
-          "url": "https://sports.yahoo.com/articles/eagles-giants-inactives-163358790.html",
+          "title": "Olson scores 19 points, No. 5 Michigan forces 28 turnovers in 109-52 romp over Wright State",
+          "url": "https://sports.yahoo.com/articles/olson-scores-19-points-no-205557618.html",
           "date": "2026-11-08"
         }
       ]
@@ -724,17 +724,27 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
-          "title": "‘It feels like he’s quietly building a separate life’: My husband inherited $500,000, but he refuses to spend it on our home",
-          "url": "https://www.marketwatch.com/story/it-feels-like-hes-quietly-building-a-separate-life-my-husband-inherited-500-000-but-he-refuses-to-spend-it-on-our-home-06535cff?mod=mw_rss_topstories",
+          "title": "‘It seems bizarre’: We’re in our 80s with $950,000 in traditional IRAs. Why is our adviser pushing Roth conversions?",
+          "url": "https://www.marketwatch.com/story/it-seems-bizarre-were-in-our-80s-with-950-000-in-traditional-iras-why-is-our-adviser-pushing-us-to-do-roth-conversions-a665f990?mod=mw_rss_topstories",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Two months after my father’s funeral, my stepmother asked me to repay his $40,000 wedding gift. Should I do what she says?",
+          "url": "https://www.marketwatch.com/story/shes-a-type-a-personality-my-stepmother-wants-me-to-repay-my-late-fathers-40-000-wedding-gift-should-i-oblige-51fc64f7?mod=mw_rss_topstories",
           "date": "2026-11-08"
         },
         {
           "title": "Funeral homes are finding new life hosting weddings and golf outings, as the traditional burial business dies out",
           "url": "https://www.marketwatch.com/story/funeral-homes-are-finding-new-life-hosting-weddings-and-golf-outings-as-the-traditional-burial-business-dies-out-15831d13?mod=mw_rss_topstories",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "‘It feels like he’s quietly building a separate life’: My husband inherited $500,000, but he refuses to spend it on our home",
+          "url": "https://www.marketwatch.com/story/it-feels-like-hes-quietly-building-a-separate-life-my-husband-inherited-500-000-but-he-refuses-to-spend-it-on-our-home-06535cff?mod=mw_rss_topstories",
           "date": "2026-11-08"
         },
         {
@@ -756,16 +766,6 @@
           "title": "‘We’re losing to cottage cheese’: The protein-maxxing craze is hurting cream-cheese sales",
           "url": "https://www.marketwatch.com/story/were-losing-to-cottage-cheese-the-protein-maxxing-craze-is-hurting-cream-cheese-sales-40ae94f3?mod=mw_rss_topstories",
           "date": "2026-11-08"
-        },
-        {
-          "title": "Stocks are moving in sync again for the first time in a while. There’s just one problem.",
-          "url": "https://www.marketwatch.com/story/stocks-are-moving-in-sync-again-for-the-first-time-in-a-while-theres-just-one-problem-c953bf72?mod=mw_rss_topstories",
-          "date": "2026-11-08"
-        },
-        {
-          "title": "This market signal called the tech selloff. Now it’s sending another warning.",
-          "url": "https://www.marketwatch.com/story/this-market-signal-called-the-tech-selloff-now-its-sending-another-warning-f7f8eb9b?mod=mw_rss_topstories",
-          "date": "2026-11-08"
         }
       ]
     },
@@ -775,22 +775,32 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
+        {
+          "title": "Nvidia investigates CEO Jensen Huang's relationship with alleged Chinese spy",
+          "url": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html",
+          "date": "2026-11-08"
+        },
         {
           "title": "How Democrats will try to end Trump's tariffs",
           "url": "https://www.cnbc.com/2026/11/08/trump-tariffs-democrats-congress-canada.html",
           "date": "2026-11-08"
         },
         {
-          "title": "Cathie Wood 'always feels better when the market is worried' — here's why",
-          "url": "https://www.cnbc.com/2026/11/08/cathie-wood-ai-selloff.html",
+          "title": "Democrats amp up Trump investigation threats, Blanche counters he may probe lawmakers",
+          "url": "https://www.cnbc.com/2026/11/08/democrats-trump-oversight-blanche-doj-investigations.html",
           "date": "2026-11-08"
         },
         {
           "title": "Using miles to fly for Thanksgiving? These are the most expensive and cheapest routes",
           "url": "https://www.cnbc.com/2026/11/08/frequent-flyer-miles-points-thanksgiving.html",
+          "date": "2026-11-08"
+        },
+        {
+          "title": "Cathie Wood 'always feels better when the market is worried' — here's why",
+          "url": "https://www.cnbc.com/2026/11/08/cathie-wood-ai-selloff.html",
           "date": "2026-11-08"
         },
         {
@@ -807,16 +817,6 @@
           "title": "Recent AI agent experiments reveal a risky future of machine 'teamwork' inside corporations",
           "url": "https://www.cnbc.com/2026/11/08/ai-agents-risks.html",
           "date": "2026-11-08"
-        },
-        {
-          "title": "Trump offers UFC chief Dana White press secretary job",
-          "url": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html",
-          "date": "2026-11-07"
-        },
-        {
-          "title": "Mark Cuban says he doesn’t ‘give a f---' about growing his net worth—a healthy mindset for non-billionaires too, a financial therapist says",
-          "url": "https://www.cnbc.com/make-it/2026/11/07/mark-cuban-net-worth-money-mindset.html",
-          "date": "2026-11-07"
         }
       ]
     },
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": []
     },
     {
@@ -846,8 +846,8 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "A hidden limit of space and time could unlock electronics 100,000 times faster",
@@ -897,8 +897,8 @@
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "NASA Announces $1 Million to Students for Moon Base Challenge",
@@ -948,8 +948,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "Antipersonnel mines have returned in Ukraine and now threaten the world",
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "Medicinal plants, lessons from mushrooms and the power of smell: Books in brief",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "stale",
       "generatedAt": "2026-11-04T06:12:38+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "Show HN: Kairos – Open-source risk and fraud decisioning platform",
@@ -1066,9 +1066,14 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
+        {
+          "title": "Moving from AI adoption to an AI operating model: How Docusign engineering went beyond tool rollout",
+          "url": "https://thenewstack.io/docusign-ai-engineering-adoption/",
+          "date": "2026-11-08"
+        },
         {
           "title": "Scaling an autonomous agent from one team to fifty: A serverless-to-container decision framework",
           "url": "https://thenewstack.io/scaling-autonomous-agents-framework/",
@@ -1103,11 +1108,6 @@
           "title": "Cognition turned an open model into a coding beast. But it won’t release the weights.",
           "url": "https://thenewstack.io/cognition-flash-private-weights/",
           "date": "2026-11-06"
-        },
-        {
-          "title": "Meta’s best AI model now trains the one most of its users get",
-          "url": "https://thenewstack.io/meta-muse-specialized-models/",
-          "date": "2026-11-06"
         }
       ]
     },
@@ -1118,7 +1118,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1168,8 +1168,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
         {
           "title": "Lima v2.3: Native on Windows, VMnet on Linux, and menu TUI",
@@ -1219,9 +1219,14 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-08T16:41:00+00:00",
-      "lastAttemptAt": "2026-11-08T16:41:00+00:00",
+      "generatedAt": "2026-11-08T21:07:36+00:00",
+      "lastAttemptAt": "2026-11-08T21:07:36+00:00",
       "items": [
+        {
+          "title": "SRE Weekly Issue #542",
+          "url": "https://sreweekly.com/sre-weekly-issue-542/",
+          "date": "2026-11-08"
+        },
         {
           "title": "SRE Weekly Issue #541",
           "url": "https://sreweekly.com/sre-weekly-issue-541/",
@@ -1241,11 +1246,6 @@
           "title": "SRE Weekly Issue #538",
           "url": "https://sreweekly.com/sre-weekly-issue-538/",
           "date": "2026-10-12"
-        },
-        {
-          "title": "SRE Weekly Issue #537",
-          "url": "https://sreweekly.com/sre-weekly-issue-537/",
-          "date": "2026-10-05"
         }
       ]
     }
