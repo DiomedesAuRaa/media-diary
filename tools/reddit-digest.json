@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-07T23:09:22+00:00",
-  "generated_at": "2026-11-07 23:09:22 UTC",
+  "timestamp": "2026-11-08T14:35:33+00:00",
+  "generated_at": "2026-11-08 14:35:33 UTC",
   "subreddits_count": 12,
   "total_posts": 156,
   "feeds": [
@@ -12,6 +12,11 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
+    "cfb": [
+      "Best of Week",
+      "Hot",
+      "Best of Hour"
+    ],
     "nfl": [
       "Best of Hour",
       "Best of 24h",
@@ -77,15 +82,184 @@
       "Best of 24h",
       "Best of Week",
       "Hot"
-    ],
-    "cfb": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week"
     ]
   },
   "data": {
     "cfb": {
+      "Best of 24h": [
+        {
+          "title": "[Postgame Thread] Oregon Defeats Ohio State 41-28",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xql83g/postgame_thread_oregon_defeats_ohio_state_4128/",
+          "selftext": "",
+          "created_utc": 1794097631,
+          "num_comments": 0,
+          "id": "1xql83g",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xql83g/postgame_thread_oregon_defeats_ohio_state_4128/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Postgame Thread] Michigan State Defeats Michigan 15-6",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xqpivz/postgame_thread_michigan_state_defeats_michigan/",
+          "selftext": "",
+          "created_utc": 1794111315,
+          "num_comments": 0,
+          "id": "1xqpivz",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xqpivz/postgame_thread_michigan_state_defeats_michigan/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Scott Richey] Bret Bielema: “We're 6-3 and beat another 5-3 team. If we were in the SEC we'd be a top 15 team.”",
+          "author": "Lakelyfe09",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xq8psr/scott_richey_bret_bielema_were_63_and_beat/",
+          "selftext": "",
+          "created_utc": 1794064548,
+          "num_comments": 0,
+          "id": "1xq8psr",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xq8psr/scott_richey_bret_bielema_were_63_and_beat/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Postgame Thread] Notre Dame Defeats Miami 31-24",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xqpdl2/postgame_thread_notre_dame_defeats_miami_3124/",
+          "selftext": "",
+          "created_utc": 1794110830,
+          "num_comments": 0,
+          "id": "1xqpdl2",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xqpdl2/postgame_thread_notre_dame_defeats_miami_3124/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Postgame Thread] Utah Defeats BYU 28-20",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xqg1aq/postgame_thread_utah_defeats_byu_2820/",
+          "selftext": "",
+          "created_utc": 1794083171,
+          "num_comments": 0,
+          "id": "1xqg1aq",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xqg1aq/postgame_thread_utah_defeats_byu_2820/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Best of Week": [
+        {
+          "title": "[DNVR Buffs] Colorado took a timeout because there were only 8 players out for FG block They then came out after the timeout with only 9 players",
+          "author": "ConstantMadness",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1wx3j8m/dnvr_buffs_colorado_took_a_timeout_because_there/",
+          "selftext": "",
+          "created_utc": 1791077900,
+          "num_comments": 0,
+          "id": "1wx3j8m",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1wx3j8m/dnvr_buffs_colorado_took_a_timeout_because_there/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Marcello] Arkansas super booster John Tyson when asked why he can't do for Arkansas football what Cody Campbell is doing for Texas Tech: \"He's got oil, I've got chickens.\"",
+          "author": "redwave2505",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1wygbly/marcello_arkansas_super_booster_john_tyson_when/",
+          "selftext": "",
+          "created_utc": 1791225127,
+          "num_comments": 0,
+          "id": "1wygbly",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1wygbly/marcello_arkansas_super_booster_john_tyson_when/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Postgame Thread] Missouri Defeats Florida 45-17",
+          "author": "CFB_Referee",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1wx0mo2/postgame_thread_missouri_defeats_florida_4517/",
+          "selftext": "",
+          "created_utc": 1791068922,
+          "num_comments": 0,
+          "id": "1wx0mo2",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1wx0mo2/postgame_thread_missouri_defeats_florida_4517/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Highlight] Kentucky @ South Carolina: Kentucky completes the 17 pt comeback with a walk-off 2pt conversion in OT",
+          "author": "Moose4KU",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1wx1rcv/highlight_kentucky_south_carolina_kentucky/",
+          "selftext": "",
+          "created_utc": 1791072339,
+          "num_comments": 0,
+          "id": "1wx1rcv",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1wx1rcv/highlight_kentucky_south_carolina_kentucky/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[On3] Alabama legend Nick Saban was asked what \"Roll Tide\" means: \"I don't know. I really don’t. I honestly don't know.\"",
+          "author": "AkfurAshkenzic",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1x198en/on3_alabama_legend_nick_saban_was_asked_what_roll/",
+          "selftext": "",
+          "created_utc": 1791511364,
+          "num_comments": 0,
+          "id": "1x198en",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x198en/on3_alabama_legend_nick_saban_was_asked_what_roll/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Hot": [
         {
           "title": "CFB Hub",
@@ -202,180 +376,6 @@
           "id": "1xi3r3o",
           "subreddit": "cfb",
           "link_url": "https://www.reddit.com/r/CFB/comments/1xi3r3o/heartland_trophy_week_time_for_your_yearly_watch/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of 24h": [
-        {
-          "title": "[Jeff Rabjohns] \"Curt Cignetti on the TV presentation of the CFP rankings: “These people, and there are a whole bunch of them, they march out of the tent, and they’re given instructions on what to say, and they follow the company line. And I don’t need to go any further.” #iufb\" / X",
-          "author": "Big_Morf",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xo7tx8/jeff_rabjohns_curt_cignetti_on_the_tv/",
-          "selftext": "",
-          "created_utc": 1793847617,
-          "num_comments": 0,
-          "id": "1xo7tx8",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xo7tx8/jeff_rabjohns_curt_cignetti_on_the_tv/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Curt Cignetti: “SEC gets a lot of love from ESPN… That's why you see all these SEC teams up there, and some good two-loss teams from the Big Ten not quite as high.“",
-          "author": "Frosty-Marzipan-9824",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xojvuf/curt_cignetti_sec_gets_a_lot_of_love_from_espn/",
-          "selftext": "",
-          "created_utc": 1793888528,
-          "num_comments": 0,
-          "id": "1xojvuf",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xojvuf/curt_cignetti_sec_gets_a_lot_of_love_from_espn/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Pablo Torre Finds Out]EXCLUSIVE: The Onion has the chance to sponsor the funniest bowl game of all time. Why won't Big Football let them?",
-          "author": "Honestly_",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xok4p2/pablo_torre_finds_outexclusive_the_onion_has_the/",
-          "selftext": "",
-          "created_utc": 1793889151,
-          "num_comments": 0,
-          "id": "1xok4p2",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xok4p2/pablo_torre_finds_outexclusive_the_onion_has_the/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Zenitz] Miami star wide receiver Malachi Toney is currently expected to undergo surgery due to the ankle injury…",
-          "author": "simbaslanding",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xo4x0l/zenitz_miami_star_wide_receiver_malachi_toney_is/",
-          "selftext": "",
-          "created_utc": 1793839131,
-          "num_comments": 0,
-          "id": "1xo4x0l",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xo4x0l/zenitz_miami_star_wide_receiver_malachi_toney_is/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Kirk Ferentz on if he watches the CFP Selection Show: \"Geez, I can't wait! Yeah, that's tonight? Not to be a smart ass, but no. So, not to make fun of it, but it's great for TV, right? It's going to be televised? ESPN is loving it.\"",
-          "author": "Windows_66",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xo85iv/kirk_ferentz_on_if_he_watches_the_cfp_selection/",
-          "selftext": "",
-          "created_utc": 1793848576,
-          "num_comments": 0,
-          "id": "1xo85iv",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xo85iv/kirk_ferentz_on_if_he_watches_the_cfp_selection/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of Week": [
-        {
-          "title": "[DNVR Buffs] Colorado took a timeout because there were only 8 players out for FG block They then came out after the timeout with only 9 players",
-          "author": "ConstantMadness",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1wx3j8m/dnvr_buffs_colorado_took_a_timeout_because_there/",
-          "selftext": "",
-          "created_utc": 1791077900,
-          "num_comments": 0,
-          "id": "1wx3j8m",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1wx3j8m/dnvr_buffs_colorado_took_a_timeout_because_there/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Marcello] Arkansas super booster John Tyson when asked why he can't do for Arkansas football what Cody Campbell is doing for Texas Tech: \"He's got oil, I've got chickens.\"",
-          "author": "redwave2505",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1wygbly/marcello_arkansas_super_booster_john_tyson_when/",
-          "selftext": "",
-          "created_utc": 1791225127,
-          "num_comments": 0,
-          "id": "1wygbly",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1wygbly/marcello_arkansas_super_booster_john_tyson_when/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Postgame Thread] Missouri Defeats Florida 45-17",
-          "author": "CFB_Referee",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1wx0mo2/postgame_thread_missouri_defeats_florida_4517/",
-          "selftext": "",
-          "created_utc": 1791068922,
-          "num_comments": 0,
-          "id": "1wx0mo2",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1wx0mo2/postgame_thread_missouri_defeats_florida_4517/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Highlight] Kentucky @ South Carolina: Kentucky completes the 17 pt comeback with a walk-off 2pt conversion in OT",
-          "author": "Moose4KU",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1wx1rcv/highlight_kentucky_south_carolina_kentucky/",
-          "selftext": "",
-          "created_utc": 1791072339,
-          "num_comments": 0,
-          "id": "1wx1rcv",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1wx1rcv/highlight_kentucky_south_carolina_kentucky/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[On3] Alabama legend Nick Saban was asked what \"Roll Tide\" means: \"I don't know. I really don’t. I honestly don't know.\"",
-          "author": "AkfurAshkenzic",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x198en/on3_alabama_legend_nick_saban_was_asked_what_roll/",
-          "selftext": "",
-          "created_utc": 1791511364,
-          "num_comments": 0,
-          "id": "1x198en",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x198en/on3_alabama_legend_nick_saban_was_asked_what_roll/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2840,30 +2840,30 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-07T23:09:22+00:00",
+  "last_attempt_at": "2026-11-08T14:35:33+00:00",
   "feed_status": {
     "cfb": {
-      "Hot": {
-        "status": "ok",
-        "generated_at": "2026-11-07T23:09:22+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00"
-      },
-      "Best of Hour": {
-        "status": "stale",
-        "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
-        "reason": "rate_limited"
-      },
       "Best of 24h": {
-        "status": "stale",
-        "generated_at": "2026-11-06T00:35:18+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
-        "reason": "rate_limited"
+        "status": "ok",
+        "generated_at": "2026-11-08T14:35:33+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Hour": {
+        "status": "stale",
+        "generated_at": "2026-10-28T23:40:19+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2871,25 +2871,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2897,25 +2897,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2923,25 +2923,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2949,25 +2949,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2975,25 +2975,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-05T15:51:11+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3001,25 +3001,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3027,25 +3027,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-17T21:47:56+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3053,25 +3053,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3079,25 +3079,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3105,25 +3105,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-06T23:50:46+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3131,25 +3131,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-02T17:30:15+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-07T23:09:22+00:00",
+        "last_attempt_at": "2026-11-08T14:35:33+00:00",
         "reason": "rate_limited"
       }
     }
