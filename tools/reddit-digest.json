@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-10T02:26:24+00:00",
-  "generated_at": "2026-11-10 02:26:24 UTC",
+  "timestamp": "2026-11-10T15:51:40+00:00",
+  "generated_at": "2026-11-10 15:51:40 UTC",
   "subreddits_count": 12,
-  "total_posts": 159,
+  "total_posts": 164,
   "feeds": [
     "Best of Hour",
     "Best of 24h",
@@ -12,7 +12,37 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
+    "CoDCompetitive": [
+      "Hot",
+      "Best of Hour",
+      "Best of 24h"
+    ],
+    "soccer": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "formula1": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "MichiganWolverines": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "DetroitLions": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
     "DetroitPistons": [
+      "Best of Hour",
       "Best of 24h",
       "Best of Week",
       "Hot"
@@ -48,36 +78,6 @@
       "Hot"
     ],
     "baseball": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "CoDCompetitive": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "soccer": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "formula1": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "MichiganWolverines": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "DetroitLions": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -1005,6 +1005,180 @@
       ]
     },
     "CoDCompetitive": {
+      "Best of Week": [
+        {
+          "title": "“Super team” losing to swooty and purj",
+          "author": "MountainStorms",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xpm7aw/super_team_losing_to_swooty_and_purj/",
+          "selftext": "",
+          "created_utc": 1793994307,
+          "num_comments": 0,
+          "id": "1xpm7aw",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xpm7aw/super_team_losing_to_swooty_and_purj/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Toronto KOI win Monster Invitational (MW4)",
+          "author": "arunvenu_",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xre6my/toronto_koi_win_monster_invitational_mw4/",
+          "selftext": "",
+          "created_utc": 1794185770,
+          "num_comments": 0,
+          "id": "1xre6my",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xre6my/toronto_koi_win_monster_invitational_mw4/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Swooty after the Win vs Faze",
+          "author": "leggitt27",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xpmcar/swooty_after_the_win_vs_faze/",
+          "selftext": "",
+          "created_utc": 1793994652,
+          "num_comments": 0,
+          "id": "1xpmcar",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xpmcar/swooty_after_the_win_vs_faze/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "FaZe getting belt by C9 vs OpTic",
+          "author": "honestcodfan",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xr7lcn/faze_getting_belt_by_c9_vs_optic/",
+          "selftext": "",
+          "created_utc": 1794168041,
+          "num_comments": 0,
+          "id": "1xr7lcn",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xr7lcn/faze_getting_belt_by_c9_vs_optic/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Dan “Crybaby” Ghosty’s crouch button gets stuck whilst in a 1v1 against Jamie “The Iron Giant” Craven",
+          "author": "Dependent-Syrup6979",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xptjjk/dan_crybaby_ghostys_crouch_button_gets_stuck/",
+          "selftext": "",
+          "created_utc": 1794013619,
+          "num_comments": 0,
+          "id": "1xptjjk",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xptjjk/dan_crybaby_ghostys_crouch_button_gets_stuck/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Hot": [
+        {
+          "title": "Free Talk Friday - October 30, 2026",
+          "author": "AutoModerator",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjbrbx/free_talk_friday_october_30_2026/",
+          "selftext": "",
+          "created_utc": 1793356269,
+          "num_comments": 0,
+          "id": "1xjbrbx",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjbrbx/free_talk_friday_october_30_2026/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Omg I wasn’t muted? - Dashy 😂",
+          "author": "TheNerd420",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjrndj/omg_i_wasnt_muted_dashy/",
+          "selftext": "",
+          "created_utc": 1793394966,
+          "num_comments": 0,
+          "id": "1xjrndj",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjrndj/omg_i_wasnt_muted_dashy/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Riyadh Falcons announce their roster for CDL 2027",
+          "author": "arunvenu_",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjsdim/riyadh_falcons_announce_their_roster_for_cdl_2027/",
+          "selftext": "",
+          "created_utc": 1793396764,
+          "num_comments": 0,
+          "id": "1xjsdim",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjsdim/riyadh_falcons_announce_their_roster_for_cdl_2027/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "NaDeSHoT turns back the Clock and 1v3s Repullze, Simp & aBeZy",
+          "author": "Remandoe",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjglmt/nadeshot_turns_back_the_clock_and_1v3s_repullze/",
+          "selftext": "",
+          "created_utc": 1793369853,
+          "num_comments": 0,
+          "id": "1xjglmt",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjglmt/nadeshot_turns_back_the_clock_and_1v3s_repullze/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Exnid's Message To The Falcons and CDL Community Going into MW4",
+          "author": "Metieore",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjp8r4/exnids_message_to_the_falcons_and_cdl_community/",
+          "selftext": "",
+          "created_utc": 1793389325,
+          "num_comments": 0,
+          "id": "1xjp8r4",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjp8r4/exnids_message_to_the_falcons_and_cdl_community/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of Hour": [
         {
           "title": "Dreamhack Major 2 ticket pricing",
@@ -1121,94 +1295,6 @@
           "id": "1x5xfop",
           "subreddit": "CoDCompetitive",
           "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5xfop/new_cdl_2027_grand_finals_format_winners_bracket/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of Week": [],
-      "Hot": [
-        {
-          "title": "Free Talk Friday - October 30, 2026",
-          "author": "AutoModerator",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjbrbx/free_talk_friday_october_30_2026/",
-          "selftext": "",
-          "created_utc": 1793356269,
-          "num_comments": 0,
-          "id": "1xjbrbx",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjbrbx/free_talk_friday_october_30_2026/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Omg I wasn’t muted? - Dashy 😂",
-          "author": "TheNerd420",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjrndj/omg_i_wasnt_muted_dashy/",
-          "selftext": "",
-          "created_utc": 1793394966,
-          "num_comments": 0,
-          "id": "1xjrndj",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjrndj/omg_i_wasnt_muted_dashy/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Riyadh Falcons announce their roster for CDL 2027",
-          "author": "arunvenu_",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjsdim/riyadh_falcons_announce_their_roster_for_cdl_2027/",
-          "selftext": "",
-          "created_utc": 1793396764,
-          "num_comments": 0,
-          "id": "1xjsdim",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjsdim/riyadh_falcons_announce_their_roster_for_cdl_2027/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "NaDeSHoT turns back the Clock and 1v3s Repullze, Simp & aBeZy",
-          "author": "Remandoe",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjglmt/nadeshot_turns_back_the_clock_and_1v3s_repullze/",
-          "selftext": "",
-          "created_utc": 1793369853,
-          "num_comments": 0,
-          "id": "1xjglmt",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjglmt/nadeshot_turns_back_the_clock_and_1v3s_repullze/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Exnid's Message To The Falcons and CDL Community Going into MW4",
-          "author": "Metieore",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjp8r4/exnids_message_to_the_falcons_and_cdl_community/",
-          "selftext": "",
-          "created_utc": 1793389325,
-          "num_comments": 0,
-          "id": "1xjp8r4",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjp8r4/exnids_message_to_the_falcons_and_cdl_community/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2892,31 +2978,31 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-10T02:26:24+00:00",
+  "last_attempt_at": "2026-11-10T15:51:40+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-07T23:09:22+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2924,25 +3010,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2950,25 +3036,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -2976,51 +3062,50 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
     "CoDCompetitive": {
+      "Best of Week": {
+        "status": "ok",
+        "generated_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-10-31T13:56:06+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "reason": "rate_limited"
+      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Week": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3028,25 +3113,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3054,25 +3139,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3080,25 +3165,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3106,50 +3191,51 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
     "DetroitPistons": {
       "Best of Hour": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00"
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3157,25 +3243,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-06T23:50:46+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3183,25 +3269,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-02T17:30:15+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-10T15:51:40+00:00",
         "reason": "rate_limited"
       }
     }
