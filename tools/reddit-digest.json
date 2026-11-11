@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-10T15:51:40+00:00",
-  "generated_at": "2026-11-10 15:51:40 UTC",
+  "timestamp": "2026-11-11T00:17:01+00:00",
+  "generated_at": "2026-11-11 00:17:01 UTC",
   "subreddits_count": 12,
-  "total_posts": 164,
+  "total_posts": 169,
   "feeds": [
     "Best of Hour",
     "Best of 24h",
@@ -12,40 +12,10 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "CoDCompetitive": [
+    "DetroitPistons": [
       "Hot",
       "Best of Hour",
       "Best of 24h"
-    ],
-    "soccer": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "formula1": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "MichiganWolverines": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "DetroitLions": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "DetroitPistons": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
     ],
     "movies": [
       "Best of Hour",
@@ -78,6 +48,36 @@
       "Hot"
     ],
     "baseball": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "CoDCompetitive": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "soccer": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "formula1": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "MichiganWolverines": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "DetroitLions": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -1005,6 +1005,129 @@
       ]
     },
     "CoDCompetitive": {
+      "Best of Hour": [
+        {
+          "title": "Dreamhack Major 2 ticket pricing",
+          "author": "OpTic_MH",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xmvus1/dreamhack_major_2_ticket_pricing/",
+          "selftext": "",
+          "created_utc": 1793719475,
+          "num_comments": 0,
+          "id": "1xmvus1",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xmvus1/dreamhack_major_2_ticket_pricing/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Which one is the most badass nickname?",
+          "author": "Cold_Swan_9021",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xmvfbw/which_one_is_the_most_badass_nickname/",
+          "selftext": "",
+          "created_utc": 1793718495,
+          "num_comments": 0,
+          "id": "1xmvfbw",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xmvfbw/which_one_is_the_most_badass_nickname/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Best of 24h": [
+        {
+          "title": "Maniac on the OpTic race to prestige😂",
+          "author": "skindonakasaki",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5vc5q/maniac_on_the_optic_race_to_prestige/",
+          "selftext": "",
+          "created_utc": 1791994173,
+          "num_comments": 0,
+          "id": "1x5vc5q",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5vc5q/maniac_on_the_optic_race_to_prestige/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Daniel Tsay has left the CDL",
+          "author": "Ok_Nerve_9128",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5wxlw/daniel_tsay_has_left_the_cdl/",
+          "selftext": "",
+          "created_utc": 1791997755,
+          "num_comments": 0,
+          "id": "1x5wxlw",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5wxlw/daniel_tsay_has_left_the_cdl/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Swooty gets a Reality Check from Scrap on Competing vs Content",
+          "author": "Remandoe",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5tp59/swooty_gets_a_reality_check_from_scrap_on/",
+          "selftext": "",
+          "created_utc": 1791990453,
+          "num_comments": 0,
+          "id": "1x5tp59",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5tp59/swooty_gets_a_reality_check_from_scrap_on/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "CDC Intel reveals that Renegade and Owakening are expected to Join the Carolina Royal Ravens for next season.",
+          "author": "leggitt27",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5eo33/cdc_intel_reveals_that_renegade_and_owakening_are/",
+          "selftext": "",
+          "created_utc": 1791941625,
+          "num_comments": 0,
+          "id": "1x5eo33",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5eo33/cdc_intel_reveals_that_renegade_and_owakening_are/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "New CDL 2027 Grand Finals format- Winners bracket finally have an advantage!",
+          "author": "JohnnerCOD",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5xfop/new_cdl_2027_grand_finals_format_winners_bracket/",
+          "selftext": "",
+          "created_utc": 1791998897,
+          "num_comments": 0,
+          "id": "1x5xfop",
+          "subreddit": "CoDCompetitive",
+          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5xfop/new_cdl_2027_grand_finals_format_winners_bracket/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of Week": [
         {
           "title": "“Super team” losing to swooty and purj",
@@ -1172,129 +1295,6 @@
           "id": "1xjp8r4",
           "subreddit": "CoDCompetitive",
           "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xjp8r4/exnids_message_to_the_falcons_and_cdl_community/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of Hour": [
-        {
-          "title": "Dreamhack Major 2 ticket pricing",
-          "author": "OpTic_MH",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xmvus1/dreamhack_major_2_ticket_pricing/",
-          "selftext": "",
-          "created_utc": 1793719475,
-          "num_comments": 0,
-          "id": "1xmvus1",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xmvus1/dreamhack_major_2_ticket_pricing/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Which one is the most badass nickname?",
-          "author": "Cold_Swan_9021",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1xmvfbw/which_one_is_the_most_badass_nickname/",
-          "selftext": "",
-          "created_utc": 1793718495,
-          "num_comments": 0,
-          "id": "1xmvfbw",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1xmvfbw/which_one_is_the_most_badass_nickname/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of 24h": [
-        {
-          "title": "Maniac on the OpTic race to prestige😂",
-          "author": "skindonakasaki",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5vc5q/maniac_on_the_optic_race_to_prestige/",
-          "selftext": "",
-          "created_utc": 1791994173,
-          "num_comments": 0,
-          "id": "1x5vc5q",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5vc5q/maniac_on_the_optic_race_to_prestige/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Daniel Tsay has left the CDL",
-          "author": "Ok_Nerve_9128",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5wxlw/daniel_tsay_has_left_the_cdl/",
-          "selftext": "",
-          "created_utc": 1791997755,
-          "num_comments": 0,
-          "id": "1x5wxlw",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5wxlw/daniel_tsay_has_left_the_cdl/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Swooty gets a Reality Check from Scrap on Competing vs Content",
-          "author": "Remandoe",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5tp59/swooty_gets_a_reality_check_from_scrap_on/",
-          "selftext": "",
-          "created_utc": 1791990453,
-          "num_comments": 0,
-          "id": "1x5tp59",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5tp59/swooty_gets_a_reality_check_from_scrap_on/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "CDC Intel reveals that Renegade and Owakening are expected to Join the Carolina Royal Ravens for next season.",
-          "author": "leggitt27",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5eo33/cdc_intel_reveals_that_renegade_and_owakening_are/",
-          "selftext": "",
-          "created_utc": 1791941625,
-          "num_comments": 0,
-          "id": "1x5eo33",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5eo33/cdc_intel_reveals_that_renegade_and_owakening_are/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "New CDL 2027 Grand Finals format- Winners bracket finally have an advantage!",
-          "author": "JohnnerCOD",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5xfop/new_cdl_2027_grand_finals_format_winners_bracket/",
-          "selftext": "",
-          "created_utc": 1791998897,
-          "num_comments": 0,
-          "id": "1x5xfop",
-          "subreddit": "CoDCompetitive",
-          "link_url": "https://www.reddit.com/r/CoDCompetitive/comments/1x5xfop/new_cdl_2027_grand_finals_format_winners_bracket/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2081,6 +2081,180 @@
       ]
     },
     "DetroitPistons": {
+      "Best of Week": [
+        {
+          "title": "Lebron James says Luka and Cade are two of his favorite players",
+          "author": "AcadiaTemporary5737",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xop5no/lebron_james_says_luka_and_cade_are_two_of_his/",
+          "selftext": "",
+          "created_utc": 1793900820,
+          "num_comments": 0,
+          "id": "1xop5no",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xop5no/lebron_james_says_luka_and_cade_are_two_of_his/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "I'm sure this comment section will be civil 😀",
+          "author": "g59mountsinai",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xngmam/im_sure_this_comment_section_will_be_civil/",
+          "selftext": "",
+          "created_utc": 1793772088,
+          "num_comments": 0,
+          "id": "1xngmam",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xngmam/im_sure_this_comment_section_will_be_civil/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Thank you Kevin Huerter",
+          "author": "Interesting-Tax-498",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xrecf3/thank_you_kevin_huerter/",
+          "selftext": "",
+          "created_utc": 1794186235,
+          "num_comments": 0,
+          "id": "1xrecf3",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xrecf3/thank_you_kevin_huerter/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "I didn’t even know this happened at the game with the Lakers 😂😂😂",
+          "author": "JeremieLoyalty",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xsqkgt/i_didnt_even_know_this_happened_at_the_game_with/",
+          "selftext": "",
+          "created_utc": 1794326293,
+          "num_comments": 0,
+          "id": "1xsqkgt",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xsqkgt/i_didnt_even_know_this_happened_at_the_game_with/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Another NBA Superstar catches the “Ausar-Flu” 😈",
+          "author": "Certain_Park7290",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xr60rz/another_nba_superstar_catches_the_ausarflu/",
+          "selftext": "",
+          "created_utc": 1794164247,
+          "num_comments": 0,
+          "id": "1xr60rz",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xr60rz/another_nba_superstar_catches_the_ausarflu/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Hot": [
+        {
+          "title": "Game Thread: Detroit Pistons (5-1) vs Charlotte Hornets (3-4) Live | NBA | Nov 2, 2026",
+          "author": "nba-hub",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xm5e4a/game_thread_detroit_pistons_51_vs_charlotte/",
+          "selftext": "",
+          "created_utc": 1793644476,
+          "num_comments": 0,
+          "id": "1xm5e4a",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xm5e4a/game_thread_detroit_pistons_51_vs_charlotte/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Pistons halloween costumes",
+          "author": "MatthewTheGOATyt",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xlztl1/pistons_halloween_costumes/",
+          "selftext": "",
+          "created_utc": 1793632410,
+          "num_comments": 0,
+          "id": "1xlztl1",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xlztl1/pistons_halloween_costumes/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Woo",
+          "author": "salawayun",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xm73mw/woo/",
+          "selftext": "",
+          "created_utc": 1793648149,
+          "num_comments": 0,
+          "id": "1xm73mw",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xm73mw/woo/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Gametime!",
+          "author": "olliwoodda",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xmegr4/gametime/",
+          "selftext": "",
+          "created_utc": 1793665732,
+          "num_comments": 0,
+          "id": "1xmegr4",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xmegr4/gametime/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Strong 5-1 start to the season despite a tough opening schedule 🔥",
+          "author": "Certain_Park7290",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xlyeey/strong_51_start_to_the_season_despite_a_tough/",
+          "selftext": "",
+          "created_utc": 1793629096,
+          "num_comments": 0,
+          "id": "1xlyeey",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xlyeey/strong_51_start_to_the_season_despite_a_tough/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of Hour": [
         {
           "title": "Ebuka",
@@ -2214,94 +2388,6 @@
           "id": "1x6aliq",
           "subreddit": "DetroitPistons",
           "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1x6aliq/i_know_its_preseason_but_we_look_so_good/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of Week": [],
-      "Hot": [
-        {
-          "title": "Game Thread: Detroit Pistons (5-1) vs Charlotte Hornets (3-4) Live | NBA | Nov 2, 2026",
-          "author": "nba-hub",
-          "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xm5e4a/game_thread_detroit_pistons_51_vs_charlotte/",
-          "selftext": "",
-          "created_utc": 1793644476,
-          "num_comments": 0,
-          "id": "1xm5e4a",
-          "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xm5e4a/game_thread_detroit_pistons_51_vs_charlotte/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Pistons halloween costumes",
-          "author": "MatthewTheGOATyt",
-          "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xlztl1/pistons_halloween_costumes/",
-          "selftext": "",
-          "created_utc": 1793632410,
-          "num_comments": 0,
-          "id": "1xlztl1",
-          "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xlztl1/pistons_halloween_costumes/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Woo",
-          "author": "salawayun",
-          "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xm73mw/woo/",
-          "selftext": "",
-          "created_utc": 1793648149,
-          "num_comments": 0,
-          "id": "1xm73mw",
-          "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xm73mw/woo/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Gametime!",
-          "author": "olliwoodda",
-          "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xmegr4/gametime/",
-          "selftext": "",
-          "created_utc": 1793665732,
-          "num_comments": 0,
-          "id": "1xmegr4",
-          "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xmegr4/gametime/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Strong 5-1 start to the season despite a tough opening schedule 🔥",
-          "author": "Certain_Park7290",
-          "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xlyeey/strong_51_start_to_the_season_despite_a_tough/",
-          "selftext": "",
-          "created_utc": 1793629096,
-          "num_comments": 0,
-          "id": "1xlyeey",
-          "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xlyeey/strong_51_start_to_the_season_despite_a_tough/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -2978,31 +3064,31 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-10T15:51:40+00:00",
+  "last_attempt_at": "2026-11-11T00:17:01+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-07T23:09:22+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3010,25 +3096,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3036,25 +3122,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3062,50 +3148,51 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
     "CoDCompetitive": {
-      "Best of Week": {
-        "status": "ok",
-        "generated_at": "2026-11-10T15:51:40+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
-        "reason": "rate_limited"
-      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Week": {
+        "status": "stale",
+        "generated_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-10-31T13:56:06+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3113,25 +3200,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3139,25 +3226,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3165,25 +3252,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3191,51 +3278,50 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
     "DetroitPistons": {
+      "Best of Week": {
+        "status": "ok",
+        "generated_at": "2026-11-11T00:17:01+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-11-03T01:53:32+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
+        "reason": "rate_limited"
+      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Week": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3243,25 +3329,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-06T23:50:46+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3269,25 +3355,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-02T17:30:15+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-10T15:51:40+00:00",
+        "last_attempt_at": "2026-11-11T00:17:01+00:00",
         "reason": "rate_limited"
       }
     }
