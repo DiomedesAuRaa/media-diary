@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-12T01:30:40+00:00",
-  "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+  "generatedAt": "2026-11-12T09:46:14+00:00",
+  "lastAttemptAt": "2026-11-12T09:46:14+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,9 +10,19 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
+        {
+          "title": "Israeli strike on a Gaza hospital kills 6 people, health authorities say",
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6038339/israeli-strike-gaza-hospital",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "World's fastest ocean liner is sunk to break another record: largest artificial reef",
+          "url": "https://www.npr.org/2026/11/11/nx-s1-6030853/ss-united-states-artificial-reef-sinking",
+          "date": "2026-11-12"
+        },
         {
           "title": "Democrat Scott Colom wins the closest Senate race in the country",
           "url": "https://www.npr.org/2026/11/11/nx-s1-6037840/democrat-scott-colom-wins-the-closest-senate-race-in-the-country",
@@ -42,16 +52,6 @@
           "title": "What's behind democratic socialists' historic victories in the midterms?",
           "url": "https://www.npr.org/2026/11/11/nx-s1-6037432/whats-behind-democratic-socialists-historic-victories-in-the-midterms",
           "date": "2026-11-11"
-        },
-        {
-          "title": "Following big Democratic wins, these swing voters are looking for results",
-          "url": "https://www.npr.org/2026/11/11/nx-s1-6036790/swing-voters-swing-states-democrats-congress",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Russia and Ukraine agree to a prisoner exchange as talks end with no big breakthrough",
-          "url": "https://www.npr.org/2026/11/11/g-s1-152954/russia-ukraine-war-talks",
-          "date": "2026-11-11"
         }
       ]
     },
@@ -61,23 +61,23 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
-          "title": "Author says there were 'real concerns' about David Walliams within publishing industry",
-          "url": "https://www.bbc.co.uk/news/articles/c95y15830k77o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Some under-25s should get less benefits, Milburn review to say",
+          "title": "Some under-25s should get fewer benefits, Milburn review to say",
           "url": "https://www.bbc.co.uk/news/articles/cwn70l1628l0o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
+          "date": "2026-11-12"
         },
         {
-          "title": "Clashes erupt in Barcelona after thousands join Spain general strike",
-          "url": "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
+          "title": "'No light, no water, no heat': Ukrainians struggle with blackouts as Russia hits power grid",
+          "url": "https://www.bbc.co.uk/news/articles/cr1ewpd95d21o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Israeli strike on Gaza hospital kills six Palestinians, health ministry says",
+          "url": "https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
         },
         {
           "title": "Hegseth and advisers reprimanded by guard at Tomb of the Unknown Soldier",
@@ -90,19 +90,19 @@
           "date": "2026-11-12"
         },
         {
-          "title": "Thousands of schools in Italy, Scotland and Northern Ireland hit by threats in suspected bomb hoax",
-          "url": "https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
+          "title": "Democrat Scott Colom seals historic win in Mississippi Senate race",
+          "url": "https://www.bbc.co.uk/news/articles/cw7vppyr80eeo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
         },
         {
-          "title": "Scottish DJ, 32, confirmed as victim of Krakow shooting",
-          "url": "https://www.bbc.co.uk/news/articles/cmx28e95g2rzo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
+          "title": "Media industry could be forced to improve safeguards after Walliams allegations",
+          "url": "https://www.bbc.co.uk/news/articles/cm3egj20v5x4o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
         },
         {
-          "title": "Russia-Ukraine talks turn to post-war security but end without breakthrough",
-          "url": "https://www.bbc.co.uk/news/articles/ck792we7zrz4o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
+          "title": "Tourette syndrome: The life-changing device helping to stop tics",
+          "url": "https://www.bbc.co.uk/news/videos/c94gnv5e31gno?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
         }
       ]
     },
@@ -112,13 +112,18 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
-          "title": "Clashes erupt in Barcelona after thousands join Spain general strike",
-          "url": "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
+          "title": "'No light, no water, no heat': Ukrainians struggle with blackouts as Russia hits power grid",
+          "url": "https://www.bbc.co.uk/news/articles/cr1ewpd95d21o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "New York building collapse kills at least two, officials say",
+          "url": "https://www.bbc.co.uk/news/articles/c8zx964glvwxo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
         },
         {
           "title": "Democrat Scott Colom seals historic win in Mississippi Senate race",
@@ -126,33 +131,28 @@
           "date": "2026-11-12"
         },
         {
+          "title": "Israeli strike on Gaza hospital kills six Palestinians, health ministry says",
+          "url": "https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Ugandan police investigate deaths of four pupils in suspected school poisoning",
+          "url": "https://www.bbc.co.uk/news/articles/ck9d71wyn7wwo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Australian teen missing in bush for six days rescued alive",
+          "url": "https://www.bbc.co.uk/news/articles/ckvg25zmppglo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Clashes erupt in Barcelona after thousands join Spain general strike",
+          "url": "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-11"
+        },
+        {
           "title": "Russia-Ukraine talks turn to post-war security but end without breakthrough",
           "url": "https://www.bbc.co.uk/news/articles/ck792we7zrz4o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "New York building collapse kills one person and injures 12",
-          "url": "https://www.bbc.co.uk/news/videos/c60rkwjj7x7go?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Indonesia's vice president resigns amid signs ruling alliance is fraying",
-          "url": "https://www.bbc.co.uk/news/articles/cmvgxgz87qqro?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Kidnapper, 74, escapes from house arrest in Argentina by abseiling from balcony",
-          "url": "https://www.bbc.co.uk/news/articles/c933gn6710lyo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Famed ship SS United States to be sunk off coast of Florida",
-          "url": "https://www.bbc.co.uk/news/articles/c3x298n87rn2o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Schools in Italy, Scotland and Northern Ireland hit by threats in suspected bomb hoax",
-          "url": "https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-11"
         }
       ]
@@ -163,47 +163,47 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
-          "title": "Former Italian Red Brigades member escapes house arrest in Argentina",
-          "url": "https://www.aljazeera.com/news/2026/11/12/former-italian-red-brigades-member-escapes-house-arrest-in-argentina?traffic_source=rss",
+          "title": "From the UK to the Gulf, are US overseas bases becoming liabilities?",
+          "url": "https://www.aljazeera.com/news-analysis/2026/11/12/from-the-uk-to-the-gulf-are-us-overseas-bases-becoming-liabilities?traffic_source=rss",
           "date": "2026-11-12"
         },
         {
-          "title": "Nvidia shares plunge amid reports board to discuss CEO Huang’s future",
-          "url": "https://www.aljazeera.com/economy/2026/11/12/nvidia-shares-plunge-amid-reports-board-to-discuss-ceo-huangs-future?traffic_source=rss",
+          "title": "US envoys arrive in Moscow for Russia-Ukraine talks with Putin",
+          "url": "https://www.aljazeera.com/news/2026/11/12/us-envoys-arrive-in-moscow-for-russia-ukraine-talks-with-putin?traffic_source=rss",
           "date": "2026-11-12"
         },
         {
-          "title": "Hegseth entourage reprimanded by guard at Tomb of the Unknown Soldier",
-          "url": "https://www.aljazeera.com/news/2026/11/12/hegseth-entourage-reprimanded-by-guard-at-tomb-of-the-unknown-soldier?traffic_source=rss",
+          "title": "India bypasses own rules to buy Israeli phone-hacking tech",
+          "url": "https://www.aljazeera.com/features/2026/11/12/india-bypasses-own-rules-to-buy-israeli-phone-hacking-tech?traffic_source=rss",
           "date": "2026-11-12"
         },
         {
-          "title": "Why the US, Mexico and Guatemala may lose their measles-free status",
-          "url": "https://www.aljazeera.com/news/2026/11/12/why-the-us-mexico-and-guatemala-may-lose-their-measles-free-status?traffic_source=rss",
+          "title": "Ten police officers, 18 fighters killed in northwest Pakistan attack",
+          "url": "https://www.aljazeera.com/news/2026/11/12/ten-police-officers-18-fighters-killed-in-northwest-pakistan-attack?traffic_source=rss",
           "date": "2026-11-12"
         },
         {
-          "title": "Cameroon: Who is really calling the shots?",
-          "url": "https://www.aljazeera.com/news/2026/11/12/cameroon-who-is-really-calling-the-shots?traffic_source=rss",
+          "title": "Xi Jinping says Taiwan ‘reunification’ with China must happen",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/12/xi-jinping-says-taiwan-reunification-with-china-must-happen?traffic_source=rss",
           "date": "2026-11-12"
         },
         {
-          "title": "Hegseth scolded by security at Tomb of the Unknown Soldier",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/12/hegseth-scolded-by-security-at-tomb-of-the-unknown-soldier?traffic_source=rss",
+          "title": "Mississippi elects first Black Senator since 1874",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/12/mississippi-elects-first-black-senator-since-1874?traffic_source=rss",
           "date": "2026-11-12"
         },
         {
-          "title": "US election results could be positive for Lebanon, Hezbollah chief says",
-          "url": "https://www.aljazeera.com/news/2026/11/12/us-election-results-could-be-positive-for-lebanon-hezbollah-chief-says?traffic_source=rss",
+          "title": "Photos: Protesters clash with police after housing cost rallies in Spain",
+          "url": "https://www.aljazeera.com/gallery/2026/11/12/photos-protesters-clash-with-police-after-housing-cost-rallies-in-spain?traffic_source=rss",
           "date": "2026-11-12"
         },
         {
-          "title": "Iran war live: Iran warns of Europe retaliation, Israel attacks Gaza",
-          "url": "https://www.aljazeera.com/news/liveblog/2026/11/12/iran-war-live-tehran-warns-of-wider-retaliation-israel-kills-in-gaza?traffic_source=rss",
+          "title": "Iran open to deal if US ‘refrains from excessive demands’, says Ghalibaf",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/12/iran-open-to-deal-if-us-refrains-from-excessive-demands-says-ghalibaf?traffic_source=rss",
           "date": "2026-11-12"
         }
       ]
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "Lewis Hamilton visits Egypt’s Rafah crossing and Gaza aid facilities",
@@ -265,9 +265,39 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
+        {
+          "title": "Ukraine's ex foreign minister Kuleba on prospects for peace in Russia-Ukraine war",
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6037759/ukraines-ex-foreign-minister-kuleba-on-prospects-for-peace-in-russia-ukraine-war",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Former U.S. Ambassador William Taylor discusses the latest Russia-Ukraine talks",
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6037526/former-u-s-ambassador-william-taylor-discusses-the-latest-russia-ukraine-talks",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "U.S. officials set to meet with Putin, Zelenskyy following Abu Dhabi peace talks",
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6037558/u-s-officials-set-to-meet-with-putin-zelenskyy-following-abu-dhabi-peace-talks",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Drought threatens Iraq's marshes, risking one of the oldest ways of life",
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6026458/drought-threatens-iraqs-marshes-risking-one-of-the-oldest-ways-of-life",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Aid groups call on Israel to allow shelters in Gaza amid a humanitarian emergency",
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6035686/aid-groups-call-on-israel-to-allow-shelters-in-gaza-amid-a-humanitarian-emergency",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Israeli strike on a Gaza hospital kills 6 people, health authorities say",
+          "url": "https://www.npr.org/2026/11/12/nx-s1-6038339/israeli-strike-gaza-hospital",
+          "date": "2026-11-12"
+        },
         {
           "title": "Greetings from Senegal, where breakdancers are competing in the Youth Olympics",
           "url": "https://www.npr.org/2026/11/11/g-s1-150228/senegal-youth-olympic-games-breakdancing",
@@ -277,36 +307,6 @@
           "title": "Russia and Ukraine agree to a prisoner exchange as talks end with no big breakthrough",
           "url": "https://www.npr.org/2026/11/11/g-s1-152954/russia-ukraine-war-talks",
           "date": "2026-11-11"
-        },
-        {
-          "title": "House effectively ends Hegseth impeachment. And, 3 men accused of plotting U.K. attacks",
-          "url": "https://www.npr.org/2026/11/11/g-s1-152949/up-first-newsletter-pete-hegseth-jim-jordan-iran-backed-trio-us-bases",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "An Iran-backed trio is accused of plotting attacks on a U.K. base hosting U.S. jets",
-          "url": "https://www.npr.org/2026/11/10/nx-s1-6036786/uk-iran-airbase-russia-spy",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Spain's workers hold a general strike over housing costs before national election",
-          "url": "https://www.npr.org/2026/11/11/nx-s1-6037314/spain-general-strike",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Ebola tops 11,000 cases in Congo's deadliest outbreak",
-          "url": "https://www.npr.org/2026/11/11/nx-s1-6037304/ebola-congo-outbreak",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "U.S. boycotts U.N. human rights review for second year running",
-          "url": "https://www.npr.org/2026/11/10/nx-s1-6034998/un-human-rights-us-geneva",
-          "date": "2026-11-10"
-        },
-        {
-          "title": "'Like gods reigning over humans': Many defectors see daughter of North Korea's Kim as heir apparent",
-          "url": "https://www.npr.org/2026/11/10/g-s1-152795/like-gods-reigning-over-humans-many-defectors-see-daughter-of-north-koreas-kim-as-heir-apparent",
-          "date": "2026-11-10"
         }
       ]
     },
@@ -315,48 +315,48 @@
       "category": "tech",
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
-      "status": "stale",
-      "generatedAt": "2026-11-11T18:40:31+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "status": "ok",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
-          "title": "AWS Finally Built Its Own AWS Emulator",
-          "url": "https://github.com/aws/aws-emulator",
+          "title": "I'm Working on a FOSS Linux Pinbal Simulation Engine",
+          "url": "https://www.getlazarus.org/forums/topic/17/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Darling Development Update – Q4 2026",
+          "url": "https://blog.darlinghq.org/2026/11/08/development-update-q4-2026/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Bad ideas that aren't bad anymore",
+          "url": "https://devonestes.com/bad-ideas-that-arent-bad-anymore",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Lean Grimoire",
+          "url": "https://terrytao.wordpress.com/2026/11/11/lean-grimoire/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Critical RCE Vulnerability in Apache HTTP Server",
+          "url": "https://www.wiz.io/blog/cve-2026-119618-rce-apache-http-server-vulnerability",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "A general purpose Apple Silicon layer for x86-64 PCs",
+          "url": "https://github.com/tylertms/Stela",
           "date": "2026-11-11"
         },
         {
-          "title": "Launch HN: Pomerado (YC F26) – Turn any website into an MCP for agents",
-          "url": "https://pomerado.ai/",
+          "title": "93% of paint splatters are valid Perl programs (2019)",
+          "url": "https://www.mcmillen.dev/sigbovik/",
           "date": "2026-11-11"
         },
         {
-          "title": "Faster Retrieval for Better, More Efficient RAG",
-          "url": "https://machinelearning.apple.com/research/faster-retrieval",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
-          "url": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Multiple remote code execution vulnerabilities in danfoss sm-800A",
-          "url": "https://www.midnightblue.nl/blog/multiple-rce-danfoss-aksm800a",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "The hardest notes to find on the guitar fretboard",
-          "url": "https://www.gitori.com/blog/articles/hardest-notes-on-the-guitar-fretboard",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Show HN: Klad, a paint app your coding agent can drive (source-available)",
-          "url": "https://github.com/klad-app/klad",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "The Computer Graphics Book of Knowledge",
-          "url": "https://www.cs.cmu.edu/~ph/nyit/masson/history.htm",
+          "title": "Nvidia is preparing to oust Jensen Huang",
+          "url": "https://www.wsj.com/business/nvidia-is-preparing-to-oust-nvidia-ceo-jensen-huang-30f421ad",
           "date": "2026-11-11"
         }
       ]
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "CEO Jensen Huang's job is suddenly on the line at Nvidia",
@@ -418,8 +418,8 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "Nvidia is reportedly preparing to fire Jensen Huang",
@@ -469,48 +469,48 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
-          "title": "Pete Hegseth Is About to Get His Ass Kicked",
-          "url": "https://www.wired.com/story/pete-hegseth-is-about-to-get-his-ass-kicked/",
-          "date": "2026-11-11"
+          "title": "The Polar Vortex Is About to Make Weather Weird From the UK to the US",
+          "url": "https://www.wired.com/story/the-polar-vortex-is-about-to-make-weather-weird-from-the-uk-to-the-us/",
+          "date": "2026-11-12"
         },
         {
-          "title": "I Saw the Future of Robotics in a Virtual Duck That Chases My Cat",
-          "url": "https://www.wired.com/story/i-trained-a-microduck-to-be-my-cats-butler/",
-          "date": "2026-11-11"
+          "title": "TurboTax Full Service Coupons This November 2026",
+          "url": "https://www.wired.com/story/turbotax-coupon/",
+          "date": "2026-11-12"
         },
         {
-          "title": "The 22 Best Early Black Friday Deals: Our Ultimate Picks (2026)",
-          "url": "https://www.wired.com/story/best-black-friday-deals-11-11-2026/",
-          "date": "2026-11-11"
+          "title": "Lovehoney Coupon Offers: 70% Off",
+          "url": "https://www.wired.com/story/lovehoney-discount-code/",
+          "date": "2026-11-12"
         },
         {
-          "title": "A Startup Wants to Fight AI Bioweapons With AI",
-          "url": "https://www.wired.com/story/startup-fights-ai-bioweapons-with-ai/",
-          "date": "2026-11-11"
+          "title": "Wayfair Coupons: Up to 80% Off November 2026",
+          "url": "https://www.wired.com/story/wayfair-promo-code/",
+          "date": "2026-11-12"
         },
         {
-          "title": "The AO3 Shutdown Is Pitting Fanfic Readers Against Authors",
-          "url": "https://www.wired.com/story/the-ao3-shutdown-is-pitting-fanfic-readers-against-authors/",
-          "date": "2026-11-11"
+          "title": "Lenovo Coupon Codes: 15% Off in November 2026",
+          "url": "https://www.wired.com/story/lenovo-coupon-code/",
+          "date": "2026-11-12"
         },
         {
-          "title": "China’s Nvidia Honeypot Isn’t Surprising. Jensen Huang Fell for It Anyway",
-          "url": "https://www.wired.com/story/chinas-nvidia-honeypot-isnt-surprising-jensen-huang-fell-for-it-anyway/",
-          "date": "2026-11-11"
+          "title": "HelloFresh Promo Codes: 55% Off for November 2026",
+          "url": "https://www.wired.com/story/hellofresh-coupon/",
+          "date": "2026-11-12"
         },
         {
-          "title": "Duolingo, Strava, and Ticketmaster Are All Caught Up in EU’s New Digital Fairness Rules",
-          "url": "https://www.wired.com/story/duolingo-strava-and-ticketmaster-are-all-caught-up-in-eus-new-digital-fairness-rules/",
-          "date": "2026-11-11"
+          "title": "Hydrow Discount Code: Save Up to $150 | November 2026",
+          "url": "https://www.wired.com/story/hydrow-discount-code/",
+          "date": "2026-11-12"
         },
         {
-          "title": "Best Indoor Garden Systems I’ve Been Testing for Years (2026)",
-          "url": "https://www.wired.com/gallery/best-indoor-gardening-systems/",
-          "date": "2026-11-11"
+          "title": "Nike Promo Codes and Discounts: 30% for November 2026",
+          "url": "https://www.wired.com/story/nike-promo-code/",
+          "date": "2026-11-12"
         }
       ]
     },
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "What to know about this year’s UN climate talks",
@@ -572,7 +572,7 @@
       "url": "https://www.espn.com/espn/rss/news",
       "status": "stale",
       "generatedAt": "2026-11-05T09:26:38+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "Wemby delivers career performance with 52 points, 24 rebounds, 8 blocks",
@@ -622,48 +622,48 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
+        {
+          "title": "Stephen Curry injury: 'Concern high' as Warriors superstar has MRI on abdomen",
+          "url": "https://www.cbssports.com/nba/news/stephen-curry-injury-warriors-abdominal/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "NC State set to hire Philip Rivers as next coach: Legendary Wolfpack QB aims to turn around alma mater",
+          "url": "https://www.cbssports.com/college-football/news/nc-state-hires-philip-rivers-coach/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Warriors vs. Rockets predictions: Use Polymarket promo code CBSSPORTS to get a $25 bonus for November 11",
+          "url": "https://www.cbssports.com/prediction/news/warriors-vs-rockets-predictions-use-polymarket-promo-code-cbssports-to-get-a-25-bonus-for-november-11/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "NFL Week 10 injury report: Mike Evans still not practicing, Puka Nacua facing multi-week absence",
+          "url": "https://www.cbssports.com/nfl/news/2026-nfl-week-10-injury-report-mike-evans-puka-nacua/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Warriors vs. Rockets NBA odds, picks: Kevin Durant, Steph Curry face off Wednesday in latest Hall of Fame duel",
+          "url": "https://www.cbssports.com/betting/news/warriors-vs-rockets-nba-odds-picks-kevin-durant-steph-curry-face-off-wednesday-in-latest-hall-of-fame-duel/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Cy Young winners Jacob Misiorowski and Cam Schlittler just put up a 2026 tandem not seen since 1905",
+          "url": "https://www.cbssports.com/mlb/news/cy-young-winners-jacob-misiorowski-cam-schlittler-2026-tandem/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Jacob Misiorowski named National League Cy Young winner: Brewers ace takes home unanimous honors",
+          "url": "https://www.cbssports.com/mlb/news/2026-mlb-cy-young-jacob-misiorowski-brewers-national-league/",
+          "date": "2026-11-12"
+        },
         {
           "title": "Padres' Mason Miller, Blue Jays' Louis Varland named MLB Relievers of the Year in first-ever BBWAA award",
           "url": "https://www.cbssports.com/mlb/news/2026-bbwaa-reliever-of-the-year-mlb-awards/",
           "date": "2026-11-12"
-        },
-        {
-          "title": "National League Reliever of the Year: Matt Snyder explains his 2026 BBWAA ballot",
-          "url": "https://www.cbssports.com/mlb/news/national-league-reliever-of-the-year-matt-snyder-bbwaa-ballot/",
-          "date": "2026-11-12"
-        },
-        {
-          "title": "Fantasy football Start 'Em, Sit 'Em WR in Week 10: Tutu Atwell should see more targets amid Rams' injury woes",
-          "url": "https://www.cbssports.com/fantasy/football/news/fantasy-football-2026-start-em-sit-em-wr-in-week-10/",
-          "date": "2026-11-12"
-        },
-        {
-          "title": "Cam Schlittler named American League Cy Young winner: Yankees ace wins in just second MLB season",
-          "url": "https://www.cbssports.com/mlb/news/2026-mlb-cy-young-cam-schlittler-yankees-american-league/",
-          "date": "2026-11-12"
-        },
-        {
-          "title": "Bengals nearly made a costly trade-deadline blunder, and Zac Taylor had to explain it",
-          "url": "https://www.cbssports.com/nfl/news/bengals-nfl-trade-deadline-arnold-ebiketie-zac-taylor/",
-          "date": "2026-11-12"
-        },
-        {
-          "title": "Warriors vs. Rockets prediction, odds, time: 2026 NBA picks for Wednesday, Nov. 11 from proven model",
-          "url": "https://www.cbssports.com/betting/news/warriors-rockets-prediction-odds-time-2026-nba-picks-best-bets-wednesday-november-11/",
-          "date": "2026-11-12"
-        },
-        {
-          "title": "Nuggets vs. Grizzlies odds, prediction, betting preview: NBA picks, best bets for Wednesday, Nov. 11",
-          "url": "https://www.cbssports.com/betting/news/nuggets-vs-grizzlies-odds-prediction-betting-preview-nba-picks-best-bets-for-wednesday-nov-11/",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Toledo vs. UMass odds, picks, prediction, start time: Wednesday college football betting preview for Nov. 11",
-          "url": "https://www.cbssports.com/betting/news/toledo-vs-umass-odds-picks-prediction-start-time-wednesday-college-football-betting-preview-for-nov-11/",
-          "date": "2026-11-11"
         }
       ]
     },
@@ -673,47 +673,47 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
-          "title": "Stephen Curry calls out Gilbert Arenas, Nick Young and others for criticism of wife Ayesha's new movie",
-          "url": "https://sports.yahoo.com/nba/article/stephen-curry-calls-out-gilbert-arenas-nick-young-and-others-for-criticism-of-wife-ayeshas-new-movie-012639602.html",
+          "title": "Mount St. Mary's visits Virginia Tech after Hammond's 32-point game",
+          "url": "https://sports.yahoo.com/articles/mount-st-marys-visits-virginia-094304353.html",
           "date": "2026-11-12"
         },
         {
-          "title": "LaNorris Sellers, Nyck Harbor on South Carolina football vs Arkansas injury report",
-          "url": "https://sports.yahoo.com/articles/lanorris-sellers-nyck-harbor-south-012619784.html",
+          "title": "Montana State visits No. 23 BYU after Wright's 21-point game",
+          "url": "https://sports.yahoo.com/articles/montana-state-visits-no-23-094303263.html",
           "date": "2026-11-12"
         },
         {
-          "title": "49ers wide receiver Mike Evans ‘week-to-week' with injury, likely out Sunday",
-          "url": "https://sports.yahoo.com/articles/49ers-wide-receiver-mike-evans-012425478.html",
+          "title": "Lindsey leads Fordham against LIU after 20-point performance",
+          "url": "https://sports.yahoo.com/articles/lindsey-leads-fordham-against-liu-094303102.html",
           "date": "2026-11-12"
         },
         {
-          "title": "DePaul draws on 'motivation' to earn first sectional volleyball title",
-          "url": "https://sports.yahoo.com/articles/depaul-draws-motivation-earn-first-012403492.html",
+          "title": "Cent. Conn. St. visits Sacred Heart following Robinson's 21-point game",
+          "url": "https://sports.yahoo.com/articles/cent-conn-st-visits-sacred-094302502.html",
           "date": "2026-11-12"
         },
         {
-          "title": "Online, Windrem can be abrasive—Schuhmann didn’t like …",
-          "url": "https://sports.yahoo.com/articles/online-windrem-abrasive-schuhmann-didn-012352400.html",
+          "title": "O'Keefe leads Columbia against Bucknell after 22-point showing",
+          "url": "https://sports.yahoo.com/articles/okeefe-leads-columbia-against-bucknell-094302342.html",
           "date": "2026-11-12"
         },
         {
-          "title": "“I used to joke that the tagline for The Brooklyn Game …",
-          "url": "https://sports.yahoo.com/articles/used-joke-tagline-brooklyn-game-012351466.html",
+          "title": "Mississippi Valley State visits Oregon State after Freitag's 21-point performance",
+          "url": "https://sports.yahoo.com/articles/mississippi-valley-state-visits-oregon-094302704.html",
           "date": "2026-11-12"
         },
         {
-          "title": "If Lendeborg and Wembanyama pull it off, that would …",
-          "url": "https://sports.yahoo.com/articles/lendeborg-wembanyama-pull-off-012350223.html",
+          "title": "Quinnipiac hosts Monmouth in non-conference matchup",
+          "url": "https://sports.yahoo.com/articles/quinnipiac-hosts-monmouth-non-conference-094302473.html",
           "date": "2026-11-12"
         },
         {
-          "title": "The next closest instance came much more recently, in …",
-          "url": "https://sports.yahoo.com/articles/next-closest-instance-came-much-012349887.html",
+          "title": "Indiana hosts Tennessee Tech after Burton's 20-point game",
+          "url": "https://sports.yahoo.com/articles/indiana-hosts-tennessee-tech-burtons-094302235.html",
           "date": "2026-11-12"
         }
       ]
@@ -724,12 +724,27 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
+        {
+          "title": "Jensen Huang built Nvidia into a behemoth. His scandal puts the entire AI boom in jeopardy.",
+          "url": "https://www.marketwatch.com/story/jensen-huang-built-nvidia-into-a-behemoth-his-scandal-puts-the-entire-ai-boom-in-jeopardy-c374b079?mod=mw_rss_topstories",
+          "date": "2026-11-12"
+        },
         {
           "title": "Nasdaq futures fall as Nvidia sinks 8% after hours on report board may oust Huang",
           "url": "https://www.marketwatch.com/story/nasdaq-futures-fall-as-nvidia-sinks-8-after-hours-on-report-board-may-oust-huang-e99b898d?mod=mw_rss_topstories",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "‘The thought of living to 100 terrifies me’: Is Social Security a giant Ponzi scheme?",
+          "url": "https://www.marketwatch.com/story/the-thought-of-living-to-100-terrifies-me-is-social-security-a-giant-ponzi-scheme-84a64e7e?mod=mw_rss_topstories",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Here’s how Bernie Sanders wants to keep Social Security solvent ‘for generations’",
+          "url": "https://www.marketwatch.com/story/heres-how-bernie-sanders-wants-to-keep-social-security-solvent-for-generations-f5666a38?mod=mw_rss_topstories",
           "date": "2026-11-12"
         },
         {
@@ -738,33 +753,18 @@
           "date": "2026-11-12"
         },
         {
-          "title": "Your holiday credit-card bills are going up. What you can do to ease the pain.",
-          "url": "https://www.marketwatch.com/story/your-holiday-credit-card-bills-are-going-up-what-you-can-do-to-ease-the-pain-5ddeb446?mod=mw_rss_topstories",
-          "date": "2026-11-11"
+          "title": "‘I’m sick of flying’: I paid for priority boarding, but the overhead bins were full. Was I duped?",
+          "url": "https://www.marketwatch.com/story/im-sick-of-flying-i-paid-for-priority-boarding-but-the-overhead-bins-were-full-was-i-duped-0badcc80?mod=mw_rss_topstories",
+          "date": "2026-11-12"
         },
         {
           "title": "I’m 63 and spending $95,000 on a roof deck for my $500,000 home. Am I being extravagant?",
           "url": "https://www.marketwatch.com/story/im-63-and-want-to-spend-95-000-on-a-roof-deck-for-my-500-000-home-is-that-a-good-investment-f1a59c27?mod=mw_rss_topstories",
-          "date": "2026-11-11"
+          "date": "2026-11-12"
         },
         {
-          "title": "CoreWeave just gave a shot in the arm to Micron, Lumentum and the rest of the AI trade",
-          "url": "https://www.marketwatch.com/story/micron-and-other-ai-stocks-surge-as-coreweave-calms-wall-streets-worst-fears-0a18152a?mod=mw_rss_topstories",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Opening trading-card packs has become a $2 billion market. New apps are trying to cash in.",
-          "url": "https://www.marketwatch.com/story/opening-trading-card-packs-has-become-a-2-billion-market-new-apps-are-trying-to-cash-in-b7ba11f5?mod=mw_rss_topstories",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Falling oil prices are no longer enough to bring down borrowing costs in the world’s most important bond market",
-          "url": "https://www.marketwatch.com/story/falling-oil-prices-are-no-longer-enough-to-bring-down-borrowing-costs-in-the-worlds-most-important-bond-market-3176d25a?mod=mw_rss_topstories",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Sandisk’s stock just staged a big gain. Here’s how it could march even higher.",
-          "url": "https://www.marketwatch.com/story/sandisks-stock-is-soaring-and-these-three-trends-could-send-it-even-higher-b0d7d5ec?mod=mw_rss_topstories",
+          "title": "Your holiday credit-card bills are going up. What you can do to ease the pain.",
+          "url": "https://www.marketwatch.com/story/your-holiday-credit-card-bills-are-going-up-what-you-can-do-to-ease-the-pain-5ddeb446?mod=mw_rss_topstories",
           "date": "2026-11-11"
         }
       ]
@@ -775,12 +775,37 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
-          "title": "Nvidia prepares to oust Jensen Huang, WSJ reports — stock sinks",
-          "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-affair-employee.html",
+          "title": "Nvidia stock falls 6% as investors await Jensen Huang’s fate",
+          "url": "https://www.cnbc.com/2026/11/12/nvidia-nvda-jensen-huang-second-affair.html",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Elon Musk says it would be an 'honor' to hire Nvidia's Jensen Huang",
+          "url": "https://www.cnbc.com/2026/11/12/elon-musk-jensen-huang-nvidia-tesla.html",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+          "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+          "date": "2026-11-11"
+        },
+        {
+          "title": "What we know so far about Nvidia partner Megaspeed’s Asia footprint",
+          "url": "https://www.cnbc.com/2026/11/12/nvidia-megaspeed-alice-huang-jensen-.html",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Cramer's stance on Nvidia's stock amid reports that CEO Jensen Huang may be ousted",
+          "url": "https://www.cnbc.com/investingclub/2026/11/11/jim-cramer-jensen-huang-nvidia-stock-advice.html",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Treasury yields edge higher as investors await fresh inflation and housing data",
+          "url": "https://www.cnbc.com/2026/11/12/us-treasurys-bonds-yields.html",
           "date": "2026-11-12"
         },
         {
@@ -792,31 +817,6 @@
           "title": "Feds arrest top official of healthcare company, alleging illegal drug importation",
           "url": "https://www.cnbc.com/2026/11/11/canarx-official-arrested-drug-importation.html",
           "date": "2026-11-11"
-        },
-        {
-          "title": "Cramer's stance on Nvidia's stock amid reports that CEO Jensen Huang may be ousted",
-          "url": "https://www.cnbc.com/investingclub/2026/11/11/jim-cramer-jensen-huang-nvidia-stock-advice.html",
-          "date": "2026-11-12"
-        },
-        {
-          "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
-          "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Canada’s ambassador warns Trump tariffs are driving up costs, threatening U.S. investment",
-          "url": "https://www.cnbc.com/2026/11/11/canada-ambassador-trump-tariffs-investments.html",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Mississippi Senate: Scott Colom lead over Hyde-Smith pops to more than 4,400 votes",
-          "url": "https://www.cnbc.com/2026/11/10/mississippi-senate-scott-colom-hyde-smith.html",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "CoreWeave soars more than 24% for best day since April 2025 after strong Q3 report",
-          "url": "https://www.cnbc.com/2026/11/11/coreweave-crwv-outlook-earnings-ai.html",
-          "date": "2026-11-11"
         }
       ]
     },
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": []
     },
     {
@@ -846,13 +846,33 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
+        {
+          "title": "Common forever chemicals linked to nearly double the rate of aggressive breast cancer",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261112025527.htm",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Scientists discover a common sugar may help cancer cells break free and spread",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261111221501.htm",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Walking and weight training may not be enough to keep your bones strong",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261110042601.htm",
+          "date": "2026-11-12"
+        },
         {
           "title": "Where are all the males? Ancient human fossils reveal a startling mystery",
           "url": "https://www.sciencedaily.com/releases/2026/11/261110042558.htm",
           "date": "2026-11-11"
+        },
+        {
+          "title": "Earth's fiery birth may have created hundreds of oceans' worth of water",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261110042549.htm",
+          "date": "2026-11-12"
         },
         {
           "title": "NASA reveals Earth's ozone hole has grown to a size not seen in a decade",
@@ -868,26 +888,6 @@
           "title": "Even occasional marijuana use linked to 40% higher odds of stroke",
           "url": "https://www.sciencedaily.com/releases/2026/11/261110042539.htm",
           "date": "2026-11-11"
-        },
-        {
-          "title": "Scientists discover a giant 66-pound rodent that lived 34 million years ago",
-          "url": "https://www.sciencedaily.com/releases/2026/11/261110042532.htm",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "Why heart attacks can still happen even when bad cholesterol is low",
-          "url": "https://www.sciencedaily.com/releases/2026/11/261109205415.htm",
-          "date": "2026-11-10"
-        },
-        {
-          "title": "The mystery of how hair knows where to grow may finally be solved",
-          "url": "https://www.sciencedaily.com/releases/2026/11/261109205413.htm",
-          "date": "2026-11-11"
-        },
-        {
-          "title": "237-million-year-old fossils reveal a bizarre armored sea amphibian",
-          "url": "https://www.sciencedaily.com/releases/2026/11/261109205409.htm",
-          "date": "2026-11-11"
         }
       ]
     },
@@ -897,9 +897,24 @@
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
+        {
+          "title": "APOD: 2026 November 12 – Moon, Venus and Spica Meet",
+          "url": "https://science.nasa.gov/image-article/apod-2026-november-12-moon-venus-and-spica-meet/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Scotland’s Flow Country",
+          "url": "https://science.nasa.gov/earth/earth-observatory/scotlands-flow-country/",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "Curiosity Blog, Sols 5063-5069 Rocks and Chips",
+          "url": "https://science.nasa.gov/blog/curiosity-blog-sols-5063-5069-rocks-and-chips/",
+          "date": "2026-11-12"
+        },
         {
           "title": "APOD: 2026 November 11 – NGC 4449: Small Galaxy, Big Impact",
           "url": "https://science.nasa.gov/image-article/apod-2026-november-11-ngc-4449-small-galaxy-big-impact/",
@@ -924,21 +939,6 @@
           "title": "NASA Scientists Show How Gravitational Waves Can Reveal New Worlds",
           "url": "https://science.nasa.gov/missions/lisa/gravitational-waves-can-reveal-new-worlds/",
           "date": "2026-11-10"
-        },
-        {
-          "title": "CHAPEA Crew Leaves a Mark",
-          "url": "https://www.nasa.gov/image-article/chapea-crew-leaves-a-mark/",
-          "date": "2026-11-10"
-        },
-        {
-          "title": "APOD: 2026 November 10 – Saturn Behind the Moon",
-          "url": "https://science.nasa.gov/image-article/apod-2026-november-10-saturn-behind-the-moon/",
-          "date": "2026-11-10"
-        },
-        {
-          "title": "Autumn Mornings Bring Valley Fog",
-          "url": "https://science.nasa.gov/earth/earth-observatory/autumn-mornings-bring-valley-fog/",
-          "date": "2026-11-10"
         }
       ]
     },
@@ -948,8 +948,8 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "Some PFAS chemicals are declining in English rivers but others are appearing",
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "Rattlesnakes have personalities too — to venomous effect",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "stale",
       "generatedAt": "2026-11-04T06:12:38+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "Show HN: Kairos – Open-source risk and fraud decisioning platform",
@@ -1066,8 +1066,8 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "Anthropic built a model that beats Opus. It recommends Opus anyway.",
@@ -1118,7 +1118,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1168,8 +1168,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "Introducing CNCF User Groups: Long-lived homes for End User collaboration",
@@ -1219,8 +1219,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-12T01:30:40+00:00",
-      "lastAttemptAt": "2026-11-12T01:30:40+00:00",
+      "generatedAt": "2026-11-12T09:46:14+00:00",
+      "lastAttemptAt": "2026-11-12T09:46:14+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #542",
