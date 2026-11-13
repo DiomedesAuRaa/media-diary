@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-12T16:23:40+00:00",
-  "generated_at": "2026-11-12 16:23:40 UTC",
+  "timestamp": "2026-11-13T00:45:04+00:00",
+  "generated_at": "2026-11-13 00:45:04 UTC",
   "subreddits_count": 12,
   "total_posts": 176,
   "feeds": [
@@ -12,10 +12,23 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "baseball": [
+    "nfl": [
+      "Best of Hour",
+      "Best of 24h",
       "Best of Week",
-      "Hot",
-      "Best of Hour"
+      "Hot"
+    ],
+    "nba": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "baseball": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
     ],
     "CoDCompetitive": [
       "Best of Hour",
@@ -68,24 +81,98 @@
     "cfb": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "nfl": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "nba": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
+      "Best of Week"
     ]
   },
   "data": {
     "cfb": {
+      "Hot": [
+        {
+          "title": "CFB Hub",
+          "author": "pinned-hub",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1x7ogc7/cfb_hub/",
+          "selftext": "",
+          "created_utc": 1792176319,
+          "num_comments": 0,
+          "id": "1x7ogc7",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x7ogc7/cfb_hub/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Cignetti] Bad losses don't count anymore? 😂😂😂😂😂😂 Are first downs still 10 yards?🤡🤡🤡",
+          "author": "BuckeyeEmpire",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xull7c/cignetti_bad_losses_dont_count_anymore_are_first/",
+          "selftext": "",
+          "created_utc": 1794510408,
+          "num_comments": 0,
+          "id": "1xull7c",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xull7c/cignetti_bad_losses_dont_count_anymore_are_first/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[@CollegeGameDay] Boise State legend Ian Johnson is returning to campus as this week’s guest picker. The moment where Johnson proposed to his girlfriend after scoring the winning two-point conversion in the 2007 Fiesta Bowl will forever live in college football history ❤️",
+          "author": "-Gnostic28",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xuktjy/collegegameday_boise_state_legend_ian_johnson_is/",
+          "selftext": "",
+          "created_utc": 1794508717,
+          "num_comments": 0,
+          "id": "1xuktjy",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xuktjy/collegegameday_boise_state_legend_ian_johnson_is/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Thamel] Wake Forest head coach Jake Dickert has agreed to a new contract, which includes an extension, per ESPN sources. Dickert has emerged as one of the country’s most sought-after coaches. Wake Forest is 8-1 and No. 13 in the CFP rankings.",
+          "author": "lowes18",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xuma6w/thamel_wake_forest_head_coach_jake_dickert_has/",
+          "selftext": "",
+          "created_utc": 1794511936,
+          "num_comments": 0,
+          "id": "1xuma6w",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xuma6w/thamel_wake_forest_head_coach_jake_dickert_has/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Christian Caple] \"Washington has reached a 10-year, $70 million stadium naming-rights agreement with Columbia Bank, according to a source, pending Regents approval this afternoon. A press conference is scheduled for 3:30. Assuming approval, Husky Stadium becomes Columbia Bank Stadium in 2027:\"",
+          "author": "SparkMaster360",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xuotty/christian_caple_washington_has_reached_a_10year/",
+          "selftext": "",
+          "created_utc": 1794517829,
+          "num_comments": 0,
+          "id": "1xuotty",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xuotty/christian_caple_washington_has_reached_a_10year/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of Hour": [
         {
           "title": "[Game Thread] Jacksonville State @ New Mexico State (8:00 PM ET)",
@@ -289,93 +376,6 @@
           "id": "1x198en",
           "subreddit": "cfb",
           "link_url": "https://www.reddit.com/r/CFB/comments/1x198en/on3_alabama_legend_nick_saban_was_asked_what_roll/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Hot": [
-        {
-          "title": "CFB Hub",
-          "author": "pinned-hub",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x7ogc7/cfb_hub/",
-          "selftext": "",
-          "created_utc": 1792176319,
-          "num_comments": 0,
-          "id": "1x7ogc7",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x7ogc7/cfb_hub/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Postgame Thread] Utah Defeats BYU 28-20",
-          "author": "CFB_Referee",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xqg1aq/postgame_thread_utah_defeats_byu_2820/",
-          "selftext": "",
-          "created_utc": 1794083171,
-          "num_comments": 0,
-          "id": "1xqg1aq",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xqg1aq/postgame_thread_utah_defeats_byu_2820/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Highlight] #7 Texas @ #18 Missouri: Arch Manning fumbles the ball for a 12 yard gain after review before the Longhorns tie it up",
-          "author": "Large_banana_hammock",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xqf1ur/highlight_7_texas_18_missouri_arch_manning/",
-          "selftext": "",
-          "created_utc": 1794080620,
-          "num_comments": 0,
-          "id": "1xqf1ur",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xqf1ur/highlight_7_texas_18_missouri_arch_manning/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Scott Richey] Bret Bielema: “We're 6-3 and beat another 5-3 team. If we were in the SEC we'd be a top 15 team.”",
-          "author": "Lakelyfe09",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xq8psr/scott_richey_bret_bielema_were_63_and_beat/",
-          "selftext": "",
-          "created_utc": 1794064548,
-          "num_comments": 0,
-          "id": "1xq8psr",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xq8psr/scott_richey_bret_bielema_were_63_and_beat/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Highlight] Oregon @ Ohio State: Oregon runs a fake punt on 4th and 10 from their own 30 yard line to perfection as Matayo Uiagalelei catches the wobbly pass from Teitum Tuioti and hurdles a man for the 30 yard gain",
-          "author": "A_MASSIVE_PERVERT",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xqi54i/highlight_oregon_ohio_state_oregon_runs_a_fake/",
-          "selftext": "",
-          "created_utc": 1794088870,
-          "num_comments": 0,
-          "id": "1xqi54i",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xqi54i/highlight_oregon_ohio_state_oregon_runs_a_fake/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -827,6 +827,93 @@
       ]
     },
     "baseball": {
+      "Best of Hour": [
+        {
+          "title": "WSJ: MLB is preparing for “the nuclear option”—that the players could move to dissolve the MLBPA and file an antitrust lawsuit",
+          "author": "Schwettes",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xtkarz/wsj_mlb_is_preparing_for_the_nuclear_optionthat/",
+          "selftext": "",
+          "created_utc": 1794410088,
+          "num_comments": 0,
+          "id": "1xtkarz",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xtkarz/wsj_mlb_is_preparing_for_the_nuclear_optionthat/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Drellich] MLB editorial workers form union in what may be a first for major US sports leagues (Gift Article)",
+          "author": "Knightbear49",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xtjpbw/drellich_mlb_editorial_workers_form_union_in_what/",
+          "selftext": "",
+          "created_utc": 1794408681,
+          "num_comments": 0,
+          "id": "1xtjpbw",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xtjpbw/drellich_mlb_editorial_workers_form_union_in_what/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "The 2012 Cleveland Indians is the only team in MLB history to have a player named Tony and Ezequiel on their roster.",
+          "author": "GoodNinja18",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xtkjf4/the_2012_cleveland_indians_is_the_only_team_in/",
+          "selftext": "",
+          "created_utc": 1794410637,
+          "num_comments": 0,
+          "id": "1xtkjf4",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xtkjf4/the_2012_cleveland_indians_is_the_only_team_in/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "How many years of no playoffs would you take for a World Series win?",
+          "author": "Traditional-Seat9437",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xtjqq1/how_many_years_of_no_playoffs_would_you_take_for/",
+          "selftext": "",
+          "created_utc": 1794408781,
+          "num_comments": 0,
+          "id": "1xtjqq1",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xtjqq1/how_many_years_of_no_playoffs_would_you_take_for/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Runner on 3rd with less than 2 outs - hit into unproductive double play? These 5 hitters were the best at it in 2026.",
+          "author": "ImaManCheetahh",
+          "score": 0,
+          "url": "https://www.reddit.com/r/baseball/comments/1xtked3/runner_on_3rd_with_less_than_2_outs_hit_into/",
+          "selftext": "",
+          "created_utc": 1794410317,
+          "num_comments": 0,
+          "id": "1xtked3",
+          "subreddit": "baseball",
+          "link_url": "https://www.reddit.com/r/baseball/comments/1xtked3/runner_on_3rd_with_less_than_2_outs_hit_into/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
       "Best of 24h": [
         {
           "title": "After years of hearing that MLB games can't be discussed without express written consent, I decided to ask for it. They actually said yes.",
@@ -1081,93 +1168,6 @@
           "id": "1xm7v2k",
           "subreddit": "baseball",
           "link_url": "https://www.reddit.com/r/baseball/comments/1xm7v2k/kid_names_every_world_series_winner_for_a_100_on/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of Hour": [
-        {
-          "title": "WSJ: MLB is preparing for “the nuclear option”—that the players could move to dissolve the MLBPA and file an antitrust lawsuit",
-          "author": "Schwettes",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xtkarz/wsj_mlb_is_preparing_for_the_nuclear_optionthat/",
-          "selftext": "",
-          "created_utc": 1794410088,
-          "num_comments": 0,
-          "id": "1xtkarz",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xtkarz/wsj_mlb_is_preparing_for_the_nuclear_optionthat/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Drellich] MLB editorial workers form union in what may be a first for major US sports leagues (Gift Article)",
-          "author": "Knightbear49",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xtjpbw/drellich_mlb_editorial_workers_form_union_in_what/",
-          "selftext": "",
-          "created_utc": 1794408681,
-          "num_comments": 0,
-          "id": "1xtjpbw",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xtjpbw/drellich_mlb_editorial_workers_form_union_in_what/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "The 2012 Cleveland Indians is the only team in MLB history to have a player named Tony and Ezequiel on their roster.",
-          "author": "GoodNinja18",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xtkjf4/the_2012_cleveland_indians_is_the_only_team_in/",
-          "selftext": "",
-          "created_utc": 1794410637,
-          "num_comments": 0,
-          "id": "1xtkjf4",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xtkjf4/the_2012_cleveland_indians_is_the_only_team_in/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "How many years of no playoffs would you take for a World Series win?",
-          "author": "Traditional-Seat9437",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xtjqq1/how_many_years_of_no_playoffs_would_you_take_for/",
-          "selftext": "",
-          "created_utc": 1794408781,
-          "num_comments": 0,
-          "id": "1xtjqq1",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xtjqq1/how_many_years_of_no_playoffs_would_you_take_for/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Runner on 3rd with less than 2 outs - hit into unproductive double play? These 5 hitters were the best at it in 2026.",
-          "author": "ImaManCheetahh",
-          "score": 0,
-          "url": "https://www.reddit.com/r/baseball/comments/1xtked3/runner_on_3rd_with_less_than_2_outs_hit_into/",
-          "selftext": "",
-          "created_utc": 1794410317,
-          "num_comments": 0,
-          "id": "1xtked3",
-          "subreddit": "baseball",
-          "link_url": "https://www.reddit.com/r/baseball/comments/1xtked3/runner_on_3rd_with_less_than_2_outs_hit_into/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -3185,31 +3185,30 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-12T16:23:40+00:00",
+  "last_attempt_at": "2026-11-13T00:45:04+00:00",
   "feed_status": {
     "cfb": {
+      "Hot": {
+        "status": "ok",
+        "generated_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00"
+      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-11-07T23:09:22+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3217,25 +3216,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3243,50 +3242,51 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
     "baseball": {
+      "Best of Hour": {
+        "status": "stale",
+        "generated_at": "2026-11-11T15:40:07+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "reason": "rate_limited"
+      },
       "Best of 24h": {
-        "status": "ok",
+        "status": "stale",
         "generated_at": "2026-11-12T16:23:40+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00"
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Hour": {
-        "status": "stale",
-        "generated_at": "2026-11-11T15:40:07+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3294,25 +3294,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-10T15:51:40+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3320,25 +3320,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3346,25 +3346,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3372,25 +3372,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3398,25 +3398,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3424,25 +3424,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-11T00:17:01+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3450,25 +3450,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-06T23:50:46+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3476,25 +3476,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-12T01:42:25+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-12T16:23:40+00:00",
+        "last_attempt_at": "2026-11-13T00:45:04+00:00",
         "reason": "rate_limited"
       }
     }
