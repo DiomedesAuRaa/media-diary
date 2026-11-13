@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-11-13T00:45:04+00:00",
-  "generated_at": "2026-11-13 00:45:04 UTC",
+  "timestamp": "2026-11-13T15:44:05+00:00",
+  "generated_at": "2026-11-13 15:44:05 UTC",
   "subreddits_count": 12,
   "total_posts": 176,
   "feeds": [
@@ -12,41 +12,10 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "nfl": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "nba": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "baseball": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "CoDCompetitive": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "soccer": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
     "formula1": [
+      "Hot",
       "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
+      "Best of 24h"
     ],
     "MichiganWolverines": [
       "Best of Hour",
@@ -81,98 +50,42 @@
     "cfb": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week"
+      "Best of Week",
+      "Hot"
+    ],
+    "nfl": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "nba": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "baseball": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "CoDCompetitive": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "soccer": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
     ]
   },
   "data": {
     "cfb": {
-      "Hot": [
-        {
-          "title": "CFB Hub",
-          "author": "pinned-hub",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1x7ogc7/cfb_hub/",
-          "selftext": "",
-          "created_utc": 1792176319,
-          "num_comments": 0,
-          "id": "1x7ogc7",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1x7ogc7/cfb_hub/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Cignetti] Bad losses don't count anymore? 😂😂😂😂😂😂 Are first downs still 10 yards?🤡🤡🤡",
-          "author": "BuckeyeEmpire",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xull7c/cignetti_bad_losses_dont_count_anymore_are_first/",
-          "selftext": "",
-          "created_utc": 1794510408,
-          "num_comments": 0,
-          "id": "1xull7c",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xull7c/cignetti_bad_losses_dont_count_anymore_are_first/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[@CollegeGameDay] Boise State legend Ian Johnson is returning to campus as this week’s guest picker. The moment where Johnson proposed to his girlfriend after scoring the winning two-point conversion in the 2007 Fiesta Bowl will forever live in college football history ❤️",
-          "author": "-Gnostic28",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xuktjy/collegegameday_boise_state_legend_ian_johnson_is/",
-          "selftext": "",
-          "created_utc": 1794508717,
-          "num_comments": 0,
-          "id": "1xuktjy",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xuktjy/collegegameday_boise_state_legend_ian_johnson_is/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Thamel] Wake Forest head coach Jake Dickert has agreed to a new contract, which includes an extension, per ESPN sources. Dickert has emerged as one of the country’s most sought-after coaches. Wake Forest is 8-1 and No. 13 in the CFP rankings.",
-          "author": "lowes18",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xuma6w/thamel_wake_forest_head_coach_jake_dickert_has/",
-          "selftext": "",
-          "created_utc": 1794511936,
-          "num_comments": 0,
-          "id": "1xuma6w",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xuma6w/thamel_wake_forest_head_coach_jake_dickert_has/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Christian Caple] \"Washington has reached a 10-year, $70 million stadium naming-rights agreement with Columbia Bank, according to a source, pending Regents approval this afternoon. A press conference is scheduled for 3:30. Assuming approval, Husky Stadium becomes Columbia Bank Stadium in 2027:\"",
-          "author": "SparkMaster360",
-          "score": 0,
-          "url": "https://www.reddit.com/r/CFB/comments/1xuotty/christian_caple_washington_has_reached_a_10year/",
-          "selftext": "",
-          "created_utc": 1794517829,
-          "num_comments": 0,
-          "id": "1xuotty",
-          "subreddit": "cfb",
-          "link_url": "https://www.reddit.com/r/CFB/comments/1xuotty/christian_caple_washington_has_reached_a_10year/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of Hour": [
         {
           "title": "[Game Thread] Jacksonville State @ New Mexico State (8:00 PM ET)",
@@ -376,6 +289,93 @@
           "id": "1x198en",
           "subreddit": "cfb",
           "link_url": "https://www.reddit.com/r/CFB/comments/1x198en/on3_alabama_legend_nick_saban_was_asked_what_roll/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Hot": [
+        {
+          "title": "CFB Hub",
+          "author": "pinned-hub",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1x7ogc7/cfb_hub/",
+          "selftext": "",
+          "created_utc": 1792176319,
+          "num_comments": 0,
+          "id": "1x7ogc7",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1x7ogc7/cfb_hub/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Cignetti] Bad losses don't count anymore? 😂😂😂😂😂😂 Are first downs still 10 yards?🤡🤡🤡",
+          "author": "BuckeyeEmpire",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xull7c/cignetti_bad_losses_dont_count_anymore_are_first/",
+          "selftext": "",
+          "created_utc": 1794510408,
+          "num_comments": 0,
+          "id": "1xull7c",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xull7c/cignetti_bad_losses_dont_count_anymore_are_first/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[@CollegeGameDay] Boise State legend Ian Johnson is returning to campus as this week’s guest picker. The moment where Johnson proposed to his girlfriend after scoring the winning two-point conversion in the 2007 Fiesta Bowl will forever live in college football history ❤️",
+          "author": "-Gnostic28",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xuktjy/collegegameday_boise_state_legend_ian_johnson_is/",
+          "selftext": "",
+          "created_utc": 1794508717,
+          "num_comments": 0,
+          "id": "1xuktjy",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xuktjy/collegegameday_boise_state_legend_ian_johnson_is/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Thamel] Wake Forest head coach Jake Dickert has agreed to a new contract, which includes an extension, per ESPN sources. Dickert has emerged as one of the country’s most sought-after coaches. Wake Forest is 8-1 and No. 13 in the CFP rankings.",
+          "author": "lowes18",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xuma6w/thamel_wake_forest_head_coach_jake_dickert_has/",
+          "selftext": "",
+          "created_utc": 1794511936,
+          "num_comments": 0,
+          "id": "1xuma6w",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xuma6w/thamel_wake_forest_head_coach_jake_dickert_has/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[Christian Caple] \"Washington has reached a 10-year, $70 million stadium naming-rights agreement with Columbia Bank, according to a source, pending Regents approval this afternoon. A press conference is scheduled for 3:30. Assuming approval, Husky Stadium becomes Columbia Bank Stadium in 2027:\"",
+          "author": "SparkMaster360",
+          "score": 0,
+          "url": "https://www.reddit.com/r/CFB/comments/1xuotty/christian_caple_washington_has_reached_a_10year/",
+          "selftext": "",
+          "created_utc": 1794517829,
+          "num_comments": 0,
+          "id": "1xuotty",
+          "subreddit": "cfb",
+          "link_url": "https://www.reddit.com/r/CFB/comments/1xuotty/christian_caple_washington_has_reached_a_10year/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -1706,6 +1706,94 @@
       ]
     },
     "formula1": {
+      "Best of Week": [
+        {
+          "title": "[Lewis Hamilton] on Instagram",
+          "author": "Guyfromthepast_",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1xtpaoe/lewis_hamilton_on_instagram/",
+          "selftext": "",
+          "created_utc": 1794421173,
+          "num_comments": 0,
+          "id": "1xtpaoe",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1xtpaoe/lewis_hamilton_on_instagram/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "[F1] BREAKING: Racing Bulls retain Arvid Lindblad and Liam Lawson for 2027",
+          "author": "wokwok__",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1xu9y4e/f1_breaking_racing_bulls_retain_arvid_lindblad/",
+          "selftext": "",
+          "created_utc": 1794481359,
+          "num_comments": 0,
+          "id": "1xu9y4e",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1xu9y4e/f1_breaking_racing_bulls_retain_arvid_lindblad/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Lewis Hamilton has touched down in Egypt's North Sinai ahead of a planned visit to Rafah to see firsthand the humanitarian efforts supporting Gaza. He is expected to visit aid warehouses and logistics facilities handling supplies destined for Gaza.",
+          "author": "MuttonBiryaniEnjoyer",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1xsm0fu/lewis_hamilton_has_touched_down_in_egypts_north/",
+          "selftext": "",
+          "created_utc": 1794314804,
+          "num_comments": 0,
+          "id": "1xsm0fu",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1xsm0fu/lewis_hamilton_has_touched_down_in_egypts_north/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Lando Norris breaks the champagne bottle on the podium",
+          "author": "randomseocb",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1xr65f4/lando_norris_breaks_the_champagne_bottle_on_the/",
+          "selftext": "",
+          "created_utc": 1794164542,
+          "num_comments": 0,
+          "id": "1xr65f4",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1xr65f4/lando_norris_breaks_the_champagne_bottle_on_the/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "I broke a camera taking these photos…",
+          "author": "jameypricephoto",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1xqme8a/i_broke_a_camera_taking_these_photos/",
+          "selftext": "",
+          "created_utc": 1794101182,
+          "num_comments": 0,
+          "id": "1xqme8a",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1xqme8a/i_broke_a_camera_taking_these_photos/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Hot": [],
       "Best of Hour": [
         {
           "title": "Max: “I always tell the team: ‘Give me a fast car, then we’ll all have a better life.’ I showed in 2023 that you can win the Constructors’ Championship with just one driver. Many found that boring, but I thought it was fantastic. I’d love to do that again!”",
@@ -1725,95 +1813,7 @@
           "metadata_source": "rss"
         }
       ],
-      "Best of 24h": [],
-      "Best of Week": [
-        {
-          "title": "[Valtteri Bottas] Yes I’m riding to Singapore",
-          "author": "memloh",
-          "score": 0,
-          "url": "https://www.reddit.com/r/formula1/comments/1wyhl2o/valtteri_bottas_yes_im_riding_to_singapore/",
-          "selftext": "",
-          "created_utc": 1791227991,
-          "num_comments": 0,
-          "id": "1wyhl2o",
-          "subreddit": "formula1",
-          "link_url": "https://www.reddit.com/r/formula1/comments/1wyhl2o/valtteri_bottas_yes_im_riding_to_singapore/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[Valtteri Bottas] 419.67km commute; Well arrived in Singapore this arvo.",
-          "author": "memloh",
-          "score": 0,
-          "url": "https://www.reddit.com/r/formula1/comments/1x0dnbn/valtteri_bottas_41967km_commute_well_arrived_in/",
-          "selftext": "",
-          "created_utc": 1791421321,
-          "num_comments": 0,
-          "id": "1x0dnbn",
-          "subreddit": "formula1",
-          "link_url": "https://www.reddit.com/r/formula1/comments/1x0dnbn/valtteri_bottas_41967km_commute_well_arrived_in/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "An exhausted Lewis Hamilton after Sepang Podium",
-          "author": "femmd",
-          "score": 0,
-          "url": "https://www.reddit.com/r/formula1/comments/1wxwwm3/an_exhausted_lewis_hamilton_after_sepang_podium/",
-          "selftext": "",
-          "created_utc": 1791166166,
-          "num_comments": 0,
-          "id": "1wxwwm3",
-          "subreddit": "formula1",
-          "link_url": "https://www.reddit.com/r/formula1/comments/1wxwwm3/an_exhausted_lewis_hamilton_after_sepang_podium/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "[The Race] What Bottas saw when he cycled from Malaysia to Singapore.",
-          "author": "LightningMcqueen2011",
-          "score": 0,
-          "url": "https://www.reddit.com/r/formula1/comments/1x0qzds/the_race_what_bottas_saw_when_he_cycled_from/",
-          "selftext": "",
-          "created_utc": 1791466224,
-          "num_comments": 0,
-          "id": "1x0qzds",
-          "subreddit": "formula1",
-          "link_url": "https://www.reddit.com/r/formula1/comments/1x0qzds/the_race_what_bottas_saw_when_he_cycled_from/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Valterri Bottas has completed his cycling trip to Singapore",
-          "author": "Objective-Pizza5920",
-          "score": 0,
-          "url": "https://www.reddit.com/r/formula1/comments/1wzrxyx/valterri_bottas_has_completed_his_cycling_trip_to/",
-          "selftext": "",
-          "created_utc": 1791364749,
-          "num_comments": 0,
-          "id": "1wzrxyx",
-          "subreddit": "formula1",
-          "link_url": "https://www.reddit.com/r/formula1/comments/1wzrxyx/valterri_bottas_has_completed_his_cycling_trip_to/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Hot": []
+      "Best of 24h": []
     },
     "MichiganWolverines": {
       "Best of Hour": [],
@@ -3185,30 +3185,31 @@
     }
   },
   "refresh_status": "partial",
-  "last_attempt_at": "2026-11-13T00:45:04+00:00",
+  "last_attempt_at": "2026-11-13T15:44:05+00:00",
   "feed_status": {
     "cfb": {
-      "Hot": {
-        "status": "ok",
-        "generated_at": "2026-11-13T00:45:04+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00"
-      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3216,25 +3217,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3242,25 +3243,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3268,25 +3269,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-11T15:40:07+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-12T16:23:40+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3294,25 +3295,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-10T15:51:40+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3320,51 +3321,50 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
     "formula1": {
+      "Best of Week": {
+        "status": "ok",
+        "generated_at": "2026-11-13T15:44:05+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
+        "reason": "rate_limited"
+      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
-        "reason": "rate_limited"
-      },
-      "Best of Week": {
-        "status": "stale",
-        "generated_at": "2026-10-11T14:26:03+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3372,25 +3372,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3398,25 +3398,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T15:49:40+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3424,25 +3424,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-11T00:17:01+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3450,25 +3450,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-06T23:50:46+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3476,25 +3476,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-12T01:42:25+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-13T00:45:04+00:00",
+        "last_attempt_at": "2026-11-13T15:44:05+00:00",
         "reason": "rate_limited"
       }
     }
