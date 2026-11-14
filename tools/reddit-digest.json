@@ -12,17 +12,11 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "MichiganWolverines": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
     "DetroitLions": [
+      "Hot",
       "Best of Hour",
       "Best of 24h",
-      "Best of Week",
-      "Hot"
+      "Best of Week"
     ],
     "DetroitPistons": [
       "Best of Hour",
@@ -79,6 +73,12 @@
       "Hot"
     ],
     "formula1": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "MichiganWolverines": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -2081,6 +2081,88 @@
       ]
     },
     "DetroitLions": {
+      "Hot": [
+        {
+          "title": "Daily Discussion Thread June 24",
+          "author": "AutoModerator",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1ue981m/daily_discussion_thread_june_24/",
+          "selftext": "",
+          "created_utc": 1782313229.0,
+          "num_comments": 0,
+          "id": "1ue981m",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1ue981m/daily_discussion_thread_june_24/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Detroit Lions' 2026 Draft Selections",
+          "author": "JCameron181",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1svp0ld/detroit_lions_2026_draft_selections/",
+          "selftext": "",
+          "created_utc": 1777171774.0,
+          "num_comments": 0,
+          "id": "1svp0ld",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1svp0ld/detroit_lions_2026_draft_selections/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Kerby Joseph Via Instagram. Shout out to Moe.",
+          "author": "derrfurr23",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1udzgxx/kerby_joseph_via_instagram_shout_out_to_moe/",
+          "selftext": "",
+          "created_utc": 1782281755.0,
+          "num_comments": 0,
+          "id": "1udzgxx",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1udzgxx/kerby_joseph_via_instagram_shout_out_to_moe/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Do you think that Dan Campbell will be the Lions eventually be the franchise leader in all time Head Coaching wins?",
+          "author": "33GoodSamaritans",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1udy0yv/do_you_think_that_dan_campbell_will_be_the_lions/",
+          "selftext": "",
+          "created_utc": 1782277816.0,
+          "num_comments": 0,
+          "id": "1udy0yv",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1udy0yv/do_you_think_that_dan_campbell_will_be_the_lions/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        },
+        {
+          "title": "Pitts has officially reset the TE market. LaPorta in all likelihood will command a 3 year, 60 million deal in order to keep him.",
+          "author": "PETZING_ELITE_OC_DET",
+          "score": 0,
+          "url": "https://www.reddit.com/r/detroitlions/comments/1ue26rt/pitts_has_officially_reset_the_te_market_laporta/",
+          "selftext": "",
+          "created_utc": 1782289463.0,
+          "num_comments": 0,
+          "id": "1ue26rt",
+          "subreddit": "DetroitLions",
+          "link_url": "https://www.reddit.com/r/detroitlions/comments/1ue26rt/pitts_has_officially_reset_the_te_market_laporta/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": []
+        }
+      ],
       "Best of Hour": [],
       "Best of 24h": [],
       "Best of Week": [
@@ -2168,88 +2250,6 @@
           "flair": "",
           "comments": [],
           "metadata_source": "rss"
-        }
-      ],
-      "Hot": [
-        {
-          "title": "Daily Discussion Thread June 24",
-          "author": "AutoModerator",
-          "score": 0,
-          "url": "https://www.reddit.com/r/detroitlions/comments/1ue981m/daily_discussion_thread_june_24/",
-          "selftext": "",
-          "created_utc": 1782313229.0,
-          "num_comments": 0,
-          "id": "1ue981m",
-          "subreddit": "DetroitLions",
-          "link_url": "https://www.reddit.com/r/detroitlions/comments/1ue981m/daily_discussion_thread_june_24/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "Detroit Lions' 2026 Draft Selections",
-          "author": "JCameron181",
-          "score": 0,
-          "url": "https://www.reddit.com/r/detroitlions/comments/1svp0ld/detroit_lions_2026_draft_selections/",
-          "selftext": "",
-          "created_utc": 1777171774.0,
-          "num_comments": 0,
-          "id": "1svp0ld",
-          "subreddit": "DetroitLions",
-          "link_url": "https://www.reddit.com/r/detroitlions/comments/1svp0ld/detroit_lions_2026_draft_selections/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "Kerby Joseph Via Instagram. Shout out to Moe.",
-          "author": "derrfurr23",
-          "score": 0,
-          "url": "https://www.reddit.com/r/detroitlions/comments/1udzgxx/kerby_joseph_via_instagram_shout_out_to_moe/",
-          "selftext": "",
-          "created_utc": 1782281755.0,
-          "num_comments": 0,
-          "id": "1udzgxx",
-          "subreddit": "DetroitLions",
-          "link_url": "https://www.reddit.com/r/detroitlions/comments/1udzgxx/kerby_joseph_via_instagram_shout_out_to_moe/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "Do you think that Dan Campbell will be the Lions eventually be the franchise leader in all time Head Coaching wins?",
-          "author": "33GoodSamaritans",
-          "score": 0,
-          "url": "https://www.reddit.com/r/detroitlions/comments/1udy0yv/do_you_think_that_dan_campbell_will_be_the_lions/",
-          "selftext": "",
-          "created_utc": 1782277816.0,
-          "num_comments": 0,
-          "id": "1udy0yv",
-          "subreddit": "DetroitLions",
-          "link_url": "https://www.reddit.com/r/detroitlions/comments/1udy0yv/do_you_think_that_dan_campbell_will_be_the_lions/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
-        },
-        {
-          "title": "Pitts has officially reset the TE market. LaPorta in all likelihood will command a 3 year, 60 million deal in order to keep him.",
-          "author": "PETZING_ELITE_OC_DET",
-          "score": 0,
-          "url": "https://www.reddit.com/r/detroitlions/comments/1ue26rt/pitts_has_officially_reset_the_te_market_laporta/",
-          "selftext": "",
-          "created_utc": 1782289463.0,
-          "num_comments": 0,
-          "id": "1ue26rt",
-          "subreddit": "DetroitLions",
-          "link_url": "https://www.reddit.com/r/detroitlions/comments/1ue26rt/pitts_has_officially_reset_the_te_market_laporta/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": []
         }
       ]
     },
@@ -3186,31 +3186,31 @@
     }
   },
   "refresh_status": "stale",
-  "last_attempt_at": "2026-11-14T14:35:00+00:00",
+  "last_attempt_at": "2026-11-14T23:27:28+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-13T00:45:04+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3218,25 +3218,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T14:42:02+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3244,25 +3244,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3270,25 +3270,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-11T15:40:07+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-12T16:23:40+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3296,25 +3296,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-10T15:51:40+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3322,25 +3322,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3348,25 +3348,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-13T15:44:05+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3374,51 +3374,51 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
-        "reason": "fetch_failed"
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
+        "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
     "DetroitLions": {
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
+        "reason": "rate_limited"
+      },
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-14T00:30:31+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3426,25 +3426,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-11T00:17:01+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3452,25 +3452,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-06T23:50:46+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-04T00:14:05+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3478,25 +3478,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-12T01:42:25+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-14T14:35:00+00:00",
+        "last_attempt_at": "2026-11-14T23:27:28+00:00",
         "reason": "rate_limited"
       }
     }
