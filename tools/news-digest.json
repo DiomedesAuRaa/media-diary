@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T02:24:34+00:00",
-  "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+  "generatedAt": "2026-11-14T10:19:01+00:00",
+  "lastAttemptAt": "2026-11-14T10:19:01+00:00",
   "provenance": "publisher-rss-headlines",
   "feeds": [
     {
@@ -10,9 +10,29 @@
       "name": "NPR",
       "url": "https://feeds.npr.org/1001/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
+        {
+          "title": "As Democrats win big, thirst traps of male candidates take social media by storm",
+          "url": "https://www.npr.org/2026/11/14/nx-s1-6040507/democrats-male-candidates-masculinity-trump",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Hegseth's failed impeachment was a warning to Democrats. Where will they go from here?",
+          "url": "https://www.npr.org/2026/11/14/nx-s1-6040299/hegseth-impeachment-democrats-house-test",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "An organ transplant controversy tests 'the dead donor rule'",
+          "url": "https://www.npr.org/2026/11/14/nx-s1-6032604/organ-transplant-donor-dead-ethics",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Democrat Jonathan Kreiss-Tomkins wins race for Alaska governor, replaces a Republican",
+          "url": "https://www.npr.org/2026/11/14/g-s1-151719/midterms-alaska-governor-kreiss-tomkins",
+          "date": "2026-11-14"
+        },
         {
           "title": "DHS head Markwayne Mullin says there is not a threat to the U.S. amid FAA ground stop",
           "url": "https://www.npr.org/2026/11/13/nx-s1-6040418/dhs-head-markwayne-mullin-says-there-is-not-a-threat-to-the-u-s-amid-faa-ground-stop",
@@ -24,33 +44,13 @@
           "date": "2026-11-13"
         },
         {
+          "title": "What we know about the FAA nationwide ground stop",
+          "url": "https://www.npr.org/2026/11/13/nx-s1-6040388/what-we-know-about-the-faa-nationwide-ground-stop",
+          "date": "2026-11-13"
+        },
+        {
           "title": "GOP state officials push to revive Trump's mail voting restrictions for 2028 election",
           "url": "https://www.npr.org/2026/11/13/nx-s1-6040409/trump-mail-in-voting",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "FAA lifts the nationwide ground stop for all U.S. airports",
-          "url": "https://www.npr.org/2026/11/13/nx-s1-6040403/faa-nationwide-groundstop-airports",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "With his challenge to Schumer, Van Hollen forces a debate over Democrats' mandate",
-          "url": "https://www.npr.org/2026/11/13/nx-s1-6040044/dem-senate-leader-fight",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "The government says it will close a beloved D.C. park Sunday. Will a judge step in?",
-          "url": "https://www.npr.org/2026/11/13/nx-s1-6039273/east-po-hearing-nov-13",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "What's Trump's strategy now with Iran? To keep things as they are",
-          "url": "https://www.npr.org/2026/11/13/g-s1-153578/whats-trumps-strategy-now-with-iran-to-keep-things-as-they-are",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "The Trump administration's voter roll crusade could continue",
-          "url": "https://www.npr.org/2026/11/13/nx-s1-6034016/voter-fraud-search-trump-california",
           "date": "2026-11-13"
         }
       ]
@@ -61,18 +61,18 @@
       "name": "BBC News",
       "url": "https://feeds.bbci.co.uk/news/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "'Miracle on Mississippi' - All passengers rescued after New Orleans cruise ship collision",
-          "url": "https://www.bbc.co.uk/news/articles/cw20xmy0m5yyo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-13"
+          "title": "Young people should have legal guarantee of job or training, Milburn tells BBC",
+          "url": "https://www.bbc.co.uk/news/articles/c69vwp09d7vvo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-14"
         },
         {
-          "title": "US Air Force says it responded to 'suspected drones' over RAF Lakenheath",
-          "url": "https://www.bbc.co.uk/news/articles/c6jd75geegzyo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-13"
+          "title": "What we know about the US ground stop and what to do if your flight is affected",
+          "url": "https://www.bbc.co.uk/news/articles/cqx2wyvyr3zzo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-14"
         },
         {
           "title": "Trump, Putin and Xi plan historic joint meeting in China next week, White House says",
@@ -80,29 +80,29 @@
           "date": "2026-11-14"
         },
         {
-          "title": "Police investigating David Walliams over reports alleging serious sexual offences",
-          "url": "https://www.bbc.co.uk/news/articles/cwx2emg4xe72o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Setback for SpaceX Starship rocket's double-catch test",
-          "url": "https://www.bbc.co.uk/news/articles/ckregdgnl0xpo?at_medium=RSS&at_campaign=rss",
+          "title": "Microsoft says services fully restored after day-long global outage",
+          "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-14"
         },
         {
-          "title": "Goalkeeper involved in fatal collision gets 12-game ban",
-          "url": "https://www.bbc.co.uk/sport/football/articles/cm98xy2j8k1ko?at_medium=RSS&at_campaign=rss",
+          "title": "Cruise ship left on its side after collision with tanker on Mississippi",
+          "url": "https://www.bbc.co.uk/news/articles/cw20xmy0m5yyo?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-13"
         },
         {
-          "title": "Microsoft 'deeply sorry' for global outage after almost 24 hours of disruption",
-          "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-13"
+          "title": "King jokes with Elton John as he marks 78th birthday with radio show",
+          "url": "https://www.bbc.co.uk/news/articles/ck0jx8pxxx6eo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-14"
         },
         {
-          "title": "Rosenberg: Uncompromising Putin ups demands for peace with Ukraine",
-          "url": "https://www.bbc.co.uk/news/articles/cq39glwprknjo?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-13"
+          "title": "Brand, Walliams and Married at First Sight: Is this a reckoning for the entertainment industry?",
+          "url": "https://www.bbc.co.uk/news/articles/cqn70lz71lg8o?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Even Grand Theft Auto's original creators haven't been able to play GTA 6",
+          "url": "https://www.bbc.co.uk/news/articles/c6jd7k5ryl1mo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-14"
         }
       ]
     },
@@ -112,28 +112,28 @@
       "name": "BBC World",
       "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
+        {
+          "title": "What we know about the ground stop and what to do if you're affected",
+          "url": "https://www.bbc.co.uk/news/articles/cqx2wyvyr3zzo?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-14"
+        },
         {
           "title": "'Miracle on Mississippi' - All passengers rescued after New Orleans cruise ship collision",
           "url": "https://www.bbc.co.uk/news/articles/cw20xmy0m5yyo?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-13"
         },
         {
-          "title": "Microsoft 'deeply sorry' for global outage after almost 24 hours of disruption",
+          "title": "Trump, Putin and Xi plan historic joint meeting in China next week, White House says",
+          "url": "https://www.bbc.co.uk/news/articles/ckz74jzpy18do?at_medium=RSS&at_campaign=rss",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Microsoft says services fully restored after day-long global outage",
           "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Why is Microsoft's outage lasting so long and will emails be lost?",
-          "url": "https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Watch: How a server outage took down Microsoft Teams and Outlook",
-          "url": "https://www.bbc.co.uk/news/videos/cqzjr903n01po?at_medium=RSS&at_campaign=rss",
-          "date": "2026-11-13"
+          "date": "2026-11-14"
         },
         {
           "title": "Setback for SpaceX Starship rocket's double-catch test",
@@ -151,8 +151,8 @@
           "date": "2026-11-13"
         },
         {
-          "title": "The Peruvian city that has embraced Pope Leo as one of its own",
-          "url": "https://www.bbc.co.uk/news/articles/cwg7l8n7dx5mo?at_medium=RSS&at_campaign=rss",
+          "title": "Estonia bans Russian athletes as backlash intensifies",
+          "url": "https://www.bbc.co.uk/sport/articles/cm4gn9lvlgy2o?at_medium=RSS&at_campaign=rss",
           "date": "2026-11-13"
         }
       ]
@@ -163,48 +163,48 @@
       "name": "Al Jazeera",
       "url": "https://www.aljazeera.com/xml/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "Tanker collision leaves riverboat passengers clinging to railings",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/14/aje-onl-nf_tanker-collision-in-new-orleans-131126?traffic_source=rss",
+          "title": "Migrant caravan heads to US from Mexico after Democrats’ midterm win",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/14/migrant-caravan-heads-to-us-from-mexico-after-democrats-midterm-win?traffic_source=rss",
           "date": "2026-11-14"
         },
         {
-          "title": "Former FAA official says ‘nobody really knows what is going on’",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/14/former-faa-official-says-nobody-really-knows-what-is-going?traffic_source=rss",
+          "title": "Netanyahu may fall, but his far-right legacy in Israel is going nowhere",
+          "url": "https://www.aljazeera.com/news/2026/11/14/netanyahu-may-fall-but-his-far-right-legacy-in-israel-is-going-nowhere?traffic_source=rss",
           "date": "2026-11-14"
         },
         {
-          "title": "UK police open sex offence probe into comedian and author David Walliams",
-          "url": "https://www.aljazeera.com/news/2026/11/14/uk-police-open-sex-offence-probe-into-comedian-and-author-david-walliams?traffic_source=rss",
+          "title": "Pochettino bids emotional farewell to US football ahead of Man Utd move",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/14/pochettino-bids-emotional-farewell-to-us-football-ahead-of-man-utd-move?traffic_source=rss",
           "date": "2026-11-14"
         },
         {
-          "title": "Microsoft services begin recovering after global outage",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/14/microsoft-services-begin-recovering-after-global-outage?traffic_source=rss",
+          "title": "Qatar and Turkiye sign a mutual defence pact: What do we know?",
+          "url": "https://www.aljazeera.com/news/2026/11/14/qatar-and-turkiye-sign-a-mutual-defence-pact-what-do-we-know?traffic_source=rss",
           "date": "2026-11-14"
         },
         {
-          "title": "Afghanistan’s new road to China ends at a closed border",
-          "url": "https://www.aljazeera.com/features/2026/11/14/wakhan-corridor-afghanistan-china-taliban?traffic_source=rss",
+          "title": "Nearly $20m found in Hungary’s forests, buildings amid corruption probe",
+          "url": "https://www.aljazeera.com/news/2026/11/14/hungarian-investigators-uncover-19-5m-hidden-in-forests-and-buildings?traffic_source=rss",
           "date": "2026-11-14"
         },
         {
-          "title": "Iran war live: Fighting grips Yemen as Qatar, Turkiye sign defence deal",
-          "url": "https://www.aljazeera.com/news/liveblog/2026/11/14/iran-war-live-fighting-grips-yemen-as-qatar-turkiye-sign-defence-deal?traffic_source=rss",
+          "title": "Hungary seizes $18m cash tied to ex-Orban-era minister in probe",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/14/hungary-seizes-18m-cash-tied-to-ex-orban-era-minister-in-probe?traffic_source=rss",
           "date": "2026-11-14"
         },
         {
-          "title": "FAA grounds all fights across the US over ‘telecommunication outage’",
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/11/13/faa-grounds-all-fights-across-the-us-over-telecommunication?traffic_source=rss",
-          "date": "2026-11-13"
+          "title": "Warner accuses Cricket Australia of ‘cover-up’ in ball-tampering scandal",
+          "url": "https://www.aljazeera.com/sports/2026/11/14/warner-cricket-australia-ball-tampering-sandpapergate-khawaja-cummins?traffic_source=rss",
+          "date": "2026-11-14"
         },
         {
-          "title": "32 passengers taken to hospital after tanker hits river cruise boat in US",
-          "url": "https://www.aljazeera.com/news/2026/11/13/rescue-efforts-under-way-after-tanker-strikes-river-cruise-boat-in-us?traffic_source=rss",
-          "date": "2026-11-13"
+          "title": "Pacers hold off Knicks in NBA Cup thriller, Spurs rout Warriors",
+          "url": "https://www.aljazeera.com/sports/2026/11/14/nba-cup-basketball-pacers-knicks-spurs-warriors?traffic_source=rss",
+          "date": "2026-11-14"
         }
       ]
     },
@@ -214,8 +214,8 @@
       "name": "The Guardian",
       "url": "https://www.theguardian.com/world/rss",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "Zimbabwean author Simbarashe Kundizeza cleared of using AI to write prize-winning story",
@@ -265,8 +265,8 @@
       "name": "NPR World",
       "url": "https://feeds.npr.org/1004/rss.xml",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "What's Trump's strategy now with Iran? To keep things as they are",
@@ -316,17 +316,37 @@
       "name": "Hacker News",
       "url": "https://hnrss.org/frontpage",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "FAA lifted National Ground Stop at 0119Z",
-          "url": "https://www.fly.faa.gov/adv/adv_otherdis?adv_date=11142026&advn=5",
+          "title": "Ask HN: What are the most useful, concrete AI skills to independently learn?",
+          "url": "https://news.ycombinator.com/item?id=50494696",
           "date": "2026-11-14"
         },
         {
-          "title": "Ukraine knocks out 36% of Russia's oil refining capacity in under two weeks",
-          "url": "https://english.nv.ua/nation/thirteen-day-drone-blitz-paralyzes-36-of-moscow-s-oil-50658616.html",
+          "title": "Monkey Island: all 13 versions side by side",
+          "url": "https://monkeyisland.pages.dev/",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs",
+          "url": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Ggml v1.0.0",
+          "url": "https://github.com/ggml-org/ggml/releases/tag/v1.0.0",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Security Agencies Worldwide Found to Use Ad-Based Surveillance System",
+          "url": "https://citizenlab.ca/security-agencies-worldwide-found-to-use-ad-based-surveillance-system/",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Elephants found to be increasingly isolated leading to fractured social networks",
+          "url": "https://today.ucsd.edu/story/elephants-found-to-be-increasingly-isolated-leading-to-fractured-social-networks",
           "date": "2026-11-14"
         },
         {
@@ -335,29 +355,9 @@
           "date": "2026-11-14"
         },
         {
-          "title": "Anthropic Upgrades Claude Code Projects to Run Parallel AI Workers Hands-Free",
-          "url": "https://alphasignal.ai/news/anthropic-upgrades-claude-code-projects-to-run-parallel-ai-workers-hands-free",
-          "date": "2026-11-14"
-        },
-        {
           "title": "Unsloth Qwen3.8-27B Quantizations – Dynamic v3.1 Update",
           "url": "https://unsloth.ai/docs/models/qwen3.8",
           "date": "2026-11-14"
-        },
-        {
-          "title": "What Happened to 3Com?",
-          "url": "https://dfarq.homeip.net/what-happened-to-3com/",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Show HN: Live map of U.S. flights during tonight's FAA nationwide ground stop",
-          "url": "https://grounds.top/",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Terminal borders that don't cost a cell",
-          "url": "https://www.joshka.net/cell-borders/",
-          "date": "2026-11-13"
         }
       ]
     },
@@ -367,8 +367,8 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/index",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "Starship flight 15 powers to orbit—setting up a possible catch on Saturday",
@@ -376,7 +376,7 @@
           "date": "2026-11-14"
         },
         {
-          "title": "FAA orders third nationwide ground stop in its history",
+          "title": "FAA has lifted its third-ever nationwide ground stop",
           "url": "https://arstechnica.com/tech-policy/2026/11/faa-orders-third-nationwide-ground-stop-in-its-history/",
           "date": "2026-11-13"
         },
@@ -418,8 +418,8 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/index.xml",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "FAA lifts nationwide ground stop that blocked takeoffs for hours",
@@ -469,48 +469,48 @@
       "name": "Wired",
       "url": "https://www.wired.com/feed/rss",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "The FAA Nationwide Ground Stop Is Over",
-          "url": "https://www.wired.com/story/the-faa-nationwide-ground-stop-is-over/",
+          "title": "Thanksgiving Meal Deals Roundup (2026): Walmart, Amazon, Target",
+          "url": "https://www.wired.com/story/thanksgiving-meal-deals-2026/",
           "date": "2026-11-14"
         },
         {
-          "title": "Best Early Black Friday AirPods Deals (2026)",
-          "url": "https://www.wired.com/story/best-early-black-friday-airpods-deals-11-13-2026/",
-          "date": "2026-11-13"
+          "title": "These ‘Ghostly’ Galaxies Have Lost Their Dark Matter",
+          "url": "https://www.wired.com/story/these-ghostly-galaxies-have-lost-their-dark-matter/",
+          "date": "2026-11-14"
         },
         {
-          "title": "FAA Grounds All US Flights Until Further Notice",
-          "url": "https://www.wired.com/story/faa-grounds-all-us-flights-until-further-notice/",
-          "date": "2026-11-13"
+          "title": "Outlook Went Down? Microsoft May Owe You Money",
+          "url": "https://www.wired.com/story/outlook-went-down-microsoft-may-owe-you-money/",
+          "date": "2026-11-14"
         },
         {
-          "title": "Atlas Coffee Club’s Black Friday Deals (2026)",
-          "url": "https://www.wired.com/story/atlas-coffee-club-black-friday-2026/",
-          "date": "2026-11-13"
+          "title": "Dell Coupon Codes: 20% Off for November 2026",
+          "url": "https://www.wired.com/story/dell-coupon-code/",
+          "date": "2026-11-14"
         },
         {
-          "title": "Early Black Friday Mattress Deals: Get Up to 55% Off WIRED-Tested Favorites",
-          "url": "https://www.wired.com/story/best-early-black-friday-mattress-deals-11-13-2026/",
-          "date": "2026-11-13"
+          "title": "Paramount+ Coupon Codes and Deals for 2026",
+          "url": "https://www.wired.com/story/paramount-plus-coupon-code/",
+          "date": "2026-11-14"
         },
         {
-          "title": "Microsoft 365 Crawls Back to Life After a 24-Hour Outage",
-          "url": "https://www.wired.com/story/microsoft-365-crawls-back-to-life-after-a-24-hour-outage/",
-          "date": "2026-11-13"
+          "title": "Disney Plus Discount Codes: 52% Off November 2026",
+          "url": "https://www.wired.com/story/disney-plus-discounts/",
+          "date": "2026-11-14"
         },
         {
-          "title": "The Microsoft Outage Is a Warning for the World",
-          "url": "https://www.wired.com/story/the-microsoft-outage-is-a-warning-for-the-world/",
-          "date": "2026-11-13"
+          "title": "30% Off Canon Promo Codes | November 2026",
+          "url": "https://www.wired.com/story/canon-promo-code/",
+          "date": "2026-11-14"
         },
         {
-          "title": "Jensen Huang and the End of the Founder Fairy Tale",
-          "url": "https://www.wired.com/story/jensen-huang-and-the-end-of-the-founder-fairy-tale/",
-          "date": "2026-11-13"
+          "title": "Wayfair Coupons: Up to 80% Off November 2026",
+          "url": "https://www.wired.com/story/wayfair-promo-code/",
+          "date": "2026-11-14"
         }
       ]
     },
@@ -520,8 +520,8 @@
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/stories.rss",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "The Download: Silicon Valley’s blind spot and Nvidia’s chip-tracking plan",
@@ -571,12 +571,17 @@
       "name": "ESPN",
       "url": "https://www.espn.com/espn/rss/news",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "FAA ground stop disrupting travel for multiple college football teams, officials",
+          "title": "FAA ground stop throws sports world into travel chaos ahead of weekend games",
           "url": "https://www.espn.com/college-football/story/_/id/50475169/faa-ground-stop-disrupting-travel-college-football-teams",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Ole Miss-Oklahoma bumped to Sunday despite Sooners AD's 'strong objection'",
+          "url": "https://www.espn.com/college-football/story/_/id/50478281/ole-miss-oklahoma-bumped-sunday-sooners-ad-rips-decision",
           "date": "2026-11-14"
         },
         {
@@ -590,6 +595,11 @@
           "date": "2026-11-14"
         },
         {
+          "title": "Giannis, Bam combine for 74 as Heat flex potential as East contenders",
+          "url": "https://www.espn.com/nba/story/_/id/50477867/giannis-antetokounmpo-bam-adebayo-shine-heat-take-cavs",
+          "date": "2026-11-14"
+        },
+        {
           "title": "Murray wants trade from Pelicans; both sides working on resolution",
           "url": "https://www.espn.com/nba/story/_/id/50473732/sources-dejounte-murray-wants-trade-pelicans",
           "date": "2026-11-14"
@@ -600,18 +610,8 @@
           "date": "2026-11-14"
         },
         {
-          "title": "Blue Jays' Santander apologizes for sharing anti-Muslim posts",
-          "url": "https://www.espn.com/mlb/story/_/id/50474604/blue-jays-anthony-santander-apologizes-anti-muslim-posts",
-          "date": "2026-11-14"
-        },
-        {
           "title": "Goalkeeper banned 12 games for collision that led to Spanish player's death",
           "url": "https://www.espn.com/soccer/story/_/id/50474551/andorra-goalkeeper-jesus-owono-tenerife-death-jesus-de-miguel",
-          "date": "2026-11-14"
-        },
-        {
-          "title": "Sources: Earthquakes sold to Heath Freeman of Alden Global for $625 million",
-          "url": "https://www.espn.com/soccer/story/_/id/50474340/san-jose-earthquakes-sold-625-million-heath-freeman",
           "date": "2026-11-14"
         }
       ]
@@ -622,12 +622,32 @@
       "name": "CBS Sports",
       "url": "https://www.cbssports.com/rss/headlines",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
+        {
+          "title": "Oklahoma AD Roger Denny blasts SEC after game vs. Ole Miss pushed to Sunday under threat of forfeit",
+          "url": "https://www.cbssports.com/college-football/news/oklahoma-ad-roger-denny-blasts-sec-ole-miss-sunday-faa-groundstop/",
+          "date": "2026-11-14"
+        },
         {
           "title": "College football teams scrambling to find alternate travel plans after FAA lifts ground-stop order",
           "url": "https://www.cbssports.com/college-football/news/faa-ground-stoppage-college-football-teams-travel-plans/",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "College football picks: Predictions against the spread, odds, betting lines for top 25 games in Week 11",
+          "url": "https://www.cbssports.com/college-football/news/college-football-picks-predictions-spread-odds-betting-lines-top-25-week-11-games/",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "UFC 334: An inside look at Josh Hokit's incredible rise to title challenger in just one year",
+          "url": "https://www.cbssports.com/ufc/news/ufc-334-josh-hokit-incredible-rise-from-early-prelims-to-title-challenger/",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Kentucky hits last second three to avoid epic upset to Northern Arizona, but the heat is still on Mark Pope",
+          "url": "https://www.cbssports.com/college-basketball/news/kentucky-avoid-epic-upset-northern-arizona-last-second-three-mark-pope/",
           "date": "2026-11-14"
         },
         {
@@ -644,26 +664,6 @@
           "title": "Houston vs. Colorado prediction, odds, time: Week 11 Friday college football picks from proven model",
           "url": "https://www.cbssports.com/betting/news/houston-colorado-prediction-odds-time-2026-week-11-friday-college-football-picks-best-bets/",
           "date": "2026-11-14"
-        },
-        {
-          "title": "UCLA vs. Illinois prediction, odds, time: Week 11 college football Friday picks from proven model",
-          "url": "https://www.cbssports.com/betting/news/ucla-illinois-prediction-odds-time-2026-week-11-college-football-friday-picks-best-bets/",
-          "date": "2026-11-14"
-        },
-        {
-          "title": "College football picks: Predictions against the spread, odds, betting lines for top 25 games in Week 11",
-          "url": "https://www.cbssports.com/college-football/news/college-football-picks-predictions-spread-odds-betting-lines-top-25-week-11-games/",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Use DraftKings promo code to get $200 bonus, free NBA League Pass for Pacers-Knicks, UCLA-Illinois on Friday",
-          "url": "https://www.cbssports.com/betting/news/use-draftkings-promo-code-to-get-200-bonus-free-nba-league-pass-pacers-knicks-ucla-illinois-friday/",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Use BetMGM bonus code CBSSPORTS to get $1,500 bonus bets for Pacers-Knicks, Illinois-UCLA, college football",
-          "url": "https://www.cbssports.com/betting/news/use-betmgm-bonus-code-cbssports-to-get-1500-bonus-bets-pacers-knicks-illinois-ucla-college-football-friday/",
-          "date": "2026-11-13"
         }
       ]
     },
@@ -673,47 +673,47 @@
       "name": "Yahoo Sports",
       "url": "https://sports.yahoo.com/rss/",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "Eagles waive 2 veterans who could help Rams, including former 1st-round WR",
-          "url": "https://sports.yahoo.com/articles/eagles-waive-2-veterans-could-021548517.html",
+          "title": "Connecticut football's numbers keep falling. Coaches say rebuilding starts long before high school",
+          "url": "https://sports.yahoo.com/articles/connecticut-footballs-numbers-keep-falling-101500012.html",
           "date": "2026-11-14"
         },
         {
-          "title": "Big Walnut girls volleyball falls in four-set OHSAA state semifinal",
-          "url": "https://sports.yahoo.com/articles/big-walnut-girls-volleyball-falls-021521836.html",
+          "title": "Texas A&amp;M junior WR added to injury report, won't play vs. Tennessee",
+          "url": "https://sports.yahoo.com/articles/texas-m-junior-wr-added-101043704.html",
           "date": "2026-11-14"
         },
         {
-          "title": "LSU football’s Whit Weeks questionable to take the field vs. Texas",
-          "url": "https://sports.yahoo.com/articles/lsu-football-whit-weeks-questionable-021350856.html",
+          "title": "George Russell is “looking down the barrel” of Kimi Antonelli’s raw pace, says James Allison",
+          "url": "https://sports.yahoo.com/articles/george-russell-looking-down-barrel-101030113.html",
           "date": "2026-11-14"
         },
         {
-          "title": "Frosh Brooklynn Haywood gives Oregon Ducks big lift in win vs. Maine",
-          "url": "https://sports.yahoo.com/articles/frosh-brooklynn-haywood-gives-oregon-021112051.html",
+          "title": "Texas A&M volleyball snaps three-match skid with sweep of LSU",
+          "url": "https://sports.yahoo.com/articles/texas-m-volleyball-snaps-three-100856012.html",
           "date": "2026-11-14"
         },
         {
-          "title": "Northern Highlands football finally breaks through, wins sectional",
-          "url": "https://sports.yahoo.com/articles/northern-highlands-football-finally-breaks-021036231.html",
+          "title": "Kentucky players, Mark Pope strike different tones after Northern Arizona win",
+          "url": "https://sports.yahoo.com/articles/kentucky-players-mark-pope-strike-100843351.html",
           "date": "2026-11-14"
         },
         {
-          "title": "Victims claim Rex Ryan &quot;almost killed&quot; them with truck in Nasvhille",
-          "url": "https://sports.yahoo.com/articles/victims-claim-rex-ryan-almost-021027486.html",
+          "title": "What channel is Louisville football's game vs. UNC on today?",
+          "url": "https://sports.yahoo.com/articles/channel-louisville-footballs-game-vs-100807718.html",
           "date": "2026-11-14"
         },
         {
-          "title": "ATVS Reacts Results: How do you feel about the new CFP 24-team format?",
-          "url": "https://sports.yahoo.com/articles/atvs-reacts-results-feel-cfp-021024821.html",
+          "title": "NI target challenge of Nations League promotion",
+          "url": "https://sports.yahoo.com/articles/ni-target-challenge-nations-league-100803498.html",
           "date": "2026-11-14"
         },
         {
-          "title": "Texas football remains in Austin after FAA ground stop",
-          "url": "https://sports.yahoo.com/articles/texas-football-remains-austin-faa-020912135.html",
+          "title": "Steelers get huge status update about possible injury return in Week 10",
+          "url": "https://sports.yahoo.com/articles/steelers-huge-status-possible-injury-100758326.html",
           "date": "2026-11-14"
         }
       ]
@@ -724,11 +724,11 @@
       "name": "MarketWatch",
       "url": "https://feeds.marketwatch.com/marketwatch/topstories/",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "FAA lifts rare nationwide ground stop; flights may take days to recover",
+          "title": "FAA lifts rare nationwide ground stop on flights; air travel may take days to recover",
           "url": "https://www.marketwatch.com/story/faa-declares-rare-widespread-ground-outage-bdc46393?mod=mw_rss_topstories",
           "date": "2026-11-14"
         },
@@ -775,12 +775,12 @@
       "name": "CNBC",
       "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "FAA lifts ground stop after four hours, but flight cancellations will stretch into the weekend",
-          "url": "https://www.cnbc.com/2026/11/13/faa-ground-stop.html",
+          "title": "U.S. flights resume after FAA ground stop, but travel disruption continues",
+          "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html",
           "date": "2026-11-14"
         },
         {
@@ -789,29 +789,29 @@
           "date": "2026-11-14"
         },
         {
+          "title": "Analysis: Companies love a ‘rockstar’ CEO. Until they depend on one",
+          "url": "https://www.cnbc.com/2026/11/14/nvidia-jensen-huang-ceo-succession-risk.html",
+          "date": "2026-11-14"
+        },
+        {
           "title": "Nvidia is done with Jensen Huang. The fallout in Washington is just beginning",
           "url": "https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-washington-congress.html",
           "date": "2026-11-13"
         },
         {
+          "title": "Ecuador wants to monetize its biodiversity — while still drilling for oil",
+          "url": "https://www.cnbc.com/2026/11/14/ecuador-biodiversity-green-finance-oil.html",
+          "date": "2026-11-14"
+        },
+        {
           "title": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
           "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
-          "date": "2026-11-13"
+          "date": "2026-11-14"
         },
         {
           "title": "SpaceX launches Starship in key test flight of massive rocket",
           "url": "https://www.cnbc.com/2026/11/13/spacex-launches-starship-in-key-test-flight-of-massive-rocket.html",
           "date": "2026-11-14"
-        },
-        {
-          "title": "Nvidia stock suffers longest weekly losing streak since 2012 as market value sinks by $1.7 trillion",
-          "url": "https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "AI risks are the biggest threat to the financial system, Fed survey finds",
-          "url": "https://www.cnbc.com/2026/11/13/ai-risks-financial-system-federal-reserve.html",
-          "date": "2026-11-13"
         },
         {
           "title": "Lutnick faces questions over Nvidia spy scandal. His sons' firm has deep ties to the chipmaker",
@@ -827,7 +827,7 @@
       "url": "https://www.ft.com/rss/home/us",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": []
     },
     {
@@ -837,7 +837,7 @@
       "url": "https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline",
       "status": "unavailable",
       "generatedAt": null,
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": []
     },
     {
@@ -846,13 +846,28 @@
       "name": "ScienceDaily",
       "url": "https://www.sciencedaily.com/rss/all.xml",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
+        {
+          "title": "Yale scientists reveal what really slows aging and what doesn't",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261112230452.htm",
+          "date": "2026-11-14"
+        },
         {
           "title": "A surprising brain difference may explain why some kids struggle with math",
           "url": "https://www.sciencedaily.com/releases/2026/11/261112025542.htm",
           "date": "2026-11-12"
+        },
+        {
+          "title": "5,000-year-old skulls reveal a disturbing secret of ancient Egypt's first kings",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261112025540.htm",
+          "date": "2026-11-14"
+        },
+        {
+          "title": "Forcing yourself to smile can actually make you miserable",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261112025536.htm",
+          "date": "2026-11-14"
         },
         {
           "title": "Stopping statins after 70 may be safer than expected, but there's a catch",
@@ -873,21 +888,6 @@
           "title": "Common forever chemicals linked to nearly double the rate of aggressive breast cancer",
           "url": "https://www.sciencedaily.com/releases/2026/11/261112025527.htm",
           "date": "2026-11-12"
-        },
-        {
-          "title": "Superheated magma could fuel towering lava fountains",
-          "url": "https://www.sciencedaily.com/releases/2026/11/261111221811.htm",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Without this protein, damaged muscle fills with fat and scar tissue",
-          "url": "https://www.sciencedaily.com/releases/2026/11/261111221643.htm",
-          "date": "2026-11-13"
-        },
-        {
-          "title": "Scientists discover a common sugar may help cancer cells break free and spread",
-          "url": "https://www.sciencedaily.com/releases/2026/11/261111221501.htm",
-          "date": "2026-11-12"
         }
       ]
     },
@@ -897,8 +897,8 @@
       "name": "NASA",
       "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "Outbursts from a Massive Star",
@@ -948,9 +948,14 @@
       "name": "New Scientist",
       "url": "https://www.newscientist.com/feed/home",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
+        {
+          "title": "New Scientist readers on how the magazine has shaped their lives",
+          "url": "https://www.newscientist.com/article/2595857-new-scientist-readers-on-how-the-magazine-has-shaped-their-lives/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
+          "date": "2026-11-14"
+        },
         {
           "title": "Noise pollution is reshaping the health and behaviour of animals everywhere",
           "url": "https://www.newscientist.com/article/2598675-noise-pollution-is-reshaping-the-health-and-behaviour-of-animals-everywhere/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
@@ -985,11 +990,6 @@
           "title": "AI confirms a long-suspected limit on quantum computers’ advantages",
           "url": "https://www.newscientist.com/article/2598418-ai-confirms-a-long-suspected-limit-on-quantum-computers-advantages/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
           "date": "2026-11-12"
-        },
-        {
-          "title": "A robot has assembled a structure in space for the first time",
-          "url": "https://www.newscientist.com/article/2598576-a-robot-has-assembled-a-structure-in-space-for-the-first-time/?utm_campaign=RSS|NSNS&utm_content=home&utm_medium=RSS&utm_source=NSNS",
-          "date": "2026-11-12"
         }
       ]
     },
@@ -999,8 +999,8 @@
       "name": "Nature",
       "url": "https://www.nature.com/nature.rss",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "Number of international students arriving in US plunges — worrying scientists",
@@ -1051,7 +1051,7 @@
       "url": "https://hnrss.org/frontpage?q=kubernetes+OR+terraform+OR+devops+OR+SRE+OR+platform",
       "status": "stale",
       "generatedAt": "2026-11-04T06:12:38+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "Show HN: Kairos – Open-source risk and fraud decisioning platform",
@@ -1066,11 +1066,11 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
-          "title": "Anthropic now lets you self-host Claude Managed Agents. The catch? 8 hours to act if it flags a safety risk",
+          "title": "Anthropic now lets you self-host Claude Managed Agents. The catch? 8 hours to act if it flags a safety risk in the software",
           "url": "https://thenewstack.io/self-hosted-claude-managed-agents/",
           "date": "2026-11-13"
         },
@@ -1118,7 +1118,7 @@
       "url": "https://devops.com/feed/",
       "status": "stale",
       "generatedAt": "2026-10-11T18:03:26+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "The Agent Failure Your Approval Gate Can’t Catch",
@@ -1168,8 +1168,8 @@
       "name": "CNCF Blog",
       "url": "https://www.cncf.io/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "CNCF Recognizes Cloud Native Champions in 2026 Community Awards",
@@ -1219,8 +1219,8 @@
       "name": "SRE Weekly",
       "url": "https://sreweekly.com/feed/",
       "status": "ok",
-      "generatedAt": "2026-11-14T02:24:34+00:00",
-      "lastAttemptAt": "2026-11-14T02:24:34+00:00",
+      "generatedAt": "2026-11-14T10:19:01+00:00",
+      "lastAttemptAt": "2026-11-14T10:19:01+00:00",
       "items": [
         {
           "title": "SRE Weekly Issue #542",
