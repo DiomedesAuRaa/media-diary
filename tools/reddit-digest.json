@@ -12,11 +12,17 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "MichiganWolverines": [
-      "Hot",
+    "formula1": [
       "Best of Hour",
       "Best of 24h",
-      "Best of Week"
+      "Best of Week",
+      "Hot"
+    ],
+    "MichiganWolverines": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
     ],
     "DetroitLions": [
       "Best of Hour",
@@ -73,12 +79,6 @@
       "Hot"
     ],
     "soccer": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "formula1": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -1851,93 +1851,6 @@
       "Hot": []
     },
     "MichiganWolverines": {
-      "Hot": [
-        {
-          "title": "Michigan Notre Dame - 2007",
-          "author": "Loose-Ebb-7951",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x4o2gk/michigan_notre_dame_2007/",
-          "selftext": "",
-          "created_utc": 1791868368,
-          "num_comments": 0,
-          "id": "1x4o2gk",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x4o2gk/michigan_notre_dame_2007/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Go Blue!!!",
-          "author": "Scared_Camera2861",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x4es69/go_blue/",
-          "selftext": "",
-          "created_utc": 1791841135,
-          "num_comments": 0,
-          "id": "1x4es69",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x4es69/go_blue/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Bryce Underwood is still the starting QB",
-          "author": "cpashei",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44ixb/bryce_underwood_is_still_the_starting_qb/",
-          "selftext": "",
-          "created_utc": 1791818066,
-          "num_comments": 0,
-          "id": "1x44ixb",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44ixb/bryce_underwood_is_still_the_starting_qb/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Michigan staying the course on offense amid struggles: ‘You can’t panic’",
-          "author": "mlivesocial",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x45k9u/michigan_staying_the_course_on_offense_amid/",
-          "selftext": "",
-          "created_utc": 1791820449,
-          "num_comments": 0,
-          "id": "1x45k9u",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x45k9u/michigan_staying_the_course_on_offense_amid/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Andrew Sprague NOT RETURNING ANYTIME SOON",
-          "author": "SenorSabeBalon",
-          "score": 0,
-          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44nyj/andrew_sprague_not_returning_anytime_soon/",
-          "selftext": "",
-          "created_utc": 1791818395,
-          "num_comments": 0,
-          "id": "1x44nyj",
-          "subreddit": "MichiganWolverines",
-          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44nyj/andrew_sprague_not_returning_anytime_soon/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of Hour": [],
       "Best of 24h": [
         {
@@ -2106,6 +2019,93 @@
           "id": "1xjfwdw",
           "subreddit": "MichiganWolverines",
           "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1xjfwdw/day_6_of_posting_an_embarrassing_offensive_stat/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Hot": [
+        {
+          "title": "Michigan Notre Dame - 2007",
+          "author": "Loose-Ebb-7951",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x4o2gk/michigan_notre_dame_2007/",
+          "selftext": "",
+          "created_utc": 1791868368,
+          "num_comments": 0,
+          "id": "1x4o2gk",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x4o2gk/michigan_notre_dame_2007/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Go Blue!!!",
+          "author": "Scared_Camera2861",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x4es69/go_blue/",
+          "selftext": "",
+          "created_utc": 1791841135,
+          "num_comments": 0,
+          "id": "1x4es69",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x4es69/go_blue/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Bryce Underwood is still the starting QB",
+          "author": "cpashei",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44ixb/bryce_underwood_is_still_the_starting_qb/",
+          "selftext": "",
+          "created_utc": 1791818066,
+          "num_comments": 0,
+          "id": "1x44ixb",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44ixb/bryce_underwood_is_still_the_starting_qb/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Michigan staying the course on offense amid struggles: ‘You can’t panic’",
+          "author": "mlivesocial",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x45k9u/michigan_staying_the_course_on_offense_amid/",
+          "selftext": "",
+          "created_utc": 1791820449,
+          "num_comments": 0,
+          "id": "1x45k9u",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x45k9u/michigan_staying_the_course_on_offense_amid/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Andrew Sprague NOT RETURNING ANYTIME SOON",
+          "author": "SenorSabeBalon",
+          "score": 0,
+          "url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44nyj/andrew_sprague_not_returning_anytime_soon/",
+          "selftext": "",
+          "created_utc": 1791818395,
+          "num_comments": 0,
+          "id": "1x44nyj",
+          "subreddit": "MichiganWolverines",
+          "link_url": "https://www.reddit.com/r/MichiganWolverines/comments/1x44nyj/andrew_sprague_not_returning_anytime_soon/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -3169,31 +3169,31 @@
     }
   },
   "refresh_status": "stale",
-  "last_attempt_at": "2026-11-21T15:42:00+00:00",
+  "last_attempt_at": "2026-11-21T23:58:44+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-13T00:45:04+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3201,25 +3201,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-17T17:08:02+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3227,25 +3227,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3253,25 +3253,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-11T15:40:07+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-12T16:23:40+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3279,25 +3279,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-10T15:51:40+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3305,25 +3305,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-16T17:33:04+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3331,51 +3331,51 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
-        "reason": "rate_limited"
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
+        "reason": "fetch_failed"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-15T23:36:38+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
     "MichiganWolverines": {
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
-        "reason": "fetch_failed"
-      },
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-10-13T15:19:51+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3383,25 +3383,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-14T00:30:31+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3409,25 +3409,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-11T00:17:01+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3435,25 +3435,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-17T02:39:53+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-15T15:02:09+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3461,25 +3461,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-12T01:42:25+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-21T15:42:00+00:00",
+        "last_attempt_at": "2026-11-21T23:58:44+00:00",
         "reason": "rate_limited"
       }
     }
