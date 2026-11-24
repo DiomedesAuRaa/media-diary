@@ -34,7 +34,7 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "stale"
   },
   {
@@ -71,8 +71,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT2579103520.mp3"
       }
     ],
-    "generatedAt": "2026-11-24T05:25:48+00:00",
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "generatedAt": "2026-11-24T16:09:01+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -109,8 +109,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT7589109568.mp3"
       }
     ],
-    "generatedAt": "2026-11-24T05:25:48+00:00",
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "generatedAt": "2026-11-24T16:09:01+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -147,8 +147,8 @@
         "audioUrl": "https://www.podtrac.com/pts/redirect.mp3/pdst.fm/e/traffic.megaphone.fm/FOXM1210483067.mp3"
       }
     ],
-    "generatedAt": "2026-11-24T05:25:48+00:00",
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "generatedAt": "2026-11-24T16:09:01+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -185,13 +185,19 @@
         "audioUrl": "https://mgln.ai/e/617/pscrb.fm/rss/p/traffic.megaphone.fm/LEW5719326703.mp3"
       }
     ],
-    "generatedAt": "2026-11-24T05:25:48+00:00",
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "generatedAt": "2026-11-24T16:09:01+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "ok"
   },
   {
     "name": "Village Church",
     "episodes": [
+      {
+        "title": "The Lord's Prayer",
+        "date": "Nov 22, 2026",
+        "dateSort": "2026-11-22",
+        "audioUrl": "http://feeds.thevillagechurch.net/link/13086/17539244/e1f4471f8ffd470aa5339576911b487b_20261122_MC_Standalone.mp3"
+      },
       {
         "title": "First Love",
         "date": "Nov 15, 2026",
@@ -215,16 +221,10 @@
         "date": "Oct 25, 2026",
         "dateSort": "2026-10-25",
         "audioUrl": "http://feeds.thevillagechurch.net/link/13086/17507158/b4dda2979b804aa5a8e59c8c7fe0b2bb_20261025_MC_BLJ_Wk7.mp3"
-      },
-      {
-        "title": "The Pure in Heart",
-        "date": "Oct 18, 2026",
-        "dateSort": "2026-10-18",
-        "audioUrl": "http://feeds.thevillagechurch.net/link/13086/17500968/1a47c04cc9d34341898e888a78e4ab7e_20261018_MC_BLJ_Wk6.mp3"
       }
     ],
-    "generatedAt": "2026-11-24T05:25:48+00:00",
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "generatedAt": "2026-11-24T16:09:01+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -261,8 +261,8 @@
         "audioUrl": "https://pdst.fm/e/traffic.megaphone.fm/GLT5004276910.mp3"
       }
     ],
-    "generatedAt": "2026-11-24T05:25:48+00:00",
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "generatedAt": "2026-11-24T16:09:01+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -299,8 +299,8 @@
         "audioUrl": "https://traffic.megaphone.fm/GLT8414563895.mp3"
       }
     ],
-    "generatedAt": "2026-11-24T05:25:48+00:00",
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "generatedAt": "2026-11-24T16:09:01+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "ok"
   },
   {
@@ -338,12 +338,18 @@
       }
     ],
     "generatedAt": null,
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "stale"
   },
   {
     "name": "P1 with Matt and Tommy",
     "episodes": [
+      {
+        "title": "Las Vegas GP Driver Ratings",
+        "date": "Nov 24, 2026",
+        "dateSort": "2026-11-24",
+        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6b05a4b5f402e492d24439b8/media.mp3"
+      },
       {
         "title": "Las Vegas GP Race Review",
         "date": "Nov 22, 2026",
@@ -367,16 +373,10 @@
         "date": "Nov 17, 2026",
         "dateSort": "2026-11-17",
         "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6afc82214c66d1c5299599d9/media.mp3"
-      },
-      {
-        "title": "Our reaction to Liam Lawson and Arvid Lindblad staying at VCARB",
-        "date": "Nov 12, 2026",
-        "dateSort": "2026-11-12",
-        "audioUrl": "https://sphinx.acast.com/p/open/s/63e24225436c36001119fc66/e/6af5ecf717692acb44cd8b8e/media.mp3"
       }
     ],
-    "generatedAt": "2026-11-24T05:25:48+00:00",
-    "lastAttemptAt": "2026-11-24T05:25:48+00:00",
+    "generatedAt": "2026-11-24T16:09:01+00:00",
+    "lastAttemptAt": "2026-11-24T16:09:01+00:00",
     "fetchStatus": "ok"
   }
 ]
