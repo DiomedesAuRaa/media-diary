@@ -12,6 +12,24 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
+    "soccer": [
+      "Best of 24h",
+      "Best of Week",
+      "Hot",
+      "Best of Hour"
+    ],
+    "formula1": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "MichiganWolverines": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
     "DetroitLions": [
       "Best of Hour",
       "Best of 24h",
@@ -61,24 +79,6 @@
       "Hot"
     ],
     "CoDCompetitive": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "soccer": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "formula1": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "MichiganWolverines": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -1477,93 +1477,6 @@
       ]
     },
     "soccer": {
-      "Best of Hour": [
-        {
-          "title": "Thomas Frank appointed Crystal Palace Manager",
-          "author": "Alternative-Lime1670",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xxuqaa/thomas_frank_appointed_crystal_palace_manager/",
-          "selftext": "",
-          "created_utc": 1794848501,
-          "num_comments": 0,
-          "id": "1xxuqaa",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xxuqaa/thomas_frank_appointed_crystal_palace_manager/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "The Faroe Islands finish 2nd in their Nations League group after their win against Moldova, and will now play in the promotion playoffs for a place in League B. Not bad for a small nation with a population of just over 50,000!",
-          "author": "Cosmos1985",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xxurre/the_faroe_islands_finish_2nd_in_their_nations/",
-          "selftext": "",
-          "created_utc": 1794848592,
-          "num_comments": 0,
-          "id": "1xxurre",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xxurre/the_faroe_islands_finish_2nd_in_their_nations/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Welcome to Conmeboland",
-          "author": "arodx14",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xxu3c6/welcome_to_conmeboland/",
-          "selftext": "",
-          "created_utc": 1794847125,
-          "num_comments": 0,
-          "id": "1xxu3c6",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xxu3c6/welcome_to_conmeboland/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Eritrea 0-1 Guinea - Mohamed Soumah 28'",
-          "author": "Meladroit15",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xxty3n/eritrea_01_guinea_mohamed_soumah_28/",
-          "selftext": "",
-          "created_utc": 1794846794,
-          "num_comments": 0,
-          "id": "1xxty3n",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xxty3n/eritrea_01_guinea_mohamed_soumah_28/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Eritrea 0-2 Guinea - Yakhouba Barry 52'",
-          "author": "Meladroit15",
-          "score": 0,
-          "url": "https://www.reddit.com/r/soccer/comments/1xxvcsg/eritrea_02_guinea_yakhouba_barry_52/",
-          "selftext": "",
-          "created_utc": 1794849888,
-          "num_comments": 0,
-          "id": "1xxvcsg",
-          "subreddit": "soccer",
-          "link_url": "https://www.reddit.com/r/soccer/comments/1xxvcsg/eritrea_02_guinea_yakhouba_barry_52/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of 24h": [],
       "Best of Week": [
         {
@@ -1732,6 +1645,93 @@
           "id": "1xrs6k5",
           "subreddit": "soccer",
           "link_url": "https://www.reddit.com/r/soccer/comments/1xrs6k5/klopp_is_planning_to_have_a_conversation_with/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Best of Hour": [
+        {
+          "title": "Thomas Frank appointed Crystal Palace Manager",
+          "author": "Alternative-Lime1670",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xxuqaa/thomas_frank_appointed_crystal_palace_manager/",
+          "selftext": "",
+          "created_utc": 1794848501,
+          "num_comments": 0,
+          "id": "1xxuqaa",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xxuqaa/thomas_frank_appointed_crystal_palace_manager/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "The Faroe Islands finish 2nd in their Nations League group after their win against Moldova, and will now play in the promotion playoffs for a place in League B. Not bad for a small nation with a population of just over 50,000!",
+          "author": "Cosmos1985",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xxurre/the_faroe_islands_finish_2nd_in_their_nations/",
+          "selftext": "",
+          "created_utc": 1794848592,
+          "num_comments": 0,
+          "id": "1xxurre",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xxurre/the_faroe_islands_finish_2nd_in_their_nations/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Welcome to Conmeboland",
+          "author": "arodx14",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xxu3c6/welcome_to_conmeboland/",
+          "selftext": "",
+          "created_utc": 1794847125,
+          "num_comments": 0,
+          "id": "1xxu3c6",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xxu3c6/welcome_to_conmeboland/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Eritrea 0-1 Guinea - Mohamed Soumah 28'",
+          "author": "Meladroit15",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xxty3n/eritrea_01_guinea_mohamed_soumah_28/",
+          "selftext": "",
+          "created_utc": 1794846794,
+          "num_comments": 0,
+          "id": "1xxty3n",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xxty3n/eritrea_01_guinea_mohamed_soumah_28/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Eritrea 0-2 Guinea - Yakhouba Barry 52'",
+          "author": "Meladroit15",
+          "score": 0,
+          "url": "https://www.reddit.com/r/soccer/comments/1xxvcsg/eritrea_02_guinea_yakhouba_barry_52/",
+          "selftext": "",
+          "created_utc": 1794849888,
+          "num_comments": 0,
+          "id": "1xxvcsg",
+          "subreddit": "soccer",
+          "link_url": "https://www.reddit.com/r/soccer/comments/1xxvcsg/eritrea_02_guinea_yakhouba_barry_52/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -3169,31 +3169,31 @@
     }
   },
   "refresh_status": "stale",
-  "last_attempt_at": "2026-11-24T19:08:31+00:00",
+  "last_attempt_at": "2026-11-25T03:12:32+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-13T00:45:04+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3201,25 +3201,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-17T17:08:02+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3227,25 +3227,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3253,25 +3253,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-11T15:40:07+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-12T16:23:40+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3279,51 +3279,51 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-10T15:51:40+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
     "soccer": {
-      "Best of Hour": {
-        "status": "stale",
-        "generated_at": "2026-11-16T17:33:04+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
-        "reason": "rate_limited"
-      },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
-        "reason": "rate_limited"
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
+        "reason": "fetch_failed"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Hour": {
+        "status": "stale",
+        "generated_at": "2026-11-16T17:33:04+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3331,25 +3331,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-15T23:36:38+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3357,25 +3357,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3383,25 +3383,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
-        "reason": "fetch_failed"
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
+        "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-14T00:30:31+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3409,25 +3409,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-11T00:17:01+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3435,25 +3435,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-17T02:39:53+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-15T15:02:09+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3461,25 +3461,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-12T01:42:25+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-24T19:08:31+00:00",
+        "last_attempt_at": "2026-11-25T03:12:32+00:00",
         "reason": "rate_limited"
       }
     }
