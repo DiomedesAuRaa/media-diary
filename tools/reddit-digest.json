@@ -12,29 +12,11 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "formula1": [
+    "DetroitPistons": [
+      "Best of 24h",
       "Best of Week",
       "Hot",
-      "Best of Hour",
-      "Best of 24h"
-    ],
-    "MichiganWolverines": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "DetroitLions": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "DetroitPistons": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
+      "Best of Hour"
     ],
     "movies": [
       "Best of Hour",
@@ -79,6 +61,24 @@
       "Hot"
     ],
     "soccer": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "formula1": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "MichiganWolverines": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "DetroitLions": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -1741,6 +1741,26 @@
       ]
     },
     "formula1": {
+      "Best of Hour": [
+        {
+          "title": "Max: “I always tell the team: ‘Give me a fast car, then we’ll all have a better life.’ I showed in 2023 that you can win the Constructors’ Championship with just one driver. Many found that boring, but I thought it was fantastic. I’d love to do that again!”",
+          "author": "urmommy1_",
+          "score": 0,
+          "url": "https://www.reddit.com/r/formula1/comments/1xjgr00/max_i_always_tell_the_team_give_me_a_fast_car/",
+          "selftext": "",
+          "created_utc": 1793370199,
+          "num_comments": 0,
+          "id": "1xjgr00",
+          "subreddit": "formula1",
+          "link_url": "https://www.reddit.com/r/formula1/comments/1xjgr00/max_i_always_tell_the_team_give_me_a_fast_car/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Best of 24h": [],
       "Best of Week": [
         {
           "title": "[Lewis Hamilton] on Instagram",
@@ -1828,27 +1848,7 @@
           "metadata_source": "rss"
         }
       ],
-      "Hot": [],
-      "Best of Hour": [
-        {
-          "title": "Max: “I always tell the team: ‘Give me a fast car, then we’ll all have a better life.’ I showed in 2023 that you can win the Constructors’ Championship with just one driver. Many found that boring, but I thought it was fantastic. I’d love to do that again!”",
-          "author": "urmommy1_",
-          "score": 0,
-          "url": "https://www.reddit.com/r/formula1/comments/1xjgr00/max_i_always_tell_the_team_give_me_a_fast_car/",
-          "selftext": "",
-          "created_utc": 1793370199,
-          "num_comments": 0,
-          "id": "1xjgr00",
-          "subreddit": "formula1",
-          "link_url": "https://www.reddit.com/r/formula1/comments/1xjgr00/max_i_always_tell_the_team_give_me_a_fast_car/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
-      "Best of 24h": []
+      "Hot": []
     },
     "MichiganWolverines": {
       "Best of Hour": [],
@@ -2288,59 +2288,6 @@
       ]
     },
     "DetroitPistons": {
-      "Best of Hour": [
-        {
-          "title": "Ebuka",
-          "author": "NinjaPacquiao",
-          "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xsb5iy/ebuka/",
-          "selftext": "",
-          "created_utc": 1794277440,
-          "num_comments": 0,
-          "id": "1xsb5iy",
-          "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xsb5iy/ebuka/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Ausar’s steals and blocks are cut in half from what they were last year. Rebounds are up. Anyone know why?",
-          "author": "fishing_pole",
-          "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xsaj3e/ausars_steals_and_blocks_are_cut_in_half_from/",
-          "selftext": "",
-          "created_utc": 1794275632,
-          "num_comments": 0,
-          "id": "1xsaj3e",
-          "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xsaj3e/ausars_steals_and_blocks_are_cut_in_half_from/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Rebranding we need it badly",
-          "author": "Ajthekid5",
-          "score": 0,
-          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xsb35a/rebranding_we_need_it_badly/",
-          "selftext": "",
-          "created_utc": 1794277252,
-          "num_comments": 0,
-          "id": "1xsb35a",
-          "subreddit": "DetroitPistons",
-          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xsb35a/rebranding_we_need_it_badly/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of 24h": [
         {
           "title": "Secret r/DetroitPistons mod",
@@ -2595,6 +2542,59 @@
           "id": "1xlyeey",
           "subreddit": "DetroitPistons",
           "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xlyeey/strong_51_start_to_the_season_despite_a_tough/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Best of Hour": [
+        {
+          "title": "Ebuka",
+          "author": "NinjaPacquiao",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xsb5iy/ebuka/",
+          "selftext": "",
+          "created_utc": 1794277440,
+          "num_comments": 0,
+          "id": "1xsb5iy",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xsb5iy/ebuka/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Ausar’s steals and blocks are cut in half from what they were last year. Rebounds are up. Anyone know why?",
+          "author": "fishing_pole",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xsaj3e/ausars_steals_and_blocks_are_cut_in_half_from/",
+          "selftext": "",
+          "created_utc": 1794275632,
+          "num_comments": 0,
+          "id": "1xsaj3e",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xsaj3e/ausars_steals_and_blocks_are_cut_in_half_from/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Rebranding we need it badly",
+          "author": "Ajthekid5",
+          "score": 0,
+          "url": "https://www.reddit.com/r/DetroitPistons/comments/1xsb35a/rebranding_we_need_it_badly/",
+          "selftext": "",
+          "created_utc": 1794277252,
+          "num_comments": 0,
+          "id": "1xsb35a",
+          "subreddit": "DetroitPistons",
+          "link_url": "https://www.reddit.com/r/DetroitPistons/comments/1xsb35a/rebranding_we_need_it_badly/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -3169,31 +3169,31 @@
     }
   },
   "refresh_status": "stale",
-  "last_attempt_at": "2026-11-25T18:14:02+00:00",
+  "last_attempt_at": "2026-11-26T02:30:54+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-13T00:45:04+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3201,25 +3201,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-17T17:08:02+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3227,25 +3227,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3253,25 +3253,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-11T15:40:07+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-12T16:23:40+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3279,25 +3279,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-10T15:51:40+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3305,51 +3305,51 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-16T17:33:04+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
     "formula1": {
-      "Best of Week": {
-        "status": "stale",
-        "generated_at": "2026-11-15T23:36:38+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
-        "reason": "fetch_failed"
-      },
-      "Hot": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
-        "reason": "rate_limited"
-      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Week": {
+        "status": "stale",
+        "generated_at": "2026-11-15T23:36:38+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3357,25 +3357,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3383,51 +3383,51 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-14T00:30:31+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
     "DetroitPistons": {
-      "Best of Hour": {
-        "status": "stale",
-        "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
-        "reason": "rate_limited"
-      },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
-        "reason": "rate_limited"
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
+        "reason": "fetch_failed"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-11T00:17:01+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
+        "reason": "rate_limited"
+      },
+      "Best of Hour": {
+        "status": "stale",
+        "generated_at": "2026-11-10T02:26:24+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3435,25 +3435,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-17T02:39:53+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-15T15:02:09+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3461,25 +3461,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-12T01:42:25+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-25T18:14:02+00:00",
+        "last_attempt_at": "2026-11-26T02:30:54+00:00",
         "reason": "rate_limited"
       }
     }
