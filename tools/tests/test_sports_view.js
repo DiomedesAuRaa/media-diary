@@ -5,14 +5,14 @@ const vm = require('node:vm');
 class Element {
   constructor(tag, value='') { this.tag=tag; this.textContent=value; this.children=[]; this.dataset={}; this.style={}; this.attrs={}; this.listeners={}; }
   append(...nodes) { this.children.push(...nodes); }
-  replaceChildren(...nodes) { this.children=nodes; }
+  replaceChildren(...nodes) { this.children=nodes; this.replacements=(this.replacements||0)+1; }
   setAttribute(key,value) { this.attrs[key]=value; }
   addEventListener(name,handler) { this.listeners[name]=handler; }
   contains() { return false; }
   focus() {}
 }
 function descendants(element) { return element.children.filter(n=>typeof n==='object').flatMap(n=>[n,...descendants(n)]); }
-async function view(mode='scores', hash='') {
+async function view(mode='scores', hash='', savedReady=false) {
   const ids={};
   for(const name of ['sports-content','sports-league','sports-date','sports-page-label','sports-refresh','sports-prev-day','sports-next-day','sports-today']) ids[name]=new Element('div');
   const leagues=[{name:'EPL',enabled:true},{name:'NFL',enabled:true},{name:'NBA',enabled:true}];
@@ -25,12 +25,12 @@ async function view(mode='scores', hash='') {
     document:{body:{dataset:{sportsMode:mode}},getElementById:id=>ids[id],querySelectorAll:()=>[],addEventListener:()=>{},activeElement:null},
     ToolUI:{text:(tag,value,cls)=>Object.assign(new Element(tag,value),{className:cls||''}),httpURL:()=>null},
     SportsScoreDisplay:{score:()=>'-'},
-    SportsData:{config:async()=>({leagues,favorite_team_ids:{NFL:['8'],NBA:['8']}}),saved:async()=>null,
+    SportsData:{config:async()=>({leagues,favorite_team_ids:{NFL:['8'],NBA:['8']}}),saved:async()=>savedReady ? {payload:{},status:'ok',source:'snapshot',generatedAt:eventDate} : null,
       load:async league=>{calls.push(league.name);return {payload:{},status:'ok',source:'live',retrievedAt:eventDate};},
       events:league=>events[league.name].map(e=>({...e,date:eventDate,name:e.id,state:'pre',participants:[]}))}}
-  context.window={SportsData:context.SportsData,addEventListener:()=>{},setInterval:()=>{}};
+  context.window={SportsData:context.SportsData,addEventListener:()=>{},setInterval:()=>{},setTimeout};
   vm.runInNewContext(fs.readFileSync(require.resolve('../assets/sports-view.js'),'utf8'),context);
-  for(let i=0;i<5;i++) await new Promise(resolve=>setImmediate(resolve));
+  await new Promise(resolve=>setTimeout(resolve,20));
   return {ids,calls,location};
 }
 (async()=>{
@@ -46,6 +46,10 @@ async function view(mode='scores', hash='') {
     assert.deepEqual(nodes.filter(n=>n.className==='sports-group-title').map(n=>n.textContent),['Favorite teams','EPL','NFL']);
     assert.equal(nodes.filter(n=>n.className==='sports-pager').length,0,'default has no pager');
   }
+  const fast=await view('scores','',true);
+  assert.equal(fast.ids['sports-content'].replacements,1,'all saved leagues render in a single pass');
+  assert.deepEqual(fast.calls,[],'saved opening must not start fourteen live requests');
+  assert.equal(descendants(fast.ids['sports-content']).filter(n=>n.tag==='article').length,15,'all saved games render together');
   const filtered=await view('scores','#section-NFL');
   assert.deepEqual(filtered.calls,['NFL'],'explicit league still loads only its own data');
   assert.equal(filtered.ids['sports-league'].value,'NFL');

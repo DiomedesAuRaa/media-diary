@@ -2,6 +2,9 @@
 """Build a curated static diary and tools site into a fresh Pages directory."""
 from __future__ import annotations
 import argparse
+import copy
+import datetime
+from zoneinfo import ZoneInfo
 import csv
 import importlib.util
 import json
@@ -144,6 +147,42 @@ def validate_output(path: Path) -> Path:
         raise ValueError('Output must be a fresh or empty directory')
     return output
 
+def sports_opening(output: Path):
+    """Embed only today's validated scoreboards, avoiding a full multi-day download."""
+    tools = ROOT / 'tools'
+    snapshot = json.loads((tools / 'sports-snapshot.json').read_text())
+    day = datetime.datetime.now(ZoneInfo('America/New_York')).date().isoformat()
+    opening = {'version': 1, 'lastAttemptAt': snapshot['lastAttemptAt'], 'entries': {}}
+    for key, entry in snapshot['entries'].items():
+        coverage = entry.get('coverage', {})
+        if not key.endswith('/scoreboard') or day not in coverage.get('dates', []):
+            continue
+        row = copy.deepcopy(entry)
+        events = []
+        for event in (row.get('payload') or {}).get('events', []):
+            competitions = []
+            for comp in event.get('competitions', []):
+                try:
+                    date = datetime.datetime.fromisoformat(comp.get('date', event.get('date', '')).replace('Z', '+00:00'))
+                    if date.astimezone(ZoneInfo('America/New_York')).date().isoformat() == day:
+                        competitions.append(comp)
+                except (ValueError, TypeError):
+                    continue
+            if competitions:
+                event['competitions'] = competitions
+                events.append(event)
+        if row.get('payload') is not None:
+            row['payload']['events'] = events
+        row['coverage'] = {'start': day, 'end': day, 'dates': [day], 'complete': coverage.get('complete', False)}
+        opening['entries'][key] = row
+    bundle = {'date': day, 'config': json.loads((tools / 'sports-config.json').read_text()), 'snapshot': opening}
+    # Prevent provider text from terminating a script element; data is parsed, never executed.
+    encoded = json.dumps(bundle, separators=(',', ':'), ensure_ascii=True).replace('<', chr(92) + 'u003c')
+    page = output / 'tools/sports-scores.html'
+    html = page.read_text()
+    html = html.replace('</head>', '<script id="sports-bootstrap" type="application/json">' + encoded + '</script>' + chr(10) + '</head>')
+    page.write_text(html)
+
 def populate(output: Path):
     spec = importlib.util.spec_from_file_location('diary_export', ROOT / 'scripts/export_json.py')
     exporter = importlib.util.module_from_spec(spec)
@@ -179,6 +218,7 @@ def populate(output: Path):
         check=True,
     )
     copy_checked(tools / 'home.html', output / 'tools' / 'index.html', tools)
+    sports_opening(output)
     (output / '.nojekyll').touch()
 
 def build(path: Path):

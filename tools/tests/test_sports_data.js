@@ -227,6 +227,21 @@ async function testDateValidationOnUTCPlus14() {
     assert.ok(urls.some(url=>url.includes('dates=20261011')));
   } finally { if (prior === undefined) delete process.env.TZ; else process.env.TZ=prior; }
 }
+async function testEmbeddedOpeningNeedsNoNetwork() {
+  const key='https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard';
+  const opening={date:TODAY,config:CONFIG,snapshot:{version:1,lastAttemptAt:STAMP,entries:{[key]:{
+    payload:{events:[gameEvent('opening',STAMP)]},status:'ok',generatedAt:STAMP,lastAttemptAt:STAMP,
+    coverage:{start:TODAY,end:TODAY,dates:[TODAY],complete:true}
+  }}}};
+  let requests=0;
+  const api=createSportsData({opening,storage:storage(),window:{setTimeout,clearTimeout,AbortController},now:()=>new Date(STAMP),fetch:async()=>{requests++;throw new Error('offline');}});
+  await api.config();
+  const saved=await api.saved('NFL','scores',{date:TODAY});
+  assert.equal(api.events('NFL',saved).length,1);
+  assert.equal(saved.generatedAt,STAMP);
+  assert.equal(saved.source,'snapshot');
+  assert.equal(requests,0,'embedded config and current-day scores require no network');
+}
 async function testColdLiveLoadsDoNotWaitForSlowPublishedSnapshot() {
   const urls=[];
   const api=makeApi({snapshot:null,timers:{setTimeout:()=>1,clearTimeout:()=>{}},fetch:async url=>{
@@ -249,7 +264,7 @@ async function testColdLiveLoadsDoNotWaitForSlowPublishedSnapshot() {
   const tests=[testKeysAndLeagueQueries,testProjectionCompetitionDedupAndFavoriteIDs,testF1EmptyCompetitorsAndMalformedPartial,
     testDateFilteringUsesLocalCompetitionDate,testScheduleDateFetchConcurrencyAndDedup,testInflightDedupeAndCancellationDoesNotCaptureNewLoad,
     testSnapshotCoverageAndFailureFallback,testCacheValidationAndFreshness,testFavoriteAliasesOnlyWhenNoIDMap,
-    testBrowserStyleFactoryPrefersBoundToolUIFetch,testDateValidationOnUTCPlus14,testColdLiveLoadsDoNotWaitForSlowPublishedSnapshot];
+    testBrowserStyleFactoryPrefersBoundToolUIFetch,testDateValidationOnUTCPlus14,testEmbeddedOpeningNeedsNoNetwork,testColdLiveLoadsDoNotWaitForSlowPublishedSnapshot];
   for(const test of tests){ await test(); console.log('ok - '+test.name); }
   console.log('sports-data fixture tests passed');
 })().catch(error=>{console.error(error);process.exitCode=1;});

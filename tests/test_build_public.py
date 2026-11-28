@@ -5,6 +5,7 @@ from urllib.parse import urlsplit
 import csv
 import importlib.util
 import json
+import re
 import tempfile
 import unittest
 
@@ -26,6 +27,23 @@ class PublicBuildTests(unittest.TestCase):
         cls.temp = TemporaryDirectory(prefix='combined-apps-tests-', dir=ROOT.parent)
         cls.output = Path(cls.temp.name) / '_site'
         builder.build(cls.output)
+    def test_sports_opening_and_2048_defaults(self):
+        page = (self.output / 'tools/sports-scores.html').read_text()
+        match = re.search(r'<script id="sports-bootstrap" type="application/json">(.*?)</script>', page, re.S)
+        self.assertIsNotNone(match)
+        bundle = json.loads(match.group(1))
+        self.assertNotIn('<', match.group(1))
+        self.assertEqual(bundle['config'], json.loads((ROOT / 'tools/sports-config.json').read_text()))
+        self.assertLess(len(match.group(1)), (ROOT / 'tools/sports-snapshot.json').stat().st_size)
+        snapshot = json.loads((ROOT / 'tools/sports-snapshot.json').read_text())
+        expected = {key for key, row in snapshot['entries'].items()
+                    if key.endswith('/scoreboard') and bundle['date'] in row.get('coverage', {}).get('dates', [])}
+        self.assertEqual(set(bundle['snapshot']['entries']), expected)
+        for row in bundle['snapshot']['entries'].values():
+            self.assertEqual(row['coverage']['dates'], [bundle['date']])
+        game = (self.output / 'tools/games/2048.html').read_text()
+        self.assertIn('data-compact="1" class="compact"', game)
+
     @classmethod
     def tearDownClass(cls): cls.temp.cleanup()
 
