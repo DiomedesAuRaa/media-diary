@@ -12,11 +12,35 @@
   ],
   "comments_feed": "Disabled for RSS",
   "fetch_errors": {
-    "movies": [
+    "formula1": [
       "Hot",
       "Best of Hour",
       "Best of 24h",
       "Best of Week"
+    ],
+    "MichiganWolverines": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "DetroitLions": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "DetroitPistons": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
+    ],
+    "movies": [
+      "Best of Hour",
+      "Best of 24h",
+      "Best of Week",
+      "Hot"
     ],
     "BillSimmons": [
       "Best of Hour",
@@ -55,30 +79,6 @@
       "Hot"
     ],
     "soccer": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "formula1": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "MichiganWolverines": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "DetroitLions": [
-      "Best of Hour",
-      "Best of 24h",
-      "Best of Week",
-      "Hot"
-    ],
-    "DetroitPistons": [
       "Best of Hour",
       "Best of 24h",
       "Best of Week",
@@ -1741,6 +1741,7 @@
       ]
     },
     "formula1": {
+      "Hot": [],
       "Best of Hour": [
         {
           "title": "Max: “I always tell the team: ‘Give me a fast car, then we’ll all have a better life.’ I showed in 2023 that you can win the Constructors’ Championship with just one driver. Many found that boring, but I thought it was fantastic. I’d love to do that again!”",
@@ -1847,8 +1848,7 @@
           "comments": [],
           "metadata_source": "rss"
         }
-      ],
-      "Hot": []
+      ]
     },
     "MichiganWolverines": {
       "Best of Hour": [],
@@ -2604,93 +2604,6 @@
       ]
     },
     "movies": {
-      "Hot": [
-        {
-          "title": "AMA/Q&A Announcement - James McAvoy - Friday 10/9 at 10 AM ET - Actor in 'Split', 'X-Men', 'It: Chapter Two', 'Speak No Evil', 'Atonement', 'Wanted', 'California Schemin'",
-          "author": "BunyipPouch",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1wybsyk/amaqa_announcement_james_mcavoy_friday_109_at_10/",
-          "selftext": "",
-          "created_utc": 1791214841,
-          "num_comments": 0,
-          "id": "1wybsyk",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1wybsyk/amaqa_announcement_james_mcavoy_friday_109_at_10/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Official Discussion Megathread (The Social Reckoning / Other Mommy) plus throwbacks!",
-          "author": "LiteraryBoner",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x19nf1/official_discussion_megathread_the_social/",
-          "selftext": "",
-          "created_utc": 1791512633,
-          "num_comments": 0,
-          "id": "1x19nf1",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x19nf1/official_discussion_megathread_the_social/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "David Zaslav Gets $606 Million Payout From Paramount-Warner Bros. Merger",
-          "author": "MarvelsGrantMan136",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
-          "selftext": "",
-          "created_utc": 1791493507,
-          "num_comments": 0,
-          "id": "1x12s13",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "'Cyberpunk 2077' Movie In The Works At Paramount",
-          "author": "ChiefLeef22",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
-          "selftext": "",
-          "created_utc": 1791482464,
-          "num_comments": 0,
-          "id": "1x0xy17",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        },
-        {
-          "title": "Which film had absolutely no right being as good as it was?",
-          "author": "Wooden_Dentist1674",
-          "score": 0,
-          "url": "https://www.reddit.com/r/movies/comments/1x0yabw/which_film_had_absolutely_no_right_being_as_good/",
-          "selftext": "",
-          "created_utc": 1791483256,
-          "num_comments": 0,
-          "id": "1x0yabw",
-          "subreddit": "movies",
-          "link_url": "https://www.reddit.com/r/movies/comments/1x0yabw/which_film_had_absolutely_no_right_being_as_good/",
-          "is_self": true,
-          "upvote_ratio": 0,
-          "flair": "",
-          "comments": [],
-          "metadata_source": "rss"
-        }
-      ],
       "Best of Hour": [
         {
           "title": "Favorite Christmas movies that arent outwardly Christmas movies",
@@ -2877,6 +2790,93 @@
           "id": "1xtwjq2",
           "subreddit": "movies",
           "link_url": "https://www.reddit.com/r/movies/comments/1xtwjq2/tarantino_fired_mélanie_laurent_from_inglourious/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        }
+      ],
+      "Hot": [
+        {
+          "title": "AMA/Q&A Announcement - James McAvoy - Friday 10/9 at 10 AM ET - Actor in 'Split', 'X-Men', 'It: Chapter Two', 'Speak No Evil', 'Atonement', 'Wanted', 'California Schemin'",
+          "author": "BunyipPouch",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1wybsyk/amaqa_announcement_james_mcavoy_friday_109_at_10/",
+          "selftext": "",
+          "created_utc": 1791214841,
+          "num_comments": 0,
+          "id": "1wybsyk",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1wybsyk/amaqa_announcement_james_mcavoy_friday_109_at_10/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Official Discussion Megathread (The Social Reckoning / Other Mommy) plus throwbacks!",
+          "author": "LiteraryBoner",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x19nf1/official_discussion_megathread_the_social/",
+          "selftext": "",
+          "created_utc": 1791512633,
+          "num_comments": 0,
+          "id": "1x19nf1",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x19nf1/official_discussion_megathread_the_social/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "David Zaslav Gets $606 Million Payout From Paramount-Warner Bros. Merger",
+          "author": "MarvelsGrantMan136",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "selftext": "",
+          "created_utc": 1791493507,
+          "num_comments": 0,
+          "id": "1x12s13",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x12s13/david_zaslav_gets_606_million_payout_from/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "'Cyberpunk 2077' Movie In The Works At Paramount",
+          "author": "ChiefLeef22",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
+          "selftext": "",
+          "created_utc": 1791482464,
+          "num_comments": 0,
+          "id": "1x0xy17",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0xy17/cyberpunk_2077_movie_in_the_works_at_paramount/",
+          "is_self": true,
+          "upvote_ratio": 0,
+          "flair": "",
+          "comments": [],
+          "metadata_source": "rss"
+        },
+        {
+          "title": "Which film had absolutely no right being as good as it was?",
+          "author": "Wooden_Dentist1674",
+          "score": 0,
+          "url": "https://www.reddit.com/r/movies/comments/1x0yabw/which_film_had_absolutely_no_right_being_as_good/",
+          "selftext": "",
+          "created_utc": 1791483256,
+          "num_comments": 0,
+          "id": "1x0yabw",
+          "subreddit": "movies",
+          "link_url": "https://www.reddit.com/r/movies/comments/1x0yabw/which_film_had_absolutely_no_right_being_as_good/",
           "is_self": true,
           "upvote_ratio": 0,
           "flair": "",
@@ -3169,31 +3169,31 @@
     }
   },
   "refresh_status": "stale",
-  "last_attempt_at": "2026-11-28T02:17:30+00:00",
+  "last_attempt_at": "2026-11-28T16:26:24+00:00",
   "feed_status": {
     "cfb": {
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-28T23:40:19+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T14:35:33+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-10T22:59:53+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-13T00:45:04+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3201,25 +3201,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-01T23:10:34+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-17T17:08:02+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3227,25 +3227,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-29T23:40:11+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-15T12:54:35+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3253,25 +3253,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-11T15:40:07+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-12T16:23:40+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-11T23:15:29+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3279,25 +3279,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-03T15:30:55+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-10T15:51:40+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-31T13:56:06+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3305,51 +3305,51 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-16T17:33:04+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-30T23:19:53+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-09T17:52:39+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
     "formula1": {
+      "Hot": {
+        "status": "unavailable",
+        "generated_at": "2026-06-24T12:04:34.142692",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
+        "reason": "fetch_failed"
+      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-10-30T14:37:57+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-15T23:36:38+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
-        "reason": "rate_limited"
-      },
-      "Hot": {
-        "status": "unavailable",
-        "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3357,25 +3357,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-08T23:14:00+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-05T00:34:20+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-13T15:19:51+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3383,25 +3383,25 @@
       "Best of Hour": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "unavailable",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-14T00:30:31+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-06-24T12:04:34.142692",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3409,51 +3409,51 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-10T02:26:24+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-15T22:43:40+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-11T00:17:01+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-11-03T01:53:32+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
     "movies": {
-      "Hot": {
-        "status": "stale",
-        "generated_at": "2026-10-09T10:04:26+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
-        "reason": "fetch_failed"
-      },
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-17T02:39:53+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-11-06T15:25:51+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-11-15T15:02:09+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
+        "reason": "rate_limited"
+      },
+      "Hot": {
+        "status": "stale",
+        "generated_at": "2026-10-09T10:04:26+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     },
@@ -3461,25 +3461,25 @@
       "Best of Hour": {
         "status": "stale",
         "generated_at": "2026-11-12T01:42:25+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of 24h": {
         "status": "stale",
         "generated_at": "2026-10-16T22:15:23+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Best of Week": {
         "status": "stale",
         "generated_at": "2026-10-14T22:44:24+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       },
       "Hot": {
         "status": "stale",
         "generated_at": "2026-10-16T12:46:16+00:00",
-        "last_attempt_at": "2026-11-28T02:17:30+00:00",
+        "last_attempt_at": "2026-11-28T16:26:24+00:00",
         "reason": "rate_limited"
       }
     }
