@@ -281,11 +281,37 @@
       return Promise.resolve();
     }
     var current = ++run, targetLeagues = targets(), kind = mode === 'schedule' ? 'schedule' : 'scores';
+    // The all-league opening is saved-first: no provider fan-out before first content.
+    if (mode === 'scores' && state.league === 'all' && !force && !silent) {
+      content.setAttribute('aria-busy', 'true');
+      return Promise.all(targetLeagues.map(function (league) {
+        return SportsData.saved(league, kind, {date:state.date}).then(function (entry) { return {league:league, entry:entry}; }, function () { return {league:league, entry:null}; });
+      })).then(function (rows) {
+        if (current !== run) return;
+        entries = rows;
+        render(targetLeagues);
+        // Only missing leagues need an initial live request.
+        var missing = rows.filter(function (row) { return !row.entry || !row.entry.payload; });
+        if (!missing.length) return;
+        return Promise.all(missing.map(function (row) {
+          return SportsData.load(row.league, kind, {date:state.date, shouldContinue:function () { return current === run; }}).then(function (entry) {
+            if (current === run) { row.entry = entry; }
+          }, function () {});
+        })).then(function () { if (current === run) preserveFocus(function () { render(targetLeagues); }); });
+      });
+    }
+    // Background polling updates favorites; Refresh explicitly updates every league.
+    if (mode === 'scores' && state.league === 'all' && silent && !force) {
+      var favorites = favoriteLeagueNames();
+      targetLeagues = targetLeagues.filter(function (league) { return favorites.indexOf(league.name) >= 0; });
+    }
+
     if (!silent) content.replaceChildren(text('p', 'Loading selected sports data…', 'sports-meta'));
     if (!silent) content.setAttribute('aria-busy', 'true');
     if (!targetLeagues.length) { content.setAttribute('aria-busy', 'false'); content.replaceChildren(text('p', 'No enabled leagues are configured.', 'sports-empty')); return Promise.resolve(); }
     if (!silent) entries = [];
     var options = mode === 'scores' ? {date:state.date} : {date:state.date};
+    var renderPending = false;
     function applyEntry(league, entry, isFinal) {
       if (current !== run) return;
       var index = entries.findIndex(function (row) { return row.league.name === league.name; });
@@ -294,7 +320,13 @@
         entries[index].entry = entry;
         entries[index].final = !!isFinal || entries[index].final;
       } else entries.push({league:league, entry:entry, final:!!isFinal});
-      preserveFocus(function () { render(targetLeagues); });
+      if (!renderPending) {
+        renderPending = true;
+        window.setTimeout(function () {
+          renderPending = false;
+          if (current === run) preserveFocus(function () { render(targets()); });
+        }, 0);
+      }
     }
     var tasks = targetLeagues.map(function (league) {
       if (mode === 'schedule') {

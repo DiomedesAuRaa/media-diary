@@ -27,11 +27,16 @@
     var fetchImpl = env.fetchJSON || (toolFetch ? toolFetch.bind(env.ToolUI || global.ToolUI) : (env.fetch || global.fetch) && (env.fetch || global.fetch).bind(env.fetch ? env : global));
     var now = env.now || function () { return new Date(); };
     var timers = env.timers || global;
+    var opening = env.opening || null;
+    if (!opening && global.document) {
+      try { var node = global.document.getElementById('sports-bootstrap'); if (node) opening = JSON.parse(node.textContent); } catch (_) {}
+    }
     var currentConfig = null;
     var configPromise = null;
     var snapshotData = env.snapshot || null;
     var snapshotPromise = null;
     var memoryCache = Object.create(null);
+    var cacheRead = false;
     var inFlight = Object.create(null);
     var activeRequests = 0;
     var waiters = [];
@@ -102,6 +107,9 @@
     }
     function clone(value) { return JSON.parse(JSON.stringify(value)); }
     function config() {
+      if (!currentConfig && opening && opening.config) {
+        try { currentConfig = sanitizeConfig(opening.config); } catch (_) { opening = null; }
+      }
       if (currentConfig) return Promise.resolve(clone(currentConfig));
       if (configPromise) return configPromise.then(clone);
       configPromise = jsonRequest(CONFIG_URL).then(sanitizeConfig).then(function (value) {
@@ -158,6 +166,8 @@
     }
     function jsonRequest(url) { return requestURL(url, REQUEST_TIMEOUT); }
     function cacheStore() {
+      if (cacheRead) return memoryCache;
+      cacheRead = true;
       try {
         var value = JSON.parse(safeGet(CACHE_KEY) || 'null');
         if (!value || value.version !== 2 || !value.entries || typeof value.entries !== 'object' || !currentConfig) return {};
@@ -178,6 +188,7 @@
         });
         var ids = Object.keys(cleaned).sort(function (a, b) { return Date.parse(cleaned[b].lastAttemptAt) - Date.parse(cleaned[a].lastAttemptAt); });
         ids.slice(MAX_CACHE_ENTRIES).forEach(function (id) { delete cleaned[id]; });
+        memoryCache = cleaned;
         return cleaned;
       } catch (_) { return {}; }
     }
@@ -415,8 +426,9 @@
       if (age >= ttl && candidate.status === 'ok') candidate.status = 'stale';
       return candidate;
     }
-    function snapshotCandidate(league, kind, date, window) {
-      var snapshotRow = snapshotData && snapshotData.entries && snapshotData.entries[key(league, kind)];
+    function snapshotCandidate(league, kind, date, window, source) {
+      var data = source || snapshotData;
+      var snapshotRow = data && data.entries && data.entries[key(league, kind)];
       if (!snapshotRow || !validateStandings(kind, snapshotRow.payload)) return null;
       if (!Number.isFinite(Date.parse(snapshotRow.generatedAt || '')) || !Number.isFinite(Date.parse(snapshotRow.lastAttemptAt || ''))) return null;
       var row = {payload:snapshotRow.payload, status:['ok','stale','unavailable'].indexOf(snapshotRow.status) >= 0 ? snapshotRow.status : 'stale',
@@ -485,6 +497,12 @@
       var cached = cacheCandidate(id, kind);
       var ttl = kind === 'scores' ? 60000 : kind === 'standings' ? 300000 : 900000;
       if (cached && cached.status === 'ok' && !cached.partial && cached.generatedAt && clockMs() - Date.parse(cached.generatedAt) >= 0 && clockMs() - Date.parse(cached.generatedAt) < ttl && (kind !== 'schedule' || coversWindow(cached.coverage, window.start, window.end))) return cached;
+      if (kind === 'scores' && opening && opening.date === date) {
+        var initial = snapshotCandidate(league, kind, date, window, opening.snapshot);
+        if (initial && initial.payload) {
+          return cached && Date.parse(cached.generatedAt || 0) > Date.parse(initial.generatedAt || 0) ? cached : initial;
+        }
+      }
       await publishedSnapshot();
       var published = snapshotCandidate(league, kind, date, window);
       if (!cached) return published;
